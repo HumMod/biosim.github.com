@@ -1,7 +1,7 @@
 /* Style.CSS
 
    Created : 2011-11-26
-   Revised : 2011-11-26
+   Revised : 2011-11-27
    Author : Tom Coleman
    Copyright : 2011-2011
    By : University of Mississippi Medical Center
@@ -15,14 +15,20 @@ body
 a
 { font-family : Arial, Helvetica, sans-serif ;
   font-size : 12pt ;
-  color : dodgerblue ;
+  color : royalblue ;
 }
 
 
 #Title
 { font-family : Arial, Helvetica, sans-serif ;
   font-size : 13pt ;
-  color : dodgerblue ;
+  color : royalblue ;
+}
+
+h1
+{ font-family : Arial, Helvetica, sans-serif ;
+  font-size : 13pt ;
+//  font-wight : bold ;
 }
 
 /* End */

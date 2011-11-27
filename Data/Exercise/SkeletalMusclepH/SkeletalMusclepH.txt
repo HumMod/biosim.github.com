@@ -1,0 +1,55 @@
+Skeletal Muscle pH
+
+
+Cellular pH in resting skeletal muscle is typically 7.15 (Harmer et.al. 2000, Sullivan et.al. 1994, Hermansen and Osnes 1972).
+
+Cellular pH falls in exercise in proportion to the intensity of the exercise, with increased pCO2 (see Blood Gases) and increased lactic acid concentrations (see Lactic Acid) both contributing to the acidity.
+
+
+
+Exercising to exhaustion decreases skeletal muscle pH to around 6.60 (Harmer et.al. 2000, Sullivan et.al. 1994, Hermansen and Osnes 1972).  The acidity appears to be an important contributor to the perceived and real exhaustion.
+
+Strong Ion Difference
+
+Lactate accumulates during exercise, decreasing the strong ion difference (SID, see Acid-Base Balance).  Decreased strong ion difference lowers the muscle pH.
+
+We can use lactate, pH and pCO2 data to estimate skeletal muscle strong ion difference.  The equation for pH as a function of pCO2 and SID must be solved for two different conditions.
+
+pH = pK + log (SID / pCO2)
+
+The pH and lactate data is from Harmer et.al (2000) and the pCO2 data is from Sun et.al. (2001).
+
+7.20 = pK + log (SID / 46)
+6.57 = pK + log ((SID – 26) / 90)
+
+The calculated strong ion difference is 48 mEq/L.  The calculated pK is 7.18.
+
+Units
+
+Analyses of cellular constituents often use tissue samples with the water removed and report the results in terms of mMol/kG of tissue dry mass.  Skeletal muscle wet/dry ration is 4.06 (75% water) at rest and 4.12 (76% water) after exercise (Harmer et.al. 2000, Sullivan et.al 1994).
+
+Divide mMol/kG dry by 4.06 or 4.12 to get mMol/L.
+
+References
+
+Harmer, A.R., M.J. McKenna, J.R. Sutton, R.J. Snow, P.A. Ruell, J. Booth, M.W. Thompson, N.A. Mackey, C.G. Stathis, R.M. Cremeri, M.F. Carey and D.M. Eager.  Skeletal muscle metabolic and ionic adaptations during intense exercise following sprint training in humans.  J. Appl. Physiol.  89:1793-1803, 2000.
+
+Hermansen, L. and J.-B. Osnes.  Blood and pH after maximal exercise in man.  J. Appl. Physiol.  32:304-308, 1972.
+
+Sullivan, M.J., B. Saltin, R. Negro-Vilar, B.D. Duscha and H.C. Charles.  Skeletal muscle pH assessed by biochemical and 31P-MRS ,methods during exercise and recovery in men.  J. Appl. Physiol.  77:2194-2200, 1994.
+
+Sun, X.-G., J.E. Hansen, W.W. Stringer, H. Ting and K. Wasserman.  Carbon dioxide pressure-concentration relationship in arterial and mixed venous blood during exercise.  J. Appl. Physiol.  90:1798-1810, 2001.
+
+
+Skeletal Muscle pH   3
+
+
+
+
+
+Exercise Physiology
+
+
+
+Exercise Physiology
+
