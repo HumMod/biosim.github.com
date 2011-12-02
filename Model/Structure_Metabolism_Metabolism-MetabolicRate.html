@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_Metabolism_Metabolism.html'><img src='../Back.PNG'></a>
+<p>
+HumMod / Metabolism-MetabolicRate<br>
+<br>
+Created : 23-May-05<br>
+Last Modified : 2010-05-28<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Solver : DES 2005<br>
+Schema : 2005.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Metabolism-MetabolicRate &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Total(Cal/Min) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Total(Cal/Day) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Total(kCal/Min) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Total(kCal/Day) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; BMRUnits &lt;/name&gt;&lt;/var&gt;<br>
+&lt;parm&gt;&lt;name&gt; BMRNormal &lt;/name&gt;&lt;val&gt; 36.9 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;var&gt;&lt;name&gt; BMR(%) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Net(Cal/Min) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Net(kCal/Day) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Watts &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Total(Cal/Min) &lt;/name&gt;<br>
+  &lt;val&gt; Metabolism-CaloriesUsed.Total &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Total(kCal/Min) &lt;/name&gt;<br>
+  &lt;val&gt; 0.001 * Total(Cal/Min) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Total(Cal/Day) &lt;/name&gt;<br>
+  &lt;val&gt; 1440.0 * Total(Cal/Min) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Total(kCal/Day) &lt;/name&gt;<br>
+  &lt;val&gt; 1440.0 * Total(kCal/Min) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; BMRUnits &lt;/name&gt;<br>
+  &lt;val&gt; 60.0 * Total(kCal/Min) / SurfaceArea.Area &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; BMR(%) &lt;/name&gt;<br>
+  &lt;val&gt; 100.0 * ( ( BMRUnits / BMRNormal ) - 1.0 ) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Watts &lt;/name&gt;<br>
+  &lt;val&gt; Metabolism-Tools.KCAL_MIN_TO_WATT * Total(kCal/Min) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Net(Cal/Min) &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      DietIntakeNutrition.Total_Cal/Min<br>
+    - Total(Cal/Min)<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Net(kCal/Day) &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      DietIntakeNutrition.Total_kCal/Day<br>
+    - Total(kCal/Day)<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

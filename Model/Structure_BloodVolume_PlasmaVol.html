@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_BloodVolume_BloodVolume.html'><img src='../Back.PNG'></a>
+<p>
+HumMod / PlasmaVol<br>
+<br>
+Created : 21-Oct-04<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2005-2010<br>
+By : University of Mississippi Medical Center<br>
+Solver : DES 2005<br>
+Schema : 2005.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; PlasmaVol &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; InitialVol &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Vol(L) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; Vol &lt;/name&gt;<br>
+  &lt;integralname&gt; Vol &lt;/integralname&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 30.0 &lt;/errorlim&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Initialize &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialVol &lt;/name&gt;<br>
+  &lt;val&gt; BloodVol.InitialPVCrit * BloodVol.InitialVol &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Vol &lt;/name&gt;<br>
+  &lt;val&gt; InitialVol &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcVol &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Vol(L) &lt;/name&gt;&lt;val&gt; Vol / 1000.0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Gain &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+     GILumenVolume.Absorption<br>
+   + LymphWater.Rate<br>
+   + IVDrip.H2ORate<br>
+   + ExcessLungWater.Flux<br>
+   + PeritoneumSpace.Loss<br>
+   + Transfusion.PlasmaRate<br>
+<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Loss &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+     CD_H2O.Outflow<br>
+   + CapillaryWater.Rate<br>
+   + ExcessLungWater.Flux<br>
+   + PeritoneumSpace.Gain<br>
+   + Hemorrhage.PlasmaRate<br>
+   + Pericardium-Hemorrhage.PlasmaFlow<br>
+<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; Gain - Loss &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:39 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Docs_BloodVolume.html'><img src='../Back.PNG'></a>
+<p>
+QHP 2008 / BloodVolume.DOCS<br>
+<br>
+Created : 27-Mar-09<br>
+Last Modified : 27-Mar-09<br>
+Author : Tom Coleman<br>
+Copyright : 2009<br>
+<br>
+&lt;structurename&gt; RBCClearance &lt;/structurename&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; RBCClearance.K &lt;/name&gt;<br>
+&lt;topic&gt; K - RBCC1Definition &lt;/topic&gt;<br>
+&lt;topic&gt; RBCClearance - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; RBCClearance - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; RBCClearance - Concentration Units &lt;/topic&gt;<br>
+&lt;seealso&gt; RBCClearance.Tau &lt;/seealso&gt;<br>
+&lt;seealso&gt; EpiClearance.K &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; RBCClearance.Rate &lt;/name&gt;<br>
+&lt;topic&gt; Rate - RBCC2Definition &lt;/topic&gt;<br>
+&lt;topic&gt; RBCClearance - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; RBCClearance - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; RBCClearance - Concentration Units &lt;/topic&gt;<br>
+&lt;seealso&gt; RBCClearance.Tau &lt;/seealso&gt;<br>
+&lt;seealso&gt; RBCVol.Vol &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; RBCClearance.Tau &lt;/name&gt;<br>
+&lt;topic&gt; Tau - RBCC3Definition &lt;/topic&gt;<br>
+&lt;topic&gt; RBCClearance - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; RBCClearance - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; RBCClearance - Concentration Units &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; RBCClearance - Overview &lt;/name&gt;<br>
+&lt;label&gt; Overview &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+RBCs normally circulate an average of 120 days <br>
+before being destroyed. As the cells age, the <br>
+cell membrane becomes more fragile and the cells <br>
+rupture during passage through some tight spots <br>
+in the circulation, particularly in the spleen.<br>
+<br>
+RBCs are comprised of solids and water. <br>
+Typical RBC volume is 2400mL with 1580mL <br>
+being water and 820mL being solids. <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; RBCClearance - Physical Units &lt;/name&gt;<br>
+&lt;label&gt; Physical Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Mass mL<br>
+Flux mL/min<br>
+RBCvolume mL<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; RBCClearance - Concentration Units &lt;/name&gt;<br>
+&lt;label&gt; Concentration Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+RBC concentrations have been expressed number per <br>
+cubic millimeter and as a % of the blood volume <br>
+(hematocrit).<br>
+<br>
+A typical hematocrit is 44% for males and 40% for females<br>
+<br>
+A typical concentration is 5,200,000 (plus or minus 300,000)in <br>
+males and 4,700,000 (plus or minus 300,000) in females<br>
+<br>
+A typical RBC secretion and clearance rate is 0.014mL/min<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; K - RBCC1Definition   &lt;/name&gt;<br>
+&lt;label&gt; Definition   &lt;/label&gt;<br>
+&lt;content&gt;  <br>
+<br>
+K is the rate constant <br>
+K = 1/Tau<br>
+K = 1/120*1440<br>
+Since tau is in days and clearance is expressed in minutes, <br>
+multiply tau by 1440.  <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Rate - RBCC2Definition  &lt;/name&gt;<br>
+&lt;label&gt; Definition   &lt;/label&gt;<br>
+&lt;content&gt;  <br>
+<br>
+Rate is the calculated rate of clearance of <br>
+red blood cells.<br>
+<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Tau - RBCC3Definition   &lt;/name&gt;<br>
+&lt;label&gt; Definition   &lt;/label&gt;<br>
+&lt;content&gt;  <br>
+<br>
+Tau = 120 days<br>
+<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+<br>
+<br>
+  <br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

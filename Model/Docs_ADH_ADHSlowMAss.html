@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:39 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Docs_ADH.html'><img src='../Back.PNG'></a>
+<p>
+QHP 2008 / ADH.DOCS<br>
+<br>
+Created : 27-Mar-09<br>
+Last Modified : 27-Mar-09<br>
+Author : Tom Coleman<br>
+Copyright : 2009<br>
+<br>
+&lt;structurename&gt; ADHSlowMass &lt;/structurename&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHSlowMass.Change &lt;/name&gt;<br>
+&lt;topic&gt; ADHSlowMass - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; Change - DefinitionADHSM1 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHSlowMass.Flux &lt;/name&gt;<br>
+&lt;topic&gt; Flux - DefinitionADHSM2 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHSlowMass.FluxK &lt;/name&gt;<br>
+&lt;topic&gt; FluxK - DefinitionADHSM3 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHSlowMass.Mass &lt;/name&gt;<br>
+&lt;topic&gt; Mass - DefinitionADHSM4 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; ADHSlowMass - Overview &lt;/name&gt;<br>
+&lt;label&gt; Overview &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+In HumMod, the amount of ADH stored in the posterior pituitary is <br>
+divided into two distict masses - the SlowMass and the FastMass. <br>
+This assumption comes from hemorrhage studies in dogs which show <br>
+that the initial secretory response is not sustained in the <br>
+presence of a maintained stimulus of hemorrhagic hypotension. <br>
+<br>
+When a chronic stimulus is applied, sizeable depletion of hormonal <br>
+stores occurs and a coincidental increase in synthesis occurs. This <br>
+is the Slow Mass of ADH and is the predominant factor controlling <br>
+rate of synthesis in the hypothalamus. In HumMod, feedback is a multiplier <br>
+of base secretion and is dependant on the Slow Mass storage level. <br>
+As the Slow Mass levels decrease, synthesis increases. <br>
+<br>
+Sachs H, Share L, Osinchak J, Carpi A. Capacity of the neurohypophysis<br>
+to release vasopressin. Endocrinology 81: 755 - 770, 1967. <br>
+   <br>
+ <br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Change - DefinitionADHSM1&lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Change in the SlowMass pool can occur in three ways: <br>
+1. ADH synthesis increases the Slow Mass pool <br>
+2. Flux of ADH out of the SlowMass pool into the FastMass pool <br>
+depletes the FastMass pool.<br>
+3. Flux of ADH out of FastMass pool into the SlowMass pool increases<br>
+the SlowMass pool.   <br>
+<br>
+Change is therefore defined as <br>
+ADHSynthesis.Rate + ADHFastMass.Flux - ADHSlowMass.Flux<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Flux - DefinitionADHSM2 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Flux is the rate of movement of ADH out of the SlowMass and into <br>
+the FastMass and vice versa. It is defined by the Flux time <br>
+constant: Flux K<br>
+<br>
+Flux = FluxK * Mass<br>
+<br>
+Since normal synthesis and secretion rates are 3.2 nG/Min into <br>
+and out of the fast pool and the fast mass is 3200ng, the <br>
+fractional secretion rate is 0.001 /Min. The SlowMass is<br>
+17000nG and so fluxes between the fast and slow is 17nG/Min<br>
+This defines the two rate constants:<br>
+SlowToFast - 0.0010 /Min<br>
+FastToSlow - 0.0053 /Min<br>
+<br>
+<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; FluxK - DefinitionADHSM3 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+FluxK is the flux time constant for movement of ADH out of the Slow <br>
+Mass. it has  a value of 0.0010<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Mass - DefinitionADHSM4 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Mass is amount of ADH stored in the Slow Mass<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+<br>
+End<br>
+
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

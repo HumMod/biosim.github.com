@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_Structure.html'><img src='../Back.PNG'></a>
+<p>
+HumMod | Cortisol<br>
+<br>
+Created : 2011-07-30<br>
+Last Modified : 2011-07-30<br>
+Author : Tom Coleman<br>
+Copyright : 2011-2011<br>
+By : University of Mississippi Medical Center<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Cortisol &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Secretion &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Degradation &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; TargetConc &lt;/name&gt;&lt;val&gt; 0.2 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [Conc(uG/mL)] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [Conc(uG/dL)] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [Conc(nMol/L)] &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; UG/DL_TO_NMOL/L &lt;/name&gt;&lt;val&gt; 27.6 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; PumpSwitch &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; PumpSetting &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;var&gt;&lt;name&gt; PumpRate &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; ClampSwitch &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; ClampSetting &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [ACTH]Effect &lt;/name&gt;&lt;/var&gt;<br>
+&lt;parm&gt;&lt;name&gt; Secretion-Basic &lt;/name&gt;&lt;val&gt; 10.4 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; K &lt;/name&gt;&lt;val&gt; 52.0 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 30.0 &lt;/errorlim&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;functions&gt;<br>
+<br>
+&lt;curve&gt;&lt;name&gt; [ACTH]Effect &lt;/name&gt;<br>
+&lt;point&gt;&lt;x&gt;  0 &lt;/x&gt;&lt;y&gt; 0 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;point&gt;&lt;x&gt;  5 &lt;/x&gt;&lt;y&gt; 1 &lt;/y&gt;&lt;slope&gt; 0.4 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;point&gt;&lt;x&gt; 20 &lt;/x&gt;&lt;y&gt; 5 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;/functions&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Init &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialMass &lt;/name&gt;<br>
+  &lt;val&gt; TargetConc * ECFV.InitialVol &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;val&gt; InitialMass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Conc &lt;/name&gt;<br>
+&lt;if&gt;&lt;test&gt; ClampSwitch &lt;/test&gt;<br>
+&lt;true&gt;<br>
+  &lt;def&gt;&lt;name&gt; [Conc(uG/mL)] &lt;/name&gt;&lt;val&gt; ClampSetting / 100 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/true&gt;<br>
+&lt;false&gt;<br>
+  &lt;def&gt;&lt;name&gt; [Conc(uG/mL)] &lt;/name&gt;&lt;val&gt; Mass / ECFV.Vol &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/false&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; [Conc(uG/dL)] &lt;/name&gt;&lt;val&gt; 100.0 * [Conc(uG/mL)] &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; [Conc(nMol/L)] &lt;/name&gt;&lt;val&gt; [Conc(uG/dL)] * UG/DL_TO_NMOL/L &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;conditional&gt;&lt;name&gt; PumpRate &lt;/name&gt;<br>
+&lt;test&gt; PumpSwitch &lt;/test&gt;<br>
+&lt;true&gt; PumpSetting &lt;/true&gt;<br>
+&lt;false&gt; 0 &lt;/false&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; [ACTH]Effect &lt;/name&gt;<br>
+  &lt;val&gt; [ACTH]Effect [ ACTH.[Conc(nG/dL)] ] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Secretion &lt;/name&gt;<br>
+  &lt;val&gt; Secretion-Basic * [ACTH]Effect &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Degradation &lt;/name&gt;&lt;val&gt; K * [Conc(uG/mL)] &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;val&gt; Secretion + PumpRate &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;val&gt; Degradation &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; Gain - Loss &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

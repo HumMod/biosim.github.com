@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_CO2_CO2.html'><img src='../Back.PNG'></a>
+<p>
+HumMod / CO2Veins<br>
+<br>
+Created : 29-Mar-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; CO2Veins &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; [HCO3(mEq/L)] &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; Pressure &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;stabledelay&gt;<br>
+  &lt;name&gt; [HCO3] &lt;/name&gt;<br>
+  &lt;outputname&gt; [HCO3] &lt;/outputname&gt;<br>
+  &lt;initialval&gt; 0.0256 &lt;/initialval&gt;<br>
+  &lt;inputname&gt; [HCO3-SteadyState] &lt;/inputname&gt;<br>
+  &lt;rateconstname&gt; K &lt;/rateconstname&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 0.000256 &lt;/errorlim&gt;<br>
+  &lt;dxmaxname&gt; DxMax &lt;/dxmaxname&gt;<br>
+&lt;/stabledelay&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcConc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; [HCO3(mEq/L)] &lt;/name&gt;<br>
+  &lt;val&gt; 1000.0 * [HCO3] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;copy&gt;<br>
+  &lt;from&gt; [HCO3] &lt;/from&gt;<br>
+  &lt;to&gt; Blood-BaseToGas.[HCO3] &lt;/to&gt;<br>
+&lt;/copy&gt;<br>
+<br>
+&lt;copy&gt;<br>
+  &lt;from&gt; BloodIons.[SID] &lt;/from&gt;<br>
+  &lt;to&gt; Blood-BaseToGas.[SID] &lt;/to&gt;<br>
+&lt;/copy&gt;<br>
+<br>
+&lt;call&gt; Blood-BaseToGas.Calc &lt;/call&gt;<br>
+<br>
+&lt;copy&gt;<br>
+  &lt;from&gt; Blood-BaseToGas.pCO2 &lt;/from&gt;<br>
+  &lt;to&gt; Pressure &lt;/to&gt;<br>
+&lt;/copy&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;val&gt; [HCO3] * VeinsVol.Vol &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; K &lt;/name&gt;<br>
+  &lt;val&gt; 5.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; DxMax &lt;/name&gt;<br>
+  &lt;val&gt; INVERT K &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;conditional&gt;<br>
+  &lt;name&gt; [HCO3-SteadyState] &lt;/name&gt;<br>
+  &lt;test&gt; CardiacOutput.Flow GT 0.0 &lt;/test&gt;<br>
+  &lt;true&gt; CO2Artys.[HCO3] + ( CO2Total.Inflow / CardiacOutput.Flow ) &lt;/true&gt;<br>
+  &lt;false&gt; 0.0 &lt;/false&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

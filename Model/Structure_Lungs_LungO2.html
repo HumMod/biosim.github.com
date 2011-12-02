@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_Lungs_Lungs.html'><img src='../Back.PNG'></a>
+<p>
+HumMod / LungO2<br>
+<br>
+Created : 30-Mar-05<br>
+Last Modified : 2010-06-04<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+<br>
+&lt;structure&gt;&lt;name&gt; LungO2 &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [Alveolar] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; PAlveolar &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; MembraneGradient &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [Capy] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; PCapy &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; CapySat &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;impliciteq&gt;<br>
+  &lt;name&gt; Uptake &lt;/name&gt;<br>
+  &lt;startname&gt; Uptake &lt;/startname&gt;<br>
+  &lt;initialval&gt; 250.0 &lt;/initialval&gt;<br>
+  &lt;endname&gt; EndUptake &lt;/endname&gt;<br>
+  &lt;errorlim&gt; 2.5 &lt;/errorlim&gt;<br>
+&lt;/impliciteq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;if&gt;<br>
+  &lt;test&gt; Breathing.AlveolarVentilation(STPD) GT 0.0 &lt;/test&gt;<br>
+  &lt;true&gt;<br>
+<br>
+  &lt;call&gt; CalcUptake &lt;/call&gt;<br>
+<br>
+  &lt;/true&gt;<br>
+  &lt;false&gt; Not breathing<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; Uptake &lt;/name&gt;<br>
+    &lt;val&gt; 0.0 &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; [Capy] &lt;/name&gt;<br>
+    &lt;val&gt; LungArtyO2.[O2] &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;copy&gt;<br>
+    &lt;from&gt; [Capy] &lt;/from&gt;<br>
+    &lt;to&gt; HgbLung.[O2] &lt;/to&gt;<br>
+  &lt;/copy&gt;<br>
+<br>
+  &lt;call&gt; HgbLung.O2ToPO2 &lt;/call&gt;<br>
+<br>
+  &lt;copy&gt;<br>
+    &lt;from&gt; HgbLung.pO2 &lt;/from&gt;<br>
+    &lt;to&gt; PCapy &lt;/to&gt;<br>
+  &lt;/copy&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; PAlveolar &lt;/name&gt;<br>
+    &lt;val&gt; PCapy &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; [Alveolar] &lt;/name&gt;<br>
+    &lt;val&gt; PAlveolar / 760.0 &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;/false&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;copy&gt;<br>
+  &lt;from&gt; [Capy] &lt;/from&gt;<br>
+  &lt;to&gt; HgbConc.[O2] &lt;/to&gt;<br>
+&lt;/copy&gt;<br>
+<br>
+&lt;call&gt; HgbConc.Sat(%) &lt;/call&gt;<br>
+<br>
+&lt;copy&gt;<br>
+  &lt;from&gt; HgbConc.Sat(%) &lt;/from&gt;<br>
+  &lt;to&gt; CapySat &lt;/to&gt;<br>
+&lt;/copy&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcUptake &lt;/name&gt;<br>
+  &lt;implicitmath&gt;&lt;name&gt; Uptake &lt;/name&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; [Alveolar] &lt;/name&gt;<br>
+    &lt;val&gt;<br>
+        Bronchi.[O2]<br>
+      - ( Uptake / Breathing.AlveolarVentilation(STPD) )<br>
+    &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; PAlveolar &lt;/name&gt;<br>
+    &lt;val&gt; [Alveolar] * Barometer.Pressure<br>
+    &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; MembraneGradient &lt;/name&gt;<br>
+    &lt;val&gt; Uptake / PulmonaryMembrane.Permeability &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; PCapy &lt;/name&gt;<br>
+    &lt;val&gt; PAlveolar - MembraneGradient &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;copy&gt;<br>
+    &lt;from&gt; PCapy &lt;/from&gt;<br>
+    &lt;to&gt; HgbLung.pO2 &lt;/to&gt;<br>
+  &lt;/copy&gt;<br>
+<br>
+  &lt;call&gt; HgbLung.PO2ToO2 &lt;/call&gt;<br>
+<br>
+  &lt;copy&gt;<br>
+    &lt;from&gt; HgbLung.[O2] &lt;/from&gt;<br>
+    &lt;to&gt; [Capy] &lt;/to&gt;<br>
+  &lt;/copy&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; EndUptake &lt;/name&gt;<br>
+    &lt;val&gt;<br>
+        LungBloodFlow.AlveolarVentilated<br>
+      * ( [Capy] - LungArtyO2.[O2] )<br>
+    &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;/implicitmath&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

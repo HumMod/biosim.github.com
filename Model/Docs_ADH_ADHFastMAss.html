@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:39 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Docs_ADH.html'><img src='../Back.PNG'></a>
+<p>
+QHP 2008 / ADH.DOCS<br>
+<br>
+Created : 27-Mar-09<br>
+Last Modified : 27-Mar-09<br>
+Author : Tom Coleman<br>
+Copyright : 2009<br>
+<br>
+&lt;structurename&gt; ADHFastMass &lt;/structurename&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHFastMass.Change &lt;/name&gt;<br>
+&lt;topic&gt; ADHFastMass - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; Change - DefinitionADHFM1 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHFastMass.Flux &lt;/name&gt;<br>
+&lt;topic&gt; Flux - DefinitionADHFM2 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHFastMass.FluxK &lt;/name&gt;<br>
+&lt;topic&gt; FluxK - DefinitionADHFM3 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHFastMass.Mass &lt;/name&gt;<br>
+&lt;topic&gt; Mass - DefinitionADHFM4 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; ADHFastMass - Overview &lt;/name&gt;<br>
+&lt;label&gt; Overview &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+In HumMod, the amount of ADH stored in the posterior pituitary is <br>
+divided into two distict masses - the SlowMass and the FastMass. <br>
+This assumption comes from hemorrhage studies in dogs which show <br>
+that the initial secretory response is not sustained in the <br>
+presence of a maintained stimulus of hemorrhagic hypotension. <br>
+The Fast Mass is a readily releasable pool of ADH which is released <br>
+in response to an acute stimulus and does not result in a net <br>
+increase in synthesis of ADH (as indexed by total mRNA or nucleolar <br>
+volume in hypothalamic neurons).<br>
+The fast mass comprises about 10 -20% of the total hormone content <br>
+of the gland - 3200nG. Since normal synthesis and secretion rates<br>
+are 3.2nG/Min into and out of the FastMass pool, the fractional <br>
+secretion rate is 0.001/min <br>
+<br>
+Sachs H, Share L, Osinchak J, Carpi A. Capacity of the neurohypophysis<br>
+to release vasopressin. Endocrinology 81: 755 - 770, 1967. <br>
+   <br>
+ <br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Change - DefinitionADHFM1&lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Change in the FastMass pool can occur in three ways: <br>
+1. ADH secretion depletes the Fast Mass pool <br>
+2. Flux of ADH out of the FastMass pool into the SlowMass pool<br>
+also depletes the FastMass pool.<br>
+3. Flux of ADH out of SlowMass pool into the FastMass pool increases<br>
+the FastMass pool.   <br>
+<br>
+Change is therefore defined as <br>
+ADHSlowMassFlux - ADHFastMass.Flux - ADHSecretion.Rate<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Flux - DefinitionADHFM2 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Flux is the rate of movement of ADH out of the FastMass and into <br>
+the SlowMass and vice versa. It is defined by the Flux time <br>
+constant: Flux K<br>
+<br>
+Flux = FluxK * Mass<br>
+<br>
+Since normal synthesis and secretion rates are 3.2 nG/Min into <br>
+and out of the fast pool and the fast mass is 3200ng, the <br>
+fractional secretion rate is 0.001 /Min. The SlowMass is<br>
+17000nG and so fluxes between the fast and slow is 17nG/Min<br>
+This defines the two rate constants:<br>
+SlowToFast - 0.0010 /Min<br>
+FastToSlow - 0.0053 /Min<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; FluxK - DefinitionADHFM3 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+FluxK is the flux time constant for movement of ADH out of the Fast <br>
+Mass. it has  a value of .0043<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Mass - DefinitionADHFM4 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Mass is the amount of ADH stored in the FastMass <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

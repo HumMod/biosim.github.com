@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_RightHeart_RightHeart.html'><img src='../Back.PNG'></a>
+<p>
+HumMod / RightHeart-Function<br>
+<br>
+Created : 28-Jun-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; RightHeart-Function &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; Failed &lt;/name&gt;<br>
+  &lt;val&gt; FALSE &lt;/val&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; Effect &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; PhEffect &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; ProteinEffect &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; FuelEffect &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; TemperatureEffect &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;functions&gt;<br>
+<br>
+&lt;curve&gt;<br>
+  &lt;name&gt; PhOnFunction &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt; 6.6 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 6.7 &lt;/x&gt;&lt;y&gt; 1.0 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;curve&gt;<br>
+  &lt;name&gt; ProteinOnFunction &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt; 3000.0 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 5200.0 &lt;/x&gt;&lt;y&gt; 1.0 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;curve&gt;<br>
+  &lt;name&gt; FuelOnFunction &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt; 0.0 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 0.9 &lt;/x&gt;&lt;y&gt; 1.0 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;curve&gt;<br>
+  &lt;name&gt; TemperatureOnFunction &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt; 10 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 37 &lt;/x&gt;&lt;y&gt; 1.0 &lt;/y&gt;&lt;slope&gt; 0.12 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 40 &lt;/x&gt;&lt;y&gt; 1.5 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 46 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;/functions&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; PhEffect &lt;/name&gt;<br>
+  &lt;val&gt; PhOnFunction [ RightHeart-Ph.Ph ] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; ProteinEffect &lt;/name&gt;<br>
+  &lt;val&gt; ProteinOnFunction [ CellProtein.Mass(G) ] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; FuelEffect &lt;/name&gt;<br>
+  &lt;val&gt; FuelOnFunction [ RightHeart-Fuel.FractUseDelay ] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TemperatureEffect &lt;/name&gt;<br>
+  &lt;val&gt; TemperatureOnFunction [ HeatCore.Temp(C) ] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Effect &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      PhEffect<br>
+    * ProteinEffect<br>
+    * FuelEffect<br>
+    * TemperatureEffect<br>
+    * RightHeart-Structure.Effect<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; NOT Failed AND ( Effect LT 0.2 ) &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Failed &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Failed AND ( Effect GT 0.4 ) &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Failed &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

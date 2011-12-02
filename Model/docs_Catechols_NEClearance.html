@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:39 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Docs_Catechols.html'><img src='../Back.PNG'></a>
+<p>
+QHP 2008 / Catechols.DOCS<br>
+<br>
+Created : 27-Mar-09<br>
+Last Modified : 27-Mar-09<br>
+Author : Tom Coleman<br>
+Copyright : 2009<br>
+<br>
+&lt;structurename&gt; NEClearance &lt;/structurename&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; NEClearance.K &lt;/name&gt;<br>
+&lt;topic&gt; NEClearance - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; NEClearance - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; NEClearance - Concentration Units &lt;/topic&gt;<br>
+&lt;topic&gt; Rate Constant Definition &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; NEClearance.Rate &lt;/name&gt;<br>
+&lt;topic&gt; NEClearance - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; NEClearance - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; NEClearance - Concentration Units &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; NEClearance - Overview  &lt;/name&gt;<br>
+&lt;label&gt; Overview &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Norepinephrine is cleared from plasma mainly in the liver.<br>
+<br>
+Lund A. Elimination of adrenaline and noradrenaline from <br>
+the organism. Acta Pharmacol 7: 297, 1951 <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; NEClearance - Physical Units &lt;/name&gt;<br>
+&lt;label&gt; Physical Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Clearance is typically expressed in nG/Min or L/Min<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; NEClearance - Concentration Units &lt;/name&gt;<br>
+&lt;label&gt; Concentration Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+  <br>
+Norepinephrine (C8 H11 N O3) has a molecular<br>
+weight of 169. <br>
+<br>
+Typical plasma concentration of NE is 240pG/mL or <br>
+1.42nMol/L (Multiply by 0.00592 to convert pG/mL <br>
+to nMol/L)<br>
+<br>
+Volume of distribution for catechols is ECFV or<br>
+15,000mL. Therefore the typical circulating pool<br>
+or mass of NE is<br>
+<br>
+240*15,000 = 3600nG<br>
+<br>
+Clearance rate is typically is 4.5L/Min or 1080nG/Min<br>
+<br>
+If the pool is 3600nG and 1080nG is cleared per minute<br>
+the total pool is cleared in 3600/1800 = 0.33minutes<br>
+K = 1/0.33 = 0.3<br>
+<br>
+Goldstein DS, Eisenhofer G, Kopin IJ. Sources and <br>
+significance of plasma levels of catechols and their <br>
+metabolites in humans.<br>
+J Pharmacol Exp Ther 305(3): 800-811, 2003.<br>
+<br>
+ <br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Rate Constant Definition &lt;/name&gt;<br>
+&lt;label&gt; Rate Constant Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Understanding rate constants is an <br>
+essential tool for all model builders.<br>
+<br>
+There is an irrational number called Euler's number <br>
+which is often denoted by e (and sometimes exp). <br>
+The value of e is roughly 2.718.<br>
+<br>
+If e is raised to a power, we have an exponential. <br>
+A specific example might be e^2. Note that the value <br>
+of e to a power can be obtained using an infinite series <br>
+(and e to a power is part of every scientific calculator <br>
+and computer programming library).<br>
+<br>
+If we raise e to an unspecified power using a variable, <br>
+we have an exponential function. An example might be e^x.<br>
+<br>
+The exponential function gets attention when is noted <br>
+that its derivative with respect to x is again the exponential <br>
+function. This can be denoted as<br>
+<br>
+	d(e^x)/dx = e^x<br>
+<br>
+The exponential function is also used to (inversely) <br>
+define the natural logarithm, denoted by In. If e^x = y <br>
+then x = ln y.<br>
+<br>
+Note that e0 = 1 and e-� = 0. (� represents infinity).<br>
+<br>
+In models, we often see responses where a variable decays <br>
+in an exponential fashion from an initial value to a steady <br>
+state value. Such responses can roughly be represented by<br>
+<br>
+	e^-Kt<br>
+<br>
+where K is a positive constant called the rate constant and <br>
+t is the independent variable (usually time). This function <br>
+again has the boundary values of e^K0 = 1 and e^-K� = 0. <br>
+(� represents infinity). The importance of K is that it <br>
+determines the speed (or rate and hence its name) of transition <br>
+between 1 and 0.<br>
+<br>
+We can now work this backwards and get an estimate of K <br>
+by looking at the speed or rate of the decay in an <br>
+appropriate data set.<br>
+<br>
+When t = 1/K, we have e^-1, which has a value of 0.37. <br>
+This means that the decay is 63% of way to its final value <br>
+(defined as t0.63). So we observe how long it takes the decay <br>
+to get to 63% of its final value and then we define K = 1/t0.63.<br>
+<br>
+Another way to find a rate constant is to <br>
+observe how long it takes a decay to get half way to its final <br>
+value - this is the half-time. We can denote the half-time <br>
+as t1/2. The exponential function is then e^-Kt1/2 = 0.5. <br>
+We can solve this equality for K by taking the natural <br>
+logarithm of both sides of the equation and rearranging.<br>
+<br>
+	-Kt1/2 = ln (0.5)<br>
+	K = - ln(0.5) / t1/2<br>
+<br>
+Or simply<br>
+<br>
+	K = 0.69 / t1/2<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

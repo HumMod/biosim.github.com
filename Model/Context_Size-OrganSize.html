@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Context_Context.html'><img src='../Back.PNG'></a>
+<p>
+HumMod / Size-OrganSize DES<br>
+<br>
+Created : 03-Apr-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Size-OrganSize &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; SumMassFractBase &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+  &lt;call&gt; Fat-Size.Initialize &lt;/call&gt;<br>
+  &lt;call&gt; LipidDeposits.Initialize &lt;/call&gt;<br>
+  &lt;call&gt; Bone-Size.Initialize &lt;/call&gt;<br>
+  &lt;call&gt; Bone-Mineral.Initialize &lt;/call&gt;<br>
+  &lt;call&gt; Brain-Size.Initialize &lt;/call&gt;<br>
+  &lt;call&gt; GITract-Size.Initialize &lt;/call&gt;<br>
+  &lt;call&gt; Kidney-Size.Initialize &lt;/call&gt;<br>
+  &lt;call&gt; LeftHeart-Size.Initialize &lt;/call&gt;<br>
+  &lt;call&gt; Liver-Size.Initialize &lt;/call&gt;<br>
+  &lt;call&gt; OtherTissue-Size.Initialize &lt;/call&gt;<br>
+  &lt;call&gt; RespiratoryMuscle-Size.Initialize &lt;/call&gt;<br>
+  &lt;call&gt; RespiratoryMuscle-ContractileProtein.Initialize &lt;/call&gt;<br>
+  &lt;call&gt; RightHeart-Size.Initialize &lt;/call&gt;<br>
+  &lt;call&gt; SkeletalMuscle-Size.Initialize &lt;/call&gt;<br>
+  &lt;call&gt; SkeletalMuscle-ContractileProtein.Initialize &lt;/call&gt;<br>
+  &lt;call&gt; Skin-Size.Initialize &lt;/call&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; SumMassFractBase &lt;/name&gt;<br>
+    &lt;val&gt;<br>
+        Bone-Size.MassFractBase<br>
+      + Brain-Size.MassFractBase<br>
+      + GITract-Size.MassFractBase<br>
+      + Kidney-Size.MassFractBase<br>
+      + LeftHeart-Size.MassFractBase<br>
+      + Liver-Size.MassFractBase<br>
+      + OtherTissue-Size.MassFractBase<br>
+      + RespiratoryMuscle-Size.MassFractBase<br>
+      + RightHeart-Size.MassFractBase<br>
+      + Skin-Size.MassFractBase<br>
+    &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

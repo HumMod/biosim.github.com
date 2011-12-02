@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_Lungs_Lungs.html'><img src='../Back.PNG'></a>
+<p>
+HumMod / Breathing<br>
+<br>
+Created : 27-Mar-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+We need both BTPS and STPD volumes.<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Breathing &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; NATURAL &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; CPR &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; VENTILATOR &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Type &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; TotalVentilation &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; TotalVentilation(L) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; AlveolarVentilation &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; AlveolarVentilation(L) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; RespRate &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; TidalVolume &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; TidalVolumeBasic &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; DeadSpace &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; DeadSpaceFract &lt;/name&gt;&lt;/var&gt;<br>
+&lt;parm&gt;&lt;name&gt; DeadSpaceSlope &lt;/name&gt;&lt;val&gt; 0.20 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; DeadSpaceMin &lt;/name&gt;&lt;val&gt; 60.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;var&gt;&lt;name&gt; AlveolarVolume &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; TotalVentilation(L-STPD) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; AlveolarVentilation(L-STPD) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; TotalVentilation(STPD) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; AlveolarVentilation(STPD) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; TidalVolume(STPD) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; DeadSpace(STPD) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; AlveolarVolume(STPD) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;functions&gt;<br>
+<br>
+&lt;curve&gt;<br>
+  &lt;name&gt; DriveOnTidalVolume &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt;  0 &lt;/x&gt;&lt;y&gt;    0 &lt;/y&gt;&lt;slope&gt;   0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt;  1 &lt;/x&gt;&lt;y&gt;  550 &lt;/y&gt;&lt;slope&gt; 400 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 10 &lt;/x&gt;&lt;y&gt; 2630 &lt;/y&gt;&lt;slope&gt;   0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;/functions&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;&lt;test&gt; Ventilator.Switch &lt;/test&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Type &lt;/name&gt;&lt;val&gt; VENTILATOR &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; RespRate &lt;/name&gt;&lt;val&gt; Ventilator.Rate &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; TidalVolumeBasic &lt;/name&gt;&lt;val&gt; Ventilator.TidalVolume &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; TidalVolume &lt;/name&gt;&lt;val&gt; TidalVolumeBasic &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;&lt;test&gt; CPR-Lungs.Status EQ CPR-Lungs.ACTIVE &lt;/test&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Type &lt;/name&gt;&lt;val&gt; CPR &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; RespRate &lt;/name&gt;&lt;val&gt; CPR-Lungs.Rate &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; TidalVolumeBasic &lt;/name&gt;&lt;val&gt; CPR-Lungs.Volume &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; TidalVolume &lt;/name&gt;&lt;val&gt; TidalVolumeBasic &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;&lt;test&gt; TRUE &lt;/test&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Type &lt;/name&gt;&lt;val&gt; NATURAL &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; RespRate &lt;/name&gt;&lt;val&gt; RespiratoryCenter-Output.Rate &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; TidalVolumeBasic &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      DriveOnTidalVolume [ RespiratoryCenter-Output.MotorNerveActivity ]<br>
+    * Thorax.LungInflation<br>
+    * RespiratoryMuscle-Function.Effect<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; TidalVolume &lt;/name&gt;&lt;val&gt; ( TidalVolumeBasic - ExcessLungWater.Volume ) MAX 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; DeadSpace &lt;/name&gt;&lt;val&gt; DeadSpaceSlope * TidalVolume + DeadSpaceMin &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;conditional&gt;<br>
+  &lt;name&gt; DeadSpaceFract &lt;/name&gt;<br>
+  &lt;test&gt; TidalVolume GT 0.0 &lt;/test&gt;<br>
+  &lt;true&gt; DeadSpace / TidalVolume &lt;/true&gt;<br>
+  &lt;false&gt; UNDEFINED &lt;/false&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; AlveolarVolume &lt;/name&gt;&lt;val&gt; ( TidalVolume - DeadSpace ) MAX 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; TotalVentilation &lt;/name&gt;&lt;val&gt; RespRate * TidalVolume &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; TotalVentilation(L) &lt;/name&gt;&lt;val&gt; TotalVentilation / 1000.0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; AlveolarVentilation &lt;/name&gt;&lt;val&gt; RespRate * AlveolarVolume &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; AlveolarVentilation(L) &lt;/name&gt;&lt;val&gt; AlveolarVentilation / 1000.0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;copy&gt;&lt;from&gt; TidalVolume &lt;/from&gt;&lt;to&gt; BTPS_To_STPD.V1 &lt;/to&gt;&lt;/copy&gt;<br>
+  &lt;call&gt; BTPS_To_STPD.Calc &lt;/call&gt;<br>
+&lt;copy&gt;&lt;from&gt; BTPS_To_STPD.V2 &lt;/from&gt;&lt;to&gt; TidalVolume(STPD) &lt;/to&gt;&lt;/copy&gt;<br>
+<br>
+&lt;copy&gt;&lt;from&gt; DeadSpace &lt;/from&gt;&lt;to&gt; BTPS_To_STPD.V1 &lt;/to&gt;&lt;/copy&gt;<br>
+  &lt;call&gt; BTPS_To_STPD.Calc &lt;/call&gt;<br>
+&lt;copy&gt;&lt;from&gt; BTPS_To_STPD.V2 &lt;/from&gt;&lt;to&gt; DeadSpace(STPD) &lt;/to&gt;&lt;/copy&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; AlveolarVolume(STPD) &lt;/name&gt;&lt;val&gt; TidalVolume(STPD) - DeadSpace(STPD) &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; TotalVentilation(STPD) &lt;/name&gt;&lt;val&gt; RespRate * TidalVolume(STPD) &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; TotalVentilation(L-STPD) &lt;/name&gt;&lt;val&gt; TotalVentilation(STPD) / 1000.0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; AlveolarVentilation(STPD) &lt;/name&gt;&lt;val&gt; RespRate * AlveolarVolume(STPD) &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; AlveolarVentilation(L-STPD) &lt;/name&gt;&lt;val&gt; AlveolarVentilation(STPD) / 1000.0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

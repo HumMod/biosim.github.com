@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_Structure.html'><img src='../Back.PNG'></a>
+<p><a href='Structure_TissueH2O_UT_H2O.html'>Structure_TissueH2O_UT_H2O</a>
+<br><a href='Structure_TissueH2O_MT_H2O.html'>Structure_TissueH2O_MT_H2O</a>
+<br><a href='Structure_TissueH2O_LT_H2O.html'>Structure_TissueH2O_LT_H2O</a>
+<br><a href='Structure_TissueH2O_CapillaryWater_CapillaryWater.html'>Structure_TissueH2O_CapillaryWater_CapillaryWater</a>
+<br><a href='Structure_TissueH2O_CapillaryProtein_CapillaryProtein.html'>Structure_TissueH2O_CapillaryProtein_CapillaryProtein</a>
+<br><a href='Structure_TissueH2O_InterstitialWater_InterstitialWater.html'>Structure_TissueH2O_InterstitialWater_InterstitialWater</a>
+<br><a href='Structure_TissueH2O_InterstitialProtein_InterstitialProtein.html'>Structure_TissueH2O_InterstitialProtein_InterstitialProtein</a>
+<br><a href='Structure_TissueH2O_LymphWater_LymphWater.html'>Structure_TissueH2O_LymphWater_LymphWater</a>
+<br><a href='Structure_TissueH2O_LymphProtein_LymphProtein.html'>Structure_TissueH2O_LymphProtein_LymphProtein</a>
+<br><a href='Structure_TissueH2O_CellH2O_CellH2O.html'>Structure_TissueH2O_CellH2O_CellH2O</a>
+<p>
+HumMod / TissueH2O<br>
+<br>
+Created : 24-Mar-08<br>
+Last Modified : 2010-04-18<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+<br>
+&lt;?path Structure\TissueH2O\ ?&gt;<br>
+<br>
+&lt;?include UT_H2O.DES ?&gt;<br>
+&lt;?include MT_H2O.DES ?&gt;<br>
+&lt;?include LT_H2O.DES ?&gt;<br>
+<br>
+&lt;?include CapillaryWater\CapillaryWater.DES ?&gt;<br>
+&lt;?include CapillaryProtein\CapillaryProtein.DES ?&gt;<br>
+<br>
+&lt;?include InterstitialWater\InterstitialWater.DES ?&gt;<br>
+&lt;?include InterstitialProtein\InterstitialProtein.DES ?&gt;<br>
+<br>
+&lt;?include LymphWater\LymphWater.DES ?&gt;<br>
+&lt;?include LymphProtein\LymphProtein.DES ?&gt;<br>
+<br>
+&lt;?include CellH2O\CellH2O.DES ?&gt;<br>
+<br>
+&lt;structure&gt;&lt;name&gt; TissueH2O &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Vol &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialVol &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Vol(L) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Change &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; LT_SizeFract &lt;/name&gt;<br>
+  &lt;val&gt; 0.30 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; MT_SizeFract &lt;/name&gt;<br>
+  &lt;val&gt; 0.50 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; UT_SizeFract &lt;/name&gt;<br>
+  &lt;val&gt; 0.20 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; LT_CalsFract &lt;/name&gt;<br>
+  &lt;val&gt; 0.20 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; MT_CalsFract &lt;/name&gt;<br>
+  &lt;val&gt; 0.50 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; UT_CalsFract &lt;/name&gt;<br>
+  &lt;val&gt; 0.30 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; LT_SweatFract &lt;/name&gt;<br>
+  &lt;val&gt; 0.33 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; MT_SweatFract &lt;/name&gt;<br>
+  &lt;val&gt; 0.34 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; UT_SweatFract &lt;/name&gt;<br>
+  &lt;val&gt; 0.33 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; LT_SkinFract &lt;/name&gt;<br>
+  &lt;val&gt; 0.33 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; MT_SkinFract &lt;/name&gt;<br>
+  &lt;val&gt; 0.34 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; UT_SkinFract &lt;/name&gt;<br>
+  &lt;val&gt; 0.33 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; LT_LungFract &lt;/name&gt;<br>
+  &lt;val&gt; 0.0 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; MT_LungFract &lt;/name&gt;<br>
+  &lt;val&gt; 1.0 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; UT_LungFract &lt;/name&gt;<br>
+  &lt;val&gt; 0.0 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Initialize &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; InitialVol &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      Bone-Size.InitialLiquidVol<br>
+    + Brain-Size.InitialLiquidVol<br>
+    + Fat-Size.InitialLiquidVol<br>
+    + GITract-Size.InitialLiquidVol<br>
+    + Kidney-Size.InitialLiquidVol<br>
+    + LeftHeart-Size.InitialLiquidVol<br>
+    + Liver-Size.InitialLiquidVol<br>
+    + OtherTissue-Size.InitialLiquidVol<br>
+    + RespiratoryMuscle-Size.InitialLiquidVol<br>
+    + RightHeart-Size.InitialLiquidVol<br>
+    + SkeletalMuscle-Size.InitialLiquidVol<br>
+    + Skin-Size.InitialLiquidVol<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;call&gt; UT_H2O.Initialize &lt;/call&gt;<br>
+&lt;call&gt; MT_H2O.Initialize &lt;/call&gt;<br>
+&lt;call&gt; LT_H2O.Initialize &lt;/call&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcVol &lt;/name&gt;<br>
+<br>
+&lt;call&gt; UT_H2O.Calc &lt;/call&gt;<br>
+&lt;call&gt; MT_H2O.Calc &lt;/call&gt;<br>
+&lt;call&gt; LT_H2O.Calc &lt;/call&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Vol &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      UT_H2O.Vol<br>
+    + MT_H2O.Vol<br>
+    + LT_H2O.Vol<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Vol(L) &lt;/name&gt;&lt;val&gt; Vol / 1000.0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;call&gt; CellH2O.Calc &lt;/call&gt;<br>
+&lt;call&gt; InterstitialWater.Calc &lt;/call&gt;<br>
+&lt;call&gt; InterstitialProtein.Calc &lt;/call&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;call&gt; CapillaryProtein.Dervs &lt;/call&gt;<br>
+&lt;call&gt; CapillaryWater.Dervs &lt;/call&gt;<br>
+<br>
+&lt;call&gt; LymphWater.Dervs &lt;/call&gt;<br>
+&lt;call&gt; LymphProtein.Dervs &lt;/call&gt;<br>
+<br>
+&lt;call&gt; InterstitialProtein.Dervs &lt;/call&gt;<br>
+<br>
+&lt;call&gt; UT_H2O.Dervs &lt;/call&gt;<br>
+&lt;call&gt; MT_H2O.Dervs &lt;/call&gt;<br>
+&lt;call&gt; LT_H2O.Dervs &lt;/call&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Gain &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      UT_H2O.Gain<br>
+    + MT_H2O.Gain<br>
+    + LT_H2O.Gain<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Loss &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      UT_H2O.Loss<br>
+    + MT_H2O.Loss<br>
+    + LT_H2O.Loss<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; Gain - Loss &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

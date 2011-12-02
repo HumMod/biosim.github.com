@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_Bone_Bone.html'><img src='../Back.PNG'></a>
+<p><a href='Structure_Bone_Bone-Composition.html'>Structure_Bone_Bone-Composition</a>
+<br><a href='Structure_Bone_Bone-ExchangeableCalcium.html'>Structure_Bone_Bone-ExchangeableCalcium</a>
+<br><a href='Structure_Bone_Bone-FixedCalcium.html'>Structure_Bone_Bone-FixedCalcium</a>
+<p>
+HumMod / Bone-Mineral<br>
+<br>
+Created : 2011-08-08<br>
+Last Modified : 2011-08-08<br>
+Author : Tom Coleman<br>
+Copyright : 2011-2011<br>
+By : University Of Mississippi Medical Center<br>
+<br>
+&lt;?path Structure\Bone\ ?&gt;<br>
+<br>
+&lt;?include Bone-Composition.DES ?&gt;<br>
+&lt;?include Bone-ExchangeableCalcium.DES ?&gt;<br>
+&lt;?include Bone-FixedCalcium.DES ?&gt;<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Bone-Mineral &lt;/name&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Initialize &lt;/name&gt;<br>
+  &lt;call&gt; Bone-ExchangeableCalcium.Initialize &lt;/call&gt;<br>
+  &lt;call&gt; Bone-FixedCalcium.Initialize &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc  &lt;/name&gt;<br>
+  &lt;call&gt; Bone-Composition.Calc &lt;/call&gt;<br>
+  &lt;call&gt; Bone-ExchangeableCalcium.Calc &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+  &lt;call&gt; Bone-FixedCalcium.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; Bone-ExchangeableCalcium.Dervs &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

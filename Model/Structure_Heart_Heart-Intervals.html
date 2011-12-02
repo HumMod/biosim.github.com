@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_Heart_Heart.html'><img src='../Back.PNG'></a>
+<p>
+HumMod / Heart-Intervals<br>
+<br>
+Created : 30-Mar-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Heart-Intervals &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; R-R &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Systolic &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Diastolic &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; R-R(Safe) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Systolic(Safe) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Diastolic(Safe) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; SYSTOLICK &lt;/name&gt;&lt;val&gt; 0.343 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; CPR-Heart.Status EQ CPR-Heart.ACTIVE &lt;/test&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; R-R &lt;/name&gt;&lt;val&gt; UNDEFINED &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Systolic &lt;/name&gt;&lt;val&gt; UNDEFINED &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Diastolic &lt;/name&gt;&lt;val&gt; UNDEFINED &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; R-R(Safe) &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Systolic(Safe) &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Diastolic(Safe) &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Heart-Rate.Rate LE 0.0 &lt;/test&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; R-R &lt;/name&gt;&lt;val&gt; UNDEFINED &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Systolic &lt;/name&gt;&lt;val&gt; UNDEFINED &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Diastolic &lt;/name&gt;&lt;val&gt; UNDEFINED &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; R-R(Safe) &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Systolic(Safe) &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Diastolic(Safe) &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; TRUE &lt;/test&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; R-R &lt;/name&gt;&lt;val&gt; 60.0 / Heart-Rate.Rate &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Systolic &lt;/name&gt;&lt;val&gt; SYSTOLICK * SQRT R-R &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Diastolic &lt;/name&gt;&lt;val&gt; R-R - Systolic &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; R-R(Safe) &lt;/name&gt;&lt;val&gt; R-R &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Systolic(Safe) &lt;/name&gt;&lt;val&gt; Systolic &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Diastolic(Safe) &lt;/name&gt;&lt;val&gt; Diastolic &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

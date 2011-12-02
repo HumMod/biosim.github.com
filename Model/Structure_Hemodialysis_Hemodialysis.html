@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_Structure.html'><img src='../Back.PNG'></a>
+<p><a href='Structure_Hemodialysis_DialysisShunt.html'>Structure_Hemodialysis_DialysisShunt</a>
+<br><a href='Structure_Hemodialysis_DialyzerControl.html'>Structure_Hemodialysis_DialyzerControl</a>
+<br><a href='Structure_Hemodialysis_DialysateComposition.html'>Structure_Hemodialysis_DialysateComposition</a>
+<br><a href='Structure_Hemodialysis_DialyzerActivity.html'>Structure_Hemodialysis_DialyzerActivity</a>
+<p>
+HumMod / Hemodialysis<br>
+<br>
+Created : 03-Mar-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Solver : DES 2005<br>
+Schema : 2005.0<br>
+<br>
+&lt;?path Structure\Hemodialysis\ ?&gt;<br>
+<br>
+&lt;?include DialysisShunt.DES ?&gt;<br>
+&lt;?include DialyzerControl.DES ?&gt;<br>
+&lt;?include DialysateComposition.DES ?&gt;<br>
+&lt;?include DialyzerActivity.DES ?&gt;<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Hemodialysis &lt;/name&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
+<br>
+  &lt;call&gt; DialyzerControl.Parms &lt;/call&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+  &lt;call&gt; DialysisShunt.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; DialyzerActivity.Dervs &lt;/call&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
+<br>
+  &lt;call&gt; DialyzerActivity.Wrapup &lt;/call&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

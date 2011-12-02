@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_RespiratoryCenter_RespiratoryCenter.html'><img src='../Back.PNG'></a>
+<p>
+HumMod / RespiratoryCenter-Output<br>
+<br>
+Created : 23-Jan-06<br>
+Last Modified : 2011-08-13<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2011<br>
+By : University Of Mississippi Medical Center<br>
+<br>
+&lt;structure&gt;&lt;name&gt; RespiratoryCenter-Output &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Rate &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; MotorNerveActivity &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; RateClampSwitch &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; RateClampSetting &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; NerveClampSwitch &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; NerveClampSetting &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;functions&gt;<br>
+<br>
+&lt;curve&gt;<br>
+  &lt;name&gt; Rate &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt;  0 &lt;/x&gt;&lt;y&gt;  0 &lt;/y&gt;&lt;slope&gt; 12 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt;  1 &lt;/x&gt;&lt;y&gt; 12 &lt;/y&gt;&lt;slope&gt;  4 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 10 &lt;/x&gt;&lt;y&gt; 40 &lt;/y&gt;&lt;slope&gt;  0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;/functions&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;conditional&gt;<br>
+  &lt;name&gt; Rate &lt;/name&gt;<br>
+  &lt;test&gt; RateClampSwitch &lt;/test&gt;<br>
+  &lt;true&gt; RateClampSetting &lt;/true&gt;<br>
+  &lt;false&gt;<br>
+      Brain-Function.Effect<br>
+    * Rate [ RespiratoryCenter-Integration.TotalDrive ]<br>
+  &lt;/false&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;conditional&gt;<br>
+  &lt;name&gt; MotorNerveActivity &lt;/name&gt;<br>
+  &lt;test&gt; NerveClampSwitch &lt;/test&gt;<br>
+  &lt;true&gt; NerveClampSetting &lt;/true&gt;<br>
+  &lt;false&gt;<br>
+      Brain-Function.Effect<br>
+    * Anesthesia.TidalVolume<br>
+    * RespiratoryCenter-Integration.TotalDrive<br>
+  &lt;/false&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;/block&gt;<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

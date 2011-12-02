@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_Exercise_Exercise.html'><img src='../Back.PNG'></a>
+<p>
+HumMod / Exercise-Treadmill<br>
+<br>
+Created : 20-Dec-05<br>
+Last Modified : 2011-08-12<br>
+Author : Tom Coleman<br>
+Copyright : 2005-2011<br>
+By : University of Mississippi Medical Center<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Exercise-Treadmill &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; Speed(MPH) &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; Grade(%) &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; Efficiency(%) &lt;/name&gt;&lt;val&gt; 30.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; RunOrWalk &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Power(W) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Power(kPM/Min) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;timervar&gt;&lt;name&gt; ElapsedTime &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/timervar&gt;<br>
+&lt;var&gt;&lt;name&gt; Efficiency &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; TotalWatts &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Speed(FPM) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Speed(KPH) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; StepsPerMinute &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Distance(Miles) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Distance(kM) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Status &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/var&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; IS_INACTIVE &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; IS_ACTIVE &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; DistanceTraveled(Feet) &lt;/name&gt;<br>
+  &lt;integralname&gt; DistanceTraveled(Feet) &lt;/integralname&gt;<br>
+  &lt;initialval&gt; 0.0 &lt;/initialval&gt;<br>
+  &lt;dervname&gt; Velocity &lt;/dervname&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;functions&gt;<br>
+<br>
+&lt;curve&gt;&lt;name&gt; GradeX &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt; -10.0 &lt;/x&gt;&lt;y&gt; 0.6 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt;   0.0 &lt;/x&gt;&lt;y&gt; 1.0 &lt;/y&gt;&lt;slope&gt; 0.08 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt;  10.0 &lt;/x&gt;&lt;y&gt; 2.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;curve&gt;&lt;name&gt; WalkingBonus &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt; 0.0 &lt;/x&gt;&lt;y&gt; 0.6 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 5.0 &lt;/x&gt;&lt;y&gt; 1.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;/functions&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
+<br>
+&lt;conditional&gt;&lt;name&gt; Speed(MPH) &lt;/name&gt;<br>
+&lt;test&gt; RunOrWalk &lt;/test&gt;<br>
+&lt;true&gt;<br>
+  Speed(MPH) MIN 5.0<br>
+&lt;/true&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Speed(FPM) &lt;/name&gt;&lt;val&gt; 88.0 * Speed(MPH) &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Speed(KPH) &lt;/name&gt;&lt;val&gt; 1.609 * Speed(MPH) &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; StepsPerMinute &lt;/name&gt;&lt;val&gt; 39.0 * Speed(MPH) &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Efficiency &lt;/name&gt;&lt;val&gt; 0.01 * Efficiency(%) &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Power(W) &lt;/name&gt;<br>
+  &lt;val&gt; 0.412 * Weight.Weight(kG) * Speed(MPH) * GradeX [ Grade(%) ] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;conditional&gt;&lt;name&gt; Power(W) &lt;/name&gt;<br>
+&lt;test&gt; RunOrWalk &lt;/test&gt;<br>
+&lt;true&gt;<br>
+  Power(W) * WalkingBonus [ Speed(MPH) ]<br>
+&lt;/true&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Power(kPM/Min) &lt;/name&gt;&lt;val&gt; 6.12 * Power(W) &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; TotalWatts &lt;/name&gt;&lt;val&gt; Power(W) / Efficiency &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;if&gt;&lt;test&gt; Status.Exertion EQ 4 &lt;/test&gt;<br>
+&lt;true&gt;<br>
+  &lt;timer&gt;&lt;name&gt; ElapsedTime &lt;/name&gt;&lt;state&gt; UP &lt;/state&gt;&lt;/timer&gt;<br>
+  &lt;def&gt;&lt;name&gt; Velocity &lt;/name&gt;&lt;val&gt; Speed(FPM) &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/true&gt;<br>
+&lt;false&gt;<br>
+  &lt;timer&gt;&lt;name&gt; ElapsedTime &lt;/name&gt;&lt;state&gt; OFF &lt;/state&gt;&lt;/timer&gt;<br>
+  &lt;def&gt;&lt;name&gt; Velocity &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/false&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Distance(Miles) &lt;/name&gt;&lt;val&gt; DistanceTraveled(Feet) / 5280.0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Distance(kM) &lt;/name&gt;&lt;val&gt; 1.609 * Distance(Miles) &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; ResetTime&Distance &lt;/name&gt;<br>
+<br>
+&lt;timer&gt;&lt;name&gt; ElapsedTime &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/timer&gt;<br>
+&lt;def&gt;&lt;name&gt; DistanceTraveled(Feet) &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

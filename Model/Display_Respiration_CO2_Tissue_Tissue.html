@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:38 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Display_Respiration_CO2_CO2.html'><img src='../Back.PNG'></a>
+<p><a href='Display_Respiration_CO2_Tissue_PCO2.html'>Display_Respiration_CO2_Tissue_PCO2</a>
+<br><a href='Display_Respiration_CO2_Tissue_[HCO3].html'>Display_Respiration_CO2_Tissue_[HCO3]</a>
+<p>
+HumMod / Tissue<br>
+<br>
+Created : 27-Apr-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;panel&gt;&lt;name&gt; CO2_Tissue &lt;/name&gt;<br>
+<br>
+&lt;label&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;text&gt; CO2 - Tissue &lt;/text&gt;<br>
+&lt;/label&gt;<br>
+<br>
+&lt;showclock&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+  &lt;name&gt; System.X &lt;/name&gt;<br>
+  &lt;ampm/&gt;<br>
+  &lt;secs/&gt;<br>
+  &lt;days/&gt;<br>
+&lt;/showclock&gt;<br>
+<br>
+&lt;?path Display\Respiration\CO2\Tissue\ ?&gt;<br>
+<br>
+&lt;?include PCO2.DES ?&gt;<br>
+&lt;?include [HCO3].DES ?&gt;<br>
+<br>
+&lt;/panel&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

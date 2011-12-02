@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:38 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Display_Lifestyle_DailyPlanner_DailyPlanner.html'><img src='../Back.PNG'></a>
+<p>
+HumMod / Schedule<br>
+<br>
+Created : 24-Apr-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;panel&gt;&lt;name&gt; DailyPlannerSchedule &lt;/name&gt;<br>
+<br>
+&lt;showbitmap&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;<br>
+  &lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Clock &lt;/name&gt;<br>
+&lt;/showbitmap&gt;<br>
+<br>
+&lt;label&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;<br>
+  &lt;col&gt; 4.5 &lt;/col&gt;<br>
+  &lt;text&gt; Daily Planner - Schedule &lt;/text&gt;<br>
+&lt;/label&gt;<br>
+<br>
+&lt;showclock&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+  &lt;name&gt; System.X &lt;/name&gt;<br>
+  &lt;ampm/&gt;&lt;secs/&gt;&lt;days/&gt;<br>
+&lt;/showclock&gt;<br>
+<br>
+<br>
+&lt;maplist&gt;<br>
+  &lt;name&gt; DailyPlannerSchedule.Activity &lt;/name&gt;<br>
+  &lt;map&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;img&gt; Sleep &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;img&gt; Rest &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;img&gt; Work &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;img&gt; Aerobics &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 4 &lt;/val&gt;&lt;img&gt; Eat Meal &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+&lt;structurename&gt; DailyPlannerSchedule &lt;/structurename&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 2.8 &lt;/row&gt;&lt;col&gt; 2.0 &lt;/col&gt;<br>
+  &lt;name&gt; Hour12AM-1AM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 12 AM - 1 AM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 3.8 &lt;/row&gt;&lt;col&gt; 2.9 &lt;/col&gt;<br>
+  &lt;name&gt; Hour1AM-2AM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 1 AM - 2 AM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 4.8 &lt;/row&gt;&lt;col&gt; 2.9 &lt;/col&gt;<br>
+  &lt;name&gt; Hour2AM-3AM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 2 AM - 3 AM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 5.8 &lt;/row&gt;&lt;col&gt; 2.9 &lt;/col&gt;<br>
+  &lt;name&gt; Hour3AM-4AM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 3 AM - 4 AM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 6.8 &lt;/row&gt;&lt;col&gt; 2.9 &lt;/col&gt;<br>
+  &lt;name&gt; Hour4AM-5AM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 4 AM - 5 AM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 7.8 &lt;/row&gt;&lt;col&gt; 2.9 &lt;/col&gt;<br>
+  &lt;name&gt; Hour5AM-6AM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 5 AM - 6 AM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 8.8 &lt;/row&gt;&lt;col&gt; 2.9 &lt;/col&gt;<br>
+  &lt;name&gt; Hour6AM-7AM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 6 AM - 7 AM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 9.8 &lt;/row&gt;&lt;col&gt; 2.9 &lt;/col&gt;<br>
+  &lt;name&gt; Hour7AM-8AM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 7 AM - 8 AM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 10.8 &lt;/row&gt;&lt;col&gt; 2.9 &lt;/col&gt;<br>
+  &lt;name&gt; Hour8AM-9AM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 8 AM - 9 AM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 11.8 &lt;/row&gt;&lt;col&gt; 2.0 &lt;/col&gt;<br>
+  &lt;name&gt; Hour9AM-10AM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 9 AM - 10 AM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 12.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Hour10AM-11AM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 10 AM - 11 AM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 13.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Hour11AM-12PM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 11 AM - 12 PM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 14.8 &lt;/row&gt;&lt;col&gt; 2.0 &lt;/col&gt;<br>
+  &lt;name&gt; Hour12PM-1PM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 12 PM - 1 PM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 15.8 &lt;/row&gt;&lt;col&gt; 2.9 &lt;/col&gt;<br>
+  &lt;name&gt; Hour1PM-2PM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 1 PM - 2 PM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 16.8 &lt;/row&gt;&lt;col&gt; 2.9 &lt;/col&gt;<br>
+  &lt;name&gt; Hour2PM-3PM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 2 PM - 3 PM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 17.8 &lt;/row&gt;&lt;col&gt; 2.9 &lt;/col&gt;<br>
+  &lt;name&gt; Hour3PM-4PM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 3 PM - 4 PM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 18.8 &lt;/row&gt;&lt;col&gt; 2.9 &lt;/col&gt;<br>
+  &lt;name&gt; Hour4PM-5PM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 4 PM - 5 PM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 19.8 &lt;/row&gt;&lt;col&gt; 2.9 &lt;/col&gt;<br>
+  &lt;name&gt; Hour5PM-6PM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 5 PM - 6 PM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 20.8 &lt;/row&gt;&lt;col&gt; 2.9 &lt;/col&gt;<br>
+  &lt;name&gt; Hour6PM-7PM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 6 PM - 7 PM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 21.8 &lt;/row&gt;&lt;col&gt; 2.9 &lt;/col&gt;<br>
+  &lt;name&gt; Hour7PM-8PM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 7 PM - 8 PM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 22.8 &lt;/row&gt;&lt;col&gt; 2.9 &lt;/col&gt;<br>
+  &lt;name&gt; Hour8PM-9PM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 8 PM - 9 PM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 23.8 &lt;/row&gt;&lt;col&gt; 2.0 &lt;/col&gt;<br>
+  &lt;name&gt; Hour9PM-10PM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 9 PM - 10 PM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 24.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Hour10PM-11PM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 10 PM - 11 PM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 25.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Hour11PM-12AM &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerSchedule.Activity &lt;/listname&gt;<br>
+  &lt;label&gt; 11 PM - 12 AM &lt;/label&gt;<br>
+  &lt;layout&gt; HORZ &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;/panel&gt;<br>
+<br>
+End<br>
+
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

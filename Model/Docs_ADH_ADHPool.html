@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:39 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Docs_ADH.html'><img src='../Back.PNG'></a>
+<p>
+QHP 2008 / ADH.DOCS<br>
+<br>
+Created : 27-Mar-09<br>
+Last Modified : 27-Mar-09<br>
+Author : Tom Coleman<br>
+Copyright : 2009<br>
+<br>
+&lt;structurename&gt; ADHPool &lt;/structurename&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHPool.[ADH(pMol/L)] &lt;/name&gt;<br>
+&lt;topic&gt; [ADH(pMol/L)] - DefinitionADHP1 &lt;/topic&gt;<br>
+&lt;topic&gt; ADH - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; ADH - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; ADH - Concentration Units &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHPool.[ADH(uU/mL)] &lt;/name&gt;<br>
+&lt;topic&gt; [ADH(uU/mL)] - DefinitionADHP2  &lt;/topic&gt;<br>
+&lt;topic&gt; ADH - Concentration Units &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHPool.[ADH] &lt;/name&gt;<br>
+&lt;topic&gt; [ADH] - DefinitionADHP3  &lt;/topic&gt;<br>
+&lt;topic&gt; ADH - Concentration Units &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHPool.Change &lt;/name&gt;<br>
+&lt;topic&gt; Change - DefinitionADHP4 &lt;/topic&gt;<br>
+&lt;seealso&gt; ADHPool.Gain &lt;/seealso&gt;<br>
+&lt;seealso&gt; ADHPool.Loss &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHPool.ClampSetting &lt;/name&gt;<br>
+&lt;topic&gt; ClampSetting - DefinitionADHP5 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHPool.ClampSwitch &lt;/name&gt;<br>
+&lt;topic&gt; ClampSwitch - DefinitionADHP6 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHPool.Gain &lt;/name&gt;<br>
+&lt;topic&gt; Gain - DefinitionADHP7 &lt;/topic&gt;<br>
+&lt;seealso&gt; ADHSecretion.Rate  &lt;/seealso&gt;<br>
+&lt;seealso&gt; ADHPump.Rate &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHPool.InitialMass &lt;/name&gt;<br>
+&lt;topic&gt; InitialMass - DefinitionADHP8 &lt;/topic&gt;<br>
+&lt;seealso&gt; ADHPool.Target[ADH] &lt;/seealso&gt;<br>
+&lt;seealso&gt; ECFV.InitialVol(L) &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHPool.Log10Conc &lt;/name&gt;<br>
+&lt;topic&gt; Log10Conc - DefinitionADHP9 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHPool.Loss &lt;/name&gt;<br>
+&lt;topic&gt; Loss - DefinitionADHP10 &lt;/topic&gt;<br>
+&lt;seealso&gt; ADHClearance.Total &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHPool.Mass &lt;/name&gt;<br>
+&lt;topic&gt; Mass - DefinitionADHP11 &lt;/topic&gt;<br>
+&lt;seealso&gt; ADHPool.Change &lt;/seealso&gt;<br>
+&lt;seealso&gt; ADHPool.InitialMass &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHPool.PGTOPMOL &lt;/name&gt;<br>
+&lt;topic&gt; PGTOPMOL - DefinitionADHP12 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHPool.PGTOUUNITS &lt;/name&gt;<br>
+&lt;topic&gt; PGTOUUNITS - DefinitionADHP13 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ADHPool.Target[ADH] &lt;/name&gt;<br>
+&lt;topic&gt; Target[ADH] - DefinitionADHP14 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; ADH - Physical Units &lt;/name&gt;<br>
+&lt;label&gt; Physical Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+[Plasma]    pG/mL<br>
+Plasma Mass nG<br>
+Fluxes      nG/Min<br>
+Stored Mass uG<br>
+<br>
+Notice that micro (10^-6), nano (10^-9) and pico (10^-12)<br>
+gram units are used.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; ADH - Concentration Units &lt;/name&gt;<br>
+&lt;label&gt; Concentration Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+ADH concentrations have been expressed in<br>
+<br>
+   pG/mL<br>
+   pMol/L<br>
+   uU/mL<br>
+<br>
+The ADH pool is [ADH]*ECFV.  Typical [ADH] is 2.0 pg/ml <br>
+and ECFV is 15,000ml. <br>
+2.0pG/ml*15,000ml = 30,000pG mass or 30nG. <br>
+<br>
+A typical concentration is 2.0 pG/mL; 1.8pMol/L or 0.8uU/mL<br>
+To change from pG to pMol multiply by 0.922<br>
+To change from pG to uU, multiply by 0.4<br>
+<br>
+Sachs H, Share L, Osinchak J, Carpi A. Capacity of the<br>
+neurohypophysis to release vasopressin. <br>
+Endocrinology 81: 755 - 770, 1967<br>
+<br>
+Share L. Control of plasma ADH titer in hemorrhage; role<br>
+of atrial and arterial receptors. <br>
+Am J Physiol 215: 1384 - 1389, 1968.<br>
+<br>
+Robertson GL, Mahr EA, Athar S, Sinha T. Development and <br>
+clinical application of a new method for the radioimmunoassay <br>
+of arginine vaopressin in human plasma. <br>
+J Clin Invest. 52: 2340 - 2352, 1973.<br>
+<br>
+Robertson GL, Athar S. The interaction of blood <br>
+osmolality and blood volume in regulating plasma <br>
+vasopressin in man.<br>
+J Clin Endocr Metabol 42: 613 - 620, 1976. <br>
+<br>
+Fabian M, Forsling ML, Jones JJ, Pryor JS. The clearance and <br>
+antidiuretic potency of neurohypophysial hormones in man, and<br>
+their plasma binding and stability. <br>
+J Physiol 204: 653 - 668, 1969.<br>
+<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; ADH - Overview &lt;/name&gt;<br>
+&lt;label&gt; Overview &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Antidiuretic hormone(also known as vasopressin or AVP),a nonapeptide, <br>
+is synthesized in the magnocellular neurons of the paraventricular<br>
+and supraoptic nuclei and stored in the posterior lobe of the pituitary. <br>
+Its release is stimulated by increased osmolality and by reductions <br>
+in blood volume and blood pressure. Increased ADH secretion causes <br>
+increased fluid reabsorption by the kidneys, helping to restore blood <br>
+pressure, blood volume and osmolality toward normal. <br>
+<br>
+When the osmolarity of the body fluids increases above normal,<br>
+the posterior pituitary gland secretes more ADH, which increases<br>
+the permeability of the distal tubules and collecting ducts to water.<br>
+This allows large amounts of water to be reabsorbed and results <br>
+in increases in blood volume and decreases in urine volume.<br>
+An increase in extracellular fluid osmolarity causes special <br>
+nerve cells called osmoreceptor cells, located in the anterior <br>
+hypothalamus near the supraoptic nuclei, to shrink. This  shrinkage <br>
+causes the cells to send nerve signals to the supraoptic nuclei which<br>
+stimulates the release of ADH from the posterior pituitary. A second<br>
+neuronal area important in controlling osmolarity and ADH secretion <br>
+is located along the anteroventral region of the third ventricle, <br>
+called the AV3V region. At the upper part of this region is a structure <br>
+called the subfornical organ, and at the inferior part is another structure <br>
+called the organum vasculosum of the lamina terminalis. Between these two <br>
+organs is the median preoptic nucleus, which has multiple nerve connections<br>
+with the two organs as well as with the supraoptic nuclei and the blood <br>
+pressure control centers in the medulla of the brain. <br>
+<br>
+ADH release is also controlled by cardiovascular reflexes in response to<br>
+decreases in blood pressure and/or blood volume including the arterial<br>
+baroreceptor reflexes and the cardiopulmonary reflexes. <br>
+<br>
+Kurtzman NA, Boonjarern S. Physiology of antidiuretic hormone and<br>
+the interrelationship between the hormone and the kidney.<br>
+Nepron 15: 167 - 185, 1975.<br>
+<br>
+Share L. Control of Vasopressin Release: An Old But Continuing Story.<br>
+News Physiol. Sci. Volume 11, February 1996<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; [ADH(pMol/L)] - DefinitionADHP1 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+[ADH(pMol/L)] is the plasma concentration of ADH <br>
+expressed in pMol/L. <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; [ADH(uU/mL)] - DefinitionADHP2  &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+[ADH(uU/mL)]is the plasma concentration of ADH <br>
+expressed in uU/mL.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; [ADH] - DefinitionADHP3  &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+[ADH]is the plasma concentration of ADH <br>
+expressed in pg/mL.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Change - DefinitionADHP4 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt; <br>
+<br>
+Changes in the ADH pool or mass are a function of both<br>
+gains and losses in ADH over time. Gains may occur from<br>
+increased secretion and from infusion of ADH using the <br>
+ADH pump feature of the model. Loss occurs from ADH <br>
+clearance from the blood<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt; <br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; ClampSetting - DefinitionADHP5 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt; <br>
+<br>
+The ADH clamp feature enables the model user to <br>
+fix plasma ADH levels at a particular level. When <br>
+the clamp switch is turned on, the user can set <br>
+the ADH level using the sliding bar in the ADH Pool <br>
+display box. levels can be increased increments of <br>
+0.1 from 0.0 up to 5.0 pG/mL <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt; <br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; ClampSwitch - DefinitionADHP6 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt; <br>
+<br>
+The ADH clamp feature enables the model user to <br>
+fix plasma ADH levels at a particular level. When <br>
+the clamp switch is turned on, the user can set <br>
+the ADH level using the sliding bar in the ADH Pool <br>
+display box. Levels can be increased increments of <br>
+0.1 from 0.0 up to 5.0 pG/mL <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt; <br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Gain - DefinitionADHP7 &lt;/name&gt;<br>
+&lt;label&gt;  Definition  &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Gain is defined as positive changes in mass of ADH<br>
+and is a function of ADH secretion rate and ADH<br>
+from infusion (using the ADH pump feature).<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;  <br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt;  InitialMass - DefinitionADHP8  &lt;/name&gt;<br>
+&lt;label&gt;  Definition  &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+During startup, the model user defines the particular <br>
+traits of the HumMod patient. These are gender, body size, <br>
+age, muscularity and adiposity. All of these traits <br>
+influence body volumes, most notably the extracellular <br>
+fluid volume (ECFV). The assumption is made that<br>
+while volumes may change with traits, concentrations do <br>
+not. At startup,initial volumes,especially ECFV and plasma <br>
+volume are calculated. A target concentration is specified <br>
+- in this case Target[ADH]. <br>
+<br>
+The initial mass or circulating pool is the Target[ADH] <br>
+multiplied by the initial volume of distribution, in <br>
+this case the ECFV.<br>
+ <br>
+Initial Mass = Target[ADH]*ECFV.InitialVol(L)<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt; <br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Log10Conc - DefinitionADHP9 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Log10Conc is a conditional element to ensure that<br>
+[ADH]can never be less than zero.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Loss - DefinitionADHP10 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt; <br>
+&lt;content&gt;<br>
+<br>
+Loss is defined as negative changes in mass of ADH and is <br>
+a function of ADH clearance.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+ <br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt;  Mass - DefinitionADHP11  &lt;/name&gt;<br>
+&lt;label&gt;  Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+The Mass is the calculated amount of ADH <br>
+at any given time. It is a function of the <br>
+initial mass of ADH and the change in ADH mass<br>
+over time. <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt; <br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt;  PGTOPMOL - DefinitionADHP12  &lt;/name&gt;<br>
+&lt;label&gt;  Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+PGTOPMOL is a constant used to change from pG to pMol.<br>
+It has  value of 0.922.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;  <br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt;  PGTOUUNITS - DefinitionADHP13  &lt;/name&gt;<br>
+&lt;label&gt;  Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+PGTOUUNITS is a constant used to change from pG to uU.<br>
+It has  value of 0.400.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;  <br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Target[ADH] - DefinitionADHP14 &lt;/name&gt;<br>
+&lt;label&gt;  Definition  &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Target[ADH] is the plasma concentration of ADH<br>
+at startup. <br>
+<br>
+During startup, the model user defines the particular <br>
+traits of the HumMod patient. These are gender, body size, <br>
+age, muscularity and adiposity. All of these traits <br>
+influence body volumes, most notably the extracellular <br>
+fluid volume (ECFV). The assumption is made that<br>
+while volumes may change with traits, concentrations do <br>
+not. At startup,initial volumes,especially ECFV and plasma <br>
+volume are calculated. A target concentration is specified <br>
+- in this case Target[ADH]. <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;  <br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

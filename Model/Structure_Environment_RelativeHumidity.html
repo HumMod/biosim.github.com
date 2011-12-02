@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_Environment_Environment.html'><img src='../Back.PNG'></a>
+<p>
+HumMod / RelativeHumidity<br>
+<br>
+Created : 21-Dec-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; RelativeHumidity &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; Percent &lt;/name&gt;&lt;val&gt; 30.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;var&gt;&lt;name&gt; VaporPressure &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [H2O] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; SaturationPressure &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; DewPoint &lt;/name&gt;&lt;/var&gt;<br>
+&lt;constant&gt;&lt;name&gt; A &lt;/name&gt;&lt;val&gt; 18.6686 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; B &lt;/name&gt;&lt;val&gt; 4030.183 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; C &lt;/name&gt;&lt;val&gt; 235.0 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; AmbientTemperature.Temp(C) GT 100.0 &lt;/test&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; SaturationPressure &lt;/name&gt;<br>
+  &lt;val&gt; 760.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; AmbientTemperature.Temp(C) LT -273.15 &lt;/test&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; SaturationPressure &lt;/name&gt;<br>
+  &lt;val&gt; 0.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; TRUE &lt;/test&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; SaturationPressure &lt;/name&gt;<br>
+  &lt;val&gt; EXP ( A - ( B / ( AmbientTemperature.Temp(C) + C ) ) ) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; VaporPressure &lt;/name&gt;<br>
+  &lt;val&gt; 0.01 * Percent * SaturationPressure &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; [H2O] &lt;/name&gt;<br>
+  &lt;val&gt; VaporPressure / Barometer.Pressure &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; VaporPressure GT 760.0 &lt;/test&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; DewPoint &lt;/name&gt;<br>
+  &lt;val&gt; 100.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; VaporPressure LT 0.0 &lt;/test&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; DewPoint &lt;/name&gt;<br>
+  &lt;val&gt; -273.15 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; TRUE &lt;/test&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; DewPoint &lt;/name&gt;<br>
+  &lt;val&gt; B / ( A - LOG ( VaporPressure ) ) - C &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;/block&gt;<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

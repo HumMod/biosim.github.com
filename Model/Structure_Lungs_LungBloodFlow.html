@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_Lungs_Lungs.html'><img src='../Back.PNG'></a>
+<p>
+HumMod / LungBloodFlow<br>
+<br>
+Created : 29-Mar-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; LungBloodFlow &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Total &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Alveolar &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; AlveolarVentilated &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; AlveolarShunt &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;<br>
+  &lt;name&gt; BasicR-LShunt &lt;/name&gt;<br>
+  &lt;val&gt; 220.0 &lt;/val&gt;<br>
+&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Right-LeftShunt &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; TotalShunt &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; RightLungTotal &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; RightLungVentilated &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; RightLungShunt &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; LeftLungTotal &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; LeftLungVentilated &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; LeftLungShunt &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Total &lt;/name&gt;<br>
+  &lt;val&gt; ( PulmArty.Outflow + PulmCapys.Outflow ) / 2.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Right-LeftShunt &lt;/name&gt;<br>
+  &lt;val&gt; BasicR-LShunt MIN Total &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Alveolar &lt;/name&gt;<br>
+  &lt;val&gt; Total - Right-LeftShunt &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; RightLungTotal &lt;/name&gt;<br>
+  &lt;val&gt; Alveolar * Thorax.RightLungFlowFract &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; RightLungVentilated &lt;/name&gt;<br>
+  &lt;val&gt; RightLungTotal * RightHemithorax.LungInflation &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; RightLungShunt &lt;/name&gt;<br>
+  &lt;val&gt; RightLungTotal - RightLungVentilated &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; LeftLungTotal &lt;/name&gt;<br>
+  &lt;val&gt; Alveolar * Thorax.LeftLungFlowFract &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; LeftLungVentilated &lt;/name&gt;<br>
+  &lt;val&gt; LeftLungTotal * LeftHemithorax.LungInflation &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; LeftLungShunt &lt;/name&gt;<br>
+  &lt;val&gt; LeftLungTotal - LeftLungVentilated &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; AlveolarVentilated &lt;/name&gt;<br>
+  &lt;val&gt; RightLungVentilated + LeftLungVentilated &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; AlveolarShunt &lt;/name&gt;<br>
+  &lt;val&gt; RightLungShunt + LeftLungShunt &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TotalShunt &lt;/name&gt;<br>
+  &lt;val&gt; Right-LeftShunt + AlveolarShunt &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:39 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='docs_AnesthesiaGas_AnesthesiaGas.html'><img src='../Back.PNG'></a>
+<p>
+QHP 2008 / AnesthesiaGas.DOCS<br>
+<br>
+<br>
+Created : 27-Mar-09<br>
+Last Modified : 27-Mar-09<br>
+Author : Tom Coleman<br>
+Copyright : 2009<br>
+<br>
+&lt;structurename&gt; AnesthesiaGasArty<br>
+ &lt;/structurename&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; AnesthesiaGasArty.[Blood] &lt;/name&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; AnesthesiaGasArty.Change &lt;/name&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; AnesthesiaGasArty.DxMax &lt;/name&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; AnesthesiaGasArty.Gain &lt;/name&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; AnesthesiaGasArty.Loss &lt;/name&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; AnesthesiaGasArty.Mass &lt;/name&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; AnesthesiaGasArty.pBlood &lt;/name&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; XXX&lt;/name&gt;<br>
+&lt;label&gt; XXX&lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Using mass balance, gas enters<br>
+the pulmonary artery at a rate<br>
+of capillary concentration times<br>
+ventilated flow plus venus<br>
+concentration times shunt flow.<br>
+<br>
+Gas leaves the pulmonary artery<br>
+at a rate of total flow times<br>
+mixed concentration.<br>
+<br>
+We solve here for mixed concentration.<br>
+<br>
+      [Cap] * VentFlow + [V] * Shunt<br>
+[A] = ------------------------------<br>
+               Total Flow<br>
+<br>
+Trap for 0 flow.  If there is no flow,<br>
+the conc is 0.<br>
+<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; XX &lt;/name&gt;<br>
+&lt;label&gt; XXX &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; XXX &lt;/name&gt;<br>
+&lt;label&gt; Overview &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+   <br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_Creatinine_Creatinine.html'><img src='../Back.PNG'></a>
+<p>
+HumMod / CreatininePool<br>
+<br>
+Created : 28-Mar-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Solver : DES 2005<br>
+Schema : 2005.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; CreatininePool &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; RenalLoss &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; ExtrarenalLoss &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [Creatinine] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [Creatinine(mG/dL)] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [Creatinine(uMol/L)] &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; VolDist &lt;/name&gt;&lt;/var&gt;<br>
+&lt;parm&gt;&lt;name&gt; VolDistFract &lt;/name&gt;&lt;val&gt; 0.87 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; PER_ML_TO_PER_DL &lt;/name&gt;&lt;val&gt; 100.0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; MG_TO_UMOL &lt;/name&gt;&lt;val&gt; 8840.0 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Target[Creatinine] &lt;/name&gt;&lt;val&gt; 0.0082 &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialVolDist &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 3.10 &lt;/errorlim&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Init &lt;/name&gt;<br>
+  &lt;def&gt;&lt;name&gt; InitialVolDist &lt;/name&gt;&lt;val&gt; VolDistFract * BodyH2O.InitialTotalVol &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;val&gt; Target[Creatinine] * InitialVolDist &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass &lt;/name&gt;&lt;val&gt; InitialMass &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Conc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; VolDist &lt;/name&gt;&lt;val&gt; VolDistFract * BodyH2O.TotalVol &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; [Creatinine] &lt;/name&gt;&lt;val&gt; Mass / VolDist &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; [Creatinine(mG/dL)] &lt;/name&gt;&lt;val&gt; PER_ML_TO_PER_DL * [Creatinine] &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; [Creatinine(uMol/L)] &lt;/name&gt;&lt;val&gt; MG_TO_UMOL * [Creatinine] &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; RenalLoss &lt;/name&gt;&lt;val&gt; CD_Creatinine.Outflow &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; ExtrarenalLoss &lt;/name&gt;&lt;val&gt; 0.02 * [Creatinine(mG/dL)] &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;val&gt; CreatineCells.CreatineToCreatinine &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;val&gt; RenalLoss + ExtrarenalLoss &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; Gain - Loss &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

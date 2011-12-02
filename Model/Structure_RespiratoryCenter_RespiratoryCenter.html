@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_Structure.html'><img src='../Back.PNG'></a>
+<p><a href='Structure_RespiratoryCenter_RespiratoryCenter-Output.html'>Structure_RespiratoryCenter_RespiratoryCenter-Output</a>
+<br><a href='Structure_RespiratoryCenter_RespiratoryCenter-Integration.html'>Structure_RespiratoryCenter_RespiratoryCenter-Integration</a>
+<br><a href='Structure_RespiratoryCenter_RespiratoryCenter-Chemical.html'>Structure_RespiratoryCenter_RespiratoryCenter-Chemical</a>
+<br><a href='Structure_RespiratoryCenter_RespiratoryCenter-Exercise.html'>Structure_RespiratoryCenter_RespiratoryCenter-Exercise</a>
+<br><a href='Structure_RespiratoryCenter_RespiratoryCenter-Radiation.html'>Structure_RespiratoryCenter_RespiratoryCenter-Radiation</a>
+<br><a href='Structure_RespiratoryCenter_RespiratoryCenter-Metaboreflex.html'>Structure_RespiratoryCenter_RespiratoryCenter-Metaboreflex</a>
+<p>
+HumMod / RespiratoryCenter<br>
+<br>
+Created : 24-Dec-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;?path Structure\RespiratoryCenter\ ?&gt;<br>
+<br>
+&lt;?include RespiratoryCenter-Output.DES ?&gt;<br>
+&lt;?include RespiratoryCenter-Integration.DES ?&gt;<br>
+&lt;?include RespiratoryCenter-Chemical.DES ?&gt;<br>
+&lt;?include RespiratoryCenter-Exercise.DES ?&gt;<br>
+&lt;?include RespiratoryCenter-Radiation.DES ?&gt;<br>
+&lt;?include RespiratoryCenter-Metaboreflex.DES ?&gt;<br>
+<br>
+&lt;structure&gt;&lt;name&gt; RespiratoryCenter &lt;/name&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+  &lt;call&gt; RespiratoryCenter-Chemical.Calc &lt;/call&gt;<br>
+  &lt;call&gt; RespiratoryCenter-Radiation.Calc &lt;/call&gt;<br>
+  &lt;call&gt; RespiratoryCenter-Metaboreflex.Calc &lt;/call&gt;<br>
+  &lt;call&gt; RespiratoryCenter-Exercise.Calc &lt;/call&gt;<br>
+  &lt;call&gt; RespiratoryCenter-Integration.Calc &lt;/call&gt;<br>
+  &lt;call&gt; RespiratoryCenter-Output.Calc &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

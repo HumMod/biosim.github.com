@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_Nephrons_Nephrons.html'><img src='../Back.PNG'></a>
+<p><a href='Structure_Nephrons_CollectingDuct_CD_H2O.html'>Structure_Nephrons_CollectingDuct_CD_H2O</a>
+<br><a href='Structure_Nephrons_CollectingDuct_CD_Glucose.html'>Structure_Nephrons_CollectingDuct_CD_Glucose</a>
+<br><a href='Structure_Nephrons_CollectingDuct_CD_KA.html'>Structure_Nephrons_CollectingDuct_CD_KA</a>
+<br><a href='Structure_Nephrons_CollectingDuct_CD_NH4.html'>Structure_Nephrons_CollectingDuct_CD_NH4</a>
+<br><a href='Structure_Nephrons_CollectingDuct_CD_PO4.html'>Structure_Nephrons_CollectingDuct_CD_PO4</a>
+<br><a href='Structure_Nephrons_CollectingDuct_CD_SO4.html'>Structure_Nephrons_CollectingDuct_CD_SO4</a>
+<br><a href='Structure_Nephrons_CollectingDuct_CD_Na.html'>Structure_Nephrons_CollectingDuct_CD_Na</a>
+<br><a href='Structure_Nephrons_CollectingDuct_CD_K.html'>Structure_Nephrons_CollectingDuct_CD_K</a>
+<br><a href='Structure_Nephrons_CollectingDuct_CD_Cl.html'>Structure_Nephrons_CollectingDuct_CD_Cl</a>
+<br><a href='Structure_Nephrons_CollectingDuct_CD_HCO3.html'>Structure_Nephrons_CollectingDuct_CD_HCO3</a>
+<br><a href='Structure_Nephrons_CollectingDuct_CD_Urea.html'>Structure_Nephrons_CollectingDuct_CD_Urea</a>
+<br><a href='Structure_Nephrons_CollectingDuct_CD_Creatinine.html'>Structure_Nephrons_CollectingDuct_CD_Creatinine</a>
+<br><a href='Structure_Nephrons_CollectingDuct_CD_Protein.html'>Structure_Nephrons_CollectingDuct_CD_Protein</a>
+<br><a href='Structure_Nephrons_CollectingDuct_CD_H2OChannels.html'>Structure_Nephrons_CollectingDuct_CD_H2OChannels</a>
+<p>
+HumMod / CollectingDuct<br>
+<br>
+Created : 09-Apr-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2005-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;?path Structure\Nephrons\CollectingDuct\ ?&gt;<br>
+<br>
+&lt;?include CD_H2O.DES ?&gt;<br>
+&lt;?include CD_Glucose.DES ?&gt;<br>
+&lt;?include CD_KA.DES ?&gt;<br>
+&lt;?include CD_NH4.DES ?&gt;<br>
+&lt;?include CD_PO4.DES ?&gt;<br>
+&lt;?include CD_SO4.DES ?&gt;<br>
+&lt;?include CD_Na.DES ?&gt;<br>
+&lt;?include CD_K.DES ?&gt;<br>
+&lt;?include CD_Cl.DES ?&gt;<br>
+&lt;?include CD_HCO3.DES ?&gt;<br>
+&lt;?include CD_Urea.DES ?&gt;<br>
+&lt;?include CD_Creatinine.DES ?&gt;<br>
+&lt;?include CD_Protein.DES ?&gt;<br>
+<br>
+&lt;?include CD_H2OChannels.DES ?&gt;<br>
+<br>
+&lt;structure&gt;&lt;name&gt; CollectingDuct &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; Osmolarity &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; ClAndHCO3 &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; ClFract &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; NetSumCats &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;functions&gt;<br>
+<br>
+&lt;curve&gt;<br>
+  &lt;name&gt; PhOnClFract &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt; 7.00 &lt;/x&gt;&lt;y&gt; 1.00 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 7.45 &lt;/x&gt;&lt;y&gt; 0.93 &lt;/y&gt;&lt;slope&gt; -0.5 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 7.80 &lt;/x&gt;&lt;y&gt; 0.00 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;/functions&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;call&gt; CD_H2O.CalcInflow &lt;/call&gt;<br>
+<br>
+&lt;if&gt;<br>
+  &lt;test&gt; CD_H2O.Inflow LT 0.1 &lt;/test&gt;<br>
+  &lt;true&gt;<br>
+    &lt;call&gt; CD_Cl.NoFlow &lt;/call&gt;<br>
+    &lt;call&gt; CD_Glucose.NoFlow &lt;/call&gt;<br>
+    &lt;call&gt; CD_H2O.NoFlow &lt;/call&gt;<br>
+    &lt;call&gt; CD_HCO3.NoFlow &lt;/call&gt;<br>
+    &lt;call&gt; CD_K.NoFlow &lt;/call&gt;<br>
+    &lt;call&gt; CD_KA.NoFlow &lt;/call&gt;<br>
+    &lt;call&gt; CD_Na.NoFlow &lt;/call&gt;<br>
+    &lt;call&gt; CD_NH4.NoFlow &lt;/call&gt;<br>
+    &lt;call&gt; CD_PO4.NoFlow &lt;/call&gt;<br>
+    &lt;call&gt; CD_SO4.NoFlow &lt;/call&gt;<br>
+    &lt;call&gt; CD_Urea.NoFlow &lt;/call&gt;<br>
+    &lt;call&gt; CD_Creatinine.NoFlow &lt;/call&gt;<br>
+    &lt;call&gt; CD_Protein.NoFlow &lt;/call&gt;<br>
+<br>
+    &lt;def&gt;&lt;name&gt; Osmolarity &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+    &lt;exitblock/&gt;<br>
+  &lt;/true&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;call&gt; CD_Glucose.CalcFlux &lt;/call&gt;<br>
+&lt;call&gt; CD_KA.CalcFlux &lt;/call&gt;<br>
+&lt;call&gt; CD_NH4.CalcFlux &lt;/call&gt;<br>
+&lt;call&gt; CD_PO4.CalcFlux &lt;/call&gt;<br>
+&lt;call&gt; CD_K.CalcFlux &lt;/call&gt;<br>
+&lt;call&gt; CD_SO4.CalcFlux &lt;/call&gt;<br>
+&lt;call&gt; CD_Na.CalcFlux &lt;/call&gt;<br>
+&lt;call&gt; CD_Creatinine.CalcFlux &lt;/call&gt;<br>
+&lt;call&gt; CD_Protein.CalcFlux &lt;/call&gt;<br>
+<br>
+&lt;call&gt; CD_H2OChannels.CalcActive &lt;/call&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; NetSumCats &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      CD_Na.Outflow<br>
+    + CD_K.Outflow<br>
+    + CD_NH4.Outflow<br>
+    - CD_KA.Outflow<br>
+    - CD_PO4.Outflow<br>
+    - CD_SO4.Outflow<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;if&gt;<br>
+  &lt;test&gt; NetSumCats GT 0.0 &lt;/test&gt;<br>
+  &lt;true&gt;<br>
+<br>
+    &lt;def&gt;<br>
+      &lt;name&gt; ClAndHCO3 &lt;/name&gt;<br>
+      &lt;val&gt; NetSumCats &lt;/val&gt;<br>
+    &lt;/def&gt;<br>
+<br>
+  &lt;/true&gt;<br>
+  &lt;false&gt;<br>
+<br>
+    &lt;def&gt;<br>
+      &lt;name&gt; ClAndHCO3 &lt;/name&gt;<br>
+      &lt;val&gt; 0.0 &lt;/val&gt;<br>
+    &lt;/def&gt;<br>
+<br>
+    &lt;def&gt;<br>
+      &lt;name&gt; CD_NH4.Flux &lt;/name&gt;<br>
+      &lt;val&gt; CD_NH4.Flux - NetSumCats &lt;/val&gt;<br>
+    &lt;/def&gt;<br>
+<br>
+    &lt;def&gt;<br>
+      &lt;name&gt; CD_NH4.Outflow &lt;/name&gt;<br>
+      &lt;val&gt; CD_NH4.Inflow + CD_NH4.Flux &lt;/val&gt;<br>
+    &lt;/def&gt;<br>
+<br>
+  &lt;/false&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; ClFract &lt;/name&gt;<br>
+  &lt;val&gt; PhOnClFract [ BloodPh.ArtysPh ] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;call&gt; CD_Cl.CalcFlux &lt;/call&gt;<br>
+&lt;call&gt; CD_HCO3.CalcFlux &lt;/call&gt;<br>
+&lt;call&gt; CD_H2O.CalcFlux &lt;/call&gt;<br>
+<br>
+&lt;call&gt; CD_Cl.CalcConc &lt;/call&gt;<br>
+&lt;call&gt; CD_Glucose.CalcConc &lt;/call&gt;<br>
+&lt;call&gt; CD_HCO3.CalcConc &lt;/call&gt;<br>
+&lt;call&gt; CD_KA.CalcConc &lt;/call&gt;<br>
+&lt;call&gt; CD_NH4.CalcConc &lt;/call&gt;<br>
+&lt;call&gt; CD_PO4.CalcConc &lt;/call&gt;<br>
+&lt;call&gt; CD_K.CalcConc &lt;/call&gt;<br>
+&lt;call&gt; CD_SO4.CalcConc &lt;/call&gt;<br>
+&lt;call&gt; CD_Na.CalcConc &lt;/call&gt;<br>
+&lt;call&gt; CD_Creatinine.CalcConc &lt;/call&gt;<br>
+&lt;call&gt; CD_Protein.CalcConc &lt;/call&gt;<br>
+<br>
+&lt;call&gt; CD_Urea.CalcFlux &lt;/call&gt;<br>
+&lt;call&gt; CD_Urea.CalcConc &lt;/call&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Osmolarity &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      CD_Cl.Osmolarity<br>
+    + CD_Glucose.Osmolarity<br>
+    + CD_HCO3.Osmolarity<br>
+    + CD_KA.Osmolarity<br>
+    + CD_NH4.Osmolarity<br>
+    + CD_PO4.Osmolarity<br>
+    + CD_K.Osmolarity<br>
+    + CD_SO4.Osmolarity<br>
+    + CD_Na.Osmolarity<br>
+    + CD_Urea.Osmolarity<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;call&gt; CD_H2OChannels.CalcDervs &lt;/call&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:37 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Structure_GILumen_GILumen.html'><img src='../Back.PNG'></a>
+<p><a href='Structure_GILumen_GILumenOther_GILumenDiarrhea.html'>Structure_GILumen_GILumenOther_GILumenDiarrhea</a>
+<br><a href='Structure_GILumen_GILumenOther_GILumenVomitus.html'>Structure_GILumen_GILumenOther_GILumenVomitus</a>
+<p>
+HumMod / GILumenOther<br>
+<br>
+Created : 13-Mar-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;?path Structure\GILumen\GILumenOther\ ?&gt;<br>
+<br>
+&lt;?include GILumenDiarrhea.DES ?&gt;<br>
+&lt;?include GILumenVomitus.DES ?&gt;<br>
+<br>
+&lt;structure&gt;&lt;name&gt; GILumenOther &lt;/name&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+  &lt;call&gt; GILumenDiarrhea.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; GILumenVomitus.Dervs &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>

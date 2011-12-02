@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/2/2011 5:41:38 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'>
+<img src='SmallModel.PNG'>
+<a href='Display_Hormones_Renin_Renin.html'><img src='../Back.PNG'></a>
+<p><a href='Display_Hormones_Renin_Circulating_Pool.html'>Display_Hormones_Renin_Circulating_Pool</a>
+<br><a href='Display_Hormones_Renin_Circulating_Clearance.html'>Display_Hormones_Renin_Circulating_Clearance</a>
+<br><a href='Display_Hormones_Renin_Circulating_Tumor.html'>Display_Hormones_Renin_Circulating_Tumor</a>
+<p>
+HumMod / Circulating<br>
+<br>
+Created : 22-Jun-06<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;panel&gt;&lt;name&gt; Hormones_Renin_Circulating &lt;/name&gt;<br>
+<br>
+&lt;showbitmap&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;<br>
+  &lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Hormone &lt;/name&gt;<br>
+&lt;/showbitmap&gt;<br>
+<br>
+&lt;label&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;<br>
+  &lt;col&gt; 4.5 &lt;/col&gt;<br>
+  &lt;text&gt; Circulating Renin &lt;/text&gt;<br>
+&lt;/label&gt;<br>
+<br>
+&lt;showclock&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+  &lt;name&gt; System.X &lt;/name&gt;<br>
+  &lt;ampm/&gt;<br>
+  &lt;secs/&gt;<br>
+  &lt;days/&gt;<br>
+&lt;/showclock&gt;<br>
+<br>
+&lt;?path Display\Hormones\Renin\Circulating\ ?&gt;<br>
+<br>
+&lt;?include Pool.DES ?&gt;<br>
+&lt;?include Clearance.DES ?&gt;<br>
+&lt;?include Tumor.DES ?&gt;<br>
+<br>
+&lt;/panel&gt;<br>
+<br>
+End
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>
