@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,110 +19,110 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_Glucose_Glucose.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / GlucosePool<br>
-<br>
-Created : 07-Apr-05<br>
-Last Modified : 2011-10-17<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2011<br>
-By : University Of Mississippi Medical Center<br>
-<br>
-&lt;structure&gt;&lt;name&gt; GlucosePool &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; [Glucose] &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; [Glucose(mG/dL)] &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; [Glucose(mMol/L)] &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; [BloodGlucose] &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; [BloodGlucose(mG/dL)] &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; [BloodGlucose(mMol/L)] &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; BLOOD_TO_PLASMA &lt;/name&gt;&lt;val&gt; 1.15 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; PER_ML_TO_PER_DL &lt;/name&gt;&lt;val&gt; 100.0 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; MG_TO_MMOL &lt;/name&gt;&lt;val&gt; 5.551 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Osmoles &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; [Osm] &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; [Osm(mOsm/L)] &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; MW &lt;/name&gt;&lt;val&gt; 180.0 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Target[Glucose] &lt;/name&gt;&lt;val&gt; 1.10 &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;diffeq&gt;<br>
-  &lt;name&gt; Mass &lt;/name&gt;<br>
-  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
-  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 165.0 &lt;/errorlim&gt;<br>
-&lt;/diffeq&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcOsmoles &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Osmoles &lt;/name&gt;&lt;val&gt; Mass / MW &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Init &lt;/name&gt;<br>
-  &lt;def&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;val&gt; Target[Glucose] * ECFV.Vol &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;def&gt;&lt;name&gt; Mass &lt;/name&gt;&lt;val&gt; InitialMass &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcConc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; [Glucose] &lt;/name&gt;&lt;val&gt; Mass / ECFV.Vol &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; [Glucose(mG/dL)] &lt;/name&gt;&lt;val&gt; PER_ML_TO_PER_DL * [Glucose] &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; [Glucose(mMol/L)] &lt;/name&gt;&lt;val&gt; MG_TO_MMOL * [Glucose] &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; [BloodGlucose] &lt;/name&gt;&lt;val&gt; [Glucose] / BLOOD_TO_PLASMA &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; [BloodGlucose(mG/dL)] &lt;/name&gt;&lt;val&gt; PER_ML_TO_PER_DL * [BloodGlucose] &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; [BloodGlucose(mMol/L)] &lt;/name&gt;&lt;val&gt; MG_TO_MMOL * [BloodGlucose] &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; [Osm] &lt;/name&gt;&lt;val&gt; Osmoles / ECFV.Vol &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; [Osm(mOsm/L)] &lt;/name&gt;&lt;val&gt; 1000.0 * [Osm] &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcDervs &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Gain &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-      GILumenCarbohydrates.Absorption<br>
-    + LM_Glucose.Release<br>
-    + GlucosePump.Rate<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Loss &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-      Metabolism-Glucose.TotalUptake<br>
-    + LM_Glucose.Uptake<br>
-    + NephronGlucose.Spillover<br>
-    + GlucoseDecomposition.Rate<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; Gain - Loss &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / GlucosePool<br>
+<br>
+Created : 07-Apr-05<br>
+Last Modified : 2011-10-17<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2011<br>
+By : University Of Mississippi Medical Center<br>
+<br>
+&lt;structure&gt;&lt;name&gt; GlucosePool &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [Glucose] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [Glucose(mG/dL)] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [Glucose(mMol/L)] &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [BloodGlucose] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [BloodGlucose(mG/dL)] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [BloodGlucose(mMol/L)] &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; BLOOD_TO_PLASMA &lt;/name&gt;&lt;val&gt; 1.15 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; PER_ML_TO_PER_DL &lt;/name&gt;&lt;val&gt; 100.0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; MG_TO_MMOL &lt;/name&gt;&lt;val&gt; 5.551 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Osmoles &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [Osm] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [Osm(mOsm/L)] &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; MW &lt;/name&gt;&lt;val&gt; 180.0 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Target[Glucose] &lt;/name&gt;&lt;val&gt; 1.10 &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 165.0 &lt;/errorlim&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcOsmoles &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Osmoles &lt;/name&gt;&lt;val&gt; Mass / MW &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Init &lt;/name&gt;<br>
+  &lt;def&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;val&gt; Target[Glucose] * ECFV.Vol &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass &lt;/name&gt;&lt;val&gt; InitialMass &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcConc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; [Glucose] &lt;/name&gt;&lt;val&gt; Mass / ECFV.Vol &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; [Glucose(mG/dL)] &lt;/name&gt;&lt;val&gt; PER_ML_TO_PER_DL * [Glucose] &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; [Glucose(mMol/L)] &lt;/name&gt;&lt;val&gt; MG_TO_MMOL * [Glucose] &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; [BloodGlucose] &lt;/name&gt;&lt;val&gt; [Glucose] / BLOOD_TO_PLASMA &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; [BloodGlucose(mG/dL)] &lt;/name&gt;&lt;val&gt; PER_ML_TO_PER_DL * [BloodGlucose] &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; [BloodGlucose(mMol/L)] &lt;/name&gt;&lt;val&gt; MG_TO_MMOL * [BloodGlucose] &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; [Osm] &lt;/name&gt;&lt;val&gt; Osmoles / ECFV.Vol &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; [Osm(mOsm/L)] &lt;/name&gt;&lt;val&gt; 1000.0 * [Osm] &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcDervs &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Gain &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      GILumenCarbohydrates.Absorption<br>
+    + LM_Glucose.Release<br>
+    + GlucosePump.Rate<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Loss &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      Metabolism-Glucose.TotalUptake<br>
+    + LM_Glucose.Uptake<br>
+    + NephronGlucose.Spillover<br>
+    + GlucoseDecomposition.Rate<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; Gain - Loss &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

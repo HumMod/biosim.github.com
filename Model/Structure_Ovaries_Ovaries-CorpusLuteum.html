@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -21,90 +21,90 @@
 <p><a href='Structure_Ovaries_CorpusLuteum-Growth.html'>Structure_Ovaries_CorpusLuteum-Growth</a>
 <br><a href='Structure_Ovaries_CorpusLuteum-Involution.html'>Structure_Ovaries_CorpusLuteum-Involution</a>
 <p>
-HumMod / Ovaries-CorpusLuteum<br>
-<br>
-Created : 05-Oct-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;?path Structure\Ovaries\ ?&gt;<br>
-<br>
-&lt;?include CorpusLuteum-Growth.DES ?&gt;<br>
-&lt;?include CorpusLuteum-Involution.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Ovaries-CorpusLuteum &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Growth &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Involution &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Radius(mM) &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;diffeq&gt;<br>
-  &lt;name&gt; Mass &lt;/name&gt;<br>
-  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
-  &lt;initialval&gt; 0.0 &lt;/initialval&gt;<br>
-  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 1.0 &lt;/errorlim&gt;<br>
-&lt;/diffeq&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;call&gt; CorpusLuteum-Growth.Dervs &lt;/call&gt;<br>
-&lt;call&gt; CorpusLuteum-Involution.Dervs &lt;/call&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Growth &lt;/name&gt;<br>
-  &lt;val&gt; CorpusLuteum-Growth.Growth &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Involution &lt;/name&gt;<br>
-  &lt;val&gt; CorpusLuteum-Involution.Rate &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Change &lt;/name&gt;<br>
-  &lt;val&gt; Growth - Involution &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
-<br>
-&lt;if&gt;<br>
-&lt;test&gt;<br>
-      ( Ovaries.Cycling? )<br>
-  AND ( Ovaries.Phase EQ Ovaries.IS_LUTEAL )<br>
-  AND ( Mass LT 100.0 )<br>
-&lt;/test&gt;<br>
-&lt;true&gt;<br>
-  &lt;def&gt;&lt;name&gt; Ovaries.Phase &lt;/name&gt;&lt;val&gt; Ovaries.IS_IDLE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/true&gt;<br>
-&lt;/if&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Radius(mM) &lt;/name&gt;<br>
-  &lt;val&gt; ( 0.239 * Mass ) ^ 0.333 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / Ovaries-CorpusLuteum<br>
+<br>
+Created : 05-Oct-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;?path Structure\Ovaries\ ?&gt;<br>
+<br>
+&lt;?include CorpusLuteum-Growth.DES ?&gt;<br>
+&lt;?include CorpusLuteum-Involution.DES ?&gt;<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Ovaries-CorpusLuteum &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Growth &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Involution &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Radius(mM) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
+  &lt;initialval&gt; 0.0 &lt;/initialval&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 1.0 &lt;/errorlim&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;call&gt; CorpusLuteum-Growth.Dervs &lt;/call&gt;<br>
+&lt;call&gt; CorpusLuteum-Involution.Dervs &lt;/call&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Growth &lt;/name&gt;<br>
+  &lt;val&gt; CorpusLuteum-Growth.Growth &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Involution &lt;/name&gt;<br>
+  &lt;val&gt; CorpusLuteum-Involution.Rate &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Change &lt;/name&gt;<br>
+  &lt;val&gt; Growth - Involution &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
+<br>
+&lt;if&gt;<br>
+&lt;test&gt;<br>
+      ( Ovaries.Cycling? )<br>
+  AND ( Ovaries.Phase EQ Ovaries.IS_LUTEAL )<br>
+  AND ( Mass LT 100.0 )<br>
+&lt;/test&gt;<br>
+&lt;true&gt;<br>
+  &lt;def&gt;&lt;name&gt; Ovaries.Phase &lt;/name&gt;&lt;val&gt; Ovaries.IS_IDLE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/true&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Radius(mM) &lt;/name&gt;<br>
+  &lt;val&gt; ( 0.239 * Mass ) ^ 0.333 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

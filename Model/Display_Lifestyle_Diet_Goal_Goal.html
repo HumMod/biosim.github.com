@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:54 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,194 +19,194 @@
 <img src='SmallModel.PNG'>
 <a href='Display_Lifestyle_Diet_Diet.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / Goal<br>
-<br>
-Created : 24-Jun-06<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;panel&gt;&lt;name&gt; Diet_Goal &lt;/name&gt;<br>
-<br>
-&lt;showbitmap&gt;<br>
-  &lt;row&gt; 0.3 &lt;/row&gt;<br>
-  &lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Diet &lt;/name&gt;<br>
-&lt;/showbitmap&gt;<br>
-<br>
-&lt;label&gt;<br>
-  &lt;row&gt; 0.3 &lt;/row&gt;<br>
-  &lt;col&gt; 4.5 &lt;/col&gt;<br>
-  &lt;text&gt; Diet | Goal &lt;/text&gt;<br>
-&lt;/label&gt;<br>
-<br>
-&lt;showclock&gt;<br>
-  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; System.X &lt;/name&gt;<br>
-  &lt;ampm/&gt;<br>
-  &lt;secs/&gt;<br>
-  &lt;days/&gt;<br>
-&lt;/showclock&gt;<br>
-<br>
-&lt;structurename&gt; DietGoalNutrition &lt;/structurename&gt;<br>
-<br>
-&lt;label&gt;<br>
-  &lt;row&gt; 3.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;text&gt; Nutrition (kCal / Day) &lt;/text&gt;<br>
-&lt;/label&gt;<br>
-<br>
-&lt;repeatlist&gt;<br>
-  &lt;name&gt; DietGoalNutrition.Rate &lt;/name&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 200 &lt;/reps&gt;&lt;stepsize&gt;   10.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt;  40 &lt;/reps&gt;&lt;stepsize&gt;  100.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-&lt;/repeatlist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 4.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Carbo_kCal/Day &lt;/name&gt;<br>
-  &lt;listname&gt; DietGoalNutrition.Rate &lt;/listname&gt;<br>
-  &lt;label&gt; Carbo's &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 6.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Fat_kCal/Day &lt;/name&gt;<br>
-  &lt;listname&gt; DietGoalNutrition.Rate &lt;/listname&gt;<br>
-  &lt;label&gt; Fat &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 7.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Protein_kCal/Day &lt;/name&gt;<br>
-  &lt;listname&gt; DietGoalNutrition.Rate &lt;/listname&gt;<br>
-  &lt;label&gt; Protein &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 8.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Total_kCal/Day &lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Total &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;label&gt;<br>
-  &lt;row&gt; 10.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;text&gt; G / Day &lt;/text&gt;<br>
-&lt;/label&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 11.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Carbo_G/Day &lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Carbo's &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 12.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Fat_G/Day &lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Fat &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 13.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Protein_G/Day &lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Protein &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 2.8 &lt;/row&gt;<br>
-  &lt;col&gt; 26.0 &lt;/col&gt;<br>
-<br>
-  &lt;line&gt; Typical values for kCal/Day are &lt;/line&gt;<br>
-  &lt;line&gt; &lt;/line&gt;<br>
-  &lt;line&gt; Carbo's = 900 &lt;/line&gt;<br>
-  &lt;line&gt; Fat = 800 &lt;/line&gt;<br>
-  &lt;line&gt; Protein = 500 &lt;/line&gt;<br>
-  &lt;line&gt; &lt;/line&gt;<br>
-  &lt;line&gt; Total = 2200 &lt;/line&gt;<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;structurename&gt; DietGoalElectrolytes &lt;/structurename&gt;<br>
-<br>
-&lt;label&gt;<br>
-  &lt;row&gt; 3.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;text&gt; Electrolytes (mMol / Day) &lt;/text&gt;<br>
-&lt;/label&gt;<br>
-<br>
-&lt;repeatlist&gt;<br>
-  &lt;name&gt; Rate &lt;/name&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 10 &lt;/reps&gt;&lt;stepsize&gt;  1.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 29 &lt;/reps&gt;&lt;stepsize&gt; 10.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt;  4 &lt;/reps&gt;&lt;stepsize&gt; 50.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-&lt;/repeatlist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 4.6 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; Na+_mMol/Day &lt;/name&gt;<br>
-  &lt;listname&gt; Rate &lt;/listname&gt;<br>
-  &lt;label&gt; Na+ &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 6.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; Cl-_mMol/Day &lt;/name&gt;<br>
-  &lt;listname&gt; Rate &lt;/listname&gt;<br>
-  &lt;label&gt; Cl- &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 7.4 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; K+_mMol/Day &lt;/name&gt;<br>
-  &lt;listname&gt; Rate &lt;/listname&gt;<br>
-  &lt;label&gt; K+ &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;repeatlist&gt;<br>
-  &lt;name&gt; Calcium &lt;/name&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 100 &lt;/reps&gt;&lt;stepsize&gt;  1 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-&lt;/repeatlist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 8.8 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; Ca++_mMol/Day &lt;/name&gt;<br>
-  &lt;listname&gt; Calcium &lt;/listname&gt;<br>
-  &lt;label&gt; Ca++ &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 10.2 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; PO4---_mMol/Day &lt;/name&gt;<br>
-  &lt;listname&gt; Rate &lt;/listname&gt;<br>
-  &lt;label&gt; PO4--- &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 11.6 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; SO4--_mMol/Day &lt;/name&gt;<br>
-  &lt;listname&gt; Rate &lt;/listname&gt;<br>
-  &lt;label&gt; SO4-- &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 2.8 &lt;/row&gt;<br>
-  &lt;col&gt; 58.0 &lt;/col&gt;<br>
-<br>
-  &lt;line&gt; Typical values for mEq/Day are &lt;/line&gt;<br>
-  &lt;line&gt; &lt;/line&gt;<br>
-  &lt;line&gt; Na+ = 180 &lt;/line&gt;<br>
-  &lt;line&gt; Cl- = 200 &lt;/line&gt;<br>
-  &lt;line&gt; K+ = 70 &lt;/line&gt;<br>
-  &lt;line&gt; Ca++ = 30 &lt;/line&gt;<br>
-  &lt;line&gt; PO4--- = 30 &lt;/line&gt;<br>
-  &lt;line&gt; SO4-- = 50 &lt;/line&gt;<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;/panel&gt;<br>
-<br>
+HumMod / Goal<br>
+<br>
+Created : 24-Jun-06<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;panel&gt;&lt;name&gt; Diet_Goal &lt;/name&gt;<br>
+<br>
+&lt;showbitmap&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;<br>
+  &lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Diet &lt;/name&gt;<br>
+&lt;/showbitmap&gt;<br>
+<br>
+&lt;label&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;<br>
+  &lt;col&gt; 4.5 &lt;/col&gt;<br>
+  &lt;text&gt; Diet | Goal &lt;/text&gt;<br>
+&lt;/label&gt;<br>
+<br>
+&lt;showclock&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+  &lt;name&gt; System.X &lt;/name&gt;<br>
+  &lt;ampm/&gt;<br>
+  &lt;secs/&gt;<br>
+  &lt;days/&gt;<br>
+&lt;/showclock&gt;<br>
+<br>
+&lt;structurename&gt; DietGoalNutrition &lt;/structurename&gt;<br>
+<br>
+&lt;label&gt;<br>
+  &lt;row&gt; 3.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;text&gt; Nutrition (kCal / Day) &lt;/text&gt;<br>
+&lt;/label&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; DietGoalNutrition.Rate &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 200 &lt;/reps&gt;&lt;stepsize&gt;   10.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt;  40 &lt;/reps&gt;&lt;stepsize&gt;  100.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 4.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Carbo_kCal/Day &lt;/name&gt;<br>
+  &lt;listname&gt; DietGoalNutrition.Rate &lt;/listname&gt;<br>
+  &lt;label&gt; Carbo's &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 6.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Fat_kCal/Day &lt;/name&gt;<br>
+  &lt;listname&gt; DietGoalNutrition.Rate &lt;/listname&gt;<br>
+  &lt;label&gt; Fat &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 7.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Protein_kCal/Day &lt;/name&gt;<br>
+  &lt;listname&gt; DietGoalNutrition.Rate &lt;/listname&gt;<br>
+  &lt;label&gt; Protein &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 8.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; Total_kCal/Day &lt;/name&gt;<br>
+   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Total &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;label&gt;<br>
+  &lt;row&gt; 10.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;text&gt; G / Day &lt;/text&gt;<br>
+&lt;/label&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 11.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; Carbo_G/Day &lt;/name&gt;<br>
+   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Carbo's &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 12.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; Fat_G/Day &lt;/name&gt;<br>
+   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Fat &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 13.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; Protein_G/Day &lt;/name&gt;<br>
+   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Protein &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;infobutton&gt;<br>
+  &lt;row&gt; 2.8 &lt;/row&gt;<br>
+  &lt;col&gt; 26.0 &lt;/col&gt;<br>
+<br>
+  &lt;line&gt; Typical values for kCal/Day are &lt;/line&gt;<br>
+  &lt;line&gt; &lt;/line&gt;<br>
+  &lt;line&gt; Carbo's = 900 &lt;/line&gt;<br>
+  &lt;line&gt; Fat = 800 &lt;/line&gt;<br>
+  &lt;line&gt; Protein = 500 &lt;/line&gt;<br>
+  &lt;line&gt; &lt;/line&gt;<br>
+  &lt;line&gt; Total = 2200 &lt;/line&gt;<br>
+&lt;/infobutton&gt;<br>
+<br>
+&lt;structurename&gt; DietGoalElectrolytes &lt;/structurename&gt;<br>
+<br>
+&lt;label&gt;<br>
+  &lt;row&gt; 3.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+  &lt;text&gt; Electrolytes (mMol / Day) &lt;/text&gt;<br>
+&lt;/label&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; Rate &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 10 &lt;/reps&gt;&lt;stepsize&gt;  1.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 29 &lt;/reps&gt;&lt;stepsize&gt; 10.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt;  4 &lt;/reps&gt;&lt;stepsize&gt; 50.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 4.6 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+  &lt;name&gt; Na+_mMol/Day &lt;/name&gt;<br>
+  &lt;listname&gt; Rate &lt;/listname&gt;<br>
+  &lt;label&gt; Na+ &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 6.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+  &lt;name&gt; Cl-_mMol/Day &lt;/name&gt;<br>
+  &lt;listname&gt; Rate &lt;/listname&gt;<br>
+  &lt;label&gt; Cl- &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 7.4 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+  &lt;name&gt; K+_mMol/Day &lt;/name&gt;<br>
+  &lt;listname&gt; Rate &lt;/listname&gt;<br>
+  &lt;label&gt; K+ &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; Calcium &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 100 &lt;/reps&gt;&lt;stepsize&gt;  1 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 8.8 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+  &lt;name&gt; Ca++_mMol/Day &lt;/name&gt;<br>
+  &lt;listname&gt; Calcium &lt;/listname&gt;<br>
+  &lt;label&gt; Ca++ &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 10.2 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+  &lt;name&gt; PO4---_mMol/Day &lt;/name&gt;<br>
+  &lt;listname&gt; Rate &lt;/listname&gt;<br>
+  &lt;label&gt; PO4--- &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 11.6 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+  &lt;name&gt; SO4--_mMol/Day &lt;/name&gt;<br>
+  &lt;listname&gt; Rate &lt;/listname&gt;<br>
+  &lt;label&gt; SO4-- &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;infobutton&gt;<br>
+  &lt;row&gt; 2.8 &lt;/row&gt;<br>
+  &lt;col&gt; 58.0 &lt;/col&gt;<br>
+<br>
+  &lt;line&gt; Typical values for mEq/Day are &lt;/line&gt;<br>
+  &lt;line&gt; &lt;/line&gt;<br>
+  &lt;line&gt; Na+ = 180 &lt;/line&gt;<br>
+  &lt;line&gt; Cl- = 200 &lt;/line&gt;<br>
+  &lt;line&gt; K+ = 70 &lt;/line&gt;<br>
+  &lt;line&gt; Ca++ = 30 &lt;/line&gt;<br>
+  &lt;line&gt; PO4--- = 30 &lt;/line&gt;<br>
+  &lt;line&gt; SO4-- = 50 &lt;/line&gt;<br>
+&lt;/infobutton&gt;<br>
+<br>
+&lt;/panel&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

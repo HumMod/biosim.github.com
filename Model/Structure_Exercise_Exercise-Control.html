@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,150 +19,150 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_Exercise_Exercise.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / Exercise-Control<br>
-<br>
-Created : 20-Dec-05<br>
-Last Modified : 2011-08-12<br>
-Author : Tom Coleman<br>
-Copyright : 2005-2011<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Exercise-Control &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; Request &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;var&gt;&lt;name&gt; LastValidRequest &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/var&gt;<br>
-&lt;parm&gt;&lt;name&gt; Motivation &lt;/name&gt;&lt;val&gt; 0.04 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; NO_EXERCISE &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-<br>
-&lt;onjustchanged&gt;&lt;name&gt; Request &lt;/name&gt;<br>
-<br>
-  &lt;if&gt;<br>
-  &lt;test&gt; DailyPlannerControl.Switch &lt;/test&gt;<br>
-  &lt;true&gt;<br>
-    &lt;message&gt; The daily planner is controlling exeercise now. &lt;/message&gt;<br>
-    &lt;def&gt;&lt;name&gt; Request &lt;/name&gt;&lt;val&gt; LastValidRequest &lt;/val&gt;&lt;/def&gt;<br>
-    &lt;exitblock/&gt;<br>
-  &lt;/true&gt;<br>
-  &lt;/if&gt;<br>
-<br>
-  &lt;if&gt;<br>
-  &lt;test&gt; Brain-Function.Comatose &lt;/test&gt;<br>
-  &lt;true&gt;<br>
-    &lt;message&gt; Subject is comatose and can't exercise. &lt;/message&gt;<br>
-    &lt;def&gt;&lt;name&gt; Request &lt;/name&gt;&lt;val&gt; LastValidRequest &lt;/val&gt;&lt;/def&gt;<br>
-    &lt;exitblock/&gt;<br>
-  &lt;/true&gt;<br>
-  &lt;/if&gt;<br>
-<br>
-  &lt;def&gt;&lt;name&gt; Status.Exertion &lt;/name&gt;&lt;val&gt; Request &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;def&gt;&lt;name&gt; LastValidRequest &lt;/name&gt;&lt;val&gt; Request &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;call&gt; UpdateStatus &lt;/call&gt;<br>
-&lt;/onjustchanged&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; UpdateStatus &lt;/name&gt;<br>
-  &lt;testcase&gt;<br>
-<br>
-  &lt;case&gt;&lt;test&gt; Request EQ 0 &lt;/test&gt;<br>
-  &lt;def&gt;<br>
-    &lt;name&gt; Exercise-Bike.Status &lt;/name&gt;<br>
-    &lt;val&gt; Exercise-Bike.IS_INACTIVE &lt;/val&gt;<br>
-  &lt;/def&gt;<br>
-<br>
-  &lt;def&gt;<br>
-    &lt;name&gt; Exercise-Treadmill.Status &lt;/name&gt;<br>
-    &lt;val&gt; Exercise-Treadmill.IS_INACTIVE &lt;/val&gt;<br>
-  &lt;/def&gt;<br>
-  &lt;/case&gt;<br>
-<br>
-  &lt;case&gt;&lt;test&gt; Request EQ 1 &lt;/test&gt;<br>
-  &lt;def&gt;<br>
-    &lt;name&gt; Exercise-Bike.Status &lt;/name&gt;<br>
-    &lt;val&gt; Exercise-Bike.IS_ACTIVE &lt;/val&gt;<br>
-  &lt;/def&gt;<br>
-<br>
-  &lt;def&gt;<br>
-    &lt;name&gt; Exercise-Treadmill.Status &lt;/name&gt;<br>
-    &lt;val&gt; Exercise-Treadmill.IS_INACTIVE &lt;/val&gt;<br>
-  &lt;/def&gt;<br>
-  &lt;/case&gt;<br>
-<br>
-  &lt;case&gt;&lt;test&gt; Request EQ 2 &lt;/test&gt;<br>
-  &lt;def&gt;<br>
-    &lt;name&gt; Exercise-Bike.Status &lt;/name&gt;<br>
-    &lt;val&gt; Exercise-Bike.IS_INACTIVE &lt;/val&gt;<br>
-  &lt;/def&gt;<br>
-<br>
-  &lt;def&gt;<br>
-    &lt;name&gt; Exercise-Treadmill.Status &lt;/name&gt;<br>
-    &lt;val&gt; Exercise-Treadmill.IS_ACTIVE &lt;/val&gt;<br>
-  &lt;/def&gt;<br>
-  &lt;/case&gt;<br>
-<br>
-  &lt;/testcase&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
-  &lt;if&gt;<br>
-  &lt;test&gt; Request EQ NO_EXERCISE &lt;/test&gt;<br>
-  &lt;true&gt;&lt;exitblock/&gt;&lt;/true&gt;<br>
-  &lt;/if&gt;<br>
-<br>
-&lt;testcase&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; SkeletalMuscle-Lactate.[Lac-] GT Exercise-Motivation.Motivation &lt;/test&gt;<br>
-  &lt;call&gt; StopExercising &lt;/call&gt;<br>
-  &lt;message&gt; I stopped exercising. My muscles gave out. &lt;/message&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; SkeletalMuscle-Function.Failed &lt;/test&gt;<br>
-  &lt;call&gt; StopExercising &lt;/call&gt;<br>
-  &lt;message&gt; I stopped exercising. My muscles are too weak. &lt;/message&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Brain-Function.Comatose &lt;/test&gt;<br>
-  &lt;call&gt; StopExercising &lt;/call&gt;<br>
-  &lt;message&gt; This subject is not conscious. Exercise is over. &lt;/message&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Brain-Function.Impaired &lt;/test&gt;<br>
-  &lt;call&gt; StopExercising &lt;/call&gt;<br>
-  &lt;message&gt; I can't exercise any more. I'm too confused. &lt;/message&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; RespiratoryMuscle-Function.Failed &lt;/test&gt;<br>
-  &lt;call&gt; StopExercising &lt;/call&gt;<br>
-  &lt;message&gt; I stopped exercising. I can't breathe. &lt;/message&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;/testcase&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; StopExercising &lt;/name&gt;<br>
-  &lt;def&gt;&lt;name&gt; Request &lt;/name&gt;&lt;val&gt; NO_EXERCISE &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;def&gt;&lt;name&gt; LastValidRequest &lt;/name&gt;&lt;val&gt; NO_EXERCISE &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;def&gt;&lt;name&gt; Status.Exertion &lt;/name&gt;&lt;val&gt; NO_EXERCISE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / Exercise-Control<br>
+<br>
+Created : 20-Dec-05<br>
+Last Modified : 2011-08-12<br>
+Author : Tom Coleman<br>
+Copyright : 2005-2011<br>
+By : University of Mississippi Medical Center<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Exercise-Control &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; Request &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;var&gt;&lt;name&gt; LastValidRequest &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/var&gt;<br>
+&lt;parm&gt;&lt;name&gt; Motivation &lt;/name&gt;&lt;val&gt; 0.04 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; NO_EXERCISE &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
+<br>
+&lt;onjustchanged&gt;&lt;name&gt; Request &lt;/name&gt;<br>
+<br>
+  &lt;if&gt;<br>
+  &lt;test&gt; DailyPlannerControl.Switch &lt;/test&gt;<br>
+  &lt;true&gt;<br>
+    &lt;message&gt; The daily planner is controlling exeercise now. &lt;/message&gt;<br>
+    &lt;def&gt;&lt;name&gt; Request &lt;/name&gt;&lt;val&gt; LastValidRequest &lt;/val&gt;&lt;/def&gt;<br>
+    &lt;exitblock/&gt;<br>
+  &lt;/true&gt;<br>
+  &lt;/if&gt;<br>
+<br>
+  &lt;if&gt;<br>
+  &lt;test&gt; Brain-Function.Comatose &lt;/test&gt;<br>
+  &lt;true&gt;<br>
+    &lt;message&gt; Subject is comatose and can't exercise. &lt;/message&gt;<br>
+    &lt;def&gt;&lt;name&gt; Request &lt;/name&gt;&lt;val&gt; LastValidRequest &lt;/val&gt;&lt;/def&gt;<br>
+    &lt;exitblock/&gt;<br>
+  &lt;/true&gt;<br>
+  &lt;/if&gt;<br>
+<br>
+  &lt;def&gt;&lt;name&gt; Status.Exertion &lt;/name&gt;&lt;val&gt; Request &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; LastValidRequest &lt;/name&gt;&lt;val&gt; Request &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;call&gt; UpdateStatus &lt;/call&gt;<br>
+&lt;/onjustchanged&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; UpdateStatus &lt;/name&gt;<br>
+  &lt;testcase&gt;<br>
+<br>
+  &lt;case&gt;&lt;test&gt; Request EQ 0 &lt;/test&gt;<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; Exercise-Bike.Status &lt;/name&gt;<br>
+    &lt;val&gt; Exercise-Bike.IS_INACTIVE &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; Exercise-Treadmill.Status &lt;/name&gt;<br>
+    &lt;val&gt; Exercise-Treadmill.IS_INACTIVE &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;&lt;test&gt; Request EQ 1 &lt;/test&gt;<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; Exercise-Bike.Status &lt;/name&gt;<br>
+    &lt;val&gt; Exercise-Bike.IS_ACTIVE &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; Exercise-Treadmill.Status &lt;/name&gt;<br>
+    &lt;val&gt; Exercise-Treadmill.IS_INACTIVE &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;&lt;test&gt; Request EQ 2 &lt;/test&gt;<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; Exercise-Bike.Status &lt;/name&gt;<br>
+    &lt;val&gt; Exercise-Bike.IS_INACTIVE &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; Exercise-Treadmill.Status &lt;/name&gt;<br>
+    &lt;val&gt; Exercise-Treadmill.IS_ACTIVE &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;/testcase&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
+  &lt;if&gt;<br>
+  &lt;test&gt; Request EQ NO_EXERCISE &lt;/test&gt;<br>
+  &lt;true&gt;&lt;exitblock/&gt;&lt;/true&gt;<br>
+  &lt;/if&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; SkeletalMuscle-Lactate.[Lac-] GT Exercise-Motivation.Motivation &lt;/test&gt;<br>
+  &lt;call&gt; StopExercising &lt;/call&gt;<br>
+  &lt;message&gt; I stopped exercising. My muscles gave out. &lt;/message&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; SkeletalMuscle-Function.Failed &lt;/test&gt;<br>
+  &lt;call&gt; StopExercising &lt;/call&gt;<br>
+  &lt;message&gt; I stopped exercising. My muscles are too weak. &lt;/message&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Brain-Function.Comatose &lt;/test&gt;<br>
+  &lt;call&gt; StopExercising &lt;/call&gt;<br>
+  &lt;message&gt; This subject is not conscious. Exercise is over. &lt;/message&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Brain-Function.Impaired &lt;/test&gt;<br>
+  &lt;call&gt; StopExercising &lt;/call&gt;<br>
+  &lt;message&gt; I can't exercise any more. I'm too confused. &lt;/message&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; RespiratoryMuscle-Function.Failed &lt;/test&gt;<br>
+  &lt;call&gt; StopExercising &lt;/call&gt;<br>
+  &lt;message&gt; I stopped exercising. I can't breathe. &lt;/message&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; StopExercising &lt;/name&gt;<br>
+  &lt;def&gt;&lt;name&gt; Request &lt;/name&gt;&lt;val&gt; NO_EXERCISE &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; LastValidRequest &lt;/name&gt;&lt;val&gt; NO_EXERCISE &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Status.Exertion &lt;/name&gt;&lt;val&gt; NO_EXERCISE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

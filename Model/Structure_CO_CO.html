@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,147 +19,147 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_Structure.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / CO<br>
-<br>
-Created : 29-Mar-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; CO &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; [CO] &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; pCO &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; HaldaneFactor &lt;/name&gt;<br>
-  &lt;val&gt; 230.0 &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; EndogenousProduction &lt;/name&gt;<br>
-  &lt;val&gt; 0.007 &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; ExtravascularSpaceFraction &lt;/name&gt;<br>
-  &lt;val&gt; 0.16 &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; ExtravascularSpace &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; VolumeDistribution &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Permeability &lt;/name&gt;&lt;/var&gt;<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; CO_O2Ratio &lt;/name&gt;<br>
-  &lt;val&gt; 0.81 &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Gradient &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; [CO-Lung] &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; pCO-Lung &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;diffeq&gt;<br>
-  &lt;name&gt; Mass &lt;/name&gt;<br>
-  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
-  &lt;initialval&gt; 4.9 &lt;/initialval&gt;<br>
-  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 10.0 &lt;/errorlim&gt;<br>
-&lt;/diffeq&gt;<br>
-<br>
-&lt;impliciteq&gt;<br>
-  &lt;name&gt; Uptake &lt;/name&gt;<br>
-  &lt;startname&gt; Uptake &lt;/startname&gt;<br>
-  &lt;initialval&gt; -0.007 &lt;/initialval&gt;<br>
-  &lt;endname&gt; EndUptake &lt;/endname&gt;<br>
-  &lt;errorlim&gt; 0.01 &lt;/errorlim&gt;<br>
-&lt;/impliciteq&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; ExtravascularSpace &lt;/name&gt;<br>
-  &lt;val&gt; ExtravascularSpaceFraction * BloodVol.Vol &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; VolumeDistribution &lt;/name&gt;<br>
-  &lt;val&gt; BloodVol.Vol + ExtravascularSpace &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; [CO] &lt;/name&gt;<br>
-  &lt;val&gt; Mass / VolumeDistribution &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;conditional&gt;<br>
-  &lt;name&gt; pCO &lt;/name&gt;<br>
-  &lt;test&gt; LungO2.[Capy] GT 0.002 &lt;/test&gt;<br>
-  &lt;true&gt;<br>
-      ( [CO] * LungO2.PCapy )<br>
-    / ( HaldaneFactor * LungO2.[Capy] )<br>
-  &lt;/true&gt;<br>
-  &lt;false&gt; 0 &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Permeability &lt;/name&gt;<br>
-  &lt;val&gt; CO_O2Ratio * PulmonaryMembrane.Permeability &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;implicitmath&gt;&lt;name&gt; Uptake &lt;/name&gt;<br>
-<br>
-&lt;conditional&gt;<br>
-  &lt;name&gt; [CO-Lung] &lt;/name&gt;<br>
-  &lt;test&gt; Breathing.AlveolarVentilation(STPD) GT 0.1 &lt;/test&gt;<br>
-  &lt;true&gt; Bronchi.[CO] - ( Uptake / Breathing.AlveolarVentilation(STPD) ) &lt;/true&gt;<br>
-  &lt;false&gt; pCO / Barometer.Pressure &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; pCO-Lung &lt;/name&gt;<br>
-  &lt;val&gt; [CO-Lung] * Barometer.Pressure &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Gradient &lt;/name&gt;<br>
-  &lt;val&gt; pCO-Lung - pCO &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; EndUptake &lt;/name&gt;<br>
-  &lt;val&gt; Gradient * Permeability &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/implicitmath&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Change &lt;/name&gt;<br>
-  &lt;val&gt; Uptake + EndogenousProduction &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / CO<br>
+<br>
+Created : 29-Mar-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; CO &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [CO] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; pCO &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;<br>
+  &lt;name&gt; HaldaneFactor &lt;/name&gt;<br>
+  &lt;val&gt; 230.0 &lt;/val&gt;<br>
+&lt;/parm&gt;<br>
+<br>
+&lt;parm&gt;<br>
+  &lt;name&gt; EndogenousProduction &lt;/name&gt;<br>
+  &lt;val&gt; 0.007 &lt;/val&gt;<br>
+&lt;/parm&gt;<br>
+<br>
+&lt;parm&gt;<br>
+  &lt;name&gt; ExtravascularSpaceFraction &lt;/name&gt;<br>
+  &lt;val&gt; 0.16 &lt;/val&gt;<br>
+&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; ExtravascularSpace &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; VolumeDistribution &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Permeability &lt;/name&gt;&lt;/var&gt;<br>
+&lt;parm&gt;<br>
+  &lt;name&gt; CO_O2Ratio &lt;/name&gt;<br>
+  &lt;val&gt; 0.81 &lt;/val&gt;<br>
+&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Gradient &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [CO-Lung] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; pCO-Lung &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
+  &lt;initialval&gt; 4.9 &lt;/initialval&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 10.0 &lt;/errorlim&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;impliciteq&gt;<br>
+  &lt;name&gt; Uptake &lt;/name&gt;<br>
+  &lt;startname&gt; Uptake &lt;/startname&gt;<br>
+  &lt;initialval&gt; -0.007 &lt;/initialval&gt;<br>
+  &lt;endname&gt; EndUptake &lt;/endname&gt;<br>
+  &lt;errorlim&gt; 0.01 &lt;/errorlim&gt;<br>
+&lt;/impliciteq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; ExtravascularSpace &lt;/name&gt;<br>
+  &lt;val&gt; ExtravascularSpaceFraction * BloodVol.Vol &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; VolumeDistribution &lt;/name&gt;<br>
+  &lt;val&gt; BloodVol.Vol + ExtravascularSpace &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; [CO] &lt;/name&gt;<br>
+  &lt;val&gt; Mass / VolumeDistribution &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;conditional&gt;<br>
+  &lt;name&gt; pCO &lt;/name&gt;<br>
+  &lt;test&gt; LungO2.[Capy] GT 0.002 &lt;/test&gt;<br>
+  &lt;true&gt;<br>
+      ( [CO] * LungO2.PCapy )<br>
+    / ( HaldaneFactor * LungO2.[Capy] )<br>
+  &lt;/true&gt;<br>
+  &lt;false&gt; 0 &lt;/false&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Permeability &lt;/name&gt;<br>
+  &lt;val&gt; CO_O2Ratio * PulmonaryMembrane.Permeability &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;implicitmath&gt;&lt;name&gt; Uptake &lt;/name&gt;<br>
+<br>
+&lt;conditional&gt;<br>
+  &lt;name&gt; [CO-Lung] &lt;/name&gt;<br>
+  &lt;test&gt; Breathing.AlveolarVentilation(STPD) GT 0.1 &lt;/test&gt;<br>
+  &lt;true&gt; Bronchi.[CO] - ( Uptake / Breathing.AlveolarVentilation(STPD) ) &lt;/true&gt;<br>
+  &lt;false&gt; pCO / Barometer.Pressure &lt;/false&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; pCO-Lung &lt;/name&gt;<br>
+  &lt;val&gt; [CO-Lung] * Barometer.Pressure &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Gradient &lt;/name&gt;<br>
+  &lt;val&gt; pCO-Lung - pCO &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; EndUptake &lt;/name&gt;<br>
+  &lt;val&gt; Gradient * Permeability &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/implicitmath&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Change &lt;/name&gt;<br>
+  &lt;val&gt; Uptake + EndogenousProduction &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

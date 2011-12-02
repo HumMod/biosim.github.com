@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,201 +19,201 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_Liver_Liver.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / Liver-Fuel<br>
-<br>
-Created : 07-Jun-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Liver-Fuel &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; FADelivered &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; GlucoseDelivered &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; KR &lt;/name&gt;&lt;val&gt; 0.026 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;var&gt;&lt;name&gt; Ratio &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; FAFraction &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; GlucoseFraction &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; FA+GlucoseFraction &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; LacFraction &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; FAUsed(Cal/Min) &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; AerobicGlucoseUsed(Cal/Min) &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; AnaerobicGlucoseUsed(Cal/Min) &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; LacUsed(Cal/Min) &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; FAUsed(mG/Min) &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; AerobicGlucoseUsed(mG/Min) &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; AnaerobicGlucoseUsed(mG/Min) &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; LacUsed(mG/Min) &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; TotalGlucoseUsed(mG/Min) &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; AnaerobicGlucoseDelivered &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; FAFractionalDelivery &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; AerobicGlucoseFractionalDelivery &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; AnaerobicGlucoseFractionalDelivery &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; MinimumFractionalDelivery &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;stabledelay&gt;<br>
-  &lt;name&gt; FractUseDelay &lt;/name&gt;<br>
-  &lt;outputname&gt; FractUseDelay &lt;/outputname&gt;<br>
-  &lt;initialval&gt; 1.0 &lt;/initialval&gt;<br>
-  &lt;inputname&gt; FractUse &lt;/inputname&gt;<br>
-  &lt;rateconstname&gt; K &lt;/rateconstname&gt;<br>
-  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 0.01 &lt;/errorlim&gt;<br>
-  &lt;dxmaxname&gt; DxMax &lt;/dxmaxname&gt;<br>
-&lt;/stabledelay&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;functions&gt;<br>
-<br>
-&lt;curve&gt;<br>
-  &lt;name&gt; LacFraction &lt;/name&gt;<br>
-  &lt;point&gt;&lt;x&gt;  10 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
-  &lt;point&gt;&lt;x&gt; 100 &lt;/x&gt;&lt;y&gt; 0.3 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
-&lt;/curve&gt;<br>
-<br>
-&lt;/functions&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; FADelivered &lt;/name&gt;<br>
-  &lt;val&gt; ( PortalVein-FattyAcid.[FattyAcid] * PortalVein.PlasmaFlow ) MAX 0.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; GlucoseDelivered &lt;/name&gt;<br>
-  &lt;val&gt; ( PortalVein-Glucose.[Glucose] * PortalVein.PlasmaFlow ) MAX 0.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; LacFraction &lt;/name&gt;<br>
-  &lt;val&gt; LacFraction [ Liver-Lactate.[Lac-(mG/dL)] ] &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; FA+GlucoseFraction &lt;/name&gt;<br>
-  &lt;val&gt; 1.0 - LacFraction &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Ratio &lt;/name&gt;<br>
-  &lt;val&gt; PortalVein-FattyAcid.[FattyAcid] / PortalVein-Glucose.[Glucose] &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; FAFraction &lt;/name&gt;<br>
-  &lt;val&gt; FA+GlucoseFraction * ( Ratio / ( Ratio + KR ) ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; GlucoseFraction &lt;/name&gt;<br>
-  &lt;val&gt; FA+GlucoseFraction - FAFraction &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; FAUsed(Cal/Min) &lt;/name&gt;<br>
-  &lt;val&gt; FAFraction * Liver-Metabolism.AerobicCals &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; FAUsed(mG/Min) &lt;/name&gt;<br>
-  &lt;val&gt; FAUsed(Cal/Min) * Metabolism-Tools.Fat(mG/Cal) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; AerobicGlucoseUsed(Cal/Min) &lt;/name&gt;<br>
-  &lt;val&gt; GlucoseFraction * Liver-Metabolism.AerobicCals &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; AerobicGlucoseUsed(mG/Min) &lt;/name&gt;<br>
-  &lt;val&gt; AerobicGlucoseUsed(Cal/Min) * Metabolism-Tools.CarboAerobic(mG/Cal) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; LacUsed(Cal/Min) &lt;/name&gt;<br>
-  &lt;val&gt; LacFraction * Liver-Metabolism.AerobicCals &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; LacUsed(mG/Min) &lt;/name&gt;<br>
-  &lt;val&gt; LacUsed(Cal/Min) * Metabolism-Tools.Lac-(mG/Cal) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; AnaerobicGlucoseDelivered &lt;/name&gt;<br>
-  &lt;val&gt; GlucoseDelivered - AerobicGlucoseUsed(mG/Min) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; AnaerobicGlucoseUsed(Cal/Min) &lt;/name&gt;<br>
-  &lt;val&gt; Liver-Metabolism.AnaerobicCals MIN AnaerobicGlucoseDelivered &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; AnaerobicGlucoseUsed(mG/Min) &lt;/name&gt;<br>
-  &lt;val&gt; AnaerobicGlucoseUsed(Cal/Min) * Metabolism-Tools.CarboAnaerobic(mG/Cal) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TotalGlucoseUsed(mG/Min) &lt;/name&gt;<br>
-  &lt;val&gt; AerobicGlucoseUsed(mG/Min) + AnaerobicGlucoseUsed(mG/Min) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;conditional&gt;&lt;name&gt; FAFractionalDelivery &lt;/name&gt;<br>
-&lt;test&gt; FAUsed(mG/Min) GT 0.0 &lt;/test&gt;<br>
-&lt;true&gt; ( FADelivered / FAUsed(mG/Min) ) MIN 1.0 &lt;/true&gt;<br>
-&lt;false&gt; 1.0 &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;conditional&gt;&lt;name&gt; AerobicGlucoseFractionalDelivery &lt;/name&gt;<br>
-&lt;test&gt; AerobicGlucoseUsed(mG/Min) GT 0.0 &lt;/test&gt;<br>
-&lt;true&gt; ( GlucoseDelivered / AerobicGlucoseUsed(mG/Min) ) MIN 1.0 &lt;/true&gt;<br>
-&lt;false&gt; 1.0 &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;conditional&gt;&lt;name&gt; AnaerobicGlucoseFractionalDelivery &lt;/name&gt;<br>
-&lt;test&gt; AnaerobicGlucoseUsed(mG/Min) GT 0.0 &lt;/test&gt;<br>
-&lt;true&gt; ( AnaerobicGlucoseDelivered / AnaerobicGlucoseUsed(mG/Min) ) MIN 1.0 &lt;/true&gt;<br>
-&lt;false&gt; 1.0 &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; MinimumFractionalDelivery &lt;/name&gt;<br>
-  &lt;val&gt;  FAFractionalDelivery<br>
-     MIN AerobicGlucoseFractionalDelivery<br>
-     MIN AnaerobicGlucoseFractionalDelivery<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; K &lt;/name&gt;&lt;val&gt; 0.5 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; DxMax &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; FractUse &lt;/name&gt;&lt;val&gt; MinimumFractionalDelivery &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End<br>
+HumMod / Liver-Fuel<br>
+<br>
+Created : 07-Jun-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Liver-Fuel &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; FADelivered &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; GlucoseDelivered &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; KR &lt;/name&gt;&lt;val&gt; 0.026 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;var&gt;&lt;name&gt; Ratio &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; FAFraction &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; GlucoseFraction &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; FA+GlucoseFraction &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; LacFraction &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; FAUsed(Cal/Min) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; AerobicGlucoseUsed(Cal/Min) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; AnaerobicGlucoseUsed(Cal/Min) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; LacUsed(Cal/Min) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; FAUsed(mG/Min) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; AerobicGlucoseUsed(mG/Min) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; AnaerobicGlucoseUsed(mG/Min) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; LacUsed(mG/Min) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; TotalGlucoseUsed(mG/Min) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; AnaerobicGlucoseDelivered &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; FAFractionalDelivery &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; AerobicGlucoseFractionalDelivery &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; AnaerobicGlucoseFractionalDelivery &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; MinimumFractionalDelivery &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;stabledelay&gt;<br>
+  &lt;name&gt; FractUseDelay &lt;/name&gt;<br>
+  &lt;outputname&gt; FractUseDelay &lt;/outputname&gt;<br>
+  &lt;initialval&gt; 1.0 &lt;/initialval&gt;<br>
+  &lt;inputname&gt; FractUse &lt;/inputname&gt;<br>
+  &lt;rateconstname&gt; K &lt;/rateconstname&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 0.01 &lt;/errorlim&gt;<br>
+  &lt;dxmaxname&gt; DxMax &lt;/dxmaxname&gt;<br>
+&lt;/stabledelay&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;functions&gt;<br>
+<br>
+&lt;curve&gt;<br>
+  &lt;name&gt; LacFraction &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt;  10 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 100 &lt;/x&gt;&lt;y&gt; 0.3 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;/functions&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; FADelivered &lt;/name&gt;<br>
+  &lt;val&gt; ( PortalVein-FattyAcid.[FattyAcid] * PortalVein.PlasmaFlow ) MAX 0.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; GlucoseDelivered &lt;/name&gt;<br>
+  &lt;val&gt; ( PortalVein-Glucose.[Glucose] * PortalVein.PlasmaFlow ) MAX 0.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; LacFraction &lt;/name&gt;<br>
+  &lt;val&gt; LacFraction [ Liver-Lactate.[Lac-(mG/dL)] ] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; FA+GlucoseFraction &lt;/name&gt;<br>
+  &lt;val&gt; 1.0 - LacFraction &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Ratio &lt;/name&gt;<br>
+  &lt;val&gt; PortalVein-FattyAcid.[FattyAcid] / PortalVein-Glucose.[Glucose] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; FAFraction &lt;/name&gt;<br>
+  &lt;val&gt; FA+GlucoseFraction * ( Ratio / ( Ratio + KR ) ) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; GlucoseFraction &lt;/name&gt;<br>
+  &lt;val&gt; FA+GlucoseFraction - FAFraction &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; FAUsed(Cal/Min) &lt;/name&gt;<br>
+  &lt;val&gt; FAFraction * Liver-Metabolism.AerobicCals &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; FAUsed(mG/Min) &lt;/name&gt;<br>
+  &lt;val&gt; FAUsed(Cal/Min) * Metabolism-Tools.Fat(mG/Cal) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; AerobicGlucoseUsed(Cal/Min) &lt;/name&gt;<br>
+  &lt;val&gt; GlucoseFraction * Liver-Metabolism.AerobicCals &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; AerobicGlucoseUsed(mG/Min) &lt;/name&gt;<br>
+  &lt;val&gt; AerobicGlucoseUsed(Cal/Min) * Metabolism-Tools.CarboAerobic(mG/Cal) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; LacUsed(Cal/Min) &lt;/name&gt;<br>
+  &lt;val&gt; LacFraction * Liver-Metabolism.AerobicCals &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; LacUsed(mG/Min) &lt;/name&gt;<br>
+  &lt;val&gt; LacUsed(Cal/Min) * Metabolism-Tools.Lac-(mG/Cal) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; AnaerobicGlucoseDelivered &lt;/name&gt;<br>
+  &lt;val&gt; GlucoseDelivered - AerobicGlucoseUsed(mG/Min) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; AnaerobicGlucoseUsed(Cal/Min) &lt;/name&gt;<br>
+  &lt;val&gt; Liver-Metabolism.AnaerobicCals MIN AnaerobicGlucoseDelivered &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; AnaerobicGlucoseUsed(mG/Min) &lt;/name&gt;<br>
+  &lt;val&gt; AnaerobicGlucoseUsed(Cal/Min) * Metabolism-Tools.CarboAnaerobic(mG/Cal) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TotalGlucoseUsed(mG/Min) &lt;/name&gt;<br>
+  &lt;val&gt; AerobicGlucoseUsed(mG/Min) + AnaerobicGlucoseUsed(mG/Min) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;conditional&gt;&lt;name&gt; FAFractionalDelivery &lt;/name&gt;<br>
+&lt;test&gt; FAUsed(mG/Min) GT 0.0 &lt;/test&gt;<br>
+&lt;true&gt; ( FADelivered / FAUsed(mG/Min) ) MIN 1.0 &lt;/true&gt;<br>
+&lt;false&gt; 1.0 &lt;/false&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;conditional&gt;&lt;name&gt; AerobicGlucoseFractionalDelivery &lt;/name&gt;<br>
+&lt;test&gt; AerobicGlucoseUsed(mG/Min) GT 0.0 &lt;/test&gt;<br>
+&lt;true&gt; ( GlucoseDelivered / AerobicGlucoseUsed(mG/Min) ) MIN 1.0 &lt;/true&gt;<br>
+&lt;false&gt; 1.0 &lt;/false&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;conditional&gt;&lt;name&gt; AnaerobicGlucoseFractionalDelivery &lt;/name&gt;<br>
+&lt;test&gt; AnaerobicGlucoseUsed(mG/Min) GT 0.0 &lt;/test&gt;<br>
+&lt;true&gt; ( AnaerobicGlucoseDelivered / AnaerobicGlucoseUsed(mG/Min) ) MIN 1.0 &lt;/true&gt;<br>
+&lt;false&gt; 1.0 &lt;/false&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; MinimumFractionalDelivery &lt;/name&gt;<br>
+  &lt;val&gt;  FAFractionalDelivery<br>
+     MIN AerobicGlucoseFractionalDelivery<br>
+     MIN AnaerobicGlucoseFractionalDelivery<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; K &lt;/name&gt;&lt;val&gt; 0.5 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; DxMax &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; FractUse &lt;/name&gt;&lt;val&gt; MinimumFractionalDelivery &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End<br>
 
 
 <p><img src='../Footer.PNG'>

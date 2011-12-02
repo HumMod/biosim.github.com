@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,157 +19,157 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_Orthostatics_Orthostatics.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / RegionalPressure<br>
-<br>
-Created : 18-Jun-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; RegionalPressure &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; Alpha &lt;/name&gt;&lt;val&gt; 0.1667 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Brain &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Carotid &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; UpperArty &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; UpperCapy &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; UpperVein &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; MiddleArty &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; MiddleCapy &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; MiddleVein &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; LowerArty &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; LowerCapy &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; LowerVein &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Brain &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-    ( SystemicArtys.Pressure<br>
-    + Hydrostatics.BrainGradient<br>
-    )<br>
-    MAX 0.0 <br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Carotid &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-    ( SystemicArtys.Pressure<br>
-    + Hydrostatics.CarotidGradient<br>
-    )<br>
-    MAX 0.0<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; UpperArty &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-    ( SystemicArtys.Pressure<br>
-    + Hydrostatics.UpperTorsoGradient<br>
-    )<br>
-    MAX 0.0 <br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; MiddleArty &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-    ( SystemicArtys.Pressure<br>
-    + Hydrostatics.MiddleTorsoGradient<br>
-    )<br>
-    MAX 0.0<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; LowerArty &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-    ( SystemicArtys.Pressure<br>
-    + Hydrostatics.LowerTorsoArtyGradient<br>
-    )<br>
-    MAX 0.0<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; UpperVein &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-    ( RightAtrium.Pressure<br>
-    + Hydrostatics.UpperTorsoGradient<br>
-    )<br>
-    MAX 0.0<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; MiddleVein &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-    ( RightAtrium.Pressure<br>
-    + Hydrostatics.MiddleTorsoGradient<br>
-    )<br>
-    MAX 0.0 <br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; LowerVein &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-    ( RightAtrium.Pressure<br>
-    + ( Hydrostatics.LowerTorsoVeinGradient * LegMusclePump.Effect )<br>
-    )<br>
-    MAX 0.0<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; UpperCapy &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-    ( ( Alpha * UpperArty )<br>
-    + ( ( 1.0 - Alpha ) * UpperVein )<br>
-    )<br>
-    MAX 0.0 <br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; MiddleCapy &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-    ( ( Alpha * MiddleArty )<br>
-    + ( ( 1.0 - Alpha ) * MiddleVein )<br>
-    )<br>
-    MAX 0.0 <br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; LowerCapy &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-    ( ( Alpha * LowerArty )<br>
-    + ( ( 1.0 - Alpha ) * LowerVein )<br>
-    )<br>
-    MAX 0.0 <br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / RegionalPressure<br>
+<br>
+Created : 18-Jun-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; RegionalPressure &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; Alpha &lt;/name&gt;&lt;val&gt; 0.1667 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Brain &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Carotid &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; UpperArty &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; UpperCapy &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; UpperVein &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; MiddleArty &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; MiddleCapy &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; MiddleVein &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; LowerArty &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; LowerCapy &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; LowerVein &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Brain &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+    ( SystemicArtys.Pressure<br>
+    + Hydrostatics.BrainGradient<br>
+    )<br>
+    MAX 0.0 <br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Carotid &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+    ( SystemicArtys.Pressure<br>
+    + Hydrostatics.CarotidGradient<br>
+    )<br>
+    MAX 0.0<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; UpperArty &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+    ( SystemicArtys.Pressure<br>
+    + Hydrostatics.UpperTorsoGradient<br>
+    )<br>
+    MAX 0.0 <br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; MiddleArty &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+    ( SystemicArtys.Pressure<br>
+    + Hydrostatics.MiddleTorsoGradient<br>
+    )<br>
+    MAX 0.0<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; LowerArty &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+    ( SystemicArtys.Pressure<br>
+    + Hydrostatics.LowerTorsoArtyGradient<br>
+    )<br>
+    MAX 0.0<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; UpperVein &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+    ( RightAtrium.Pressure<br>
+    + Hydrostatics.UpperTorsoGradient<br>
+    )<br>
+    MAX 0.0<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; MiddleVein &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+    ( RightAtrium.Pressure<br>
+    + Hydrostatics.MiddleTorsoGradient<br>
+    )<br>
+    MAX 0.0 <br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; LowerVein &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+    ( RightAtrium.Pressure<br>
+    + ( Hydrostatics.LowerTorsoVeinGradient * LegMusclePump.Effect )<br>
+    )<br>
+    MAX 0.0<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; UpperCapy &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+    ( ( Alpha * UpperArty )<br>
+    + ( ( 1.0 - Alpha ) * UpperVein )<br>
+    )<br>
+    MAX 0.0 <br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; MiddleCapy &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+    ( ( Alpha * MiddleArty )<br>
+    + ( ( 1.0 - Alpha ) * MiddleVein )<br>
+    )<br>
+    MAX 0.0 <br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; LowerCapy &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+    ( ( Alpha * LowerArty )<br>
+    + ( ( 1.0 - Alpha ) * LowerVein )<br>
+    )<br>
+    MAX 0.0 <br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

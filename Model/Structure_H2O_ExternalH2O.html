@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,115 +19,115 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_H2O_H2O.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / ExternalH2O<br>
-<br>
-Created : 14-Dec-08<br>
-Last Modified : 2010-04-16<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; ExternalH2O &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Vol &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; InitialVol &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Vol(L) &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Core &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; InitialCore &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Core(L) &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Other &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; InitialOther &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Other(L) &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Change &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Initialize &lt;/name&gt;<br>
-<br>
-&lt;call&gt; GILumenVolume.Initialize &lt;/call&gt;<br>
-&lt;call&gt; PeritoneumSpace.Initialize &lt;/call&gt;<br>
-&lt;call&gt; ExcessLungWater.Initialize &lt;/call&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; InitialCore &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-       PeritoneumSpace.InitialVolume<br>
-     + ExcessLungWater.InitialVolume<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; InitialOther &lt;/name&gt;<br>
-  &lt;val&gt; GILumenVolume.InitialMass &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; InitialVol &lt;/name&gt;<br>
-  &lt;val&gt; InitialCore + InitialOther &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcVol &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Core &lt;/name&gt;<br>
-  &lt;val&gt; PeritoneumSpace.Volume + ExcessLungWater.Volume &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Core(L) &lt;/name&gt;<br>
-  &lt;val&gt; Core / 1000.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Other &lt;/name&gt;<br>
-  &lt;val&gt; GILumenVolume.Mass &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Other(L) &lt;/name&gt;<br>
-  &lt;val&gt; Other / 1000.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Vol &lt;/name&gt;<br>
-  &lt;val&gt; Core + Other &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Vol(L) &lt;/name&gt;<br>
-  &lt;val&gt; Vol / 1000.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Change &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-       GILumenVolume.Change<br>
-     + PeritoneumSpace.Change<br>
-     + ExcessLungWater.Change<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / ExternalH2O<br>
+<br>
+Created : 14-Dec-08<br>
+Last Modified : 2010-04-16<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; ExternalH2O &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Vol &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialVol &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Vol(L) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Core &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialCore &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Core(L) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Other &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialOther &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Other(L) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Change &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Initialize &lt;/name&gt;<br>
+<br>
+&lt;call&gt; GILumenVolume.Initialize &lt;/call&gt;<br>
+&lt;call&gt; PeritoneumSpace.Initialize &lt;/call&gt;<br>
+&lt;call&gt; ExcessLungWater.Initialize &lt;/call&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialCore &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+       PeritoneumSpace.InitialVolume<br>
+     + ExcessLungWater.InitialVolume<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialOther &lt;/name&gt;<br>
+  &lt;val&gt; GILumenVolume.InitialMass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialVol &lt;/name&gt;<br>
+  &lt;val&gt; InitialCore + InitialOther &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcVol &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Core &lt;/name&gt;<br>
+  &lt;val&gt; PeritoneumSpace.Volume + ExcessLungWater.Volume &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Core(L) &lt;/name&gt;<br>
+  &lt;val&gt; Core / 1000.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Other &lt;/name&gt;<br>
+  &lt;val&gt; GILumenVolume.Mass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Other(L) &lt;/name&gt;<br>
+  &lt;val&gt; Other / 1000.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Vol &lt;/name&gt;<br>
+  &lt;val&gt; Core + Other &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Vol(L) &lt;/name&gt;<br>
+  &lt;val&gt; Vol / 1000.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Change &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+       GILumenVolume.Change<br>
+     + PeritoneumSpace.Change<br>
+     + ExcessLungWater.Change<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

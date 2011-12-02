@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,142 +19,142 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_Heart_Heart.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / Heart-ECG<br>
-<br>
-Created : 01-Mar-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Heart-ECG &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Index &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Now &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; NORMAL  &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; PACED   &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; STSHIFT &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; VFIB    &lt;/name&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; FLAT    &lt;/name&gt;&lt;val&gt; 4 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Is_OK &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Is_Paced &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Is_STShift &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Is_VFib &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Is_Flat &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; R-RInterval &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Q-TInterval &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; R-RInterval &lt;/name&gt;&lt;val&gt; Heart-Intervals.R-R &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Q-TInterval &lt;/name&gt;&lt;val&gt; Heart-Intervals.Systolic &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Now &lt;/name&gt;&lt;val&gt; NORMAL &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;testcase&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Heart-Pacemaker.Switch &lt;/test&gt;<br>
-  &lt;def&gt;&lt;name&gt; Now &lt;/name&gt;&lt;val&gt; PACED &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Heart-Pain.HasPain &lt;/test&gt;<br>
-  &lt;def&gt;&lt;name&gt; Now &lt;/name&gt;&lt;val&gt; STSHIFT &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Heart-VFib.Is_Fibrillating &lt;/test&gt;<br>
-  &lt;def&gt;&lt;name&gt; Now &lt;/name&gt;&lt;val&gt; VFIB &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Heart-Asystole.Is_Asystole &lt;/test&gt;<br>
-  &lt;def&gt;&lt;name&gt; Now &lt;/name&gt;&lt;val&gt; FLAT &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;/testcase&gt;<br>
-<br>
-&lt;testcase&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; ( Index NE FLAT ) AND ( Now EQ FLAT ) &lt;/test&gt;<br>
-  &lt;def&gt;&lt;name&gt; Index &lt;/name&gt;&lt;val&gt; FLAT &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-  &lt;call&gt; Reset &lt;/call&gt;<br>
-  &lt;def&gt;&lt;name&gt; Is_Flat &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-  &lt;page&gt; The ECG is flat! &lt;/page&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; ( Index NE VFIB ) AND ( Now EQ VFIB ) &lt;/test&gt;<br>
-  &lt;def&gt;&lt;name&gt; Index &lt;/name&gt;&lt;val&gt; VFIB &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-  &lt;call&gt; Reset &lt;/call&gt;<br>
-  &lt;def&gt;&lt;name&gt; Is_VFib &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-  &lt;page&gt; The ECG shows V-Fib! &lt;/page&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; ( Index NE STSHIFT ) AND ( Now EQ STSHIFT ) &lt;/test&gt;<br>
-  &lt;def&gt;&lt;name&gt; Index &lt;/name&gt;&lt;val&gt; STSHIFT &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-  &lt;call&gt; Reset &lt;/call&gt;<br>
-  &lt;def&gt;&lt;name&gt; Is_STShift &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-  &lt;page&gt; ECG shows S-T segment shift. &lt;/page&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; ( Index NE PACED ) AND ( Now EQ PACED ) &lt;/test&gt;<br>
-  &lt;def&gt;&lt;name&gt; Index &lt;/name&gt;&lt;val&gt; PACED &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-  &lt;call&gt; Reset &lt;/call&gt;<br>
-  &lt;def&gt;&lt;name&gt; Is_Paced &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-  &lt;page&gt; ECG shows a pacemaker. &lt;/page&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; ( Index NE NORMAL ) AND ( Now EQ NORMAL ) &lt;/test&gt;<br>
-  &lt;def&gt;&lt;name&gt; Index &lt;/name&gt;&lt;val&gt; NORMAL &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-  &lt;call&gt; Reset &lt;/call&gt;<br>
-  &lt;def&gt;&lt;name&gt; Is_OK &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-  &lt;page&gt; ECG now looks OK. &lt;/page&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;/testcase&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Reset &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Is_OK &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Is_Paced &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Is_STShift &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Is_VFib &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Is_Flat &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / Heart-ECG<br>
+<br>
+Created : 01-Mar-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Solver : DES 2005<br>
+Schema : 2005.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Heart-ECG &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Index &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Now &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; NORMAL  &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; PACED   &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; STSHIFT &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; VFIB    &lt;/name&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; FLAT    &lt;/name&gt;&lt;val&gt; 4 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Is_OK &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Is_Paced &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Is_STShift &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Is_VFib &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Is_Flat &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; R-RInterval &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Q-TInterval &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; R-RInterval &lt;/name&gt;&lt;val&gt; Heart-Intervals.R-R &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Q-TInterval &lt;/name&gt;&lt;val&gt; Heart-Intervals.Systolic &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Now &lt;/name&gt;&lt;val&gt; NORMAL &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Heart-Pacemaker.Switch &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Now &lt;/name&gt;&lt;val&gt; PACED &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Heart-Pain.HasPain &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Now &lt;/name&gt;&lt;val&gt; STSHIFT &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Heart-VFib.Is_Fibrillating &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Now &lt;/name&gt;&lt;val&gt; VFIB &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Heart-Asystole.Is_Asystole &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Now &lt;/name&gt;&lt;val&gt; FLAT &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; ( Index NE FLAT ) AND ( Now EQ FLAT ) &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Index &lt;/name&gt;&lt;val&gt; FLAT &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;call&gt; Reset &lt;/call&gt;<br>
+  &lt;def&gt;&lt;name&gt; Is_Flat &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;page&gt; The ECG is flat! &lt;/page&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; ( Index NE VFIB ) AND ( Now EQ VFIB ) &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Index &lt;/name&gt;&lt;val&gt; VFIB &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;call&gt; Reset &lt;/call&gt;<br>
+  &lt;def&gt;&lt;name&gt; Is_VFib &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;page&gt; The ECG shows V-Fib! &lt;/page&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; ( Index NE STSHIFT ) AND ( Now EQ STSHIFT ) &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Index &lt;/name&gt;&lt;val&gt; STSHIFT &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;call&gt; Reset &lt;/call&gt;<br>
+  &lt;def&gt;&lt;name&gt; Is_STShift &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;page&gt; ECG shows S-T segment shift. &lt;/page&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; ( Index NE PACED ) AND ( Now EQ PACED ) &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Index &lt;/name&gt;&lt;val&gt; PACED &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;call&gt; Reset &lt;/call&gt;<br>
+  &lt;def&gt;&lt;name&gt; Is_Paced &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;page&gt; ECG shows a pacemaker. &lt;/page&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; ( Index NE NORMAL ) AND ( Now EQ NORMAL ) &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Index &lt;/name&gt;&lt;val&gt; NORMAL &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;call&gt; Reset &lt;/call&gt;<br>
+  &lt;def&gt;&lt;name&gt; Is_OK &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;page&gt; ECG now looks OK. &lt;/page&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Reset &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Is_OK &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Is_Paced &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Is_STShift &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Is_VFib &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Is_Flat &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

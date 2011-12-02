@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,83 +19,83 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_Electrolytes_Na_Na.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / NaPool<br>
-<br>
-Created : 06-Apr-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2005-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; NaPool &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; [Na+] &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; [Na+(mEq/L)] &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Target[Na+] &lt;/name&gt;&lt;val&gt; 0.144 &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;diffeq&gt;<br>
-  &lt;name&gt; Mass &lt;/name&gt;<br>
-  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
-  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 21.7 &lt;/errorlim&gt;<br>
-&lt;/diffeq&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Init &lt;/name&gt;<br>
-  &lt;def&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;val&gt; Target[Na+] * ECFV.Vol &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;def&gt;&lt;name&gt; Mass &lt;/name&gt;&lt;val&gt; InitialMass &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/block&gt;<br>
-<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcConc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; [Na+] &lt;/name&gt;&lt;val&gt; Mass / ECFV.Vol &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; [Na+(mEq/L)] &lt;/name&gt;&lt;val&gt; 1000.0 * [Na+] &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcDervs &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Gain &lt;/name&gt;<br>
-  &lt;val&gt;  <br>
-      GILumenSodium.Absorption<br>
-    + IVDrip.NaRate<br>
-    + Transfusion.NaRate<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Loss &lt;/name&gt;<br>
-  &lt;val&gt;  <br>
-      CD_Na.Outflow<br>
-    + SweatDuct.NaOutflow<br>
-    + Hemorrhage.NaRate<br>
-    + DialyzerActivity.Na+Flux<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; Gain - Loss &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / NaPool<br>
+<br>
+Created : 06-Apr-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2005-2010<br>
+By : University of Mississippi Medical Center<br>
+Solver : DES 2005<br>
+Schema : 2005.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; NaPool &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [Na+] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [Na+(mEq/L)] &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Target[Na+] &lt;/name&gt;&lt;val&gt; 0.144 &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 21.7 &lt;/errorlim&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Init &lt;/name&gt;<br>
+  &lt;def&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;val&gt; Target[Na+] * ECFV.Vol &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass &lt;/name&gt;&lt;val&gt; InitialMass &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/block&gt;<br>
+<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcConc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; [Na+] &lt;/name&gt;&lt;val&gt; Mass / ECFV.Vol &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; [Na+(mEq/L)] &lt;/name&gt;&lt;val&gt; 1000.0 * [Na+] &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcDervs &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Gain &lt;/name&gt;<br>
+  &lt;val&gt;  <br>
+      GILumenSodium.Absorption<br>
+    + IVDrip.NaRate<br>
+    + Transfusion.NaRate<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Loss &lt;/name&gt;<br>
+  &lt;val&gt;  <br>
+      CD_Na.Outflow<br>
+    + SweatDuct.NaOutflow<br>
+    + Hemorrhage.NaRate<br>
+    + DialyzerActivity.Na+Flux<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; Gain - Loss &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

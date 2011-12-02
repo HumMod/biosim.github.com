@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,74 +19,74 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_Hemoglobin_Hemoglobin.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / HgbLung<br>
-<br>
-Created : 28-Mar-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; HgbLung &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; pO2 &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; [O2] &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; pH &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; pCO2 &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; P50 &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; ScaleForSat &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; pHEffect &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; pCO2Effect &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; TempEffect &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; COEffect &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Setup &lt;/name&gt;<br>
-<br>
-&lt;copy&gt;&lt;from&gt; HeatCore.Temp(C) &lt;/from&gt;&lt;to&gt; HgbProps.Temp &lt;/to&gt;&lt;/copy&gt;<br>
-&lt;copy&gt;&lt;from&gt; BloodPh.ArtysPh &lt;/from&gt;&lt;to&gt; HgbProps.pH &lt;/to&gt;&lt;/copy&gt;<br>
-&lt;copy&gt;&lt;from&gt; CO2Artys.Pressure &lt;/from&gt;&lt;to&gt; HgbProps.pCO2 &lt;/to&gt;&lt;/copy&gt;<br>
-  &lt;call&gt; HgbProps.Setup &lt;/call&gt;<br>
-&lt;copy&gt;&lt;from&gt; HgbProps.P50 &lt;/from&gt;&lt;to&gt; P50 &lt;/to&gt;&lt;/copy&gt;<br>
-&lt;copy&gt;&lt;from&gt; HgbProps.ScaleForSat &lt;/from&gt;&lt;to&gt; ScaleForSat &lt;/to&gt;&lt;/copy&gt;<br>
-<br>
-&lt;copy&gt;&lt;from&gt; HgbProps.pHEffect &lt;/from&gt;&lt;to&gt; pHEffect &lt;/to&gt;&lt;/copy&gt;<br>
-&lt;copy&gt;&lt;from&gt; HgbProps.pCO2Effect &lt;/from&gt;&lt;to&gt; pCO2Effect &lt;/to&gt;&lt;/copy&gt;<br>
-&lt;copy&gt;&lt;from&gt; HgbProps.TempEffect &lt;/from&gt;&lt;to&gt; TempEffect &lt;/to&gt;&lt;/copy&gt;<br>
-&lt;copy&gt;&lt;from&gt; HgbProps.COEffect &lt;/from&gt;&lt;to&gt; COEffect &lt;/to&gt;&lt;/copy&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; O2ToPO2 &lt;/name&gt;<br>
-<br>
-&lt;copy&gt;&lt;from&gt; [O2] &lt;/from&gt;&lt;to&gt; HgbProps.[O2] &lt;/to&gt;&lt;/copy&gt;<br>
-&lt;copy&gt;&lt;from&gt; P50 &lt;/from&gt;&lt;to&gt; HgbProps.P50 &lt;/to&gt;&lt;/copy&gt;<br>
-&lt;copy&gt;&lt;from&gt; ScaleForSat &lt;/from&gt;&lt;to&gt; HgbProps.ScaleForSat &lt;/to&gt;&lt;/copy&gt;<br>
-  &lt;call&gt; HgbProps.O2ToPO2 &lt;/call&gt;<br>
-&lt;copy&gt;&lt;from&gt; HgbProps.pO2 &lt;/from&gt;&lt;to&gt; pO2 &lt;/to&gt;&lt;/copy&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; PO2ToO2 &lt;/name&gt;<br>
-<br>
-&lt;copy&gt;&lt;from&gt; pO2 &lt;/from&gt;&lt;to&gt; HgbProps.pO2 &lt;/to&gt;&lt;/copy&gt;<br>
-&lt;copy&gt;&lt;from&gt; P50 &lt;/from&gt;&lt;to&gt; HgbProps.P50 &lt;/to&gt;&lt;/copy&gt;<br>
-&lt;copy&gt;&lt;from&gt; ScaleForSat &lt;/from&gt;&lt;to&gt; HgbProps.ScaleForSat &lt;/to&gt;&lt;/copy&gt;<br>
-  &lt;call&gt; HgbProps.PO2ToO2 &lt;/call&gt;<br>
-&lt;copy&gt;&lt;from&gt; HgbProps.[O2] &lt;/from&gt;&lt;to&gt; [O2] &lt;/to&gt;&lt;/copy&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / HgbLung<br>
+<br>
+Created : 28-Mar-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; HgbLung &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; pO2 &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [O2] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; pH &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; pCO2 &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; P50 &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; ScaleForSat &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; pHEffect &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; pCO2Effect &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; TempEffect &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; COEffect &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Setup &lt;/name&gt;<br>
+<br>
+&lt;copy&gt;&lt;from&gt; HeatCore.Temp(C) &lt;/from&gt;&lt;to&gt; HgbProps.Temp &lt;/to&gt;&lt;/copy&gt;<br>
+&lt;copy&gt;&lt;from&gt; BloodPh.ArtysPh &lt;/from&gt;&lt;to&gt; HgbProps.pH &lt;/to&gt;&lt;/copy&gt;<br>
+&lt;copy&gt;&lt;from&gt; CO2Artys.Pressure &lt;/from&gt;&lt;to&gt; HgbProps.pCO2 &lt;/to&gt;&lt;/copy&gt;<br>
+  &lt;call&gt; HgbProps.Setup &lt;/call&gt;<br>
+&lt;copy&gt;&lt;from&gt; HgbProps.P50 &lt;/from&gt;&lt;to&gt; P50 &lt;/to&gt;&lt;/copy&gt;<br>
+&lt;copy&gt;&lt;from&gt; HgbProps.ScaleForSat &lt;/from&gt;&lt;to&gt; ScaleForSat &lt;/to&gt;&lt;/copy&gt;<br>
+<br>
+&lt;copy&gt;&lt;from&gt; HgbProps.pHEffect &lt;/from&gt;&lt;to&gt; pHEffect &lt;/to&gt;&lt;/copy&gt;<br>
+&lt;copy&gt;&lt;from&gt; HgbProps.pCO2Effect &lt;/from&gt;&lt;to&gt; pCO2Effect &lt;/to&gt;&lt;/copy&gt;<br>
+&lt;copy&gt;&lt;from&gt; HgbProps.TempEffect &lt;/from&gt;&lt;to&gt; TempEffect &lt;/to&gt;&lt;/copy&gt;<br>
+&lt;copy&gt;&lt;from&gt; HgbProps.COEffect &lt;/from&gt;&lt;to&gt; COEffect &lt;/to&gt;&lt;/copy&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; O2ToPO2 &lt;/name&gt;<br>
+<br>
+&lt;copy&gt;&lt;from&gt; [O2] &lt;/from&gt;&lt;to&gt; HgbProps.[O2] &lt;/to&gt;&lt;/copy&gt;<br>
+&lt;copy&gt;&lt;from&gt; P50 &lt;/from&gt;&lt;to&gt; HgbProps.P50 &lt;/to&gt;&lt;/copy&gt;<br>
+&lt;copy&gt;&lt;from&gt; ScaleForSat &lt;/from&gt;&lt;to&gt; HgbProps.ScaleForSat &lt;/to&gt;&lt;/copy&gt;<br>
+  &lt;call&gt; HgbProps.O2ToPO2 &lt;/call&gt;<br>
+&lt;copy&gt;&lt;from&gt; HgbProps.pO2 &lt;/from&gt;&lt;to&gt; pO2 &lt;/to&gt;&lt;/copy&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; PO2ToO2 &lt;/name&gt;<br>
+<br>
+&lt;copy&gt;&lt;from&gt; pO2 &lt;/from&gt;&lt;to&gt; HgbProps.pO2 &lt;/to&gt;&lt;/copy&gt;<br>
+&lt;copy&gt;&lt;from&gt; P50 &lt;/from&gt;&lt;to&gt; HgbProps.P50 &lt;/to&gt;&lt;/copy&gt;<br>
+&lt;copy&gt;&lt;from&gt; ScaleForSat &lt;/from&gt;&lt;to&gt; HgbProps.ScaleForSat &lt;/to&gt;&lt;/copy&gt;<br>
+  &lt;call&gt; HgbProps.PO2ToO2 &lt;/call&gt;<br>
+&lt;copy&gt;&lt;from&gt; HgbProps.[O2] &lt;/from&gt;&lt;to&gt; [O2] &lt;/to&gt;&lt;/copy&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

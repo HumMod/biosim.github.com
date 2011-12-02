@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,76 +19,76 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_Heart_Heart.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / Heart-Ventricles<br>
-<br>
-Created : 01-Mar-08<br>
-Last Modified : 2011-08-13<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2011<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Heart-Ventricles &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Rate &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; NotPacedRate &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; AVBlock &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; IntrinsicRate &lt;/name&gt;&lt;/var&gt;<br>
-&lt;parm&gt;&lt;name&gt; BasicRate &lt;/name&gt;&lt;val&gt; 45.0 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Is_VentricularRhythm &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; IntrinsicRate &lt;/name&gt;&lt;val&gt; BasicRate * LeftHeart-Function.Effect &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; SANode-Rate.Is_SinusRhythm &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Is_VentricularRhythm &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-<br>
-&lt;if&gt;<br>
-&lt;test&gt; Heart-Asystole.Is_Asystole OR Heart-VFib.Is_Fibrillating &lt;/test&gt;<br>
-&lt;true&gt;<br>
-  &lt;conditional&gt;&lt;name&gt; Rate &lt;/name&gt;<br>
-    &lt;test&gt; CPR-Heart.Status EQ CPR-Heart.ACTIVE &lt;/test&gt;<br>
-    &lt;true&gt; CPR-Heart.ThumpRate &lt;/true&gt;<br>
-    &lt;false&gt; 0.0 &lt;/false&gt;<br>
-  &lt;/conditional&gt;<br>
-  &lt;exitblock/&gt;<br>
-&lt;/true&gt;<br>
-&lt;/if&gt;<br>
-<br>
-<br>
-&lt;if&gt;<br>
-&lt;test&gt; AVBlock &lt;/test&gt;<br>
-&lt;true&gt;<br>
-  &lt;def&gt;&lt;name&gt; NotPacedRate &lt;/name&gt;&lt;val&gt; IntrinsicRate &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;def&gt;&lt;name&gt; Is_VentricularRhythm &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/true&gt;<br>
-&lt;false&gt;<br>
-  &lt;def&gt;&lt;name&gt; NotPacedRate &lt;/name&gt;&lt;val&gt; SANode-Rate.Rate &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;def&gt;&lt;name&gt; SANode-Rate.Is_SinusRhythm &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/false&gt;<br>
-&lt;/if&gt;<br>
-<br>
-&lt;conditional&gt;&lt;name&gt; Rate &lt;/name&gt;<br>
-  &lt;test&gt; Heart-Pacemaker.Switch &lt;/test&gt;<br>
-  &lt;true&gt; NotPacedRate MAX Heart-Pacemaker.Rate &lt;/true&gt;<br>
-  &lt;false&gt; NotPacedRate &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / Heart-Ventricles<br>
+<br>
+Created : 01-Mar-08<br>
+Last Modified : 2011-08-13<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2011<br>
+By : University of Mississippi Medical Center<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Heart-Ventricles &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Rate &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; NotPacedRate &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; AVBlock &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; IntrinsicRate &lt;/name&gt;&lt;/var&gt;<br>
+&lt;parm&gt;&lt;name&gt; BasicRate &lt;/name&gt;&lt;val&gt; 45.0 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Is_VentricularRhythm &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; IntrinsicRate &lt;/name&gt;&lt;val&gt; BasicRate * LeftHeart-Function.Effect &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; SANode-Rate.Is_SinusRhythm &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Is_VentricularRhythm &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+<br>
+&lt;if&gt;<br>
+&lt;test&gt; Heart-Asystole.Is_Asystole OR Heart-VFib.Is_Fibrillating &lt;/test&gt;<br>
+&lt;true&gt;<br>
+  &lt;conditional&gt;&lt;name&gt; Rate &lt;/name&gt;<br>
+    &lt;test&gt; CPR-Heart.Status EQ CPR-Heart.ACTIVE &lt;/test&gt;<br>
+    &lt;true&gt; CPR-Heart.ThumpRate &lt;/true&gt;<br>
+    &lt;false&gt; 0.0 &lt;/false&gt;<br>
+  &lt;/conditional&gt;<br>
+  &lt;exitblock/&gt;<br>
+&lt;/true&gt;<br>
+&lt;/if&gt;<br>
+<br>
+<br>
+&lt;if&gt;<br>
+&lt;test&gt; AVBlock &lt;/test&gt;<br>
+&lt;true&gt;<br>
+  &lt;def&gt;&lt;name&gt; NotPacedRate &lt;/name&gt;&lt;val&gt; IntrinsicRate &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Is_VentricularRhythm &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/true&gt;<br>
+&lt;false&gt;<br>
+  &lt;def&gt;&lt;name&gt; NotPacedRate &lt;/name&gt;&lt;val&gt; SANode-Rate.Rate &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; SANode-Rate.Is_SinusRhythm &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/false&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;conditional&gt;&lt;name&gt; Rate &lt;/name&gt;<br>
+  &lt;test&gt; Heart-Pacemaker.Switch &lt;/test&gt;<br>
+  &lt;true&gt; NotPacedRate MAX Heart-Pacemaker.Rate &lt;/true&gt;<br>
+  &lt;false&gt; NotPacedRate &lt;/false&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

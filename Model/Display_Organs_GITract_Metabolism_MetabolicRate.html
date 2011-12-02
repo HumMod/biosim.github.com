@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:22 AM
+  Created : 12/2/2011 6:49:54 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,140 +19,140 @@
 <img src='SmallModel.PNG'>
 <a href='Display_Organs_GITract_Metabolism_Metabolism.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / MetabolicRate<br>
-<br>
-Created : 05-Apr-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;groupbox&gt;<br>
-   &lt;row&gt; 2.0 &lt;/row&gt;<br>
-   &lt;col&gt; 32.0 &lt;/col&gt;<br>
-   &lt;high&gt; 24.6 &lt;/high&gt;<br>
-   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
-   &lt;title&gt; Metabolic Rate &lt;/title&gt;<br>
-<br>
-&lt;structurename&gt; GITract-Metabolism &lt;/structurename&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; TotalCalsUsed &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Total (Cal/Min) &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showgraph&gt;<br>
-  &lt;row&gt; 2.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
-  &lt;leftmargin&gt; 4 &lt;/leftmargin&gt;<br>
-  &lt;xaxis&gt;<br>
-    &lt;name&gt; System.X &lt;/name&gt;<br>
-    &lt;label&gt; Time &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
-  &lt;/xaxis&gt;<br>
-  &lt;yaxis&gt;<br>
-    &lt;yvar&gt;<br>
-      &lt;name&gt; TotalCalsUsed &lt;/name&gt;<br>
-      &lt;nolabel/&gt;<br>
-      &lt;linecolor&gt; BLUE &lt;/linecolor&gt;<br>
-    &lt;/yvar&gt;<br>
-    &lt;scale&gt;<br>
-      &lt;min&gt; 110 &lt;/min&gt;&lt;max&gt; 120 &lt;/max&gt;&lt;inc&gt; 10 &lt;/inc&gt;<br>
-    &lt;/scale&gt;<br>
-  &lt;/yaxis&gt;<br>
-&lt;/showgraph&gt;<br>
-<br>
-&lt;showbargraph&gt;<br>
-  &lt;row&gt; 9.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 5 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
-  &lt;leftmargin&gt; 11 &lt;/leftmargin&gt;<br>
-  &lt;title&gt; Effect &lt;/title&gt;<br>
-  &lt;showinitialvalues/&gt;<br>
-  &lt;bar&gt;<br>
-    &lt;name&gt; Thyroid.Effect &lt;/name&gt;<br>
-    &lt;label&gt; Thyroxine &lt;/label&gt;<br>
-    &lt;color&gt; BLUE &lt;/color&gt;<br>
-  &lt;/bar&gt;<br>
-  &lt;bar&gt;<br>
-    &lt;name&gt; HeatMetabolism.Core &lt;/name&gt;<br>
-    &lt;label&gt; Temperature &lt;/label&gt;<br>
-    &lt;color&gt; BLUE &lt;/color&gt;<br>
-  &lt;/bar&gt;<br>
-  &lt;bar&gt;<br>
-    &lt;name&gt; GITract-Structure.Effect &lt;/name&gt;<br>
-    &lt;label&gt; Structure &lt;/label&gt;<br>
-    &lt;color&gt; BLUE &lt;/color&gt;<br>
-  &lt;/bar&gt;<br>
-  &lt;scale&gt;<br>
-    &lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;inc&gt; 1 &lt;/inc&gt;<br>
-    <br>
-  &lt;/scale&gt;<br>
-&lt;/showbargraph&gt;<br>
-<br>
-&lt;showbargraph&gt;<br>
-  &lt;row&gt; 14.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 4 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
-  &lt;leftmargin&gt; 11 &lt;/leftmargin&gt;<br>
-  &lt;title&gt; Calories &lt;/title&gt;<br>
-  &lt;showinitialvalues/&gt;<br>
-  &lt;bar&gt;<br>
-    &lt;name&gt; GITract-Metabolism.AerobicCals &lt;/name&gt;<br>
-    &lt;label&gt; Aerobic &lt;/label&gt;<br>
-    &lt;color&gt; BLUE &lt;/color&gt;<br>
-  &lt;/bar&gt;<br>
-  &lt;bar&gt;<br>
-    &lt;name&gt; GITract-Metabolism.AnaerobicCals &lt;/name&gt;<br>
-    &lt;label&gt; Anaerobic &lt;/label&gt;<br>
-    &lt;color&gt; BLUE &lt;/color&gt;<br>
-  &lt;/bar&gt;<br>
-  &lt;scale&gt;<br>
-    &lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 60 &lt;/max&gt;&lt;inc&gt; 10 &lt;/inc&gt;<br>
-  &lt;/scale&gt;<br>
-&lt;/showbargraph&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 19.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; NormalCalsUsed &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Normal &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 20.5 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-  &lt;name&gt; CalMultiplier &lt;/name&gt;<br>
-  &lt;listname&gt; Common.Multiplier &lt;/listname&gt;<br>
-  &lt;label&gt; Multiplier &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 21.8 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-  &lt;name&gt; NormalCalsUsed((Cal/Min)/G) &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 4 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Cals ((Cal/Min)/G) &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 22.8 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-  &lt;name&gt; GITract-Size.Mass &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Organ Mass &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 1.2 &lt;/row&gt;<br>
-  &lt;col&gt; 26.0 &lt;/col&gt;<br>
-<br>
-  &lt;line&gt; Total Metabolic Rate = 50 Cal/Min &lt;/line&gt;<br>
-  &lt;line&gt;  &lt;/line&gt;<br>
-  &lt;line&gt; Effects ~ 1.0 &lt;/line&gt;<br>
-  &lt;line&gt;  &lt;/line&gt;<br>
-  &lt;line&gt; Aerobic ~ Total &lt;/line&gt;<br>
-  &lt;line&gt; Anaerobic ~ 0 &lt;/line&gt;<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;/groupbox&gt;<br>
-<br>
-End<br>
+HumMod / MetabolicRate<br>
+<br>
+Created : 05-Apr-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;groupbox&gt;<br>
+   &lt;row&gt; 2.0 &lt;/row&gt;<br>
+   &lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;high&gt; 24.6 &lt;/high&gt;<br>
+   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
+   &lt;title&gt; Metabolic Rate &lt;/title&gt;<br>
+<br>
+&lt;structurename&gt; GITract-Metabolism &lt;/structurename&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; TotalCalsUsed &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Total (Cal/Min) &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showgraph&gt;<br>
+  &lt;row&gt; 2.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
+  &lt;leftmargin&gt; 4 &lt;/leftmargin&gt;<br>
+  &lt;xaxis&gt;<br>
+    &lt;name&gt; System.X &lt;/name&gt;<br>
+    &lt;label&gt; Time &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/xaxis&gt;<br>
+  &lt;yaxis&gt;<br>
+    &lt;yvar&gt;<br>
+      &lt;name&gt; TotalCalsUsed &lt;/name&gt;<br>
+      &lt;nolabel/&gt;<br>
+      &lt;linecolor&gt; BLUE &lt;/linecolor&gt;<br>
+    &lt;/yvar&gt;<br>
+    &lt;scale&gt;<br>
+      &lt;min&gt; 110 &lt;/min&gt;&lt;max&gt; 120 &lt;/max&gt;&lt;inc&gt; 10 &lt;/inc&gt;<br>
+    &lt;/scale&gt;<br>
+  &lt;/yaxis&gt;<br>
+&lt;/showgraph&gt;<br>
+<br>
+&lt;showbargraph&gt;<br>
+  &lt;row&gt; 9.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 5 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
+  &lt;leftmargin&gt; 11 &lt;/leftmargin&gt;<br>
+  &lt;title&gt; Effect &lt;/title&gt;<br>
+  &lt;showinitialvalues/&gt;<br>
+  &lt;bar&gt;<br>
+    &lt;name&gt; Thyroid.Effect &lt;/name&gt;<br>
+    &lt;label&gt; Thyroxine &lt;/label&gt;<br>
+    &lt;color&gt; BLUE &lt;/color&gt;<br>
+  &lt;/bar&gt;<br>
+  &lt;bar&gt;<br>
+    &lt;name&gt; HeatMetabolism.Core &lt;/name&gt;<br>
+    &lt;label&gt; Temperature &lt;/label&gt;<br>
+    &lt;color&gt; BLUE &lt;/color&gt;<br>
+  &lt;/bar&gt;<br>
+  &lt;bar&gt;<br>
+    &lt;name&gt; GITract-Structure.Effect &lt;/name&gt;<br>
+    &lt;label&gt; Structure &lt;/label&gt;<br>
+    &lt;color&gt; BLUE &lt;/color&gt;<br>
+  &lt;/bar&gt;<br>
+  &lt;scale&gt;<br>
+    &lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;inc&gt; 1 &lt;/inc&gt;<br>
+    <br>
+  &lt;/scale&gt;<br>
+&lt;/showbargraph&gt;<br>
+<br>
+&lt;showbargraph&gt;<br>
+  &lt;row&gt; 14.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 4 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
+  &lt;leftmargin&gt; 11 &lt;/leftmargin&gt;<br>
+  &lt;title&gt; Calories &lt;/title&gt;<br>
+  &lt;showinitialvalues/&gt;<br>
+  &lt;bar&gt;<br>
+    &lt;name&gt; GITract-Metabolism.AerobicCals &lt;/name&gt;<br>
+    &lt;label&gt; Aerobic &lt;/label&gt;<br>
+    &lt;color&gt; BLUE &lt;/color&gt;<br>
+  &lt;/bar&gt;<br>
+  &lt;bar&gt;<br>
+    &lt;name&gt; GITract-Metabolism.AnaerobicCals &lt;/name&gt;<br>
+    &lt;label&gt; Anaerobic &lt;/label&gt;<br>
+    &lt;color&gt; BLUE &lt;/color&gt;<br>
+  &lt;/bar&gt;<br>
+  &lt;scale&gt;<br>
+    &lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 60 &lt;/max&gt;&lt;inc&gt; 10 &lt;/inc&gt;<br>
+  &lt;/scale&gt;<br>
+&lt;/showbargraph&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 19.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; NormalCalsUsed &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Normal &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 20.5 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
+  &lt;name&gt; CalMultiplier &lt;/name&gt;<br>
+  &lt;listname&gt; Common.Multiplier &lt;/listname&gt;<br>
+  &lt;label&gt; Multiplier &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 21.8 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
+  &lt;name&gt; NormalCalsUsed((Cal/Min)/G) &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 4 &lt;/decimal&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Cals ((Cal/Min)/G) &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 22.8 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
+  &lt;name&gt; GITract-Size.Mass &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Organ Mass &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;infobutton&gt;<br>
+  &lt;row&gt; 1.2 &lt;/row&gt;<br>
+  &lt;col&gt; 26.0 &lt;/col&gt;<br>
+<br>
+  &lt;line&gt; Total Metabolic Rate = 50 Cal/Min &lt;/line&gt;<br>
+  &lt;line&gt;  &lt;/line&gt;<br>
+  &lt;line&gt; Effects ~ 1.0 &lt;/line&gt;<br>
+  &lt;line&gt;  &lt;/line&gt;<br>
+  &lt;line&gt; Aerobic ~ Total &lt;/line&gt;<br>
+  &lt;line&gt; Anaerobic ~ 0 &lt;/line&gt;<br>
+&lt;/infobutton&gt;<br>
+<br>
+&lt;/groupbox&gt;<br>
+<br>
+End<br>
 
 
 <p><img src='../Footer.PNG'>

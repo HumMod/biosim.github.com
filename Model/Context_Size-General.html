@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,78 +19,78 @@
 <img src='SmallModel.PNG'>
 <a href='Context_Context.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / Size-General<br>
-<br>
-Created : 21-May-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Size-General &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; X-Textbook &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; InitialLeanMass &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; InitialFatMass &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; LeanPart &lt;/name&gt;&lt;/var&gt;<br>
-&lt;constant&gt;&lt;name&gt; LeanFraction &lt;/name&gt;&lt;val&gt; 0.0000182 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; FatPart &lt;/name&gt;&lt;/var&gt;<br>
-&lt;constant&gt;&lt;name&gt; FatFraction &lt;/name&gt;&lt;val&gt; 0.0000060 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; InitialLeanMass &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-      Bone-Size.InitialMass<br>
-    + Brain-Size.InitialMass<br>
-    + GITract-Size.InitialMass<br>
-    + Kidney-Size.InitialMass<br>
-    + LeftHeart-Size.InitialMass<br>
-    + Liver-Size.InitialMass<br>
-    + OtherTissue-Size.InitialMass<br>
-    + RespiratoryMuscle-Size.InitialMass<br>
-    + RightHeart-Size.InitialMass<br>
-    + SkeletalMuscle-Size.InitialMass<br>
-    + Skin-Size.InitialMass<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; InitialFatMass &lt;/name&gt;<br>
-  &lt;val&gt; Fat-Size.InitialMass &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; LeanPart &lt;/name&gt;<br>
-  &lt;val&gt; LeanFraction * InitialLeanMass &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; FatPart &lt;/name&gt;<br>
-  &lt;val&gt; FatFraction * InitialFatMass &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; X-Textbook &lt;/name&gt;<br>
-  &lt;val&gt; LeanPart + FatPart &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / Size-General<br>
+<br>
+Created : 21-May-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Size-General &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; X-Textbook &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; InitialLeanMass &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialFatMass &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; LeanPart &lt;/name&gt;&lt;/var&gt;<br>
+&lt;constant&gt;&lt;name&gt; LeanFraction &lt;/name&gt;&lt;val&gt; 0.0000182 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; FatPart &lt;/name&gt;&lt;/var&gt;<br>
+&lt;constant&gt;&lt;name&gt; FatFraction &lt;/name&gt;&lt;val&gt; 0.0000060 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialLeanMass &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      Bone-Size.InitialMass<br>
+    + Brain-Size.InitialMass<br>
+    + GITract-Size.InitialMass<br>
+    + Kidney-Size.InitialMass<br>
+    + LeftHeart-Size.InitialMass<br>
+    + Liver-Size.InitialMass<br>
+    + OtherTissue-Size.InitialMass<br>
+    + RespiratoryMuscle-Size.InitialMass<br>
+    + RightHeart-Size.InitialMass<br>
+    + SkeletalMuscle-Size.InitialMass<br>
+    + Skin-Size.InitialMass<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialFatMass &lt;/name&gt;<br>
+  &lt;val&gt; Fat-Size.InitialMass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; LeanPart &lt;/name&gt;<br>
+  &lt;val&gt; LeanFraction * InitialLeanMass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; FatPart &lt;/name&gt;<br>
+  &lt;val&gt; FatFraction * InitialFatMass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; X-Textbook &lt;/name&gt;<br>
+  &lt;val&gt; LeanPart + FatPart &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:22 AM
+  Created : 12/2/2011 6:49:54 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,170 +19,170 @@
 <img src='SmallModel.PNG'>
 <a href='Docs_AcidBase.html'><img src='../Back.PNG'></a>
 <p>
-QHP 2008 / ACIDBASE.DOCS<br>
-<br>
-Created : 27-Mar-09<br>
-Last Modified : 27-Mar-09<br>
-Author : Tom Coleman<br>
-Copyright : 2009<br>
-<br>
-&lt;structurename&gt; PhGeneral &lt;/structurename&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; PhGeneral.H+ &lt;/name&gt;<br>
-&lt;topic&gt; AcidBase - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; H+ - DefinitionPHG1 &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; PhGeneral.pCO2 &lt;/name&gt;<br>
-&lt;topic&gt; pCO2 - DefinitionPHG2 &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; PhGeneral.pH &lt;/name&gt;<br>
-&lt;topic&gt; pH - DefinitionPHG3 &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; PhGeneral.pK &lt;/name&gt;<br>
-&lt;topic&gt; pK - DefinitionPHG4 &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; PhGeneral.SID &lt;/name&gt;<br>
-&lt;topic&gt; SID - DefinitionPHG5 &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; AcidBase - Overview &lt;/name&gt;<br>
-&lt;label&gt;  AcidBase Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Precise regulation of hydrogen ions (H+) in the body<br>
-is essential because the activities of almost all <br>
-enzyme systems in the body are influenced by <br>
-H+ concentration. Therefore changes in hydrogen<br>
-concentration alter virtually all cell and body <br>
-functions. <br>
-<br>
-Blood H+ concentration is normally maintained <br>
-within tight limits around a normal value of<br>
-about 0.00004mEq/L (40 nEq/L). Because H+ <br>
-concentration is low, and these small numbers <br>
-are cumbersome, it is customary to express<br>
-H+ concentration on a logarithm scale, using<br>
-pH units. pH is related to the actual H+<br>
-concentration by the following formula:<br>
-<br>
-pH = log 1/[H+] = -log[H+]<br>
-<br>
-where [H+] is the hydrogen ion concentration<br>
-in Eq/L. <br>
-<br>
-In HumMod, PhGeneral is a calculator used to<br>
-provide values for the pH of blood and tissues. <br>
-PhGeneral calls for values for pK , SID and pCO2<br>
-which are taken from PhBlood and PhCell. These <br>
-are used in pHGeneral to calculate pH values which <br>
-are ultimately returned to BloodPh.  <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; H+ - DefinitionPHG1 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-H+ is the hydrogen ion concentration in Eq/L<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; pCO2 - DefinitionPHG2 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-pCO2 is the partial pressure of carbon dioxide<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; pH - DefinitionPHG3 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-It is customary to express hydrogen ion concentration on a <br>
-logarithm scale using pH units.<br>
-<br>
-pH = log (1/[H+]) = -log[H+] where [H+] is the hydrogen<br>
-ion concentration in Eq/L.<br>
-<br>
-The prmary determinants of pH in all body fluids are pCO2<br>
-and SID. pH is calculated using the following formula:<br>
-<br>
-[H+] = K * (pCO2/SID) or<br>
-pH = pK + log10 (SID/pCO2)<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; pK - DefinitionPHG4 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-For any acid, the concentration of the acid relative to its <br>
-dissociated ions is defined by the dissociation constant K.<br>
-<br>
-pK = -log K<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; SID - DefinitionPHG5 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Peter Stewart was a Canadian physiologist who introduced <br>
-the term "strong ion difference" or [SID] to mean the <br>
-concentration of strongly dissociating cations minus <br>
-the concentration of strongly dissociating anions. <br>
-<br>
-The concentrations of anions and cations in both plasma<br>
-and cells must be equal to maintain electrical neutrality.<br>
-<br>
-His equation is:<br>
-<br>
-[SID] + [H+] = [HCO3-] + [A-] + [CO2] + [OH-]<br>
-<br>
-where [A-] is the concentration of dissociated weak acids.<br>
-<br>
-In HumMod, SID is calculated from the cations [Na+] and [K+].<br>
-The anions used are [Cl-], [Lac-]. Additionally the following <br>
-strong anions are included: Ketoacids [KA-], [SO4--] and [PO4--]. <br>
-Under normal physiological conditions the contribution of the <br>
-latter three anions is small. <br>
- <br>
-Stewart PA. Independent and dependent variables of acid-base <br>
-control. Respir Physiol 33: 9�26, 1978.<br>
-<br>
-Stewart PA. How to Understand Acid-Based: A Quantitative <br>
-Acid-Base Primer for Biology and Medicine. New York: Elsevier, 1981.<br>
-<br>
-Stewart PA. Modern quantitative acid-base chemistry. <br>
-Can J Physiol Pharmacol 61: 1444�1461, 1983.<br>
- <br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-      <br>
-<br>
+QHP 2008 / ACIDBASE.DOCS<br>
+<br>
+Created : 27-Mar-09<br>
+Last Modified : 27-Mar-09<br>
+Author : Tom Coleman<br>
+Copyright : 2009<br>
+<br>
+&lt;structurename&gt; PhGeneral &lt;/structurename&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; PhGeneral.H+ &lt;/name&gt;<br>
+&lt;topic&gt; AcidBase - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; H+ - DefinitionPHG1 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; PhGeneral.pCO2 &lt;/name&gt;<br>
+&lt;topic&gt; pCO2 - DefinitionPHG2 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; PhGeneral.pH &lt;/name&gt;<br>
+&lt;topic&gt; pH - DefinitionPHG3 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; PhGeneral.pK &lt;/name&gt;<br>
+&lt;topic&gt; pK - DefinitionPHG4 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; PhGeneral.SID &lt;/name&gt;<br>
+&lt;topic&gt; SID - DefinitionPHG5 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; AcidBase - Overview &lt;/name&gt;<br>
+&lt;label&gt;  AcidBase Overview &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Precise regulation of hydrogen ions (H+) in the body<br>
+is essential because the activities of almost all <br>
+enzyme systems in the body are influenced by <br>
+H+ concentration. Therefore changes in hydrogen<br>
+concentration alter virtually all cell and body <br>
+functions. <br>
+<br>
+Blood H+ concentration is normally maintained <br>
+within tight limits around a normal value of<br>
+about 0.00004mEq/L (40 nEq/L). Because H+ <br>
+concentration is low, and these small numbers <br>
+are cumbersome, it is customary to express<br>
+H+ concentration on a logarithm scale, using<br>
+pH units. pH is related to the actual H+<br>
+concentration by the following formula:<br>
+<br>
+pH = log 1/[H+] = -log[H+]<br>
+<br>
+where [H+] is the hydrogen ion concentration<br>
+in Eq/L. <br>
+<br>
+In HumMod, PhGeneral is a calculator used to<br>
+provide values for the pH of blood and tissues. <br>
+PhGeneral calls for values for pK , SID and pCO2<br>
+which are taken from PhBlood and PhCell. These <br>
+are used in pHGeneral to calculate pH values which <br>
+are ultimately returned to BloodPh.  <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; H+ - DefinitionPHG1 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+H+ is the hydrogen ion concentration in Eq/L<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; pCO2 - DefinitionPHG2 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+pCO2 is the partial pressure of carbon dioxide<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; pH - DefinitionPHG3 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+It is customary to express hydrogen ion concentration on a <br>
+logarithm scale using pH units.<br>
+<br>
+pH = log (1/[H+]) = -log[H+] where [H+] is the hydrogen<br>
+ion concentration in Eq/L.<br>
+<br>
+The prmary determinants of pH in all body fluids are pCO2<br>
+and SID. pH is calculated using the following formula:<br>
+<br>
+[H+] = K * (pCO2/SID) or<br>
+pH = pK + log10 (SID/pCO2)<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; pK - DefinitionPHG4 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+For any acid, the concentration of the acid relative to its <br>
+dissociated ions is defined by the dissociation constant K.<br>
+<br>
+pK = -log K<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; SID - DefinitionPHG5 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Peter Stewart was a Canadian physiologist who introduced <br>
+the term "strong ion difference" or [SID] to mean the <br>
+concentration of strongly dissociating cations minus <br>
+the concentration of strongly dissociating anions. <br>
+<br>
+The concentrations of anions and cations in both plasma<br>
+and cells must be equal to maintain electrical neutrality.<br>
+<br>
+His equation is:<br>
+<br>
+[SID] + [H+] = [HCO3-] + [A-] + [CO2] + [OH-]<br>
+<br>
+where [A-] is the concentration of dissociated weak acids.<br>
+<br>
+In HumMod, SID is calculated from the cations [Na+] and [K+].<br>
+The anions used are [Cl-], [Lac-]. Additionally the following <br>
+strong anions are included: Ketoacids [KA-], [SO4--] and [PO4--]. <br>
+Under normal physiological conditions the contribution of the <br>
+latter three anions is small. <br>
+ <br>
+Stewart PA. Independent and dependent variables of acid-base <br>
+control. Respir Physiol 33: 9�26, 1978.<br>
+<br>
+Stewart PA. How to Understand Acid-Based: A Quantitative <br>
+Acid-Base Primer for Biology and Medicine. New York: Elsevier, 1981.<br>
+<br>
+Stewart PA. Modern quantitative acid-base chemistry. <br>
+Can J Physiol Pharmacol 61: 1444�1461, 1983.<br>
+ <br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+      <br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

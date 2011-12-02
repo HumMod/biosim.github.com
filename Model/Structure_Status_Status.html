@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,275 +19,275 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_Structure.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / Status<br>
-<br>
-Created : 28-Feb-08<br>
-Last Modified : 2011-10-15<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2011<br>
-By : University Of Mississippi Medical Center<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Status &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Activity &lt;/name&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Exertion &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Posture &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Nutrition &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Sleeping &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Awake &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Unconscious &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; NotDefined &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Resting &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Working &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Aerobics &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; ExerciseBike &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Treadmill &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Lying &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Sitting &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Standing &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Tilting &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Eating &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; BetweenMeals &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Continuous &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; CantEat &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Conscious &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CheckConscious &lt;/name&gt;<br>
-<br>
-&lt;if&gt;<br>
-&lt;test&gt; Brain-Function.Comatose &lt;/test&gt;<br>
-&lt;true&gt;<br>
-  &lt;andif&gt;<br>
-  &lt;test&gt; Conscious &lt;/test&gt;<br>
-  &lt;true&gt;<br>
-    &lt;def&gt;&lt;name&gt; Conscious &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-    &lt;call&gt; JustLostConscious &lt;/call&gt;<br>
-  &lt;/true&gt;<br>
-  &lt;/andif&gt;<br>
-&lt;/true&gt;<br>
-&lt;false&gt;<br>
-  &lt;andif&gt;<br>
-  &lt;test&gt; NOT Conscious &lt;/test&gt;<br>
-  &lt;true&gt;<br>
-    &lt;def&gt;&lt;name&gt; Conscious &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;/true&gt;<br>
-  &lt;/andif&gt;<br>
-&lt;/false&gt;<br>
-&lt;/if&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
-<br>
-&lt;call&gt; Activity &lt;/call&gt;<br>
-&lt;call&gt; Exertion &lt;/call&gt;<br>
-&lt;call&gt; Posture &lt;/call&gt;<br>
-&lt;call&gt; Nutrition &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Activity &lt;/name&gt;<br>
-<br>
-&lt;testcase&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Activity EQ 3 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Sleeping &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Awake &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Unconscious &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; NotDefined &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Activity EQ 1 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Sleeping &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Awake &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Unconscious &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; NotDefined &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Activity EQ 0 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Sleeping &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Awake &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Unconscious &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; NotDefined &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Activity EQ 2 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Sleeping &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Awake &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Unconscious &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; NotDefined &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;/testcase&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Exertion &lt;/name&gt;<br>
-<br>
-&lt;testcase&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Exertion EQ 0 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Resting &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; ExerciseBike &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Treadmill &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Working &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Aerobics &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Exertion EQ 1 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Resting &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; ExerciseBike &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Treadmill &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Working &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Aerobics &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Exertion EQ 2 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Resting &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; ExerciseBike &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Treadmill &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Working &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Aerobics &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Exertion EQ 3 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Resting &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; ExerciseBike &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Treadmill &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Working &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Aerobics &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Exertion EQ 4 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Resting &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; ExerciseBike &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Treadmill &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Working &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Aerobics &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;/testcase&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Posture &lt;/name&gt;<br>
-<br>
-&lt;testcase&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Posture EQ PostureControl.LYING &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Lying &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Sitting &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Standing &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Tilting &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Posture EQ PostureControl.SITTING &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Lying &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Sitting &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Standing &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Tilting &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Posture EQ PostureControl.STANDING &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Lying &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Sitting &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Standing &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Tilting &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Posture EQ PostureControl.TILTED &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Lying &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Sitting &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Standing &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Tilting &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;/testcase&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Nutrition &lt;/name&gt;<br>
-<br>
-&lt;testcase&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Nutrition EQ 2 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Eating &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; BetweenMeals &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Continuous &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; CantEat &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Nutrition EQ 0 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Eating &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; BetweenMeals &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Continuous &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; CantEat &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Nutrition EQ 1 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Eating &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; BetweenMeals &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Continuous &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; CantEat &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Nutrition EQ 3 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Eating &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; BetweenMeals &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Continuous &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; CantEat &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;/testcase&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; JustLostConscious &lt;/name&gt;<br>
-  &lt;if&gt;<br>
-  &lt;test&gt; DailyPlannerControl.Switch &lt;/test&gt;<br>
-  &lt;true&gt;<br>
-    &lt;def&gt;&lt;name&gt; DailyPlannerControl.Switch &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-    &lt;call&gt; DailyPlannerControl.Stop &lt;/call&gt;<br>
-    &lt;message&gt; Subject lost consciousness. Daily planner stopped. &lt;/message&gt;<br>
-  &lt;/true&gt;<br>
-  &lt;/if&gt;<br>
-<br>
-<br>
-  &lt;def&gt;&lt;name&gt; PostureControl.Request &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-  &lt;def&gt;&lt;name&gt; Status.Activity &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;def&gt;&lt;name&gt; Status.Exertion &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;def&gt;&lt;name&gt; Status.Posture &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;def&gt;&lt;name&gt; Status.Nutrition &lt;/name&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / Status<br>
+<br>
+Created : 28-Feb-08<br>
+Last Modified : 2011-10-15<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2011<br>
+By : University Of Mississippi Medical Center<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Status &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Activity &lt;/name&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Exertion &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Posture &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Nutrition &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Sleeping &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Awake &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Unconscious &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; NotDefined &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Resting &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Working &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Aerobics &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; ExerciseBike &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Treadmill &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Lying &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Sitting &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Standing &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Tilting &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Eating &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; BetweenMeals &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Continuous &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; CantEat &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Conscious &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CheckConscious &lt;/name&gt;<br>
+<br>
+&lt;if&gt;<br>
+&lt;test&gt; Brain-Function.Comatose &lt;/test&gt;<br>
+&lt;true&gt;<br>
+  &lt;andif&gt;<br>
+  &lt;test&gt; Conscious &lt;/test&gt;<br>
+  &lt;true&gt;<br>
+    &lt;def&gt;&lt;name&gt; Conscious &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+    &lt;call&gt; JustLostConscious &lt;/call&gt;<br>
+  &lt;/true&gt;<br>
+  &lt;/andif&gt;<br>
+&lt;/true&gt;<br>
+&lt;false&gt;<br>
+  &lt;andif&gt;<br>
+  &lt;test&gt; NOT Conscious &lt;/test&gt;<br>
+  &lt;true&gt;<br>
+    &lt;def&gt;&lt;name&gt; Conscious &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/true&gt;<br>
+  &lt;/andif&gt;<br>
+&lt;/false&gt;<br>
+&lt;/if&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
+<br>
+&lt;call&gt; Activity &lt;/call&gt;<br>
+&lt;call&gt; Exertion &lt;/call&gt;<br>
+&lt;call&gt; Posture &lt;/call&gt;<br>
+&lt;call&gt; Nutrition &lt;/call&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Activity &lt;/name&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Activity EQ 3 &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Sleeping &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Awake &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Unconscious &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; NotDefined &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Activity EQ 1 &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Sleeping &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Awake &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Unconscious &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; NotDefined &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Activity EQ 0 &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Sleeping &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Awake &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Unconscious &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; NotDefined &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Activity EQ 2 &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Sleeping &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Awake &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Unconscious &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; NotDefined &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Exertion &lt;/name&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Exertion EQ 0 &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Resting &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; ExerciseBike &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Treadmill &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Working &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Aerobics &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Exertion EQ 1 &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Resting &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; ExerciseBike &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Treadmill &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Working &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Aerobics &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Exertion EQ 2 &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Resting &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; ExerciseBike &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Treadmill &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Working &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Aerobics &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Exertion EQ 3 &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Resting &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; ExerciseBike &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Treadmill &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Working &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Aerobics &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Exertion EQ 4 &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Resting &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; ExerciseBike &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Treadmill &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Working &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Aerobics &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Posture &lt;/name&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Posture EQ PostureControl.LYING &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Lying &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Sitting &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Standing &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Tilting &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Posture EQ PostureControl.SITTING &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Lying &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Sitting &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Standing &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Tilting &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Posture EQ PostureControl.STANDING &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Lying &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Sitting &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Standing &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Tilting &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Posture EQ PostureControl.TILTED &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Lying &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Sitting &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Standing &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Tilting &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Nutrition &lt;/name&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Nutrition EQ 2 &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Eating &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; BetweenMeals &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Continuous &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; CantEat &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Nutrition EQ 0 &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Eating &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; BetweenMeals &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Continuous &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; CantEat &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Nutrition EQ 1 &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Eating &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; BetweenMeals &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Continuous &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; CantEat &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Nutrition EQ 3 &lt;/test&gt;<br>
+&lt;def&gt;&lt;name&gt; Eating &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; BetweenMeals &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Continuous &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; CantEat &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; JustLostConscious &lt;/name&gt;<br>
+  &lt;if&gt;<br>
+  &lt;test&gt; DailyPlannerControl.Switch &lt;/test&gt;<br>
+  &lt;true&gt;<br>
+    &lt;def&gt;&lt;name&gt; DailyPlannerControl.Switch &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+    &lt;call&gt; DailyPlannerControl.Stop &lt;/call&gt;<br>
+    &lt;message&gt; Subject lost consciousness. Daily planner stopped. &lt;/message&gt;<br>
+  &lt;/true&gt;<br>
+  &lt;/if&gt;<br>
+<br>
+<br>
+  &lt;def&gt;&lt;name&gt; PostureControl.Request &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;def&gt;&lt;name&gt; Status.Activity &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Status.Exertion &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Status.Posture &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Status.Nutrition &lt;/name&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

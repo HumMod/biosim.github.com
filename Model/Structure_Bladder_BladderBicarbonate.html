@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,58 +19,58 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_Bladder_Bladder.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / BladderBicarbonate<br>
-<br>
-Created : 16-Mar-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; BladderBicarbonate &lt;/name&gt;<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; [HCO3-] &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; [HCO3-(mEq/L)] &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;diffeq&gt;<br>
-  &lt;name&gt; Mass &lt;/name&gt;<br>
-  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
-  &lt;initialval&gt; 0.0 &lt;/initialval&gt;<br>
-  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
-&lt;/diffeq&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-  &lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; CD_HCO3.Outflow &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Conc &lt;/name&gt;<br>
-<br>
-  &lt;def&gt;&lt;name&gt; [HCO3-] &lt;/name&gt;&lt;val&gt; Mass / BladderVolume.Mass &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;def&gt;&lt;name&gt; [HCO3-(mEq/L)] &lt;/name&gt;&lt;val&gt; 1000.0 * [HCO3-] &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Void &lt;/name&gt;<br>
-<br>
-  &lt;def&gt;&lt;name&gt; Mass &lt;/name&gt;&lt;val&gt; Mass - ( BladderVolume.VolumeVoid * [HCO3-] ) &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / BladderBicarbonate<br>
+<br>
+Created : 16-Mar-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; BladderBicarbonate &lt;/name&gt;<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [HCO3-] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [HCO3-(mEq/L)] &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
+  &lt;initialval&gt; 0.0 &lt;/initialval&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+  &lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; CD_HCO3.Outflow &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Conc &lt;/name&gt;<br>
+<br>
+  &lt;def&gt;&lt;name&gt; [HCO3-] &lt;/name&gt;&lt;val&gt; Mass / BladderVolume.Mass &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; [HCO3-(mEq/L)] &lt;/name&gt;&lt;val&gt; 1000.0 * [HCO3-] &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Void &lt;/name&gt;<br>
+<br>
+  &lt;def&gt;&lt;name&gt; Mass &lt;/name&gt;&lt;val&gt; Mass - ( BladderVolume.VolumeVoid * [HCO3-] ) &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

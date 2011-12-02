@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,128 +19,128 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_Heat_Heat.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / HeatSkin<br>
-<br>
-Created : 25-Jun-06<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; HeatSkin &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Temp(F) &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Temp(C) &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Temp(K) &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Flux &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; InitialTemp(F) &lt;/name&gt;&lt;val&gt; 84.0 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; InitialTemp(K) &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;diffeq&gt;<br>
-  &lt;name&gt; Mass &lt;/name&gt;<br>
-  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
-  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 7.0 &lt;/errorlim&gt;<br>
-&lt;/diffeq&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Initialize &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; InitialTemp(K) &lt;/name&gt;<br>
-  &lt;val&gt; ( 5 / 9 ) * ( InitialTemp(F) - 32.0 ) + 273.15 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; InitialMass &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-       Skin-Size.InitialMass<br>
-     * SpecificHeat.Tissue(kCal/G)<br>
-     * InitialTemp(K)<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Mass &lt;/name&gt;<br>
-  &lt;val&gt; InitialMass &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcTemp &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Temp(K) &lt;/name&gt;<br>
-  &lt;val&gt; Mass / ( Skin-Size.Mass(kG) * SpecificHeat.Tissue ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Temp(C) &lt;/name&gt;<br>
-  &lt;val&gt; Temp(K) - 273.15 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Temp(F) &lt;/name&gt;<br>
-  &lt;val&gt; ( 9 / 5 ) * Temp(C) + 32.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Flux &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Flux &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-      HeatRadiation.Flux<br>
-    + HeatConduction.Flux<br>
-    + HeatInsensibleSkin.Flux<br>
-    + HeatSweating.Flux<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Gain &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-      Metabolism-CaloriesUsed.SkinHeat(kCal/Min)<br>
-    + HeatCore.Flux<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Loss &lt;/name&gt;<br>
-  &lt;val&gt; Flux &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Change &lt;/name&gt;<br>
-  &lt;val&gt; Gain - Loss &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / HeatSkin<br>
+<br>
+Created : 25-Jun-06<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; HeatSkin &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Temp(F) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Temp(C) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Temp(K) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Flux &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; InitialTemp(F) &lt;/name&gt;&lt;val&gt; 84.0 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; InitialTemp(K) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 7.0 &lt;/errorlim&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Initialize &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialTemp(K) &lt;/name&gt;<br>
+  &lt;val&gt; ( 5 / 9 ) * ( InitialTemp(F) - 32.0 ) + 273.15 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialMass &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+       Skin-Size.InitialMass<br>
+     * SpecificHeat.Tissue(kCal/G)<br>
+     * InitialTemp(K)<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;val&gt; InitialMass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcTemp &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Temp(K) &lt;/name&gt;<br>
+  &lt;val&gt; Mass / ( Skin-Size.Mass(kG) * SpecificHeat.Tissue ) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Temp(C) &lt;/name&gt;<br>
+  &lt;val&gt; Temp(K) - 273.15 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Temp(F) &lt;/name&gt;<br>
+  &lt;val&gt; ( 9 / 5 ) * Temp(C) + 32.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Flux &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Flux &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      HeatRadiation.Flux<br>
+    + HeatConduction.Flux<br>
+    + HeatInsensibleSkin.Flux<br>
+    + HeatSweating.Flux<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Gain &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      Metabolism-CaloriesUsed.SkinHeat(kCal/Min)<br>
+    + HeatCore.Flux<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Loss &lt;/name&gt;<br>
+  &lt;val&gt; Flux &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Change &lt;/name&gt;<br>
+  &lt;val&gt; Gain - Loss &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

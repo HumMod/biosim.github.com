@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,45 +19,45 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_Osmoles_Osmoles.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / OsmCell<br>
-<br>
-Created : 26-May-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2005-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; OsmCell &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Total &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Electrolytes &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Anions &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Cations &lt;/name&gt;&lt;/var&gt;<br>
-&lt;parm&gt;&lt;name&gt; OtherCations &lt;/name&gt;&lt;val&gt; 692.0 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;var&gt;&lt;name&gt; Non-Electrolytes &lt;/name&gt;&lt;/var&gt;<br>
-&lt;parm&gt;&lt;name&gt; UnknownOsmoles &lt;/name&gt;&lt;val&gt; 354.0 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Cations &lt;/name&gt;&lt;val&gt; KCell.Mass + OtherCations &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Anions &lt;/name&gt;&lt;val&gt; Cations - 1000.0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Non-Electrolytes &lt;/name&gt;&lt;val&gt; UreaCell.Osmoles + UnknownOsmoles &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Electrolytes &lt;/name&gt;&lt;val&gt; Cations + Anions &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Total &lt;/name&gt;&lt;val&gt; Electrolytes + Non-Electrolytes &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / OsmCell<br>
+<br>
+Created : 26-May-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2005-2010<br>
+By : University of Mississippi Medical Center<br>
+Solver : DES 2005<br>
+Schema : 2005.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; OsmCell &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Total &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Electrolytes &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Anions &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Cations &lt;/name&gt;&lt;/var&gt;<br>
+&lt;parm&gt;&lt;name&gt; OtherCations &lt;/name&gt;&lt;val&gt; 692.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;var&gt;&lt;name&gt; Non-Electrolytes &lt;/name&gt;&lt;/var&gt;<br>
+&lt;parm&gt;&lt;name&gt; UnknownOsmoles &lt;/name&gt;&lt;val&gt; 354.0 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Cations &lt;/name&gt;&lt;val&gt; KCell.Mass + OtherCations &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Anions &lt;/name&gt;&lt;val&gt; Cations - 1000.0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Non-Electrolytes &lt;/name&gt;&lt;val&gt; UreaCell.Osmoles + UnknownOsmoles &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Electrolytes &lt;/name&gt;&lt;val&gt; Cations + Anions &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Total &lt;/name&gt;&lt;val&gt; Electrolytes + Non-Electrolytes &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,105 +19,105 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_AnesthesiaGas_AnesthesiaGas.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / AnesthesiaGasSolubility<br>
-<br>
-Created : 01-Jun-06<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-Solubility is mL gas per mL tissue<br>
-at a gas pressure of 760 mmHg over<br>
-the tissue. We use a function of the<br>
-inverse.<br>
-<br>
-  SolubleK = 760 / Solubility   (1)<br>
-<br>
-Units for Soluble K are mmHg / (mL/mL).<br>
-SolubleK is used to calculate partial pressure.<br>
-<br>
-  pGas = SolubleK * [Gas]       (2)<br>
-<br>
-Default values describe isoflurane.<br>
-<br>
-  Tissue    Solubility<br>
-  --------  ---------<br>
-  Blood         1.4<br>
-  General       4.2<br>
-  Brain         3.6<br>
-  Adipose      63.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; AnesthesiaGasSolubility &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; Blood &lt;/name&gt;<br>
-  &lt;val&gt; 1.4 &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; BloodK &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; General &lt;/name&gt;<br>
-  &lt;val&gt; 4.2 &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; GeneralK &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; Brain &lt;/name&gt;<br>
-  &lt;val&gt; 3.6 &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; BrainK &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; Adipose &lt;/name&gt;<br>
-  &lt;val&gt; 63.0 &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; AdiposeK &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; BloodK &lt;/name&gt;<br>
-  &lt;val&gt; 760.0 / Blood &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; GeneralK &lt;/name&gt;<br>
-  &lt;val&gt; 760.0 / General  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; BrainK &lt;/name&gt;<br>
-  &lt;val&gt; 760.0 / Brain &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; AdiposeK &lt;/name&gt;<br>
-  &lt;val&gt; 760.0 / Adipose &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / AnesthesiaGasSolubility<br>
+<br>
+Created : 01-Jun-06<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+Solubility is mL gas per mL tissue<br>
+at a gas pressure of 760 mmHg over<br>
+the tissue. We use a function of the<br>
+inverse.<br>
+<br>
+  SolubleK = 760 / Solubility   (1)<br>
+<br>
+Units for Soluble K are mmHg / (mL/mL).<br>
+SolubleK is used to calculate partial pressure.<br>
+<br>
+  pGas = SolubleK * [Gas]       (2)<br>
+<br>
+Default values describe isoflurane.<br>
+<br>
+  Tissue    Solubility<br>
+  --------  ---------<br>
+  Blood         1.4<br>
+  General       4.2<br>
+  Brain         3.6<br>
+  Adipose      63.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; AnesthesiaGasSolubility &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;parm&gt;<br>
+  &lt;name&gt; Blood &lt;/name&gt;<br>
+  &lt;val&gt; 1.4 &lt;/val&gt;<br>
+&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; BloodK &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;<br>
+  &lt;name&gt; General &lt;/name&gt;<br>
+  &lt;val&gt; 4.2 &lt;/val&gt;<br>
+&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; GeneralK &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;<br>
+  &lt;name&gt; Brain &lt;/name&gt;<br>
+  &lt;val&gt; 3.6 &lt;/val&gt;<br>
+&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; BrainK &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;<br>
+  &lt;name&gt; Adipose &lt;/name&gt;<br>
+  &lt;val&gt; 63.0 &lt;/val&gt;<br>
+&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; AdiposeK &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; BloodK &lt;/name&gt;<br>
+  &lt;val&gt; 760.0 / Blood &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; GeneralK &lt;/name&gt;<br>
+  &lt;val&gt; 760.0 / General  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; BrainK &lt;/name&gt;<br>
+  &lt;val&gt; 760.0 / Brain &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; AdiposeK &lt;/name&gt;<br>
+  &lt;val&gt; 760.0 / Adipose &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -25,53 +25,53 @@
 <br><a href='Structure_Drugs_Midodrine_MidodrineSingleDose.html'>Structure_Drugs_Midodrine_MidodrineSingleDose</a>
 <br><a href='Structure_Drugs_Midodrine_MidodrineDailyDose.html'>Structure_Drugs_Midodrine_MidodrineDailyDose</a>
 <p>
-HumMod / Midodrine<br>
-<br>
-Created : 10-Apr-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;?path Structure\Drugs\Midodrine\ ?&gt;<br>
-<br>
-&lt;?include MidodrinePool.DES ?&gt;<br>
-&lt;?include DesglymidodrinePool.DES ?&gt;<br>
-<br>
-&lt;?include DesglymidodrineKidney.DES ?&gt;<br>
-&lt;?include MidodrineGILumen.DES ?&gt;<br>
-&lt;?include MidodrineSingleDose.DES ?&gt;<br>
-&lt;?include MidodrineDailyDose.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Midodrine &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-  &lt;call&gt; MidodrineDailyDose.Parms &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcConc &lt;/name&gt;<br>
-  &lt;call&gt; MidodrineGILumen.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; MidodrinePool.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; DesglymidodrinePool.CalcConc &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-  &lt;call&gt; MidodrineGILumen.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; DesglymidodrineKidney.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; MidodrinePool.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; DesglymidodrinePool.Dervs &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
-  &lt;call&gt; MidodrineDailyDose.Wrapup &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / Midodrine<br>
+<br>
+Created : 10-Apr-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;?path Structure\Drugs\Midodrine\ ?&gt;<br>
+<br>
+&lt;?include MidodrinePool.DES ?&gt;<br>
+&lt;?include DesglymidodrinePool.DES ?&gt;<br>
+<br>
+&lt;?include DesglymidodrineKidney.DES ?&gt;<br>
+&lt;?include MidodrineGILumen.DES ?&gt;<br>
+&lt;?include MidodrineSingleDose.DES ?&gt;<br>
+&lt;?include MidodrineDailyDose.DES ?&gt;<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Midodrine &lt;/name&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
+  &lt;call&gt; MidodrineDailyDose.Parms &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcConc &lt;/name&gt;<br>
+  &lt;call&gt; MidodrineGILumen.CalcConc &lt;/call&gt;<br>
+  &lt;call&gt; MidodrinePool.CalcConc &lt;/call&gt;<br>
+  &lt;call&gt; DesglymidodrinePool.CalcConc &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+  &lt;call&gt; MidodrineGILumen.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; DesglymidodrineKidney.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; MidodrinePool.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; DesglymidodrinePool.Dervs &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
+  &lt;call&gt; MidodrineDailyDose.Wrapup &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

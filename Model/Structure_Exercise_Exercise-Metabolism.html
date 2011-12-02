@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,189 +19,189 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_Exercise_Exercise.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / Exercise-Metabolism<br>
-<br>
-Created : 20-Dec-05<br>
-Last Modified : 2011-11-15<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2011<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Exercise-Metabolism &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; HeatWatts &lt;/name&gt;&lt;/var&gt;<br>
-&lt;constant&gt;&lt;name&gt; WattsToCals &lt;/name&gt;&lt;val&gt; 14.34 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;var&gt;&lt;name&gt; TotalCals &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; MotionCals &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; HeatCals &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; Tau &lt;/name&gt;&lt;val&gt; 0.2 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;var&gt;&lt;name&gt; K &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;delay&gt;<br>
-  &lt;name&gt; TotalWatts &lt;/name&gt;<br>
-  &lt;outputname&gt; TotalWatts &lt;/outputname&gt;<br>
-  &lt;initialval&gt; 0.0 &lt;/initialval&gt;<br>
-  &lt;inputname&gt; TargetTotalWatts &lt;/inputname&gt;<br>
-  &lt;rateconstname&gt; TotalWattsK &lt;/rateconstname&gt;<br>
-  &lt;dervname&gt; TotalWattsDerv &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 3.0 &lt;/errorlim&gt;<br>
-&lt;/delay&gt;<br>
-<br>
-&lt;delay&gt;<br>
-  &lt;name&gt; MotionWatts &lt;/name&gt;<br>
-  &lt;outputname&gt; MotionWatts &lt;/outputname&gt;<br>
-  &lt;initialval&gt; 0.0 &lt;/initialval&gt;<br>
-  &lt;inputname&gt; TargetMotionWatts &lt;/inputname&gt;<br>
-  &lt;rateconstname&gt; MotionWattsK &lt;/rateconstname&gt;<br>
-  &lt;dervname&gt; MotionWattsDerv &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 0.6 &lt;/errorlim&gt;<br>
-&lt;/delay&gt;<br>
-<br>
-&lt;delay&gt;<br>
-  &lt;name&gt; ContractionRate &lt;/name&gt;<br>
-  &lt;outputname&gt; ContractionRate &lt;/outputname&gt;<br>
-  &lt;initialval&gt; 0.0 &lt;/initialval&gt;<br>
-  &lt;inputname&gt; TargetContractionRate &lt;/inputname&gt;<br>
-  &lt;rateconstname&gt; ContractionRateK &lt;/rateconstname&gt;<br>
-  &lt;dervname&gt; ContractionRateDerv &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 0.5 &lt;/errorlim&gt;<br>
-&lt;/delay&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-<br>
-&lt;conditional&gt;&lt;name&gt; K &lt;/name&gt;<br>
-&lt;test&gt; Tau GT 0.0 &lt;/test&gt;<br>
-&lt;true&gt; INVERT Tau &lt;/true&gt;<br>
-&lt;false&gt; INFINITE &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; TotalWattsK &lt;/name&gt;&lt;val&gt; K &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; MotionWattsK &lt;/name&gt;&lt;val&gt; K &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; ContractionRateK &lt;/name&gt;&lt;val&gt; K &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;testcase&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Status.Exertion EQ 0 &lt;/test&gt;<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TargetTotalWatts &lt;/name&gt;<br>
-  &lt;val&gt; 0.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TargetMotionWatts &lt;/name&gt;<br>
-  &lt;val&gt; 0.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TargetContractionRate &lt;/name&gt;<br>
-  &lt;val&gt; 0.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Status.Exertion EQ 1 &lt;/test&gt;<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TargetTotalWatts &lt;/name&gt;<br>
-  &lt;val&gt; Exercise-Bike.TotalWatts &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TargetMotionWatts &lt;/name&gt;<br>
-  &lt;val&gt; Exercise-Bike.Power(W) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TargetContractionRate &lt;/name&gt;<br>
-  &lt;val&gt; Exercise-Bike.RPM &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Status.Exertion EQ 2 &lt;/test&gt;<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TargetTotalWatts &lt;/name&gt;<br>
-  &lt;val&gt; Exercise-Treadmill.TotalWatts &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TargetMotionWatts &lt;/name&gt;<br>
-  &lt;val&gt; Exercise-Treadmill.Power(W) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TargetContractionRate &lt;/name&gt;<br>
-  &lt;val&gt; Exercise-Treadmill.StepsPerMinute &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Status.Exertion EQ 3 &lt;/test&gt;<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TargetMotionWatts &lt;/name&gt;<br>
-  &lt;val&gt; DailyPlannerControl.WorkLevel &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TargetTotalWatts &lt;/name&gt;<br>
-  &lt;val&gt; MotionWatts / 0.22 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TargetContractionRate &lt;/name&gt;<br>
-  &lt;val&gt; 10.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Status.Exertion EQ 4 &lt;/test&gt;<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TargetMotionWatts &lt;/name&gt;<br>
-  &lt;val&gt; DailyPlannerControl.AerobicsLevel &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TargetTotalWatts &lt;/name&gt;<br>
-  &lt;val&gt; MotionWatts / 0.22 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TargetContractionRate &lt;/name&gt;<br>
-  &lt;val&gt; 50.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;/testcase&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; HeatWatts &lt;/name&gt;<br>
-  &lt;val&gt; TotalWatts - MotionWatts &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TotalCals &lt;/name&gt;<br>
-  &lt;val&gt; WattsToCals * TotalWatts &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; MotionCals &lt;/name&gt;<br>
-  &lt;val&gt; WattsToCals * MotionWatts &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; HeatCals &lt;/name&gt;<br>
-  &lt;val&gt; WattsToCals * HeatWatts &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / Exercise-Metabolism<br>
+<br>
+Created : 20-Dec-05<br>
+Last Modified : 2011-11-15<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2011<br>
+By : University of Mississippi Medical Center<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Exercise-Metabolism &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; HeatWatts &lt;/name&gt;&lt;/var&gt;<br>
+&lt;constant&gt;&lt;name&gt; WattsToCals &lt;/name&gt;&lt;val&gt; 14.34 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;var&gt;&lt;name&gt; TotalCals &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; MotionCals &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; HeatCals &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; Tau &lt;/name&gt;&lt;val&gt; 0.2 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;var&gt;&lt;name&gt; K &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;delay&gt;<br>
+  &lt;name&gt; TotalWatts &lt;/name&gt;<br>
+  &lt;outputname&gt; TotalWatts &lt;/outputname&gt;<br>
+  &lt;initialval&gt; 0.0 &lt;/initialval&gt;<br>
+  &lt;inputname&gt; TargetTotalWatts &lt;/inputname&gt;<br>
+  &lt;rateconstname&gt; TotalWattsK &lt;/rateconstname&gt;<br>
+  &lt;dervname&gt; TotalWattsDerv &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 3.0 &lt;/errorlim&gt;<br>
+&lt;/delay&gt;<br>
+<br>
+&lt;delay&gt;<br>
+  &lt;name&gt; MotionWatts &lt;/name&gt;<br>
+  &lt;outputname&gt; MotionWatts &lt;/outputname&gt;<br>
+  &lt;initialval&gt; 0.0 &lt;/initialval&gt;<br>
+  &lt;inputname&gt; TargetMotionWatts &lt;/inputname&gt;<br>
+  &lt;rateconstname&gt; MotionWattsK &lt;/rateconstname&gt;<br>
+  &lt;dervname&gt; MotionWattsDerv &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 0.6 &lt;/errorlim&gt;<br>
+&lt;/delay&gt;<br>
+<br>
+&lt;delay&gt;<br>
+  &lt;name&gt; ContractionRate &lt;/name&gt;<br>
+  &lt;outputname&gt; ContractionRate &lt;/outputname&gt;<br>
+  &lt;initialval&gt; 0.0 &lt;/initialval&gt;<br>
+  &lt;inputname&gt; TargetContractionRate &lt;/inputname&gt;<br>
+  &lt;rateconstname&gt; ContractionRateK &lt;/rateconstname&gt;<br>
+  &lt;dervname&gt; ContractionRateDerv &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 0.5 &lt;/errorlim&gt;<br>
+&lt;/delay&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
+<br>
+&lt;conditional&gt;&lt;name&gt; K &lt;/name&gt;<br>
+&lt;test&gt; Tau GT 0.0 &lt;/test&gt;<br>
+&lt;true&gt; INVERT Tau &lt;/true&gt;<br>
+&lt;false&gt; INFINITE &lt;/false&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; TotalWattsK &lt;/name&gt;&lt;val&gt; K &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; MotionWattsK &lt;/name&gt;&lt;val&gt; K &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; ContractionRateK &lt;/name&gt;&lt;val&gt; K &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Status.Exertion EQ 0 &lt;/test&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TargetTotalWatts &lt;/name&gt;<br>
+  &lt;val&gt; 0.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TargetMotionWatts &lt;/name&gt;<br>
+  &lt;val&gt; 0.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TargetContractionRate &lt;/name&gt;<br>
+  &lt;val&gt; 0.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Status.Exertion EQ 1 &lt;/test&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TargetTotalWatts &lt;/name&gt;<br>
+  &lt;val&gt; Exercise-Bike.TotalWatts &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TargetMotionWatts &lt;/name&gt;<br>
+  &lt;val&gt; Exercise-Bike.Power(W) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TargetContractionRate &lt;/name&gt;<br>
+  &lt;val&gt; Exercise-Bike.RPM &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Status.Exertion EQ 2 &lt;/test&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TargetTotalWatts &lt;/name&gt;<br>
+  &lt;val&gt; Exercise-Treadmill.TotalWatts &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TargetMotionWatts &lt;/name&gt;<br>
+  &lt;val&gt; Exercise-Treadmill.Power(W) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TargetContractionRate &lt;/name&gt;<br>
+  &lt;val&gt; Exercise-Treadmill.StepsPerMinute &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Status.Exertion EQ 3 &lt;/test&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TargetMotionWatts &lt;/name&gt;<br>
+  &lt;val&gt; DailyPlannerControl.WorkLevel &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TargetTotalWatts &lt;/name&gt;<br>
+  &lt;val&gt; MotionWatts / 0.22 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TargetContractionRate &lt;/name&gt;<br>
+  &lt;val&gt; 10.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Status.Exertion EQ 4 &lt;/test&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TargetMotionWatts &lt;/name&gt;<br>
+  &lt;val&gt; DailyPlannerControl.AerobicsLevel &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TargetTotalWatts &lt;/name&gt;<br>
+  &lt;val&gt; MotionWatts / 0.22 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TargetContractionRate &lt;/name&gt;<br>
+  &lt;val&gt; 50.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; HeatWatts &lt;/name&gt;<br>
+  &lt;val&gt; TotalWatts - MotionWatts &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TotalCals &lt;/name&gt;<br>
+  &lt;val&gt; WattsToCals * TotalWatts &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; MotionCals &lt;/name&gt;<br>
+  &lt;val&gt; WattsToCals * MotionWatts &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; HeatCals &lt;/name&gt;<br>
+  &lt;val&gt; WattsToCals * HeatWatts &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

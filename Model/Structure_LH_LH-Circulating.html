@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,85 +19,85 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_LH_LH.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / LH-Circulating<br>
-<br>
-Created : 07-Apr-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; LH-Circulating &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Secretion &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Degradation &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; TargetConcFemale &lt;/name&gt;&lt;val&gt; 13.0 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;parm&gt;&lt;name&gt; TargetConcMale &lt;/name&gt;&lt;val&gt; 7.0 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; TargetConc &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; [Conc(IU/L)] &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; PumpSwitch &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;parm&gt;&lt;name&gt; PumpSetting &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; K &lt;/name&gt;&lt;val&gt; 0.005 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;diffeq&gt;<br>
-  &lt;name&gt; Mass &lt;/name&gt;<br>
-  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
-  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 1.0 &lt;/errorlim&gt;<br>
-&lt;/diffeq&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Init &lt;/name&gt;<br>
-<br>
-&lt;conditional&gt;&lt;name&gt; TargetConc &lt;/name&gt;<br>
-  &lt;test&gt; Gender.IsFemale &lt;/test&gt;<br>
-  &lt;true&gt; TargetConcFemale &lt;/true&gt;<br>
-  &lt;false&gt; TargetConcMale &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;val&gt; TargetConc * ECFV.InitialVol(L) &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Mass &lt;/name&gt;&lt;val&gt; InitialMass &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Conc &lt;/name&gt;<br>
-  &lt;def&gt;&lt;name&gt; [Conc(IU/L)] &lt;/name&gt;&lt;val&gt; Mass / ECFV.Vol(L) &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-  &lt;def&gt;&lt;name&gt; Secretion &lt;/name&gt;&lt;val&gt; LH-AnteriorPituitary.Secretion &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;def&gt;&lt;name&gt; Degradation &lt;/name&gt;&lt;val&gt; K * Mass &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-  &lt;def&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;val&gt; Secretion + ( PumpSetting * PumpSwitch ) &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;def&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;val&gt; Degradation &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-  &lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; Gain - Loss &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / LH-Circulating<br>
+<br>
+Created : 07-Apr-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; LH-Circulating &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Secretion &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Degradation &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; TargetConcFemale &lt;/name&gt;&lt;val&gt; 13.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; TargetConcMale &lt;/name&gt;&lt;val&gt; 7.0 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; TargetConc &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [Conc(IU/L)] &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; PumpSwitch &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; PumpSetting &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; K &lt;/name&gt;&lt;val&gt; 0.005 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 1.0 &lt;/errorlim&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Init &lt;/name&gt;<br>
+<br>
+&lt;conditional&gt;&lt;name&gt; TargetConc &lt;/name&gt;<br>
+  &lt;test&gt; Gender.IsFemale &lt;/test&gt;<br>
+  &lt;true&gt; TargetConcFemale &lt;/true&gt;<br>
+  &lt;false&gt; TargetConcMale &lt;/false&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;val&gt; TargetConc * ECFV.InitialVol(L) &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Mass &lt;/name&gt;&lt;val&gt; InitialMass &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Conc &lt;/name&gt;<br>
+  &lt;def&gt;&lt;name&gt; [Conc(IU/L)] &lt;/name&gt;&lt;val&gt; Mass / ECFV.Vol(L) &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+  &lt;def&gt;&lt;name&gt; Secretion &lt;/name&gt;&lt;val&gt; LH-AnteriorPituitary.Secretion &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Degradation &lt;/name&gt;&lt;val&gt; K * Mass &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;def&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;val&gt; Secretion + ( PumpSetting * PumpSwitch ) &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;val&gt; Degradation &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; Gain - Loss &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

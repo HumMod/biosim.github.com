@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,53 +19,53 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_SkeletalMuscle_SkeletalMuscle.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / SkeletalMuscle-MusclePumping<br>
-<br>
-Created : 20-Dec-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; SkeletalMuscle-MusclePumping &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Effect &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; IntensityEffect &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; RateEffect &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;functions&gt;<br>
-<br>
-&lt;curve&gt;<br>
-  &lt;name&gt; IntensityEffect &lt;/name&gt;<br>
-  &lt;point&gt;&lt;x&gt;   0 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0.007 &lt;/slope&gt;&lt;/point&gt;<br>
-  &lt;point&gt;&lt;x&gt; 300 &lt;/x&gt;&lt;y&gt; 1.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
-&lt;/curve&gt;<br>
-<br>
-&lt;curve&gt;<br>
-  &lt;name&gt; RateEffect &lt;/name&gt;<br>
-  &lt;point&gt;&lt;x&gt;  0 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0.04 &lt;/slope&gt;&lt;/point&gt;<br>
-  &lt;point&gt;&lt;x&gt; 60 &lt;/x&gt;&lt;y&gt; 1.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
-&lt;/curve&gt;<br>
-<br>
-&lt;/functions&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; IntensityEffect &lt;/name&gt;&lt;val&gt; IntensityEffect [ Exercise-Metabolism.MotionWatts ] &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; RateEffect &lt;/name&gt;&lt;val&gt; RateEffect [ Exercise-Metabolism.ContractionRate ] &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Effect &lt;/name&gt;&lt;val&gt; 1.0 + ( IntensityEffect * RateEffect ) &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / SkeletalMuscle-MusclePumping<br>
+<br>
+Created : 20-Dec-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; SkeletalMuscle-MusclePumping &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Effect &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; IntensityEffect &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; RateEffect &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;functions&gt;<br>
+<br>
+&lt;curve&gt;<br>
+  &lt;name&gt; IntensityEffect &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt;   0 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0.007 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 300 &lt;/x&gt;&lt;y&gt; 1.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;curve&gt;<br>
+  &lt;name&gt; RateEffect &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt;  0 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0.04 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 60 &lt;/x&gt;&lt;y&gt; 1.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;/functions&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; IntensityEffect &lt;/name&gt;&lt;val&gt; IntensityEffect [ Exercise-Metabolism.MotionWatts ] &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; RateEffect &lt;/name&gt;&lt;val&gt; RateEffect [ Exercise-Metabolism.ContractionRate ] &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Effect &lt;/name&gt;&lt;val&gt; 1.0 + ( IntensityEffect * RateEffect ) &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>

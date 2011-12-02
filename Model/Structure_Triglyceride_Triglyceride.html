@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -22,45 +22,45 @@
 <br><a href='Structure_Triglyceride_TriglycerideDecomposition.html'>Structure_Triglyceride_TriglycerideDecomposition</a>
 <br><a href='Structure_Triglyceride_TriglycerideHydrolysis.html'>Structure_Triglyceride_TriglycerideHydrolysis</a>
 <p>
-HumMod / Triglyceride<br>
-<br>
-Created : 07-Apr-05<br>
-Last Modified : 2010-06-03<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-<br>
-&lt;?path Structure\Triglyceride\ ?&gt;<br>
-<br>
-&lt;?include TriglyceridePool.DES ?&gt;<br>
-&lt;?include TriglycerideDecomposition.DES ?&gt;<br>
-&lt;?include TriglycerideHydrolysis.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Triglyceride &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Init &lt;/name&gt;<br>
-  &lt;call&gt; TriglyceridePool.Init &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Conc &lt;/name&gt;<br>
-  &lt;call&gt; TriglyceridePool.Conc &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Rate &lt;/name&gt;<br>
-  &lt;call&gt; TriglycerideHydrolysis.Rate &lt;/call&gt;<br>
-  &lt;call&gt; TriglycerideDecomposition.Rate &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-  &lt;call&gt; TriglyceridePool.Dervs &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End<br>
+HumMod / Triglyceride<br>
+<br>
+Created : 07-Apr-05<br>
+Last Modified : 2010-06-03<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+<br>
+&lt;?path Structure\Triglyceride\ ?&gt;<br>
+<br>
+&lt;?include TriglyceridePool.DES ?&gt;<br>
+&lt;?include TriglycerideDecomposition.DES ?&gt;<br>
+&lt;?include TriglycerideHydrolysis.DES ?&gt;<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Triglyceride &lt;/name&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Init &lt;/name&gt;<br>
+  &lt;call&gt; TriglyceridePool.Init &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Conc &lt;/name&gt;<br>
+  &lt;call&gt; TriglyceridePool.Conc &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Rate &lt;/name&gt;<br>
+  &lt;call&gt; TriglycerideHydrolysis.Rate &lt;/call&gt;<br>
+  &lt;call&gt; TriglycerideDecomposition.Rate &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+  &lt;call&gt; TriglyceridePool.Dervs &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End<br>
 End
 
 <p><img src='../Footer.PNG'>

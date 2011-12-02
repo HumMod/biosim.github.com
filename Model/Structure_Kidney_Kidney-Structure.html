@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/2/2011 6:42:21 AM
+  Created : 12/2/2011 6:49:53 AM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -19,104 +19,104 @@
 <img src='SmallModel.PNG'>
 <a href='Structure_Kidney_Kidney.html'><img src='../Back.PNG'></a>
 <p>
-HumMod / Kidney-Structure<br>
-<br>
-Created : 31-Mar-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Kidney-Structure &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; PhEffect &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; FuelEffect &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; TemperatureEffect &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;backwardeuler&gt;<br>
-  &lt;name&gt; Effect &lt;/name&gt;<br>
-  &lt;integralname&gt; Effect &lt;/integralname&gt;<br>
-  &lt;initialval&gt; 1.0 &lt;/initialval&gt;<br>
-  &lt;f1name&gt; F1 &lt;/f1name&gt;<br>
-  &lt;f2name&gt; F2 &lt;/f2name&gt;<br>
-  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
-&lt;/backwardeuler&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;functions&gt;<br>
-<br>
-&lt;curve&gt;<br>
-  &lt;name&gt; PhOnStructure &lt;/name&gt;<br>
-  &lt;point&gt;&lt;x&gt; 6.5 &lt;/x&gt;&lt;y&gt; 0.1 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
-  &lt;point&gt;&lt;x&gt; 6.6 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
-&lt;/curve&gt;<br>
-<br>
-&lt;curve&gt;<br>
-  &lt;name&gt; FuelOnStructure &lt;/name&gt;<br>
-  &lt;point&gt;&lt;x&gt; 0.5 &lt;/x&gt;&lt;y&gt; 0.05 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
-  &lt;point&gt;&lt;x&gt; 0.8 &lt;/x&gt;&lt;y&gt; 0.00 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
-&lt;/curve&gt;<br>
-<br>
-&lt;curve&gt;<br>
-  &lt;name&gt; TemperatureOnStructure &lt;/name&gt;<br>
-  &lt;point&gt;&lt;x&gt; 44.0 &lt;/x&gt;&lt;y&gt; 0.00 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
-  &lt;point&gt;&lt;x&gt; 46.0 &lt;/x&gt;&lt;y&gt; 0.05 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
-&lt;/curve&gt;<br>
-<br>
-&lt;/functions&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; PhEffect &lt;/name&gt;<br>
-  &lt;val&gt; PhOnStructure [ Kidney-Ph.Ph ] &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; FuelEffect &lt;/name&gt;<br>
-  &lt;val&gt; FuelOnStructure [ Kidney-Fuel.FractUseDelay ] &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TemperatureEffect &lt;/name&gt;<br>
-  &lt;val&gt; TemperatureOnStructure [ HeatCore.Temp(C) ] &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; F1 &lt;/name&gt;<br>
-  &lt;val&gt; 0.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; F2 &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-      PhEffect<br>
-    + TemperatureEffect<br>
-    + FuelEffect<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
+HumMod / Kidney-Structure<br>
+<br>
+Created : 31-Mar-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Kidney-Structure &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; PhEffect &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; FuelEffect &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; TemperatureEffect &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;backwardeuler&gt;<br>
+  &lt;name&gt; Effect &lt;/name&gt;<br>
+  &lt;integralname&gt; Effect &lt;/integralname&gt;<br>
+  &lt;initialval&gt; 1.0 &lt;/initialval&gt;<br>
+  &lt;f1name&gt; F1 &lt;/f1name&gt;<br>
+  &lt;f2name&gt; F2 &lt;/f2name&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+&lt;/backwardeuler&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;functions&gt;<br>
+<br>
+&lt;curve&gt;<br>
+  &lt;name&gt; PhOnStructure &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt; 6.5 &lt;/x&gt;&lt;y&gt; 0.1 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 6.6 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;curve&gt;<br>
+  &lt;name&gt; FuelOnStructure &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt; 0.5 &lt;/x&gt;&lt;y&gt; 0.05 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 0.8 &lt;/x&gt;&lt;y&gt; 0.00 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;curve&gt;<br>
+  &lt;name&gt; TemperatureOnStructure &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt; 44.0 &lt;/x&gt;&lt;y&gt; 0.00 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 46.0 &lt;/x&gt;&lt;y&gt; 0.05 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;/functions&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; PhEffect &lt;/name&gt;<br>
+  &lt;val&gt; PhOnStructure [ Kidney-Ph.Ph ] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; FuelEffect &lt;/name&gt;<br>
+  &lt;val&gt; FuelOnStructure [ Kidney-Fuel.FractUseDelay ] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TemperatureEffect &lt;/name&gt;<br>
+  &lt;val&gt; TemperatureOnStructure [ HeatCore.Temp(C) ] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; F1 &lt;/name&gt;<br>
+  &lt;val&gt; 0.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; F2 &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      PhEffect<br>
+    + TemperatureEffect<br>
+    + FuelEffect<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
 End
 
 <p><img src='../Footer.PNG'>
