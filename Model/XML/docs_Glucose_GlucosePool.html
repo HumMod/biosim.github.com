@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:36 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Docs_Glucose.html'><img src='../../Back.PNG'></a>
+<p>
+QHP 2008 / Glucose.DOCS<br>
+<br>
+Created : 27-Mar-09<br>
+Last Modified : 27-Mar-09<br>
+Author : Tom Coleman<br>
+Copyright : 2009<br>
+<br>
+&lt;structurename&gt; GlucosePool &lt;/structurename&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; GlucosePool.[Glucose(mG/dL)]&lt;/name&gt;<br>
+&lt;topic&gt; Glucose - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; Glucose - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; Glucose - Concentration Units1 &lt;/topic&gt;<br>
+&lt;seealso&gt; InsulinSecretion.GlucoseEffect &lt;/seealso&gt;<br>
+&lt;seealso&gt; GlucagonSecretion. GlucoseEffect &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; GlucosePool.[Glucose(mMol/L)] &lt;/name&gt;<br>
+&lt;topic&gt; Glucose - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; Glucose - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; Glucose - Concentration Units &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; GlucosePool.[Glucose] &lt;/name&gt;<br>
+&lt;topic&gt; Glucose - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; Glucose - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; Glucose - Concentration Units &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; GlucosePool.[Osm(mOsm/L)]&lt;/name&gt;<br>
+&lt;topic&gt; Osmolarity - Overview  &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; GlucosePool.[Osm] &lt;/name&gt;<br>
+&lt;topic&gt; Osmolarity - Overview &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; GlucosePool.Change &lt;/name&gt;<br>
+&lt;topic&gt; Change - GPDefinition1 &lt;/topic&gt;<br>
+&lt;seealso&gt; GlucosePool.Mass &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; GlucosePool.Gain &lt;/name&gt;<br>
+&lt;topic&gt; Gain - GPDefinition2 &lt;/topic&gt;<br>
+&lt;seealso&gt; GlucosePool.Change &lt;/seealso&gt;<br>
+&lt;seealso&gt; LM_Glucose.Release &lt;/seealso&gt;<br>
+&lt;seealso&gt; GILumenCarbohydrates.Absorption &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt;  GlucosePool.InitialMass &lt;/name&gt;<br>
+&lt;topic&gt; InitialMass - GPDefinition4 &lt;/topic&gt;<br>
+&lt;seealso&gt; GlucosePool.Mass &lt;/seealso&gt;<br>
+<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; GlucosePool.Loss &lt;/name&gt;<br>
+&lt;topic&gt; Loss - GPDefinition3 &lt;/topic&gt;<br>
+&lt;seealso&gt; Metabolism-Glucose.TotalUptake &lt;/seealso&gt;<br>
+&lt;seealso&gt; LM_Glucose.Uptake.Uptake &lt;/seealso&gt;<br>
+&lt;seealso&gt; NephronGlucose.Spillover &lt;/seealso&gt;<br>
+&lt;seealso&gt; GlucoseDecomposition.Rate &lt;/seealso&gt;<br>
+<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; GlucosePool.Mass &lt;/name&gt;<br>
+&lt;topic&gt; Mass - GPDefinition5 &lt;/topic&gt;<br>
+&lt;seealso&gt; GlucosePool.Change &lt;/seealso&gt;<br>
+&lt;seealso&gt; GlucosePool.InitialMass &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; GlucosePool.MG_TO_MMOL &lt;/name&gt;<br>
+&lt;topic&gt; Glucose - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; Glucose - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; Glucose - Concentration Units &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; GlucosePool.MW &lt;/name&gt;<br>
+&lt;topic&gt; Glucose - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; Glucose - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; Glucose - Concentration Units &lt;/topic&gt;<br>
+&lt;seealso&gt; GlucosePool.Osmoles &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; GlucosePool.Osmoles &lt;/name&gt;<br>
+&lt;topic&gt; Osmolarity - Overview  &lt;/topic&gt;<br>
+&lt;seealso&gt; OsmECFV.Non-Electrolytes &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; GlucosePool.PER_ML_TO_PER_DL &lt;/name&gt;<br>
+&lt;topic&gt; Glucose - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; Glucose - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; Glucose - Concentration Units &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; GlucosePool.Target[Glucose] &lt;/name&gt;<br>
+&lt;topic&gt; Target[Glucose] - GPDefinition6 &lt;/topic&gt;<br>
+&lt;seealso&gt; GlucosePool.InitialMass &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Glucose - Overview &lt;/name&gt;<br>
+&lt;label&gt; Overview &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Glucose is the final product of carbohydrate digestion and is <br>
+used as a fuel source for the production of ATP in the cells <br>
+of the body.  Glucose is the principal fuel source for the brain <br>
+and cerebral function is critically dependent on maintaining <br>
+plasma glucose levels within narrow limits.<br>
+Plasma glucose levels depend on the rates of entry of glucose <br>
+into the circulation and of its uptake into the tissues. <br>
+The main tissues that regulate blood glucose levels are the <br>
+liver (by glucose production and uptake) and skeletal muscle <br>
+(glucose uptake). The hormones insulin and glucagon function <br>
+as important feedback control systems for maintaining a normal <br>
+blood glucose concentration. <br>
+<br>
+Immediately after a high-carbohydrate meal, the glucose that <br>
+is absorbed into the blood causes an increase in plasma <br>
+concentration of glucose and subsequent rapid secretion of <br>
+insulin.  Insulin causes rapid uptake and storage of glucose <br>
+by almost all tissues of the body but especially by the muscles, <br>
+adipose tissue, and liver. Excess glucose is stored in the <br>
+form of glycogen. Insulin also inhibits glycogen breakdown <br>
+and glucose release by the liver. Between meals, when <br>
+food is not available and the blood glucose concentration <br>
+begins to fall, insulin secretion decreases rapidly and <br>
+secretion of glucagon increases. Liver glycogen is split back <br>
+into glucose (glycogenolysis) and released back into the <br>
+blood to maintain the plasma glucose levels. The decrease <br>
+in insulin secretion and increase in glucagon release also<br>
+causes increased gluconeogenesis in the liver and results in <br>
+the breakdown and use of stored glucose, fats and proteins.  <br>
+Both of these effects greatly enhance the availability of <br>
+glucose to other organs of the body. <br>
+<br>
+Kruszynska YT. Normal metabolism: the physiology of fuel<br>
+homeostasis. Textbook of Diabetes. Chapter 9. Edited by <br>
+Pickup JC & Willams G. Third Edition 2003. Blackwell Science.<br>
+<br>
+Cryer PE. Glucose Counterregulation: prevention and correction <br>
+of hypoglycemia in humans. Am J Physiol 264: E149 - E155, 1993<br>
+<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Glucose - Physical Units &lt;/name&gt;<br>
+&lt;label&gt; Physical Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Plasma Concentration  mG/mL, mG/dL or nMol/L<br>
+Mass  mG <br>
+mG/dL * 0.05551 = mMol/L<br>
+mMol * 0.182 = mG<br>
+mG * 5.551 = mMol<br>
+mG/mL * 100 = mG/dL<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Glucose - Concentration Units1 &lt;/name&gt;<br>
+&lt;label&gt; Concentration Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Molecular Weight (MW) of glucose is 180<br>
+<br>
+Typical plasma glucose concentration [Glucose] = 1.1mg/mL<br>
+The volume of distribution is the ECFV.<br>
+<br>
+Glucose Mass = ECFV * [Glucose]<br>
+             = 15000 * 1.1 = 16500mG<br>
+<br>
+Typical glucose concentrations under a variety of<br>
+physiological situations<br>
+<br>
+                 <br>
+Hypoglycemia    45 mG/dL ; 2.5 mMol/L<br>
+Starving        60 mG/dL ; 3.3 mMol/L<br>
+Fasting         85 mG/dL ; 4.7 mMol/L<br>
+Drip           110 mG/dL ; 6.1 mMol/L<br>
+Fed            130 mG/dL ; 7.2 mMol/L<br>
+Glucose Load   200 mG/dL ; 11.1 mMol/L<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Change - GPDefinition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Change in glucose mass is the gain in glucose minus the loss<br>
+in glucose. <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Gain - GPDefinition2 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Gain is defined as positive changes in mass of glucose <br>
+and is a function of GI lumen carbohydrate absorption rate,<br>
+rate of liver release of glucose and infused glucose (using <br>
+the glucose pump feature). <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Loss - GPDefinition3 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Loss is defined as negative changes in mass of glucose <br>
+and is a function of uptake of glucose into the cells<br>
+of the body; liver uptake; loss of glucose in the kidney<br>
+(Nephron Glucose spillover) and glucose decomposition rate.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt; <br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Osmolarity - Overview &lt;/name&gt;<br>
+&lt;label&gt; Overview &lt;/label&gt; <br>
+&lt;content&gt;<br>
+<br>
+Osmolarity is the osmolal concentration of a solution<br>
+expressed as osmoles (osm) per liter of solution. One <br>
+osmole  equal to one mole (mol)(6.02 * 10^23) of solute<br>
+particles. Therefore a solution containing 1 mole of<br>
+glucose in each liter has a concentration of 1 osm/L.<br>
+In general, the osmole is too large a unit for expressing<br>
+osmotic activity of solutes in body fluids. The term <br>
+milliosmole (mOsm), which equals 1/1000 osmole, is<br>
+commonly used. <br>
+<br>
+A normal plasma concentration of glucose is 100mG/dL.<br>
+100mG/dL = 1000mG/L. The MW of glucose is 180<br>
+Therefore 100mG/dL = 1000/180 = 5.55 mOsm/L.<br>
+<br>
+In patients with diabetes, plasma glucose levels can<br>
+rise to dangerously high levels. This can exert a <br>
+large amount of osmotic pressure in the extracellular <br>
+fluid and result in cellular dehydration. Increased <br>
+excretion of glucose in the urine can also cause osmotic<br>
+diuresis and a depletion of body fluids. <br>
+<br>
+Guyton AC, Hall JE. Textbook of medical physiology.<br>
+Eleventh Edition. Elsevier Saunders.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt; <br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; InitialMass - GPDefinition4 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+The initial mass is the starting amount of glucose.<br>
+It is the initial ECFV * Target[Glucose]. The initial<br>
+ECFV is affected by body traits (size, adiposity and <br>
+muscularity). Target[Glucose] is the starting plasma<br>
+glucose concentration. <br>
+  <br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Mass - GPDefinition5 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Changes in the glucose pool or mass are a function of both <br>
+gains and losses in glucose over time. Gain is a function <br>
+of GI lumen carbohydrate absorption rate,<br>
+rate of liver release of glucose and infused glucose (using <br>
+the glucose pump feature).  Loss is a function of uptake <br>
+of glucose into the cells of the body; liver uptake; loss <br>
+of glucose in the kidney (Nephron Glucose Spillover) <br>
+and glucose decomposition rate.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt; <br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Target[Glucose] - GPDefinition6 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Target[Glucose] is the starting or initial plasma<br>
+glucose concentration.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;  <br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:34 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Structure_Heart_Heart.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / RightHeart-Pain DES<br>
+<br>
+Created : 2010-06-01<br>
+Last Modified : 2010-06-01<br>
+Author : Tom Coleman<br>
+Copyright : 2010-2010<br>
+By : University of Mississippi Medical Center<br>
+<br>
+&lt;structure&gt;&lt;name&gt; RightHeart-Pain &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; HasPain &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; IsIschemic &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; IsAcidic &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [Lac-]-NoPain &lt;/name&gt;&lt;val&gt; 0.03 &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [Lac-]-Pain &lt;/name&gt;&lt;val&gt; 0.05 &lt;/val&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; IsIschemic &lt;/name&gt;<br>
+  &lt;val&gt; RightHeart-Infarction.IsIschemic &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;conditional&gt;&lt;name&gt; IsAcidic &lt;/name&gt;<br>
+&lt;test&gt; RightHeart-Lactate.[Lac-] LT [Lac-]-NoPain &lt;/test&gt;<br>
+&lt;true&gt; FALSE &lt;/true&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;conditional&gt;&lt;name&gt; IsAcidic &lt;/name&gt;<br>
+&lt;test&gt; RightHeart-Lactate.[Lac-] GT [Lac-]-Pain &lt;/test&gt;<br>
+&lt;true&gt; TRUE &lt;/true&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;conditional&gt;&lt;name&gt; HasPain &lt;/name&gt;<br>
+&lt;test&gt; IsIschemic OR IsAcidic &lt;/test&gt;<br>
+&lt;true&gt; TRUE &lt;/true&gt;<br>
+&lt;false&gt; FALSE &lt;/false&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

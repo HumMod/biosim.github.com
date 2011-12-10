@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:35 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Display_Organs_SkeletalMuscle_Metabolism_Metabolism.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / O2<br>
+<br>
+Created : 11-Dec-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;groupbox&gt;<br>
+   &lt;row&gt; 2.0 &lt;/row&gt;<br>
+   &lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;high&gt; 15.8 &lt;/high&gt;<br>
+   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
+   &lt;title&gt; O2 &lt;/title&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; SkeletalMuscle-Flow.PO2 &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; pO2 &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showgraph&gt;<br>
+  &lt;row&gt; 2.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
+  &lt;leftmargin&gt; 5 &lt;/leftmargin&gt;<br>
+  &lt;xaxis&gt;<br>
+    &lt;name&gt; System.X &lt;/name&gt;<br>
+    &lt;label&gt; Time &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/xaxis&gt;<br>
+  &lt;yaxis&gt;<br>
+    &lt;yvar&gt;<br>
+      &lt;name&gt; SkeletalMuscle-Flow.PO2 &lt;/name&gt;<br>
+      &lt;nolabel/&gt;<br>
+      &lt;linecolor&gt; BLUE &lt;/linecolor&gt;<br>
+    &lt;/yvar&gt;<br>
+    &lt;scale&gt;<br>
+      &lt;min&gt; 40 &lt;/min&gt;&lt;max&gt; 50 &lt;/max&gt;&lt;inc&gt; 10 &lt;/inc&gt;<br>
+    &lt;/scale&gt;<br>
+  &lt;/yaxis&gt;<br>
+&lt;/showgraph&gt;<br>
+<br>
+&lt;showbargraph&gt;<br>
+  &lt;row&gt; 9.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 4 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
+  &lt;leftmargin&gt; 5 &lt;/leftmargin&gt;<br>
+  &lt;title&gt; O2 (mL/Min) &lt;/title&gt;<br>
+  &lt;showinitialvalues/&gt;<br>
+  &lt;bar&gt;<br>
+    &lt;name&gt; SkeletalMuscle-Metabolism.O2Need &lt;/name&gt;<br>
+    &lt;label&gt; Need &lt;/label&gt;<br>
+    &lt;color&gt; BLUE &lt;/color&gt;<br>
+  &lt;/bar&gt;<br>
+  &lt;bar&gt;<br>
+    &lt;name&gt; SkeletalMuscle-Flow.O2Use &lt;/name&gt;<br>
+    &lt;label&gt; Use &lt;/label&gt;<br>
+    &lt;color&gt; BLUE &lt;/color&gt;<br>
+  &lt;/bar&gt;<br>
+  &lt;scale&gt;<br>
+    &lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 15 &lt;/max&gt;&lt;inc&gt; 5 &lt;/inc&gt;<br>
+    <br>
+  &lt;/scale&gt;<br>
+&lt;/showbargraph&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 14.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; SkeletalMuscle-Flow.O2Use &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; O2Use &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;infobutton&gt;<br>
+  &lt;row&gt; 1.2 &lt;/row&gt;<br>
+  &lt;col&gt; 26.0 &lt;/col&gt;<br>
+<br>
+  &lt;line&gt; pO2 = 52 mmHg &lt;/line&gt;<br>
+  &lt;line&gt;  &lt;/line&gt;<br>
+  &lt;line&gt; O2 Need = 10.5 mL/Min &lt;/line&gt;<br>
+  &lt;line&gt; O2 Use = 10.5 mL/Min &lt;/line&gt;<br>
+&lt;/infobutton&gt;<br>
+<br>
+&lt;/groupbox&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

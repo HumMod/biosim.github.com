@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:35 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Display_Organs_Kidney_Nephrons_DistalTubule_Sodium_Sodium.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / SodiumMovement<br>
+<br>
+Created : 18-Mar-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;groupbox&gt;<br>
+   &lt;row&gt; 2.0 &lt;/row&gt;<br>
+   &lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;high&gt; 15.8 &lt;/high&gt;<br>
+   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
+   &lt;title&gt; Sodium Movement &lt;/title&gt;<br>
+<br>
+&lt;structurename&gt; DT_Na &lt;/structurename&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Inflow &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Inflow &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 2.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Reab &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Reabsorption &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showgraph&gt;<br>
+  &lt;row&gt; 3.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 9 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
+  &lt;leftmargin&gt; 6 &lt;/leftmargin&gt;<br>
+  &lt;xaxis&gt;<br>
+    &lt;name&gt; System.X &lt;/name&gt;&lt;label&gt; Time &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/xaxis&gt;<br>
+  &lt;yaxis&gt;<br>
+    &lt;yvar&gt;&lt;name&gt; Inflow &lt;/name&gt;&lt;label&gt; In &lt;/label&gt;&lt;linecolor&gt; BLUE &lt;/linecolor&gt;&lt;/yvar&gt;<br>
+    &lt;yvar&gt;&lt;name&gt; Reab &lt;/name&gt;&lt;label&gt; Reab &lt;/label&gt;&lt;linecolor&gt; RED &lt;/linecolor&gt;&lt;/yvar&gt;<br>
+    &lt;yvar&gt;&lt;name&gt; Outflow &lt;/name&gt;&lt;label&gt; Out &lt;/label&gt;&lt;linecolor&gt; BLACK &lt;/linecolor&gt;&lt;/yvar&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/yaxis&gt;<br>
+&lt;/showgraph&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 12.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Outflow &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Outflow &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 14.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; [Na+] &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+  &lt;label&gt; [Na+] &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;infobutton&gt;<br>
+  &lt;row&gt; 1.2 &lt;/row&gt;<br>
+  &lt;col&gt; 26.0 &lt;/col&gt;<br>
+<br>
+  &lt;line&gt; Typical values are &lt;/line&gt;<br>
+  &lt;line&gt;  &lt;/line&gt;<br>
+  &lt;line&gt; Inflow = 1.7 mEq/Min &lt;/line&gt;<br>
+  &lt;line&gt; Reaqbsorption = 1.3 mEq/Min &lt;/line&gt;<br>
+  &lt;line&gt; Outflow = 0.5 mEq/Min &lt;/line&gt;<br>
+  &lt;line&gt;  &lt;/line&gt;<br>
+  &lt;line&gt; [Na+] = 110.0 mEq/L &lt;/line&gt;<br>
+&lt;/infobutton&gt;<br>
+<br>
+&lt;/groupbox&gt;<br>
+<br>
+End<br>
+
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

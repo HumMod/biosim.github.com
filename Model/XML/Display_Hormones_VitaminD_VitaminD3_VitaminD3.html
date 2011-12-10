@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:34 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Display_Hormones_VitaminD_VitaminD.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod | VitaminD3<br>
+<br>
+Created : 2011-08-04<br>
+Last Modified : 2011-08-04<br>
+Author : Tom Coleman<br>
+Copyright : 2011-2011<br>
+By : University of Mississippi Medical Center<br>
+<br>
+&lt;panel&gt;&lt;name&gt; VitaminD3 &lt;/name&gt;<br>
+<br>
+&lt;showbitmap&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;<br>
+  &lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Hormone &lt;/name&gt;<br>
+&lt;/showbitmap&gt;<br>
+<br>
+&lt;label&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;<br>
+  &lt;col&gt; 4.5 &lt;/col&gt;<br>
+  &lt;text&gt; Hormones | Vitamin D3 &lt;/text&gt;<br>
+&lt;/label&gt;<br>
+<br>
+&lt;showclock&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+  &lt;name&gt; System.X &lt;/name&gt;<br>
+  &lt;ampm/&gt;<br>
+  &lt;secs/&gt;<br>
+  &lt;days/&gt;<br>
+&lt;/showclock&gt;<br>
+<br>
+&lt;structurename&gt; VitaminD3 &lt;/structurename&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 3.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; [Conc(nG/mL)] &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; [Conc (nG/mL)] &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showgraph&gt;<br>
+  &lt;row&gt; 4.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
+  &lt;leftmargin&gt; 6 &lt;/leftmargin&gt;<br>
+  &lt;xaxis&gt;<br>
+    &lt;name&gt; System.X &lt;/name&gt;<br>
+    &lt;label&gt; Time &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/xaxis&gt;<br>
+  &lt;yaxis&gt;<br>
+    &lt;yvar&gt;<br>
+      &lt;name&gt; [Conc(nG/mL)] &lt;/name&gt;<br>
+      &lt;nolabel/&gt;<br>
+      &lt;linecolor&gt; BLUE &lt;/linecolor&gt;<br>
+    &lt;/yvar&gt;<br>
+    &lt;scale&gt;<br>
+      &lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 20 &lt;/max&gt;<br>
+    &lt;/scale&gt;<br>
+  &lt;/yaxis&gt;<br>
+&lt;/showgraph&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 11.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; [Conc(nMol/L)] &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; [Conc (nMol/L)] &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 13.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; ClampSwitch &lt;/name&gt;<br>
+  &lt;listname&gt; Common.Switch &lt;/listname&gt;<br>
+  &lt;label&gt; Clamp Switch &lt;/label&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; Clamp &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 100 &lt;/reps&gt;&lt;stepsize&gt; 0.1 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 14.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; ClampSetting &lt;/name&gt;<br>
+  &lt;listname&gt; Clamp &lt;/listname&gt;<br>
+  &lt;label&gt; Setting &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 16.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; [25-H]Effect &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; [25-H]Effect &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showcurve&gt;<br>
+  &lt;row&gt; 17.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
+  &lt;leftmargin&gt; 6 &lt;/leftmargin&gt;<br>
+<br>
+  &lt;xaxis&gt;<br>
+    &lt;name&gt; VitaminD(25-Hydroxy).[Conc(nG/mL)] &lt;/name&gt;<br>
+    &lt;label&gt; [25-H] &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 40 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/xaxis&gt;<br>
+<br>
+  &lt;yaxis&gt;<br>
+    &lt;label&gt; Effect &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/yaxis&gt;<br>
+<br>
+  &lt;curvename&gt; [25-H]Effect &lt;/curvename&gt;<br>
+&lt;/showcurve&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 24.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; VitaminD(25-Hydroxy).[Conc(nG/mL)] &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; [25-H] &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 3.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; Mass &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Mass (uG) &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showgraph&gt;<br>
+  &lt;row&gt; 4.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
+  &lt;leftmargin&gt; 6 &lt;/leftmargin&gt;<br>
+  &lt;xaxis&gt;<br>
+    &lt;name&gt; System.X &lt;/name&gt;<br>
+    &lt;label&gt; Time &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/xaxis&gt;<br>
+  &lt;yaxis&gt;<br>
+    &lt;yvar&gt;<br>
+      &lt;name&gt; Mass &lt;/name&gt;<br>
+      &lt;nolabel/&gt;<br>
+      &lt;linecolor&gt; BLUE &lt;/linecolor&gt;<br>
+    &lt;/yvar&gt;<br>
+    &lt;scale&gt;<br>
+      &lt;min&gt; 100 &lt;/min&gt;&lt;max&gt; 200 &lt;/max&gt;<br>
+    &lt;/scale&gt;<br>
+  &lt;/yaxis&gt;<br>
+&lt;/showgraph&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 11.4 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; Change &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 3 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Change (uG/Min) &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 12.8 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; Gain(nG/Min) &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Gain (nG/Min) &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 13.8 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; Loss(nG/Min) &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Loss (nG/Min) &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 15.4 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; Photosynthesis &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Photosynthesis &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;maplist&gt;<br>
+  &lt;name&gt; Sunlight &lt;/name&gt;<br>
+  &lt;map&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;img&gt; None &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;img&gt; Dim &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;img&gt; Normal &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;img&gt; Bright &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 4 &lt;/val&gt;&lt;img&gt; Very Bright &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 5 &lt;/val&gt;&lt;img&gt; Extreme &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 16.8 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
+  &lt;name&gt; Sunlight &lt;/name&gt;<br>
+  &lt;listname&gt; Sunlight &lt;/listname&gt;<br>
+  &lt;label&gt; Sunlight &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 18.2 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; Diet &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Diet &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; Diet(IU/Day) &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 100 &lt;/reps&gt;&lt;stepsize&gt; 100 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 19.6 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
+  &lt;name&gt; Diet(IU/Day) &lt;/name&gt;<br>
+  &lt;listname&gt; Diet(IU/Day) &lt;/listname&gt;<br>
+  &lt;label&gt; Diet (IU/Day) &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 21.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; Sequestration &lt;/name&gt;<br>
+   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Sequestration &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 22.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; Mobilization &lt;/name&gt;<br>
+   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Mobilization &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 23.4 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; Hydroxylation &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Hydroxylation &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 24.4 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
+   &lt;name&gt; [25-H]Effect &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; [25-H] Effect &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; K &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 100 &lt;/reps&gt;&lt;stepsize&gt; 0.01 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 25.8 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
+  &lt;name&gt; K &lt;/name&gt;<br>
+  &lt;listname&gt; K &lt;/listname&gt;<br>
+  &lt;label&gt; K &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 27.2 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
+   &lt;name&gt; Mass &lt;/name&gt;<br>
+   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Mass &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 28.8 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; PumpRate &lt;/name&gt;<br>
+   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Pump Rate &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 30.0 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
+  &lt;name&gt; PumpSwitch &lt;/name&gt;<br>
+  &lt;listname&gt; Common.Switch &lt;/listname&gt;<br>
+  &lt;label&gt; Switch &lt;/label&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; Pump &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 100 &lt;/reps&gt;&lt;stepsize&gt;  1 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 31.4 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
+  &lt;name&gt; PumpSetting &lt;/name&gt;<br>
+  &lt;listname&gt; Pump &lt;/listname&gt;<br>
+  &lt;label&gt; Setting &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;/panel&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

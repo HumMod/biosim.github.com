@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:34 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Display_Circulation_LHPumping_LHPumping.html'><img src='../../Back.PNG'></a>
+<p><a href='Display_Circulation_LHPumping_Output_Summary.html'>Display_Circulation_LHPumping_Output_Summary</a>
+<p>
+HumMod / Output<br>
+<br>
+Created : 16-May-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2005-2010<br>
+By : University of Mississippi Medical Center<br>
+Solver : DES 2005<br>
+Schema : 2005.0<br>
+<br>
+&lt;panel&gt;&lt;name&gt; LHPumping-Output &lt;/name&gt;<br>
+<br>
+&lt;showbitmap&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; LeftHeart(2) &lt;/name&gt;<br>
+&lt;/showbitmap&gt;<br>
+<br>
+&lt;label&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 4.5 &lt;/col&gt;<br>
+  &lt;text&gt; Left Heart Pumping - Output &lt;/text&gt;<br>
+&lt;/label&gt;<br>
+<br>
+&lt;showclock&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+  &lt;name&gt; System.X &lt;/name&gt;<br>
+  &lt;ampm/&gt;<br>
+  &lt;secs/&gt;<br>
+  &lt;days/&gt;<br>
+&lt;/showclock&gt;<br>
+<br>
+&lt;?path Display\Circulation\LHPumping\Output\ ?&gt;<br>
+<br>
+&lt;?include Summary.DES ?&gt;<br>
+<br>
+&lt;structurename&gt; LeftHeartPumping-Pumping &lt;/structurename&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 3.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; NetStroke &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Net Stroke &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 4.0 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
+   &lt;name&gt; AorticRegurgitation &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Aortic Regurgitation &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 5.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; ForwardStroke &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Forward Stroke &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 6.0 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
+   &lt;name&gt; AorticStenosis &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Aortic Stenosis &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 7.0 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
+   &lt;name&gt; MitralRegurgitation &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Mitral Regurgitation &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 8.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; BasicStroke &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Basic Stroke &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+<br>
+&lt;/panel&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

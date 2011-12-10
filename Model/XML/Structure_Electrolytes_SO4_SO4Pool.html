@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:34 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Structure_Electrolytes_SO4_SO4.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / SO4Pool<br>
+<br>
+Created : 06-Apr-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2005-2010<br>
+By : University of Mississippi Medical Center<br>
+Solver : DES 2005<br>
+Schema : 2005.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; SO4Pool &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [SO4--] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [SO4--(mEq/L)] &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Osmoles &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Target[SO4--] &lt;/name&gt;&lt;val&gt; 0.00028 &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 0.042 &lt;/errorlim&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcOsmoles &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Osmoles &lt;/name&gt;&lt;val&gt; Mass / 2.0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Init &lt;/name&gt;<br>
+  &lt;def&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;val&gt; Target[SO4--] * ECFV.Vol &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass &lt;/name&gt;&lt;val&gt; InitialMass &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcConc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; [SO4--] &lt;/name&gt;&lt;val&gt; Mass / ECFV.Vol &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; [SO4--(mEq/L)] &lt;/name&gt;&lt;val&gt; 1000.0 * [SO4--] &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcDervs &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;val&gt; DietIntakeElectrolytes.SO4--_mMol/Min &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;val&gt; CD_SO4.Outflow &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; Gain - Loss &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

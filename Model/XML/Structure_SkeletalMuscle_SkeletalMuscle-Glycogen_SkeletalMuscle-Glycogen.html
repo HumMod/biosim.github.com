@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:34 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Structure_SkeletalMuscle_SkeletalMuscle.html'><img src='../../Back.PNG'></a>
+<p><a href='Structure_SkeletalMuscle_SkeletalMuscle-Glycogen_SkeletalMuscle-Insulin.html'>Structure_SkeletalMuscle_SkeletalMuscle-Glycogen_SkeletalMuscle-Insulin</a>
+<p>
+HumMod / SkeletalMuscle-Glycogen<br>
+<br>
+Created : 29-Mar-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Solver : DES 2005<br>
+Schema : 2005.0<br>
+<br>
+&lt;?path Structure\SkeletalMuscle\SkeletalMuscle-Glycogen\ ?&gt;<br>
+<br>
+&lt;?include SkeletalMuscle-Insulin.DES ?&gt;<br>
+<br>
+&lt;structure&gt;&lt;name&gt; SkeletalMuscle-Glycogen &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Synthesis &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Metabolism &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; BasicSynthesis &lt;/name&gt;&lt;val&gt; 20.0 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; GlucoseEffect &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InsulinEffect &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Space &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Availability &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Metabolism(Cal/Min) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; MG_TO_G &lt;/name&gt;&lt;val&gt; 0.001 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
+  &lt;initialval&gt; 500.0 &lt;/initialval&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 5.3 &lt;/errorlim&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;functions&gt;<br>
+<br>
+&lt;curve&gt;<br>
+  &lt;name&gt; GlucoseEffect &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt;   0 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 100 &lt;/x&gt;&lt;y&gt; 1.0 &lt;/y&gt;&lt;slope&gt; 0.01 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 300 &lt;/x&gt;&lt;y&gt; 3.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;curve&gt;<br>
+  &lt;name&gt; InsulinEffect &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt;   0 &lt;/x&gt;&lt;y&gt;  0.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt;  20 &lt;/x&gt;&lt;y&gt;  1.0 &lt;/y&gt;&lt;slope&gt; 0.2 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 100 &lt;/x&gt;&lt;y&gt; 20.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;curve&gt;<br>
+  &lt;name&gt; Space &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt;   0 &lt;/x&gt;&lt;y&gt; 4.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 400 &lt;/x&gt;&lt;y&gt; 1.0 &lt;/y&gt;&lt;slope&gt; -0.015 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 500 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;curve&gt;<br>
+  &lt;name&gt; Availability &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt;  0 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 50 &lt;/x&gt;&lt;y&gt; 1.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;/functions&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; GlucoseEffect &lt;/name&gt;&lt;val&gt; GlucoseEffect [ GlucosePool.[Glucose(mG/dL)] ] &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; InsulinEffect &lt;/name&gt;&lt;val&gt; InsulinEffect [ SkeletalMuscle-Insulin.[InsulinDelayed] ] &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Space &lt;/name&gt;&lt;val&gt; Space [ Mass ] &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Availability &lt;/name&gt;&lt;val&gt; Availability [ Mass ] &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Synthesis &lt;/name&gt;&lt;val&gt; BasicSynthesis * GlucoseEffect * InsulinEffect * Space &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Metabolism(Cal/Min) &lt;/name&gt;&lt;val&gt; SkeletalMuscle-Metabolism.AnaerobicCals * Availability &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Metabolism &lt;/name&gt;&lt;val&gt; Metabolism(Cal/Min) * Metabolism-Tools.CarboAnaerobic(mG/Cal) &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; MG_TO_G * ( Synthesis - Metabolism ) &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

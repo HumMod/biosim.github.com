@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:34 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Structure_GILumen_GILumenH2O_GILumenH2O.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / GILumenTemperature<br>
+<br>
+Created : 05-Jun-06<br>
+Last Modified : 2010-03-24<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; GILumenTemperature &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Intake &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Absorption &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Vomitus &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Diarrhea &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; DegK &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; DegC &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; DegF &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Conduction &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Convection &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; Cond &lt;/name&gt;&lt;val&gt; 0.01 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
+  &lt;initialval&gt; 310.0 &lt;/initialval&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 1.6 &lt;/errorlim&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Conc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; DegK &lt;/name&gt;<br>
+  &lt;val&gt; 1000.0 * Mass / GILumenVolume.Mass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; DegC &lt;/name&gt;<br>
+  &lt;val&gt; DegK - 273.15 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; DegF &lt;/name&gt;<br>
+  &lt;val&gt; ( 9 / 5 ) * DegC + 32 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Conduction &lt;/name&gt;<br>
+  &lt;val&gt; Cond * ( DegK - HeatCore.Temp(K) ) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Convection &lt;/name&gt;<br>
+  &lt;val&gt; SpecificHeat.Water(kCal/G) * DegK * GILumenVolume.Absorption &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Intake &lt;/name&gt;<br>
+  &lt;val&gt; SpecificHeat.Water(kCal/G) * DietGoalH2O.DegK * GILumenVolume.OralIntake &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Absorption &lt;/name&gt;<br>
+  &lt;val&gt; Conduction + Convection &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Vomitus &lt;/name&gt;<br>
+  &lt;val&gt; GILumenVomitus.HeatLoss &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Diarrhea &lt;/name&gt;<br>
+  &lt;val&gt; GILumenDiarrhea.HeatLoss &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Gain &lt;/name&gt;<br>
+  &lt;val&gt; Intake &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Loss &lt;/name&gt;<br>
+  &lt;val&gt; Absorption + Vomitus + Diarrhea &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Change &lt;/name&gt;<br>
+  &lt;val&gt; Gain - Loss &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

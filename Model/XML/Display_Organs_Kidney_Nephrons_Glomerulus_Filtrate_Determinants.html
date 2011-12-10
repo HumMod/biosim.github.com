@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:35 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Display_Organs_Kidney_Nephrons_Glomerulus_Filtrate_Filtrate.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / Determinants<br>
+<br>
+Created : 17-Mar-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;groupbox&gt;<br>
+   &lt;row&gt; 2.0 &lt;/row&gt;<br>
+   &lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;high&gt; 10.2 &lt;/high&gt;<br>
+   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
+   &lt;title&gt; Determinants &lt;/title&gt;<br>
+<br>
+&lt;structurename&gt; GlomerulusFiltrate &lt;/structurename&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Kidney-NephronCount.Filtering(xNormal) &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Fraction Filtering &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; GlomerulusFiltrate.Perm &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 10 &lt;/reps&gt;&lt;stepsize&gt;  1.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt;  9 &lt;/reps&gt;&lt;stepsize&gt; 10.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 2.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Perm &lt;/name&gt;<br>
+  &lt;listname&gt; GlomerulusFiltrate.Perm &lt;/listname&gt;<br>
+  &lt;label&gt; Perm &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 4.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; PressureGradient &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Pressure Gradient &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 5.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Pressure &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Glomerular Pressure &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 6.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; EffCOP &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Efferent COP &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 7.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; PT_Pressure &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;fieldwidth&gt; 6 &lt;/fieldwidth&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Proximal Tubule Pressure &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;infobutton&gt;<br>
+  &lt;row&gt; 1.2 &lt;/row&gt;<br>
+  &lt;col&gt; 26.0 &lt;/col&gt;<br>
+<br>
+  &lt;line&gt; Typical values are &lt;/line&gt;<br>
+  &lt;line&gt;  &lt;/line&gt;<br>
+  &lt;line&gt; Fraction Filtering = 1.00 &lt;/line&gt;<br>
+  &lt;line&gt; Perm = 20 (mL/Min)/mmHg &lt;/line&gt;<br>
+  &lt;line&gt; Pressure Gradient = 6.0 mmHg &lt;/line&gt;<br>
+  &lt;line&gt; Glomerular Pressure = 60.0 mmHg &lt;/line&gt;<br>
+  &lt;line&gt; Efferent COP = 36.0 mmHg &lt;/line&gt;<br>
+  &lt;line&gt; Proximal Tubule Pressure = 18 mmHg &lt;/line&gt;<br>
+&lt;/infobutton&gt;<br>
+<br>
+&lt;/groupbox&gt;<br>
+<br>
+End<br>
+
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

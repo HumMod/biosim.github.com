@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:36 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Docs_Catechols.html'><img src='../../Back.PNG'></a>
+<p>
+QHP 2008 / Catechols.DOCS<br>
+<br>
+Created : 27-Mar-09<br>
+Last Modified : 27-Mar-09<br>
+Author : Tom Coleman<br>
+Copyright : 2009<br>
+<br>
+&lt;structurename&gt; BetaPool &lt;/structurename&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; BetaPool.Effect &lt;/name&gt;<br>
+&lt;topic&gt; BetaPool - Definition &lt;/topic&gt;<br>
+&lt;topic&gt; Receptor Dynamics Overview  &lt;/topic&gt;<br>
+&lt;topic&gt; Adrenergic Receptors Overview &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; BetaPool.EpiPart &lt;/name&gt;<br>
+&lt;topic&gt; EpiPart - Definition &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; BetaPool.EPISCALE &lt;/name&gt;<br>
+&lt;topic&gt; EPISCALE - Definition&lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; BetaPool.NEPart &lt;/name&gt;<br>
+&lt;topic&gt; NEPart - Definition &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; BetaPool.NESCALE &lt;/name&gt;<br>
+&lt;topic&gt; NESCALE - Definition &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; BetaPool.Total &lt;/name&gt;<br>
+&lt;topic&gt; Total - Definition &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; BetaPool - Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+The beta pool is the quantity of stimulated beta receptors.<br>
+Under resting conditions the effect of beta pool stimulation<br>
+is 1.0 and norepinephrine and epinephrine make roughly equal<br>
+contributions to the beta pool. <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Adrenergic Receptors Overview &lt;/name&gt;<br>
+&lt;label&gt; Adrenergic Receptors Overview &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+There are two major types of adrenergic receptors, alpha <br>
+receptors and beta receptors. Alpha receptors can be subdivided <br>
+into alpha 1  and alpha 2 receptors. Beta receptors can be <br>
+subdivided into beta 1 receptors and beta 2 receptors. <br>
+Norepinephrine and epinephrine have slightly different effects <br>
+in exciting the alpha and beta receptors. Norepinephrine excites <br>
+mainly alpha receptors but excites beta receptors to a lesser <br>
+extent as well. Epinephrine excites both types of receptors <br>
+approximately equally. Therefore the relative effects of <br>
+norepinephrine and epinephrine on different effector<br>
+organs are determined by the types of receptors in the organs.<br>
+Furthermore certain alpha functions are excitatory, whereas <br>
+others are inhibitory. Likewise certain beta functions are <br>
+excitatory and others are inhibitory. Therefore, alpha and beta <br>
+receptors are not necessarly associated with excitation or <br>
+inhibition but simply with the affinity of the hormone for the <br>
+receptors in the given effector organ.  <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Receptor Dynamics Overview  &lt;/name&gt;<br>
+&lt;label&gt; Receptor Dynamics Overview &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Clark JW, Leff P. Operational models of pharmacological<br>
+agonism. Proc R. Soc Lond 220: 141-162, 1983.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; NESCALE - Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+The NESCALE is a constant which relates plasma levels of <br>
+norepinephrine to beta agonism. Together with EPISCALE, <br>
+normal plasma levels of epinephrine and NE are mapped to <br>
+an beta agonism of 1.0.    <br>
+ <br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; NEPart - Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Since beta receptors see both epinephrine and norepinephrine, <br>
+the blood concentration of Epi and NE do not quantitate their<br>
+effect on beta receptors. In the model NE and Epi contribute <br>
+equally to beta agonism and normal plasma concentrations of <br>
+NE and Epi are mapped to a beta agonism of 1.0. This is done <br>
+by using two constants NESCALE and EPISCALE to calculate NEPart <br>
+and EpiPart respectively. <br>
+<br>
+NEPart = NESCALE*[NE] <br>
+EpiPart = EPISCALE*[Epi]<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; EPISCALE - Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+The EPISCALE is a constant which relates plasma levels of <br>
+epinephrine to beta agonism. Together with NESCALE, <br>
+normal plasma levels of epinephrine and NE are mapped to <br>
+an beta agonism of 1.0.    <br>
+ <br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; EpiPart - Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Since beta receptors see both epinephrine and norepinephrine, <br>
+the blood concentration of epinephrine and norepinephrine <br>
+do not quantitate either's effect on beta receptors. In the model <br>
+NE and Epi contribute equally to beta agonism and normal plasma <br>
+concentrations of NE and Epi are mapped to a beta agonism of 1.0. <br>
+This is done by using two constants NESCALE and EPISCALE to <br>
+calculate NEPart & EpiPart respectively. <br>
+ <br>
+NEPart = NEScale*[NE] <br>
+EpiPart = EPISCALE*[Epi]<br>
+<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Total - Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Total beta pool is the sum of the effects of epinephrine and<br>
+norepinephrine on beta receptors. <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+   <br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

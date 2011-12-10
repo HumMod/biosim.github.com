@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:34 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Structure_Structure.html'><img src='../../Back.PNG'></a>
+<p><a href='Structure_CO2_CO2Tools.html'>Structure_CO2_CO2Tools</a>
+<br><a href='Structure_CO2_CO2Total.html'>Structure_CO2_CO2Total</a>
+<br><a href='Structure_CO2_CO2Artys.html'>Structure_CO2_CO2Artys</a>
+<br><a href='Structure_CO2_CO2Veins.html'>Structure_CO2_CO2Veins</a>
+<br><a href='Structure_CO2_Blood-BaseToGas.html'>Structure_CO2_Blood-BaseToGas</a>
+<br><a href='Structure_CO2_Blood-GasToBase.html'>Structure_CO2_Blood-GasToBase</a>
+<br><a href='Structure_CO2_Tissue-BaseToGas.html'>Structure_CO2_Tissue-BaseToGas</a>
+<br><a href='Structure_CO2_Tissue-GasToBase.html'>Structure_CO2_Tissue-GasToBase</a>
+<br><a href='Structure_CO2_Muscle-BaseToGas.html'>Structure_CO2_Muscle-BaseToGas</a>
+<br><a href='Structure_CO2_Muscle-GasToBase.html'>Structure_CO2_Muscle-GasToBase</a>
+<p>
+HumMod / CO2<br>
+<br>
+Created : 21-Oct-04<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;?path Structure\CO2\ ?&gt;<br>
+<br>
+&lt;?include CO2Tools.DES ?&gt;<br>
+<br>
+&lt;?include CO2Total.DES ?&gt;<br>
+&lt;?include CO2Artys.DES ?&gt;<br>
+&lt;?include CO2Veins.DES ?&gt;<br>
+<br>
+&lt;?include Blood-BaseToGas.DES ?&gt;<br>
+&lt;?include Blood-GasToBase.DES ?&gt;<br>
+&lt;?include Tissue-BaseToGas.DES ?&gt;<br>
+&lt;?include Tissue-GasToBase.DES ?&gt;<br>
+&lt;?include Muscle-BaseToGas.DES ?&gt;<br>
+&lt;?include Muscle-GasToBase.DES ?&gt;<br>
+<br>
+&lt;structure&gt;&lt;name&gt; CO2 &lt;/name&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcConc &lt;/name&gt;<br>
+<br>
+  &lt;call&gt; CO2Artys.CalcConc &lt;/call&gt;<br>
+  &lt;call&gt; CO2Veins.CalcConc &lt;/call&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+  &lt;call&gt; CO2Total.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; CO2Artys.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; CO2Veins.Dervs &lt;/call&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:35 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Display_NervousSystem_AutonomicNerves_Afferents_Chemoreceptors_Chemoreceptors.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / Stimuli<br>
+<br>
+Created : 08-Feb-06<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structurename&gt; Chemoreceptors &lt;/structurename&gt;<br>
+<br>
+&lt;groupbox&gt;<br>
+   &lt;row&gt; 8.2 &lt;/row&gt;<br>
+   &lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;high&gt; 31.2 &lt;/high&gt;<br>
+   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
+   &lt;title&gt; Stimuli &lt;/title&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; BasicFiringRate &lt;/name&gt;<br>
+  &lt;label&gt; Basic Rate &lt;/label&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 2.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; PO2Effect &lt;/name&gt;<br>
+  &lt;label&gt; PO2 Effect  &lt;/label&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showcurve&gt;<br>
+  &lt;row&gt; 3.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
+  &lt;leftmargin&gt; 7 &lt;/leftmargin&gt;<br>
+<br>
+  &lt;xaxis&gt;<br>
+    &lt;name&gt; PO2Artys.Pressure &lt;/name&gt;<br>
+    &lt;label&gt; Arterial pO2 &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 100 &lt;/max&gt;&lt;inc&gt; 10 &lt;/inc&gt;&lt;/scale&gt;<br>
+  &lt;/xaxis&gt;<br>
+<br>
+  &lt;yaxis&gt;<br>
+    &lt;label&gt; Effect &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 10 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/yaxis&gt;<br>
+<br>
+  &lt;curvename&gt; PO2Effect &lt;/curvename&gt;<br>
+&lt;/showcurve&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 10.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; PO2Artys.Pressure &lt;/name&gt;<br>
+  &lt;label&gt; Arterial pO2 &lt;/label&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 12.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; PhEffect&lt;/name&gt;<br>
+  &lt;label&gt; Ph Effect  &lt;/label&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showcurve&gt;<br>
+  &lt;row&gt; 13.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
+  &lt;leftmargin&gt; 7 &lt;/leftmargin&gt;<br>
+<br>
+  &lt;xaxis&gt;<br>
+    &lt;name&gt; BloodPh.ArtysPh &lt;/name&gt;<br>
+    &lt;label&gt; Arterial pH &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 7.1 &lt;/min&gt;&lt;max&gt; 7.7 &lt;/max&gt;&lt;inc&gt; 0.1 &lt;/inc&gt;&lt;/scale&gt;<br>
+  &lt;/xaxis&gt;<br>
+<br>
+  &lt;yaxis&gt;<br>
+    &lt;label&gt; Effect &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/yaxis&gt;<br>
+<br>
+  &lt;curvename&gt; PhEffect &lt;/curvename&gt;<br>
+&lt;/showcurve&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 20.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; BloodPh.ArtysPh &lt;/name&gt;<br>
+  &lt;label&gt; Arterial pH &lt;/label&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 21.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; SympsEffect&lt;/name&gt;<br>
+  &lt;label&gt; Sympathetics Effect  &lt;/label&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showcurve&gt;<br>
+  &lt;row&gt; 22.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
+  &lt;leftmargin&gt; 7 &lt;/leftmargin&gt;<br>
+<br>
+  &lt;xaxis&gt;<br>
+    &lt;name&gt; AlphaAgonism &lt;/name&gt;<br>
+    &lt;label&gt; Alpha Agonism  &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 4 &lt;/max&gt;&lt;inc&gt; 1 &lt;/inc&gt;&lt;/scale&gt;<br>
+  &lt;/xaxis&gt;<br>
+<br>
+  &lt;yaxis&gt;<br>
+    &lt;label&gt; Effect &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 1 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/yaxis&gt;<br>
+<br>
+  &lt;curvename&gt; SympsEffect &lt;/curvename&gt;<br>
+&lt;/showcurve&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 29.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; AlphaAgonism &lt;/name&gt;<br>
+  &lt;label&gt; Alpha Agonism &lt;/label&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;infobutton&gt;<br>
+  &lt;row&gt; 1.2 &lt;/row&gt;<br>
+  &lt;col&gt; 26.0 &lt;/col&gt;<br>
+<br>
+  &lt;line&gt; The basic firing rate is typically 1.0 &lt;/line&gt;<br>
+  &lt;line&gt; Hz, but it will go much higher with &lt;/line&gt;<br>
+  &lt;line&gt; stimuli. &lt;/line&gt;<br>
+&lt;/infobutton&gt;<br>
+<br>
+&lt;/groupbox&gt;<br>
+<br>
+End<br>
+
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

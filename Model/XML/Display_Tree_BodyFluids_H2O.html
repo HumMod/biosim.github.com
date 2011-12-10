@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:34 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Display_Tree_BodyFluids_BodyFluids.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / H2O<br>
+<br>
+Created : 19-Jun-06<br>
+Last Modified : 2010-04-16<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;branch&gt;<br>
+  &lt;name&gt; H2O &lt;/name&gt;<br>
+  &lt;label&gt; H2O &lt;/label&gt;<br>
+  &lt;parent&gt; BODYFLUIDS &lt;/parent&gt;<br>
+&lt;/branch&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; H2O-Distribution &lt;/name&gt;<br>
+  &lt;label&gt; Distribution &lt;/label&gt;<br>
+  &lt;parent&gt; H2O &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; H2O-Storage &lt;/name&gt;<br>
+  &lt;label&gt; Storage &lt;/label&gt;<br>
+  &lt;parent&gt; H2O &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;separatorbar&gt;<br>
+  &lt;parent&gt; H2O &lt;/parent&gt;<br>
+&lt;/separatorbar&gt;<br>
+<br>
+&lt;branch&gt;<br>
+  &lt;name&gt; H2O-Movement &lt;/name&gt;<br>
+  &lt;label&gt; Movement &lt;/label&gt;<br>
+  &lt;parent&gt; H2O &lt;/parent&gt;<br>
+&lt;/branch&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; H2O-Movement-OralIntake &lt;/name&gt;<br>
+  &lt;label&gt; Oral Intake &lt;/label&gt;<br>
+  &lt;parent&gt; H2O-Movement &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; H2O-Movement-Metabolism &lt;/name&gt;<br>
+  &lt;label&gt; Metabolism &lt;/label&gt;<br>
+  &lt;parent&gt; H2O-Movement &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; H2O-Movement-IVDrip &lt;/name&gt;<br>
+  &lt;label&gt; IV Drip &lt;/label&gt;<br>
+  &lt;parent&gt; H2O-Movement &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; H2O-Movement-Transfusion &lt;/name&gt;<br>
+  &lt;label&gt; Transfusion &lt;/label&gt;<br>
+  &lt;parent&gt; H2O-Movement &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;separatorbar&gt;<br>
+  &lt;parent&gt; H2O-Movement &lt;/parent&gt;<br>
+&lt;/separatorbar&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; H2O-Movement-Urine &lt;/name&gt;<br>
+  &lt;label&gt; Urine &lt;/label&gt;<br>
+  &lt;parent&gt; H2O-Movement &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; H2O-Movement-Hemorrhage &lt;/name&gt;<br>
+  &lt;label&gt; Hemorrhage &lt;/label&gt;<br>
+  &lt;parent&gt; H2O-Movement &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; H2O-Movement-Dialysis &lt;/name&gt;<br>
+  &lt;label&gt; Dialysis &lt;/label&gt;<br>
+  &lt;parent&gt; H2O-Movement &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; H2O-Movement-Sweating &lt;/name&gt;<br>
+  &lt;label&gt; Sweating &lt;/label&gt;<br>
+  &lt;parent&gt; H2O-Movement &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; H2O-Movement-InsensibleSkin &lt;/name&gt;<br>
+  &lt;label&gt; Insensible Skin &lt;/label&gt;<br>
+  &lt;parent&gt; H2O-Movement &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; H2O-Movement-InsensibleLung &lt;/name&gt;<br>
+  &lt;label&gt; Insensible Lung &lt;/label&gt;<br>
+  &lt;parent&gt; H2O-Movement &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; H2O-Movement-Vomitus &lt;/name&gt;<br>
+  &lt;label&gt; Vomitus &lt;/label&gt;<br>
+  &lt;parent&gt; H2O-Movement &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; H2O-Movement-Diarrhea &lt;/name&gt;<br>
+  &lt;label&gt; Diarrhea &lt;/label&gt;<br>
+  &lt;parent&gt; H2O-Movement &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

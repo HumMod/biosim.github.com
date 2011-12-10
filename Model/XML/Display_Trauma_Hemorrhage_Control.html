@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:35 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Display_Trauma_Hemorrhage_Hemorrhage.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / Control<br>
+<br>
+Created : 16-Jan-06<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;groupbox&gt;<br>
+   &lt;row&gt; 2.0 &lt;/row&gt;<br>
+   &lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;high&gt; 16.6 &lt;/high&gt;<br>
+   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
+   &lt;title&gt; Control &lt;/title&gt;<br>
+<br>
+&lt;structurename&gt; Hemorrhage &lt;/structurename&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 1.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Switch &lt;/name&gt;<br>
+  &lt;listname&gt; Common.Switch &lt;/listname&gt;<br>
+  &lt;label&gt; Switch &lt;/label&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 3.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; BloodVol.Hct(%) &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Hct (%) &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;label&gt;<br>
+  &lt;row&gt; 4.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;text&gt; Rates &lt;/text&gt;<br>
+&lt;/label&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 5.4 &lt;/row&gt;&lt;col&gt; 2.0 &lt;/col&gt;<br>
+   &lt;name&gt; Rate &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Total &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 6.4 &lt;/row&gt;&lt;col&gt; 2.0 &lt;/col&gt;<br>
+   &lt;name&gt; RBCRate &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; RBC's &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 7.4 &lt;/row&gt;&lt;col&gt; 2.0 &lt;/col&gt;<br>
+   &lt;name&gt; PlasmaRate &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Plasma &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 8.4 &lt;/row&gt;&lt;col&gt; 2.0 &lt;/col&gt;<br>
+   &lt;name&gt; ProteinRate &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 4 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Protein &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 9.4 &lt;/row&gt;&lt;col&gt; 2.0 &lt;/col&gt;<br>
+   &lt;name&gt; NaRate &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 3 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Na+ &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 10.4 &lt;/row&gt;&lt;col&gt; 2.0 &lt;/col&gt;<br>
+   &lt;name&gt; KRate &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 3 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; K+ &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 11.4 &lt;/row&gt;&lt;col&gt; 2.0 &lt;/col&gt;<br>
+   &lt;name&gt; ClRate &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 3 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Cl- &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 12.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; Volume &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Volume &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;actionbutton&gt;<br>
+   &lt;row&gt; 14.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;blockname&gt; ResetVolume &lt;/blockname&gt;<br>
+   &lt;label&gt; Reset Volume &lt;/label&gt;<br>
+&lt;/actionbutton&gt;<br>
+<br>
+&lt;infobutton&gt;<br>
+  &lt;row&gt; 1.2 &lt;/row&gt;<br>
+  &lt;col&gt; 26.0 &lt;/col&gt;<br>
+<br>
+  &lt;line&gt; Turn a hemorrhage on and off here after &lt;/line&gt;<br>
+  &lt;line&gt; setting the target rate. Monitor volume. &lt;/line&gt;<br>
+  &lt;line&gt; &lt;/line&gt;<br>
+  &lt;line&gt; Units for rates are mL/Min. &lt;/line&gt;<br>
+  &lt;line&gt; Units for volume are mL. &lt;/line&gt;<br>
+&lt;/infobutton&gt;<br>
+<br>
+&lt;/groupbox&gt;<br>
+<br>
+End<br>
+
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

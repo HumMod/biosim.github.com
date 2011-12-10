@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:34 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Structure_Structure.html'><img src='../../Back.PNG'></a>
+<p><a href='Structure_Bladder_BladderVolume.html'>Structure_Bladder_BladderVolume</a>
+<br><a href='Structure_Bladder_BladderSodium.html'>Structure_Bladder_BladderSodium</a>
+<br><a href='Structure_Bladder_BladderChloride.html'>Structure_Bladder_BladderChloride</a>
+<br><a href='Structure_Bladder_BladderCreatinine.html'>Structure_Bladder_BladderCreatinine</a>
+<br><a href='Structure_Bladder_BladderGlucose.html'>Structure_Bladder_BladderGlucose</a>
+<br><a href='Structure_Bladder_BladderBicarbonate.html'>Structure_Bladder_BladderBicarbonate</a>
+<br><a href='Structure_Bladder_BladderPotassium.html'>Structure_Bladder_BladderPotassium</a>
+<br><a href='Structure_Bladder_BladderKetoacid.html'>Structure_Bladder_BladderKetoacid</a>
+<br><a href='Structure_Bladder_BladderAmmonia.html'>Structure_Bladder_BladderAmmonia</a>
+<br><a href='Structure_Bladder_BladderPhosphate.html'>Structure_Bladder_BladderPhosphate</a>
+<br><a href='Structure_Bladder_BladderProtein.html'>Structure_Bladder_BladderProtein</a>
+<br><a href='Structure_Bladder_BladderSulphate.html'>Structure_Bladder_BladderSulphate</a>
+<br><a href='Structure_Bladder_BladderUrea.html'>Structure_Bladder_BladderUrea</a>
+<p>
+HumMod / Bladder<br>
+<br>
+Created : 21-Oct-04<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;?path Structure\Bladder\ ?&gt;<br>
+<br>
+&lt;?include BladderVolume.DES ?&gt;<br>
+&lt;?include BladderSodium.DES ?&gt;<br>
+&lt;?include BladderChloride.DES ?&gt;<br>
+&lt;?include BladderCreatinine.DES ?&gt;<br>
+&lt;?include BladderGlucose.DES ?&gt;<br>
+&lt;?include BladderBicarbonate.DES ?&gt;<br>
+&lt;?include BladderPotassium.DES ?&gt;<br>
+&lt;?include BladderKetoacid.DES ?&gt;<br>
+&lt;?include BladderAmmonia.DES ?&gt;<br>
+&lt;?include BladderPhosphate.DES ?&gt;<br>
+&lt;?include BladderProtein.DES ?&gt;<br>
+&lt;?include BladderSulphate.DES ?&gt;<br>
+&lt;?include BladderUrea.DES ?&gt;<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Bladder &lt;/name&gt;<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; TimeLastVoid &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+  &lt;call&gt; BladderVolume.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; BladderSodium.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; BladderChloride.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; BladderCreatinine.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; BladderGlucose.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; BladderBicarbonate.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; BladderPotassium.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; BladderKetoacid.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; BladderAmmonia.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; BladderPhosphate.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; BladderProtein.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; BladderSulphate.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; BladderUrea.Dervs &lt;/call&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
+<br>
+&lt;call&gt; BladderSodium.Conc &lt;/call&gt;<br>
+&lt;call&gt; BladderChloride.Conc &lt;/call&gt;<br>
+&lt;call&gt; BladderCreatinine.Conc &lt;/call&gt;<br>
+&lt;call&gt; BladderGlucose.Conc &lt;/call&gt;<br>
+&lt;call&gt; BladderBicarbonate.Conc &lt;/call&gt;<br>
+&lt;call&gt; BladderPotassium.Conc &lt;/call&gt;<br>
+&lt;call&gt; BladderKetoacid.Conc &lt;/call&gt;<br>
+&lt;call&gt; BladderAmmonia.Conc &lt;/call&gt;<br>
+&lt;call&gt; BladderPhosphate.Conc &lt;/call&gt;<br>
+&lt;call&gt; BladderProtein.Conc &lt;/call&gt;<br>
+&lt;call&gt; BladderSulphate.Conc &lt;/call&gt;<br>
+&lt;call&gt; BladderUrea.Conc &lt;/call&gt;<br>
+<br>
+&lt;if&gt;<br>
+&lt;test&gt; BladderVolume.Mass GE 1000.0 &lt;/test&gt;<br>
+&lt;true&gt;<br>
+<br>
+  &lt;def&gt;&lt;name&gt; TimeLastVoid &lt;/name&gt;&lt;val&gt; System.X &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;call&gt; BladderVolume.Void &lt;/call&gt;<br>
+  &lt;call&gt; BladderSodium.Void &lt;/call&gt;<br>
+  &lt;call&gt; BladderChloride.Void &lt;/call&gt;<br>
+  &lt;call&gt; BladderCreatinine.Void &lt;/call&gt;<br>
+  &lt;call&gt; BladderGlucose.Void &lt;/call&gt;<br>
+  &lt;call&gt; BladderBicarbonate.Void &lt;/call&gt;<br>
+  &lt;call&gt; BladderPotassium.Void &lt;/call&gt;<br>
+  &lt;call&gt; BladderKetoacid.Void &lt;/call&gt;<br>
+  &lt;call&gt; BladderAmmonia.Void &lt;/call&gt;<br>
+  &lt;call&gt; BladderPhosphate.Void &lt;/call&gt;<br>
+  &lt;call&gt; BladderProtein.Void &lt;/call&gt;<br>
+  &lt;call&gt; BladderSulphate.Void &lt;/call&gt;<br>
+  &lt;call&gt; BladderUrea.Void &lt;/call&gt;<br>
+<br>
+&lt;/true&gt;<br>
+&lt;/if&gt;<br>
+<br>
+<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

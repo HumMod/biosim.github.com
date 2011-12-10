@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:34 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Display_Tree_NervousSystem_NervousSystem.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / AutonomicNerves<br>
+<br>
+Created : 19-Jun-06<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;branch&gt;<br>
+  &lt;name&gt; AutonomicNerves &lt;/name&gt;<br>
+  &lt;label&gt;  Autonomic Nerves &lt;/label&gt;<br>
+  &lt;parent&gt; NERVOUSSYSTEM &lt;/parent&gt;<br>
+&lt;/branch&gt;<br>
+<br>
+&lt;branch&gt;<br>
+  &lt;name&gt; AutonomicNerves-Afferents &lt;/name&gt;<br>
+  &lt;label&gt; Afferents &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves &lt;/parent&gt;<br>
+&lt;/branch&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-Afferents-Summary &lt;/name&gt;<br>
+  &lt;label&gt; Summary &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-Afferents &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-Afferents-Baroreflex &lt;/name&gt;<br>
+  &lt;label&gt; Baroreflex &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-Afferents &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-Afferents-LowPressureReceptors &lt;/name&gt;<br>
+  &lt;label&gt; Low Pressure Receptors &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-Afferents &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-Afferents-Mechanoreceptors &lt;/name&gt;<br>
+  &lt;label&gt; Heart Mechanoreceptors &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-Afferents &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-Afferents-Chemoreceptors &lt;/name&gt;<br>
+  &lt;label&gt; Chemoreceptors &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-Afferents &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;!--<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-Afferents-Metaboreflex &lt;/name&gt;<br>
+  &lt;label&gt; Metaboreflex &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-Afferents &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+--&gt;<br>
+<br>
+&lt;branch&gt;<br>
+  &lt;name&gt; AutonomicNerves-CNS &lt;/name&gt;<br>
+  &lt;label&gt; CNS &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves &lt;/parent&gt;<br>
+&lt;/branch&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-CNS-Integration &lt;/name&gt;<br>
+  &lt;label&gt; Integration &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-CNS &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-CNS-Baroreflex &lt;/name&gt;<br>
+  &lt;label&gt; Baroreflex &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-CNS &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-CNS-LowPressureReceptors &lt;/name&gt;<br>
+  &lt;label&gt; Low Pressure Receptors &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-CNS &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;!--<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-CNS-Chemoreceptors &lt;/name&gt;<br>
+  &lt;label&gt; Chemoreceptors &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-CNS &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+--&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-CNS-Exercise &lt;/name&gt;<br>
+  &lt;label&gt; Exercise &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-CNS &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;!--<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-CNS-Cushing &lt;/name&gt;<br>
+  &lt;label&gt; Cushing Response &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-CNS &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+--&gt;<br>
+<br>
+&lt;!--<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-CNS-TrophicFactor &lt;/name&gt;<br>
+  &lt;label&gt; Trophic Factor &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-CNS &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+--&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-CNS-PituitaryNerve &lt;/name&gt;<br>
+  &lt;label&gt; Pituitary Nerve &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-CNS &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;branch&gt;<br>
+  &lt;name&gt; AutonomicNerves-Efferents &lt;/name&gt;<br>
+  &lt;label&gt; Efferents &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves &lt;/parent&gt;<br>
+&lt;/branch&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-Efferents-GangliaGeneral &lt;/name&gt;<br>
+  &lt;label&gt; Ganglia General &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-Efferents &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-Efferents-GangliaKidney &lt;/name&gt;<br>
+  &lt;label&gt; Ganglia Kidney &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-Efferents &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-Efferents-VagusNerve &lt;/name&gt;<br>
+  &lt;label&gt; Vagus Nerve &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-Efferents &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-Efferents-AdrenalNerve &lt;/name&gt;<br>
+  &lt;label&gt; Adrenal Nerve &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-Efferents &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-Efferents-SystemicVeins &lt;/name&gt;<br>
+  &lt;label&gt; Systemic Veins &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-Efferents &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;!--<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; AutonomicNerves-Efferents-SequesteredBV &lt;/name&gt;<br>
+  &lt;label&gt; Sequestered Blood &lt;/label&gt;<br>
+  &lt;parent&gt; AutonomicNerves-Efferents &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+--&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

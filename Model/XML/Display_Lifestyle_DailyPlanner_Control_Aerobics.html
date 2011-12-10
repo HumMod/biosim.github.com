@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:34 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Display_Lifestyle_DailyPlanner_Control_Control.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / Aerobics<br>
+<br>
+Created : 27-Feb-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;groupbox&gt;<br>
+   &lt;row&gt; 6.8 &lt;/row&gt;<br>
+   &lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;high&gt; 4.4 &lt;/high&gt;<br>
+   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
+   &lt;title&gt; Aerobics &lt;/title&gt;<br>
+<br>
+&lt;structurename&gt; DailyPlannerControl &lt;/structurename&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; DailyPlannerControl.AerobicsLevel &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 30 &lt;/reps&gt;&lt;stepsize&gt; 10.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; AerobicsLevel &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerControl.AerobicsLevel &lt;/listname&gt;<br>
+  &lt;label&gt; Level &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; DailyPlannerControl.AerobicsDuration &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 12 &lt;/reps&gt;&lt;stepsize&gt; 5.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 2.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; AerobicsDuration &lt;/name&gt;<br>
+  &lt;listname&gt; DailyPlannerControl.AerobicsDuration &lt;/listname&gt;<br>
+  &lt;label&gt; Duration &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;infobutton&gt;<br>
+  &lt;row&gt; 1.2 &lt;/row&gt;<br>
+  &lt;col&gt; 26.0 &lt;/col&gt;<br>
+  &lt;line&gt; Specify the exercise level and fraction of &lt;/line&gt;<br>
+  &lt;line&gt; each hour actually used for exercise &lt;/line&gt;<br>
+  &lt;line&gt; here. &lt;/line&gt;<br>
+  &lt;line&gt;  &lt;/line&gt;<br>
+  &lt;line&gt; Work is specified in Watts. &lt;/line&gt;<br>
+  &lt;line&gt; Time is specified in minutes. &lt;/line&gt;<br>
+  &lt;line&gt;  &lt;/line&gt;<br>
+  &lt;line&gt; Note that the watts specified here are &lt;/line&gt;<br>
+  &lt;line&gt; motion watts. For every motion watt, &lt;/line&gt;<br>
+  &lt;line&gt; there is an additional 3.55 heat watts &lt;/line&gt;<br>
+  &lt;line&gt; for a total of 4.55 watts or 65 kCal/Min. &lt;/line&gt;<br>
+  &lt;line&gt;  &lt;/line&gt;<br>
+  &lt;line&gt;  &lt;/line&gt;<br>
+  &lt;line&gt; 100 Watts = Moderate Exercise &lt;/line&gt;<br>
+  &lt;line&gt; 200 Watts = Heavy Exercise &lt;/line&gt;<br>
+  &lt;line&gt; 300 Watts = Very Exercise Work &lt;/line&gt;<br>
+&lt;/infobutton&gt;<br>
+<br>
+&lt;/groupbox&gt;<br>
+<br>
+End<br>
+
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

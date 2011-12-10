@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:34 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Structure_Diet_Diet.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / DietIntakeElectrolytes<br>
+<br>
+Created : 24-Jun-06<br>
+Last Modified : 2011-08-01<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2011<br>
+By : University of Mississippi Medical Center<br>
+<br>
+&lt;structure&gt;&lt;name&gt; DietIntakeElectrolytes &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Na+_mMol/Min &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Cl-_mMol/Min &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; K+_mMol/Min &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Ca++_mMol/Min &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; PO4---_mMol/Min &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; SO4--_mMol/Min &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Intake(xGoal) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;if&gt;<br>
+&lt;test&gt; Brain-Function.IsReallyDead &lt;/test&gt;<br>
+&lt;true&gt;<br>
+  &lt;def&gt;&lt;name&gt; Na+_mMol/Min &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Cl-_mMol/Min &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; K+_mMol/Min &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Ca++_mMol/Min &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; PO4---_mMol/Min &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; SO4--_mMol/Min &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;exitblock/&gt;  <br>
+&lt;/true&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Intake(xGoal) &lt;/name&gt;<br>
+  &lt;val&gt; DietIntakeNutrition.Intake(xGoal) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Na+_mMol/Min &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+       DietFeeding.Fraction<br>
+     * DietGoalElectrolytes.Na+_mMol/Day<br>
+     * Intake(xGoal)<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Cl-_mMol/Min &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+       DietFeeding.Fraction<br>
+     * DietGoalElectrolytes.Cl-_mMol/Day<br>
+     * Intake(xGoal)<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; K+_mMol/Min &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+       DietFeeding.Fraction<br>
+     * DietGoalElectrolytes.K+_mMol/Day<br>
+     * Intake(xGoal)<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Ca++_mMol/Min &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+       DietFeeding.Fraction<br>
+     * DietGoalElectrolytes.Ca++_mMol/Day<br>
+     * Intake(xGoal)<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; PO4---_mMol/Min &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+       DietFeeding.Fraction<br>
+     * DietGoalElectrolytes.PO4---_mMol/Day<br>
+     * Intake(xGoal)<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; SO4--_mMol/Min &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+       DietFeeding.Fraction<br>
+     * DietGoalElectrolytes.SO4--_mMol/Day<br>
+     * Intake(xGoal)<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:34 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Structure_Structure.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / Symptoms<br>
+<br>
+Created : 21-May-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Symptoms &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Number &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+  &lt;!-- Not Responding --&gt;<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; Brain-Function.NotResponding &lt;/test&gt;<br>
+    &lt;def&gt;&lt;name&gt; Number &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;!-- Chest Pain --&gt;<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; Heart-Pain.HasPain &lt;/test&gt;<br>
+    &lt;def&gt;&lt;name&gt; Number &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;!-- Can't Get Air --&gt;<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; FALSE &lt;/test&gt;<br>
+    &lt;def&gt;&lt;name&gt; Number &lt;/name&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;!-- Tired  --&gt;<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; BloodVol.Hct LT 0.34 &lt;/test&gt;<br>
+    &lt;def&gt;&lt;name&gt; Number &lt;/name&gt;&lt;val&gt; 4 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;!-- Confused --&gt;<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; Brain-Function.Confused &lt;/test&gt;<br>
+    &lt;def&gt;&lt;name&gt; Number &lt;/name&gt;&lt;val&gt; 5 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;!-- Dizzy --&gt;<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; Brain-Function.Impaired &lt;/test&gt;<br>
+    &lt;def&gt;&lt;name&gt; Number &lt;/name&gt;&lt;val&gt; 6 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;!-- Swelled Head --&gt;<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; FALSE &lt;/test&gt;<br>
+    &lt;def&gt;&lt;name&gt; Number &lt;/name&gt;&lt;val&gt; 7 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;!-- Swelled Gut --&gt;<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; FALSE &lt;/test&gt;<br>
+    &lt;def&gt;&lt;name&gt; Number &lt;/name&gt;&lt;val&gt; 8 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;!-- Swelled Feet --&gt;<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; FALSE &lt;/test&gt;<br>
+    &lt;def&gt;&lt;name&gt; Number &lt;/name&gt;&lt;val&gt; 9 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;!-- Kidney Disease --&gt;<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; Kidney-NephronCount.Total(xNormal) LT 0.40 &lt;/test&gt;<br>
+    &lt;def&gt;&lt;name&gt; Number &lt;/name&gt;&lt;val&gt; 10 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;!-- At Work --&gt;<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; Status.Working &lt;/test&gt;<br>
+    &lt;def&gt;&lt;name&gt; Number &lt;/name&gt;&lt;val&gt; 11 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;!-- In Aerobics --&gt;<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; Status.Aerobics &lt;/test&gt;<br>
+    &lt;def&gt;&lt;name&gt; Number &lt;/name&gt;&lt;val&gt; 12 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;!-- On The Bike --&gt;<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; Status.ExerciseBike &lt;/test&gt;<br>
+    &lt;def&gt;&lt;name&gt; Number &lt;/name&gt;&lt;val&gt; 13 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;!-- On Treadmill --&gt;<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; Status.Treadmill &lt;/test&gt;<br>
+    &lt;def&gt;&lt;name&gt; Number &lt;/name&gt;&lt;val&gt; 14 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;!-- OK --&gt;<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; TRUE &lt;/test&gt;<br>
+    &lt;def&gt;&lt;name&gt; Number &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

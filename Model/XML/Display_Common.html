@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:34 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Display_Display.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / Common<br>
+<br>
+Created : 05-Apr-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;maplist&gt;<br>
+  &lt;name&gt; Common.Switch &lt;/name&gt;<br>
+  &lt;map&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;img&gt; Off &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;img&gt; On &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+&lt;maplist&gt;<br>
+  &lt;name&gt; Common.EffectIs &lt;/name&gt;<br>
+  &lt;map&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;img&gt; Variable &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;img&gt; Fixed &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+&lt;maplist&gt;<br>
+  &lt;name&gt; Common.NoYes &lt;/name&gt;<br>
+  &lt;map&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;img&gt; No &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;img&gt; Yes &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+&lt;maplist&gt;<br>
+  &lt;name&gt; Common.Active &lt;/name&gt;<br>
+  &lt;map&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;img&gt; Inactive &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;img&gt; Active &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; Common.Percent &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 100 &lt;/reps&gt;&lt;stepsize&gt; 1 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; Common.Fraction &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 100 &lt;/reps&gt;&lt;stepsize&gt; 0.01 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+Standard organ perfusion pump goes<br>
+from 0 to 200 mmHg.<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; Common.PerfusionPump &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 14 &lt;/reps&gt;&lt;stepsize&gt; 5 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 40 &lt;/reps&gt;&lt;stepsize&gt; 1 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 18 &lt;/reps&gt;&lt;stepsize&gt; 5 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;maplist&gt;<br>
+  &lt;name&gt; Common.Adiposity &lt;/name&gt;<br>
+  &lt;map&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;img&gt; Underweight &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;img&gt; Normal &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;img&gt; Overweight &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;img&gt; Obese &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 4 &lt;/val&gt;&lt;img&gt; Morbidly Obese &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+&lt;maplist&gt;<br>
+  &lt;name&gt; Common.Age &lt;/name&gt;<br>
+  &lt;map&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;img&gt; Young &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;img&gt; Youngish &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;img&gt; Middleaged &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;img&gt; Old &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 4 &lt;/val&gt;&lt;img&gt; Very Old &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+&lt;maplist&gt;<br>
+  &lt;name&gt; Common.Gender &lt;/name&gt;<br>
+  &lt;map&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;img&gt; Male &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;img&gt; Female &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+&lt;maplist&gt;<br>
+  &lt;name&gt; Common.Height &lt;/name&gt;<br>
+  &lt;map&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;img&gt; Short &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;img&gt; Normal &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;img&gt; Tall &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;img&gt; Very Tall &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+&lt;maplist&gt;<br>
+  &lt;name&gt; Common.Muscularity &lt;/name&gt;<br>
+  &lt;map&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;img&gt; Below Normal &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;img&gt; Normal &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;img&gt; Above Normal &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;img&gt; Trained Athlete &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+&lt;maplist&gt;<br>
+  &lt;name&gt; Common.OtherMass &lt;/name&gt;<br>
+  &lt;map&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;img&gt; Small &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;img&gt; Normal &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;img&gt; Large &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;img&gt; Very Large &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+A symbol for xy plots.<br>
+<br>
+&lt;symbol&gt;<br>
+  &lt;name&gt; Common.RedBox &lt;/name&gt;<br>
+  &lt;style&gt; BOX &lt;/style&gt;<br>
+  &lt;color&gt; RED &lt;/color&gt;<br>
+  &lt;size&gt; 4 &lt;/size&gt;<br>
+  &lt;linewidth&gt; 2 &lt;/linewidth&gt;<br>
+&lt;/symbol&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; Common.Multiplier &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt;   5 &lt;/reps&gt;&lt;stepsize&gt; 0.10 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 100 &lt;/reps&gt;&lt;stepsize&gt; 0.01 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt;  45 &lt;/reps&gt;&lt;stepsize&gt; 0.10 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;maplist&gt;<br>
+  &lt;name&gt; Common.Failed &lt;/name&gt;<br>
+  &lt;map&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;img&gt; Failed &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;img&gt; OK &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; Common.Structure &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 20 &lt;/reps&gt;&lt;stepsize&gt; 0.01 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

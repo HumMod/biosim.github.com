@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:36 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Docs_BloodVolume.html'><img src='../../Back.PNG'></a>
+<p>
+QHP 2008 / BloodVolume.DOCS<br>
+Created : 27-Mar-09<br>
+Last Modified : 27-Mar-09<br>
+Author : Tom Coleman<br>
+Copyright : 2009<br>
+<br>
+&lt;structurename&gt; PlasmaVol &lt;/structurename&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; PlasmaVol.Change &lt;/name&gt;<br>
+&lt;topic&gt; Change - PV1Definition &lt;/topic&gt;<br>
+&lt;topic&gt; PlasmaVol - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; PlasmaVol - Concentration Units &lt;/topic&gt;<br>
+&lt;seealso&gt; PlasmaVol.Gain &lt;/seealso&gt;<br>
+&lt;seealso&gt; PlasmaVol.Loss &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; PlasmaVol.Gain &lt;/name&gt;<br>
+&lt;topic&gt; Gain - PV2Definition &lt;/topic&gt;<br>
+&lt;topic&gt; PlasmaVol - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; PlasmaVol - Concentration Units &lt;/topic&gt;<br>
+&lt;seealso&gt; GILumenVolume.Absorption&lt;/seealso&gt;<br>
+&lt;seealso&gt; LymphWater.Rate &lt;/seealso&gt;<br>
+&lt;seealso&gt; IVDrip.H2ORate&lt;/seealso&gt;<br>
+&lt;seealso&gt; ExcessLungWater.Flux &lt;/seealso&gt;<br>
+&lt;seealso&gt; PeritoneumSpace.Loss&lt;/seealso&gt;<br>
+&lt;seealso&gt; Transfusion.PlasmaRate &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; PlasmaVol.InitialVol &lt;/name&gt;<br>
+&lt;topic&gt; InitialVol - PV3Definition &lt;/topic&gt;<br>
+&lt;topic&gt; PlasmaVol - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; PlasmaVol - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; PlasmaVol - Concentration Units &lt;/topic&gt;<br>
+&lt;seealso&gt; BloodVol.InitialVol &lt;/seealso&gt;<br>
+&lt;seealso&gt; BllodVol.InitialPVCrit &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; PlasmaVol.Loss &lt;/name&gt;<br>
+&lt;topic&gt; Loss - PV4Definition &lt;/topic&gt; <br>
+&lt;topic&gt; PlasmaVol.Loss - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; PlasmaVol - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; PlasmaVol - Concentration Units &lt;/topic&gt;<br>
+&lt;seealso&gt; CD_H2O.Outflow&lt;/seealso&gt;<br>
+&lt;seealso&gt; CapillaryWater.Rate &lt;/seealso&gt;<br>
+&lt;seealso&gt; ExcessLungWater.Flux &lt;/seealso&gt;<br>
+&lt;seealso&gt; PeritoneumSpace.Gain &lt;/seealso&gt;<br>
+&lt;seealso&gt; Hemorrhage.PlasmaRate &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; PlasmaVol.Vol &lt;/name&gt;<br>
+&lt;topic&gt; Vol - PV5Definition &lt;/topic&gt;<br>
+&lt;topic&gt; PlasmaVol - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; PlasmaVol - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; PlasmaVol - Concentration Units &lt;/topic&gt;<br>
+&lt;seealso&gt; PlasmaVol.Change  &lt;/seealso&gt;<br>
+&lt;seealso&gt; PlasmaVol.InitialVol &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; PlasmaVol.Vol(L)&lt;/name&gt;<br>
+&lt;topic&gt; Vol(L) - PV6Definition &lt;/topic&gt;<br>
+&lt;topic&gt; PlasmaVol - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; PlasmaVol - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; PlasmaVol - Concentration Units &lt;/topic&gt;<br>
+&lt;seealso&gt; PlasmaVol.Vol &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; PlasmaVol - Overview &lt;/name&gt;<br>
+&lt;label&gt; Overview &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+About 60% of the blood volume is plasma. <br>
+In the average adult male (70Kg) this is <br>
+approximately 3 Liters. This percentage varies <br>
+considerably depending on gender, weight, and <br>
+other factors. <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Change - PV1Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Changes in plasma volume are defined by three variables:<br>
+The intial volume and the gain and loss of plasma volume. <br>
+ <br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Gain - PV2Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Gains in plasma volume may result from changes in <br>
+gut absorption; the peritoneal lymph system;<br>
+the systemic lymphatic system;the pulmonary lymphatic <br>
+system. Gains can also occur by intravenous <br>
+administration and blood transfusion.<br>
+  <br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; InitialVol - PV3Definition &lt;/name&gt;<br>
+&lt;label&gt; Defintion &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Initial volume is the starting plasma volume.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Loss - PV4Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Loss is defined as negative changes in plasma volume.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Vol - PV5Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Vol is the calcualted plasma volume at any given time.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Vol(L) - PV6Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Vol is the calculated plasma volume at any given time.<br>
+Vol(L) is the plasma volume expressed in Liters<br>
+Vol(L) = Vol/1000.00<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; PlasmaVol.Loss - Overview &lt;/name&gt;<br>
+&lt;label&gt; Overview &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Loss in plasma volume may occur in several <br>
+different areas:excretion by the kidney;<br>
+the peritoneum space;the capillaries;<br>
+the pulmonary system. Loss can also occur as<br>
+a result of hemorrhage and hemodialysis.<br>
+  <br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; PlasmaVol - Physical Units &lt;/name&gt;<br>
+&lt;label&gt; Physical Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Plasma Volume mL or L<br>
+Gain/Loss mL/Min<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; PlasmaVol - Concentration Units&lt;/name&gt;<br>
+&lt;label&gt; Concentration Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Normal Plasma Volume is 3000mL<br>
+Gain 3.58mL/Min<br>
+Loss  3.55mL/Min<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+<br>
+ <br>
+  <br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

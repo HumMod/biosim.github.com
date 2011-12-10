@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:34 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Display_Circulation_VascularCompartments_SystemicVeins_SystemicVeins.html'><img src='../../Back.PNG'></a>
+<p><a href='Display_Circulation_VascularCompartments_SystemicVeins_Summary_Volume.html'>Display_Circulation_VascularCompartments_SystemicVeins_Summary_Volume</a>
+<br><a href='Display_Circulation_VascularCompartments_SystemicVeins_Summary_UnstressedVolume.html'>Display_Circulation_VascularCompartments_SystemicVeins_Summary_UnstressedVolume</a>
+<br><a href='Display_Circulation_VascularCompartments_SystemicVeins_Summary_Pressure.html'>Display_Circulation_VascularCompartments_SystemicVeins_Summary_Pressure</a>
+<br><a href='Display_Circulation_VascularCompartments_SystemicVeins_Summary_BloodFlow.html'>Display_Circulation_VascularCompartments_SystemicVeins_Summary_BloodFlow</a>
+<p>
+HumMod / SystemicVeins<br>
+<br>
+Created : 27-Apr-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;panel&gt;&lt;name&gt; SystemicVeins-Summary &lt;/name&gt;<br>
+<br>
+&lt;showbitmap&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;<br>
+  &lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Compartment &lt;/name&gt;<br>
+&lt;/showbitmap&gt;<br>
+<br>
+&lt;label&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;<br>
+  &lt;col&gt; 4.5 &lt;/col&gt;<br>
+  &lt;text&gt; Systemic Veins - Summary &lt;/text&gt;<br>
+&lt;/label&gt;<br>
+<br>
+&lt;showclock&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+  &lt;name&gt; System.X &lt;/name&gt;<br>
+  &lt;ampm/&gt;&lt;secs/&gt;&lt;days/&gt;<br>
+&lt;/showclock&gt;<br>
+<br>
+&lt;?path Display\Circulation\VascularCompartments\SystemicVeins\Summary\ ?&gt;<br>
+<br>
+&lt;?include Volume.DES ?&gt;<br>
+&lt;?include UnstressedVolume.DES ?&gt;<br>
+<br>
+&lt;?include Pressure.DES ?&gt;<br>
+&lt;?include BloodFlow.DES ?&gt;<br>
+<br>
+&lt;/panel&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

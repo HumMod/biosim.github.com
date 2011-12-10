@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:35 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Display_Organs_Kidney_Nephrons_More_ADH_ADH.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / RenalTubule<br>
+<br>
+Created : 09-Apr-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Solver : DES 2005<br>
+Schema : 2005.0<br>
+<br>
+&lt;groupbox&gt;<br>
+   &lt;row&gt; 2.0 &lt;/row&gt;<br>
+   &lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;high&gt; 19.2 &lt;/high&gt;<br>
+   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
+   &lt;title&gt; Renal Tubule &lt;/title&gt;<br>
+<br>
+&lt;structurename&gt; NephronADH &lt;/structurename&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; [ADH] &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; [ADH] &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showgraph&gt;<br>
+  &lt;row&gt; 2.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 9 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
+  &lt;leftmargin&gt; 7 &lt;/leftmargin&gt;<br>
+  &lt;xaxis&gt;<br>
+    &lt;name&gt; System.X &lt;/name&gt;<br>
+    &lt;label&gt; Time &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/xaxis&gt;<br>
+  &lt;yaxis&gt;<br>
+    &lt;yvar&gt;<br>
+      &lt;name&gt; [ADH] &lt;/name&gt;<br>
+      &lt;nolabel/&gt;<br>
+      &lt;linecolor&gt; BLUE &lt;/linecolor&gt;<br>
+    &lt;/yvar&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 1 &lt;/min&gt;&lt;max&gt; 3 &lt;/max&gt;&lt;inc&gt; 1 &lt;/inc&gt;&lt;/scale&gt;<br>
+  &lt;/yaxis&gt;<br>
+&lt;/showgraph&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 11.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Clamp &lt;/name&gt;<br>
+  &lt;listname&gt; Common.Switch &lt;/listname&gt;<br>
+  &lt;label&gt; Clamp &lt;/label&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; NephronADH.Level &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 40 &lt;/reps&gt;&lt;stepsize&gt;  0.1 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt;  6 &lt;/reps&gt;&lt;stepsize&gt;  1.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt;  9 &lt;/reps&gt;&lt;stepsize&gt; 10.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 13.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Level &lt;/name&gt;<br>
+  &lt;listname&gt; NephronADH.Level &lt;/listname&gt;<br>
+  &lt;label&gt; Level &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; NephronADH.Tau &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 40 &lt;/reps&gt;&lt;stepsize&gt;   1.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt;  6 &lt;/reps&gt;&lt;stepsize&gt;  10.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt;  9 &lt;/reps&gt;&lt;stepsize&gt; 100.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 14.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Tau &lt;/name&gt;<br>
+  &lt;listname&gt; NephronADH.Tau &lt;/listname&gt;<br>
+  &lt;label&gt; Tau &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 16.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; [ADHPool] &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; [Plasma ADH] &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 17.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; Log10Conc &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; log10 [ADH] &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;infobutton&gt;<br>
+  &lt;row&gt; 1.2 &lt;/row&gt;<br>
+  &lt;col&gt; 26.0 &lt;/col&gt;<br>
+  &lt;line&gt; A typical delay (Tau) is 20 minutes. &lt;/line&gt;<br>
+&lt;/infobutton&gt;<br>
+<br>
+&lt;/groupbox&gt;<br>
+<br>
+End<br>
+
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

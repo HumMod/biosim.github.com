@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 12/10/2011 9:59:34 AM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.PNG'>
+<a href='Structure_Structure.html'><img src='../../Back.PNG'></a>
+<p><a href='Structure_LeftHeartPumping_LeftHeartPumping-Pumping.html'>Structure_LeftHeartPumping_LeftHeartPumping-Pumping</a>
+<br><a href='Structure_LeftHeartPumping_LeftHeartPumping-Diastole.html'>Structure_LeftHeartPumping_LeftHeartPumping-Diastole</a>
+<br><a href='Structure_LeftHeartPumping_LeftHeartPumping-Systole.html'>Structure_LeftHeartPumping_LeftHeartPumping-Systole</a>
+<br><a href='Structure_LeftHeartPumping_LeftHeartPumping-Work.html'>Structure_LeftHeartPumping_LeftHeartPumping-Work</a>
+<br><a href='Structure_LeftHeartPumping_LeftHeartPumping-ContractileProtein.html'>Structure_LeftHeartPumping_LeftHeartPumping-ContractileProtein</a>
+<br><a href='Structure_LeftHeartPumping_LeftHeartPumping-Contractility.html'>Structure_LeftHeartPumping_LeftHeartPumping-Contractility</a>
+<p>
+HumMod / LeftHeartPumping<br>
+<br>
+Created : 2010-05-25<br>
+Last Modified : 2011-08-11<br>
+Author : Tom Coleman<br>
+Copyright : 2010-2011<br>
+By : University of Mississippi Medical Center<br>
+<br>
+&lt;?path Structure\LeftHeartPumping\ ?&gt;<br>
+<br>
+&lt;?include LeftHeartPumping-Pumping.DES ?&gt;<br>
+&lt;?include LeftHeartPumping-Diastole.DES ?&gt;<br>
+&lt;?include LeftHeartPumping-Systole.DES ?&gt;<br>
+&lt;?include LeftHeartPumping-Work.DES ?&gt;<br>
+&lt;?include LeftHeartPumping-ContractileProtein.DES ?&gt;<br>
+&lt;?include LeftHeartPumping-Contractility.DES ?&gt;<br>
+<br>
+<br>
+&lt;structure&gt;&lt;name&gt; LeftHeartPumping &lt;/name&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Init &lt;/name&gt;<br>
+  &lt;call&gt; LeftHeartPumping-ContractileProtein.Init &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
+ &lt;call&gt; LeftHeartPumping-ContractileProtein.Parms &lt;/call&gt;<br>
+ &lt;call&gt; LeftHeartPumping-Contractility.Parms &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+  &lt;call&gt; LeftHeartPumping-ContractileProtein.Calc &lt;/call&gt;<br>
+  &lt;call&gt; LeftHeartPumping-Contractility.Calc &lt;/call&gt;<br>
+  &lt;call&gt; LeftHeartPumping-Diastole.Calc &lt;/call&gt;<br>
+  &lt;call&gt; LeftHeartPumping-Systole.Calc &lt;/call&gt;<br>
+  &lt;call&gt; LeftHeartPumping-Pumping.Calc &lt;/call&gt;<br>
+  &lt;call&gt; LeftHeartPumping-Work.Calc &lt;/call&gt;<br>
+  &lt;call&gt; LeftHeartPumping-ContractileProtein.Calc &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+  &lt;call&gt; LeftHeartPumping-ContractileProtein.Dervs &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>
