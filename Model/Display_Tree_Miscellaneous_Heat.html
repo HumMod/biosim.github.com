@@ -1,180 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:41 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Display_Tree_Miscellaneous_Miscellaneous.html'><img src='../Back.PNG'></a>
-<p>
-HumMod / Temperature<br>
-<br>
-Created : 19-Jun-06<br>
-Last Modified : 2010-04-17<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;branch&gt;<br>
-  &lt;name&gt; Heat &lt;/name&gt;<br>
-  &lt;label&gt; Heat &lt;/label&gt;<br>
-  &lt;parent&gt; MISCELLANEOUS &lt;/parent&gt;<br>
-&lt;/branch&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-Summary &lt;/name&gt;<br>
-  &lt;label&gt; Summary &lt;/label&gt;<br>
-  &lt;parent&gt; Heat &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;separatorbar&gt;<br>
-  &lt;parent&gt; Heat &lt;/parent&gt;<br>
-&lt;/separatorbar&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-Core &lt;/name&gt;<br>
-  &lt;label&gt; Core &lt;/label&gt;<br>
-  &lt;parent&gt; Heat &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-Skin &lt;/name&gt;<br>
-  &lt;label&gt; Skin &lt;/label&gt;<br>
-  &lt;parent&gt; Heat &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-SkeletalMuscle &lt;/name&gt;<br>
-  &lt;label&gt; Skeletal Muscle &lt;/label&gt;<br>
-  &lt;parent&gt; Heat &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-GILumen &lt;/name&gt;<br>
-  &lt;label&gt; GI Lumen &lt;/label&gt;<br>
-  &lt;parent&gt; Heat &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;separatorbar&gt;<br>
-  &lt;parent&gt; Heat &lt;/parent&gt;<br>
-&lt;/separatorbar&gt;<br>
-<br>
-&lt;branch&gt;<br>
-  &lt;name&gt; Heat-Movement &lt;/name&gt;<br>
-  &lt;label&gt; Movement &lt;/label&gt;<br>
-  &lt;parent&gt; Heat &lt;/parent&gt;<br>
-&lt;/branch&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-Movement-OralIntake &lt;/name&gt;<br>
-  &lt;label&gt; Oral Intake &lt;/label&gt;<br>
-  &lt;parent&gt; Heat-Movement &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-Movement-Metabolism &lt;/name&gt;<br>
-  &lt;label&gt; Metabolism &lt;/label&gt;<br>
-  &lt;parent&gt; Heat-Movement &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-Movement-IVDrip &lt;/name&gt;<br>
-  &lt;label&gt; IV Drip &lt;/label&gt;<br>
-  &lt;parent&gt; Heat-Movement &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-Movement-Transfusion &lt;/name&gt;<br>
-  &lt;label&gt; Transfusion &lt;/label&gt;<br>
-  &lt;parent&gt; Heat-Movement &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-Movement-Shivering &lt;/name&gt;<br>
-  &lt;label&gt; Shivering &lt;/label&gt;<br>
-  &lt;parent&gt; Heat-Movement &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;separatorbar&gt;<br>
-  &lt;parent&gt; Heat-Movement &lt;/parent&gt;<br>
-&lt;/separatorbar&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-Movement-Urine &lt;/name&gt;<br>
-  &lt;label&gt; Urine &lt;/label&gt;<br>
-  &lt;parent&gt; Heat-Movement &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-Movement-Hemorrhage &lt;/name&gt;<br>
-  &lt;label&gt; Hemorrhage &lt;/label&gt;<br>
-  &lt;parent&gt; Heat-Movement &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-Movement-Dialysis &lt;/name&gt;<br>
-  &lt;label&gt; Dialysis &lt;/label&gt;<br>
-  &lt;parent&gt; Heat-Movement &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-Movement-Radiation &lt;/name&gt;<br>
-  &lt;label&gt; Radiation &lt;/label&gt;<br>
-  &lt;parent&gt; Heat-Movement &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-Movement-Conduction &lt;/name&gt;<br>
-  &lt;label&gt; Conduction &lt;/label&gt;<br>
-  &lt;parent&gt; Heat-Movement &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-Movement-Sweating &lt;/name&gt;<br>
-  &lt;label&gt; Sweating &lt;/label&gt;<br>
-  &lt;parent&gt; Heat-Movement &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-Movement-InsensibleSkin &lt;/name&gt;<br>
-  &lt;label&gt; Insensible Skin &lt;/label&gt;<br>
-  &lt;parent&gt; Heat-Movement &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-Movement-InsensibleLung &lt;/name&gt;<br>
-  &lt;label&gt; Insensible Lung &lt;/label&gt;<br>
-  &lt;parent&gt; Heat-Movement &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-Movement-Vomitus &lt;/name&gt;<br>
-  &lt;label&gt; Vomitus &lt;/label&gt;<br>
-  &lt;parent&gt; Heat-Movement &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Heat-Movement-Diarrhea &lt;/name&gt;<br>
-  &lt;label&gt; Diarrhea &lt;/label&gt;<br>
-  &lt;parent&gt; Heat-Movement &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-End
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

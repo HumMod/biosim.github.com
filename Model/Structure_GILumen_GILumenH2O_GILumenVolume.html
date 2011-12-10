@@ -1,143 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:40 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Structure_GILumen_GILumenH2O_GILumenH2O.html'><img src='../Back.PNG'></a>
-<p>
-HumMod / GILumenVolume<br>
-<br>
-Created : 05-Jun-06<br>
-Last Modified : 2011-07-27<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2011<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;structure&gt;&lt;name&gt; GILumenVolume &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Mass(L) &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; OralIntake &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; DietaryIntake &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; LoadingIntake &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Absorption &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Vomitus &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Diarrhea &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; [OsmNa] &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; [OsmK] &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; [Osm] &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; [Fiber] &lt;/name&gt;&lt;val&gt; 0.043 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; Perm &lt;/name&gt;&lt;val&gt; 150.0 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;diffeq&gt;<br>
-  &lt;name&gt; Mass &lt;/name&gt;<br>
-  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
-  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 10.0 &lt;/errorlim&gt;<br>
-&lt;/diffeq&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Initialize &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;val&gt; 1000.0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Mass &lt;/name&gt;&lt;val&gt; InitialMass &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Conc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Mass(L) &lt;/name&gt;&lt;val&gt; Mass / 1000.0 &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; [OsmNa] &lt;/name&gt;<br>
-  &lt;val&gt; 2 * GILumenSodium.[Na+] &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; [OsmK]  &lt;/name&gt;<br>
-  &lt;val&gt; 2 * GILumenPotassium.[K+] &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; [Osm] &lt;/name&gt;<br>
-  &lt;val&gt; [OsmNa] + [OsmK] + [Fiber] &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; DietaryIntake &lt;/name&gt;<br>
-  &lt;val&gt; DietIntakeH2O.Rate(mL/Min) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; LoadingIntake &lt;/name&gt;<br>
-  &lt;val&gt; OralH2OGlucoseLoad.H2ORate &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; OralIntake &lt;/name&gt;<br>
-  &lt;val&gt; DietaryIntake + LoadingIntake &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Absorption &lt;/name&gt;<br>
-  &lt;val&gt; Perm * ( OsmBody.[Osm]-CellWall - [Osm] ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Vomitus &lt;/name&gt;<br>
-  &lt;val&gt; GILumenVomitus.H2OLoss &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Diarrhea &lt;/name&gt;<br>
-  &lt;val&gt; GILumenDiarrhea.H2OLoss &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Change &lt;/name&gt;<br>
-  &lt;val&gt; OralIntake - Absorption - Vomitus - Diarrhea &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

@@ -1,57 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:40 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Structure_FattyAcid_FattyAcid.html'><img src='../Back.PNG'></a>
-<p>
-HumMod / FADecomposition<br>
-<br>
-Created : 27-Mar-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; FADecomposition &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Rate &lt;/name&gt;&lt;/var&gt;<br>
-&lt;parm&gt;&lt;name&gt; K &lt;/name&gt;&lt;val&gt; 0.0007 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Rate &lt;/name&gt;&lt;val&gt; K * FAPool.Mass &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

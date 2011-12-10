@@ -1,167 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:41 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Structure_Nerves_Nerves.html'><img src='../Back.PNG'></a>
-<p>
-HumMod / SympsKidy<br>
-<br>
-Created : 21-Oct-04<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; SympsKidy &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; NA &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; NA(Hz) &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; LowPressureEffect &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; FuelEffect &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; ReflexNA &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; ClampSwitch &lt;/name&gt;<br>
-  &lt;val&gt; FALSE &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; ClampLevel &lt;/name&gt;<br>
-  &lt;val&gt; 0.0 &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;functions&gt;<br>
-<br>
-&lt;curve&gt;<br>
-  &lt;name&gt; LowPressureEffect &lt;/name&gt;<br>
-  &lt;point&gt;&lt;x&gt; 0.0 &lt;/x&gt;&lt;y&gt; 1.5 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
-  &lt;point&gt;&lt;x&gt; 1.0 &lt;/x&gt;&lt;y&gt; 1.0 &lt;/y&gt;&lt;slope&gt; -0.4 &lt;/slope&gt;&lt;/point&gt;<br>
-  &lt;point&gt;&lt;x&gt; 4.0 &lt;/x&gt;&lt;y&gt; 0.2 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
-&lt;/curve&gt;<br>
-<br>
-&lt;curve&gt;<br>
-  &lt;name&gt; FuelEffect &lt;/name&gt;<br>
-  &lt;point&gt;&lt;x&gt; 0.30 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
-  &lt;point&gt;&lt;x&gt; 0.60 &lt;/x&gt;&lt;y&gt; 3.0 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
-  &lt;point&gt;&lt;x&gt; 0.80 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
-&lt;/curve&gt;<br>
-<br>
-&lt;/functions&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; FuelEffect &lt;/name&gt;<br>
-  &lt;val&gt; FuelEffect [ Brain-Fuel.FractUseDelay ] &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;if&gt;<br>
-  &lt;test&gt; Brain-Function.Effect GT 0.1 &lt;/test&gt;<br>
-  &lt;true&gt;<br>
-    &lt;def&gt;<br>
-      &lt;name&gt; LowPressureEffect &lt;/name&gt;<br>
-      &lt;val&gt;<br>
-          LowPressureEffect<br>
-          [ LowPressureReceptors.NA ]<br>
-      &lt;/val&gt;<br>
-    &lt;/def&gt;<br>
-<br>
-    &lt;def&gt;<br>
-      &lt;name&gt; ReflexNA &lt;/name&gt;<br>
-      &lt;val&gt;<br>
-          SympsCNS.BaroEffect<br>
-        * LowPressureEffect<br>
-        * SympsCNS.MechanoEffect<br>
-        * SympsChemo.Effect<br>
-      &lt;/val&gt;<br>
-    &lt;/def&gt;<br>
-<br>
-    &lt;def&gt;<br>
-      &lt;name&gt; NA &lt;/name&gt;<br>
-      &lt;val&gt;<br>
-        ( ReflexNA<br>
-        + ExerciseSymps.TotalEffect<br>
-        + CushingResponse.Effect<br>
-        + FuelEffect )<br>
-        * SympsCNS.A2Effect<br>
-        * CNSTrophicFactor.Effect<br>
-      &lt;/val&gt;<br>
-    &lt;/def&gt;<br>
-  &lt;/true&gt;<br>
-  &lt;false&gt;<br>
-    &lt;def&gt;<br>
-      &lt;name&gt; LowPressureEffect &lt;/name&gt;<br>
-      &lt;val&gt; 0.0 &lt;/val&gt;<br>
-    &lt;/def&gt;<br>
-<br>
-    &lt;def&gt;<br>
-      &lt;name&gt; ReflexNA &lt;/name&gt;<br>
-      &lt;val&gt; 0.0 &lt;/val&gt;<br>
-    &lt;/def&gt;<br>
-<br>
-    &lt;def&gt;<br>
-      &lt;name&gt; NA &lt;/name&gt;<br>
-      &lt;val&gt;<br>
-        ( 1.0<br>
-        + CushingResponse.Effect<br>
-        + FuelEffect )<br>
-        * CNSTrophicFactor.Effect<br>
-      &lt;/val&gt;<br>
-    &lt;/def&gt;<br>
-  &lt;/false&gt;<br>
-&lt;/if&gt;<br>
-<br>
-&lt;conditional&gt;<br>
-  &lt;name&gt; NA(Hz) &lt;/name&gt;<br>
-  &lt;test&gt; ClampSwitch &lt;/test&gt;<br>
-  &lt;true&gt; ClampLevel &lt;/true&gt;<br>
-  &lt;false&gt; 1.5 * NA &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

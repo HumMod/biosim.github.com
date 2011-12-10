@@ -1,75 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:41 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Structure_Structure.html'><img src='../Back.PNG'></a>
-<p><a href='Structure_VitaminD_VitaminD3.html'>Structure_VitaminD_VitaminD3</a>
-<br><a href='Structure_VitaminD_VitaminD3Stored.html'>Structure_VitaminD_VitaminD3Stored</a>
-<br><a href='Structure_VitaminD_VitaminD(25-Hydroxy).html'>Structure_VitaminD_VitaminD(25-Hydroxy)</a>
-<br><a href='Structure_VitaminD_VitaminD(1,25-Dihydroxy).html'>Structure_VitaminD_VitaminD(1,25-Dihydroxy)</a>
-<p>
-HumMod | VitaminD<br>
-<br>
-Created : 2011-08-04<br>
-Last Modified : 2011-08-04<br>
-Author : Tom Coleman<br>
-Copyright : 2011-2011<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;?path Structure\VitaminD\ ?&gt;<br>
-<br>
-&lt;?include VitaminD3.DES ?&gt;<br>
-&lt;?include VitaminD3Stored.DES ?&gt;<br>
-&lt;?include VitaminD(25-Hydroxy).DES ?&gt;<br>
-&lt;?include VitaminD(1,25-Dihydroxy).DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; VitaminD &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Init &lt;/name&gt;<br>
-  &lt;call&gt; VitaminD3.Init &lt;/call&gt;<br>
-  &lt;call&gt; VitaminD3Stored.Init &lt;/call&gt;<br>
-  &lt;call&gt; VitaminD(25-Hydroxy).Init &lt;/call&gt;<br>
-  &lt;call&gt; VitaminD(1,25-Dihydroxy).Init &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Conc &lt;/name&gt;<br>
-  &lt;call&gt; VitaminD3.Conc &lt;/call&gt;<br>
-  &lt;call&gt; VitaminD3Stored.Conc &lt;/call&gt;<br>
-  &lt;call&gt; VitaminD(25-Hydroxy).Conc &lt;/call&gt;<br>
-  &lt;call&gt; VitaminD(1,25-Dihydroxy).Conc &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-  &lt;call&gt; VitaminD3Stored.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; VitaminD3.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; VitaminD(25-Hydroxy).Dervs &lt;/call&gt;<br>
-  &lt;call&gt; VitaminD(1,25-Dihydroxy).Dervs &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

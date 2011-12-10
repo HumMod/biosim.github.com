@@ -1,130 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:41 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Structure_Posture_Posture.html'><img src='../Back.PNG'></a>
-<p>
-HumMod / PostureControl<br>
-<br>
-Created : 25-May-05<br>
-Last Modified : 2010-01-26<br>
-Author : Tom Coleman<br>
-Copyright : 2005-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; PostureControl &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; NONE     &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; LYING    &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; SITTING  &lt;/name&gt;&lt;val&gt; 2.0 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; STANDING &lt;/name&gt;&lt;val&gt; 3.0 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; TILTED   &lt;/name&gt;&lt;val&gt; 4.0 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; Restraint &lt;/name&gt;<br>
-  &lt;val&gt; 0 &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; Request &lt;/name&gt;<br>
-  &lt;val&gt; 1 &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; LastValidRequest &lt;/name&gt;<br>
-  &lt;val&gt; 1 &lt;/val&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-<br>
-&lt;onjustchanged&gt;&lt;name&gt; Restraint &lt;/name&gt;<br>
-<br>
-  &lt;if&gt;<br>
-  &lt;test&gt; Restraint EQ NONE &lt;/test&gt;<br>
-  &lt;true&gt;<br>
-    &lt;def&gt;&lt;name&gt; Status.Posture &lt;/name&gt;&lt;val&gt; LastValidRequest &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;/true&gt;<br>
-  &lt;false&gt;<br>
-    &lt;def&gt;&lt;name&gt; Status.Posture &lt;/name&gt;&lt;val&gt; Restraint &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;/false&gt;<br>
-  &lt;/if&gt;<br>
-<br>
-&lt;/onjustchanged&gt;<br>
-<br>
-&lt;onjustchanged&gt;&lt;name&gt; Request &lt;/name&gt;<br>
-<br>
-  &lt;if&gt;<br>
-  &lt;test&gt; Restraint NE NONE &lt;/test&gt;<br>
-  &lt;true&gt;<br>
-    &lt;exitblock/&gt;<br>
-  &lt;/true&gt;<br>
-  &lt;/if&gt;<br>
-<br>
-  &lt;if&gt;<br>
-  &lt;test&gt; DailyPlannerControl.Switch &lt;/test&gt;<br>
-  &lt;true&gt;<br>
-    &lt;message&gt; The daily planner is controlling posture now. &lt;/message&gt;<br>
-    &lt;def&gt;&lt;name&gt; Request &lt;/name&gt;&lt;val&gt; LastValidRequest &lt;/val&gt;&lt;/def&gt;<br>
-    &lt;exitblock/&gt;<br>
-  &lt;/true&gt;<br>
-  &lt;/if&gt;<br>
-<br>
-  &lt;if&gt;<br>
-  &lt;test&gt; Brain-Function.Comatose &lt;/test&gt;<br>
-  &lt;true&gt;<br>
-    &lt;message&gt; Subject is comatose and can't change posture. &lt;/message&gt;<br>
-    &lt;def&gt;&lt;name&gt; Request &lt;/name&gt;&lt;val&gt; LastValidRequest &lt;/val&gt;&lt;/def&gt;<br>
-    &lt;exitblock/&gt;<br>
-  &lt;/true&gt;<br>
-  &lt;/if&gt;<br>
-<br>
-  &lt;def&gt;&lt;name&gt; Status.Posture &lt;/name&gt;&lt;val&gt; Request &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;def&gt;&lt;name&gt; LastValidRequest &lt;/name&gt;&lt;val&gt; Request &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/onjustchanged&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; RequestChange &lt;/name&gt;<br>
-<br>
-  &lt;if&gt;<br>
-  &lt;test&gt; Restraint EQ NONE &lt;/test&gt;<br>
-  &lt;true&gt;<br>
-    &lt;def&gt;&lt;name&gt; Status.Posture &lt;/name&gt;&lt;val&gt; Request &lt;/val&gt;&lt;/def&gt;<br>
-    &lt;def&gt;&lt;name&gt; LastValidRequest &lt;/name&gt;&lt;val&gt; Request &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;/true&gt;<br>
-  &lt;/if&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

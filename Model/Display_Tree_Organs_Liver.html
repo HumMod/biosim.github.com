@@ -1,124 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:41 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Display_Tree_Organs_Organs.html'><img src='../Back.PNG'></a>
-<p><a href='Display_Tree_Organs_SplanchnicCirculation.html'>Display_Tree_Organs_SplanchnicCirculation</a>
-<p>
-HumMod / Liver<br>
-<br>
-Created : 08-Dec-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;branch&gt;<br>
-  &lt;name&gt; Liver &lt;/name&gt;<br>
-  &lt;label&gt; Liver &lt;/label&gt;<br>
-  &lt;parent&gt; ORGANS &lt;/parent&gt;<br>
-&lt;/branch&gt;<br>
-<br>
-&lt;?path Display\Tree\Organs\ ?&gt;<br>
-&lt;?include SplanchnicCirculation.DES ?&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Liver-Metabolism &lt;/name&gt;<br>
-  &lt;label&gt; Metabolism &lt;/label&gt;<br>
-  &lt;parent&gt; Liver &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;branch&gt;<br>
-  &lt;name&gt; Liver-Fuel &lt;/name&gt;<br>
-  &lt;label&gt; Fuel &lt;/label&gt;<br>
-  &lt;parent&gt; Liver &lt;/parent&gt;<br>
-&lt;/branch&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; LiverFuel-Selection &lt;/name&gt;<br>
-  &lt;label&gt; Selection &lt;/label&gt;<br>
-  &lt;parent&gt; Liver-Fuel &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; LiverFuel-AerobicUse &lt;/name&gt;<br>
-  &lt;label&gt; Aerobic Use &lt;/label&gt;<br>
-  &lt;parent&gt; Liver-Fuel &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; LiverFuel-AnaerobicUse &lt;/name&gt;<br>
-  &lt;label&gt; Anaerobic Use &lt;/label&gt;<br>
-  &lt;parent&gt; Liver-Fuel &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; LiverFuel-Adequacy &lt;/name&gt;<br>
-  &lt;label&gt; Adequacy &lt;/label&gt;<br>
-  &lt;parent&gt; Liver-Fuel &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Liver-CO2 &lt;/name&gt;<br>
-  &lt;label&gt; CO2 &lt;/label&gt;<br>
-  &lt;parent&gt; Liver &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Liver-Lactate &lt;/name&gt;<br>
-  &lt;label&gt; Lactate &lt;/label&gt;<br>
-  &lt;parent&gt; Liver &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Liver-AcidBase &lt;/name&gt;<br>
-  &lt;label&gt; Acid-Base &lt;/label&gt;<br>
-  &lt;parent&gt; Liver &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Liver-Nerves &lt;/name&gt;<br>
-  &lt;label&gt; Nerves &lt;/label&gt;<br>
-  &lt;parent&gt; Liver &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Liver-Function &lt;/name&gt;<br>
-  &lt;label&gt; Function &lt;/label&gt;<br>
-  &lt;parent&gt; Liver &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Liver-Structure &lt;/name&gt;<br>
-  &lt;label&gt; Structure &lt;/label&gt;<br>
-  &lt;parent&gt; Liver &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; Liver-Size &lt;/name&gt;<br>
-  &lt;label&gt; Size &lt;/label&gt;<br>
-  &lt;parent&gt; Liver &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-End
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

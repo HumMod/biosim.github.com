@@ -1,78 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:41 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Structure_Structure.html'><img src='../Back.PNG'></a>
-<p><a href='Structure_Morphology_Age.html'>Structure_Morphology_Age</a>
-<br><a href='Structure_Morphology_Gender.html'>Structure_Morphology_Gender</a>
-<br><a href='Structure_Morphology_Height.html'>Structure_Morphology_Height</a>
-<br><a href='Structure_Morphology_Weight.html'>Structure_Morphology_Weight</a>
-<br><a href='Structure_Morphology_Weight-Fluids.html'>Structure_Morphology_Weight-Fluids</a>
-<br><a href='Structure_Morphology_BMI.html'>Structure_Morphology_BMI</a>
-<br><a href='Structure_Morphology_SurfaceArea.html'>Structure_Morphology_SurfaceArea</a>
-<br><a href='Structure_Morphology_Adiposity.html'>Structure_Morphology_Adiposity</a>
-<br><a href='Structure_Morphology_Muscularity.html'>Structure_Morphology_Muscularity</a>
-<br><a href='Structure_Morphology_OtherMass.html'>Structure_Morphology_OtherMass</a>
-<p>
-HumMod / Morphology DES<br>
-<br>
-Created : 2011-07-28<br>
-Last Modified : 2011-07-28<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2011<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;?path Structure\Morphology\ ?&gt;<br>
-<br>
-&lt;?include Age.DES ?&gt;<br>
-&lt;?include Gender.DES ?&gt;<br>
-&lt;?include Height.DES ?&gt;<br>
-<br>
-&lt;?include Weight.DES ?&gt;<br>
-&lt;?include Weight-Fluids.DES ?&gt;<br>
-&lt;?include BMI.DES ?&gt;<br>
-&lt;?include SurfaceArea.DES ?&gt;<br>
-<br>
-&lt;?include Adiposity.DES ?&gt;<br>
-&lt;?include Muscularity.DES ?&gt;<br>
-&lt;?include OtherMass.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Morphology &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-<br>
-&lt;call&gt; Gender.Parms &lt;/call&gt;<br>
-&lt;call&gt; Adiposity.Parms &lt;/call&gt;<br>
-&lt;call&gt; Age.Parms &lt;/call&gt;<br>
-&lt;call&gt; Height.Parms &lt;/call&gt;<br>
-&lt;call&gt; Muscularity.Parms &lt;/call&gt;<br>
-&lt;call&gt; OtherMass.Parms &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

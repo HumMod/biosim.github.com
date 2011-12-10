@@ -1,120 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:41 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Display_Miscellaneous_CarbonMonoxide_Uptake_Uptake.html'><img src='../Back.PNG'></a>
-<p>
-HumMod / GasExchange<br>
-<br>
-Created : 2010-06-05<br>
-Last Modified : 2010-06-05<br>
-Author : Tom Coleman<br>
-Copyright : 2005-2010<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;groupbox&gt;<br>
-   &lt;row&gt; 2.0 &lt;/row&gt;<br>
-   &lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;high&gt; 17.2 &lt;/high&gt;<br>
-   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
-   &lt;title&gt; Gas Exchange &lt;/title&gt;<br>
-<br>
-&lt;structurename&gt; CO &lt;/structurename&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Uptake &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 4 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Uptake &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showgraph&gt;<br>
-  &lt;row&gt; 2.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
-  &lt;leftmargin&gt; 7 &lt;/leftmargin&gt;<br>
-  &lt;xaxis&gt;<br>
-    &lt;name&gt; System.X &lt;/name&gt;<br>
-    &lt;label&gt; Time &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
-  &lt;/xaxis&gt;<br>
-  &lt;yaxis&gt;<br>
-    &lt;yvar&gt;<br>
-      &lt;name&gt; Uptake &lt;/name&gt;<br>
-      &lt;label&gt; Uptake &lt;/label&gt;<br>
-      &lt;linecolor&gt; BLUE &lt;/linecolor&gt;<br>
-    &lt;/yvar&gt;<br>
-    &lt;scale&gt;&lt;min&gt; -1.0 &lt;/min&gt;&lt;max&gt; 1.0 &lt;/max&gt;&lt;inc&gt; 1.0 &lt;/inc&gt;&lt;/scale&gt;<br>
-  &lt;/yaxis&gt;<br>
-&lt;/showgraph&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 9.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Gradient &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 5 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Gradient &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 10.8 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; pCO-Lung &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 4 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; pCO Lung &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 11.8 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; pCO &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 4 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; pCO Blood &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 13.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Permeability &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Permeability &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 14.4 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-  &lt;name&gt; CO_O2Ratio &lt;/name&gt;<br>
-  &lt;listname&gt; Common.Fraction &lt;/listname&gt;<br>
-  &lt;label&gt; CO/O2 &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 15.6 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; PulmonaryMembrane.Permeability &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; O2 Permeability &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 1.2 &lt;/row&gt;<br>
-  &lt;col&gt; 26.0 &lt;/col&gt;<br>
-  &lt;line&gt;  &lt;/line&gt;<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;/groupbox&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

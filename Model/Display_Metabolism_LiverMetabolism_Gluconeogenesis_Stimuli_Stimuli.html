@@ -1,222 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:41 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Display_Metabolism_LiverMetabolism_Gluconeogenesis_Gluconeogenesis.html'><img src='../Back.PNG'></a>
-<p>
-HumMod / Stimuli<br>
-<br>
-Created : 29-Mar-08<br>
-Last Modified : 2010-06-06<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2011<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;panel&gt;&lt;name&gt; Gluconeogenesis-Stimuli &lt;/name&gt;<br>
-<br>
-&lt;showbitmap&gt;<br>
-  &lt;row&gt; 0.3 &lt;/row&gt;<br>
-  &lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Liver &lt;/name&gt;<br>
-&lt;/showbitmap&gt;<br>
-<br>
-&lt;label&gt;<br>
-  &lt;row&gt; 0.3 &lt;/row&gt;<br>
-  &lt;col&gt; 4.5 &lt;/col&gt;<br>
-  &lt;text&gt; Liver | Gluconeogenesis | Stimuli &lt;/text&gt;<br>
-&lt;/label&gt;<br>
-<br>
-&lt;showclock&gt;<br>
-  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; System.X &lt;/name&gt;<br>
-  &lt;ampm/&gt;<br>
-  &lt;secs/&gt;<br>
-  &lt;days/&gt;<br>
-&lt;/showclock&gt;<br>
-<br>
-&lt;structurename&gt; LM_Gluconeogenesis &lt;/structurename&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 3.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; CortisolEffect &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Cortisol Effect &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showcurve&gt;<br>
-  &lt;row&gt; 4.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
-  &lt;leftmargin&gt; 7 &lt;/leftmargin&gt;<br>
-<br>
-  &lt;xaxis&gt;<br>
-    &lt;name&gt; Cortisol.[Conc(uG/dL)] &lt;/name&gt;<br>
-    &lt;label&gt; [Cortisol] &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 100 &lt;/max&gt;&lt;/scale&gt;<br>
-  &lt;/xaxis&gt;<br>
-<br>
-  &lt;yaxis&gt;<br>
-    &lt;label&gt; Effect &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
-  &lt;/yaxis&gt;<br>
-<br>
-  &lt;curvename&gt; CortisolEffect &lt;/curvename&gt;<br>
-&lt;/showcurve&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 11.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Cortisol.[Conc(uG/dL)] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Cortisol] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 13.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; GlucoseEffect &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Glucose Effect &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showcurve&gt;<br>
-  &lt;row&gt; 14.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
-  &lt;leftmargin&gt; 7 &lt;/leftmargin&gt;<br>
-<br>
-  &lt;xaxis&gt;<br>
-    &lt;name&gt; PortalVein-Glucose.[Glucose(mG/dL)] &lt;/name&gt;<br>
-    &lt;label&gt; [Glucose] &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 400 &lt;/max&gt;&lt;inc&gt; 100 &lt;/inc&gt;&lt;/scale&gt;<br>
-  &lt;/xaxis&gt;<br>
-<br>
-  &lt;yaxis&gt;<br>
-    &lt;label&gt; Effect &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
-  &lt;/yaxis&gt;<br>
-<br>
-  &lt;curvename&gt; GlucoseEffect &lt;/curvename&gt;<br>
-&lt;/showcurve&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 21.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; PortalVein-Glucose.[Glucose(mG/dL)] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Glucose] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 23.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; AminoAcidEffect &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Amino Acid Effect &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showcurve&gt;<br>
-  &lt;row&gt; 24.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
-  &lt;leftmargin&gt; 7 &lt;/leftmargin&gt;<br>
-<br>
-  &lt;xaxis&gt;<br>
-    &lt;name&gt; AAPool.[AA(mG/dL)] &lt;/name&gt;<br>
-    &lt;label&gt; [Amino Acids] &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 200 &lt;/max&gt;&lt;inc&gt; 100 &lt;/inc&gt;&lt;/scale&gt;<br>
-  &lt;/xaxis&gt;<br>
-<br>
-  &lt;yaxis&gt;<br>
-    &lt;label&gt; Effect &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
-  &lt;/yaxis&gt;<br>
-<br>
-  &lt;curvename&gt; AminoAcidEffect &lt;/curvename&gt;<br>
-&lt;/showcurve&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 31.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; AAPool.[AA(mG/dL)] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Amino Acids] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 3.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; InsulinEffect &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Insulin Effect &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showcurve&gt;<br>
-  &lt;row&gt; 4.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
-  &lt;leftmargin&gt; 7 &lt;/leftmargin&gt;<br>
-<br>
-  &lt;xaxis&gt;<br>
-    &lt;name&gt; LM_Insulin.[InsulinDelayed] &lt;/name&gt;<br>
-    &lt;label&gt; [Insulin] &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 500 &lt;/max&gt;&lt;inc&gt; 100 &lt;/inc&gt;&lt;/scale&gt;<br>
-  &lt;/xaxis&gt;<br>
-<br>
-  &lt;yaxis&gt;<br>
-    &lt;label&gt; Effect &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 3 &lt;/max&gt;&lt;/scale&gt;<br>
-  &lt;/yaxis&gt;<br>
-<br>
-  &lt;curvename&gt; InsulinEffect &lt;/curvename&gt;<br>
-&lt;/showcurve&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 11.4 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; LM_Insulin.[InsulinDelayed] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Insulin] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 13.2 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; GlucagonEffect &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Glucagon Effect &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showcurve&gt;<br>
-  &lt;row&gt; 14.2 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
-  &lt;leftmargin&gt; 7 &lt;/leftmargin&gt;<br>
-<br>
-  &lt;xaxis&gt;<br>
-    &lt;name&gt; PortalVein-Glucagon.[Glucagon] &lt;/name&gt;<br>
-    &lt;label&gt; [Glucagon] &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 800 &lt;/max&gt;&lt;inc&gt; 100 &lt;/inc&gt;&lt;/scale&gt;<br>
-  &lt;/xaxis&gt;<br>
-<br>
-  &lt;yaxis&gt;<br>
-    &lt;label&gt; Effect &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
-  &lt;/yaxis&gt;<br>
-<br>
-  &lt;curvename&gt; GlucagonEffect &lt;/curvename&gt;<br>
-&lt;/showcurve&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 21.6 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; PortalVein-Glucagon.[Glucagon] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Glucagon] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-<br>
-&lt;/panel&gt;<br>
-<br>
-End
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

@@ -1,160 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:42 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Docs_ADH.html'><img src='../Back.PNG'></a>
-<p>
-QHP 2008 / ADH.DOCS<br>
-<br>
-Created : 27-Mar-09<br>
-Last Modified : 27-Mar-09<br>
-Author : Tom Coleman<br>
-Copyright : 2009<br>
-<br>
-&lt;structurename&gt; ADHPump &lt;/structurename&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; ADHPump.Rate &lt;/name&gt;<br>
-&lt;topic&gt; ADHPump - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; ADH - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; ADH - Concentration Units &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; ADHPump.Setting &lt;/name&gt;<br>
-&lt;topic&gt; Setting - DefinitionADHP1 &lt;/topic&gt;<br>
-&lt;topic&gt; ADH - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; ADH - Concentration Units &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; ADHPump.Switch &lt;/name&gt;<br>
-&lt;topic&gt; Switch - DefinitionADHP2 &lt;/topic&gt;<br>
-&lt;topic&gt; ADH - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; ADH - Concentration Units &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; ADHPump - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-The ADHPump enables the model user to change <br>
-[ADH] levels by infusing antidiuretic hormone at different <br>
-rates. Data is taken from a variety of human and animal studies <br>
-relating infusion rates to plasma concentrations <br>
-of ADH.<br>
-<br>
-When the switch is turned on, the model user sets the <br>
-rate by changing the setting using the slide bar. <br>
-<br>
-Dog Data <br>
-Malayan SA, Ramsay DJ, Keil LC, Reid IA. Effects of increases in<br>
-plasma vasopressin concentration on plasma renin activity, blood <br>
-pressure, heart rate, and plasma corticosteroid concentration in<br>
-conscious dogs. Endocrinology 107: 1899 - 1904, 1980.<br>
-<br>
-Montani JP, Liard JF, Schoun j, Mohring J. Hemodynamic effects of <br>
-exogenous and endogenous vasopressin at low plasma concentrations<br>
-in conscious dogs. Circ Res 47: 346 - 355, 1980.<br>
-<br>
-Cowley AW Jr., Switzer SJ, Guinn MM. Evidence and quantification <br>
-of the vasopresssin arterial pressure control system in the dog. <br>
-Circ Res 46: 58 - 67, 1980.<br>
-<br>
-Human Data<br>
-Khokhar AM, Slater JD, Forsling ML, Payne NN. Effect of vasopressin<br>
-on plasma volume and renin release in man. <br>
-Clin Sci Mol Med 50: 415 - 424, 1976.<br>
-<br>
-Bie P, Secher NH, Astrup A, Warberg J. Cardiovascular and endocrine<br>
-responses to head -up tilt and vasopressin infusion in humans.<br>
-Am J physiol 251: R735 - R741, 1986.<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Switch - DefinitionADHP2 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-When the ADHpump switch is turned on, the model <br>
-user can set infusion rates using the sliding bar <br>
-feature in the ADH pump display box. <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Setting - DefinitionADHP1 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-When the ADHpump switch is turned on, the model <br>
-user can set infusion rates using the sliding bar <br>
-feature in the ADH pump display box. Rates of infusion<br>
-may be increased from 0 in increments of 1, up to <br>
-10nG/Min and from 10 in increments of 10 up to 1000nG/Min. <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; ADH - Physical Units &lt;/name&gt;<br>
-&lt;label&gt; Physical Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-[Plasma]    pG/mL<br>
-Plasma Mass nG<br>
-Fluxes      nG/Min<br>
-Stored Mass uG<br>
-<br>
-Notice that micro (10^-6), nano (10^-9) and pico (10^-12)<br>
-gram units are used.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; ADH - Concentration Units &lt;/name&gt;<br>
-&lt;label&gt; Concentration Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-ADH concentrations have been expressed in<br>
-<br>
-   pG/mL<br>
-   pMol/L<br>
-   uU/mL<br>
-<br>
-A typical concentration is 2.0 pG/mL; 1.8pMol/L or 0.8uU/mL<br>
-To change from pG to pMol multiply by 0.922<br>
-To change from pG to uU, multiply by 0.4<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-End
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

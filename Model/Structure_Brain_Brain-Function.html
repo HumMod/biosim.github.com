@@ -1,217 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:40 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Structure_Brain_Brain.html'><img src='../Back.PNG'></a>
-<p>
-HumMod / Brain-Function<br>
-<br>
-Created : 21-Oct-04<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Brain-Function &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Failed &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Effect &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Normal &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Confused &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Impaired &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Comatose &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; NotBreathing &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; MayBeDead &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; IsReallyDead &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; NotResponding &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; LastState &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Effect &lt;/name&gt;<br>
-  &lt;val&gt; BrainInsult.Effect &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Normal &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Confused &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Impaired &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Comatose &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; NotBreathing &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; MayBeDead &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; IsReallyDead &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; NotResponding &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;testcase&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Effect LE 0.40 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Comatose &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; NotResponding &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Effect LE 0.60 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Impaired &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Effect LE 0.80 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Confused &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; TRUE &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Normal &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;/testcase&gt;<br>
-<br>
-&lt;testcase&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Effect LE 0.20 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; NotBreathing &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; NotResponding &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;/testcase&gt;<br>
-<br>
-&lt;testcase&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Effect EQ 0.0 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; IsReallyDead &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; NotResponding &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Effect LE 0.10 &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; MayBeDead &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; NotResponding &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;/testcase&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Page &lt;/name&gt;<br>
-<br>
-&lt;testcase&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; ( Effect EQ 0.0 ) AND ( LastState LT 6 ) &lt;/test&gt;<br>
-&lt;page&gt; Your patient is dead ... &lt;/page&gt;<br>
-&lt;def&gt;&lt;name&gt; LastState &lt;/name&gt;&lt;val&gt; 6 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; ( Effect LE 0.1 ) AND ( LastState LT 5 ) &lt;/test&gt;<br>
-&lt;page&gt; Your patient may be dead! &lt;/page&gt;<br>
-&lt;def&gt;&lt;name&gt; LastState &lt;/name&gt;&lt;val&gt; 5 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; ( Effect LE 0.2 ) AND ( LastState LT 4 ) &lt;/test&gt;<br>
-&lt;page&gt; Your patient is not breathing! &lt;/page&gt;<br>
-&lt;def&gt;&lt;name&gt; LastState &lt;/name&gt;&lt;val&gt; 4 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; ( Effect LE 0.4 ) AND ( LastState LT 3 ) &lt;/test&gt;<br>
-&lt;page&gt; Your patient is not conscious! &lt;/page&gt;<br>
-&lt;def&gt;&lt;name&gt; LastState &lt;/name&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; ( Effect LE 0.6 ) AND ( LastState LT 2 ) &lt;/test&gt;<br>
-&lt;page&gt; I can't talk wery bell ... &lt;/page&gt;<br>
-&lt;def&gt;&lt;name&gt; LastState &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; ( Effect LE 0.8 ) AND ( LastState LT 1 ) &lt;/test&gt;<br>
-&lt;page&gt; I'm like confused. &lt;/page&gt;<br>
-&lt;def&gt;&lt;name&gt; LastState &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; ( Effect GE 0.95 ) AND ( LastState GT 0 ) &lt;/test&gt;<br>
-&lt;page&gt; Now I'm feeling better. &lt;/page&gt;<br>
-&lt;def&gt;&lt;name&gt; LastState &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; ( Effect GE 0.60 ) AND ( LastState GT 3 ) &lt;/test&gt;<br>
-&lt;page&gt; Your patient seems to be conscious again. &lt;/page&gt;<br>
-&lt;def&gt;&lt;name&gt; LastState &lt;/name&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; ( Effect GE 0.40 ) AND ( LastState GT 4 ) &lt;/test&gt;<br>
-&lt;page&gt; Your patient is breathing again. &lt;/page&gt;<br>
-&lt;def&gt;&lt;name&gt; LastState &lt;/name&gt;&lt;val&gt; 4 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; ( Effect GE 0.20 ) AND ( LastState GE 5 ) &lt;/test&gt;<br>
-&lt;page&gt; Wait. Your patient is NOT dead! &lt;/page&gt;<br>
-&lt;def&gt;&lt;name&gt; LastState &lt;/name&gt;&lt;val&gt; 5 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;/testcase&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
-<br>
-&lt;testcase&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; NOT Failed AND ( Effect LT 0.2 ) &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Failed &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; Failed AND ( Effect GT 0.4 ) &lt;/test&gt;<br>
-&lt;def&gt;&lt;name&gt; Failed &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;/testcase&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

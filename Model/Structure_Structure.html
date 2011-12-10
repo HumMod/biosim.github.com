@@ -1,805 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:41 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='HumMod.html'><img src='../Back.PNG'></a>
-<p><a href='Structure_CO2_CO2.html'>Structure_CO2_CO2</a>
-<br><a href='Structure_Hemoglobin_Hemoglobin.html'>Structure_Hemoglobin_Hemoglobin</a>
-<br><a href='Structure_A-VFistula_A-VFistula.html'>Structure_A-VFistula_A-VFistula</a>
-<br><a href='Structure_AcidBase_AcidBase.html'>Structure_AcidBase_AcidBase</a>
-<br><a href='Structure_ACTH_ACTH.html'>Structure_ACTH_ACTH</a>
-<br><a href='Structure_ADH_ADH.html'>Structure_ADH_ADH</a>
-<br><a href='Structure_AirSupply_AirSupply.html'>Structure_AirSupply_AirSupply</a>
-<br><a href='Structure_Aldosterone_Aldosterone.html'>Structure_Aldosterone_Aldosterone</a>
-<br><a href='Structure_AminoAcid_AminoAcid.html'>Structure_AminoAcid_AminoAcid</a>
-<br><a href='Structure_Anesthesia_Anesthesia.html'>Structure_Anesthesia_Anesthesia</a>
-<br><a href='Structure_ANP_ANP.html'>Structure_ANP_ANP</a>
-<br><a href='Structure_Autopsy_Autopsy.html'>Structure_Autopsy_Autopsy</a>
-<br><a href='Structure_Bladder_Bladder.html'>Structure_Bladder_Bladder</a>
-<br><a href='Structure_BloodVolume_BloodVolume.html'>Structure_BloodVolume_BloodVolume</a>
-<br><a href='Structure_BloodIons_BloodIons.html'>Structure_BloodIons_BloodIons</a>
-<br><a href='Structure_Bone_Bone.html'>Structure_Bone_Bone</a>
-<br><a href='Structure_Brain_Brain.html'>Structure_Brain_Brain</a>
-<br><a href='Structure_Calcitonin_Calcitonin.html'>Structure_Calcitonin_Calcitonin</a>
-<br><a href='Structure_CardiacCycle_CardiacCycle.html'>Structure_CardiacCycle_CardiacCycle</a>
-<br><a href='Structure_Catechols_Catechols.html'>Structure_Catechols_Catechols</a>
-<br><a href='Structure_CellProtein_CellProtein.html'>Structure_CellProtein_CellProtein</a>
-<br><a href='Structure_Circulation_Circulation.html'>Structure_Circulation_Circulation</a>
-<br><a href='Structure_CircyProtein_CircyProtein.html'>Structure_CircyProtein_CircyProtein</a>
-<br><a href='Structure_CO_CO.html'>Structure_CO_CO</a>
-<br><a href='Structure_CoronarySinus_CoronarySinus.html'>Structure_CoronarySinus_CoronarySinus</a>
-<br><a href='Structure_CorticotropinReleasingFactor_CorticotropinReleasingFactor.html'>Structure_CorticotropinReleasingFactor_CorticotropinReleasingFactor</a>
-<br><a href='Structure_Cortisol_Cortisol.html'>Structure_Cortisol_Cortisol</a>
-<br><a href='Structure_CPR_CPR.html'>Structure_CPR_CPR</a>
-<br><a href='Structure_Creatine_Creatine.html'>Structure_Creatine_Creatine</a>
-<br><a href='Structure_Creatinine_Creatinine.html'>Structure_Creatinine_Creatinine</a>
-<br><a href='Structure_DailyPlanner_DailyPlanner.html'>Structure_DailyPlanner_DailyPlanner</a>
-<br><a href='Structure_Diet_Diet.html'>Structure_Diet_Diet</a>
-<br><a href='Structure_Drugs_Drugs.html'>Structure_Drugs_Drugs</a>
-<br><a href='Structure_Electrolytes_Electrolytes.html'>Structure_Electrolytes_Electrolytes</a>
-<br><a href='Structure_Environment_Environment.html'>Structure_Environment_Environment</a>
-<br><a href='Structure_EPO_EPO.html'>Structure_EPO_EPO</a>
-<br><a href='Structure_Estradiol_Estradiol.html'>Structure_Estradiol_Estradiol</a>
-<br><a href='Structure_Exercise_Exercise.html'>Structure_Exercise_Exercise</a>
-<br><a href='Structure_Fat_Fat.html'>Structure_Fat_Fat</a>
-<br><a href='Structure_FattyAcid_FattyAcid.html'>Structure_FattyAcid_FattyAcid</a>
-<br><a href='Structure_FSH_FSH.html'>Structure_FSH_FSH</a>
-<br><a href='Structure_GILumen_GILumen.html'>Structure_GILumen_GILumen</a>
-<br><a href='Structure_GITract_GITract.html'>Structure_GITract_GITract</a>
-<br><a href='Structure_Glucagon_Glucagon.html'>Structure_Glucagon_Glucagon</a>
-<br><a href='Structure_Glucose_Glucose.html'>Structure_Glucose_Glucose</a>
-<br><a href='Structure_Glycerol_Glycerol.html'>Structure_Glycerol_Glycerol</a>
-<br><a href='Structure_GnRH_GnRH.html'>Structure_GnRH_GnRH</a>
-<br><a href='Structure_Gravity_Gravity.html'>Structure_Gravity_Gravity</a>
-<br><a href='Structure_H2O_H2O.html'>Structure_H2O_H2O</a>
-<br><a href='Structure_hCG_hCG.html'>Structure_hCG_hCG</a>
-<br><a href='Structure_Heart_Heart.html'>Structure_Heart_Heart</a>
-<br><a href='Structure_HeartValves_HeartValves.html'>Structure_HeartValves_HeartValves</a>
-<br><a href='Structure_Heat_Heat.html'>Structure_Heat_Heat</a>
-<br><a href='Structure_Hemodialysis_Hemodialysis.html'>Structure_Hemodialysis_Hemodialysis</a>
-<br><a href='Structure_Hemorrhage_Hemorrhage.html'>Structure_Hemorrhage_Hemorrhage</a>
-<br><a href='Structure_HepaticFunction_HepaticFunction.html'>Structure_HepaticFunction_HepaticFunction</a>
-<br><a href='Structure_Hypothalamus_Hypothalamus.html'>Structure_Hypothalamus_Hypothalamus</a>
-<br><a href='Structure_Inhibin_Inhibin.html'>Structure_Inhibin_Inhibin</a>
-<br><a href='Structure_Infusions_Infusions.html'>Structure_Infusions_Infusions</a>
-<br><a href='Structure_Insulin_Insulin.html'>Structure_Insulin_Insulin</a>
-<br><a href='Structure_InsulinInjection_InsulinInjection.html'>Structure_InsulinInjection_InsulinInjection</a>
-<br><a href='Structure_IVDrip_IVDrip.html'>Structure_IVDrip_IVDrip</a>
-<br><a href='Structure_IVEpinephrineInjection_IVEpinephrineInjection.html'>Structure_IVEpinephrineInjection_IVEpinephrineInjection</a>
-<br><a href='Structure_Ketoacid_Ketoacid.html'>Structure_Ketoacid_Ketoacid</a>
-<br><a href='Structure_Kidney_Kidney.html'>Structure_Kidney_Kidney</a>
-<br><a href='Structure_Lactate_Lactate.html'>Structure_Lactate_Lactate</a>
-<br><a href='Structure_LeftHeart_LeftHeart.html'>Structure_LeftHeart_LeftHeart</a>
-<br><a href='Structure_LeftHeartPumping_LeftHeartPumping.html'>Structure_LeftHeartPumping_LeftHeartPumping</a>
-<br><a href='Structure_LegMusclePump_LegMusclePump.html'>Structure_LegMusclePump_LegMusclePump</a>
-<br><a href='Structure_Leptin_Leptin.html'>Structure_Leptin_Leptin</a>
-<br><a href='Structure_LH_LH.html'>Structure_LH_LH</a>
-<br><a href='Structure_LipidDeposits_LipidDeposits.html'>Structure_LipidDeposits_LipidDeposits</a>
-<br><a href='Structure_Liver_Liver.html'>Structure_Liver_Liver</a>
-<br><a href='Structure_LiverMetabolism_LiverMetabolism.html'>Structure_LiverMetabolism_LiverMetabolism</a>
-<br><a href='Structure_LowerExternalPressure_LowerExternalPressure.html'>Structure_LowerExternalPressure_LowerExternalPressure</a>
-<br><a href='Structure_Lungs_Lungs.html'>Structure_Lungs_Lungs</a>
-<br><a href='Structure_Metabolism_Metabolism.html'>Structure_Metabolism_Metabolism</a>
-<br><a href='Structure_Morphology_Morphology.html'>Structure_Morphology_Morphology</a>
-<br><a href='Structure_Nephrons_Nephrons.html'>Structure_Nephrons_Nephrons</a>
-<br><a href='Structure_Nerves_Nerves.html'>Structure_Nerves_Nerves</a>
-<br><a href='Structure_O2_O2.html'>Structure_O2_O2</a>
-<br><a href='Structure_OralH2OGlucoseLoad_OralH2OGlucoseLoad.html'>Structure_OralH2OGlucoseLoad_OralH2OGlucoseLoad</a>
-<br><a href='Structure_Organs_Organs.html'>Structure_Organs_Organs</a>
-<br><a href='Structure_Orthostatics_Orthostatics.html'>Structure_Orthostatics_Orthostatics</a>
-<br><a href='Structure_Osmoles_Osmoles.html'>Structure_Osmoles_Osmoles</a>
-<br><a href='Structure_OtherTissue_OtherTissue.html'>Structure_OtherTissue_OtherTissue</a>
-<br><a href='Structure_ParathyroidHormone_ParathyroidHormone.html'>Structure_ParathyroidHormone_ParathyroidHormone</a>
-<br><a href='Structure_Pericardium_Pericardium.html'>Structure_Pericardium_Pericardium</a>
-<br><a href='Structure_Peritoneum_Peritoneum.html'>Structure_Peritoneum_Peritoneum</a>
-<br><a href='Structure_Posture_Posture.html'>Structure_Posture_Posture</a>
-<br><a href='Structure_Progesterone_Progesterone.html'>Structure_Progesterone_Progesterone</a>
-<br><a href='Structure_Renin_Renin.html'>Structure_Renin_Renin</a>
-<br><a href='Structure_RespiratoryCenter_RespiratoryCenter.html'>Structure_RespiratoryCenter_RespiratoryCenter</a>
-<br><a href='Structure_RespiratoryMuscle_RespiratoryMuscle.html'>Structure_RespiratoryMuscle_RespiratoryMuscle</a>
-<br><a href='Structure_RightHeart_RightHeart.html'>Structure_RightHeart_RightHeart</a>
-<br><a href='Structure_RightHeartPumping_RightHeartPumping.html'>Structure_RightHeartPumping_RightHeartPumping</a>
-<br><a href='Structure_SequesteredBlood_SequesteredBlood.html'>Structure_SequesteredBlood_SequesteredBlood</a>
-<br><a href='Structure_SkeletalMuscle_SkeletalMuscle.html'>Structure_SkeletalMuscle_SkeletalMuscle</a>
-<br><a href='Structure_Skin_Skin.html'>Structure_Skin_Skin</a>
-<br><a href='Structure_SplanchnicCirculation_SplanchnicCirculation.html'>Structure_SplanchnicCirculation_SplanchnicCirculation</a>
-<br><a href='Structure_Status_Status.html'>Structure_Status_Status</a>
-<br><a href='Structure_Sweat_Sweat.html'>Structure_Sweat_Sweat</a>
-<br><a href='Structure_Symptoms_Symptoms.html'>Structure_Symptoms_Symptoms</a>
-<br><a href='Structure_Testosterone_Testosterone.html'>Structure_Testosterone_Testosterone</a>
-<br><a href='Structure_ThyroidGland_ThyroidGland.html'>Structure_ThyroidGland_ThyroidGland</a>
-<br><a href='Structure_TiltTable_TiltTable.html'>Structure_TiltTable_TiltTable</a>
-<br><a href='Structure_TissueH2O_TissueH2O.html'>Structure_TissueH2O_TissueH2O</a>
-<br><a href='Structure_Transfusion_Transfusion.html'>Structure_Transfusion_Transfusion</a>
-<br><a href='Structure_Triglyceride_Triglyceride.html'>Structure_Triglyceride_Triglyceride</a>
-<br><a href='Structure_Urea_Urea.html'>Structure_Urea_Urea</a>
-<br><a href='Structure_VascularCompartments_VascularCompartments.html'>Structure_VascularCompartments_VascularCompartments</a>
-<br><a href='Structure_VitaminD_VitaminD.html'>Structure_VitaminD_VitaminD</a>
-<br><a href='Structure_Ovaries_Ovaries.html'>Structure_Ovaries_Ovaries</a>
-<br><a href='Structure_Testes_Testes.html'>Structure_Testes_Testes</a>
-<br><a href='Structure_Uterus_Uterus.html'>Structure_Uterus_Uterus</a>
-<p>
-HumMod / Structure.DES<br>
-<br>
-Created : 21-Oct-04<br>
-Last Modified : 2011-08-11<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2011<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;?path Structure\ ?&gt;<br>
-<br>
-&lt;?include CO2\CO2.DES ?&gt;<br>
-&lt;?include Hemoglobin\Hemoglobin.DES ?&gt;<br>
-<br>
-&lt;?include A-VFistula\A-VFistula.DES ?&gt;<br>
-&lt;?include AcidBase\AcidBase.DES ?&gt;<br>
-&lt;?include ACTH\ACTH.DES ?&gt;<br>
-&lt;?include ADH\ADH.DES ?&gt;<br>
-&lt;?include AirSupply\AirSupply.DES ?&gt;<br>
-&lt;?include Aldosterone\Aldosterone.DES ?&gt;<br>
-&lt;?include AminoAcid\AminoAcid.DES ?&gt;<br>
-&lt;?include Anesthesia\Anesthesia.DES ?&gt;<br>
-&lt;?include ANP\ANP.DES ?&gt;<br>
-&lt;?include Autopsy\Autopsy.DES ?&gt;<br>
-&lt;?include Bladder\Bladder.DES ?&gt;<br>
-&lt;?include BloodVolume\BloodVolume.DES ?&gt;<br>
-&lt;?include BloodIons\BloodIons.DES ?&gt;<br>
-&lt;?include Bone\Bone.DES ?&gt;<br>
-&lt;?include Brain\Brain.DES ?&gt;<br>
-&lt;?include Calcitonin\Calcitonin.DES ?&gt;<br>
-&lt;?include CardiacCycle\CardiacCycle.DES ?&gt;<br>
-&lt;?include Catechols\Catechols.DES ?&gt;<br>
-&lt;?include CellProtein\CellProtein.DES ?&gt;<br>
-&lt;?include Circulation\Circulation.DES ?&gt;<br>
-&lt;?include CircyProtein\CircyProtein.DES ?&gt;<br>
-&lt;?include CO\CO.DES ?&gt;<br>
-&lt;?include CoronarySinus\CoronarySinus.DES ?&gt;<br>
-&lt;?include CorticotropinReleasingFactor\CorticotropinReleasingFactor.DES ?&gt;<br>
-&lt;?include Cortisol\Cortisol.DES ?&gt;<br>
-&lt;?include CPR\CPR.DES ?&gt;<br>
-&lt;?include Creatine\Creatine.DES ?&gt;<br>
-&lt;?include Creatinine\Creatinine.DES ?&gt;<br>
-&lt;?include DailyPlanner\DailyPlanner.DES ?&gt;<br>
-&lt;?include Diet\Diet.DES ?&gt;<br>
-&lt;?include Drugs\Drugs.DES ?&gt;<br>
-&lt;?include Electrolytes\Electrolytes.DES ?&gt;<br>
-&lt;?include Environment\Environment.DES ?&gt;<br>
-&lt;?include EPO\EPO.DES ?&gt;<br>
-&lt;?include Estradiol\Estradiol.DES ?&gt;<br>
-&lt;?include Exercise\Exercise.DES ?&gt;<br>
-&lt;?include Fat\Fat.DES ?&gt;<br>
-&lt;?include FattyAcid\FattyAcid.DES ?&gt;<br>
-&lt;?include FSH\FSH.DES ?&gt;<br>
-&lt;?include GILumen\GILumen.DES ?&gt;<br>
-&lt;?include GITract\GITract.DES ?&gt;<br>
-&lt;?include Glucagon\Glucagon.DES ?&gt;<br>
-&lt;?include Glucose\Glucose.DES ?&gt;<br>
-&lt;?include Glycerol\Glycerol.DES ?&gt;<br>
-&lt;?include GnRH\GnRH.DES ?&gt;<br>
-&lt;?include Gravity\Gravity.DES ?&gt;<br>
-&lt;?include H2O\H2O.DES ?&gt;<br>
-&lt;?include hCG\hCG.DES ?&gt;<br>
-&lt;?include Heart\Heart.DES ?&gt;<br>
-&lt;?include HeartValves\HeartValves.DES ?&gt;<br>
-&lt;?include Heat\Heat.DES ?&gt;<br>
-&lt;?include Hemodialysis\Hemodialysis.DES ?&gt;<br>
-&lt;?include Hemorrhage\Hemorrhage.DES ?&gt;<br>
-&lt;?include HepaticFunction\HepaticFunction.DES ?&gt;<br>
-&lt;?include Hypothalamus\Hypothalamus.DES ?&gt;<br>
-&lt;?include Inhibin\Inhibin.DES ?&gt;<br>
-&lt;?include Infusions\Infusions.DES ?&gt;<br>
-&lt;?include Insulin\Insulin.DES ?&gt;<br>
-&lt;?include InsulinInjection\InsulinInjection.DES ?&gt;<br>
-&lt;?include IVDrip\IVDrip.DES ?&gt;<br>
-&lt;?include IVEpinephrineInjection\IVEpinephrineInjection.DES ?&gt;<br>
-&lt;?include Ketoacid\Ketoacid.DES ?&gt;<br>
-&lt;?include Kidney\Kidney.DES ?&gt;<br>
-&lt;?include Lactate\Lactate.DES ?&gt;<br>
-&lt;?include LeftHeart\LeftHeart.DES ?&gt;<br>
-&lt;?include LeftHeartPumping\LeftHeartPumping.DES ?&gt;<br>
-&lt;?include LegMusclePump\LegMusclePump.DES ?&gt;<br>
-&lt;?include Leptin\Leptin.DES ?&gt;<br>
-&lt;?include LH\LH.DES ?&gt;<br>
-&lt;?include LipidDeposits\LipidDeposits.DES ?&gt;<br>
-&lt;?include Liver\Liver.DES ?&gt;<br>
-&lt;?include LiverMetabolism\LiverMetabolism.DES ?&gt;<br>
-&lt;?include LowerExternalPressure\LowerExternalPressure.DES ?&gt;<br>
-&lt;?include Lungs\Lungs.DES ?&gt;<br>
-&lt;?include Metabolism\Metabolism.DES ?&gt;<br>
-&lt;?include Morphology\Morphology.DES ?&gt;<br>
-&lt;?include Nephrons\Nephrons.DES ?&gt;<br>
-&lt;?include Nerves\Nerves.DES ?&gt;<br>
-&lt;?include O2\O2.DES ?&gt;<br>
-&lt;?include OralH2OGlucoseLoad\OralH2OGlucoseLoad.DES ?&gt;<br>
-&lt;?include Organs\Organs.DES ?&gt;<br>
-&lt;?include Orthostatics\Orthostatics.DES ?&gt;<br>
-&lt;?include Osmoles\Osmoles.DES ?&gt;<br>
-&lt;?include OtherTissue\OtherTissue.DES ?&gt;<br>
-&lt;?include ParathyroidHormone\ParathyroidHormone.DES ?&gt;<br>
-&lt;?include Pericardium\Pericardium.DES ?&gt;<br>
-&lt;?include Peritoneum\Peritoneum.DES ?&gt;<br>
-&lt;?include Posture\Posture.DES ?&gt;<br>
-&lt;?include Progesterone\Progesterone.DES ?&gt;<br>
-&lt;?include Renin\Renin.DES ?&gt;<br>
-&lt;?include RespiratoryCenter\RespiratoryCenter.DES ?&gt;<br>
-&lt;?include RespiratoryMuscle\RespiratoryMuscle.DES ?&gt;<br>
-&lt;?include RightHeart\RightHeart.DES ?&gt;<br>
-&lt;?include RightHeartPumping\RightHeartPumping.DES ?&gt;<br>
-&lt;?include SequesteredBlood\SequesteredBlood.DES ?&gt;<br>
-&lt;?include SkeletalMuscle\SkeletalMuscle.DES ?&gt;<br>
-&lt;?include Skin\Skin.DES ?&gt;<br>
-&lt;?include SplanchnicCirculation\SplanchnicCirculation.DES ?&gt;<br>
-&lt;?include Status\Status.DES ?&gt;<br>
-&lt;?include Sweat\Sweat.DES ?&gt;<br>
-&lt;?include Symptoms\Symptoms.DES ?&gt;<br>
-&lt;?include Testosterone\Testosterone.DES ?&gt;<br>
-&lt;?include ThyroidGland\ThyroidGland.DES ?&gt;<br>
-&lt;?include TiltTable\TiltTable.DES ?&gt;<br>
-&lt;?include TissueH2O\TissueH2O.DES ?&gt;<br>
-&lt;?include Transfusion\Transfusion.DES ?&gt;<br>
-&lt;?include Triglyceride\Triglyceride.DES ?&gt;<br>
-&lt;?include Urea\Urea.DES ?&gt;<br>
-&lt;?include VascularCompartments\VascularCompartments.DES ?&gt;<br>
-&lt;?include VitaminD\VitaminD.DES ?&gt;<br>
-<br>
-&lt;?include Ovaries\Ovaries.DES ?&gt;<br>
-&lt;?include Testes\Testes.DES ?&gt;<br>
-&lt;?include Uterus\Uterus.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Structure &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Context &lt;/name&gt;<br>
-  &lt;call&gt; Context.Calc &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-<br>
-  &lt;call&gt; Environment.Parms &lt;/call&gt;<br>
-  &lt;call&gt; Morphology.Parms &lt;/call&gt;<br>
-  &lt;call&gt; AirSupply-PressureChamber.Calc &lt;/call&gt;<br>
-  &lt;call&gt; AirSupply-GasTanks.Calc &lt;/call&gt;<br>
-  &lt;call&gt; AirSupply-InspiredAir.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Bronchi.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Environment.FinishParms &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Exercise-Bike.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Exercise-Treadmill.Parms &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; RightHemithorax.Calc &lt;/call&gt;<br>
-  &lt;call&gt; LeftHemithorax.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Thorax.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Ventilator.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Organs-Vasculature.Parms &lt;/call&gt;<br>
-  <br>
-  &lt;call&gt; LacPool.Parms &lt;/call&gt;<br>
-  &lt;call&gt; PT_NH3.Parms &lt;/call&gt;<br>
-  &lt;call&gt; NephronAldo.Parms &lt;/call&gt;<br>
-  &lt;call&gt; NephronADH.Parms &lt;/call&gt;<br>
-  &lt;call&gt; NephronANP.Parms &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; MedullaNa.Parms &lt;/call&gt;<br>
-  &lt;call&gt; MedullaUrea.Parms &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Baroreflex.Parms &lt;/call&gt;<br>
-  &lt;call&gt; LowPressureReceptors.Parms &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; LeftHeart-Infarction.Parms &lt;/call&gt;<br>
-  &lt;call&gt; RightHeart-Infarction.Parms &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Transfusion.Parms &lt;/call&gt;<br>
-  &lt;call&gt; Hemorrhage.Parms &lt;/call&gt;<br>
-  &lt;call&gt; BloodVolume.Parms &lt;/call&gt;<br>
-  &lt;call&gt; ChemoreceptorAcclimation.Parms &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Anesthesia.Parms &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Drugs.Parms &lt;/call&gt;<br>
-  &lt;call&gt; ADH.Parms &lt;/call&gt;<br>
-  &lt;call&gt; ANP.Parms &lt;/call&gt;<br>
-  &lt;call&gt; EPO.Parms &lt;/call&gt;<br>
-  &lt;call&gt; Insulin.Parms &lt;/call&gt;<br>
-  &lt;call&gt; ThyroidGland.Parms &lt;/call&gt;<br>
-  &lt;call&gt; Renin.Parms &lt;/call&gt;<br>
-  &lt;call&gt; Catechols.Parms &lt;/call&gt;<br>
-  &lt;call&gt; Diet.Parms &lt;/call&gt;<br>
-  &lt;call&gt; Hypothalamus.Parms &lt;/call&gt;<br>
-  &lt;call&gt; DailyPlannerSchedule.Parms &lt;/call&gt;<br>
-  &lt;call&gt; DailyPlannerControl.Parms &lt;/call&gt;<br>
-  &lt;call&gt; OralH2OGlucoseLoad.Parms &lt;/call&gt;<br>
-  &lt;call&gt; IVDrip.Parms &lt;/call&gt;<br>
-  &lt;call&gt; Hemodialysis.Parms &lt;/call&gt;<br>
-  &lt;call&gt; PostureControl.Parms &lt;/call&gt;<br>
-  &lt;call&gt; Exercise-Control.Parms &lt;/call&gt;<br>
-  &lt;call&gt; Exercise-Metabolism.Parms &lt;/call&gt;<br>
-  &lt;call&gt; K.Parms &lt;/call&gt;<br>
-  &lt;call&gt; GlucosePump.Parms &lt;/call&gt;<br>
-  &lt;call&gt; KAPump.Parms &lt;/call&gt;<br>
-  &lt;call&gt; LiverMetabolism.Parms &lt;/call&gt;<br>
-  &lt;call&gt; RespiratoryMuscle-Insulin.Parms &lt;/call&gt;<br>
-  &lt;call&gt; SkeletalMuscle-Insulin.Parms &lt;/call&gt;<br>
-  &lt;call&gt; Kidney-Myogenic.Parms &lt;/call&gt;<br>
-  &lt;call&gt; CPR.Parms &lt;/call&gt;<br>
-  &lt;call&gt; SkeletalMuscle-MetabolicVasodilation.Parms &lt;/call&gt;<br>
-  &lt;call&gt; Leptin.Parms &lt;/call&gt;<br>
-  &lt;call&gt; HeartValves.Parms &lt;/call&gt;<br>
-  &lt;call&gt; LH.Parms &lt;/call&gt;<br>
-  &lt;call&gt; FSH.Parms &lt;/call&gt;<br>
-  &lt;call&gt; Ovaries.Parms &lt;/call&gt;<br>
-  &lt;call&gt; Heart-Pacemaker.Parms &lt;/call&gt;<br>
-  &lt;call&gt; Sweat.Parms &lt;/call&gt;<br>
-  &lt;call&gt; LeftHeartPumping.Parms &lt;/call&gt;<br>
-  &lt;call&gt; RightHeartPumping.Parms &lt;/call&gt;<br>
-  &lt;call&gt; InsulinInjection.Parms &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-  &lt;call&gt; BloodVolume.CalcVol &lt;/call&gt;<br>
-  &lt;call&gt; Transfusion.CalcVol &lt;/call&gt;<br>
-  &lt;call&gt; TissueH2O.CalcVol &lt;/call&gt;<br>
-  &lt;call&gt; ExternalH2O.CalcVol &lt;/call&gt;<br>
-  &lt;call&gt; H2O.CalcVol &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; SO4Pool.CalcOsmoles &lt;/call&gt;<br>
-  &lt;call&gt; PO4Pool.CalcOsmoles &lt;/call&gt;<br>
-  &lt;call&gt; GlucosePool.CalcOsmoles &lt;/call&gt;<br>
-  &lt;call&gt; Urea.CalcOsmoles &lt;/call&gt;<br>
-  &lt;call&gt; KAPool.CalcOsmoles &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; BVSeq.Calc &lt;/call&gt;<br>
-  &lt;call&gt; SystemicVeins.CalcVol &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; OsmCell.Calc &lt;/call&gt;<br>
-  &lt;call&gt; OsmECFV.Calc &lt;/call&gt;<br>
-  &lt;call&gt; OsmBody.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; H2O.Calc &lt;/call&gt;<br>
-  &lt;call&gt; TissueH2O.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Bone-Mineral.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Organs-Size.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Weight.Calc &lt;/call&gt;<br>
-  &lt;call&gt; BMI.Calc &lt;/call&gt;<br>
-  &lt;call&gt; SurfaceArea.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Calcitonin.Conc &lt;/call&gt;<br>
-  &lt;call&gt; Estradiol.Conc &lt;/call&gt;<br>
-  &lt;call&gt; FSH.Conc &lt;/call&gt;<br>
-  &lt;call&gt; hCG.Conc &lt;/call&gt;<br>
-  &lt;call&gt; Inhibin.Conc &lt;/call&gt;<br>
-  &lt;call&gt; LH.Conc &lt;/call&gt;<br>
-  &lt;call&gt; Progesterone.Conc &lt;/call&gt;<br>
-  &lt;call&gt; Testosterone.Conc &lt;/call&gt;<br>
-  &lt;call&gt; VitaminD.Conc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Kidney-NephronCount.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Heat.CalcTemp &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; CellProtein.CalcConc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Viscosity.Calc &lt;/call&gt;<br>
-  &lt;call&gt; ArtysVol.Calc &lt;/call&gt;<br>
-  &lt;call&gt; VeinsVol.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; GILumen.Conc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Drugs.CalcConc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; NaPool.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; K.Conc &lt;/call&gt;<br>
-  &lt;call&gt; ClPool.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; SO4Pool.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; PO4Pool.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; Ca.Conc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; CellSID.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; ACTH.Conc &lt;/call&gt;<br>
-  &lt;call&gt; Aldosterone.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; ADH.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; Cortisol.Conc &lt;/call&gt;<br>
-  &lt;call&gt; Insulin.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; Glucagon.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; EPO.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; ParathyroidHormone.Conc &lt;/call&gt;<br>
-  &lt;call&gt; ThyroidGland.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; Thyroid.CalcEffect &lt;/call&gt;<br>
-  &lt;call&gt; Leptin.Conc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; DesglymidodrinePool.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; Catechols.CalcConc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; PlasmaProtein.CalcConc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; LacPool.CalcConc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; KAPool.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; FAPool.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; Triglyceride.Conc &lt;/call&gt;<br>
-  &lt;call&gt; Triglyceride.Rate &lt;/call&gt;<br>
-  &lt;call&gt; GlucosePool.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; AAPool.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; Urea.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; Creatine.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Creatinine.Conc &lt;/call&gt;<br>
-  &lt;call&gt; GlycerolPool.CalcConc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; BloodIons.CalcSID &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; O2.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; CO2.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; BloodIons.FinishSums &lt;/call&gt;<br>
-  &lt;call&gt; BloodPh.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Organs-Lactate.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; Organs-Ph.CalcSID &lt;/call&gt;<br>
-  &lt;call&gt; Organs-CO2.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; Organs-Ph.CalcPh &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Exercise-Treadmill.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Exercise-Metabolism.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; SkeletalMuscle-Metaboreflex.Calc &lt;/call&gt;<br>
-  &lt;call&gt; MotorRadiation.Calc &lt;/call&gt;<br>
-  &lt;call&gt; ExerciseSymps.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Exercise-MusclePump.Calc &lt;/call&gt;<br>
-  &lt;call&gt; SkeletalMuscle-MusclePumping.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Anesthesia.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; BrainInsult.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Brain-Function.Calc &lt;/call&gt;<br>
-  &lt;call&gt; GlasgowComaScale.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Organs-Function.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Hypothalamus.CalcEffect &lt;/call&gt;<br>
-  &lt;call&gt; Heat.Cals &lt;/call&gt;<br>
-  &lt;call&gt; Sweat.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Diet.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; ANP.CalcConc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Hydrostatics.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Pericardium.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; VascularCompartments.CalcPressure(1) &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; LegMusclePump.Calc &lt;/call&gt;<br>
-  &lt;call&gt; RegionalPressure.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; CarotidSinus.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Baroreflex.Calc &lt;/call&gt;<br>
-  &lt;call&gt; LowPressureReceptors.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Mechanoreceptors.Calc &lt;/call&gt;<br>
-  &lt;call&gt; SympsChemo.Calc &lt;/call&gt;<br>
-  &lt;call&gt; CushingResponse.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Renin.CalcConc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; SympsCNS.Calc &lt;/call&gt;<br>
-  &lt;call&gt; SympsKidy.Calc &lt;/call&gt;<br>
-  &lt;call&gt; GangliaGeneral.Calc &lt;/call&gt;<br>
-  &lt;call&gt; GangliaKidney.Calc &lt;/call&gt;<br>
-  &lt;call&gt; VagusNerve.Calc &lt;/call&gt;<br>
-  &lt;call&gt; AdrenalNerve.Calc &lt;/call&gt;<br>
-  &lt;call&gt; SystemicVeins-AlphaReceptors.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; VascularCompartments.CalcPressure(2) &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; BVSeqArtys.CalcPressure &lt;/call&gt;<br>
-  &lt;call&gt; BVSeqVeins.CalcPressure &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Peritoneum.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Hemodialysis.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; CO.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; HgbConc.Calc &lt;/call&gt;<br>
-  &lt;call&gt; HgbTissue.Setup &lt;/call&gt;<br>
-  &lt;call&gt; HgbLung.Setup &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; O2.CalcPO2 &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; CD_H2OChannels.CalcActive &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Organs-AlphaReceptors.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Organs-BetaReceptors.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; BloodVolume.CalcV0 &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Heart.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; LeftHeart-Infarction.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; RightHeart-Infarction.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; LeftHeartPumping.Calc &lt;/call&gt;<br>
-  &lt;call&gt; RightHeartPumping.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; CardiacOutput.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; SystemicArtys.PulsatilePressure &lt;/call&gt;<br>
-  &lt;call&gt; PulmArty.PulsatilePressure &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; PulmArty.CalcOutflow &lt;/call&gt;<br>
-  &lt;call&gt; PulmCapys.CalcOutflow &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; LungBloodFlow.Calc &lt;/call&gt;<br>
-  &lt;call&gt; LungArtyO2.Calc &lt;/call&gt;<br>
-  &lt;call&gt; LungArtyCO2.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Chemoreceptors.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; RespiratoryCenter.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Breathing.Calc &lt;/call&gt;<br>
-  &lt;call&gt; PulmonaryMembrane.Calc &lt;/call&gt;<br>
-  &lt;call&gt; LungO2.Calc &lt;/call&gt;<br>
-  &lt;call&gt; LungVeinO2.Calc &lt;/call&gt;<br>
-  &lt;call&gt; LungCO2.Calc &lt;/call&gt;<br>
-  &lt;call&gt; LungVeinCO2.Calc &lt;/call&gt;<br>
-  &lt;call&gt; GasExchangeRatio.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Organs-Pressure.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Kidney-ArcuateArtery.CalcConductance &lt;/call&gt;<br>
-  &lt;call&gt; Kidney-AfferentArtery.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Kidney-EfferentArtery.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Kidney-Flow.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Kidney-ArcuateArtery.CalcPressure &lt;/call&gt;<br>
-  &lt;call&gt; NephronIFP.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; GlomerulusFiltrate.Calc &lt;/call&gt;<br>
-  &lt;call&gt; NephronANP.Calc &lt;/call&gt;<br>
-  &lt;call&gt; PT_Na.Calc &lt;/call&gt;<br>
-  &lt;call&gt; PT_H2O.Calc &lt;/call&gt;<br>
-  &lt;call&gt; PT_Na.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; PT_NH3.Calc &lt;/call&gt;<br>
-  &lt;call&gt; NephronAldo.Calc &lt;/call&gt;<br>
-  &lt;call&gt; LH_Na.Calc &lt;/call&gt;<br>
-  &lt;call&gt; LH_H2O.Calc &lt;/call&gt;<br>
-  &lt;call&gt; LH_Na.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; MD_Na.Calc &lt;/call&gt;<br>
-  &lt;call&gt; DT_Na.Calc &lt;/call&gt;<br>
-  &lt;call&gt; NephronADH.Calc &lt;/call&gt;<br>
-  &lt;call&gt; DT_H2O.Calc &lt;/call&gt;<br>
-  &lt;call&gt; DT_Na.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; DT_K.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; NephronCalciumProximal.Calc &lt;/call&gt;<br>
-  &lt;call&gt; NephronCalciumDistal.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; MedullaNa.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; MedullaUrea.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; Medulla.CalcOsm &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; LeftHeart-Work.Calc &lt;/call&gt;<br>
-  &lt;call&gt; RespiratoryMuscle-Work.Calc &lt;/call&gt;<br>
-  &lt;call&gt; RightHeart-Work.Calc &lt;/call&gt;<br>
-  &lt;call&gt; SkeletalMuscle-Work.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Organs-Metabolism.CalcCals &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Metabolism-CaloriesUsed.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Metabolism-MetabolicRate.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; HepaticArty.CalcFlow &lt;/call&gt;<br>
- <br>
-  &lt;call&gt; SkeletalMuscle-MetabolicVasodilation.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Organs-Flow.Calc &lt;/call&gt;<br>
-  &lt;call&gt; OrganFlow.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Kidney-O2.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Liver-O2.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Organs-Metabolism.SplitCals &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; SkeletalMuscle-Glycogen.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; RespiratoryMuscle-Glycogen.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Organs-Fuel.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; NephronGlucose.CalcSpillover &lt;/call&gt;<br>
-  &lt;call&gt; NephronKetoacids.CalcExcretion &lt;/call&gt;<br>
-  &lt;call&gt; CollectingDuct.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; VasaRecta.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Metabolism-FuelUse.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; CNSTrophicFactor.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; ExcessLungWater.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Organs-Structure.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Organs-Vasculature.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Organs-CO2.CalcDervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; IVDrip.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Hemorrhage.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; GILumen.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Heat.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Sweat.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; H2O.EarlyDervs &lt;/call&gt;<br>
-  &lt;call&gt; TissueH2O.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; NaPool.CalcDervs &lt;/call&gt;<br>
-  &lt;call&gt; K.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; ClPool.CalcDervs &lt;/call&gt;<br>
-  &lt;call&gt; SO4Pool.CalcDervs &lt;/call&gt;<br>
-  &lt;call&gt; PO4Pool.CalcDervs &lt;/call&gt;<br>
-  &lt;call&gt; CellProtein.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Aldosterone.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; ADH.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; ANP.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; InsulinInjection.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Insulin.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Glucagon.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; EPO.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; ThyroidGland.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; RightHeartPumping.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; LeftHeartPumping.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; VascularCompartments.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; SplanchnicCirculation.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Liver-Fuel.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Metabolism-Glucose.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Metabolism-FattyAcid.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; LiverMetabolism.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; LipidDeposits.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Urea.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; KADecomposition.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; KAPool.CalcDervs &lt;/call&gt;<br>
-  &lt;call&gt; FADecomposition.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; FAPool.CalcDervs &lt;/call&gt;<br>
-  &lt;call&gt; Triglyceride.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; GlucoseDecomposition.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; GlucosePool.CalcDervs &lt;/call&gt;<br>
-  &lt;call&gt; AAPool.CalcDervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Organs-Lactate.CalcDervs &lt;/call&gt;<br>
-  &lt;call&gt; LacPool.CalcDervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; MedullaNa.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; MedullaUrea.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; CD_H2OChannels.CalcDervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; O2.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; CO2.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; BVSeqArtys.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; BVSeqVeins.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Bone-Mineral.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; RespiratoryMuscle-ContractileProtein.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; SkeletalMuscle-ContractileProtein.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; BrainInsult-PO2.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Baroreflex.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; ChemoreceptorAcclimation.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Anesthesia.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Drugs.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; TGF-Vascular.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; TGF-Renin.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Renin.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Catechols.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Hypothalamus.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; OralH2OGlucoseLoad.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Exercise-Treadmill.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Bladder.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Peritoneum.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Pericardium.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; BloodVolume.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; PlasmaProtein.CalcDervs &lt;/call&gt;<br>
-  &lt;call&gt; H2O.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Creatinine.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; GlycerolPool.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; RespiratoryMuscle-Insulin.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; SkeletalMuscle-Insulin.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Kidney-Myogenic.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; SkeletalMuscle-MetabolicVasodilation.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Leptin.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Ovaries.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Uterus.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Testes.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; GnRH.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; hCG.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Estradiol.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; FSH.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Inhibin.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; LH.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Progesterone.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Testosterone.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; CO.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; CorticotropinReleasingFactor.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; ACTH.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Cortisol.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; ParathyroidHormone.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Ca.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Calcitonin.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; VitaminD.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; LeftHeartPumping.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; RightHeartPumping.Dervs &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
-  &lt;call&gt; Organs-Function.Wrapup &lt;/call&gt;<br>
-  &lt;call&gt; Age.Calc &lt;/call&gt;<br>
-<br>
-  &lt;if&gt;<br>
-    &lt;test&gt; Gender.IsFemale &lt;/test&gt;<br>
-    &lt;true&gt;&lt;call&gt; Ovaries.Wrapup &lt;/call&gt;&lt;/true&gt;<br>
-  &lt;/if&gt;<br>
-<br>
-  &lt;call&gt; Autopsy.Calc &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Seizure.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Brain-Function.Page &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; SystemicArtys.Wrapup &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Drugs.Wrapup &lt;/call&gt;<br>
-  &lt;call&gt; Catechols.Wrapup &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Status.CheckConscious &lt;/call&gt;<br>
-  &lt;call&gt; Exercise-Control.Wrapup &lt;/call&gt;<br>
-  &lt;call&gt; DailyPlannerControl.Wrapup &lt;/call&gt;<br>
-  &lt;call&gt; Status.Wrapup &lt;/call&gt;<br>
-  &lt;call&gt; Hemodialysis.Wrapup &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Bladder.Wrapup &lt;/call&gt;<br>
-  &lt;call&gt; Heart.Wrapup &lt;/call&gt;<br>
-  &lt;call&gt; CPR.Wrapup &lt;/call&gt;<br>
-  &lt;call&gt; Heart.Final &lt;/call&gt;<br>
-  &lt;call&gt; PeripheralResistance.Wrapup &lt;/call&gt;<br>
-  &lt;call&gt; BodyH2O.Wrapup &lt;/call&gt;<br>
-  &lt;call&gt; Symptoms.Calc &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

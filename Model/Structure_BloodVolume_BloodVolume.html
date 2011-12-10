@@ -1,101 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:40 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Structure_Structure.html'><img src='../Back.PNG'></a>
-<p><a href='Structure_BloodVolume_BloodVol.html'>Structure_BloodVolume_BloodVol</a>
-<br><a href='Structure_BloodVolume_PlasmaVol.html'>Structure_BloodVolume_PlasmaVol</a>
-<br><a href='Structure_BloodVolume_RBCVol.html'>Structure_BloodVolume_RBCVol</a>
-<br><a href='Structure_BloodVolume_RBCSolids.html'>Structure_BloodVolume_RBCSolids</a>
-<br><a href='Structure_BloodVolume_RBCH2O.html'>Structure_BloodVolume_RBCH2O</a>
-<br><a href='Structure_BloodVolume_RBCSecretion.html'>Structure_BloodVolume_RBCSecretion</a>
-<br><a href='Structure_BloodVolume_RBCClearance.html'>Structure_BloodVolume_RBCClearance</a>
-<br><a href='Structure_BloodVolume_[EPO]Delay.html'>Structure_BloodVolume_[EPO]Delay</a>
-<p>
-HumMod / BloodVolume<br>
-<br>
-Created : 21-Oct-04<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2004-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-&lt;?path Structure\BloodVolume\ ?&gt;<br>
-<br>
-&lt;?include BloodVol.DES ?&gt;<br>
-&lt;?include PlasmaVol.DES ?&gt;<br>
-&lt;?include RBCVol.DES ?&gt;<br>
-&lt;?include RBCSolids.DES ?&gt;<br>
-&lt;?include RBCH2O.DES ?&gt;<br>
-<br>
-&lt;?include RBCSecretion.DES ?&gt;<br>
-&lt;?include RBCClearance.DES ?&gt;<br>
-&lt;?include [EPO]Delay.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; BloodVolume &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-<br>
-  &lt;call&gt; RBCClearance.Parms &lt;/call&gt;<br>
-  &lt;call&gt; [EPO]Delay.Parms &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcVol &lt;/name&gt;<br>
-<br>
-  &lt;call&gt; RBCVol.CalcVol &lt;/call&gt;<br>
-  &lt;call&gt; RBCSolids.CalcVol &lt;/call&gt;<br>
-  &lt;call&gt; RBCH2O.CalcVol &lt;/call&gt;<br>
-  &lt;call&gt; PlasmaVol.CalcVol &lt;/call&gt;<br>
-  &lt;call&gt; BloodVol.CalcVol &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcV0 &lt;/name&gt;<br>
-<br>
-  &lt;call&gt; BloodVol.CalcV0 &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-  &lt;call&gt; RBCSecretion.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; RBCClearance.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; [EPO]Delay.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; RBCVol.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; RBCH2O.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; PlasmaVol.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; BloodVol.Dervs &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

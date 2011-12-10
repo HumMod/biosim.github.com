@@ -1,94 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:40 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Structure_CPR_CPR.html'><img src='../Back.PNG'></a>
-<p>
-HumMod / CPR-Lungs<br>
-<br>
-Created : 16-Apr-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; CPR-Lungs &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; INACTIVE &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; READY &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; ACTIVE &lt;/name&gt;&lt;val&gt; 2.0 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; Switch &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;var&gt;&lt;name&gt; Status &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Activate &lt;/name&gt;&lt;/var&gt;<br>
-&lt;parm&gt;&lt;name&gt; ActivateOnRespiratoryArrest &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; Rate &lt;/name&gt;&lt;val&gt; 10.0 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;parm&gt;&lt;name&gt; Volume &lt;/name&gt;&lt;val&gt; 400.0 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-<br>
-&lt;onjustchanged&gt;&lt;name&gt; Switch &lt;/name&gt;<br>
-<br>
-&lt;conditional&gt;&lt;name&gt; Status &lt;/name&gt;<br>
-  &lt;test&gt; Switch &lt;/test&gt;<br>
-  &lt;true&gt; READY &lt;/true&gt;<br>
-  &lt;false&gt; INACTIVE &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;/onjustchanged&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
-<br>
-&lt;if&gt;<br>
-  &lt;test&gt; NOT Switch &lt;/test&gt;<br>
-  &lt;true&gt;&lt;exitblock/&gt;&lt;/true&gt;<br>
-&lt;/if&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Activate &lt;/name&gt;<br>
-  &lt;val&gt; ActivateOnRespiratoryArrest AND ( RespiratoryCenter-Output.Rate LE 0.0 ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;conditional&gt;&lt;name&gt; Status &lt;/name&gt;<br>
-  &lt;test&gt; Activate &lt;/test&gt;<br>
-  &lt;true&gt; ACTIVE &lt;/true&gt;<br>
-  &lt;false&gt; READY &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

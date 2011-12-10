@@ -1,89 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:41 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Structure_RightHeartPumping_RightHeartPumping.html'><img src='../Back.PNG'></a>
-<p>
-HumMod / RightHeartPumping-Diastole<br>
-<br>
-Created : 2010-05-25<br>
-Last Modified : 2010-05-25<br>
-Author : Tom Coleman<br>
-Copyright : 2010-2010<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;structure&gt;&lt;name&gt; RightHeartPumping-Diastole &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; EDV &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; EDP &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; TMP &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; A-Basic &lt;/name&gt;&lt;val&gt; 0.00026 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;var&gt;&lt;name&gt; A &lt;/name&gt;&lt;/var&gt;<br>
-&lt;parm&gt;&lt;name&gt; n &lt;/name&gt;&lt;val&gt; 2.0 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; Stiffness &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; TricuspidStenosis &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TricuspidStenosis &lt;/name&gt;<br>
-  &lt;val&gt; TricuspidValve-Stenosis.Effect &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; EDP &lt;/name&gt;<br>
-  &lt;val&gt; <br>
-      ( TricuspidStenosis * RightAtrium.Pressure )<br>
-    + ( ( 1 - TricuspidStenosis ) * Pericardium-Cavity.Pressure )<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; EDP &lt;/name&gt;&lt;val&gt; RightAtrium.Pressure &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; TMP &lt;/name&gt;&lt;val&gt; EDP - Pericardium-Cavity.Pressure &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; A &lt;/name&gt;&lt;val&gt; Stiffness * A-Basic &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;call&gt; V=f(P) &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; P=f(V) &lt;/name&gt;<br>
-  &lt;def&gt;&lt;name&gt; TMP &lt;/name&gt;&lt;val&gt; A * ( EDV ^ n ) &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; V=f(P) &lt;/name&gt;<br>
-  &lt;def&gt;&lt;name&gt; EDV &lt;/name&gt;&lt;val&gt; ( TMP / A ) ^ ( 1.0 / n ) &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

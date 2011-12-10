@@ -1,205 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:41 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Display_BodyFluids_H2O_Storage_Storage.html'><img src='../Back.PNG'></a>
-<p>
-HumMod / WholeBody<br>
-<br>
-Created : 31-May-05<br>
-Last Modified : 2010-04-18<br>
-Author : Tom Coleman<br>
-Copyright : 2005-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-&lt;groupbox&gt;<br>
-   &lt;row&gt; 2.0 &lt;/row&gt;<br>
-   &lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;high&gt; 28.6 &lt;/high&gt;<br>
-   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
-   &lt;title&gt; WholeBody &lt;/title&gt;<br>
-<br>
-&lt;structurename&gt; BodyH2O &lt;/structurename&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; TotalVol(L) &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Total H2O &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showgraph&gt;<br>
-  &lt;row&gt; 2.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
-  &lt;leftmargin&gt; 6 &lt;/leftmargin&gt;<br>
-  &lt;xaxis&gt;<br>
-    &lt;name&gt; System.X &lt;/name&gt;<br>
-    &lt;label&gt; Time &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
-  &lt;/xaxis&gt;<br>
-  &lt;yaxis&gt;<br>
-    &lt;yvar&gt;<br>
-      &lt;name&gt; TotalVol(L) &lt;/name&gt;<br>
-      &lt;nolabel/&gt;<br>
-      &lt;linecolor&gt; BLUE &lt;/linecolor&gt;<br>
-    &lt;/yvar&gt;<br>
-    &lt;scale&gt;<br>
-      &lt;min&gt; 40 &lt;/min&gt;&lt;max&gt; 50 &lt;/max&gt;<br>
-    &lt;/scale&gt;<br>
-  &lt;/yaxis&gt;<br>
-&lt;/showgraph&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 9.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Change &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Change &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 11.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Gain &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Gain &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 12.2 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; GILumenVolume.OralIntake &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Oral Intake &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 13.2 &lt;/row&gt;&lt;col&gt; 5.0 &lt;/col&gt;<br>
-   &lt;name&gt; GILumenVolume.DietaryIntake &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Diet &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 14.2 &lt;/row&gt;&lt;col&gt; 5.0 &lt;/col&gt;<br>
-   &lt;name&gt; GILumenVolume.LoadingIntake &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Loading &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 15.2 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; MetabolicH2O.Rate &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Metabolism &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 16.2 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; IVDrip.H2ORate &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; IV Drip &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 17.2 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; Transfusion.PlasmaRate &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Transfusion &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 18.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Loss &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Loss &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 19.6 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; CD_H2O.Outflow &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Urine &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 20.6 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; Hemorrhage.PlasmaRate &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Hemorrhage &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 21.6 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; DialyzerActivity.UltrafiltrationRate &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Dialysis &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 22.6 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; SweatDuct.H2OOutflow &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Sweat &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 23.6 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; HeatInsensibleSkin.H2O &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Insensible Skin Loss &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 24.6 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; HeatInsensibleLung.H2O &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Insensible Lung Loss &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 25.6 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; GILumenVomitus.H2OLoss &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Vomitus &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 26.6 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; GILumenDiarrhea.H2OLoss &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Diarrhea &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 1.2 &lt;/row&gt;<br>
-  &lt;col&gt; 26.0 &lt;/col&gt;<br>
-  &lt;line&gt; Units are L and mL/Min. &lt;/line&gt;<br>
-  &lt;line&gt; Typical values are &lt;/line&gt;<br>
-  &lt;line&gt;  &lt;/line&gt;<br>
-  &lt;line&gt; Total Body H2O = 41.8 L &lt;/line&gt;<br>
-  &lt;line&gt; Change ~ 0 mL/Min &lt;/line&gt;<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;/groupbox&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

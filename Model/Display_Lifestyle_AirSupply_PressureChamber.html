@@ -1,85 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:41 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Display_Lifestyle_AirSupply_AirSupply.html'><img src='../Back.PNG'></a>
-<p>
-HumMod / PressureChamber<br>
-<br>
-Created : 21-Dec-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;groupbox&gt;<br>
-   &lt;row&gt; 13.8 &lt;/row&gt;<br>
-   &lt;col&gt; 32.0 &lt;/col&gt;<br>
-   &lt;high&gt; 5.4 &lt;/high&gt;<br>
-   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
-   &lt;title&gt; Pressure Chamber &lt;/title&gt;<br>
-<br>
-&lt;structurename&gt; AirSupply-PressureChamber &lt;/structurename&gt;<br>
-<br>
-&lt;radiobuttons&gt;<br>
-  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Switch &lt;/name&gt;<br>
-  &lt;listname&gt; Common.Switch &lt;/listname&gt;<br>
-  &lt;label&gt; Switch &lt;/label&gt;<br>
-&lt;/radiobuttons&gt;<br>
-<br>
-&lt;repeatlist&gt;<br>
-  &lt;name&gt; AirSupply-PressureChamber.Pressure(Atm) &lt;/name&gt;<br>
-  &lt;firstval&gt; 0.1 &lt;/firstval&gt;<br>
-  &lt;repeat&gt;<br>
-    &lt;reps&gt; 49 &lt;/reps&gt;<br>
-    &lt;stepsize&gt; 0.1 &lt;/stepsize&gt;<br>
-  &lt;/repeat&gt;<br>
-&lt;/repeatlist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 2.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Pressure(Atm) &lt;/name&gt;<br>
-  &lt;listname&gt; AirSupply-PressureChamber.Pressure(Atm) &lt;/listname&gt;<br>
-  &lt;label&gt; Atm &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 3.8 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
-   &lt;name&gt; Pressure &lt;/name&gt;<br>
-   &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-   &lt;label&gt; mmHg &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 1.2 &lt;/row&gt;<br>
-  &lt;col&gt; 26.0 &lt;/col&gt;<br>
-<br>
-  &lt;line&gt; 1 Atm = 760 mmHg &lt;/line&gt;<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;/groupbox&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

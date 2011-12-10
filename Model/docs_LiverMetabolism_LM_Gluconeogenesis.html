@@ -1,242 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:42 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Docs_LiverMetabolism.html'><img src='../Back.PNG'></a>
-<p>
-QHP 2008 / LiverMetabolism.DOCS<br>
-<br>
-Created : 27-Mar-09<br>
-Last Modified : 27-Mar-09<br>
-Author : Tom Coleman<br>
-Copyright : 2009<br>
-<br>
-&lt;structurename&gt; LM_Gluconeogenesis &lt;/structurename&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; LM_Gluconeogenesis.AA_TO_GLU &lt;/name&gt;<br>
-&lt;topic&gt; Gluconeogenesis - Overview  &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; LM_Gluconeogenesis.AminoAcidEffect  &lt;/name&gt;<br>
-&lt;topic&gt; AminoAcidEffect - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; AAPool.[AA(mG/dL)] &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; LM_Gluconeogenesis.AminoAcidUptake  &lt;/name&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; LM_Gluconeogenesis.BasicUptake  &lt;/name&gt;<br>
-&lt;topic&gt; XXX&lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; LM_Gluconeogenesis.GlucagonEffect  &lt;/name&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; GlucagonPool.[Glucagon] &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; LM_Gluconeogenesis.GlucoseEffect  &lt;/name&gt;<br>
-&lt;topic&gt; Glucose Effect - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; LM_Gluconeogenesis.InsulinEffect  &lt;/name&gt;<br>
-&lt;topic&gt; Insulin Effect - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; LM_Gluconeogenesis.Rate  &lt;/name&gt;<br>
-&lt;topic&gt; XXX&lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Gluconeogenesis - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-The liver plays a key role in the maintenance of blood glucose <br>
-homeostasis. It releases glucose in the fasted state and takes <br>
-up and stores some of the glucose ingested in meals. In doing <br>
-so the liver ensures an even and predictable supply of glucose <br>
-to the extrahepatic tissues, primarily the brain.<br>
-<br>
-The liver is able to release glucose to the circulation from<br>
-its glycogen stores (glycogenolysis) and it has the capacity <br>
-to take up the 3-carbon fragments lactate, pyruvate, glycerol <br>
-and amino acids and convert these to glucose. The latter process <br>
-is called gluconeogenesis. <br>
-<br>
-In the overnight fasted state, the liver is the main source of <br>
-glucose production and it is widely believed that glycogenolysis<br>
-and gluconeogenesis each contribute approximately 50% of glucose<br>
-turnover in healthy subjects. <br>
-<br>
-During continued fasting,gluconeogenesis from both the kidneys<br>
-and the liver account for almost all glucose production. <br>
-<br>
-Ekberg K, Landau BR, Wajngot A, Chandramouli V, Efendic S, <br>
-Brunengraber H, Wahren J. Contributions by kidney and liver to <br>
-glucose production in the postabsorptive state and after 60 h of <br>
-fasting. Diabetes 48:292 - 298, 1999.<br>
-<br>
-Wahren J, Ekberg K. Splanchnic regulation of glucose production<br>
-Ann Rev Nutr 27: 329 - 345, 2007.<br>
-<br>
-Chandramouli V, Ekberg K, Schumann WC, Kalhan SC, Wahren J, Landau BR.<br>
-Quantifying gluconeogenesis during fasting. <br>
-Am J Physiol Endocinol Metab 273: E1209 - E1215, 1997.<br>
-<br>
-Kruszynska YT. Normal metabolism: the physiology of fuel<br>
-homeostasis. Chapter 9, Textbook of Diabetes edited by<br>
-Pickup JC & Williams G. 2003 Blackwell Science<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Glucose Effect - Overview  &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Glucose has the ability to modulate its own metabolism by<br>
-the liver, independent of any change in insulin concentration.<br>
-When insulin and glucagon are at basal levels, hyperglycemia<br>
-inhibits endogenous glucose output and increases tissue glucose <br>
-uptake.<br>
-<br>
-DOG STUDIES<br>
-Shulman GI, Liljenquist JE, Williams PE, Lacy WW, Cherrington AD.<br>
-Glucose disposal during insulinopenia in somatostatin-treated <br>
-dogs. The roles of glucose and glucagon.<br>
-J Clin Invest 62: 487 - 491, 1978<br>
-<br>
-HUMAN STUDIES<br>
-Sacca L, Hendler R, Sherwin RS.<br>
-Hyperglycemia inhibits glucose production in man independent of <br>
-changes in glucoregulatory hormones.<br>
-J Clin Endocrinol Metab. 1978 Nov;47(5):1160-3.<br>
-<br>
-Liljenquist JE, Mueller GL, Cherrington AD, Perry JM, Rabinowitz D.<br>
-Hyperglycemia per se (insulin and glucagon withdrawn) can inhibit <br>
-hepatic glucose production in man.<br>
-J Clin Endocrinol Metab 48:171 - 175, 1979<br>
-<br>
-DeFronzo RA, Ferrannini E, Hendler R, Felig P, Wahren J. <br>
-Regulation of splanchnic and peripheral glucose uptake by insulin <br>
-and hyperglycemia in man. Diabetes 32: 35 - 45, 1983.<br>
-<br>
-RAT STUDIES<br>
-Ruderman NB, Herrera MG. Glucose regulation of hepatic <br>
-gluconeogenesis. Am J Physiol 214: 1346 - 1351, 1968<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Insulin Effect - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Substantial increases in insulin levels are required for <br>
-inhibition of gluconeogenesis.<br>
-<br>
-HUMAN STUDIES<br>
-DeFronzo RA, Ferrannini E, Hendler R, Felig P, Wahren J. <br>
-Regulation of splanchnic and peripheral glucose uptake by <br>
-insulin and hyperglycemia in man. Diabetes 32: 35 - 45, 1983.<br>
-<br>
-Felig P, Wahren J. Influence of endogenous insulin secretion<br>
-on splanchnic glucose and amino acid metabolism in man.<br>
-J Clin Invest 50: 1702 - 1711, 1971<br>
-<br>
-DOGS<br>
-Chiasson J, Liljenquist J, Finger F, Lacy W. Differential<br>
-sensitivity of glycogenolysis and gluconeogenesis to insulin<br>
-infusion in dogs. Diabetes 25: 283 - 291, 1976.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Glucagon Effect - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Jiang G, Zhang BB. Glucagon and regulation of glucose metabolism.<br>
-A J Physiol Endocrinol Metab 284: E671 - E678, 2003.<br>
-<br>
-Felig P, Wahren J,Sherwin R, Hendler R. insulin, glucagon and<br>
-somatostatin in normal physiology and in diabetes mellitus.<br>
-Diabetes 25: 1091 - 1099, 1976<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; AminoAcidEffect - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;   <br>
-<br>
-End<br>
-
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

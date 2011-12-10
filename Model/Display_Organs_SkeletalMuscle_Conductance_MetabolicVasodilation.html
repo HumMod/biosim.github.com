@@ -1,138 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:42 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Display_Organs_SkeletalMuscle_Conductance_Conductance.html'><img src='../Back.PNG'></a>
-<p>
-HumMod / MetabolicVasodilation<br>
-<br>
-Created : 03-Aug-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;groupbox&gt;<br>
-   &lt;row&gt; 2.0 &lt;/row&gt;<br>
-   &lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;high&gt; 22.8 &lt;/high&gt;<br>
-   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
-   &lt;title&gt; Metabolic Vasodilation &lt;/title&gt;<br>
-<br>
-&lt;structurename&gt; SkeletalMuscle-MetabolicVasodilation &lt;/structurename&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Effect &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Effect &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showgraph&gt;<br>
-  &lt;row&gt; 2.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
-  &lt;leftmargin&gt; 4 &lt;/leftmargin&gt;<br>
-  &lt;xaxis&gt;<br>
-    &lt;name&gt; System.X &lt;/name&gt;<br>
-    &lt;label&gt; Time &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
-  &lt;/xaxis&gt;<br>
-  &lt;yaxis&gt;<br>
-    &lt;yvar&gt;<br>
-      &lt;name&gt; Effect &lt;/name&gt;<br>
-      &lt;nolabel/&gt;<br>
-      &lt;linecolor&gt; BLUE &lt;/linecolor&gt;<br>
-    &lt;/yvar&gt;<br>
-    &lt;scale&gt;<br>
-      &lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;inc&gt; 1 &lt;/inc&gt;<br>
-    &lt;/scale&gt;<br>
-  &lt;/yaxis&gt;<br>
-&lt;/showgraph&gt;<br>
-<br>
-&lt;repeatlist&gt;<br>
-  &lt;name&gt; SkeletalMuscle-MetabolicVasodilation.OnTau &lt;/name&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 10 &lt;/reps&gt;&lt;stepsize&gt;  0.1 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-&lt;/repeatlist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 10.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; OnTau &lt;/name&gt;<br>
-  &lt;listname&gt; SkeletalMuscle-MetabolicVasodilation.OnTau &lt;/listname&gt;<br>
-  &lt;label&gt; On Delay &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;repeatlist&gt;<br>
-  &lt;name&gt; SkeletalMuscle-MetabolicVasodilation.OffTau  &lt;/name&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 50 &lt;/reps&gt;&lt;stepsize&gt;  0.1 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-&lt;/repeatlist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 11.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; OffTau &lt;/name&gt;<br>
-  &lt;listname&gt; SkeletalMuscle-MetabolicVasodilation.OffTau &lt;/listname&gt;<br>
-  &lt;label&gt; Off Delay &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 12.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; SteadyState &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Steady-State &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showcurve&gt;<br>
-  &lt;row&gt; 13.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
-  &lt;leftmargin&gt; 4 &lt;/leftmargin&gt;<br>
-<br>
-  &lt;xaxis&gt;<br>
-    &lt;name&gt; SkeletalMuscle-Metabolism.O2Need &lt;/name&gt;<br>
-    &lt;label&gt; O2 Need &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 3000 &lt;/max&gt;&lt;inc&gt; 1000 &lt;/inc&gt;&lt;/scale&gt;<br>
-  &lt;/xaxis&gt;<br>
-<br>
-  &lt;yaxis&gt;<br>
-    &lt;label&gt; SS &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 6 &lt;/max&gt;&lt;inc&gt; 1 &lt;/inc&gt;&lt;/scale&gt;<br>
-  &lt;/yaxis&gt;<br>
-<br>
-  &lt;curvename&gt; SteadyState &lt;/curvename&gt;<br>
-&lt;/showcurve&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 21.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; SkeletalMuscle-Metabolism.O2Need &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; O2 Need &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 1.2 &lt;/row&gt;<br>
-  &lt;col&gt; 26.0 &lt;/col&gt;<br>
-<br>
-  &lt;line&gt;  &lt;/line&gt;<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;/groupbox&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>

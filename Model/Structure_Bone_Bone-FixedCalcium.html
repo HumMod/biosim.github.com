@@ -1,145 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 12/2/2011 7:26:40 AM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../SmallTitle.PNG'>
-<img src='SmallModel.PNG'>
-<a href='Structure_Bone_Bone-Mineral.html'><img src='../Back.PNG'></a>
-<p>
-HumMod / Bone-FixedCalcium<br>
-<br>
-Created : 2011-08-08<br>
-Last Modified : 2011-08-08<br>
-Author : Tom Coleman<br>
-Copyright : 2011-2011<br>
-By : University Of Mississippi Medical Center<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Bone-FixedCalcium &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Deposition &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Resorption &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Stress &lt;/name&gt;&lt;/var&gt;<br>
-&lt;parm&gt;&lt;name&gt; StressAdjustment &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;parm&gt;&lt;name&gt; StressK &lt;/name&gt;&lt;val&gt; 0.0667 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; DepositionK &lt;/name&gt;&lt;val&gt; 0.064 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;parm&gt;&lt;name&gt; ResorptionK &lt;/name&gt;&lt;val&gt; 0.00025 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; [Calcitonin]Effect &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;diffeq&gt;<br>
-  &lt;name&gt; Mass &lt;/name&gt;<br>
-  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
-  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 10 &lt;/errorlim&gt;<br>
-&lt;/diffeq&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;functions&gt;<br>
-<br>
-&lt;curve&gt;<br>
-  &lt;name&gt; [Calcitonin]Effect &lt;/name&gt;<br>
-  &lt;point&gt;&lt;x&gt;    0 &lt;/x&gt;&lt;y&gt; 0 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
-  &lt;point&gt;&lt;x&gt; 0.01 &lt;/x&gt;&lt;y&gt; 1 &lt;/y&gt;&lt;slope&gt; 150 &lt;/slope&gt;&lt;/point&gt;<br>
-  &lt;point&gt;&lt;x&gt; 0.02 &lt;/x&gt;&lt;y&gt; 2 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
-&lt;/curve&gt;<br>
-<br>
-&lt;/functions&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Initialize &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Mass &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-       Bone-Composition.CA_FRACT_MINERAL<br>
-     * Bone-Composition.FRACT_FIXED<br>
-     * Bone-Size.InitialMineralMass &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc  &lt;/name&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Stress &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-    ( StressK * StressAdjustment * Gravity.Gz * Weight.Weight(kG) )<br>
-  / ( Bone-Composition.Mass(kG) )<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; [Calcitonin]Effect &lt;/name&gt;<br>
-  &lt;val&gt; [Calcitonin]Effect [ Calcitonin.[Conc(nG/mL)] ] &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Deposition &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-       DepositionK<br>
-     * Bone-ExchangeableCalcium.[Conc(mG/dL)]<br>
-     * [Calcitonin]Effect<br>
-     * Stress<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Resorption &lt;/name&gt;<br>
-  &lt;val&gt; ResorptionK * Mass &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Gain &lt;/name&gt;<br>
-  &lt;val&gt; Deposition &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Loss &lt;/name&gt;<br>
-  &lt;val&gt; Resorption &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Change &lt;/name&gt;<br>
-  &lt;val&gt; Gain - Loss &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../Footer.PNG'>
-
-</body>
-</html>
