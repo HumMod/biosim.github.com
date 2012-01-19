@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/10/2011 9:59:36 AM
+  Created : 1/19/2012 2:43:29 PM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -30,94 +30,300 @@ Copyright : 2009<br>
 <br>
 &lt;vardoc&gt;<br>
 &lt;name&gt; LeptinPool.[Leptin(nG/mL)] &lt;/name&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
+&lt;topic&gt; Leptin - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; Leptin - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; Leptin - Concentration Units &lt;/topic&gt;<br>
+&lt;topic&gt; [Leptin(nG/mL)] - DefinitionLP1 &lt;/topic&gt;<br>
 &lt;/vardoc&gt;<br>
 <br>
 &lt;vardoc&gt;<br>
 &lt;name&gt; LeptinPool.Change &lt;/name&gt;<br>
-&lt;topic&gt; XXX&lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;topic&gt; Change - DefinitionLP2 &lt;/topic&gt;<br>
+&lt;seealso&gt; LeptinPool.Gain &lt;/seealso&gt;<br>
+&lt;seealso&gt; LeptinPool.Loss &lt;/seealso&gt;<br>
 &lt;/vardoc&gt;<br>
 <br>
 &lt;vardoc&gt;<br>
 &lt;name&gt; LeptinPool.Gain &lt;/name&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;topic&gt; Gain - DefinitionLP3 &lt;/topic&gt;<br>
+&lt;seealso&gt; LeptinSecretion.Rate &lt;/seealso&gt;<br>
+&lt;seealso&gt; LeptinPump.Rate &lt;/seealso&gt;<br>
 &lt;/vardoc&gt;<br>
 <br>
 &lt;vardoc&gt;<br>
 &lt;name&gt; LeptinPool.InitialMass &lt;/name&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
+&lt;topic&gt; InitialMass - DefinitionLP4 &lt;/topic&gt;<br>
+&lt;seealso&gt; ECFV.Vol(L) &lt;/seealso&gt;<br>
+&lt;seealso&gt; LeptinPool.Target[Leptin(nG/mL)] &lt;/seealso&gt;<br>
 &lt;/vardoc&gt;<br>
 <br>
 &lt;vardoc&gt;<br>
 &lt;name&gt; LeptinPool.Loss &lt;/name&gt;<br>
-&lt;topic&gt; XXX&lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;topic&gt; Loss - DefinitionLP5 &lt;/topic&gt;<br>
+&lt;seealso&gt; LeptinClearance.Rate &lt;/seealso&gt;<br>
 &lt;/vardoc&gt;<br>
 <br>
 &lt;vardoc&gt;<br>
 &lt;name&gt; LeptinPool.Mass &lt;/name&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;topic&gt; Mass - DefinitionLP6 &lt;/topic&gt;<br>
+&lt;seealso&gt; LeptinPool.Change &lt;/seealso&gt;<br>
+&lt;seealso&gt; LeptinPool.InitialMass &lt;/seealso&gt;<br>
 &lt;/vardoc&gt;<br>
 <br>
 &lt;vardoc&gt;<br>
 &lt;name&gt; LeptinPool.Target[Leptin(nG/mL)] &lt;/name&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
+&lt;topic&gt; Target[Leptin(nG/mL)] - DefinitionLP7 &lt;/topic&gt;<br>
 &lt;/vardoc&gt;<br>
 <br>
 &lt;topicdoc&gt;<br>
-&lt;name&gt; XXX&lt;/name&gt;<br>
-&lt;label&gt; XXX&lt;/label&gt;<br>
+&lt;name&gt; Leptin - Overview &lt;/name&gt;<br>
+&lt;label&gt; Overview &lt;/label&gt;<br>
 &lt;content&gt;<br>
+<br>
+Leptin is a 167 - amino acid peptide protein synthesized <br>
+predominantly in adipose tissue. It is the product of the <br>
+ob gene and its name is derived from the greek word <br>
+"leptos" which means thin. Mutation or deletion of the ob <br>
+gene leads to obesity. Leptin acts via hypothalamic receptors <br>
+to inhibit feeding and increase thermogeneis.<br>
+<br>
+Reviews<br>
+Gautron L, Elmquist JK. Sixteen years and counting:<br>
+an update on leptin in energy balance. <br>
+J Clin Invest 121: 2087 - 2093, 2011.<br>
+<br>
+Mantzoros CS, Magkos F, Brinkoetter M, Sienkiewicz E,<br>
+Dardeno TA, Kim SY, Hamnvik OP, Koniaris A. <br>
+Leptin in human physiology and pathophysiology.<br>
+Am J Physiol Endocrinol Metab 301: E567 - E584, 2011.<br>
+<br>
+Jequier E. Leptin signaling, adiposity, and energy balance.<br>
+Ann N.Y. Acad Sci 967: 379 - 388, 2002.<br>
 <br>
 &lt;/content&gt;<br>
 &lt;/topicdoc&gt;<br>
 <br>
 &lt;topicdoc&gt;<br>
-&lt;name&gt; XX &lt;/name&gt;<br>
-&lt;label&gt; XXX &lt;/label&gt;<br>
+&lt;name&gt; [Leptin(nG/mL)] - DefinitionLP1 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
 &lt;content&gt;<br>
+<br>
+[Leptin(pG/mL)] is the plasma concentration of Leptin.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Change - DefinitionLP2 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Changes in the leptin pool or mass are a function of both<br>
+gains and losses in leptin over time. Gains may occur from<br>
+increased secretion and from infusion of leptin using the <br>
+leptin pump feature of the model. Loss occurs from leptin<br>
+clearance from the blood<br>
+<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+ &lt;topicdoc&gt;<br>
+&lt;name&gt; Gain - DefinitionLP3 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Gain is defined as positive changes in mass of leptin<br>
+and is a function of leptin secretion rate and leptin<br>
+from infusion (using the leptin pump feature).<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; InitialMass - DefinitionLP4 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+During startup, the model user defines the particular <br>
+traits of the HumMod patient. These are gender, body size, <br>
+age, muscularity and adiposity. All of these traits <br>
+influence body volumes, most notably the extracellular <br>
+fluid volume (ECFV). The assumption is made that<br>
+while volumes may change with traits, concentrations do <br>
+not. At startup,initial volumes,especially ECFV and plasma <br>
+volume are calculated. A target concentration is specified <br>
+- in this case Target[Leptin(nG/mL)]. <br>
+<br>
+The initial mass or circulating pool is the Target[Leptin] <br>
+multiplied by the initial volume of distribution, in <br>
+this case the ECFV.<br>
+ <br>
+Initial Mass = Target[Leptin(nG/mL)]*ECFV.InitialVol(L)<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Loss - DefinitionLP5 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Loss is defined as negative changes in mass of leptin and is <br>
+a function of leptin clearance rate.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Mass - DefinitionLP6 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+The Mass is the calculated amount of Leptin at any given time. <br>
+It is a function of the initial mass of Leptin and the change <br>
+in Leptin mass over time. <br>
 <br>
 <br>
 &lt;/content&gt;<br>
 &lt;/topicdoc&gt;<br>
 <br>
 &lt;topicdoc&gt;<br>
-&lt;name&gt; XXX &lt;/name&gt;<br>
-&lt;label&gt; XXX &lt;/label&gt;<br>
+&lt;name&gt; Target[Leptin(nG/mL)] - DefinitionLP7 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
 &lt;content&gt;<br>
 <br>
+Target[Leptin(nG/mL)] is the plasma concentration of Leptin<br>
+at startup. <br>
+<br>
+During startup, the model user defines the particular <br>
+traits of the HumMod patient. These are gender, body size, <br>
+age, muscularity and adiposity. All of these traits <br>
+influence body volumes, most notably the extracellular <br>
+fluid volume (ECFV). The assumption is made that<br>
+while volumes may change with traits, concentrations do <br>
+not. At startup,initial volumes,especially ECFV and plasma <br>
+volume are calculated. A target concentration is specified <br>
+- in this case Target[Leptin]. <br>
 <br>
 &lt;/content&gt;<br>
 &lt;/topicdoc&gt;<br>
 <br>
-  <br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Leptin - Physical Units &lt;/name&gt;<br>
+&lt;label&gt; Physical Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Plasma nG/mL<br>
+Mass : uG<br>
+Secretion/Clearance Rate: uG/Min<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Leptin - Concentration Units &lt;/name&gt;<br>
+&lt;label&gt; Concentration Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Plasma leptin levels correlate highly with percentage body <br>
+fat, increasing exponentially with increasing body mass<br>
+index (BMI). There is a great deal of interindividual <br>
+variability in plasma leptin concentration and gender is also<br>
+an important factor, with women having markedly higher leptin <br>
+concentrations than men for any given degree of fat mass.<br>
+<br>
+In HumMod, plasma leptin concentartion is 8.0 nG/mL <br>
+<br>
+Human Data<br>
+Reference (1)<br>
+Mean (+/- SD) plasma concentrations of leptin were <br>
+7.5 +/- 9.3 nG/mL (n = 27) in normal weight subjects and <br>
+31.3 +/- 24.1 nG/mL (n = 27) in obese subjects. In this<br>
+particular study, men and women were grouped together.<br>
+<br>
+Considine RV, Sinha MK, Heiman ML, Kriauciunas A,<br>
+Stephens TW, Nyce MR, Ohannesian JP, Marco CC, McKee LJ,<br>
+Bauer TL, Caro JF. Serum immunoreactive-leptin<br>
+concentrations in normal-weight and obese humans.<br>
+N Engl J Med 334; 292 - 295, 1996.<br>
+<br>
+Reference (2)<br>
+Men (n = 19) Leptin levels ranged between 1.8 - 14.4 nG/mL <br>
+Women (n = 11)  Leptin levels ranged between 7.2 - 28.9 nG/mL  <br>
+Fat Mass = 14 -16 Kg<br>
+<br>
+Saad MF, Damani RL, Gingerich RL, Riad-Gabreil MG, <br>
+Khan A, Boyadijan R, Jinagouda SD, el-Tawil K, Rude RK, <br>
+Kamdr V. Sexual dimorphism in plasma leptin concentration.<br>
+J Cil Endocrinol Metab 82: 579 - 584, 1997.<br>
+<br>
+Reference (3)<br>
+Mean (+/- SD) plasma concentrations of leptin were<br>
+(n = 56) 8.4 +/- 0.9 nG/mL; BMI = 23.8 +/- 0.4 kg/m^2<br>
+(Range in BMI 18.4 - 30.8). No indication as to sex <br>
+of control subjects.<br>
+<br>
+Stenvinkel P, Heimburger O, Lonnqvist F. Serum leptin<br>
+concentrations correlate to plasma insulin concentrations<br>
+independent of body fat content in chronic renal failure.<br>
+Nephr Dial Transplant 12: 1321 - 1325, 1997.<br>
+<br>
+Reference (4)<br>
+Men (n = 20) 1.6 +/- 1.1 nG/mL with a BMI of less than 25<br>
+    (n = 14) 3.8 +/- 2.0 nG/mL with a BMI of 25 - 30<br>
+    (n = 9)  7.5 +/- 6.4 nG/mL with a BMI greater than 30<br>
+Women (n = 4) 11.1 +/- 8.1 nG/mL with a BMI less than 25<br>
+	(n = 8) 18.8 +/- 7.6 nG/mL with a BMI 25 - 30<br>
+	(n = 8) 36.7 +/- 17.5 nG/mL with a BMI greater than 30<br>
+<br>
+Wong SL, DePaoli AM, Lee JH, Mantzoros CS. Leptin<br>
+hormonal kinetics in the fed state: effects of adipocity, <br>
+age, and gender on endogenous leptin production and clearance.<br>
+J Clin Endocrinol Metab 89: 2672 - 2677, 2004.<br>
+<br>
+Reference (5)<br>
+Women (n = 20) 5.7 +/- 0.8 nG/ml; BMI = 19.4 +/- 0.5 kg/m^2<br>
+Women (n = 8) 17.4 +/- 2.2 nG/mL; BMI = 29.5 +/- 2.0 kg/m^2<br>
+<br>
+Escobar-Morreale HF, Serrano-Gotarredona J, Varela C,<br>
+Garcia-Robles R, Sancho JM. Circulating leptin concentrations<br>
+in women with hirsutism. <br>
+Fertility and Sterility 68: 898 - 906, 1997. <br>
+<br>
+Reference (6)<br>
+(n = 5) 5.4 nG/mL +/- 0.9 nG/mL; BMI = 22.1 +/- 0.9 kg/m^2<br>
+(n = 5) 5.7 +/- 1.2 nG/mL; BMI = 24.7 +/- 1.1 kg/m^2<br>
+(n = 3) 35.0 +/- 6.6 nG/mL; BMI = 50.3 +/- 2.0 kg/m^2<br>
+<br>
+Ozata M, Dieguez C, Casanueva FF. The inhibition of growth<br>
+hormone secretion presented in obesity is not mediated by<br>
+the high leptin levels: a study in human leptin deficiency<br>
+patients. J Clin Endocrinol Metab 88: 312 - 316, 1988.<br>
+<br>
+Dog Data<br>
+(n = 36) 2.7 +/- 0.3 nG/mL - no figures for body fat content<br>
+but these dogs had an optimal BCS of 3 ( BCS is a widely used<br>
+index of nutritional condition and obesity in animals). <br>
+(n = 5) 2.4 +/- 1.2 nG/mL; 15.7 +/- 2.2 % body fat.<br>
+(n = 5) 4.9 nG/mL; 31.8 +/- 4.1 % body fat.<br>
+ <br>
+Ishioka K, Soliman MM, Sagawa M, Nakadomo F, Shibata H, Honjoh T,<br>
+Hashimoto A, Kitamura H, Kimura K, Saito M. Experimental and<br>
+clinical studies on plasma leptin in obese dogs.<br>
+J Vet Med Sci 64: 349 - 353, 2002.<br>
+<br>
+Rat Data<br>
+(n = 5) 1.2 +/- 0.4 nG/mL<br>
+(n = 5) 0.9 +/- 0.1 nG/mL<br>
+ <br>
+Shek EW, Brands MW, Hall JE. Chronic leptin infusion increases <br>
+arterial pressure. Hypertension 31: 409 - 414, 1998.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+<br>
 <br>
 End
 

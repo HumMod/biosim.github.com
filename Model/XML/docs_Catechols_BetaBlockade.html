@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/10/2011 9:59:36 AM
+  Created : 1/19/2012 2:43:29 PM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -31,13 +31,13 @@ Copyright : 2009<br>
 &lt;vardoc&gt;<br>
 &lt;name&gt; BetaBlockade.Block(%)&lt;/name&gt;<br>
 &lt;topic&gt; Adrenergic Receptor Overview  &lt;/topic&gt;<br>
-&lt;topic&gt; BetaBlockade - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; Block(%) - DefinitionBB1 &lt;/topic&gt;<br>
 &lt;seealso&gt; BetaPool.Effect &lt;/seealso&gt;<br>
 &lt;/vardoc&gt;<br>
 <br>
 &lt;vardoc&gt;<br>
 &lt;name&gt; BetaBlockade.Effect &lt;/name&gt;<br>
-&lt;topic&gt; BetaBlockade - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; Effect - DefinitionBB2 &lt;/topic&gt;<br>
 &lt;/vardoc&gt;<br>
 <br>
 <br>
@@ -93,9 +93,27 @@ receptors in the given effector organ<br>
 &lt;/topicdoc&gt;<br>
 <br>
 &lt;topicdoc&gt;<br>
-&lt;name&gt; BetaBlockade - Overview &lt;/name&gt;<br>
-&lt;label&gt; Beta Blockade - Overview &lt;/label&gt;<br>
+&lt;name&gt; Block(%) - DefinitionBB1 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
 &lt;content&gt;<br>
+<br>
+The model user can block the effect of beta receptor stimulation.<br>
+Reeptor blockade is applied at individual organs. Effect is<br>
+1.0 when there is no blockade. For example,a 16% blockade results <br>
+in an effect of 0.84.<br>
+There are a number of drugs known as beta antagonists which can <br>
+be used clinically to cause beta blockade. These include <br>
+propranolol and metoprolol.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Effect - DefinitionBB2 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Effect = 1.0 - (Block(%)/100)<br>
 <br>
 The model user can block the effect of beta receptor stimulation.<br>
 Reeptor blockade is applied at individual organs. Effect is<br>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/10/2011 9:59:36 AM
+  Created : 1/19/2012 2:43:29 PM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -247,7 +247,7 @@ define different levels of severity.<br>
 &lt;content&gt;<br>
 <br>
 Loss is defined as a negative change in mass of NE<br>
-and is a function of clearance rate and ECFV.<br>
+and is a function of clearance rate.<br>
 <br>
 &lt;/content&gt;<br>
 &lt;/topicdoc&gt;<br>
@@ -284,6 +284,22 @@ to calculate the NE Pool or mass.<br>
 &lt;name&gt; Target[NE] - NEPDefinition8 &lt;/name&gt;<br>
 &lt;label&gt; Definition &lt;/label&gt;<br>
 &lt;content&gt;<br>
+<br>
+During startup, the model user defines the particular <br>
+traits of the HumMod patient. These are gender, body size, <br>
+age, muscularity and adiposity. All of these traits <br>
+influence body volumes, most notably the extracellular <br>
+fluid volume (ECFV). The assumption is made that<br>
+while volumes may change with traits, concentrations do <br>
+not. At startup,initial volumes,especially ECFV and plasma <br>
+volume are calculated. A target concentration is specified <br>
+- in this case Target[NE]. <br>
+<br>
+The initial mass or circulating pool is the Target[NE] <br>
+multiplied by the initial volume of distribution, in <br>
+this case the ECFV.<br>
+ <br>
+Initial Mass = Target[NE]*ECFV.InitialVol(L)<br>
 <br>
 The Target[NE] is the starting plasma concentration of<br>
 norepinephrine. Under normal physiological<br>

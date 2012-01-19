@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/10/2011 9:59:36 AM
+  Created : 1/19/2012 2:43:29 PM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -30,28 +30,29 @@ Copyright : 2009<br>
 <br>
 &lt;vardoc&gt;<br>
 &lt;name&gt; Viscosity.Clamp &lt;/name&gt;<br>
-&lt;topic&gt; Clamp - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; Clamp - DefinitionV1 &lt;/topic&gt;<br>
+&lt;topic&gt; Viscosity - Overview &lt;/topic&gt;<br>
 &lt;topic&gt; Viscosity - Physical Units &lt;/topic&gt;<br>
 &lt;topic&gt; Viscosity - Concentration Units &lt;/topic&gt;<br>
 &lt;/vardoc&gt;<br>
 <br>
 &lt;vardoc&gt;<br>
 &lt;name&gt; Viscosity.ConductanceEffect &lt;/name&gt;<br>
-&lt;topic&gt; ConductanceEffect - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; ConductanceEffect - DefinitionV2 &lt;/topic&gt;<br>
 &lt;topic&gt; Viscosity - Physical Units  &lt;/topic&gt;<br>
 &lt;topic&gt; Viscosity - Concentration Units &lt;/topic&gt;<br>
 &lt;/vardoc&gt;<br>
 <br>
 &lt;vardoc&gt;<br>
 &lt;name&gt; Viscosity.Level &lt;/name&gt;<br>
-&lt;topic&gt; Viscosity - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; Level - DefinitionV3 &lt;/topic&gt;<br>
 &lt;topic&gt; Viscosity - Physical Units  &lt;/topic&gt;<br>
 &lt;topic&gt; Viscosity - Concentration Units  &lt;/topic&gt;<br>
 &lt;/vardoc&gt;<br>
 <br>
 &lt;vardoc&gt;<br>
 &lt;name&gt; Viscosity.Value &lt;/name&gt;<br>
-&lt;topic&gt; Viscosity - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; Value - DefinitionV4 &lt;/topic&gt;<br>
 &lt;topic&gt; Viscosity - Physical Units   &lt;/topic&gt;<br>
 &lt;topic&gt; Viscosity - Concentration Units  &lt;/topic&gt;<br>
 &lt;seealso&gt; BloodVol.Hct &lt;/seealso&gt;<br>
@@ -76,7 +77,7 @@ drag against adjacent cells and against the wall of the<br>
 blood vessel. The percentage of the blood that is cells<br>
 is called the hematocrit. The viscosity of blood increases<br>
 dramatically as the hematocrit increases. When the <br>
-hematocrit rises to 60 or 70 whcih it often does in <br>
+hematocrit rises to 60 or 70 which it often does in <br>
 polycythemia, the blood viscosity can become as great as <br>
 ten times that of water, and its flow through blood vessels<br>
 is greatly retarded. <br>
@@ -102,16 +103,21 @@ J. Physiol 78:339-369,1933.<br>
 &lt;/topicdoc&gt;<br>
 <br>
 &lt;topicdoc&gt;<br>
-&lt;name&gt; ConductanceEffect - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
+&lt;name&gt; ConductanceEffect - DefinitionV2 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
 &lt;content&gt;<br>
 <br>
 Conductance is a measure of the blood flow through <br>
 a vessel for a given pressure difference. It is the<br>
 exact reciprocal of resistance. Since viscosity affects<br>
 resistance to flow, viscosity also affects conductance. <br>
-As viscosity increases, conductance decreases.<br>
+As viscosity increases, conductance decreases. The <br>
+conductance effect is defined by the relationship of<br>
+hematocrit to viscosity.<br>
 <br>
+Conductance Effect = 1 / Value. Value is the viscosity <br>
+which is either set by the user or is defined by the <br>
+curve relating hematocrit to viscosity.  <br>
 <br>
 &lt;/content&gt;<br>
 &lt;/topicdoc&gt;<br>
@@ -155,16 +161,45 @@ J. Physiol 78:339-369, 1933.<br>
 &lt;/topicdoc&gt;<br>
 <br>
 &lt;topicdoc&gt;<br>
-&lt;name&gt; Clamp - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
+&lt;name&gt; Clamp - DefinitionV1 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
 &lt;content&gt;<br>
 <br>
 The clamp feature enables the model user to fix a particular<br>
 variable at a set value. In the case of viscosity,<br>
-if the clamp is set to TRUE then viscosity would stay fixed at<br>
-the initial level. If the clamp is set to FALSE, then viscosity<br>
-will change as defined by the relationship of hematocrit to <br>
+if the clamp is turned to "on", the model user can set viscosity<br>
+level using the sliding bar feature in the viscosity display box. <br>
 viscosity.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Level - DefinitionV3 &lt;/name&gt;<br>
+&lt;label&gt; Definition  &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+The clamp feature enables the model user to fix a particular<br>
+variable at a set value. In the case of viscosity,<br>
+if the clamp is "on", then viscosity would have the value set by<br>
+the sliding bar in the viscosity display box. This is the level.<br>
+If the clamp is "off", then viscosity has a value defined by the <br>
+relationship of hematocrit to viscosity.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Value - DefinitionV4 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+The clamp feature enables the model user to fix a particular<br>
+variable at a set value. In the case of viscosity,<br>
+if the clamp is "on" then viscosity would have the value set by<br>
+the sliding bar in the viscosity display box. If the clamp is <br>
+"off", then viscosity has a value defined by the relationship <br>
+of hematocrit to viscosity.<br>
 <br>
 &lt;/content&gt;<br>
 &lt;/topicdoc&gt;<br>

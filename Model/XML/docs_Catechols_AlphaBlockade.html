@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/10/2011 9:59:36 AM
+  Created : 1/19/2012 2:43:29 PM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -31,15 +31,15 @@ Copyright : 2009<br>
 &lt;vardoc&gt;<br>
 &lt;name&gt; AlphaBlockade.Block(%)&lt;/name&gt;<br>
 &lt;topic&gt; Adrenergic Receptor Overview &lt;/topic&gt;<br>
-&lt;topic&gt; AlphaBlockade - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; Block(%) - DefinitionAB1 &lt;/topic&gt;<br>
 &lt;seealso&gt; AlphaPool.Effect &lt;/seealso&gt;<br>
 &lt;/vardoc&gt;<br>
 <br>
 &lt;vardoc&gt;<br>
 &lt;name&gt; AlphaBlockade.Effect &lt;/name&gt;<br>
+&lt;topic&gt; Effect - DefinitionAB2 &lt;/topic&gt;<br>
 &lt;topic&gt; AlphaBlockade - Overview &lt;/topic&gt;<br>
 &lt;/vardoc&gt;<br>
-<br>
 <br>
 &lt;topicdoc&gt;<br>
 &lt;name&gt; Adrenergic Receptor Overview &lt;/name&gt;<br>
@@ -88,19 +88,35 @@ receptors in the given effector organ<br>
    20th century. In: The Adrenergic Receptors in the 21st century.<br>
    Edited by DM Perez. Totowa:Humana, 2005, Pg 3-21<br>
 <br>
-<br>
 &lt;/content&gt;<br>
 &lt;/topicdoc&gt;<br>
 <br>
 &lt;topicdoc&gt;<br>
-&lt;name&gt; AlphaBlockade - Overview &lt;/name&gt;<br>
-&lt;label&gt; Alpha Blockade - Overview &lt;/label&gt;<br>
+&lt;name&gt; Block(%) - DefinitionAB1 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
 &lt;content&gt;<br>
 <br>
 The model user can block the effect of alpha receptor stimulation.<br>
 Receptor blockade is applied at individual organs. Effect is<br>
 1.0 when there is no blockade. For example,a 16% blockade results <br>
 in an effect of 0.84.<br>
+There are a number of drugs known as alpha antagonists which can <br>
+be used clinically to cause alpha blockade. These include<br>
+phentolamine, prazosin and yohimbine. <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Effect - DefinitionAB2 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+The model user can block the effect of alpha receptor stimulation.<br>
+Receptor blockade is applied at individual organs. <br>
+Effect = 1.0 - (Block(%)/100)<br>
+Effect is 1.0 when there is no blockade. For example,a 16% blockade <br>
+results in an effect of 0.84.<br>
 There are a number of drugs known as alpha antagonists which can <br>
 be used clinically to cause alpha blockade. These include<br>
 phentolamine, prazosin and yohimbine. <br>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/10/2011 9:59:34 AM
+  Created : 1/19/2012 2:43:27 PM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -22,9 +22,9 @@
 HumMod / Bone-Fuel<br>
 <br>
 Created : 07-Jun-05<br>
-Last Modified : 26-Jan-10<br>
+Last Modified : 2012-01-02<br>
 Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
+Copyright : 2008-2012<br>
 By : University of Mississippi Medical Center<br>
 Schema : DES V1.0<br>
 <br>
@@ -60,6 +60,7 @@ Schema : DES V1.0<br>
 &lt;var&gt;&lt;name&gt; FAFractionalDelivery &lt;/name&gt;&lt;/var&gt;<br>
 &lt;var&gt;&lt;name&gt; AerobicGlucoseFractionalDelivery &lt;/name&gt;&lt;/var&gt;<br>
 &lt;var&gt;&lt;name&gt; AnaerobicGlucoseFractionalDelivery &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; MinimumAerobicFraction &lt;/name&gt;&lt;/var&gt;<br>
 &lt;var&gt;&lt;name&gt; MinimumFractionalDelivery &lt;/name&gt;&lt;/var&gt;<br>
 <br>
 &lt;/variables&gt;<br>
@@ -197,11 +198,13 @@ Schema : DES V1.0<br>
 &lt;/conditional&gt;<br>
 <br>
 &lt;def&gt;<br>
+  &lt;name&gt; MinimumAerobicFraction &lt;/name&gt;<br>
+  &lt;val&gt;  FAFractionalDelivery MIN AerobicGlucoseFractionalDelivery &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
   &lt;name&gt; MinimumFractionalDelivery &lt;/name&gt;<br>
-  &lt;val&gt;  FAFractionalDelivery<br>
-     MIN AerobicGlucoseFractionalDelivery<br>
-     MIN AnaerobicGlucoseFractionalDelivery<br>
-  &lt;/val&gt;<br>
+  &lt;val&gt;  MinimumAerobicFraction MIN AnaerobicGlucoseFractionalDelivery &lt;/val&gt;<br>
 &lt;/def&gt;<br>
 <br>
 &lt;def&gt;&lt;name&gt; K &lt;/name&gt;&lt;val&gt; 0.5 &lt;/val&gt;&lt;/def&gt;<br>

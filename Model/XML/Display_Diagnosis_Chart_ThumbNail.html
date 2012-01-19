@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 12/10/2011 9:59:34 AM
+  Created : 1/19/2012 2:43:28 PM
   Author : Tom Coleman
   Copyright : 2011-2011
   By : University of Missippi Medical Center
@@ -28,6 +28,43 @@ Copyright : 2008-2011<br>
 By : University of Mississippi Medical Center<br>
 Schema : DES V1.0<br>
 <br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 2.0 &lt;/row&gt;&lt;col&gt; 27.0 &lt;/col&gt;<br>
+   &lt;name&gt; BMI.BMI &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; BMI &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 3.0 &lt;/row&gt;&lt;col&gt; 27.0 &lt;/col&gt;<br>
+  &lt;name&gt; Adiposity.Index &lt;/name&gt;<br>
+  &lt;format&gt;&lt;list&gt; Common.Adiposity &lt;/list&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Adiposity &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 4.0 &lt;/row&gt;&lt;col&gt; 27.0 &lt;/col&gt;<br>
+  &lt;name&gt; Muscularity.Index &lt;/name&gt;<br>
+  &lt;format&gt;&lt;list&gt; Common.Muscularity &lt;/list&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Muscularity &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;maplist&gt;<br>
+  &lt;name&gt; Heart-ECG.Now &lt;/name&gt;<br>
+  &lt;map&gt;&lt;val&gt;  0 &lt;/val&gt;&lt;img&gt; Normal &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt;  1 &lt;/val&gt;&lt;img&gt; Paced &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt;  2 &lt;/val&gt;&lt;img&gt; S-T Shift &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt;  3 &lt;/val&gt;&lt;img&gt; V-Fib &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt;  4 &lt;/val&gt;&lt;img&gt; Flat &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 5.4 &lt;/row&gt;&lt;col&gt; 27.0 &lt;/col&gt;<br>
+  &lt;name&gt; Heart-ECG.Now &lt;/name&gt;<br>
+  &lt;format&gt;&lt;list&gt; Heart-ECG.Now &lt;/list&gt;&lt;/format&gt;<br>
+  &lt;label&gt; ECG &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
 &lt;infobutton&gt;<br>
   &lt;row&gt; 1.8 &lt;/row&gt;<br>
   &lt;col&gt; 58 &lt;/col&gt;<br>
@@ -45,44 +82,6 @@ Schema : DES V1.0<br>
   &lt;line&gt; Temperature = 98.6 F or 37.0 C &lt;/line&gt;<br>
   &lt;line&gt; Heart Rate = 72 /Min &lt;/line&gt;<br>
 &lt;/infobutton&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 2.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-   &lt;name&gt; BMI.BMI &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; BMI &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 3.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; Adiposity.Index &lt;/name&gt;<br>
-  &lt;format&gt;&lt;list&gt; Common.Adiposity &lt;/list&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Adiposity &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 4.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; Muscularity.Index &lt;/name&gt;<br>
-  &lt;format&gt;&lt;list&gt; Common.Muscularity &lt;/list&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Muscularity &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;maplist&gt;<br>
-  &lt;name&gt; Heart-ECG.Now &lt;/name&gt;<br>
-  &lt;map&gt;&lt;val&gt;  0 &lt;/val&gt;&lt;img&gt; Normal &lt;/img&gt;&lt;/map&gt;<br>
-  &lt;map&gt;&lt;val&gt;  1 &lt;/val&gt;&lt;img&gt; Paced &lt;/img&gt;&lt;/map&gt;<br>
-  &lt;map&gt;&lt;val&gt;  2 &lt;/val&gt;&lt;img&gt; S-T Shift &lt;/img&gt;&lt;/map&gt;<br>
-  &lt;map&gt;&lt;val&gt;  3 &lt;/val&gt;&lt;img&gt; V-Fib &lt;/img&gt;&lt;/map&gt;<br>
-  &lt;map&gt;&lt;val&gt;  4 &lt;/val&gt;&lt;img&gt; Flat &lt;/img&gt;&lt;/map&gt;<br>
-&lt;/maplist&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 5.4 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; Heart-ECG.Now &lt;/name&gt;<br>
-  &lt;format&gt;&lt;list&gt; Heart-ECG.Now &lt;/list&gt;&lt;/format&gt;<br>
-  &lt;label&gt; ECG &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
 <br>
 End
 
