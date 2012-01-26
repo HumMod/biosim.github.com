@@ -1,88 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:08 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Kidney_Kidney.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / Kidney-Pressure<br>
-<br>
-Created : 09-Apr-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Kidney-Pressure &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; ArtyPressure &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; VeinPressure &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; PressureGradient &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; PumpSwitch &lt;/name&gt;<br>
-  &lt;val&gt; FALSE &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; PumpSetting &lt;/name&gt;<br>
-  &lt;val&gt; 0.0 &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;conditional&gt;<br>
-  &lt;name&gt; ArtyPressure &lt;/name&gt;<br>
-  &lt;test&gt; PumpSwitch &lt;/test&gt;<br>
-  &lt;true&gt; PumpSetting &lt;/true&gt;<br>
-  &lt;false&gt; SystemicArtys.Pressure &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; VeinPressure &lt;/name&gt;<br>
-  &lt;val&gt; SystemicVeins.Pressure &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; PressureGradient &lt;/name&gt;<br>
-  &lt;val&gt; ( ArtyPressure - VeinPressure ) MAX 0.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

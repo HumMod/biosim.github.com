@@ -1,151 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:07 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_BloodVolume_BloodVolume.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / BloodVol<br>
-<br>
-Created : 21-Oct-04<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2005-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; BloodVol &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Vol &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; InitialVol &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Vol(L) &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Change &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Hct &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; InitialHct &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Hct(%) &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;constant&gt;<br>
-  &lt;name&gt; InitialHct-Male &lt;/name&gt;<br>
-  &lt;val&gt; 0.44 &lt;/val&gt;<br>
-&lt;/constant&gt;<br>
-<br>
-&lt;constant&gt;<br>
-  &lt;name&gt; InitialHct-Female &lt;/name&gt;<br>
-  &lt;val&gt; 0.40 &lt;/val&gt;<br>
-&lt;/constant&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; PVCrit &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; InitialPVCrit &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; StressedVol &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; V0 &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Collapsed &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; CollapsedEffect &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;constant&gt;<br>
-  &lt;name&gt; TextbookVolume &lt;/name&gt;<br>
-  &lt;val&gt; 5400.0 &lt;/val&gt;<br>
-&lt;/constant&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Initialize &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; InitialVol &lt;/name&gt;<br>
-  &lt;val&gt; Size-General.X-Textbook * TextbookVolume &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;conditional&gt;<br>
-  &lt;name&gt; InitialHct &lt;/name&gt;<br>
-  &lt;test&gt; Gender.IsMale &lt;/test&gt;<br>
-  &lt;true&gt; InitialHct-Male &lt;/true&gt;<br>
-  &lt;false&gt; InitialHct-Female &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; InitialPVCrit &lt;/name&gt;<br>
-  &lt;val&gt; 1.0 - InitialHct &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcVol &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Vol &lt;/name&gt;&lt;val&gt; RBCVol.Vol + PlasmaVol.Vol &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Vol(L) &lt;/name&gt;&lt;val&gt; Vol / 1000.0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Hct &lt;/name&gt;&lt;val&gt; RBCVol.Vol / Vol &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Hct(%) &lt;/name&gt;&lt;val&gt; Hct * 100.0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; PVCrit &lt;/name&gt;&lt;val&gt; 1.0 - Hct &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcV0 &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; V0 &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-      PulmArty.V0<br>
-    + PulmCapys.V0<br>
-    + PulmVeins.V0<br>
-    + SystemicArtys.V0<br>
-    + SystemicVeins.V0<br>
-    + SplanchnicVeins.V0<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; StressedVol &lt;/name&gt;&lt;val&gt; Vol - V0 &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;if&gt;<br>
-  &lt;test&gt; Vol LE V0 &lt;/test&gt;<br>
-  &lt;true&gt;<br>
-    &lt;def&gt;&lt;name&gt; Collapsed &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-    &lt;def&gt;&lt;name&gt; CollapsedEffect &lt;/name&gt;&lt;val&gt; Vol / V0 &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;/true&gt;<br>
-  &lt;false&gt;<br>
-    &lt;def&gt;&lt;name&gt; Collapsed &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-    &lt;def&gt;&lt;name&gt; CollapsedEffect &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;/false&gt;<br>
-&lt;/if&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;val&gt; RBCVol.Gain + PlasmaVol.Gain &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;val&gt; RBCVol.Loss + PlasmaVol.Loss &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; Gain - Loss &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

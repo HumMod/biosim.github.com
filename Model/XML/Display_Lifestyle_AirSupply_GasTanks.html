@@ -1,124 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:08 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_Lifestyle_AirSupply_AirSupply.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / GasTanks<br>
-<br>
-Created : 21-Dec-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;groupbox&gt;<br>
-   &lt;row&gt; 2.0 &lt;/row&gt;<br>
-   &lt;col&gt; 32.0 &lt;/col&gt;<br>
-   &lt;high&gt; 11.6 &lt;/high&gt;<br>
-   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
-   &lt;title&gt; Gas Tanks &lt;/title&gt;<br>
-<br>
-&lt;structurename&gt; AirSupply-GasTanks &lt;/structurename&gt;<br>
-<br>
-&lt;radiobuttons&gt;<br>
-  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Switch &lt;/name&gt;<br>
-  &lt;listname&gt; Common.Switch &lt;/listname&gt;<br>
-  &lt;label&gt; Switch &lt;/label&gt;<br>
-&lt;/radiobuttons&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 2.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; O2Valve(%) &lt;/name&gt;<br>
-  &lt;listname&gt; Common.Percent &lt;/listname&gt;<br>
-  &lt;label&gt; O2 (%) &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 4.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; N2Valve(%) &lt;/name&gt;<br>
-  &lt;listname&gt; Common.Percent &lt;/listname&gt;<br>
-  &lt;label&gt; N2 (%) &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;repeatlist&gt;<br>
-  &lt;name&gt; AirSupply-GasTanks.CO2Valve(%) &lt;/name&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 50 &lt;/reps&gt;&lt;stepsize&gt; 0.1 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 15 &lt;/reps&gt;&lt;stepsize&gt; 1.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-&lt;/repeatlist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 5.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; CO2Valve(%) &lt;/name&gt;<br>
-  &lt;listname&gt; AirSupply-GasTanks.CO2Valve(%) &lt;/listname&gt;<br>
-  &lt;label&gt; CO2 (%) &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;repeatlist&gt;<br>
-  &lt;name&gt; AirSupply-GasTanks.COValve(PPM) &lt;/name&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 10 &lt;/reps&gt;&lt;stepsize&gt; 10 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 9 &lt;/reps&gt;&lt;stepsize&gt; 100 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 9 &lt;/reps&gt;&lt;stepsize&gt; 1000 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-&lt;/repeatlist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 7.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; COValve(PPM) &lt;/name&gt;<br>
-  &lt;listname&gt; AirSupply-GasTanks.COValve(PPM) &lt;/listname&gt;<br>
-  &lt;label&gt; CO (PPM) &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 8.4 &lt;/row&gt;&lt;col&gt; 12 &lt;/col&gt;<br>
-   &lt;name&gt; COValve(%) &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 3 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; CO (%) &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;repeatlist&gt;<br>
-  &lt;name&gt; AirSupply-GasTanks.AnestheticValve(%) &lt;/name&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 50 &lt;/reps&gt;&lt;stepsize&gt; 0.1 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 95 &lt;/reps&gt;&lt;stepsize&gt; 1.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-&lt;/repeatlist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 9.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; AnestheticValve(%) &lt;/name&gt;<br>
-  &lt;listname&gt; AirSupply-GasTanks.AnestheticValve(%) &lt;/listname&gt;<br>
-  &lt;label&gt; Anesthetic (%) &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 1.2 &lt;/row&gt;<br>
-  &lt;col&gt; 26.0 &lt;/col&gt;<br>
-<br>
-  &lt;line&gt; Inspired % may be a bit different &lt;/line&gt;<br>
-  &lt;line&gt; than the gas tank settings. &lt;/line&gt;<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;/groupbox&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

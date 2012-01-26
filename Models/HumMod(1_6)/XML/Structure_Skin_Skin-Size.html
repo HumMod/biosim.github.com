@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_Skin_Skin.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / Skin-Size<br>
+<br>
+Created : 05-Jun-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Skin-Size &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Vol &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Mass &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Density &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; LiquidMass &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; LiquidDensity &lt;/name&gt;<br>
+  &lt;val&gt; 1.00 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; LiquidVol &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialLiquidVol &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; SolidMass &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialSolidMass &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; SolidDensity &lt;/name&gt;<br>
+  &lt;val&gt; 1.36 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; SolidVol &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; FractTotal &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; IFV &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialIFV &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; CellH2O &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialCellH2O &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; MassFractBase &lt;/name&gt;<br>
+  &lt;val&gt; 0.102 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; H2OFractMass &lt;/name&gt;<br>
+  &lt;val&gt; 0.67 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; SolidsFractMass &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Initialize &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialMass &lt;/name&gt;<br>
+  &lt;val&gt; MassFractBase * Weight.InitialOtherMass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialLiquidVol &lt;/name&gt;<br>
+  &lt;val&gt; H2OFractMass * InitialMass / LiquidDensity &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; SolidsFractMass &lt;/name&gt;<br>
+  &lt;val&gt; 1.0 - H2OFractMass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialSolidMass &lt;/name&gt;<br>
+  &lt;val&gt; SolidsFractMass * InitialMass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; ScaleH2O &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; FractTotal &lt;/name&gt;<br>
+  &lt;val&gt; InitialLiquidVol / TissueH2O.InitialVol &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialIFV &lt;/name&gt;<br>
+  &lt;val&gt; FractTotal * InterstitialWater.InitialVol &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialCellH2O &lt;/name&gt;<br>
+  &lt;val&gt; FractTotal * CellH2O.InitialVol &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; IFV &lt;/name&gt;<br>
+  &lt;val&gt; FractTotal * InterstitialWater.Vol &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; CellH2O &lt;/name&gt;<br>
+  &lt;val&gt; FractTotal * CellH2O.Vol &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; LiquidVol &lt;/name&gt;<br>
+  &lt;val&gt; IFV + CellH2O &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; LiquidMass &lt;/name&gt;<br>
+  &lt;val&gt; LiquidVol * LiquidDensity &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; SolidMass &lt;/name&gt;<br>
+  &lt;val&gt; InitialSolidMass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; SolidVol &lt;/name&gt;<br>
+  &lt;val&gt; SolidMass / SolidDensity &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;val&gt; LiquidMass + SolidMass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Mass(kG) &lt;/name&gt;<br>
+  &lt;val&gt; Mass / 1000.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Vol &lt;/name&gt;<br>
+  &lt;val&gt; LiquidVol + SolidVol &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Density &lt;/name&gt;<br>
+  &lt;val&gt; Mass / Vol &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Display_Physiology_Blood_Plasma_Plasma.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / Balance<br>
+<br>
+Created : 27-Jun-06<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;groupbox&gt;<br>
+   &lt;row&gt; 2.0 &lt;/row&gt;<br>
+   &lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;high&gt; 17.4 &lt;/high&gt;<br>
+   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
+   &lt;title&gt; Gain - Loss &lt;/title&gt;<br>
+<br>
+&lt;structurename&gt; PlasmaVol &lt;/structurename&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; Gain &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Gain &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 2.4 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
+   &lt;name&gt; GILumenVolume.Absorption &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Gut Absorption &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 3.4 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
+   &lt;name&gt; LymphWater.Rate &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Systemic Lymph &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 4.4 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
+   &lt;name&gt; IVDrip.H2ORate &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; IV Drip &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 5.4 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
+   &lt;name&gt; ExcessLungWater.Lymph &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Lung Lymph &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 6.4 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
+   &lt;name&gt; PeritoneumSpace.Loss &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Peritoneal Lymph &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 7.4 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
+   &lt;name&gt; Transfusion.Rate &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Transfusion &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 8.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; Loss &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Loss &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 9.8 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
+   &lt;name&gt; CD_H2O.Outflow &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Urine &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 10.8 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
+   &lt;name&gt; CapillaryWater.Rate &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Capillary Filtration &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 11.8 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
+   &lt;name&gt; Hemorrhage.Rate &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Hemorrhage &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 12.8 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
+   &lt;name&gt; ExcessLungWater.Flux &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Lung Filtration &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 13.8 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
+   &lt;name&gt; PeritoneumSpace.Gain &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Hepatic Effusion &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 14.8 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
+   &lt;name&gt; DialyzerActivity.UltrafiltrationRate &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Hemodialysis &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 15.8 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
+   &lt;name&gt; Pericardium-Hemorrhage.PlasmaFlow &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Pericardial Bleed &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;infobutton&gt;<br>
+  &lt;row&gt; 1.2 &lt;/row&gt;<br>
+  &lt;col&gt; 26.0 &lt;/col&gt;<br>
+  &lt;line&gt; Gain - loss units are mL/Min. &lt;/line&gt;<br>
+&lt;/infobutton&gt;<br>
+<br>
+&lt;/groupbox&gt;<br>
+<br>
+End<br>
+
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

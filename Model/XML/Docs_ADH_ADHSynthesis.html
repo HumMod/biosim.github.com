@@ -1,182 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:09 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Docs_ADH.html'><img src='../../Back.PNG'></a>
-<p>
-QHP 2008 / ADH.DOCS<br>
-<br>
-Created : 27-Mar-09<br>
-Last Modified : 27-Mar-09<br>
-Author : Tom Coleman<br>
-Copyright : 2009<br>
-<br>
-&lt;structurename&gt; ADHSynthesis &lt;/structurename&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; ADHSynthesis.Base &lt;/name&gt;<br>
-&lt;topic&gt; Base - Definition ADHS1 &lt;/topic&gt;<br>
-&lt;topic&gt; ADHSynthesis - Overview &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; ADHSynthesis.Feedback &lt;/name&gt;<br>
-&lt;topic&gt; Feedback - DefinitionADHS2 &lt;/topic&gt;<br>
-&lt;seealso&gt; ADHSlowMass.Mass &lt;/seealso&gt;<br>
-&lt;seealso&gt; ADHSynthesis.Base &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; ADHSynthesis.Rate &lt;/name&gt;<br>
-&lt;topic&gt; Rate - DefinitionADH3 &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Base - Definition ADHS1 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Base synthesis is the level of synthesis under normal<br>
-physiological conditions.  Initial value is 3.2nG/Min<br>
-and is equal to initial base secretion.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Feedback - DefinitionADHS2  &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-ADHSynthesis.Feedback is a multiplier of base secretion and <br>
-is dependant on the Slow Mass storage level. As the Slow Mass <br>
-levels decrease, synthesis increases. <br>
-<br>
-Sachs H, Share L, Osinchak J, Carpi A. Capacity of the <br>
-neurohypophysis to release vasopressin. <br>
-Endocrinology 81: 755 - 770, 1967.<br>
-<br>
-North WG. Chapter 4: Biosynthesis of vasopressin and neurophysins.<br>
-175 - 209. In Vasopressin: Principles and properties. Edited by <br>
-Gash DM, Boer GJ. Plenum Press New York and London 1987. <br>
- <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Rate - DefinitionADH3  &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Synthesis rate is the base rate * feedback. Under normal <br>
-physiological conditions, feedback is equal to 1 and synthesis<br>
-is equal to base rate. As slow mass decreases, feedback increases<br>
-and synthesis increases. <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; ADHSynthesis - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Vasopressin (ADH) is synthesized as a precursor prepropeptide, <br>
-principally in magnocellular neurons whose cell bodies are <br>
-located in the supraoptic nucleus (SON) and paraventricular <br>
-nucleus (PVN) of the mammalian hypothalamus. This precursor <br>
-is packaged into secretory granules and is subject to cleavage <br>
-and other modifications as it is transported from the cell bodies <br>
-to storage in the posterior pituitary nerve terminals until its <br>
-release. The  pituitary gland stores enough vasopressin to maintain <br>
-basal levels of secretion for up to 30 days or enough to last 5-7 <br>
-days at maximum release rates. <br>
-<br>
-In HumMod, the amount of ADH stored in the posterior pituitary <br>
-is divided into two distict masses - the SlowMass and the FastMass. <br>
-The Fast Mass is a readily releasable pool of ADH which is released <br>
-in response to an acute stimulus and does not result in a net <br>
-increase in synthesis of ADH (as indexed by total mRNA or nucleolar <br>
-volume in hypothalamic neurons). <br>
-When a chronic stimulus is applied, sizeable depletion of hormonal <br>
-stores occurs and a coincidental increase in synthesis occurs. This <br>
-is the Slow Mass of ADH and is the predominant factor controlling <br>
-rate of synthesis in the hypothalamus. In HumMod, feedback is a multiplier <br>
-of base secretion and is dependant on the Slow Mass storage level. <br>
-As the Slow Mass levels decrease, synthesis increases. <br>
-<br>
-Although, the ADH pool is theoretically divided into the two distinct <br>
-masses, there is not a corresponding anatomical distinction. Since <br>
-vasopressin is synthesized as a precursor prepropepetide and converted <br>
-to its secreted product within the vesicles, the precise nature of these<br>
-transformations and their time courses have yet to be elucidated.  <br>
-   <br>
-Review<br>
-North WG. Chapter 4: Biosynthesis of vasopressin and neurophysins.<br>
-175 - 209. In Vasopressin: Principles and properties. Edited by <br>
-Gash DM, Boer GJ. Plenum Press New York and London 1987. <br>
-<br>
-Sladek CD. Antidiuretic Hormone: synthesis and release. <br>
-Chapter 12: 436 - 495, 2000. Handbook of Physiology Section 7<br>
-The Endocrine System Volume III. Endocrine regulation of water<br>
-and electrolyte balance. Edited by Fray JCS, Goodman HM.<br>
-Oxford University Press 2000. <br>
-<br>
-Sachs H, Fawcett P, Takabatake Y, Portanova R. Biosynthesis and <br>
-release of vasopressin and neurophysin.<br>
-Recent Prog Horm Res 25:447 -491, 1969. <br>
-<br>
-Rat Data<br>
-Fendler K, Hefco V, Lissak K. The effect of dehydration and repeated <br>
-water loading on the supraoptic-neurohypophyseo-neurosecretory system <br>
-and the ADH content of the neurohypophysis in the rat.<br>
-Acta Physiol Acad Sci Hung 34: 285 - 289, 1968.<br>
-<br>
-Jones CW, Pickering BT. Comparison of the effects of water deprivation<br>
-and sodium chloride imbibtion on the hormone content of the neurohypophysis<br>
-of the rat. J Physiol 203: 449 - 458, 1969.  <br>
-<br>
-Fitzsimmons MD, Roberts MM, Robinson AG. Control of posterior pituitary<br>
-vasopressin content: implications for the regulation of the vasopressin <br>
-gene. Endocrinology 134: 1874 - 1878, 1994. <br>
-<br>
-Murphy D, Waller S, Fairhall K, Carter DA, Robinson CA. Regulation of<br>
-the synthesis and secretion of vasopressin. <br>
-Prog Brain Res 119: 137 - 143, 1998.<br>
-<br>
-Roberts MM, Robinson AG, Hoffman GE, Fitzsimmons MD. Vasopressin <br>
-transport regulation is coupled to synthesis rate.<br>
-Neuroendocrinology 53: 416 - 422, 1991. <br>
-<br>
-Human Data<br>
-Currie AR, Adamsons H, Van Dyke HB. Vasopressin and oxcytocin in the <br>
-posterior lobe of the pituitary of man. <br>
-J Clin Endocrinol Metab 20: 947 - 951, 1960.<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-   <br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

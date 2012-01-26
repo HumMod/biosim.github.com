@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_Hemodialysis_Hemodialysis.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / DialyzerActivity<br>
+<br>
+Created : 03-Mar-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Solver : DES 2005<br>
+Schema : 2005.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; DialyzerActivity &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Scheduled? &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Active? &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; BloodFlow &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; DialysateFlow &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; UltrafiltrationRate &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Alpha &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Na+Flux &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; K+Flux &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Cl-Flux &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; UreaFlux &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;timervar&gt;&lt;name&gt; IntervalTimer &lt;/name&gt;&lt;/timervar&gt;<br>
+&lt;timervar&gt;&lt;name&gt; DurationTimer &lt;/name&gt;&lt;/timervar&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; TotalDialysateUsed &lt;/name&gt;<br>
+  &lt;integralname&gt; TotalDialysateUsed &lt;/integralname&gt;<br>
+  &lt;initialval&gt; 0.0 &lt;/initialval&gt;<br>
+  &lt;dervname&gt; DialysateChange &lt;/dervname&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; TotalUltrafiltration &lt;/name&gt;<br>
+  &lt;integralname&gt; TotalUltrafiltration &lt;/integralname&gt;<br>
+  &lt;initialval&gt; 0.0 &lt;/initialval&gt;<br>
+  &lt;dervname&gt; UltrafiltrationChange &lt;/dervname&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;if&gt;<br>
+&lt;test&gt; Active? &lt;/test&gt;<br>
+&lt;true&gt;<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; BloodFlow &lt;/name&gt;<br>
+    &lt;val&gt; 0.01 * DialyzerControl.BloodFlow(%) * DialysisShunt.BloodFlow &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; DialysateFlow &lt;/name&gt;<br>
+    &lt;val&gt; DialyzerControl.DialysateFlow &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; UltrafiltrationRate &lt;/name&gt;<br>
+    &lt;val&gt; DialyzerControl.Ultrafiltration &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; Alpha &lt;/name&gt;<br>
+    &lt;val&gt; ( BloodFlow * DialysateFlow ) / ( BloodFlow + DialysateFlow ) &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; Na+Flux &lt;/name&gt;<br>
+    &lt;val&gt; 0.001 * Alpha * ( NaPool.[Na+(mEq/L)] - DialysateComposition.[Na+] ) &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; K+Flux &lt;/name&gt;<br>
+    &lt;val&gt; 0.001 * Alpha * ( KPool.[K+(mEq/L)] - DialysateComposition.[K+] ) &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; Cl-Flux &lt;/name&gt;<br>
+    &lt;val&gt; 0.001 * Alpha * ( ClPool.[Cl-(mEq/L)] - DialysateComposition.[Cl-] ) &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; UreaFlux &lt;/name&gt;<br>
+    &lt;val&gt; 0.001 * Alpha * ( UreaPool.[Urea(mG/dL)] - DialysateComposition.[Urea] ) &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+&lt;/true&gt;<br>
+&lt;false&gt;<br>
+  &lt;def&gt;&lt;name&gt; BloodFlow &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; DialysateFlow &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; UltrafiltrationRate &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Alpha &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Na+Flux &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; K+Flux &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Cl-Flux &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; UreaFlux &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/false&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; DialysateChange &lt;/name&gt;&lt;val&gt; DialysateFlow &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; UltrafiltrationChange &lt;/name&gt;&lt;val&gt; UltrafiltrationRate &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
+<br>
+&lt;if&gt;<br>
+  &lt;test&gt; Scheduled? &lt;/test&gt;<br>
+  &lt;false&gt;&lt;exitblock/&gt;&lt;/false&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;ontimedout&gt;&lt;name&gt; IntervalTimer &lt;/name&gt;<br>
+  &lt;call&gt; Start &lt;/call&gt;<br>
+&lt;/ontimedout&gt;<br>
+<br>
+&lt;if&gt;<br>
+  &lt;test&gt; Active? &lt;/test&gt;<br>
+  &lt;false&gt;&lt;exitblock/&gt;&lt;/false&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;ontimedout&gt;&lt;name&gt; DurationTimer &lt;/name&gt;<br>
+  &lt;call&gt; StopDuration &lt;/call&gt;<br>
+&lt;/ontimedout&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Start &lt;/name&gt;<br>
+  &lt;call&gt; StartSchedule &lt;/call&gt;<br>
+  &lt;call&gt; StartDuration &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Stop &lt;/name&gt;<br>
+  &lt;call&gt; StopSchedule &lt;/call&gt;<br>
+  &lt;call&gt; StopDuration &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; StartSchedule &lt;/name&gt;<br>
+  &lt;def&gt;&lt;name&gt; Scheduled? &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;timer&gt;&lt;name&gt; IntervalTimer &lt;/name&gt;<br>
+     &lt;val&gt; 1440.0 * DialyzerControl.Interval(Days) &lt;/val&gt;<br>
+     &lt;state&gt; DOWN &lt;/state&gt;<br>
+  &lt;/timer&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; StopSchedule &lt;/name&gt;<br>
+  &lt;def&gt;&lt;name&gt; Scheduled? &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;timer&gt;&lt;name&gt; IntervalTimer &lt;/name&gt;&lt;state&gt; OFF &lt;/state&gt;&lt;/timer&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; StartDuration &lt;/name&gt;<br>
+  &lt;def&gt;&lt;name&gt; Active? &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;timer&gt;&lt;name&gt; DurationTimer &lt;/name&gt;<br>
+     &lt;val&gt; 60.0 * DialyzerControl.Duration(Hrs) &lt;/val&gt;<br>
+     &lt;state&gt; DOWN &lt;/state&gt;<br>
+  &lt;/timer&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; StopDuration &lt;/name&gt;<br>
+  &lt;def&gt;&lt;name&gt; Active? &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;timer&gt;&lt;name&gt; DurationTimer &lt;/name&gt;&lt;state&gt; OFF &lt;/state&gt;&lt;/timer&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

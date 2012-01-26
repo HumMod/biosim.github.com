@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_GILumen_GILumenOther_GILumenOther.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / GILumenDiarrhea<br>
+<br>
+Created : 05-Jun-06<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; GILumenDiarrhea &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; H2OTarget &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; H2OLoss &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Na+Loss &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; HeatLoss &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;functions&gt;<br>
+<br>
+&lt;curve&gt;&lt;name&gt; H2OMassEffect &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt;  0.0 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 50.0 &lt;/x&gt;&lt;y&gt; 1.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;/functions&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; H2OLoss &lt;/name&gt;<br>
+  &lt;val&gt; H2OTarget * H2OMassEffect [ GILumenVolume.Mass ] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Na+Loss &lt;/name&gt;<br>
+  &lt;val&gt; H2OLoss * GILumenSodium.[Na+] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; HeatLoss &lt;/name&gt;<br>
+  &lt;val&gt; SpecificHeat.Water(kCal/G) * H2OLoss * GILumenTemperature.DegK &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

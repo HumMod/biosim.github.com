@@ -1,158 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:08 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_BodyFluids_H2O_Distribution_Distribution.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / Organs<br>
-<br>
-Created : 14-May-05<br>
-Last Modified : 2010-04-16<br>
-Author : Tom Coleman<br>
-Copyright : 2005-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-&lt;groupbox&gt;<br>
-   &lt;row&gt; 2.0 &lt;/row&gt;<br>
-   &lt;col&gt; 32.0 &lt;/col&gt;<br>
-   &lt;high&gt; 18.2 &lt;/high&gt;<br>
-   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
-   &lt;title&gt; Organs &lt;/title&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Bone-Size.LiquidVol &lt;/name&gt;<br>
-  &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Bone &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 2.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Brain-Size.LiquidVol &lt;/name&gt;<br>
-  &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Brain &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 3.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Fat-Size.LiquidVol &lt;/name&gt;<br>
-  &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Fat &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 4.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; GITract-Size.LiquidVol &lt;/name&gt;<br>
-  &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-  &lt;label&gt; GI Tract &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 5.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Kidney-Size.LiquidVol &lt;/name&gt;<br>
-  &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Kidney &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 6.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; LeftHeart-Size.LiquidVol &lt;/name&gt;<br>
-  &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Left Heart &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 7.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Liver-Size.LiquidVol &lt;/name&gt;<br>
-  &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Liver &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 8.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; OtherTissue-Size.LiquidVol &lt;/name&gt;<br>
-  &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Other Tissue &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 9.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; RespiratoryMuscle-Size.LiquidVol &lt;/name&gt;<br>
-  &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Respiratory Muscle &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 10.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; RightHeart-Size.LiquidVol &lt;/name&gt;<br>
-  &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Right Heart &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 11.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; SkeletalMuscle-Size.LiquidVol &lt;/name&gt;<br>
-  &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Skeletal Muscle &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 12.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Skin-Size.LiquidVol &lt;/name&gt;<br>
-  &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Skin &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 13.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; CellH2O.Vol &lt;/name&gt;<br>
-  &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Organs Total &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 15.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; RBCH2O.Vol &lt;/name&gt;<br>
-  &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Red Cells &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 16.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; ICFV.Vol &lt;/name&gt;<br>
-  &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-  &lt;label&gt; ICFV &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 1.2 &lt;/row&gt;<br>
-  &lt;col&gt; 26.0 &lt;/col&gt;<br>
-  &lt;line&gt; Units for tissue H2O are mL. &lt;/line&gt;<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;/groupbox&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

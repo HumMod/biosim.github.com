@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Display_Lifestyle_DailyPlanner_Control_Control.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / Switch<br>
+<br>
+Created : 27-Feb-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;groupbox&gt;<br>
+   &lt;row&gt; 2.0 &lt;/row&gt;<br>
+   &lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;high&gt; 6.4 &lt;/high&gt;<br>
+   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
+   &lt;title&gt; Switch &lt;/title&gt;<br>
+<br>
+&lt;structurename&gt; DailyPlannerControl &lt;/structurename&gt;<br>
+<br>
+&lt;maplist&gt;<br>
+  &lt;name&gt; Switch &lt;/name&gt;<br>
+  &lt;map&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;img&gt; Off &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;img&gt; Start Now &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;img&gt; Start At Midnight &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Switch &lt;/name&gt;<br>
+  &lt;listname&gt; Switch &lt;/listname&gt;<br>
+  &lt;nolabel/&gt;<br>
+  &lt;layout&gt; VERT &lt;/layout&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;maplist&gt;<br>
+  &lt;name&gt; DailyPlannerControl.Status &lt;/name&gt;<br>
+  &lt;map&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;img&gt; Inactive &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;img&gt; Waiting &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;img&gt; Active &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 4.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Status &lt;/name&gt;<br>
+  &lt;format&gt;&lt;list&gt; DailyPlannerControl.Status &lt;/list&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Status &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;/groupbox&gt;<br>
+<br>
+End<br>
+
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

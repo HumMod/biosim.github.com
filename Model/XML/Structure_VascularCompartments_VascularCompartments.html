@@ -1,94 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:08 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Structure.html'><img src='../../Back.PNG'></a>
-<p><a href='Structure_VascularCompartments_LeftAtrium.html'>Structure_VascularCompartments_LeftAtrium</a>
-<br><a href='Structure_VascularCompartments_LeftVentricle.html'>Structure_VascularCompartments_LeftVentricle</a>
-<br><a href='Structure_VascularCompartments_PulmArty.html'>Structure_VascularCompartments_PulmArty</a>
-<br><a href='Structure_VascularCompartments_PulmCapys.html'>Structure_VascularCompartments_PulmCapys</a>
-<br><a href='Structure_VascularCompartments_PulmVeins.html'>Structure_VascularCompartments_PulmVeins</a>
-<br><a href='Structure_VascularCompartments_RightAtrium.html'>Structure_VascularCompartments_RightAtrium</a>
-<br><a href='Structure_VascularCompartments_RightVentricle.html'>Structure_VascularCompartments_RightVentricle</a>
-<br><a href='Structure_VascularCompartments_SplanchnicVeins.html'>Structure_VascularCompartments_SplanchnicVeins</a>
-<br><a href='Structure_VascularCompartments_SystemicArtys.html'>Structure_VascularCompartments_SystemicArtys</a>
-<br><a href='Structure_VascularCompartments_SystemicVeins.html'>Structure_VascularCompartments_SystemicVeins</a>
-<p>
-HumMod / Compartments<br>
-<br>
-Created : 16-May-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;?path Structure\VascularCompartments\ ?&gt;<br>
-<br>
-&lt;?include LeftAtrium.DES ?&gt;<br>
-&lt;?include LeftVentricle.DES ?&gt;<br>
-&lt;?include PulmArty.DES ?&gt;<br>
-&lt;?include PulmCapys.DES ?&gt;<br>
-&lt;?include PulmVeins.DES ?&gt;<br>
-&lt;?include RightAtrium.DES ?&gt;<br>
-&lt;?include RightVentricle.DES ?&gt;<br>
-&lt;?include SplanchnicVeins.DES ?&gt;<br>
-&lt;?include SystemicArtys.DES ?&gt;<br>
-&lt;?include SystemicVeins.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; VascularCompartments &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcPressure(1) &lt;/name&gt;<br>
-  &lt;call&gt; RightAtrium.CalcPressure &lt;/call&gt;<br>
-  &lt;call&gt; LeftAtrium.CalcPressure &lt;/call&gt;<br>
-  &lt;call&gt; SystemicArtys.CalcPressure &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcPressure(2) &lt;/name&gt;<br>
-  &lt;call&gt; SystemicVeins.CalcPressure &lt;/call&gt;<br>
-  &lt;call&gt; SplanchnicVeins.CalcPressure &lt;/call&gt;<br>
-  &lt;call&gt; PulmArty.CalcPressure &lt;/call&gt;<br>
-  &lt;call&gt; PulmCapys.CalcPressure &lt;/call&gt;<br>
-  &lt;call&gt; PulmVeins.CalcPressure &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-  &lt;call&gt; RightVentricle.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; LeftVentricle.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; SystemicVeins.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; SplanchnicVeins.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; RightAtrium.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; PulmArty.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; PulmCapys.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; PulmVeins.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; LeftAtrium.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; SystemicArtys.Dervs &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

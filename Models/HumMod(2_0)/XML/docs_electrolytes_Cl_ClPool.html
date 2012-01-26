@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='docs_electrolytes_Cl.html'><img src='../../Back.PNG'></a>
+<p>
+QHP 2008 /Cl.DOCS<br>
+<br>
+Created : 27-Mar-09<br>
+Last Modified : 27-Mar-09<br>
+Author : Tom Coleman<br>
+Copyright : 2009<br>
+<br>
+&lt;structurename&gt; ClPool &lt;/structurename&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ClPool.[Cl-(mEq/L)] &lt;/name&gt;<br>
+&lt;topic&gt; [Cl-] - ClPOverview &lt;/topic&gt;<br>
+&lt;topic&gt; [Cl-] - ClPPhysical Units &lt;/topic&gt;<br>
+&lt;topic&gt; [Cl-] - ClPConcentration Units &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ClPool.[Cl-] &lt;/name&gt;<br>
+&lt;topic&gt; [Cl-] - ClPOverview &lt;/topic&gt;<br>
+&lt;topic&gt; [Cl-] - ClPPhysical Units &lt;/topic&gt;<br>
+&lt;topic&gt; [Cl-] - ClPConcentration Units &lt;/topic&gt;<br>
+&lt;/vardoc&gt; <br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ClPool.Change &lt;/name&gt;<br>
+&lt;topic&gt; Change - ClP1Definition &lt;/topic&gt;<br>
+&lt;seealso&gt; ClPool.Gain &lt;/seealso&gt;<br>
+&lt;seealso&gt; ClPool.Loss &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ClPool.Gain &lt;/name&gt;<br>
+&lt;topic&gt; Gain - ClP2Definition &lt;/topic&gt;<br>
+&lt;seealso&gt; GILumenChloride.Absorption &lt;/seealso&gt;<br>
+&lt;seealso&gt; IVDrip.ClRate &lt;/seealso&gt;<br>
+&lt;seealso&gt; Transfusion.ClRate &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ClPool.InitialMass &lt;/name&gt;<br>
+&lt;topic&gt; InitialMass - ClP3Definition &lt;/topic&gt;<br>
+&lt;seealso&gt; ClPool.Target[Cl-] &lt;/seealso&gt;<br>
+&lt;seealso&gt; ECFV.Vol &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ClPool.Loss &lt;/name&gt;<br>
+&lt;topic&gt; Loss - ClP4Definition&lt;/topic&gt;<br>
+&lt;seealso&gt; CD_Cl.Outflow &lt;/seealso&gt;<br>
+&lt;seealso&gt; SweatDuct.ClOutflow &lt;/seealso&gt;<br>
+&lt;seealso&gt; Hemorrhage.ClRate &lt;/seealso&gt;<br>
+&lt;seealso&gt; DialyzerActivity.Cl-Flux &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ClPool.Mass &lt;/name&gt;<br>
+&lt;topic&gt; Mass - ClP5Definition &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; ClPool.Target[Cl-] &lt;/name&gt;<br>
+&lt;topic&gt; Target[Cl-] - ClP6Definition &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; [Cl-] - ClPOverview &lt;/name&gt;<br>
+&lt;label&gt; Overview &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+The extracellular fluid contains large amounts of chloride ions<br>
+and plasma chloride is normally regulated within very narrow limits. <br>
+<br>
+Textbook of Medical Physiology AC Guyton, JE Hall. Eleventh Edition<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; [Cl-] - ClPPhysical Units &lt;/name&gt;<br>
+&lt;label&gt; Physical Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Plasma mEq/L<br>
+Mass mEq<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; [Cl-] - ClPConcentration Units &lt;/name&gt;<br>
+&lt;label&gt; Concentration Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Normal value for plasma chloride is 105mEq/L <br>
+Normal range 103 - 112mEq/L<br>
+Mass 1590mEq<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Change - ClP1Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Changes in the chloride (Cl-) pool or mass are a function of gains <br>
+and losses in chloride over time. Gains can occur from chloride in<br>
+the diet via reabsorption from the GI lumen; from intravenous <br>
+administration or from transfusion. Losses in chloride can occur in <br>
+urine; from sweating; from hemorrhage and during dialysis<br>
+ <br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Gain - ClP2Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Gain is defined as positive changes in mass of chloride <br>
+and is a function of dietary intake through GI lumen <br>
+absorption. Chloride can also be gained by intravenous drip <br>
+administration and/or intravenous blood transfusion.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt; <br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; InitialMass - ClP3Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+The initial mass is the starting amount of chloride. Since the <br>
+plasma concentration is 106mEq/L (the Target[Cl-]) and the<br>
+volume of distribution is the ECFV (15,000mL), then the <br>
+initial mass or circulating pool is 1590.<br>
+<br>
+Initial Mass = Target[Cl-]*ECFV.Vol<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Loss - ClP4Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Loss is defined as negative changes in the mass of chloride. It <br>
+is a function of loss of chloride in the urine;loss in sweat; loss<br>
+during hemorrhage and loss during dialysis.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Mass - ClP5Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Mass is the calculated amount of chloride at any given time. <br>
+It is the change in chloride integrated over time.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Target[Cl-] - ClP6Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+The Target[Cl-] is the initial plasma concentration of chloride.<br>
+Target[Cl-] = Initial Mass/ECFV.Vol<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+ <br>
+End<br>
+
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

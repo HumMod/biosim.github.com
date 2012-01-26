@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Context_Traits_Values_Values.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / Values-OtherMass<br>
+<br>
+Created : 17-Nov-08<br>
+Last Modified : 03-Feb-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Values-OtherMass &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; MALE_SMALL &lt;/name&gt;&lt;val&gt; 19.0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; MALE_NORMAL &lt;/name&gt;&lt;val&gt; 22.0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; MALE_LARGE &lt;/name&gt;&lt;val&gt; 30.0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; MALE_VERYLARGE &lt;/name&gt;&lt;val&gt; 44.0 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; FEMALE_SMALL &lt;/name&gt;&lt;val&gt; 15.0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; FEMALE_NORMAL &lt;/name&gt;&lt;val&gt; 20.0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; FEMALE_LARGE &lt;/name&gt;&lt;val&gt; 28.0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; FEMALE_VERYLARGE &lt;/name&gt;&lt;val&gt; 36.0 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Mass &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;if&gt;<br>
+&lt;test&gt; Descriptors-Gender.IsMale &lt;/test&gt;<br>
+&lt;true&gt;<br>
+  &lt;call&gt; Male &lt;/call&gt;<br>
+&lt;/true&gt;<br>
+&lt;false&gt;<br>
+   &lt;call&gt; Female &lt;/call&gt;<br>
+&lt;/false&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Mass &lt;/name&gt;&lt;val&gt; 1000.0 * Mass(kG) &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Male &lt;/name&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; Descriptors-BodySize.IsSmall &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;val&gt; MALE_SMALL &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; Descriptors-BodySize.IsNormal &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;val&gt; MALE_NORMAL &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; Descriptors-BodySize.IsLarge &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;val&gt; MALE_LARGE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; Descriptors-BodySize.IsVeryLarge &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;val&gt; MALE_VERYLARGE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; TRUE &lt;/test&gt;<br>
+  &lt;message&gt; Body size trait is not valid. &lt;/message&gt;<br>
+  &lt;stop/&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Female &lt;/name&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; Descriptors-BodySize.IsSmall &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;val&gt; FEMALE_SMALL &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; Descriptors-BodySize.IsNormal &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;val&gt; FEMALE_NORMAL &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; Descriptors-BodySize.IsLarge &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;val&gt; FEMALE_LARGE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; Descriptors-BodySize.IsVeryLarge &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;val&gt; FEMALE_VERYLARGE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; TRUE &lt;/test&gt;<br>
+  &lt;message&gt; Body size trait is not valid. &lt;/message&gt;<br>
+  &lt;stop/&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

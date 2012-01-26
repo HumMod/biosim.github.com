@@ -1,76 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:07 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Electrolytes_Electrolytes.html'><img src='../../Back.PNG'></a>
-<p><a href='Structure_Electrolytes_K_KCell.html'>Structure_Electrolytes_K_KCell</a>
-<br><a href='Structure_Electrolytes_K_KPool.html'>Structure_Electrolytes_K_KPool</a>
-<br><a href='Structure_Electrolytes_K_KMembrane.html'>Structure_Electrolytes_K_KMembrane</a>
-<br><a href='Structure_Electrolytes_K_KFluxToCell.html'>Structure_Electrolytes_K_KFluxToCell</a>
-<br><a href='Structure_Electrolytes_K_KFluxToPool.html'>Structure_Electrolytes_K_KFluxToPool</a>
-<br><a href='Structure_Electrolytes_K_KAldoEffect.html'>Structure_Electrolytes_K_KAldoEffect</a>
-<p>
-HumMod / K<br>
-<br>
-Created : 21-Oct-04<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;?path Structure\Electrolytes\K\ ?&gt;<br>
-<br>
-&lt;?include KCell.DES ?&gt;<br>
-&lt;?include KPool.DES ?&gt;<br>
-&lt;?include KMembrane.DES ?&gt;<br>
-&lt;?include KFluxToCell.DES ?&gt;<br>
-&lt;?include KFluxToPool.DES ?&gt;<br>
-&lt;?include KAldoEffect.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; K &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-  &lt;call&gt; KAldoEffect.Parms &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Conc &lt;/name&gt;<br>
-  &lt;call&gt; KPool.Conc &lt;/call&gt;<br>
-  &lt;call&gt; KCell.Conc &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-  &lt;call&gt; KAldoEffect.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; KFluxToCell.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; KFluxToPool.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; KMembrane.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; KPool.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; KCell.Dervs &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_Brain_Brain.html'><img src='../../Back.PNG'></a>
+<p><a href='Structure_Brain_BrainInsult_BrainInsult-Ph.html'>Structure_Brain_BrainInsult_BrainInsult-Ph</a>
+<br><a href='Structure_Brain_BrainInsult_BrainInsult-Fuel.html'>Structure_Brain_BrainInsult_BrainInsult-Fuel</a>
+<br><a href='Structure_Brain_BrainInsult_BrainInsult-Temperature.html'>Structure_Brain_BrainInsult_BrainInsult-Temperature</a>
+<br><a href='Structure_Brain_BrainInsult_BrainInsult-Low[Osm].html'>Structure_Brain_BrainInsult_BrainInsult-Low[Osm]</a>
+<br><a href='Structure_Brain_BrainInsult_BrainInsult-High[Osm].html'>Structure_Brain_BrainInsult_BrainInsult-High[Osm]</a>
+<br><a href='Structure_Brain_BrainInsult_BrainInsult-PO2.html'>Structure_Brain_BrainInsult_BrainInsult-PO2</a>
+<br><a href='Structure_Brain_BrainInsult_BrainInsult-Structure.html'>Structure_Brain_BrainInsult_BrainInsult-Structure</a>
+<p>
+HumMod / BrainInsult<br>
+<br>
+Created : 08-Jun-05<br>
+Last Modified : 2012-01-02<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2012<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;?path Structure\Brain\BrainInsult\ ?&gt;<br>
+<br>
+&lt;?include BrainInsult-Ph.DES ?&gt;<br>
+&lt;?include BrainInsult-Fuel.DES ?&gt;<br>
+&lt;?include BrainInsult-Temperature.DES ?&gt;<br>
+&lt;?include BrainInsult-Low[Osm].DES ?&gt;<br>
+&lt;?include BrainInsult-High[Osm].DES ?&gt;<br>
+&lt;?include BrainInsult-PO2.DES ?&gt;<br>
+&lt;?include BrainInsult-Structure.DES ?&gt;<br>
+<br>
+&lt;structure&gt;&lt;name&gt; BrainInsult &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Effect &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Test_1 &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Test_2 &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Test_3 &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Test_4 &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Test_5 &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Test_6 &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Test_7 &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;call&gt; BrainInsult-Ph.Calc &lt;/call&gt;<br>
+&lt;call&gt; BrainInsult-Fuel.Calc &lt;/call&gt;<br>
+&lt;call&gt; BrainInsult-Temperature.Calc &lt;/call&gt;<br>
+&lt;call&gt; BrainInsult-Low[Osm].Calc &lt;/call&gt;<br>
+&lt;call&gt; BrainInsult-High[Osm].Calc &lt;/call&gt;<br>
+&lt;call&gt; BrainInsult-PO2.Calc &lt;/call&gt;<br>
+&lt;call&gt; BrainInsult-Structure.Calc &lt;/call&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Test_1 &lt;/name&gt;<br>
+  &lt;val&gt; BrainInsult-Ph.Effect MIN BrainInsult-Fuel.Effect &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Test_2 &lt;/name&gt;<br>
+  &lt;val&gt; Test_1 MIN BrainInsult-Temperature.Effect &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Test_3 &lt;/name&gt;<br>
+  &lt;val&gt; Test_2 MIN Anesthesia.BrainFunction &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Test_4 &lt;/name&gt;<br>
+  &lt;val&gt; Test_3 MIN BrainInsult-Low[Osm].Effect &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Test_5 &lt;/name&gt;<br>
+  &lt;val&gt; Test_4 MIN BrainInsult-High[Osm].Effect &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Test_6 &lt;/name&gt;<br>
+  &lt;val&gt; Test_5 MIN BrainInsult-PO2.Effect &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Effect &lt;/name&gt;<br>
+  &lt;val&gt; Test_6 MIN BrainInsult-Structure.Effect &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

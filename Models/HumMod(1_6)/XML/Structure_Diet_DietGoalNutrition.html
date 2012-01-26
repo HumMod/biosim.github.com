@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_Diet_Diet.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / DietGoalNutrition<br>
+<br>
+Created : 24-Jun-06<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; DietGoalNutrition &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; CARBO_KCAL/G &lt;/name&gt;&lt;val&gt; 4.10 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; FAT_KCAL/G &lt;/name&gt;&lt;val&gt; 9.30 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; PROTEIN_KCAL/G &lt;/name&gt;&lt;val&gt; 4.35 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;parm&gt;&lt;name&gt; Carbo_kCal/Day &lt;/name&gt;&lt;val&gt; 900.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; Fat_kCal/Day &lt;/name&gt;&lt;val&gt; 800.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; Protein_kCal/Day &lt;/name&gt;&lt;val&gt; 500.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;var&gt;&lt;name&gt; Total_kCal/Day &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Carbo_G/Day &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Fat_G/Day &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Protein_G/Day &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Total_kCal/Day &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      Carbo_kCal/Day<br>
+    + Fat_kCal/Day<br>
+    + Protein_kCal/Day<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Carbo_G/Day &lt;/name&gt;<br>
+  &lt;val&gt; Carbo_kCal/Day / CARBO_KCAL/G &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Fat_G/Day &lt;/name&gt;<br>
+  &lt;val&gt; Fat_kCal/Day / FAT_KCAL/G &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Protein_G/Day &lt;/name&gt;<br>
+  &lt;val&gt; Protein_kCal/Day / PROTEIN_KCAL/G &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

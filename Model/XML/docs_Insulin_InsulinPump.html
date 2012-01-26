@@ -1,175 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:09 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Docs_Insulin.html'><img src='../../Back.PNG'></a>
-<p>
-QHP 2008 / Insulin.DOCS<br>
-<br>
-<br>
-Created : 27-Mar-09<br>
-Last Modified : 27-Mar-09<br>
-Author : Tom Coleman<br>
-Copyright : 2009<br>
-<br>
-&lt;structurename&gt; InsulinPump &lt;/structurename&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; InsulinPump.Rate &lt;/name&gt;<br>
-&lt;topic&gt; InsulinPump - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; Insulin - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; Insulin - Concentration Units &lt;/topic&gt;<br>
-&lt;seealso&gt; InsulinInjection.Rate &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; InsulinPump.Setting &lt;/name&gt;<br>
-&lt;topic&gt; Setting - DefinitionIP1 &lt;/topic&gt;<br>
-&lt;topic&gt; Insulin - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; Insulin - Concentration Units &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; InsulinPump.Switch &lt;/name&gt;<br>
-&lt;topic&gt; Switch - DefinitionIP1 &lt;/topic&gt;<br>
-&lt;topic&gt; Insulin - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; Insulin - Concentration Units &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; InsulinPump -Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Insulin can be administered in two ways for the treatment<br>
-of diabetes. The first is by multiple daily injections; <br>
-the second by continuous subcutaneous insulin infusion.<br>
-The latter method of administration is the InsulinPump.<br>
-<br>
-Multiple daily injections are found under the structure<br>
-InsulinInjection. <br>
-<br>
-A small programmable pump with a reservoir of <br>
-short-acting insulin is connected to a cannula under <br>
-the skin by a narrow tube. The pump is set to deliver <br>
-insulin at slow rates appropriate to the time of day, <br>
-and can be adjusted by the user to accommodate reduced <br>
-insulin needs during and after exercise, and to deliver <br>
-a higher infusion rate to cover food intake. The rate <br>
-can be changed at any time by the user. For example, <br>
-mealtime doses are delivered by activation of a booster <br>
-dose by the user.<br>
-<br>
-Continuous subcutaneous insulin infusion provides a <br>
-form of intensified insulin therapy, and is part of <br>
-a system of self-care that also includes home testing <br>
-of blood glucose, self-adjustment of insulin dose, <br>
-and care with diet. It is an alternative to multiple <br>
-daily injection (MDI) of a combination of long- and <br>
-short-acting insulins, usually involving four or more <br>
-injections per day.<br>
-<br>
-The Insulin Pump enables the model user to change <br>
-[Insulin] levels by infusing insulin subcutaneously <br>
-at different rates. Data is taken from a variety of <br>
-human studies relating infusion rates to plasma <br>
-concentrations of insulin.<br>
-<br>
-Schwartz NS, Clutter WE, Shah SD, Cryer PE. Glycemic <br>
-thresholds for activation of glucose counterregulatory<br>
-systems are higher than the thresholds for symptoms.<br>
-J Clin Invest. 79: 777 - 781, 1987.<br>
-Insulin infused at 1.0 mU/kG/Min<br>
-<br>
-Ginsberg S, Block MB, Mako ME, Ruben stein AH. Serum <br>
-insulin levels following administration of exogenous<br>
-insulin. J Clin Endo Met 36: 1175 - 1179, 1973.<br>
-<br>
-Forlani G, Santacroce G, Ciaverella A, Capelli M, <br>
-Mattioli L, Vannini P. Effects of mixing short- and<br>
-intermediate-acting insulins on absorption course <br>
-and biologic effect of short-acting preparation.<br>
-Diabetes Care 9: 587 - 590, 1986. <br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Insulin - Physical Units &lt;/name&gt;<br>
-&lt;label&gt; Physical Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Units for insulin pool are mU.<br>
-Units for [plasma] are uU/mL.<br>
-<br>
-uU * 0.04167 = nG<br>
-uU * 0.007241 = pMol<br>
-<br>
-<br>
-An international unit (U) is 1/24 mG.  <br>
-Molecular weight is 5754.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Insulin - Concentration Units &lt;/name&gt;<br>
-&lt;label&gt; Concentration Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Switch - DefinitionIP1 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-When the insulin pump switch is turned on, the model <br>
-user can set infusion rates using the sliding bar <br>
-feature in the insulin pump display box. <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Setting - DefinitionIP2 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-When the insulin pump switch is turned on, the model <br>
-user can set infusion rates using the sliding bar <br>
-feature in the insulin pump display box. Rates of infusion<br>
-may be increased from 0 mU/Min, in increments of 1, up to <br>
-20 mU/Min; from 20 mU/Min, in increments of 10, up to <br>
-100 mU/Min; and from 100 mU/Min, in increments of 100,<br>
-up to 1000 mU/Min.<br>
-<br>
-Normal insulin secretion rate is 20 mU/Min.<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-   <br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

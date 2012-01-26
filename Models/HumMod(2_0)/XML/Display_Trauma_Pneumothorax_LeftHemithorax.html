@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Display_Trauma_Pneumothorax_Pneumothorax.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / LeftHemithorax<br>
+<br>
+Created : 2010-05-18<br>
+Last Modified : 2010-05-18<br>
+Author : Tom Coleman<br>
+Copyright : 2010-2010<br>
+By : University of Mississippi Medical Center<br>
+<br>
+&lt;groupbox&gt;<br>
+   &lt;row&gt; 2.0 &lt;/row&gt;<br>
+   &lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;high&gt; 7.2 &lt;/high&gt;<br>
+   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
+   &lt;title&gt; Left Hemithorax &lt;/title&gt;<br>
+<br>
+&lt;structurename&gt; LeftHemithorax &lt;/structurename&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Pressure &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Pressure &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; NormalPressure &lt;/name&gt;<br>
+  &lt;firstval&gt; -10 &lt;/firstval&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 30 &lt;/reps&gt;&lt;stepsize&gt;  1.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 2.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;wide&gt; 8 &lt;/wide&gt;<br>
+  &lt;name&gt; NormalPressure &lt;/name&gt;<br>
+  &lt;listname&gt; NormalPressure &lt;/listname&gt;<br>
+  &lt;label&gt; Normal &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;maplist&gt;<br>
+  &lt;name&gt; ChestOpen &lt;/name&gt;<br>
+  &lt;map&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;img&gt; Closed &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;img&gt; Open &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 4.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; ChestOpen &lt;/name&gt;<br>
+  &lt;listname&gt; ChestOpen &lt;/listname&gt;<br>
+  &lt;label&gt; Chest &lt;/label&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 5.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; LungInflation &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Lung Inflation &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;/groupbox&gt;<br>
+<br>
+End<br>
+
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

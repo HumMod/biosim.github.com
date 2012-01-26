@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Context_Traits_Values_Values.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / Values-Muscularity<br>
+<br>
+Created : 17-Nov-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Values-Muscularity &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; MALE_BELOWNORMAL &lt;/name&gt;&lt;val&gt; 18.0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; MALE_NORMAL &lt;/name&gt;&lt;val&gt; 27.4 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; MALE_ABOVENORMAL &lt;/name&gt;&lt;val&gt; 40.0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; MALE_TRAINEDATHLETE &lt;/name&gt;&lt;val&gt; 58.0 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; FEMALE_BELOWNORMAL &lt;/name&gt;&lt;val&gt; 12.0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; FEMALE_NORMAL &lt;/name&gt;&lt;val&gt; 17.9 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; FEMALE_ABOVENORMAL &lt;/name&gt;&lt;val&gt; 23.0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; FEMALE_TRAINEDATHLETE &lt;/name&gt;&lt;val&gt; 34.0 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;if&gt;<br>
+&lt;test&gt; Descriptors-Gender.IsMale &lt;/test&gt;<br>
+&lt;true&gt;<br>
+  &lt;call&gt; Male &lt;/call&gt;<br>
+&lt;/true&gt;<br>
+&lt;false&gt;<br>
+   &lt;call&gt; Female &lt;/call&gt;<br>
+&lt;/false&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Male &lt;/name&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; Descriptors-Muscularity.IsBelowNormal &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;val&gt; MALE_BELOWNORMAL &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; Descriptors-Muscularity.IsNormal &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;val&gt; MALE_NORMAL &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; Descriptors-Muscularity.IsAboveNormal &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;val&gt; MALE_ABOVENORMAL &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; Descriptors-Muscularity.IsTrainedAthlete &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;val&gt; MALE_TRAINEDATHLETE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; TRUE &lt;/test&gt;<br>
+  &lt;message&gt; Muscularity trait is not valid. &lt;/message&gt;<br>
+  &lt;stop/&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Female &lt;/name&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; Descriptors-Muscularity.IsBelowNormal &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;val&gt; FEMALE_BELOWNORMAL &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; Descriptors-Muscularity.IsNormal &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;val&gt; FEMALE_NORMAL &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; Descriptors-Muscularity.IsAboveNormal &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;val&gt; FEMALE_ABOVENORMAL &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; Descriptors-Muscularity.IsTrainedAthlete &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Mass(kG) &lt;/name&gt;&lt;val&gt; FEMALE_TRAINEDATHLETE &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; TRUE &lt;/test&gt;<br>
+  &lt;message&gt; Muscularity trait is not valid. &lt;/message&gt;<br>
+  &lt;stop/&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Display_Lifestyle_Exercise_Control_Control.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / ExerciseBike<br>
+<br>
+Created : 24-Dec-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;groupbox&gt;<br>
+   &lt;row&gt; 2.0 &lt;/row&gt;<br>
+   &lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;high&gt; 12.6 &lt;/high&gt;<br>
+   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
+   &lt;title&gt; Exercise Bike &lt;/title&gt;<br>
+<br>
+&lt;structurename&gt; Exercise-Bike &lt;/structurename&gt;<br>
+<br>
+&lt;maplist&gt;<br>
+  &lt;name&gt; Exercise-Bike.Level &lt;/name&gt;<br>
+  &lt;map&gt;&lt;val&gt;   0 &lt;/val&gt;&lt;img&gt; Resting &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt;  50 &lt;/val&gt;&lt;img&gt; Warmup &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 100 &lt;/val&gt;&lt;img&gt; 100 &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 150 &lt;/val&gt;&lt;img&gt; Moderate &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 200 &lt;/val&gt;&lt;img&gt; 200 &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 250 &lt;/val&gt;&lt;img&gt; Heavy &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 300 &lt;/val&gt;&lt;img&gt; 300 &lt;/img&gt;&lt;/map&gt;<br>
+  &lt;map&gt;&lt;val&gt; 350 &lt;/val&gt;&lt;img&gt; Maximum &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;wide&gt; 8.0 &lt;/wide&gt;<br>
+  &lt;name&gt; Power(W) &lt;/name&gt;<br>
+  &lt;listname&gt; Exercise-Bike.Level &lt;/listname&gt;<br>
+  &lt;label&gt; Level &lt;/label&gt;<br>
+  &lt;fieldwidth&gt; 10 &lt;/fieldwidth&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 2.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; Power(W) &lt;/name&gt;<br>
+   &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
+   &lt;label&gt; Power (Watts) &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 3.8 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
+   &lt;name&gt; Power(kPM/Min) &lt;/name&gt;<br>
+   &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
+   &lt;label&gt; kP M/Min &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; Exercise-Bike.RPM &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 100 &lt;/reps&gt;&lt;stepsize&gt; 1 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 5.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; RPM &lt;/name&gt;<br>
+  &lt;listname&gt; Exercise-Bike.RPM &lt;/listname&gt;<br>
+  &lt;label&gt; RPM &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 6.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; ElapsedTime &lt;/name&gt;<br>
+   &lt;format&gt;<br>
+     &lt;timer/&gt;<br>
+     &lt;fieldwidth&gt; 10 &lt;/fieldwidth&gt;<br>
+   &lt;/format&gt;<br>
+   &lt;label&gt; Elapsed Time &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;actionbutton&gt;<br>
+   &lt;row&gt; 8.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;blockname&gt; ResetElapsedTime &lt;/blockname&gt;<br>
+   &lt;label&gt; Reset Elapsed Time &lt;/label&gt;<br>
+&lt;/actionbutton&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; Exercise-Bike.Efficiency(%) &lt;/name&gt;<br>
+  &lt;firstval&gt; 1 &lt;/firstval&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 99 &lt;/reps&gt;&lt;stepsize&gt; 1 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 9.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Efficiency(%) &lt;/name&gt;<br>
+  &lt;listname&gt; Exercise-Bike.Efficiency(%) &lt;/listname&gt;<br>
+  &lt;label&gt; Efficiency (%) &lt;/label&gt;<br>
+  &lt;fieldwidth&gt; 5 &lt;/fieldwidth&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 11.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; TotalWatts &lt;/name&gt;<br>
+   &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
+   &lt;label&gt; Total Watts &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;infobutton&gt;<br>
+  &lt;row&gt; 1.2 &lt;/row&gt;<br>
+  &lt;col&gt; 26.0 &lt;/col&gt;<br>
+<br>
+  &lt;line&gt; Select bike in exercise type &lt;/line&gt;<br>
+  &lt;line&gt; to start the bike. &lt;/line&gt;<br>
+  &lt;line&gt; &lt;/line&gt;<br>
+  &lt;line&gt; kP M/Min is the very British &lt;/line&gt;<br>
+  &lt;line&gt; kiloPound-Meters/Min. &lt;/line&gt;<br>
+&lt;/infobutton&gt;<br>
+<br>
+&lt;/groupbox&gt;<br>
+<br>
+End<br>
+
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

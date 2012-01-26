@@ -1,115 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:08 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Triglyceride_Triglyceride.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / TriglyceridePool<br>
-<br>
-Created : 07-Apr-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; TriglyceridePool &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; [Triglyceride] &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; [Triglyceride(mG/dL)] &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; [Triglyceride(mMol/L)] &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; PER_ML_TO_PER_DL &lt;/name&gt;&lt;val&gt; 100.0 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; MG_TO_MMOL &lt;/name&gt;&lt;val&gt; 1.24 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; TRIG_TO_FFA &lt;/name&gt;&lt;val&gt; 0.89 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; FFA_TO_TRIG &lt;/name&gt;&lt;val&gt; 1.12 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; GutAbsorption &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; LiverRelease &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Target[Triglyceride] &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;diffeq&gt;<br>
-  &lt;name&gt; Mass &lt;/name&gt;<br>
-  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
-  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 125.0 &lt;/errorlim&gt;<br>
-&lt;/diffeq&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Init &lt;/name&gt;<br>
-  &lt;def&gt;&lt;name&gt; InitialMass &lt;/name&gt;&lt;val&gt; Target[Triglyceride] * ECFV.Vol &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;def&gt;&lt;name&gt; Mass &lt;/name&gt;&lt;val&gt; InitialMass &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Conc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; [Triglyceride] &lt;/name&gt;&lt;val&gt; Mass / ECFV.Vol &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; [Triglyceride(mG/dL)] &lt;/name&gt;&lt;val&gt; PER_ML_TO_PER_DL * [Triglyceride] &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; [Triglyceride(mMol/L)] &lt;/name&gt;&lt;val&gt; MG_TO_MMOL * [Triglyceride] &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; GutAbsorption &lt;/name&gt;<br>
-  &lt;val&gt; FFA_TO_TRIG * GILumenFat.Absorption &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; LiverRelease &lt;/name&gt;<br>
-  &lt;val&gt; FFA_TO_TRIG * LM_FattyAcids.Release &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Gain &lt;/name&gt;<br>
-  &lt;val&gt; GutAbsorption + LiverRelease &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Loss &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-       TriglycerideHydrolysis.Rate<br>
-     + TriglycerideDecomposition.Rate<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; Gain - Loss &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

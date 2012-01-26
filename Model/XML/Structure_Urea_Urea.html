@@ -1,68 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:08 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Structure.html'><img src='../../Back.PNG'></a>
-<p><a href='Structure_Urea_UreaPool.html'>Structure_Urea_UreaPool</a>
-<br><a href='Structure_Urea_UreaCell.html'>Structure_Urea_UreaCell</a>
-<p>
-HumMod / Urea<br>
-<br>
-Created : 28-May-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;?path Structure\Urea\ ?&gt;<br>
-<br>
-&lt;?include UreaPool.DES ?&gt;<br>
-&lt;?include UreaCell.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Urea &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcOsmoles &lt;/name&gt;<br>
-  &lt;call&gt; UreaCell.CalcOsmoles &lt;/call&gt;<br>
-  &lt;call&gt; UreaPool.CalcOsmoles &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcConc &lt;/name&gt;<br>
-  &lt;call&gt; UreaCell.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; UreaPool.CalcConc &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-  &lt;call&gt; UreaCell.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; UreaPool.Dervs &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End<br>
-<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

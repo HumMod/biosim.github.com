@@ -1,161 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:09 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Docs_Leptin.html'><img src='../../Back.PNG'></a>
-<p>
-QHP 2008 / Leptin.DOCS<br>
-<br>
-Created : 27-Mar-09<br>
-Last Modified : 27-Mar-09<br>
-Author : Tom Coleman<br>
-Copyright : 2009<br>
-<br>
-&lt;structurename&gt; LeptinPump &lt;/structurename&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; LeptinPump.Rate &lt;/name&gt;<br>
-&lt;topic&gt; LeptinPump - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; Leptin - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; Leptin - Concentration UnitsLP &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; LeptinPump.Setting &lt;/name&gt;<br>
-&lt;topic&gt; Setting - DefinitionLP1 &lt;/topic&gt;<br>
-&lt;topic&gt; Leptin - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; Leptin - Concentration Units &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; LeptinPump.Switch &lt;/name&gt;<br>
-&lt;topic&gt; Switch - DefinitionLP2 &lt;/topic&gt;<br>
-&lt;topic&gt; Leptin - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; Leptin - Concentration Units &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Leptin - Physical Units&lt;/name&gt;<br>
-&lt;label&gt; Physical Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-[Plasma]    pG/mL <br>
-Fluxes      uG/Min<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Leptin - Concentration UnitsLP  &lt;/name&gt;<br>
-&lt;label&gt; Concentration Units  &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Normal Leptin secretion rate is 1.2uG/Min<br>
-<br>
-Human Data<br>
-Mean (+/- SD) plasma concentrations of leptin were <br>
-7.5 +/- 9.3 nG/mL. <br>
-Considine RV, Sinha MK, Heiman ML, Kriauciunas A,<br>
-Stephens TW, Nyce MR, Ohannesian JP, Marco CC, McKee LJ,<br>
-Bauer TL, Caro JF. Serum immunoreactive-leptin<br>
-concentrations in normal-weight and obese humans.<br>
-N Engl J Med 334; 292 - 295, 1996.<br>
-<br>
-A typical concentration is 8.0 +/- 1.2 nG/mL. <br>
-Stenvinkel P, Heimburger O, Lonnqvist F. Serum leptin<br>
-concentrations correlate to plasma insulin concentrations<br>
-independent of body fat content in chronic renal failure.<br>
-Nephr Dial Transplant 12: 1321 - 1325, 1997.<br>
-<br>
-Wong SL, DePaoli AM, Lee JH, Mantzoros CS. Leptin<br>
-hormonal kinetics in the fed state: effects of<br>
-adipocity, age, and gender on endogenous leptin<br>
-production and clearance.<br>
-J Clin Endocrinol Metab 89: 2672 - 2677, 2004.<br>
-<br>
-Rat Data<br>
-Cumin F, Baum H-P, Levens N. Leptin is cleared from<br>
-the circulation primarily by the kidney. <br>
-Int J of Obesity 20: 1120 -1126, 1996.<br>
-<br>
-Zeng J, Patterson BW, Klein S, Martin DR, Dagogo-Jack S, <br>
-Kohrt WM, Miller SB, Landt M. Whole body leptin kinetics<br>
-and renal metabolism in vivo. <br>
-Am J Physiol 273: E1102 - E1106, 1997.<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; LeptinPump - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-The LeptinPump enables the model user to change <br>
-plasma concentration of leptin by infusing the peptide <br>
-at different rates. Data is taken from a variety of human <br>
-and animal studies relating infusion rates to plasma <br>
-concentrations of leptin.<br>
-<br>
-Mice Data<br>
-Halaas JL, Boozer C, Blair-West J, Fidahusein N, Denton DA, <br>
-Friedman JM. Physiological response to lomg-term peripheral<br>
-and central leptin infusion in lean and obese mice.<br>
-Proc Natl Acad Sci 94: 8878 - 8883, 1997.<br>
-<br>
-Rat Data<br>
-Shek EW, Brands MW, Hall JE. Chronic leptin infusion increases <br>
-arterial pressure. Hypertension 31: 409 - 414, 1998.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Switch - DefinitionLP2 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-When the LeptinPump switch is turned on, the model <br>
-user can set infusion rates using the sliding bar <br>
-feature in the LeptinPump display box. <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Setting - DefinitionLP1 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-When the LeptinPump switch is turned on, the model <br>
-user can set infusion rates using the sliding bar <br>
-feature in the leptin Pump display box. Rates of infusion<br>
-may be increased from 0, in increments of 0.1, up to <br>
-5 U/Min <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-   <br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

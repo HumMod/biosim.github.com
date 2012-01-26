@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_Structure.html'><img src='../../Back.PNG'></a>
+<p><a href='Structure_Aldosterone_AldoPool.html'>Structure_Aldosterone_AldoPool</a>
+<br><a href='Structure_Aldosterone_AldoSecretion.html'>Structure_Aldosterone_AldoSecretion</a>
+<br><a href='Structure_Aldosterone_AldoDisposal.html'>Structure_Aldosterone_AldoDisposal</a>
+<br><a href='Structure_Aldosterone_AldoPump.html'>Structure_Aldosterone_AldoPump</a>
+<br><a href='Structure_Aldosterone_AldoTumor.html'>Structure_Aldosterone_AldoTumor</a>
+<p>
+HumMod / Aldosterone<br>
+<br>
+Created : 07-Apr-05<br>
+Last Modified : 2010-05-26<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+<br>
+&lt;?path Structure\Aldosterone\ ?&gt;<br>
+<br>
+&lt;?include AldoPool.DES ?&gt;<br>
+&lt;?include AldoSecretion.DES ?&gt;<br>
+&lt;?include AldoDisposal.DES ?&gt;<br>
+&lt;?include AldoPump.DES ?&gt;<br>
+&lt;?include AldoTumor.DES ?&gt;<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Aldosterone &lt;/name&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcConc &lt;/name&gt;<br>
+  &lt;call&gt; AldoPool.CalcConc &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+  &lt;call&gt; AldoPump.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; AldoSecretion.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; AldoDisposal.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; AldoPool.Dervs &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

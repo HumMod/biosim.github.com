@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_Hemoglobin_Hemoglobin.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / HgbConc<br>
+<br>
+Created : 28-Mar-05<br>
+Last Modified : 2010-06-04<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; HgbConc &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [Total] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;parm&gt;&lt;name&gt; Clamp &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; [Level] &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; [Basic] &lt;/name&gt;&lt;val&gt; 0.15 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;var&gt;&lt;name&gt; HctEffect &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [Free] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [Carboxy] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; CarboxyPercent &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; GasMaxContent &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [O2Max] &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; NORMALHCT &lt;/name&gt;&lt;val&gt; 0.44 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; O2MAX(ML/G) &lt;/name&gt;&lt;val&gt; 1.34 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [O2] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Sat(%) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; HctEffect &lt;/name&gt;<br>
+  &lt;val&gt; BloodVol.Hct / NORMALHCT &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;conditional&gt;<br>
+  &lt;name&gt; [Total] &lt;/name&gt;<br>
+  &lt;test&gt; Clamp &lt;/test&gt;<br>
+  &lt;true&gt; [Level] &lt;/true&gt;<br>
+  &lt;false&gt; HctEffect * [Basic] &lt;/false&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; [Carboxy] &lt;/name&gt;<br>
+  &lt;val&gt; ( CO.[CO] / O2MAX(ML/G) ) MIN [Total] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;conditional&gt;<br>
+  &lt;name&gt; CarboxyPercent &lt;/name&gt;<br>
+  &lt;test&gt; [Total] GT 0.0 &lt;/test&gt;<br>
+  &lt;true&gt; 100 * [Carboxy] / [Total] &lt;/true&gt;<br>
+  &lt;false&gt; 0.0 &lt;/false&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; [Free] &lt;/name&gt;<br>
+  &lt;val&gt; [Total] - [Carboxy] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; GasMaxContent &lt;/name&gt;<br>
+  &lt;val&gt; O2MAX(ML/G) * [Total] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; [O2Max] &lt;/name&gt;<br>
+  &lt;val&gt; O2MAX(ML/G) * [Free] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Sat(%) &lt;/name&gt;<br>
+<br>
+&lt;conditional&gt;<br>
+  &lt;name&gt; Sat(%) &lt;/name&gt;<br>
+  &lt;test&gt; [O2Max] GT 0.0 &lt;/test&gt;<br>
+  &lt;true&gt; 100.0 * [O2] / [O2Max] &lt;/true&gt;<br>
+  &lt;false&gt; 0.0 &lt;/false&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

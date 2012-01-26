@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Display_Tree_Organs_Organs.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / LiverMetabolism<br>
+<br>
+Created : 29-Mar-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Solver : DES 2005<br>
+Schema : 2005.0<br>
+<br>
+&lt;branch&gt;<br>
+  &lt;name&gt; LiverMetabolism &lt;/name&gt;<br>
+  &lt;label&gt; Liver Metabolism &lt;/label&gt;<br>
+  &lt;parent&gt; ORGANS &lt;/parent&gt;<br>
+&lt;/branch&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; LiverMetabolism-PortalVein &lt;/name&gt;<br>
+  &lt;label&gt; Portal Vein &lt;/label&gt;<br>
+  &lt;parent&gt; LiverMetabolism &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;separatorbar&gt;&lt;parent&gt; LiverMetabolism &lt;/parent&gt;&lt;/separatorbar&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; LiverMetabolism-AminoAcids &lt;/name&gt;<br>
+  &lt;label&gt; Amino Acids &lt;/label&gt;<br>
+  &lt;parent&gt; LiverMetabolism &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;branch&gt;<br>
+  &lt;name&gt; LM_FattyAcids &lt;/name&gt;<br>
+  &lt;label&gt; Fatty Acids &lt;/label&gt;<br>
+  &lt;parent&gt; LiverMetabolism &lt;/parent&gt;<br>
+&lt;/branch&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; LM_FattyAcids-FABalance &lt;/name&gt;<br>
+  &lt;label&gt; FA Balance &lt;/label&gt;<br>
+  &lt;parent&gt; LM_FattyAcids &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;!--<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; LM_FattyAcids-AminoAcidsToFA &lt;/name&gt;<br>
+  &lt;label&gt; Amino Acids To FA &lt;/label&gt;<br>
+  &lt;parent&gt; LM_FattyAcids &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; LM_FattyAcids-GlucoseToFA &lt;/name&gt;<br>
+  &lt;label&gt; Glucose To FA &lt;/label&gt;<br>
+  &lt;parent&gt; LM_FattyAcids &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+--&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; LiverMetabolism-Gluconeogenesis &lt;/name&gt;<br>
+  &lt;label&gt; Gluconeogenesis &lt;/label&gt;<br>
+  &lt;parent&gt; LiverMetabolism &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; LiverMetabolism-Glucose &lt;/name&gt;<br>
+  &lt;label&gt; Glucose &lt;/label&gt;<br>
+  &lt;parent&gt; LiverMetabolism &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;!--<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; LiverMetabolism-Glycerol &lt;/name&gt;<br>
+  &lt;label&gt; Glycerol &lt;/label&gt;<br>
+  &lt;parent&gt; LiverMetabolism &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+--&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; LiverMetabolism-Glycogen &lt;/name&gt;<br>
+  &lt;label&gt; Glycogen &lt;/label&gt;<br>
+  &lt;parent&gt; LiverMetabolism &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; LiverMetabolism-Ketoacids &lt;/name&gt;<br>
+  &lt;label&gt; Ketoacids &lt;/label&gt;<br>
+  &lt;parent&gt; LiverMetabolism &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;!--<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; LiverMetabolism-Lactate &lt;/name&gt;<br>
+  &lt;label&gt; Lactate &lt;/label&gt;<br>
+  &lt;parent&gt; LiverMetabolism &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+--&gt;<br>
+<br>
+&lt;separatorbar&gt;<br>
+  &lt;parent&gt; LiverMetabolism &lt;/parent&gt;<br>
+&lt;/separatorbar&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; LiverMetabolism-Insulin &lt;/name&gt;<br>
+  &lt;label&gt; Insulin &lt;/label&gt;<br>
+  &lt;parent&gt; LiverMetabolism &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

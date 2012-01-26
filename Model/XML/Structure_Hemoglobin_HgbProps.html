@@ -1,258 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:07 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Hemoglobin_Hemoglobin.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / HgbProps<br>
-<br>
-Created : 28-Mar-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; HgbProps &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; HILLCONSTANT &lt;/name&gt;&lt;val&gt; 2.3 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; PO2SATURATED &lt;/name&gt;&lt;val&gt; 120 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; O2SOLUBILITY &lt;/name&gt;&lt;val&gt; 0.00003 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; TEMPK &lt;/name&gt;&lt;val&gt; 0.024 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; PHK &lt;/name&gt;&lt;val&gt; -0.40 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; PCO2K &lt;/name&gt;&lt;val&gt; 0.06 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; COK &lt;/name&gt;&lt;val&gt; -0.0067 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; TEMPNORM &lt;/name&gt;&lt;val&gt; 37.0 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; PHNORM &lt;/name&gt;&lt;val&gt; 7.40 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; CO2NORM &lt;/name&gt;&lt;val&gt; 40.0 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; CONORM &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; pO2 &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; [O2] &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; pH &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; pCO2 &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Temp &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; pHEffect &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; pCO2Effect &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; TempEffect &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; COEffect &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; TempSens &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;parm&gt;&lt;name&gt; pHSens &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;parm&gt;&lt;name&gt; pCO2Sens &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;parm&gt;&lt;name&gt; COSens &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Del &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Log &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; P50Basic &lt;/name&gt;&lt;val&gt; 26.6 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;var&gt;&lt;name&gt; P50 &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; ScaleForSat &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Sat &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; S &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; An &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; A &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; K &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-&lt;block&gt;&lt;name&gt; Setup &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Del &lt;/name&gt;<br>
-  &lt;val&gt; Temp - TEMPNORM &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TempEffect &lt;/name&gt;<br>
-  &lt;val&gt; 10 ^ ( TempSens * TEMPK * Del ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Del &lt;/name&gt;<br>
-  &lt;val&gt; pH - PHNORM &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; pHEffect &lt;/name&gt;<br>
-  &lt;val&gt; 10 ^ ( pHSens * PHK * Del ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;conditional&gt;<br>
-  &lt;name&gt; Log &lt;/name&gt;<br>
-  &lt;test&gt; pCO2 LT 1.0 &lt;/test&gt;<br>
-  &lt;true&gt; 0.0 &lt;/true&gt;<br>
-  &lt;false&gt; LOG10 ( pCO2 ) &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Del &lt;/name&gt;<br>
-  &lt;val&gt; Log - LOG10 ( CO2NORM ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; pCO2Effect &lt;/name&gt;<br>
-  &lt;val&gt; 10 ^ ( pCO2Sens * PCO2K * Del ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Del &lt;/name&gt;<br>
-  &lt;val&gt; HgbConc.CarboxyPercent - CONORM &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; COEffect &lt;/name&gt;<br>
-  &lt;val&gt; 10 ^ ( COSens * COK * Del ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; P50 &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-      P50Basic<br>
-    * TempEffect<br>
-    * pHEffect<br>
-    * pCO2Effect<br>
-    * COEffect<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; An &lt;/name&gt;<br>
-  &lt;val&gt; ( PO2SATURATED / P50 ) ^ HILLCONSTANT &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; ScaleForSat &lt;/name&gt;<br>
-  &lt;val&gt; ( 1.0 + An ) / An &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; O2ToPO2 &lt;/name&gt;<br>
-<br>
-&lt;testcase&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; [O2] LE 0.0 &lt;/test&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; pO2 &lt;/name&gt;<br>
-  &lt;val&gt; 0.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; [O2] GT HgbConc.[O2Max] &lt;/test&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; pO2 &lt;/name&gt;<br>
-  &lt;val&gt; PO2SATURATED + ( ( [O2] - HgbConc.[O2Max] ) / O2SOLUBILITY ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; TRUE &lt;/test&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Sat &lt;/name&gt;<br>
-  &lt;val&gt; [O2] / HgbConc.[O2Max] &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; S &lt;/name&gt;<br>
-  &lt;val&gt; Sat / ScaleForSat &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; A &lt;/name&gt;<br>
-  &lt;val&gt; ( S / ( 1.0 - S ) ) ^ ( 1.0 / HILLCONSTANT ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; pO2 &lt;/name&gt;<br>
-  &lt;val&gt; A * P50 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;/testcase&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; PO2ToO2 &lt;/name&gt;<br>
-<br>
-&lt;testcase&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; pO2 LE 0.0 &lt;/test&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; [O2] &lt;/name&gt;<br>
-  &lt;val&gt; 0.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; pO2 GE PO2SATURATED &lt;/test&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; [O2] &lt;/name&gt;<br>
-  &lt;val&gt; HgbConc.[O2Max] + ( ( pO2 - PO2SATURATED ) * O2SOLUBILITY ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; TRUE &lt;/test&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; An &lt;/name&gt;<br>
-  &lt;val&gt; ( pO2 / P50 ) ^ HILLCONSTANT &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Sat &lt;/name&gt;<br>
-  &lt;val&gt; ScaleForSat * An / ( 1.0 + An ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; [O2] &lt;/name&gt;<br>
-  &lt;val&gt; Sat * HgbConc.[O2Max] &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;/testcase&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

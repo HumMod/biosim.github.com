@@ -1,88 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:08 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Nephrons_Nephrons.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / NephronGlucose<br>
-<br>
-Created : 11-Apr-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; NephronGlucose &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; TubularMax &lt;/name&gt;<br>
-  &lt;val&gt; 250.0 &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; Reab &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; Spillover &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; Spillover(mMol/Min) &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;constant&gt;<br>
-  &lt;name&gt; MG_TO_MMOL &lt;/name&gt;<br>
-  &lt;val&gt;     0.00555 &lt;/val&gt;<br>
-&lt;/constant&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-&lt;block&gt;&lt;name&gt; CalcSpillover &lt;/name&gt;<br>
-<br>
-&lt;conditional&gt;<br>
-  &lt;name&gt; Reab &lt;/name&gt;<br>
-  &lt;test&gt; GlomerulusGlucose.Rate GT TubularMax &lt;/test&gt;<br>
-  &lt;true&gt; TubularMax &lt;/true&gt;<br>
-  &lt;false&gt; GlomerulusGlucose.Rate &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Spillover &lt;/name&gt;<br>
-  &lt;val&gt; GlomerulusGlucose.Rate - Reab &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Spillover(mMol/Min) &lt;/name&gt;<br>
-  &lt;val&gt; MG_TO_MMOL * Spillover &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

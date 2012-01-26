@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Display_Tree_Organs_Organs.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / SkeletalMuscle<br>
+<br>
+Created : 08-Dec-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;branch&gt;<br>
+  &lt;name&gt; SkeletalMuscle &lt;/name&gt;<br>
+  &lt;label&gt; Skeletal Muscle &lt;/label&gt;<br>
+  &lt;parent&gt; ORGANS &lt;/parent&gt;<br>
+&lt;/branch&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscle-Circulation &lt;/name&gt;<br>
+  &lt;label&gt; Circulation &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscle-Conductance &lt;/name&gt;<br>
+  &lt;label&gt; Conductance &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscle-Metabolism &lt;/name&gt;<br>
+  &lt;label&gt; Metabolism &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;!--<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscle-Effluents &lt;/name&gt;<br>
+  &lt;label&gt; Effluent Blood &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscle-Heat &lt;/name&gt;<br>
+  &lt;label&gt; Heat &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+--&gt;<br>
+<br>
+&lt;branch&gt;<br>
+  &lt;name&gt; SkeletalMuscle-Fuel &lt;/name&gt;<br>
+  &lt;label&gt; Fuel &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/branch&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscleFuel-Selection &lt;/name&gt;<br>
+  &lt;label&gt; Selection &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle-Fuel &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscleFuel-AerobicUse &lt;/name&gt;<br>
+  &lt;label&gt; Aerobic Use &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle-Fuel &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscleFuel-AnaerobicUse &lt;/name&gt;<br>
+  &lt;label&gt; Anaerobic Use &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle-Fuel &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscleFuel-Adequacy &lt;/name&gt;<br>
+  &lt;label&gt; Adequacy &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle-Fuel &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscle-Glycogen &lt;/name&gt;<br>
+  &lt;label&gt; Glycogen &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscle-Insulin &lt;/name&gt;<br>
+  &lt;label&gt; Insulin &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscle-CO2 &lt;/name&gt;<br>
+  &lt;label&gt; CO2 &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscle-Lactate &lt;/name&gt;<br>
+  &lt;label&gt; Lactate &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscle-AcidBase &lt;/name&gt;<br>
+  &lt;label&gt; Acid-Base &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscle-Nerves &lt;/name&gt;<br>
+  &lt;label&gt; Nerves &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscle-Function &lt;/name&gt;<br>
+  &lt;label&gt; Function &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscle-Structure &lt;/name&gt;<br>
+  &lt;label&gt; Structure &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscle-Size &lt;/name&gt;<br>
+  &lt;label&gt; Size &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscle-Vasculature &lt;/name&gt;<br>
+  &lt;label&gt; Vasculature &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscle-ContractileProtein &lt;/name&gt;<br>
+  &lt;label&gt; Contractile Protein &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscle-MusclePumping &lt;/name&gt;<br>
+  &lt;label&gt; Muscle Pumping &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; SkeletalMuscle-Metaboreflex &lt;/name&gt;<br>
+  &lt;label&gt; Metaboreflex &lt;/label&gt;<br>
+  &lt;parent&gt; SkeletalMuscle &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

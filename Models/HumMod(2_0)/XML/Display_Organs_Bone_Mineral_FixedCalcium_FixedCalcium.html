@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Display_Organs_Bone_Mineral_Mineral.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / FixedCalcium<br>
+<br>
+Created : 2011-08-08<br>
+Last Modified : 2011-08-09<br>
+Author : Tom Coleman<br>
+Copyright : 2011-2011<br>
+By : University Of Mississippi Medical Center<br>
+<br>
+&lt;panel&gt;&lt;name&gt; Mineral-FixedCalcium &lt;/name&gt;<br>
+<br>
+&lt;showbitmap&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;<br>
+  &lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Bone &lt;/name&gt;<br>
+&lt;/showbitmap&gt;<br>
+<br>
+&lt;label&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;<br>
+  &lt;col&gt; 4.5 &lt;/col&gt;<br>
+  &lt;text&gt; Bone | Mineral | Fixed Calcium &lt;/text&gt;<br>
+&lt;/label&gt;<br>
+<br>
+&lt;showclock&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+  &lt;name&gt; System.X &lt;/name&gt;<br>
+  &lt;ampm/&gt;<br>
+  &lt;secs/&gt;<br>
+  &lt;days/&gt;<br>
+&lt;/showclock&gt;<br>
+<br>
+&lt;structurename&gt; Bone-FixedCalcium &lt;/structurename&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 3.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; Stress &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Stress &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 4.0 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
+   &lt;name&gt; StressAdjustment &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Adjustment &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 5.0 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
+   &lt;name&gt; Weight.Weight(kG) &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Weight (kG) &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 6.0 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
+   &lt;name&gt; Gravity.Gz &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Gravity &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 7.0 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
+   &lt;name&gt; Bone-Composition.Mass(kG) &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Bone Mineral &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;maplist&gt;&lt;name&gt; StressAdjustment &lt;/name&gt;<br>
+&lt;map&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;img&gt; None &lt;/img&gt;&lt;/map&gt;<br>
+&lt;map&gt;&lt;val&gt; 0.5 &lt;/val&gt;&lt;img&gt; Low &lt;/img&gt;&lt;/map&gt;<br>
+&lt;map&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;img&gt; Normal &lt;/img&gt;&lt;/map&gt;<br>
+&lt;map&gt;&lt;val&gt; 1.5 &lt;/val&gt;&lt;img&gt; High &lt;/img&gt;&lt;/map&gt;<br>
+&lt;map&gt;&lt;val&gt; 2.0 &lt;/val&gt;&lt;img&gt; Very High &lt;/img&gt;&lt;/map&gt;<br>
+&lt;map&gt;&lt;val&gt; 2.5 &lt;/val&gt;&lt;img&gt; Extreme &lt;/img&gt;&lt;/map&gt;<br>
+&lt;/maplist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 8.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; StressAdjustment &lt;/name&gt;<br>
+  &lt;listname&gt; StressAdjustment &lt;/listname&gt;<br>
+  &lt;label&gt; Adjust &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 10.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; [Calcitonin]Effect &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; [Calcitonin] Effect &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showcurve&gt;<br>
+  &lt;row&gt; 11.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
+  &lt;leftmargin&gt; 6 &lt;/leftmargin&gt;<br>
+<br>
+  &lt;xaxis&gt;<br>
+    &lt;name&gt; Calcitonin.[Conc(nG/mL)] &lt;/name&gt;<br>
+    &lt;label&gt; [Calcitonin] &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 0.02 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/xaxis&gt;<br>
+<br>
+  &lt;yaxis&gt;<br>
+    &lt;label&gt; Effect &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/yaxis&gt;<br>
+<br>
+  &lt;curvename&gt; [Calcitonin]Effect &lt;/curvename&gt;<br>
+&lt;/showcurve&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 19.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;name&gt; Calcitonin.[Conc(nG/mL)] &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; [Calcitonin (nG/mL)] &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 3.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; Mass &lt;/name&gt;<br>
+   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Mass &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showgraph&gt;<br>
+  &lt;row&gt; 4.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
+  &lt;leftmargin&gt; 5 &lt;/leftmargin&gt;<br>
+  &lt;xaxis&gt;<br>
+    &lt;name&gt; System.X &lt;/name&gt;<br>
+    &lt;label&gt; Time &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/xaxis&gt;<br>
+  &lt;yaxis&gt;<br>
+    &lt;yvar&gt;<br>
+      &lt;name&gt; Mass &lt;/name&gt;<br>
+      &lt;nolabel/&gt;<br>
+      &lt;linecolor&gt; BLUE &lt;/linecolor&gt;<br>
+    &lt;/yvar&gt;<br>
+    &lt;scale&gt;<br>
+      &lt;min&gt; 1000 &lt;/min&gt;&lt;max&gt; 1600 &lt;/max&gt;<br>
+    &lt;/scale&gt;<br>
+  &lt;/yaxis&gt;<br>
+&lt;/showgraph&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 11.4 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; Change &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 3 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Change &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 12.8 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; Gain &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 3 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Gain &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 13.8 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; Loss &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 3 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Loss &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 15.2 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; Deposition &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 3 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Deposition &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; DepositionK &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 100 &lt;/reps&gt;&lt;stepsize&gt; 0.001 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 16.6 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
+  &lt;name&gt; DepositionK &lt;/name&gt;<br>
+  &lt;listname&gt; DepositionK &lt;/listname&gt;<br>
+  &lt;label&gt; K &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 18.0 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
+   &lt;name&gt; Bone-ExchangeableCalcium.[Conc(mG/dL)] &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; [Ca++ (mG/dL)] &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 19.0 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
+   &lt;name&gt; [Calcitonin]Effect &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; [Calcitonin] Effect &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 20.0 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
+   &lt;name&gt; Stress &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Stress &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 21.6 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;name&gt; Resorption &lt;/name&gt;<br>
+   &lt;format&gt;&lt;decimal&gt; 3 &lt;/decimal&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Resorption &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; ResorptionK &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 100 &lt;/reps&gt;&lt;stepsize&gt; 0.00001 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 23.0 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
+  &lt;name&gt; ResorptionK &lt;/name&gt;<br>
+  &lt;listname&gt; ResorptionK &lt;/listname&gt;<br>
+  &lt;label&gt; K &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+   &lt;row&gt; 24.4 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
+   &lt;name&gt; Mass &lt;/name&gt;<br>
+   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
+   &lt;label&gt; Mass &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;/panel&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

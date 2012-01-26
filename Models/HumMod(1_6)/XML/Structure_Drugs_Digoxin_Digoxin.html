@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_Drugs_Drugs.html'><img src='../../Back.PNG'></a>
+<p><a href='Structure_Drugs_Digoxin_DigoxinPool.html'>Structure_Drugs_Digoxin_DigoxinPool</a>
+<br><a href='Structure_Drugs_Digoxin_DigoxinKidney.html'>Structure_Drugs_Digoxin_DigoxinKidney</a>
+<br><a href='Structure_Drugs_Digoxin_DigoxinGILumen.html'>Structure_Drugs_Digoxin_DigoxinGILumen</a>
+<br><a href='Structure_Drugs_Digoxin_DigoxinSingleDose.html'>Structure_Drugs_Digoxin_DigoxinSingleDose</a>
+<br><a href='Structure_Drugs_Digoxin_DigoxinDailyDose.html'>Structure_Drugs_Digoxin_DigoxinDailyDose</a>
+<p>
+HumMod / Digoxin<br>
+<br>
+Created : 10-Apr-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;?path Structure\Drugs\Digoxin\ ?&gt;<br>
+<br>
+&lt;?include DigoxinPool.DES ?&gt;<br>
+&lt;?include DigoxinKidney.DES ?&gt;<br>
+&lt;?include DigoxinGILumen.DES ?&gt;<br>
+&lt;?include DigoxinSingleDose.DES ?&gt;<br>
+&lt;?include DigoxinDailyDose.DES ?&gt;<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Digoxin &lt;/name&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
+  &lt;call&gt; DigoxinDailyDose.Parms &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcConc &lt;/name&gt;<br>
+  &lt;call&gt; DigoxinGILumen.CalcConc &lt;/call&gt;<br>
+  &lt;call&gt; DigoxinPool.CalcConc &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+  &lt;call&gt; DigoxinGILumen.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; DigoxinKidney.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; DigoxinPool.Dervs &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
+  &lt;call&gt; DigoxinDailyDose.Wrapup &lt;/call&gt;<br>
+  &lt;call&gt; DigoxinPool.Wrapup &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

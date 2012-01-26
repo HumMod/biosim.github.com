@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_H2O_H2O.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / BodyH2O<br>
+<br>
+Created : 07-Apr-05<br>
+Last Modified : 2010-04-16<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; BodyH2O &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Vol &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialVol &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Vol(L) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; TotalVol &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialTotalVol &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; TotalVol(L) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Change &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; IntravascularVol &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; IntravascularVol(L) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; ExtravascularVol &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; ExtravascularVol(L) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Initialize &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialVol &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+       TissueH2O.InitialVol<br>
+     + PlasmaVol.InitialVol<br>
+     + RBCH2O.InitialVol<br>
+     + ExternalH2O.InitialCore<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialTotalVol &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+       InitialVol<br>
+     + ExternalH2O.InitialOther<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcTotal &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Vol &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+       TissueH2O.Vol<br>
+     + PlasmaVol.Vol<br>
+     + RBCH2O.Vol<br>
+     + ExternalH2O.Core<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Vol(L) &lt;/name&gt;<br>
+  &lt;val&gt; Vol / 1000.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TotalVol &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+       Vol<br>
+     + ExternalH2O.Other<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; TotalVol(L) &lt;/name&gt;<br>
+  &lt;val&gt; TotalVol / 1000.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Gain &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      GILumenVolume.Intake<br>
+    + MetabolicH2O.Rate<br>
+    + IVDrip.H2ORate<br>
+    + Transfusion.Rate<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Loss &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      CD_H2O.Outflow<br>
+    + SweatDuct.H2OOutflow<br>
+    + Hemorrhage.Rate<br>
+    + DialyzerActivity.UltrafiltrationRate<br>
+    + HeatInsensibleSkin.H2O<br>
+    + HeatInsensibleLung.H2O<br>
+    + GILumenVomitus.H2OLoss<br>
+    + GILumenDiarrhea.H2OLoss<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Change &lt;/name&gt;<br>
+  &lt;val&gt;  Gain - Loss &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; IntravascularVol &lt;/name&gt;<br>
+    &lt;val&gt; PlasmaVol.Vol + RBCH2O.Vol &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; IntravascularVol(L) &lt;/name&gt;<br>
+    &lt;val&gt; IntravascularVol / 1000.0 &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; ExtravascularVol &lt;/name&gt;<br>
+    &lt;val&gt; InterstitialWater.Vol + CellH2O.Vol + ExternalH2O.Vol &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+    &lt;name&gt; ExtravascularVol(L) &lt;/name&gt;<br>
+    &lt;val&gt; ExtravascularVol / 1000.0 &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Display_Clinic_IVEpinephrineInjection_IVEpinephrineInjection.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / Control<br>
+<br>
+Created : 01-Mar-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Solver : DES 2005<br>
+Schema : 2005.0<br>
+<br>
+&lt;groupbox&gt;<br>
+   &lt;row&gt; 2.0 &lt;/row&gt;<br>
+   &lt;col&gt; 1.0 &lt;/col&gt;<br>
+   &lt;high&gt; 8.8 &lt;/high&gt;<br>
+   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
+   &lt;title&gt; Control &lt;/title&gt;<br>
+<br>
+&lt;structurename&gt; IVEpinephrineInjection &lt;/structurename&gt;<br>
+<br>
+&lt;actionbutton&gt;<br>
+  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;blockname&gt; InjectEpinephrineNow &lt;/blockname&gt;<br>
+  &lt;label&gt; Inject Epinephrine Now &lt;/label&gt;<br>
+&lt;/actionbutton&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; IVEpinephrineInjection.Dose &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 20 &lt;/reps&gt;&lt;stepsize&gt; 0.01 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 18 &lt;/reps&gt;&lt;stepsize&gt; 0.10 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 3.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;wide&gt; 8 &lt;/wide&gt;<br>
+  &lt;name&gt; Dose &lt;/name&gt;<br>
+  &lt;listname&gt; IVEpinephrineInjection.Dose &lt;/listname&gt;<br>
+  &lt;label&gt; Dose (U) &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; IVEpinephrineInjection.Timespan &lt;/name&gt;<br>
+  &lt;firstval&gt; 5 &lt;/firstval&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 6 &lt;/reps&gt;&lt;stepsize&gt; 5.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 4.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;wide&gt; 8 &lt;/wide&gt;<br>
+  &lt;name&gt; Timespan &lt;/name&gt;<br>
+  &lt;listname&gt; IVEpinephrineInjection.Timespan &lt;/listname&gt;<br>
+  &lt;label&gt; Timespan (Sec) &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 6.2&lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; TotalInjections &lt;/name&gt;<br>
+  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
+  &lt;label&gt; Total Injections &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 7.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; TotalDose &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Total Dose &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;infobutton&gt;<br>
+  &lt;row&gt; 1.2 &lt;/row&gt;<br>
+  &lt;col&gt; 26.0 &lt;/col&gt;<br>
+  &lt;line&gt; Recommended dosing for cardiac &lt;/line&gt;<br>
+  &lt;line&gt; arrest is 1 mG every 5 minutes. &lt;/line&gt;<br>
+&lt;/infobutton&gt;<br>
+<br>
+&lt;/groupbox&gt;<br>
+<br>
+End<br>
+
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

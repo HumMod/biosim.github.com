@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_Morphology_Morphology.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / Weight<br>
+<br>
+Created : 21-May-05<br>
+Last Modified : 2010-03-24<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Weight &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Weight &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialWeight &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialWeight(kG) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Weight(kG) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Weight(Lb) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; OrganMass &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialOrganMass &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Core &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialCore &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Core(kG) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; OtherMass &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialOtherMass &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialOtherMass(kG) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; FatMass &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialFatMass &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; MuscleMass &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialMuscleMass &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; SkinMass &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialSkinMass &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Init &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialOtherMass &lt;/name&gt;<br>
+  &lt;val&gt; OtherMass.Mass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialOtherMass(kG) &lt;/name&gt;<br>
+  &lt;val&gt; InitialOtherMass / 1000 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Initialize &lt;/name&gt;<br>
+<br>
+&lt;call&gt; Weight-Fluids.Initialize &lt;/call&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialFatMass &lt;/name&gt;<br>
+  &lt;val&gt; Fat-Size.InitialMass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialMuscleMass &lt;/name&gt;<br>
+  &lt;val&gt; SkeletalMuscle-Size.InitialMass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialSkinMass &lt;/name&gt;<br>
+  &lt;val&gt; Skin-Size.InitialMass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialOrganMass &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      Bone-Size.InitialMass<br>
+    + Brain-Size.InitialMass<br>
+    + GITract-Size.InitialMass<br>
+    + Kidney-Size.InitialMass<br>
+    + LeftHeart-Size.InitialMass<br>
+    + Liver-Size.InitialMass<br>
+    + OtherTissue-Size.InitialMass<br>
+    + RespiratoryMuscle-Size.InitialMass<br>
+    + RightHeart-Size.InitialMass<br>
+<br>
+    + InitialFatMass<br>
+    + InitialMuscleMass<br>
+    + InitialSkinMass<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialCore &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      InitialOrganMass<br>
+    - InitialMuscleMass<br>
+    - InitialSkinMass<br>
+    + Weight-Fluids.InitialCore<br>
+<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialWeight &lt;/name&gt;<br>
+  &lt;val&gt; InitialOrganMass + Weight-Fluids.InitialTotal &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InitialWeight(kG) &lt;/name&gt;<br>
+  &lt;val&gt; InitialWeight / 1000 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;call&gt; Weight-Fluids.Calc &lt;/call&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; FatMass &lt;/name&gt;<br>
+  &lt;val&gt; Fat-Size.Mass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; MuscleMass &lt;/name&gt;<br>
+  &lt;val&gt; SkeletalMuscle-Size.Mass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; SkinMass &lt;/name&gt;<br>
+  &lt;val&gt; Skin-Size.Mass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; OrganMass &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      Bone-Size.Mass<br>
+    + Brain-Size.Mass<br>
+    + GITract-Size.Mass<br>
+    + Kidney-Size.Mass<br>
+    + LeftHeart-Size.Mass<br>
+    + Liver-Size.Mass<br>
+    + OtherTissue-Size.Mass<br>
+    + RespiratoryMuscle-Size.Mass<br>
+    + RightHeart-Size.Mass<br>
+<br>
+    + FatMass<br>
+    + MuscleMass<br>
+    + SkinMass<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; OtherMass &lt;/name&gt;<br>
+  &lt;val&gt; OrganMass - FatMass - MuscleMass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Core &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      OrganMass<br>
+    - MuscleMass<br>
+    - SkinMass<br>
+    + Weight-Fluids.Core<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Core(kG) &lt;/name&gt;<br>
+  &lt;val&gt; Core / 1000.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Weight &lt;/name&gt;<br>
+  &lt;val&gt; OrganMass + Weight-Fluids.Total &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Weight(kG) &lt;/name&gt;<br>
+  &lt;val&gt; Weight / 1000.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Weight(Lb) &lt;/name&gt;<br>
+  &lt;val&gt; 2.2 * Weight(kG) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

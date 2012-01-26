@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Display_Lifestyle_Diet_Goal_Goal.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / Electrolytes<br>
+<br>
+Created : 20-Jun-06<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;groupbox&gt;<br>
+   &lt;row&gt; 2.0 &lt;/row&gt;<br>
+   &lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;high&gt; 10.0 &lt;/high&gt;<br>
+   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
+   &lt;title&gt; Electrolytes &lt;/title&gt;<br>
+<br>
+&lt;structurename&gt; DietGoalElectrolytes &lt;/structurename&gt;<br>
+<br>
+&lt;label&gt;<br>
+  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;text&gt; mEq / Day &lt;/text&gt;<br>
+&lt;/label&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; DietGoalElectrolytes.Rate &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 10 &lt;/reps&gt;&lt;stepsize&gt;  1.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 29 &lt;/reps&gt;&lt;stepsize&gt; 10.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt;  4 &lt;/reps&gt;&lt;stepsize&gt; 50.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 2.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Na+_mEq/Day &lt;/name&gt;<br>
+  &lt;listname&gt; DietGoalElectrolytes.Rate &lt;/listname&gt;<br>
+  &lt;label&gt; Na+ &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 4.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Cl-_mEq/Day &lt;/name&gt;<br>
+  &lt;listname&gt; DietGoalElectrolytes.Rate &lt;/listname&gt;<br>
+  &lt;label&gt; Cl- &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 5.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; K+_mEq/Day &lt;/name&gt;<br>
+  &lt;listname&gt; DietGoalElectrolytes.Rate &lt;/listname&gt;<br>
+  &lt;label&gt; K+ &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 7.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; PO4--mEq/Day &lt;/name&gt;<br>
+  &lt;listname&gt; DietGoalElectrolytes.Rate &lt;/listname&gt;<br>
+  &lt;label&gt; PO4-- &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 8.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; SO4--mEq/Day &lt;/name&gt;<br>
+  &lt;listname&gt; DietGoalElectrolytes.Rate &lt;/listname&gt;<br>
+  &lt;label&gt; SO4-- &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;infobutton&gt;<br>
+  &lt;row&gt; 1.2 &lt;/row&gt;<br>
+  &lt;col&gt; 26.0 &lt;/col&gt;<br>
+<br>
+  &lt;line&gt; Typical values for mEq/Day are &lt;/line&gt;<br>
+  &lt;line&gt; &lt;/line&gt;<br>
+  &lt;line&gt; Na+ = 180 &lt;/line&gt;<br>
+  &lt;line&gt; Cl- = 200 &lt;/line&gt;<br>
+  &lt;line&gt; K+ = 70 &lt;/line&gt;<br>
+  &lt;line&gt; PO4-- = 30 &lt;/line&gt;<br>
+  &lt;line&gt; SO4-- = 50 &lt;/line&gt;<br>
+&lt;/infobutton&gt;<br>
+<br>
+&lt;/groupbox&gt;<br>
+<br>
+End<br>
+
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

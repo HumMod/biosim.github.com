@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Display_Miscellaneous_Miscellaneous.html'><img src='../../Back.PNG'></a>
+<p><a href='Display_Miscellaneous_CellProtein_Concentration.html'>Display_Miscellaneous_CellProtein_Concentration</a>
+<br><a href='Display_Miscellaneous_CellProtein_Inflow.html'>Display_Miscellaneous_CellProtein_Inflow</a>
+<br><a href='Display_Miscellaneous_CellProtein_Outflow.html'>Display_Miscellaneous_CellProtein_Outflow</a>
+<br><a href='Display_Miscellaneous_CellProtein_Degradation.html'>Display_Miscellaneous_CellProtein_Degradation</a>
+<br><a href='Display_Miscellaneous_CellProtein_Balance.html'>Display_Miscellaneous_CellProtein_Balance</a>
+<p>
+HumMod / CellFunction<br>
+<br>
+Created : 24-Apr-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2005-2010<br>
+By : University of Mississippi Medical Center<br>
+Solver : DES 2005<br>
+Schema : 2005.0<br>
+<br>
+&lt;panel&gt;&lt;name&gt; CellProtein &lt;/name&gt;<br>
+<br>
+&lt;showbitmap&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;<br>
+  &lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; Cell &lt;/name&gt;<br>
+&lt;/showbitmap&gt;<br>
+<br>
+&lt;label&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;<br>
+  &lt;col&gt; 4.5 &lt;/col&gt;<br>
+  &lt;text&gt; Cell Protein &lt;/text&gt;<br>
+&lt;/label&gt;<br>
+<br>
+&lt;showclock&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+  &lt;name&gt; System.X &lt;/name&gt;<br>
+  &lt;ampm/&gt;<br>
+  &lt;secs/&gt;<br>
+  &lt;days/&gt;<br>
+&lt;/showclock&gt;<br>
+<br>
+&lt;?path Display\Miscellaneous\CellProtein\ ?&gt;<br>
+<br>
+&lt;?include Concentration.DES ?&gt;<br>
+&lt;?include Inflow.DES ?&gt;<br>
+&lt;?include Outflow.DES ?&gt;<br>
+&lt;?include Degradation.DES ?&gt;<br>
+&lt;?include Balance.DES ?&gt;<br>
+<br>
+&lt;/panel&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

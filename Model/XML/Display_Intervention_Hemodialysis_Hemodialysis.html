@@ -1,65 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:08 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_Intervention_Intervention.html'><img src='../../Back.PNG'></a>
-<p><a href='Display_Intervention_Hemodialysis_DialysisShunt.html'>Display_Intervention_Hemodialysis_DialysisShunt</a>
-<br><a href='Display_Intervention_Hemodialysis_DialyzerControl.html'>Display_Intervention_Hemodialysis_DialyzerControl</a>
-<br><a href='Display_Intervention_Hemodialysis_DialysateComposition.html'>Display_Intervention_Hemodialysis_DialysateComposition</a>
-<br><a href='Display_Intervention_Hemodialysis_DialyzerActivity.html'>Display_Intervention_Hemodialysis_DialyzerActivity</a>
-<p>
-HumMod / Hemodialysis<br>
-<br>
-Created : 24-Apr-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2005-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-&lt;panel&gt;&lt;name&gt; Clinic_Hemodialysis &lt;/name&gt;<br>
-<br>
-&lt;label&gt;<br>
-  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;text&gt; Intervention - Hemodialysis &lt;/text&gt;<br>
-&lt;/label&gt;<br>
-<br>
-&lt;showclock&gt;<br>
-  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; System.X &lt;/name&gt;<br>
-  &lt;ampm/&gt;<br>
-  &lt;secs/&gt;<br>
-  &lt;days/&gt;<br>
-&lt;/showclock&gt;<br>
-<br>
-&lt;?path Display\Intervention\Hemodialysis\ ?&gt;<br>
-<br>
-&lt;?include DialysisShunt.DES ?&gt;<br>
-&lt;?include DialyzerControl.DES ?&gt;<br>
-&lt;?include DialysateComposition.DES ?&gt;<br>
-&lt;?include DialyzerActivity.DES ?&gt;<br>
-<br>
-&lt;/panel&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

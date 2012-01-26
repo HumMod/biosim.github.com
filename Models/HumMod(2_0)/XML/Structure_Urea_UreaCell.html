@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_Urea_Urea.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / UreaCell<br>
+<br>
+Created : 28-May-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; UreaCell &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [Urea] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [Urea(mG/dL)] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [Urea(mMol/L)] &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; MG_TO_MOSM &lt;/name&gt;&lt;val&gt; 0.01667 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; PER_ML_TO_PER_DL &lt;/name&gt;&lt;val&gt; 100.0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; MG_TO_MMOL &lt;/name&gt;&lt;val&gt; 16.67 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; DC &lt;/name&gt;&lt;val&gt; 910.0 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Osmoles &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
+  &lt;initialval&gt; 10150.0 &lt;/initialval&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 101.0 &lt;/errorlim&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcOsmoles &lt;/name&gt;<br>
+  &lt;def&gt;&lt;name&gt; Osmoles &lt;/name&gt;&lt;val&gt; MG_TO_MOSM * Mass &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcConc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; [Urea] &lt;/name&gt;&lt;val&gt; Mass / ICFV.Vol &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; [Urea(mG/dL)] &lt;/name&gt;&lt;val&gt; PER_ML_TO_PER_DL * [Urea] &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; [Urea(mMol/L)] &lt;/name&gt;&lt;val&gt; MG_TO_MMOL * [Urea] &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Change &lt;/name&gt;<br>
+  &lt;val&gt; ( UreaPool.[Urea] - [Urea] ) * DC &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Context_Context.html'><img src='../../Back.PNG'></a>
+<p><a href='Context_Start_Start-Morphology_Start-Morphology.html'>Context_Start_Start-Morphology_Start-Morphology</a>
+<br><a href='Context_Start_Start-WholeBody_Start-WholeBody.html'>Context_Start_Start-WholeBody_Start-WholeBody</a>
+<br><a href='Context_Start_Start-Heat_Start-Heat.html'>Context_Start_Start-Heat_Start-Heat</a>
+<br><a href='Context_Start_Start-Electrolytes_Start-Electrolytes.html'>Context_Start_Start-Electrolytes_Start-Electrolytes</a>
+<br><a href='Context_Start_Start-Metabolism_Start-Metabolism.html'>Context_Start_Start-Metabolism_Start-Metabolism</a>
+<br><a href='Context_Start_Start-Hormones_Start-Hormones.html'>Context_Start_Start-Hormones_Start-Hormones</a>
+<br><a href='Context_Start_Start-OrganCalories.html'>Context_Start_Start-OrganCalories</a>
+<br><a href='Context_Start_Start-OrganConductance.html'>Context_Start_Start-OrganConductance</a>
+<p>
+HumMod / Start DES<br>
+<br>
+Created : 03-Apr-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2009<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;?path Context\Start\ ?&gt;<br>
+<br>
+&lt;?include Start-Morphology\Start-Morphology.DES ?&gt;<br>
+&lt;?include Start-WholeBody\Start-WholeBody.DES ?&gt;<br>
+&lt;?include Start-Heat\Start-Heat.DES ?&gt;<br>
+&lt;?include Start-Electrolytes\Start-Electrolytes.DES ?&gt;<br>
+&lt;?include Start-Metabolism\Start-Metabolism.DES ?&gt;<br>
+&lt;?include Start-Hormones\Start-Hormones.DES ?&gt;<br>
+<br>
+&lt;?include Start-OrganCalories.DES ?&gt;<br>
+&lt;?include Start-OrganConductance.DES ?&gt;<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Start &lt;/name&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+  &lt;call&gt; Start-Morphology.Calc &lt;/call&gt;<br>
+  &lt;call&gt; Start-WholeBody.Calc &lt;/call&gt;<br>
+  &lt;call&gt; Start-Heat.Calc &lt;/call&gt;<br>
+  &lt;call&gt; Start-Electrolytes.Calc &lt;/call&gt;<br>
+  &lt;call&gt; Start-Metabolism.Calc &lt;/call&gt;<br>
+  &lt;call&gt; Start-Hormones.Calc &lt;/call&gt;<br>
+<br>
+  &lt;call&gt; Start-OrganCalories.Calc &lt;/call&gt;<br>
+  &lt;call&gt; Start-OrganConductance.Calc &lt;/call&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

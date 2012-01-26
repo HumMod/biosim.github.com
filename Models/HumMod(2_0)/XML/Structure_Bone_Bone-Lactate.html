@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_Bone_Bone.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / Bone-Lactate<br>
+<br>
+Created : 31-Mar-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Bone-Lactate &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [Lac-] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [Lac-(mEq/L)] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [Lac-(mG/dL)] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;parm&gt;&lt;name&gt; DC &lt;/name&gt;&lt;val&gt; 180.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;var&gt;&lt;name&gt; Made &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Made(mG/Min) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Used &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Used(mG/Min) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Outflux &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Outflux(0) &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; K &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Alpha &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; MEQ_ML_TO_MG_DL &lt;/name&gt;&lt;val&gt; 9008.0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; GLUCOSE_TO_LACTATE &lt;/name&gt;&lt;val&gt; 0.99 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; MG_TO_MEQ &lt;/name&gt;&lt;val&gt; 0.0112 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
+  &lt;initialval&gt; 3.51 &lt;/initialval&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 0.035 &lt;/errorlim&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; CalcConc &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; [Lac-] &lt;/name&gt;<br>
+  &lt;val&gt; Mass / Bone-Size.LiquidVol &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; [Lac-(mEq/L)] &lt;/name&gt;<br>
+  &lt;val&gt; 1000.0 * [Lac-] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; [Lac-(mG/dL)] &lt;/name&gt;<br>
+  &lt;val&gt; MEQ_ML_TO_MG_DL * [Lac-] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcDervs &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Made(mG/Min) &lt;/name&gt;<br>
+  &lt;val&gt; GLUCOSE_TO_LACTATE * Bone-Fuel.AnaerobicGlucoseUsed(mG/Min) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Made &lt;/name&gt;<br>
+  &lt;val&gt; MG_TO_MEQ * Made(mG/Min) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Used(mG/Min) &lt;/name&gt;<br>
+  &lt;val&gt; Bone-Fuel.LacUsed(mG/Min) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Used &lt;/name&gt;<br>
+  &lt;val&gt; MG_TO_MEQ * Used(mG/Min) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; K &lt;/name&gt;<br>
+  &lt;val&gt; DC / Bone-Size.LiquidVol &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; System.Dx GE UNDEFINED &lt;/test&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Alpha &lt;/name&gt;<br>
+  &lt;val&gt; 0.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; ( K * System.Dx ) GE 100.0 &lt;/test&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Alpha &lt;/name&gt;<br>
+  &lt;val&gt; 4E-44 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; TRUE &lt;/test&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Alpha &lt;/name&gt;<br>
+  &lt;val&gt; EXP ( -  K * System.Dx ) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Outflux(0) &lt;/name&gt;<br>
+  &lt;val&gt; DC * ( [Lac-] - LacPool.[Lac-] ) &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Outflux &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+        ( Alpha * Outflux(0) )<br>
+    + ( ( 1 - Alpha ) * ( Made + Used ) )<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Change &lt;/name&gt;<br>
+  &lt;val&gt; Made - Used - Outflux &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

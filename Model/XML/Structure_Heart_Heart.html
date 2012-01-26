@@ -1,106 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:08 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Structure.html'><img src='../../Back.PNG'></a>
-<p><a href='Structure_Heart_Heart-Rate.html'>Structure_Heart_Heart-Rate</a>
-<br><a href='Structure_Heart_Heart-Intervals.html'>Structure_Heart_Heart-Intervals</a>
-<br><a href='Structure_Heart_Heart-ECG.html'>Structure_Heart_Heart-ECG</a>
-<br><a href='Structure_Heart_Heart-Rhythm.html'>Structure_Heart_Heart-Rhythm</a>
-<br><a href='Structure_Heart_Heart-Asystole.html'>Structure_Heart_Heart-Asystole</a>
-<br><a href='Structure_Heart_Heart-Pacemaker.html'>Structure_Heart_Heart-Pacemaker</a>
-<br><a href='Structure_Heart_Heart-VFib.html'>Structure_Heart_Heart-VFib</a>
-<br><a href='Structure_Heart_Heart-Defibrillator.html'>Structure_Heart_Heart-Defibrillator</a>
-<br><a href='Structure_Heart_SANode-Rate.html'>Structure_Heart_SANode-Rate</a>
-<br><a href='Structure_Heart_SANode-BetaReceptors.html'>Structure_Heart_SANode-BetaReceptors</a>
-<br><a href='Structure_Heart_Heart-Ventricles.html'>Structure_Heart_Heart-Ventricles</a>
-<br><a href='Structure_Heart_Heart-Tachyarrhythmia.html'>Structure_Heart_Heart-Tachyarrhythmia</a>
-<br><a href='Structure_Heart_Heart-Pain.html'>Structure_Heart_Heart-Pain</a>
-<br><a href='Structure_Heart_RightHeart-Pain.html'>Structure_Heart_RightHeart-Pain</a>
-<br><a href='Structure_Heart_LeftHeart-Pain.html'>Structure_Heart_LeftHeart-Pain</a>
-<p>
-HumMod / Heart DES<br>
-<br>
-Created : 21-Oct-04<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;?path Structure\Heart\ ?&gt;<br>
-<br>
-&lt;?include Heart-Rate.DES ?&gt;<br>
-&lt;?include Heart-Intervals.DES ?&gt;<br>
-<br>
-&lt;?include Heart-ECG.DES ?&gt;<br>
-&lt;?include Heart-Rhythm.DES ?&gt;<br>
-<br>
-&lt;?include Heart-Asystole.DES ?&gt;<br>
-&lt;?include Heart-Pacemaker.DES ?&gt;<br>
-&lt;?include Heart-VFib.DES ?&gt;<br>
-&lt;?include Heart-Defibrillator.DES ?&gt;<br>
-<br>
-&lt;?include SANode-Rate.DES ?&gt;<br>
-&lt;?include SANode-BetaReceptors.DES ?&gt;<br>
-<br>
-&lt;?include Heart-Ventricles.DES ?&gt;<br>
-&lt;?include Heart-Tachyarrhythmia.DES ?&gt;<br>
-<br>
-&lt;?include Heart-Pain.DES ?&gt;<br>
-&lt;?include RightHeart-Pain.DES ?&gt;<br>
-&lt;?include LeftHeart-Pain.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Heart &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-  &lt;call&gt; Heart-Pacemaker.Parms &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-  &lt;call&gt; SANode-Rate.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Heart-Ventricles.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Heart-Rate.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Heart-Tachyarrhythmia.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Heart-Intervals.Calc &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
-  &lt;call&gt; Heart-Asystole.Wrapup &lt;/call&gt;<br>
-  &lt;call&gt; Heart-VFib.Wrapup &lt;/call&gt;<br>
-  &lt;call&gt; Heart-Pain.Wrapup &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Final &lt;/name&gt;<br>
-  &lt;call&gt; Heart-ECG.Wrapup &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

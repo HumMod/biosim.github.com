@@ -1,96 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:08 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_Circulation_LHPumping_LHPumping.html'><img src='../../Back.PNG'></a>
-<p><a href='Display_Circulation_LHPumping_Diastole_Pressure-Volume.html'>Display_Circulation_LHPumping_Diastole_Pressure-Volume</a>
-<br><a href='Display_Circulation_LHPumping_Diastole_Technical.html'>Display_Circulation_LHPumping_Diastole_Technical</a>
-<br><a href='Display_Circulation_LHPumping_Diastole_Stiffness.html'>Display_Circulation_LHPumping_Diastole_Stiffness</a>
-<p>
-HumMod / Diastole<br>
-<br>
-Created : 16-May-05<br>
-Last Modified : 2010-05-24<br>
-Author : Tom Coleman<br>
-Copyright : 2005-2010<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;panel&gt;&lt;name&gt; LHPumping-Diastole &lt;/name&gt;<br>
-<br>
-&lt;showbitmap&gt;<br>
-  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; LeftHeart(2) &lt;/name&gt;<br>
-&lt;/showbitmap&gt;<br>
-<br>
-&lt;label&gt;<br>
-  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 4.5 &lt;/col&gt;<br>
-  &lt;text&gt; Left Heart Pumping - Diastole &lt;/text&gt;<br>
-&lt;/label&gt;<br>
-<br>
-&lt;showclock&gt;<br>
-  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; System.X &lt;/name&gt;<br>
-  &lt;ampm/&gt;<br>
-  &lt;secs/&gt;<br>
-  &lt;days/&gt;<br>
-&lt;/showclock&gt;<br>
-<br>
-&lt;?path Display\Circulation\LHPumping\Diastole\ ?&gt;<br>
-<br>
-&lt;?include Pressure-Volume.DES ?&gt;<br>
-&lt;?include Technical.DES ?&gt;<br>
-&lt;?include Stiffness.DES ?&gt;<br>
-<br>
-&lt;structurename&gt; LeftHeartPumping-Diastole &lt;/structurename&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 7.0 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-   &lt;name&gt; EDP &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; End-Diastolic Pressure &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 8.0 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-   &lt;name&gt; MitralStenosis &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Mitral Stenosis &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 9.0 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-   &lt;name&gt; LeftAtrium.Pressure &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Left Atrial Pressure &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 10.0 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-   &lt;name&gt; Pericardium-Cavity.Pressure &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Pericardial Pressure &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;/panel&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

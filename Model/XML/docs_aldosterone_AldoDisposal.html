@@ -1,187 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:09 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Docs_Aldosterone.html'><img src='../../Back.PNG'></a>
-<p>
-QHP 2008 / Aldosterone.DOCS<br>
-Created : 27-Mar-09<br>
-Last Modified : 27-Mar-09<br>
-Author : Tom Coleman<br>
-Copyright : 2009<br>
-<br>
-&lt;structurename&gt; AldoDisposal &lt;/structurename&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; AldoDisposal.Clearance &lt;/name&gt;<br>
-&lt;topic&gt; Clearance - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; Clearance - DefinitionAD1 &lt;/topic&gt;<br>
-&lt;seealso&gt; OrganFlow.HepaticVeinFlow &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; AldoDisposal.Degradation &lt;/name&gt;<br>
-&lt;topic&gt; Degradation - DefinitionAD2 &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; AldoDisposal.DegradeK &lt;/name&gt;<br>
-&lt;topic&gt; DegradeK - DefinitionAD3 &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; AldoDisposal.ExtractK &lt;/name&gt;<br>
-&lt;topic&gt; ExtractK - DefinitionAD4 &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; AldoDisposal.Rate &lt;/name&gt;<br>
-&lt;topic&gt; Rate - DefinitionAD5 &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Clearance - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview  &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Aldosterone is degraded mainly in the liver and <br>
-conjugated especially to glucuronic acid and, <br>
-to a lesser extent, sulfates. About 25 per <br>
-cent of these conjugates are excreted in the bile <br>
-and then in the feces. The remaining conjugates formed <br>
-by the liver enter the circulation but are not <br>
-bound to plasma proteins, are highly soluble in <br>
-the plasma, and are therefore filtered readily <br>
-by the kidneys and excreted in the urine. <br>
-<br>
-Aldosterone disposal is therefore a combination of<br>
-clearance rate and degradation rate. <br>
-<br>
-Clearance rate is affected by liver blood flow and by <br>
-the liver extraction coefficient - the percentage of <br>
-a substance removed in a single passage through an <br>
-organ or tissue, in this case the liver. If hepatic <br>
-blood flow is compromised, plasma levels of aldosterone <br>
-are markedly increased. Any factor affecting hepatic blood <br>
-flow will also affect aldosterone disposal. For example, <br>
-postural changes affect hepatic blood flow and the metabolic <br>
-clearance of aldosterone in the upright position is half <br>
-of that in the supine position.    <br>
-<br>
-Degradation rate is a function of the time constant<br>
-for degradation and the mass of aldosterone available. <br>
-Changes in liver function may affect the ability of <br>
-the organ to degrade aldosterone. This has been <br>
-demonstrated in patients with hepatic cirrhosis. <br>
-<br>
-Coppage WS Jr., Island DP, Cooner AE, Liddle GW.<br>
-The metabolism of aldosterone in normal subjects and <br>
-in patients with hepatic cirrhosis. <br>
-J Clin Invest. 41: 1672 - 1680, 1962.<br>
-<br>
-Tait JF, Little B, Tait SAS, Flood C. The metabolic <br>
-clearance rate of aldosterone in pregnant and <br>
-non-pregnant subjects, estimated by both single injections <br>
-and constant infusion methods.<br>
-J. Clin Invest. 41: 2093 - 2100, 1962.<br>
-<br>
-Tait JF, Tait SAS, Little B, Laumas KR. The disappearance <br>
-of 7-H^3-d-aldosterone in the plasma of normal subjects. <br>
-J Clin Invest. 40: 72 - 80, 1961.  <br>
-    <br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Clearance - DefinitionAD1 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Clearance is defined as the rate of removal of aldosterone<br>
-from the circulation in a single passage through the liver. <br>
-It is dependent on the ExtractK, the liver extraction <br>
-coefficient and on liver blood flow. <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Degradation - DefinitionAD2 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Degradation is the rate at which aldosterone is broken down<br>
-into its metabolites in the liver. It is a function of the<br>
-rate constant for degradation (degradeK) and the amount<br>
-of aldosterone available - AldoPool.Mass<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; DegradeK - DefinitionAD3 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-DegradeK is the rate constant for degradation of aldosterone <br>
-into its metabolites. DegradeK is a parameter with a value <br>
-of 0.00070.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; ExtractK - DefinitionAD4 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Extract K is the the liver extraction coefficient<br>
-for aldosterone. The extraction coefficient of a <br>
-substance is the percentage of that substance removed<br>
-from blood or plasma in a single passage through a <br>
-tissue or organ, in this case the liver. it is calculated <br>
-by subtracting the venous concentration from the arterial <br>
-concentration, and dividing thsi value by the arterial<br>
-blood concentration. the extraction ratioo is multiplied<br>
-by organ blood flow to generate teh organ clearance rate<br>
-Extract K is a parameter which can be altered using the <br>
-sliding bar in the aldosterone disposal display box. <br>
-Normal values are 0.78  <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Rate - DefinitionAD5 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Disposal rate of aldosterone is defined as clearance <br>
-plus degradation<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

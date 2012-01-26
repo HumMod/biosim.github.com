@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_Orthostatics_Orthostatics.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / Hydrostatics<br>
+<br>
+Created : 18-Jun-05<br>
+Last Modified : 2012-01-02<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2012<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Hydrostatics &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; BrainCM &lt;/name&gt;&lt;val&gt; -18.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; CarotidCM &lt;/name&gt;&lt;val&gt; -15.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; UpperTorsoCM &lt;/name&gt;&lt;val&gt; -10.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; MiddleTorsoCM &lt;/name&gt;&lt;val&gt; 4.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; LowerTorsoCM &lt;/name&gt;&lt;val&gt; 50.0 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; BrainGradient &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; CarotidGradient &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; UpperTorsoGradient &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; MiddleTorsoGradient &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; LowerTorsoArtyGradient &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; LowerTorsoVeinGradient &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; FractGz &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; LegArtyFractGz &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; LegVeinFractGz &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Status.Posture EQ PostureControl.LYING &lt;/test&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; FractGz &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; LegArtyFractGz &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; LegVeinFractGz &lt;/name&gt;&lt;val&gt; 0.2 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Status.Posture EQ PostureControl.SITTING &lt;/test&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; FractGz &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; LegArtyFractGz &lt;/name&gt;&lt;val&gt; 0.7 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; LegVeinFractGz &lt;/name&gt;&lt;val&gt; 0.7 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Status.Posture EQ PostureControl.STANDING &lt;/test&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; FractGz &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; LegArtyFractGz &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; LegVeinFractGz &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+&lt;test&gt; Status.Posture EQ PostureControl.TILTED &lt;/test&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; FractGz &lt;/name&gt;&lt;val&gt; SIN ( ( TiltTable.Degrees * System.PI ) / 180.0 ) &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; LegArtyFractGz &lt;/name&gt;&lt;val&gt; FractGz &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; LegVeinFractGz &lt;/name&gt;&lt;val&gt; 0.2 + FractGz &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; BrainGradient &lt;/name&gt;<br>
+  &lt;val&gt; BrainCM * Gravity.Gz * FractGz &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; CarotidGradient &lt;/name&gt;<br>
+  &lt;val&gt; CarotidCM * Gravity.Gz * FractGz &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; UpperTorsoGradient &lt;/name&gt;<br>
+  &lt;val&gt; UpperTorsoCM * Gravity.Gz * FractGz &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; MiddleTorsoGradient &lt;/name&gt;<br>
+  &lt;val&gt; MiddleTorsoCM * Gravity.Gz * FractGz &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; LowerTorsoArtyGradient &lt;/name&gt;<br>
+  &lt;val&gt; LowerTorsoCM * Gravity.Gz * LegArtyFractGz &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; LowerTorsoVeinGradient &lt;/name&gt;<br>
+  &lt;val&gt; LowerTorsoCM * Gravity.Gz * LegVeinFractGz &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

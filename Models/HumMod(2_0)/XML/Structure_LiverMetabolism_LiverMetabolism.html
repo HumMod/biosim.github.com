@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_Structure.html'><img src='../../Back.PNG'></a>
+<p><a href='Structure_LiverMetabolism_LM_AminoAcids.html'>Structure_LiverMetabolism_LM_AminoAcids</a>
+<br><a href='Structure_LiverMetabolism_LM_Glucose.html'>Structure_LiverMetabolism_LM_Glucose</a>
+<br><a href='Structure_LiverMetabolism_LM_FattyAcids.html'>Structure_LiverMetabolism_LM_FattyAcids</a>
+<br><a href='Structure_LiverMetabolism_LM_Glycogen.html'>Structure_LiverMetabolism_LM_Glycogen</a>
+<br><a href='Structure_LiverMetabolism_LM_Gluconeogenesis.html'>Structure_LiverMetabolism_LM_Gluconeogenesis</a>
+<br><a href='Structure_LiverMetabolism_LM_Ketoacids.html'>Structure_LiverMetabolism_LM_Ketoacids</a>
+<br><a href='Structure_LiverMetabolism_LM_Insulin.html'>Structure_LiverMetabolism_LM_Insulin</a>
+<p>
+HumMod / LiverMetabolism<br>
+<br>
+Created : 29-Mar-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Solver : DES 2005<br>
+Schema : 2005.0<br>
+<br>
+&lt;?path Structure\LiverMetabolism\ ?&gt;<br>
+<br>
+&lt;?include LM_AminoAcids.DES ?&gt;<br>
+&lt;?include LM_Glucose.DES ?&gt;<br>
+&lt;?include LM_FattyAcids.DES ?&gt;<br>
+&lt;?include LM_Glycogen.DES ?&gt;<br>
+&lt;?include LM_Gluconeogenesis.DES ?&gt;<br>
+&lt;?include LM_Ketoacids.DES ?&gt;<br>
+<br>
+&lt;?include LM_Insulin.DES ?&gt;<br>
+<br>
+&lt;structure&gt;&lt;name&gt; LiverMetabolism &lt;/name&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
+  &lt;call&gt; LM_Insulin.Parms &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+  &lt;call&gt; LM_Glycogen.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; LM_Gluconeogenesis.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; LM_Ketoacids.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; LM_FattyAcids.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; LM_AminoAcids.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; LM_Glucose.Dervs &lt;/call&gt;<br>
+  &lt;call&gt; LM_Insulin.Dervs &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

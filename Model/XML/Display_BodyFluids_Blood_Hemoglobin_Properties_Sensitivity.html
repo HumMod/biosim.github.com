@@ -1,105 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:08 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_BodyFluids_Blood_Hemoglobin_Properties_Properties.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / Sensitivity<br>
-<br>
-Created : 21-Mar-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-&lt;groupbox&gt;<br>
-   &lt;row&gt; 2.0 &lt;/row&gt;<br>
-   &lt;col&gt; 32.0 &lt;/col&gt;<br>
-   &lt;high&gt; 9.0 &lt;/high&gt;<br>
-   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
-   &lt;title&gt; Sensitivity &lt;/title&gt;<br>
-<br>
-&lt;structurename&gt; HgbProps &lt;/structurename&gt;<br>
-<br>
-&lt;repeatlist&gt;<br>
-  &lt;name&gt; HgbProps.P50Basic &lt;/name&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 26 &lt;/reps&gt;&lt;stepsize&gt; 1.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 10 &lt;/reps&gt;&lt;stepsize&gt; 0.1 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 23 &lt;/reps&gt;&lt;stepsize&gt; 1.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-&lt;/repeatlist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; P50Basic &lt;/name&gt;<br>
-  &lt;listname&gt; HgbProps.P50Basic &lt;/listname&gt;<br>
-  &lt;label&gt; Basic P50 &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;maplist&gt;&lt;name&gt; HgbProps.Sens &lt;/name&gt;<br>
-  &lt;map&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;img&gt; None &lt;/img&gt;&lt;/map&gt;<br>
-  &lt;map&gt;&lt;val&gt; 0.5 &lt;/val&gt;&lt;img&gt; Decreased &lt;/img&gt;&lt;/map&gt;<br>
-  &lt;map&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;img&gt; Normal &lt;/img&gt;&lt;/map&gt;<br>
-  &lt;map&gt;&lt;val&gt; 1.5 &lt;/val&gt;&lt;img&gt; Increased &lt;/img&gt;&lt;/map&gt;<br>
-  &lt;map&gt;&lt;val&gt; 2.0 &lt;/val&gt;&lt;img&gt; Maximum &lt;/img&gt;&lt;/map&gt;<br>
-&lt;/maplist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 3.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; TempSens &lt;/name&gt;<br>
-  &lt;listname&gt; HgbProps.Sens &lt;/listname&gt;<br>
-  &lt;label&gt; Temp &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 4.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; pHSens &lt;/name&gt;<br>
-  &lt;listname&gt; HgbProps.Sens &lt;/listname&gt;<br>
-  &lt;label&gt; pH &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 5.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; pCO2Sens &lt;/name&gt;<br>
-  &lt;listname&gt; HgbProps.Sens &lt;/listname&gt;<br>
-  &lt;label&gt; pCO2 &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 7.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; COSens &lt;/name&gt;<br>
-  &lt;listname&gt; HgbProps.Sens &lt;/listname&gt;<br>
-  &lt;label&gt; CO &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 1.2 &lt;/row&gt;<br>
-  &lt;col&gt; 26.0 &lt;/col&gt;<br>
-  &lt;line&gt;  &lt;/line&gt;<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;/groupbox&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

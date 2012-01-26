@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Display_Respiration_RespiratoryCenter_ChemicalDrive_ChemicalDrive.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / CentralDrive<br>
+<br>
+Created : 2010-05-18<br>
+Last Modified : 2010-05-18<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+<br>
+&lt;groupbox&gt;<br>
+   &lt;row&gt; 2.0 &lt;/row&gt;<br>
+   &lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;high&gt; 20.8 &lt;/high&gt;<br>
+   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
+   &lt;title&gt; Central Drive &lt;/title&gt;<br>
+<br>
+&lt;structurename&gt; RespiratoryCenter-Chemical &lt;/structurename&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; CentralDrive &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Drive &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showgraph&gt;<br>
+  &lt;row&gt; 2.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
+  &lt;leftmargin&gt; 4 &lt;/leftmargin&gt;<br>
+  &lt;xaxis&gt;<br>
+    &lt;name&gt; System.X &lt;/name&gt;<br>
+    &lt;label&gt; Time &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/xaxis&gt;<br>
+  &lt;yaxis&gt;<br>
+    &lt;yvar&gt;<br>
+      &lt;name&gt; CentralDrive &lt;/name&gt;<br>
+      &lt;nolabel/&gt;<br>
+      &lt;linecolor&gt; BLUE &lt;/linecolor&gt;<br>
+    &lt;/yvar&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 1 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/yaxis&gt;<br>
+&lt;/showgraph&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 9.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; PhEffect &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+  &lt;label&gt; pH Effect &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;showcurve&gt;<br>
+  &lt;row&gt; 10.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
+  &lt;leftmargin&gt; 5 &lt;/leftmargin&gt;<br>
+<br>
+  &lt;xaxis&gt;<br>
+    &lt;name&gt; Brain-Ph.Ph &lt;/name&gt;<br>
+    &lt;label&gt; Brain pH &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 6.6 &lt;/min&gt;&lt;max&gt; 7.5 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/xaxis&gt;<br>
+<br>
+  &lt;yaxis&gt;<br>
+    &lt;label&gt; Effect &lt;/label&gt;<br>
+    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 10 &lt;/max&gt;&lt;/scale&gt;<br>
+  &lt;/yaxis&gt;<br>
+<br>
+  &lt;curvename&gt; PhOnCentralDrive &lt;/curvename&gt;<br>
+&lt;/showcurve&gt;<br>
+<br>
+&lt;showvalue&gt;<br>
+  &lt;row&gt; 17.8 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
+  &lt;name&gt; Brain-Ph.Ph &lt;/name&gt;<br>
+  &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
+  &lt;label&gt; Brain pH &lt;/label&gt;<br>
+&lt;/showvalue&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; CentralBase &lt;/name&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt; 20 &lt;/reps&gt;&lt;stepsize&gt; 0.1 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+  &lt;repeat&gt;&lt;reps&gt;  8 &lt;/reps&gt;&lt;stepsize&gt; 1.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 19.2 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
+  &lt;name&gt; CentralBase &lt;/name&gt;<br>
+  &lt;listname&gt; CentralBase &lt;/listname&gt;<br>
+  &lt;label&gt; Base &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;infobutton&gt;<br>
+  &lt;row&gt; 1.2 &lt;/row&gt;<br>
+  &lt;col&gt; 26.0 &lt;/col&gt;<br>
+<br>
+  &lt;line&gt; Chemical drive is normally 1.0 x Normal &lt;/line&gt;<br>
+  &lt;line&gt; and is the sum of central drive (0.6) &lt;/line&gt;<br>
+  &lt;line&gt; and peripheral drive (0.4) &lt;/line&gt;<br>
+&lt;/infobutton&gt;<br>
+<br>
+&lt;/groupbox&gt;<br>
+<br>
+End<br>
+
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

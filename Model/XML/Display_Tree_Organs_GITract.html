@@ -1,196 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:08 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_Tree_Organs_Organs.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / GITract<br>
-<br>
-Created : 08-Dec-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;branch&gt;<br>
-  &lt;name&gt; GITract &lt;/name&gt;<br>
-  &lt;label&gt; GI Tract &lt;/label&gt;<br>
-  &lt;parent&gt; ORGANS &lt;/parent&gt;<br>
-&lt;/branch&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GITract-Circulation &lt;/name&gt;<br>
-  &lt;label&gt; Circulation &lt;/label&gt;<br>
-  &lt;parent&gt; GITract &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GITract-Metabolism &lt;/name&gt;<br>
-  &lt;label&gt; Metabolism &lt;/label&gt;<br>
-  &lt;parent&gt; GITract &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;branch&gt;<br>
-  &lt;name&gt; GITract-Fuel &lt;/name&gt;<br>
-  &lt;label&gt; Fuel &lt;/label&gt;<br>
-  &lt;parent&gt; GITract &lt;/parent&gt;<br>
-&lt;/branch&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GITractFuel-Selection &lt;/name&gt;<br>
-  &lt;label&gt; Selection &lt;/label&gt;<br>
-  &lt;parent&gt; GITract-Fuel &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GITractFuel-AerobicUse &lt;/name&gt;<br>
-  &lt;label&gt; Aerobic Use &lt;/label&gt;<br>
-  &lt;parent&gt; GITract-Fuel &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GITractFuel-AnaerobicUse &lt;/name&gt;<br>
-  &lt;label&gt; Anaerobic Use &lt;/label&gt;<br>
-  &lt;parent&gt; GITract-Fuel &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GITractFuel-Adequacy &lt;/name&gt;<br>
-  &lt;label&gt; Adequacy &lt;/label&gt;<br>
-  &lt;parent&gt; GITract-Fuel &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GITract-CO2 &lt;/name&gt;<br>
-  &lt;label&gt; CO2 &lt;/label&gt;<br>
-  &lt;parent&gt; GITract &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GITract-Lactate &lt;/name&gt;<br>
-  &lt;label&gt; Lactate &lt;/label&gt;<br>
-  &lt;parent&gt; GITract &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GITract-AcidBase &lt;/name&gt;<br>
-  &lt;label&gt; Acid-Base &lt;/label&gt;<br>
-  &lt;parent&gt; GITract &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GITract-Nerves &lt;/name&gt;<br>
-  &lt;label&gt; Nerves &lt;/label&gt;<br>
-  &lt;parent&gt; GITract &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GITract-Function &lt;/name&gt;<br>
-  &lt;label&gt; Function &lt;/label&gt;<br>
-  &lt;parent&gt; GITract &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GITract-Structure &lt;/name&gt;<br>
-  &lt;label&gt; Structure &lt;/label&gt;<br>
-  &lt;parent&gt; GITract &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GITract-Size &lt;/name&gt;<br>
-  &lt;label&gt; Size &lt;/label&gt;<br>
-  &lt;parent&gt; GITract &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GITract-Vasculature &lt;/name&gt;<br>
-  &lt;label&gt; Vasculature &lt;/label&gt;<br>
-  &lt;parent&gt; GITract &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;separatorbar&gt;<br>
-  &lt;parent&gt; GITract &lt;/parent&gt;<br>
-&lt;/separatorbar&gt;<br>
-<br>
-&lt;branch&gt;<br>
-  &lt;name&gt; GILumen &lt;/name&gt;<br>
-  &lt;label&gt; GI Lumen &lt;/label&gt;<br>
-  &lt;parent&gt; GITract &lt;/parent&gt;<br>
-&lt;/branch&gt;<br>
-<br>
-&lt;branch&gt;<br>
-  &lt;name&gt; GILumenElectrolytes &lt;/name&gt;<br>
-  &lt;label&gt; Electrolytes &lt;/label&gt;<br>
-  &lt;parent&gt; GILumen &lt;/parent&gt;<br>
-&lt;/branch&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GILumenSodium &lt;/name&gt;<br>
-  &lt;label&gt; Na+ &lt;/label&gt;<br>
-  &lt;parent&gt; GILumenElectrolytes &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GILumenChloride &lt;/name&gt;<br>
-  &lt;label&gt; Cl- &lt;/label&gt;<br>
-  &lt;parent&gt; GILumenElectrolytes &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GILumenPotassium &lt;/name&gt;<br>
-  &lt;label&gt; K+ &lt;/label&gt;<br>
-  &lt;parent&gt; GILumenElectrolytes &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GILumenCalcium &lt;/name&gt;<br>
-  &lt;label&gt; Ca++ &lt;/label&gt;<br>
-  &lt;parent&gt; GILumenElectrolytes &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GILumenFood &lt;/name&gt;<br>
-  &lt;label&gt; Food &lt;/label&gt;<br>
-  &lt;parent&gt; GILumen &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GILumenH2O &lt;/name&gt;<br>
-  &lt;label&gt; H2O &lt;/label&gt;<br>
-  &lt;parent&gt; GILumen &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GILumenTemperature &lt;/name&gt;<br>
-  &lt;label&gt; Temperature &lt;/label&gt;<br>
-  &lt;parent&gt; GILumen &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GILumenOther &lt;/name&gt;<br>
-  &lt;label&gt; Other &lt;/label&gt;<br>
-  &lt;parent&gt; GILumen &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

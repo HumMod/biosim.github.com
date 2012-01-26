@@ -1,137 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:08 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_VascularCompartments_VascularCompartments.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / PulmArty DES<br>
-<br>
-Created : 21-Oct-04<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; PulmArty &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Inflow &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Outflow &lt;/name&gt;&lt;/var&gt;<br>
-&lt;parm&gt;&lt;name&gt; V0 &lt;/name&gt;&lt;val&gt; 110.0 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;var&gt;&lt;name&gt; StressedVol &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Pressure &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; ExternalPressure &lt;/name&gt;&lt;/var&gt;<br>
-&lt;parm&gt;&lt;name&gt; Compliance &lt;/name&gt;&lt;val&gt; 5.3 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;parm&gt;&lt;name&gt; Conductance &lt;/name&gt;&lt;val&gt; 1350 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; KS &lt;/name&gt;&lt;val&gt; 0.475 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; KD &lt;/name&gt;&lt;val&gt; 0.351 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; SBP &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; DBP &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;stablediffeq&gt;<br>
-  &lt;name&gt; Vol &lt;/name&gt;<br>
-  &lt;integralname&gt; Vol &lt;/integralname&gt;<br>
-  &lt;initialval&gt; 201.0 &lt;/initialval&gt;<br>
-  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 10.0 &lt;/errorlim&gt;<br>
-  &lt;dxmaxname&gt; DxMax &lt;/dxmaxname&gt;<br>
-&lt;/stablediffeq&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcPressure &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; StressedVol &lt;/name&gt;<br>
-  &lt;val&gt; ( Vol - V0 ) MAX 0.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; ExternalPressure &lt;/name&gt;<br>
-  &lt;val&gt; Thorax.AvePressure &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Pressure &lt;/name&gt;<br>
-  &lt;val&gt; ( StressedVol / Compliance ) + ExternalPressure &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcOutflow &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Outflow &lt;/name&gt;<br>
-  &lt;val&gt; Conductance * ( Pressure - PulmCapys.Pressure ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;conditional&gt;<br>
-  &lt;name&gt; DxMax &lt;/name&gt;<br>
-  &lt;test&gt; Conductance GT 0.0 &lt;/test&gt;<br>
-  &lt;true&gt; 0.5 * Compliance / Conductance &lt;/true&gt;<br>
-  &lt;false&gt; INFINITY &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Inflow &lt;/name&gt;<br>
-  &lt;val&gt; RightVentricle.Outflow &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Change &lt;/name&gt;<br>
-  &lt;val&gt; Inflow - Outflow &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; PulsatilePressure &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; SBP &lt;/name&gt;<br>
-  &lt;val&gt; Pressure + ( KS * ( RightHeartPumping-Pumping.ForwardStroke / Compliance ) ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; DBP &lt;/name&gt;<br>
-  &lt;val&gt; Pressure - ( KD * ( RightHeartPumping-Pumping.ForwardStroke / Compliance ) ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

@@ -1,100 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:08 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Heart_Heart.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / Heart-Pain DES<br>
-<br>
-Created : 2010-06-01<br>
-Last Modified : 2010-06-01<br>
-Author : Tom Coleman<br>
-Copyright : 2010-2010<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Heart-Pain &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; HasPain &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
-<br>
-&lt;call&gt; RightHeart-Pain.Wrapup &lt;/call&gt;<br>
-&lt;call&gt; LeftHeart-Pain.Wrapup &lt;/call&gt;<br>
-<br>
-&lt;if&gt;<br>
-&lt;test&gt; HasPain &lt;/test&gt;<br>
-&lt;true&gt;<br>
-  &lt;andif&gt;<br>
-  &lt;test&gt; ( NOT RightHeart-Pain.HasPain ) AND ( NOT LeftHeart-Pain.HasPain ) &lt;/test&gt;<br>
-  &lt;true&gt;<br>
-    &lt;def&gt;&lt;name&gt; HasPain &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-    &lt;call&gt; ShowOK &lt;/call&gt;<br>
-  &lt;/true&gt;<br>
-  &lt;/andif&gt;<br>
-&lt;/true&gt;<br>
-<br>
-&lt;false&gt;<br>
-  &lt;andif&gt;<br>
-  &lt;test&gt; ( RightHeart-Pain.HasPain ) OR ( LeftHeart-Pain.HasPain ) &lt;/test&gt;<br>
-  &lt;true&gt;<br>
-    &lt;def&gt;&lt;name&gt; HasPain &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-    &lt;call&gt; ShowPain &lt;/call&gt;<br>
-  &lt;/true&gt;<br>
-  &lt;/andif&gt;<br>
-&lt;/false&gt;<br>
-&lt;/if&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; ShowPain &lt;/name&gt;<br>
-<br>
-&lt;if&gt;<br>
-&lt;test&gt; NOT Brain-Function.Comatose &lt;/test&gt;<br>
-&lt;true&gt;<br>
-  &lt;page&gt; I have a very BAD pain in my chest. &lt;/page&gt;  <br>
-&lt;/true&gt;<br>
-&lt;/if&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; ShowOK &lt;/name&gt;<br>
-<br>
-&lt;if&gt;<br>
-&lt;test&gt; NOT Brain-Function.Comatose &lt;/test&gt;<br>
-&lt;true&gt;<br>
-  &lt;page&gt; My chest pain is gone. &lt;/page&gt;  <br>
-&lt;/true&gt;<br>
-&lt;/if&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

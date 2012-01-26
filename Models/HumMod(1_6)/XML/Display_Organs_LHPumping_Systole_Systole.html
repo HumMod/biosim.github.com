@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Display_Organs_LHPumping_LHPumping.html'><img src='../../Back.PNG'></a>
+<p><a href='Display_Organs_LHPumping_Systole_Pressure-Volume.html'>Display_Organs_LHPumping_Systole_Pressure-Volume</a>
+<br><a href='Display_Organs_LHPumping_Systole_Technical.html'>Display_Organs_LHPumping_Systole_Technical</a>
+<br><a href='Display_Organs_LHPumping_Systole_Contractility.html'>Display_Organs_LHPumping_Systole_Contractility</a>
+<p>
+HumMod / Systole<br>
+<br>
+Created : 16-May-05<br>
+Last Modified : 2010-05-24<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+<br>
+&lt;panel&gt;&lt;name&gt; LHPumping-Systole &lt;/name&gt;<br>
+<br>
+&lt;showbitmap&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; LeftHeart(2) &lt;/name&gt;<br>
+&lt;/showbitmap&gt;<br>
+<br>
+&lt;label&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 4.5 &lt;/col&gt;<br>
+  &lt;text&gt; Left Heart Pumping - Systole &lt;/text&gt;<br>
+&lt;/label&gt;<br>
+<br>
+&lt;showclock&gt;<br>
+  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
+  &lt;name&gt; System.X &lt;/name&gt;<br>
+  &lt;ampm/&gt;<br>
+  &lt;secs/&gt;<br>
+  &lt;days/&gt;<br>
+&lt;/showclock&gt;<br>
+<br>
+&lt;?path Display\Organs\LHPumping\Systole\ ?&gt;<br>
+<br>
+&lt;?include Pressure-Volume.DES ?&gt;<br>
+&lt;?include Technical.DES ?&gt;<br>
+&lt;?include Contractility.DES ?&gt;<br>
+<br>
+&lt;/panel&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

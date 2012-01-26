@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:01 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../DocsLightBlue.png'>
+<a href='KFluxToCell.html'><img src='../../Back.PNG'></a>
+<p>KFluxToCell.K
+<p>Definition
+<p>K is the rate constant.<br>Understanding rate constants is an <br>essential tool for all model builders.<br><br>There is an irrational number called Euler's number <br>which is often denoted by e (and sometimes exp). <br>The value of e is roughly 2.718.<br><br>If e is raised to a power, we have an exponential. <br>A specific example might be e^2. Note that the value <br>of e to a power can be obtained using an infinite series <br>(and e to a power is part of every scientific calculator <br>and computer programming library).<br><br>If we raise e to an unspecified power using a variable, <br>we have an exponential function. An example might be e^x.<br><br>The exponential function gets attention when is noted <br>that its derivative with respect to x is again the exponential <br>function. This can be denoted as<br><br>	d(e^x)/dx = e^x<br><br>The exponential function is also used to (inversely) <br>define the natural logarithm, denoted by In. If ex = y <br>then x = ln y.<br><br>Note that e^0 = 1 and e^-� = 0. (� represents infinity).<br><br>In models, we often see responses where a variable decays <br>in an exponential fashion from an initial value to a steady <br>state value. Such responses can roughly be represented by<br><br>	e^-Kt<br><br>where K is a positive constant called the rate constant and <br>t is the independent variable (usually time). This function <br>again has the boundary values of e^K0 = 1 and e^-K� = 0. <br>(� represents infinity). The importance of K is that it <br>determines the speed (or rate and hence its name) of transition <br>between 1 and 0.<br><br>We can now work this backwards and get an estimate of K <br>by looking at the speed or rate of the decay in an <br>appropriate data set.<br><br>When t = 1/K, we have e^-1, which has a value of 0.37. <br>This means that the decay is 63% of way to its final value <br>(defined as t0.63). So we observe how long it takes the decay <br>to get to 63% of its final value and then we define K = 1/t0.63.<br><br>Another (and comparable) way to find a rate constant is to <br>observe how long it takes a decay to get half way to its final <br>value - this is the half-time. We can denote the half-time <br>as t1/2. The exponential function is then e^-Kt1/2 = 0.5. <br>We can solve this equality for K by taking the natural <br>logarithm of both sides of the equation and rearranging.<br><br>	-Kt1/2 = ln (0.5)<br>	K = - ln(0.5) / t1/2<br><br>Or simply<br><br>	K = 0.69 / t1/2
+<p>XXX
+<p>[Plasma]    pG/mL<br>Plasma Mass nG<br>Fluxes      nG/Min<br>Stored Mass uG<br><br>Notice that micro (10^-6), nano (10^-9) and pico (10^-12)<br>gram units are used.
+<p>See Also
+<p>XXX
+<br>XXXX
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_Diet_Diet.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / DietIntakeNutrition<br>
+<br>
+Created : 24-Jun-06<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; DietIntakeNutrition &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Carbo_mG/Min &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Fat_mG/Min &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Protein_mG/Min &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Total_mG/Min &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; Fixed? &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; FixedIntake(xGoal) &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;var&gt;&lt;name&gt; Intake(xGoal) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Carbo_Cal/Min &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Fat_Cal/Min &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Protein_Cal/Min &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Total_Cal/Min &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Total_kCal/Day &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;if&gt;<br>
+&lt;test&gt; Brain-Function.IsReallyDead &lt;/test&gt;<br>
+&lt;true&gt;<br>
+  &lt;def&gt;&lt;name&gt; Carbo_mG/Min &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Fat_mG/Min &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Protein_mG/Min &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;call&gt; DailyCalories &lt;/call&gt;<br>
+<br>
+  &lt;exitblock/&gt;  <br>
+&lt;/true&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;conditional&gt;<br>
+  &lt;name&gt; Intake(xGoal) &lt;/name&gt;<br>
+  &lt;test&gt; Fixed? &lt;/test&gt;<br>
+  &lt;true&gt; FixedIntake(xGoal) &lt;/true&gt;<br>
+  &lt;false&gt; DietAppetite.LeptinEffect &lt;/false&gt;<br>
+&lt;/conditional&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Carbo_mG/Min &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      1000.0<br>
+    * DietFeeding.Fraction<br>
+    * DietGoalNutrition.Carbo_G/Day<br>
+    * Intake(xGoal)<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Fat_mG/Min &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      1000.0<br>
+    * DietFeeding.Fraction<br>
+    * DietGoalNutrition.Fat_G/Day<br>
+    * Intake(xGoal)<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Protein_mG/Min &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      1000.0<br>
+    * DietFeeding.Fraction<br>
+    * DietGoalNutrition.Protein_G/Day<br>
+    * Intake(xGoal)<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;call&gt; DailyCalories &lt;/call&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; DailyCalories &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Total_mG/Min &lt;/name&gt;<br>
+  &lt;val&gt; Carbo_mG/Min + Fat_mG/Min + Protein_mG/Min &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Carbo_Cal/Min &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      Carbo_mG/Min<br>
+    * Metabolism-Tools.Carbo(Cal/mG)<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Fat_Cal/Min &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      Fat_mG/Min<br>
+    * Metabolism-Tools.Fat(Cal/mG)<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Protein_Cal/Min &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      Protein_mG/Min<br>
+    * Metabolism-Tools.Protein(Cal/mG)<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Total_Cal/Min &lt;/name&gt;<br>
+  &lt;val&gt; Carbo_Cal/Min + Fat_Cal/Min + Protein_Cal/Min &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Total_kCal/Day &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      Total_Cal/Min<br>
+    * Metabolism-Tools.CAL_MIN_TO_KCAL_DAY<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

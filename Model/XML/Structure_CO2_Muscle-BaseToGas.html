@@ -1,78 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:07 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_CO2_CO2.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / Muscle-BaseToGas<br>
-<br>
-Created : 13-May-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Muscle-BaseToGas &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; pCO2 &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; [SID] &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; [HCO3] &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;constant&gt;<br>
-  &lt;name&gt; C &lt;/name&gt;<br>
-  &lt;val&gt; -413.34 &lt;/val&gt;<br>
-&lt;/constant&gt;<br>
-<br>
-&lt;constant&gt;<br>
-  &lt;name&gt; D &lt;/name&gt;<br>
-  &lt;val&gt; 5988.0 &lt;/val&gt;<br>
-&lt;/constant&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;conditional&gt;<br>
-  &lt;name&gt; pCO2 &lt;/name&gt;<br>
-  &lt;test&gt; ( [HCO3] GT 0.0 ) AND ( [SID] GT 0.0 ) &lt;/test&gt;<br>
-  &lt;true&gt; ( ( C * [SID] ) + ( D * [HCO3] ) ) MAX 0.0001 &lt;/true&gt;<br>
-  &lt;false&gt; 0.0001 &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;/block&gt;<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

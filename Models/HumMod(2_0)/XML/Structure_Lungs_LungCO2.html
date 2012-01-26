@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_Lungs_Lungs.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / LungCO2<br>
+<br>
+Created : 10-Feb-06<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; LungCO2 &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; [Alveolar] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; PAlveolar &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; [Capy] &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; PCapy &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;impliciteq&gt;<br>
+  &lt;name&gt; Expired &lt;/name&gt;<br>
+  &lt;startname&gt; Expired &lt;/startname&gt;<br>
+  &lt;initialval&gt; 200.0 &lt;/initialval&gt;<br>
+  &lt;endname&gt; EndExpired &lt;/endname&gt;<br>
+  &lt;errorlim&gt; 2.0 &lt;/errorlim&gt;<br>
+&lt;/impliciteq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;if&gt;<br>
+  &lt;test&gt; Breathing.AlveolarVentilation(STPD) GT 0.0 &lt;/test&gt;<br>
+  &lt;true&gt;<br>
+    &lt;call&gt; CalcExpired &lt;/call&gt;<br>
+  &lt;/true&gt;<br>
+  &lt;false&gt; Not breathing<br>
+    &lt;call&gt; CalcNoneExpired &lt;/call&gt;<br>
+  &lt;/false&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcExpired &lt;/name&gt;<br>
+  &lt;implicitmath&gt;&lt;name&gt; Expired &lt;/name&gt;<br>
+<br>
+  &lt;def&gt;&lt;name&gt; [Alveolar] &lt;/name&gt;<br>
+    &lt;val&gt;  Bronchi.[CO2] + ( Expired / Breathing.AlveolarVentilation(STPD) ) &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;def&gt;&lt;name&gt; PAlveolar &lt;/name&gt;&lt;val&gt; [Alveolar] * Barometer.Pressure &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; PCapy &lt;/name&gt;&lt;val&gt; PAlveolar &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;copy&gt;&lt;from&gt; PCapy &lt;/from&gt;&lt;to&gt; Blood-GasToBase.pCO2 &lt;/to&gt;&lt;/copy&gt;<br>
+  &lt;copy&gt;&lt;from&gt; BloodIons.[SID] &lt;/from&gt;&lt;to&gt; Blood-GasToBase.[SID] &lt;/to&gt;&lt;/copy&gt;<br>
+    &lt;call&gt; Blood-GasToBase.Calc &lt;/call&gt;<br>
+  &lt;copy&gt;&lt;from&gt; Blood-GasToBase.[HCO3] &lt;/from&gt;&lt;to&gt; [Capy] &lt;/to&gt;&lt;/copy&gt;<br>
+<br>
+  &lt;def&gt;&lt;name&gt; EndExpired &lt;/name&gt;<br>
+    &lt;val&gt; LungBloodFlow.AlveolarVentilated * ( LungArtyCO2.[CO2] - [Capy] ) * CO2Tools.MolsToLiters &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+<br>
+  &lt;/implicitmath&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; CalcNoneExpired &lt;/name&gt;<br>
+  &lt;def&gt;&lt;name&gt; Expired &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; [Capy] &lt;/name&gt;&lt;val&gt; LungArtyCO2.[CO2] &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; PCapy &lt;/name&gt;&lt;val&gt; LungArtyCO2.PCO2 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; PAlveolar &lt;/name&gt;&lt;val&gt; PCapy &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; [Alveolar] &lt;/name&gt;&lt;val&gt; PAlveolar / 760.0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

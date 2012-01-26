@@ -1,63 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:08 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_Tree_Tree.html'><img src='../../Back.PNG'></a>
-<p><a href='Display_Tree_Respiration_O2.html'>Display_Tree_Respiration_O2</a>
-<br><a href='Display_Tree_Respiration_CO2.html'>Display_Tree_Respiration_CO2</a>
-<br><a href='Display_Tree_Respiration_Lungs.html'>Display_Tree_Respiration_Lungs</a>
-<br><a href='Display_Tree_Respiration_RespiratoryCenter.html'>Display_Tree_Respiration_RespiratoryCenter</a>
-<p>
-HumMod / Respiration DES<br>
-<br>
-Created : 2011-07-26<br>
-Last Modified : 2011-07-26<br>
-Author : Tom Coleman<br>
-Copyright : 2011-2011<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;branch&gt;<br>
-  &lt;name&gt; RESPIRATION &lt;/name&gt;<br>
-  &lt;label&gt; Respiration &lt;/label&gt;<br>
-  &lt;parent&gt; MAINMENU &lt;/parent&gt;<br>
-&lt;/branch&gt;<br>
-<br>
-&lt;?path Display\Tree\Respiration\ ?&gt;<br>
-<br>
-&lt;?include O2.DES ?&gt;<br>
-&lt;?include CO2.DES ?&gt;<br>
-<br>
-&lt;separatorbar&gt;<br>
-  &lt;parent&gt; RESPIRATION &lt;/parent&gt;<br>
-&lt;/separatorbar&gt;<br>
-<br>
-&lt;?include Lungs.DES ?&gt;<br>
-<br>
-&lt;separatorbar&gt;<br>
-  &lt;parent&gt; RESPIRATION &lt;/parent&gt;<br>
-&lt;/separatorbar&gt;<br>
-<br>
-&lt;?include RespiratoryCenter.DES ?&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

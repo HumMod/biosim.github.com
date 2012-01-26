@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Docs_Catechols.html'><img src='../../Back.PNG'></a>
+<p>
+QHP 2008 / Catechols.DOCS<br>
+<br>
+Created : 27-Mar-09<br>
+Last Modified : 27-Mar-09<br>
+Author : Tom Coleman<br>
+Copyright : 2009<br>
+<br>
+&lt;structurename&gt; EpiPool &lt;/structurename&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; EpiPool.[Epi(nMol/L)]&lt;/name&gt;<br>
+&lt;topic&gt; Epinephrine - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; [Epi] - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; [Epi] - Concentration Units &lt;/topic&gt;<br>
+&lt;seealso&gt; AlphaPool.Effect &lt;/seealso&gt;<br>
+&lt;seealso&gt; EpiPool.Change &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; EpiPool.[Epi(pG/mL)] &lt;/name&gt;<br>
+&lt;topic&gt; Epinephrine - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; [Epi] - Physical Units  &lt;/topic&gt;<br>
+&lt;topic&gt; [Epi] - Concentration Units  &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; EpiPool.[Epi] &lt;/name&gt;<br>
+&lt;topic&gt; Epinephrine - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; [Epi] - Physical Units  &lt;/topic&gt;<br>
+&lt;topic&gt; [Epi] - Concentration Units  &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; EpiPool.Change &lt;/name&gt;<br>
+&lt;topic&gt; Change - EP1Definition &lt;/topic&gt;<br>
+&lt;topic&gt; [Epi] - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; [Epi] - Concentration Units  &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; EpiPool.F1 &lt;/name&gt;<br>
+&lt;topic&gt; F1 - EP2Definition &lt;/topic&gt;<br>
+&lt;topic&gt; Epinephrine - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; [Epi] - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; [Epi] - Concentration Units  &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; EpiPool.F2 &lt;/name&gt;<br>
+&lt;topic&gt; F2 - EP3Definition &lt;/topic&gt;<br>
+&lt;topic&gt; Epinephrine - Overview  &lt;/topic&gt;<br>
+&lt;topic&gt; [Epi] - Physical Units  &lt;/topic&gt;<br>
+&lt;topic&gt; [Epi] - Concentration Units  &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; EpiPool.Gain &lt;/name&gt;<br>
+&lt;topic&gt; Gain - EP4Definition &lt;/topic&gt;<br>
+&lt;seealso&gt; EpiSecretion.Rate &lt;/seealso&gt;<br>
+&lt;seealso&gt; EpiPump.Rate &lt;/seealso&gt;<br>
+&lt;seealso&gt; Pheochromocytoma.EpiRate &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; EpiPool.InitialMass &lt;/name&gt;<br>
+&lt;topic&gt; InitialMass - EP5Definition &lt;/topic&gt;<br>
+&lt;topic&gt; [Epi] - Physical Units  &lt;/topic&gt;<br>
+&lt;topic&gt; [Epi] - Concentration Units  &lt;/topic&gt;<br>
+&lt;seealso&gt; EpiPool.Mass &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; EpiPool.Loss &lt;/name&gt;<br>
+&lt;topic&gt; Loss - EP6Definition &lt;/topic&gt;<br>
+&lt;seealso&gt; EpiClearance.Rate &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; EpiPool.Mass &lt;/name&gt;<br>
+&lt;topic&gt; Mass - EP7Definition  &lt;/topic&gt;<br>
+&lt;topic&gt; Epinephrine - Overview &lt;/topic&gt;<br>
+&lt;topic&gt; [Epi] - Physical Units  &lt;/topic&gt;<br>
+&lt;topic&gt; [Epi] - Concentration Units  &lt;/topic&gt;<br>
+&lt;seealso&gt; ECFV.Vol &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; EpiPool.Target[Epi] &lt;/name&gt;<br>
+&lt;topic&gt; Target[Epi] - EP8Definition &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Epinephrine - Overview &lt;/name&gt;<br>
+&lt;label&gt; Overview &lt;/label&gt;<br>
+&lt;content&gt; <br>
+<br>
+In 1895, Oliver and Schaefer first showed that a substance <br>
+present in the adrenal gland was pressor. This substance was <br>
+subsequently shown to be epinephrine.<br>
+<br>
+Oliver G, Schaefer EA. The physiologic effects of extracts<br>
+from the suprarenal capsules. J Physiol 18:230-276, 1895<br>
+<br>
+Barger G, Dale HH. Chemical structure and sympathomimetic<br>
+action of amines. J Physiol 41:19-59, 1910.<br>
+ <br>
+Stimulation of the sympathetic nerves to the adrenal <br>
+medullae causes release of both epinephrine and <br>
+norepinephrine into the circulation. Catecholamines <br>
+exert their effects by stimulating specific protein <br>
+receptor sites known as adrenergic receptors. There are <br>
+two types of adrenergic receptors, alpha and beta receptors.<br>
+Epinephrine excites both types of receptors.<br>
+<br>
+The epinephrine pool or mass is a function of epinephrine <br>
+secretion, epinephrine clearance and the volume of distribution<br>
+which is the ECFV.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; [Epi] - Physical Units &lt;/name&gt;<br>
+&lt;label&gt; Physical Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+[Plasma]  pG/mL or nMol/L<br>
+Mass  nG or pG<br>
+<br>
+milli = 10^-3<br>
+micro = 10^-6<br>
+nano  = 10^-9<br>
+pico  = 10^-12<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; [Epi] - Concentration Units &lt;/name&gt;<br>
+&lt;label&gt; Concentration Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Epinephrine (C9 H13 N O3) has a molecular weight<br>
+of 183. Typical plasma concentration is 40pG/mL.<br>
+or 0.22nMol/L (Multiply by 0.00546 to convert pG/mL<br>
+to nMol/L).<br>
+<br>
+Fitzgerald GA, Barnes P, Hamilton CA, Dollery CT<br>
+Circulating adrenaline and blood pressure: the<br>
+metabolic effects and kinetics of infused adrenaline<br>
+in man. Eur J Clin Invest 10: 401-406, 1980<br>
+<br>
+Cohen G, Holland B, Sha J and Goldenberg M<br>
+Plasma concentrations of epinephrine and norepinephrine<br>
+during intravenous infusions in man.<br>
+J Clin Invest 38:1935-1941, 1959<br>
+<br>
+Clutter WE, Bier DM, Shah SD and Cryer PE<br>
+Epinephrine plasma metabolic clearance rates and <br>
+physiologic thresholds for metabolic and hemodynamic <br>
+actions in man.<br>
+J Clin Invest 66: 94-101, 1980<br>
+<br>
+Stratton JR, Pfeifer MA, Ritchie LJ and Halter JB<br>
+Hemodynamic effects of epinephrine: concentration-effect<br>
+study in humans.<br>
+J Appl Physiol 58(4):1199-1206, 1985<br>
+<br>
+Tidgren B and Hjemdahl P. Renal responses to mental<br>
+stress and epinephrine in humans.<br>
+Am J Physiol 257:F682-F689, 1989<br>
+<br>
+Goldstein DS, Eisenhofer GF, Kopin IJ<br>
+Sources and significance of plasma levels of catechols <br>
+and their metabolites in humans.<br>
+J Pharmacol Exp Ther 305(3):800-811, 2003 <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Change - EP1Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Changes in the Epi pool or mass are a function of both <br>
+gains and losses in epinephrine over time. Gains may <br>
+occur from increased secretion due to increased sympathetic <br>
+nerve stimulation; from infusion of epinephrine<br>
+using the epi pump feature of the model and/or increases <br>
+from a pheochromocytoma.  <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; F1 - EP2Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+F1 is a mathematical variable used in the calculation of <br>
+the mass of Epi. F1 is the gain in Epi over time and is <br>
+a function of  Epi secretion rate, Epi pump rate and<br>
+pheochromocytoma Epi rate. <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; F2 - EP3Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+F2 is a mathematical variable used in the calculation of <br>
+the mass of Epi. F2 is the loss in Epi over time and is <br>
+a function of  Epi clearance rate. <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Gain - EP4Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Gain is defined as positive changes in mass of epinephrine <br>
+and is a function of epinephrine secretion rate, <br>
+epinephrine from infusion (using the Epi pump feature) and<br>
+any epinephrine secretion from a possible pheochromocytoma.<br>
+The model user may create a pheochromocytoma and <br>
+define different levels of severity.<br>
+   <br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Loss - EP6Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Loss is defined as a negative change in mass of epinephrine<br>
+and is a function of clearance rate.<br>
+<br>
+Goldstein DS, Eisenhofer G, Kopin IJ. Sources and<br>
+significance of plasma levels of catechols and their<br>
+metabolites in humans. <br>
+J Pharmacol Exp Ther 305(3):800-811, 2003 <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; InitialMass - EP5Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+The initial mass is the starting amount of Epi. Since the <br>
+plasma concentration is 40pG/mL (the target[Epi]) and the<br>
+volume of distribution is the ECFV (15,000mL), then the <br>
+initial mass or circulating pool is 600nG or 600,000pG.<br>
+<br>
+Initial Mass = Target[Epi]*ECFV.Vol<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Mass - EP7Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Mass is the calculated amount of epinephrine at any <br>
+any given time. Change in the Epi pool or mass is a <br>
+function of both gains and losses in epinephrine over time. <br>
+Gains may occur from increased secretion due to increased <br>
+sympathetic nerve stimulation; from infusion of epinephrine<br>
+using the epi pump feature of the model and/or increases <br>
+from a pheochromocytoma.  <br>
+Changes in the pool are calculated in the model using two <br>
+mathematical variables, F1 and F2, which integrate gains and <br>
+losses over time. A Backward Euler integral is used in this<br>
+calculation because it gives a more stable solution set.  <br>
+<br>
+Fitzgerald GA, Barnes P, Hamilton CA, Dollery CT.<br>
+Circulating Adrenaline and blood pressure: the<br>
+metabolic effects and kinetics of infused adrenaline<br>
+in man. Eur J Clin Invest 10: 401-406, 1980.<br>
+<br>
+Goldstein DS, Eisenhofer G, Kopin IJ. Sources and<br>
+significance of plasma levels of catechols and their<br>
+metabolites in humans. <br>
+J Pharmacol Exp Ther 305(3):800-811, 2003 <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Target[Epi] - EP8Definition &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+During startup, the model user defines the particular <br>
+traits of the HumMod patient. These are gender, body size, <br>
+age, muscularity and adiposity. All of these traits <br>
+influence body volumes, most notably the extracellular <br>
+fluid volume (ECFV). The assumption is made that<br>
+while volumes may change with traits, concentrations do <br>
+not. At startup,initial volumes,especially ECFV and plasma <br>
+volume are calculated. A target concentration is specified <br>
+- in this case Target[Epi]. <br>
+<br>
+The initial mass or circulating pool is the Target[Epi] <br>
+multiplied by the initial volume of distribution, in <br>
+this case the ECFV.<br>
+ <br>
+Initial Mass = Target[Epi]*ECFV.InitialVol(L)<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+   <br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

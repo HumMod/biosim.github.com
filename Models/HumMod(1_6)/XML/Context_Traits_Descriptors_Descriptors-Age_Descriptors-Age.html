@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Context_Traits_Descriptors_Descriptors.html'><img src='../../Back.PNG'></a>
+<p><a href='Context_Traits_Descriptors_Descriptors-Age_Young.html'>Context_Traits_Descriptors_Descriptors-Age_Young</a>
+<br><a href='Context_Traits_Descriptors_Descriptors-Age_Youngish.html'>Context_Traits_Descriptors_Descriptors-Age_Youngish</a>
+<br><a href='Context_Traits_Descriptors_Descriptors-Age_Middleaged.html'>Context_Traits_Descriptors_Descriptors-Age_Middleaged</a>
+<br><a href='Context_Traits_Descriptors_Descriptors-Age_Old.html'>Context_Traits_Descriptors_Descriptors-Age_Old</a>
+<br><a href='Context_Traits_Descriptors_Descriptors-Age_VeryOld.html'>Context_Traits_Descriptors_Descriptors-Age_VeryOld</a>
+<p>
+HumMod / Descriptors-Age<br>
+<br>
+Created : 21-Nov-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Descriptors-Age &lt;/name&gt;<br>
+<br>
+&lt;?path Context\Traits\Descriptors\Descriptors-Age\ ?&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; YOUNG &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; YOUNGISH &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; MIDDLEAGED &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; OLD &lt;/name&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; VERYOLD &lt;/name&gt;&lt;val&gt; 4 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; IsYoung &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; IsYoungish &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; IsMiddleaged &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; IsOld &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; IsVeryOld &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Value &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+  &lt;?if AGE-YOUNG Young.DES ?&gt;<br>
+  &lt;?if AGE-YOUNGISH Youngish.DES ?&gt;<br>
+  &lt;?if AGE-MIDDLEAGED Middleaged.DES ?&gt;<br>
+  &lt;?if AGE-OLD Old.DES ?&gt;<br>
+  &lt;?if AGE-VERYOLD VeryOld.DES ?&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

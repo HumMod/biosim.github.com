@@ -1,105 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:08 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_LeftHeart_LeftHeart.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / LeftHeart-Infarction<br>
-<br>
-Created : 2010-06-01<br>
-Last Modified : 2010-06-01<br>
-Author : Tom Coleman<br>
-Copyright : 2010-2010<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;structure&gt;&lt;name&gt; LeftHeart-Infarction &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; Area% &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Effect &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; IschemicTissueFraction &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; IsIschemic &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;delay&gt;<br>
-  &lt;name&gt; DeadTissueFraction &lt;/name&gt;<br>
-  &lt;outputname&gt; DeadTissueFraction &lt;/outputname&gt;<br>
-  &lt;initialval&gt; 0.0 &lt;/initialval&gt;<br>
-  &lt;inputname&gt; DamagedTissueFraction &lt;/inputname&gt;<br>
-  &lt;rateconstname&gt; DeadTissueK &lt;/rateconstname&gt;<br>
-  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 0.01 &lt;/errorlim&gt;<br>
-&lt;/delay&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; DeadTissueK &lt;/name&gt;<br>
-  &lt;val&gt; 0.004 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; DamagedTissueFraction &lt;/name&gt;<br>
-  &lt;val&gt; Area% / 100.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Effect &lt;/name&gt;<br>
-  &lt;val&gt; 1.0 - DamagedTissueFraction &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; IschemicTissueFraction &lt;/name&gt;<br>
-  &lt;val&gt; DamagedTissueFraction - DeadTissueFraction &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;conditional&gt;&lt;name&gt; IsIschemic  &lt;/name&gt;<br>
-&lt;test&gt; ( IsIschemic ) AND ( IschemicTissueFraction LT 0.03 ) &lt;/test&gt;<br>
-&lt;true&gt; FALSE &lt;/true&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;conditional&gt;&lt;name&gt; IsIschemic &lt;/name&gt;<br>
-&lt;test&gt; ( NOT IsIschemic ) AND ( IschemicTissueFraction GT 0.05 ) &lt;/test&gt;<br>
-&lt;true&gt; TRUE &lt;/true&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

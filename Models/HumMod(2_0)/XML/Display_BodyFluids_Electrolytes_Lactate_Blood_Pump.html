@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Display_BodyFluids_Electrolytes_Lactate_Blood_Blood.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / LactatePump<br>
+<br>
+Created : 13-Dec-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;groupbox&gt;<br>
+   &lt;row&gt; 2.0 &lt;/row&gt;<br>
+   &lt;col&gt; 32.0 &lt;/col&gt;<br>
+   &lt;high&gt; 4.5 &lt;/high&gt;<br>
+   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
+   &lt;title&gt; Lactate Pump &lt;/title&gt;<br>
+<br>
+&lt;structurename&gt; LacPool &lt;/structurename&gt;<br>
+<br>
+&lt;radiobuttons&gt;<br>
+  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; PumpSwitch &lt;/name&gt;<br>
+  &lt;listname&gt; Common.Switch &lt;/listname&gt;<br>
+  &lt;label&gt; Switch &lt;/label&gt;<br>
+&lt;/radiobuttons&gt;<br>
+<br>
+&lt;repeatlist&gt;<br>
+  &lt;name&gt; PumpSetting &lt;/name&gt;<br>
+  &lt;repeat&gt;<br>
+    &lt;reps&gt; 10 &lt;/reps&gt;<br>
+    &lt;stepsize&gt; 0.1 &lt;/stepsize&gt;<br>
+  &lt;/repeat&gt;<br>
+  &lt;repeat&gt;<br>
+    &lt;reps&gt; 9 &lt;/reps&gt;<br>
+    &lt;stepsize&gt; 1.0 &lt;/stepsize&gt;<br>
+  &lt;/repeat&gt;<br>
+&lt;/repeatlist&gt;<br>
+<br>
+&lt;slidebar&gt;<br>
+  &lt;row&gt; 3.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
+  &lt;name&gt; PumpSetting &lt;/name&gt;<br>
+  &lt;listname&gt; PumpSetting &lt;/listname&gt;<br>
+  &lt;label&gt; Rate &lt;/label&gt;<br>
+&lt;/slidebar&gt;<br>
+<br>
+&lt;infobutton&gt;<br>
+  &lt;row&gt; 1.2 &lt;/row&gt;<br>
+  &lt;col&gt; 26.0 &lt;/col&gt;<br>
+<br>
+  &lt;line&gt; Units for rate are mEq/Min. &lt;/line&gt;<br>
+&lt;/infobutton&gt;<br>
+<br>
+&lt;/groupbox&gt;<br>
+<br>
+End<br>
+
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

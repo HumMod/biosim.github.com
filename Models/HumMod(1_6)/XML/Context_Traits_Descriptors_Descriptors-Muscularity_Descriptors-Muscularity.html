@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Context_Traits_Descriptors_Descriptors.html'><img src='../../Back.PNG'></a>
+<p><a href='Context_Traits_Descriptors_Descriptors-Muscularity_BelowNormal.html'>Context_Traits_Descriptors_Descriptors-Muscularity_BelowNormal</a>
+<br><a href='Context_Traits_Descriptors_Descriptors-Muscularity_Normal.html'>Context_Traits_Descriptors_Descriptors-Muscularity_Normal</a>
+<br><a href='Context_Traits_Descriptors_Descriptors-Muscularity_AboveNormal.html'>Context_Traits_Descriptors_Descriptors-Muscularity_AboveNormal</a>
+<br><a href='Context_Traits_Descriptors_Descriptors-Muscularity_TrainedAthlete.html'>Context_Traits_Descriptors_Descriptors-Muscularity_TrainedAthlete</a>
+<p>
+HumMod / Descriptors-Muscularity<br>
+<br>
+Created : 21-Nov-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Descriptors-Muscularity &lt;/name&gt;<br>
+<br>
+&lt;?path Context\Traits\Descriptors\Descriptors-Muscularity\ ?&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; BELOWNORMAL &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; NORMAL &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; ABOVENORMAL &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; TRAINEDATHLETE &lt;/name&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; IsBelowNormal &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; IsNormal &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; IsAboveNormal &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; IsTrainedAthlete &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Value &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+  &lt;?if MUSCULARITY-BELOWNORMAL BelowNormal.DES ?&gt;<br>
+  &lt;?if MUSCULARITY-NORMAL Normal.DES ?&gt;<br>
+  &lt;?if MUSCULARITY-ABOVENORMAL AboveNormal.DES ?&gt;<br>
+  &lt;?if MUSCULARITY-TRAINEDATHLETE TrainedAthlete.DES ?&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

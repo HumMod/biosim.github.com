@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_Catechols_Catechols.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / Pheochromocytoma<br>
+<br>
+Created : 22-Jun-06<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; Pheochromocytoma &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; Rate &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; EpiRate &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; NERate &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;<br>
+  &lt;name&gt; Epi(%) &lt;/name&gt;<br>
+  &lt;val&gt; 80.0 &lt;/val&gt;<br>
+&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; EpiFract &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; NEFract &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; FractSec &lt;/name&gt;<br>
+  &lt;val&gt; 0.0 &lt;/val&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; FRACTSEC &lt;/name&gt;<br>
+  &lt;val&gt; 0.004 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;parm&gt;<br>
+  &lt;name&gt; Severity &lt;/name&gt;<br>
+  &lt;val&gt; 0.0 &lt;/val&gt;<br>
+&lt;/parm&gt;<br>
+<br>
+&lt;whitenoise&gt;<br>
+  &lt;name&gt; Noise &lt;/name&gt;<br>
+  &lt;lowerlim&gt; 0.5 &lt;/lowerlim&gt;<br>
+  &lt;upperlim&gt; 1.0 &lt;/upperlim&gt;<br>
+&lt;/whitenoise&gt;<br>
+<br>
+&lt;timervar&gt;<br>
+  &lt;name&gt; Timer &lt;/name&gt;<br>
+&lt;/timervar&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; Period &lt;/name&gt;<br>
+  &lt;val&gt; 0.0 &lt;/val&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;<br>
+  &lt;name&gt; Switch &lt;/name&gt;<br>
+  &lt;val&gt; FALSE &lt;/val&gt;<br>
+&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; LastState &lt;/name&gt;<br>
+  &lt;val&gt; FALSE &lt;/val&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; InEpisode &lt;/name&gt;<br>
+  &lt;val&gt; FALSE &lt;/val&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; MAXEPISODE &lt;/name&gt;<br>
+  &lt;val&gt; 240.0 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;constant&gt;<br>
+  &lt;name&gt; MAXPAUSE &lt;/name&gt;<br>
+  &lt;val&gt; 480.0 &lt;/val&gt;<br>
+&lt;/constant&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; Mass &lt;/name&gt;<br>
+  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
+  &lt;initialval&gt; 0.0 &lt;/initialval&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 50000.0 &lt;/errorlim&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Rate &lt;/name&gt;<br>
+  &lt;val&gt; FractSec * Mass &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; EpiFract &lt;/name&gt;<br>
+  &lt;val&gt; Epi(%) / 100.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; NEFract &lt;/name&gt;<br>
+  &lt;val&gt; 1.0 - EpiFract &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; EpiRate &lt;/name&gt;<br>
+  &lt;val&gt; EpiFract * Rate &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; NERate &lt;/name&gt;<br>
+  &lt;val&gt; NEFract * Rate &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Change &lt;/name&gt;<br>
+  &lt;val&gt; Switch * Severity - Rate &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
+<br>
+&lt;if&gt;<br>
+  &lt;test&gt; Switch &lt;/test&gt;<br>
+  &lt;false&gt;&lt;exitblock/&gt;&lt;/false&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;if&gt;<br>
+  &lt;test&gt; Timer LT Period &lt;/test&gt;<br>
+  &lt;true&gt;&lt;exitblock/&gt;&lt;/true&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;if&gt;<br>
+  &lt;test&gt; InEpisode &lt;/test&gt;<br>
+  &lt;true&gt;&lt;call&gt; TurnOff &lt;/call&gt;&lt;/true&gt;<br>
+  &lt;false&gt;&lt;call&gt; TurnOn &lt;/call&gt;&lt;/false&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; TurnOff &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InEpisode &lt;/name&gt;<br>
+  &lt;val&gt; FALSE &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; FractSec &lt;/name&gt;<br>
+  &lt;val&gt; 0.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Period &lt;/name&gt;<br>
+  &lt;val&gt; Noise * MAXPAUSE &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;timer&gt;<br>
+  &lt;name&gt; Timer &lt;/name&gt;<br>
+  &lt;val&gt; 0.0 &lt;/val&gt;<br>
+  &lt;state&gt; UP &lt;/state&gt;<br>
+&lt;/timer&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; TurnOn &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; InEpisode &lt;/name&gt;<br>
+  &lt;val&gt; TRUE &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; FractSec &lt;/name&gt;<br>
+  &lt;val&gt; FRACTSEC &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Period &lt;/name&gt;<br>
+  &lt;val&gt; Noise * MAXEPISODE &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;timer&gt;<br>
+  &lt;name&gt; Timer &lt;/name&gt;<br>
+  &lt;val&gt; 0.0 &lt;/val&gt;<br>
+  &lt;state&gt; UP &lt;/state&gt;<br>
+&lt;/timer&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

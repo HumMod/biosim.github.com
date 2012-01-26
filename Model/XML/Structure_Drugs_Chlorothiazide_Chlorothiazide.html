@@ -1,75 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:07 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Drugs_Drugs.html'><img src='../../Back.PNG'></a>
-<p><a href='Structure_Drugs_Chlorothiazide_ThiazidePool.html'>Structure_Drugs_Chlorothiazide_ThiazidePool</a>
-<br><a href='Structure_Drugs_Chlorothiazide_ThiazideKidney.html'>Structure_Drugs_Chlorothiazide_ThiazideKidney</a>
-<br><a href='Structure_Drugs_Chlorothiazide_ThiazideGILumen.html'>Structure_Drugs_Chlorothiazide_ThiazideGILumen</a>
-<br><a href='Structure_Drugs_Chlorothiazide_ThiazideSingleDose.html'>Structure_Drugs_Chlorothiazide_ThiazideSingleDose</a>
-<br><a href='Structure_Drugs_Chlorothiazide_ThiazideDailyDose.html'>Structure_Drugs_Chlorothiazide_ThiazideDailyDose</a>
-<p>
-HumMod / Chlorothiazide<br>
-<br>
-Created : 10-Apr-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;?path Structure\Drugs\Chlorothiazide\ ?&gt;<br>
-<br>
-&lt;?include ThiazidePool.DES ?&gt;<br>
-&lt;?include ThiazideKidney.DES ?&gt;<br>
-&lt;?include ThiazideGILumen.DES ?&gt;<br>
-&lt;?include ThiazideSingleDose.DES ?&gt;<br>
-&lt;?include ThiazideDailyDose.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Chlorothiazide &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-  &lt;call&gt; ThiazideDailyDose.Parms &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcConc &lt;/name&gt;<br>
-  &lt;call&gt; ThiazideGILumen.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; ThiazidePool.CalcConc &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-  &lt;call&gt; ThiazideGILumen.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; ThiazideKidney.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; ThiazidePool.Dervs &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
-  &lt;call&gt; ThiazideDailyDose.Wrapup &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

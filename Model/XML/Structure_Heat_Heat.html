@@ -1,139 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:08 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Structure.html'><img src='../../Back.PNG'></a>
-<p><a href='Structure_Heat_SpecificHeat.html'>Structure_Heat_SpecificHeat</a>
-<br><a href='Structure_Heat_TempTools.html'>Structure_Heat_TempTools</a>
-<br><a href='Structure_Heat_HeatCore.html'>Structure_Heat_HeatCore</a>
-<br><a href='Structure_Heat_HeatSkin.html'>Structure_Heat_HeatSkin</a>
-<br><a href='Structure_Heat_HeatSkeletalMuscle.html'>Structure_Heat_HeatSkeletalMuscle</a>
-<br><a href='Structure_Heat_Convulsing.html'>Structure_Heat_Convulsing</a>
-<br><a href='Structure_Heat_HeatMetabolism.html'>Structure_Heat_HeatMetabolism</a>
-<br><a href='Structure_Heat_HeatRadiation.html'>Structure_Heat_HeatRadiation</a>
-<br><a href='Structure_Heat_HeatConduction.html'>Structure_Heat_HeatConduction</a>
-<br><a href='Structure_Heat_HeatInsensibleSkin.html'>Structure_Heat_HeatInsensibleSkin</a>
-<br><a href='Structure_Heat_HeatInsensibleLung.html'>Structure_Heat_HeatInsensibleLung</a>
-<br><a href='Structure_Heat_HeatShivering.html'>Structure_Heat_HeatShivering</a>
-<br><a href='Structure_Heat_HeatSweatConvection.html'>Structure_Heat_HeatSweatConvection</a>
-<br><a href='Structure_Heat_HeatSweatEvaporation.html'>Structure_Heat_HeatSweatEvaporation</a>
-<br><a href='Structure_Heat_HeatSweating.html'>Structure_Heat_HeatSweating</a>
-<br><a href='Structure_Heat_HeatIVDrip.html'>Structure_Heat_HeatIVDrip</a>
-<br><a href='Structure_Heat_HeatTransfusion.html'>Structure_Heat_HeatTransfusion</a>
-<br><a href='Structure_Heat_HeatHemorrhage.html'>Structure_Heat_HeatHemorrhage</a>
-<br><a href='Structure_Heat_HeatDialyzer.html'>Structure_Heat_HeatDialyzer</a>
-<br><a href='Structure_Heat_HeatUrine.html'>Structure_Heat_HeatUrine</a>
-<br><a href='Structure_Heat_HeatStorage.html'>Structure_Heat_HeatStorage</a>
-<p>
-HumMod / Heat<br>
-<br>
-Created : 21-Oct-04<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;?path Structure\Heat\ ?&gt;<br>
-<br>
-&lt;?include SpecificHeat.DES ?&gt;<br>
-&lt;?include TempTools.DES ?&gt;<br>
-&lt;?include HeatCore.DES ?&gt;<br>
-&lt;?include HeatSkin.DES ?&gt;<br>
-&lt;?include HeatSkeletalMuscle.DES ?&gt;<br>
-&lt;?include Convulsing.DES ?&gt;<br>
-&lt;?include HeatMetabolism.DES ?&gt;<br>
-&lt;?include HeatRadiation.DES ?&gt;<br>
-&lt;?include HeatConduction.DES ?&gt;<br>
-&lt;?include HeatInsensibleSkin.DES ?&gt;<br>
-&lt;?include HeatInsensibleLung.DES ?&gt;<br>
-&lt;?include HeatShivering.DES ?&gt;<br>
-&lt;?include HeatSweatConvection.DES ?&gt;<br>
-&lt;?include HeatSweatEvaporation.DES ?&gt;<br>
-&lt;?include HeatSweating.DES ?&gt;<br>
-<br>
-&lt;?include HeatIVDrip.DES ?&gt;<br>
-&lt;?include HeatTransfusion.DES ?&gt;<br>
-&lt;?include HeatHemorrhage.DES ?&gt;<br>
-&lt;?include HeatDialyzer.DES ?&gt;<br>
-&lt;?include HeatUrine.DES ?&gt;<br>
-<br>
-&lt;?include HeatStorage.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Heat &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcTemp &lt;/name&gt;<br>
-<br>
-  &lt;call&gt; HeatCore.CalcTemp &lt;/call&gt;<br>
-  &lt;call&gt; HeatSkin.CalcTemp &lt;/call&gt;<br>
-  &lt;call&gt; HeatSkeletalMuscle.CalcTemp &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; HeatMetabolism.Calc &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Cals &lt;/name&gt;<br>
-<br>
-  &lt;call&gt; HeatShivering.Cals &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-  &lt;call&gt; HeatRadiation.Flux &lt;/call&gt;<br>
-  &lt;call&gt; HeatConduction.Flux &lt;/call&gt;<br>
-  &lt;call&gt; HeatInsensibleSkin.Flux &lt;/call&gt;<br>
-  &lt;call&gt; HeatInsensibleLung.Flux &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; HeatSweatEvaporation.Flux &lt;/call&gt;<br>
-  &lt;call&gt; HeatSweatConvection.Flux &lt;/call&gt;<br>
-  &lt;call&gt; HeatSweating.Flux &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; HeatIVDrip.Flux &lt;/call&gt;<br>
-  &lt;call&gt; HeatTransfusion.Flux &lt;/call&gt;<br>
-  &lt;call&gt; HeatHemorrhage.Flux &lt;/call&gt;<br>
-  &lt;call&gt; HeatDialyzer.Flux &lt;/call&gt;<br>
-  &lt;call&gt; HeatUrine.Flux &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; HeatCore.Flux &lt;/call&gt;<br>
-  &lt;call&gt; HeatSkin.Flux &lt;/call&gt;<br>
-  &lt;call&gt; HeatSkeletalMuscle.Flux &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; HeatCore.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; HeatSkin.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; HeatSkeletalMuscle.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; HeatStorage.Calc &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

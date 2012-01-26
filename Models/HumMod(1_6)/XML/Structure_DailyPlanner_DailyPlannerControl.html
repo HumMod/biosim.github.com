@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_DailyPlanner_DailyPlanner.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / DailyPlannerControl<br>
+<br>
+Created : 27-Feb-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; DailyPlannerControl &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;parm&gt;<br>
+  &lt;name&gt; Switch &lt;/name&gt;<br>
+  &lt;val&gt; 0.0 &lt;/val&gt;<br>
+&lt;/parm&gt;<br>
+<br>
+&lt;parm&gt;<br>
+  &lt;name&gt; WorkLevel &lt;/name&gt;<br>
+  &lt;val&gt; 50.0 &lt;/val&gt;<br>
+&lt;/parm&gt;<br>
+<br>
+&lt;parm&gt;<br>
+  &lt;name&gt; WorkDuration &lt;/name&gt;<br>
+  &lt;val&gt; 50.0 &lt;/val&gt;<br>
+&lt;/parm&gt;<br>
+<br>
+&lt;parm&gt;<br>
+  &lt;name&gt; AerobicsLevel &lt;/name&gt;<br>
+  &lt;val&gt; 100.0 &lt;/val&gt;<br>
+&lt;/parm&gt;<br>
+<br>
+&lt;parm&gt;<br>
+  &lt;name&gt; AerobicsDuration &lt;/name&gt;<br>
+  &lt;val&gt; 30.0 &lt;/val&gt;<br>
+&lt;/parm&gt;<br>
+<br>
+&lt;parm&gt;<br>
+  &lt;name&gt; MealsDuration &lt;/name&gt;<br>
+  &lt;val&gt; 30.0 &lt;/val&gt;<br>
+&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; FeedingTime &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; FeedingFraction &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; Status &lt;/name&gt;<br>
+  &lt;val&gt; 0 &lt;/val&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;timervar&gt;<br>
+  &lt;name&gt; WaitingTimer &lt;/name&gt;<br>
+&lt;/timervar&gt;<br>
+<br>
+&lt;timervar&gt;<br>
+  &lt;name&gt; HourTimer &lt;/name&gt;<br>
+&lt;/timervar&gt;<br>
+<br>
+&lt;timervar&gt;<br>
+  &lt;name&gt; WorkTimer &lt;/name&gt;<br>
+&lt;/timervar&gt;<br>
+<br>
+&lt;timervar&gt;<br>
+  &lt;name&gt; AerobicsTimer &lt;/name&gt;<br>
+&lt;/timervar&gt;<br>
+<br>
+&lt;timervar&gt;<br>
+  &lt;name&gt; MealsTimer &lt;/name&gt;<br>
+&lt;/timervar&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; MinutesIntoDay &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; HoursIntoDay &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; MinutesUntilMidnight &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; Task &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;constant&gt;&lt;name&gt; OFF &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; STARTNOW &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/constant&gt;<br>
+&lt;constant&gt;&lt;name&gt; STARTATMIDNIGHT &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/constant&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
+<br>
+&lt;onjustchanged&gt;&lt;name&gt; Switch &lt;/name&gt;<br>
+<br>
+&lt;testcase&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; Switch EQ STARTNOW &lt;/test&gt;<br>
+  &lt;call&gt; Start &lt;/call&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; Switch EQ STARTATMIDNIGHT &lt;/test&gt;<br>
+  &lt;call&gt; StartWaiting &lt;/call&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;case&gt;<br>
+  &lt;test&gt; TRUE &lt;/test&gt;<br>
+  &lt;call&gt; Stop &lt;/call&gt;<br>
+&lt;/case&gt;<br>
+<br>
+&lt;/testcase&gt;<br>
+<br>
+&lt;/onjustchanged&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; FeedingTime &lt;/name&gt;<br>
+  &lt;val&gt; DailyPlannerSchedule.MealCount * DailyPlannerControl.MealsDuration &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; FeedingFraction &lt;/name&gt;<br>
+  &lt;val&gt; FeedingTime / 1440.0 &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
+  &lt;testcase&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; Status EQ 0 &lt;/test&gt;<br>
+  &lt;exitblock/&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; Status EQ 1 &lt;/test&gt;<br>
+  &lt;call&gt; Waiting &lt;/call&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; Status EQ 2 &lt;/test&gt;<br>
+  &lt;call&gt; Active &lt;/call&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;/testcase&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; StartWaiting &lt;/name&gt;<br>
+  &lt;def&gt;&lt;name&gt; MinutesIntoDay &lt;/name&gt;&lt;val&gt; System.X REM 1440.0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;if&gt;<br>
+  &lt;test&gt; MinutesIntoDay &lt;/test&gt;<br>
+  &lt;true&gt;<br>
+    &lt;message&gt; Daily planner will start at midnight. &lt;/message&gt;<br>
+    &lt;def&gt;&lt;name&gt; Status &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+    &lt;timer&gt;&lt;name&gt; WaitingTimer &lt;/name&gt;&lt;val&gt; 1440.0 - MinutesIntoDay &lt;/val&gt;&lt;state&gt; DOWN &lt;/state&gt;&lt;/timer&gt;<br>
+  &lt;/true&gt;<br>
+  &lt;false&gt;<br>
+    &lt;call&gt; Start &lt;/call&gt;<br>
+  &lt;/false&gt;<br>
+  &lt;/if&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Waiting &lt;/name&gt;<br>
+<br>
+&lt;ontimedout&gt;<br>
+  &lt;name&gt; WaitingTimer &lt;/name&gt;<br>
+  &lt;call&gt; Start &lt;/call&gt;<br>
+&lt;/ontimedout&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Active &lt;/name&gt;<br>
+<br>
+&lt;ontimedout&gt;<br>
+  &lt;name&gt; HourTimer &lt;/name&gt;<br>
+  &lt;call&gt; NewTask &lt;/call&gt;<br>
+&lt;/ontimedout&gt;<br>
+<br>
+&lt;ontimedout&gt;<br>
+  &lt;name&gt; WorkTimer &lt;/name&gt;<br>
+  &lt;call&gt; Resting &lt;/call&gt;<br>
+&lt;/ontimedout&gt;<br>
+<br>
+&lt;ontimedout&gt;<br>
+  &lt;name&gt; AerobicsTimer &lt;/name&gt;<br>
+  &lt;call&gt; Resting &lt;/call&gt;<br>
+&lt;/ontimedout&gt;<br>
+<br>
+&lt;ontimedout&gt;<br>
+  &lt;name&gt; MealsTimer &lt;/name&gt;<br>
+  &lt;call&gt; Resting &lt;/call&gt;<br>
+&lt;/ontimedout&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Start &lt;/name&gt;<br>
+  &lt;message&gt; Daily planner is starting. &lt;/message&gt;<br>
+  &lt;def&gt;&lt;name&gt; Status &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;call&gt; NewTask &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Stop &lt;/name&gt;<br>
+  &lt;def&gt;&lt;name&gt; Status &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;timer&gt;&lt;name&gt; WaitingTimer &lt;/name&gt;&lt;state&gt; OFF &lt;/state&gt;&lt;/timer&gt;<br>
+  &lt;timer&gt;&lt;name&gt; HourTimer &lt;/name&gt;&lt;state&gt; OFF &lt;/state&gt;&lt;/timer&gt;<br>
+  &lt;timer&gt;&lt;name&gt; WorkTimer &lt;/name&gt;&lt;state&gt; OFF &lt;/state&gt;&lt;/timer&gt;<br>
+  &lt;timer&gt;&lt;name&gt; AerobicsTimer &lt;/name&gt;&lt;state&gt; OFF &lt;/state&gt;&lt;/timer&gt;<br>
+  &lt;timer&gt;&lt;name&gt; MealsTimer &lt;/name&gt;&lt;state&gt; OFF &lt;/state&gt;&lt;/timer&gt;<br>
+<br>
+  &lt;def&gt;&lt;name&gt; Status.Activity &lt;/name&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Status.Exertion &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+     &lt;name&gt; PostureControl.Request &lt;/name&gt;<br>
+     &lt;val&gt; PostureControl.LYING &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+  &lt;call&gt; PostureControl.RequestChange &lt;/call&gt; <br>
+<br>
+  &lt;def&gt;&lt;name&gt; Status.Nutrition &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; NewTask &lt;/name&gt;<br>
+  &lt;call&gt; GetTask &lt;/call&gt;<br>
+<br>
+  &lt;testcase&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; Task EQ 0 &lt;/test&gt;<br>
+  &lt;call&gt; StartSleep &lt;/call&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; Task EQ 1 &lt;/test&gt;<br>
+  &lt;call&gt; StartRest &lt;/call&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; Task EQ 2 &lt;/test&gt;<br>
+  &lt;call&gt; StartWork &lt;/call&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; Task EQ 3 &lt;/test&gt;<br>
+  &lt;call&gt; StartAerobics &lt;/call&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; Task EQ 4 &lt;/test&gt;<br>
+  &lt;call&gt; StartMeals &lt;/call&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;/testcase&gt;<br>
+<br>
+  &lt;timer&gt;&lt;name&gt; HourTimer &lt;/name&gt;&lt;val&gt; 60.0 &lt;/val&gt;&lt;state&gt; DOWN &lt;/state&gt;&lt;/timer&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; GetTask &lt;/name&gt;<br>
+  &lt;def&gt;&lt;name&gt; HoursIntoDay &lt;/name&gt;&lt;val&gt; ROUND ( ( System.X REM 1440.0 ) / 60.0 ) &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;testcase&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 0 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour12AM-1AM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 1 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour1AM-2AM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 2 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour2AM-3AM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 3 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour3AM-4AM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 4 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour4AM-5AM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 5 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour5AM-6AM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 6 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour6AM-7AM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 7 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour7AM-8AM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 8 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour8AM-9AM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 9 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour9AM-10AM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 10 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour10AM-11AM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 11 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour11AM-12PM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 12 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour12PM-1PM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 13 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour1PM-2PM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 14 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour2PM-3PM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 15 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour3PM-4PM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 16 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour4PM-5PM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 17 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour5PM-6PM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 18 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour6PM-7PM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 19 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour7PM-8PM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 20 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour8PM-9PM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 21 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour9PM-10PM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 22 &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour10PM-11PM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;case&gt;<br>
+  &lt;test&gt; HoursIntoDay EQ 23  &lt;/test&gt;<br>
+  &lt;def&gt;&lt;name&gt; Task &lt;/name&gt;&lt;val&gt; DailyPlannerSchedule.Hour11PM-12AM &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;/case&gt;<br>
+<br>
+  &lt;/testcase&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; StartSleep &lt;/name&gt;<br>
+  &lt;def&gt;&lt;name&gt; Status.Activity &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Status.Exertion &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+     &lt;name&gt; PostureControl.Request &lt;/name&gt;<br>
+     &lt;val&gt; PostureControl.LYING &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+  &lt;call&gt; PostureControl.RequestChange &lt;/call&gt; <br>
+<br>
+  &lt;def&gt;&lt;name&gt; Status.Nutrition &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; StopSleep &lt;/name&gt;<br>
+  &lt;call&gt; Resting &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; StartRest &lt;/name&gt;<br>
+  &lt;call&gt; Resting &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; StartWork &lt;/name&gt;<br>
+  &lt;timer&gt;&lt;name&gt; WorkTimer &lt;/name&gt;&lt;val&gt; WorkDuration &lt;/val&gt;&lt;state&gt; DOWN &lt;/state&gt;&lt;/timer&gt;<br>
+<br>
+  &lt;def&gt;&lt;name&gt; Status.Activity &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Status.Exertion &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+     &lt;name&gt; PostureControl.Request &lt;/name&gt;<br>
+     &lt;val&gt; PostureControl.STANDING &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+  &lt;call&gt; PostureControl.RequestChange &lt;/call&gt; <br>
+<br>
+<br>
+  &lt;def&gt;&lt;name&gt; Status.Nutrition &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; StopWork &lt;/name&gt;<br>
+  &lt;call&gt; Resting &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; StartAerobics &lt;/name&gt;<br>
+  &lt;timer&gt;&lt;name&gt; AerobicsTimer &lt;/name&gt;&lt;val&gt; AerobicsDuration &lt;/val&gt;&lt;state&gt; DOWN &lt;/state&gt;&lt;/timer&gt;<br>
+<br>
+  &lt;def&gt;&lt;name&gt; Status.Activity &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Status.Exertion &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+     &lt;name&gt; PostureControl.Request &lt;/name&gt;<br>
+     &lt;val&gt; PostureControl.STANDING &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+  &lt;call&gt; PostureControl.RequestChange &lt;/call&gt; <br>
+<br>
+  &lt;def&gt;&lt;name&gt; Status.Nutrition &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; StopAerobics &lt;/name&gt;<br>
+  &lt;call&gt; Resting &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; StartMeals &lt;/name&gt;<br>
+  &lt;timer&gt;&lt;name&gt; MealsTimer &lt;/name&gt;&lt;val&gt; MealsDuration &lt;/val&gt;&lt;state&gt; DOWN &lt;/state&gt;&lt;/timer&gt;<br>
+<br>
+  &lt;def&gt;&lt;name&gt; Status.Activity &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Status.Exertion &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+     &lt;name&gt; PostureControl.Request &lt;/name&gt;<br>
+     &lt;val&gt; PostureControl.SITTING &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+  &lt;call&gt; PostureControl.RequestChange &lt;/call&gt; <br>
+<br>
+  &lt;def&gt;&lt;name&gt; Status.Nutrition &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; StopMeals &lt;/name&gt;<br>
+  &lt;call&gt; Resting &lt;/call&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Resting &lt;/name&gt;<br>
+  &lt;def&gt;&lt;name&gt; Status.Activity &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+  &lt;def&gt;&lt;name&gt; Status.Exertion &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+  &lt;def&gt;<br>
+     &lt;name&gt; PostureControl.Request &lt;/name&gt;<br>
+     &lt;val&gt; PostureControl.SITTING &lt;/val&gt;<br>
+  &lt;/def&gt;<br>
+  &lt;call&gt; PostureControl.RequestChange &lt;/call&gt; <br>
+<br>
+  &lt;def&gt;&lt;name&gt; Status.Nutrition &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

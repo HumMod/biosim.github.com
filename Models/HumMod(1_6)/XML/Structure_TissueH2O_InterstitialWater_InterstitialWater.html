@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_TissueH2O_TissueH2O.html'><img src='../../Back.PNG'></a>
+<p><a href='Structure_TissueH2O_InterstitialWater_UT_InterstitialWater.html'>Structure_TissueH2O_InterstitialWater_UT_InterstitialWater</a>
+<br><a href='Structure_TissueH2O_InterstitialWater_MT_InterstitialWater.html'>Structure_TissueH2O_InterstitialWater_MT_InterstitialWater</a>
+<br><a href='Structure_TissueH2O_InterstitialWater_LT_InterstitialWater.html'>Structure_TissueH2O_InterstitialWater_LT_InterstitialWater</a>
+<p>
+HumMod / InterstitialWater<br>
+<br>
+Created : 24-Mar-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;?path Structure\TissueH2O\InterstitialWater\ ?&gt;<br>
+<br>
+&lt;?include UT_InterstitialWater.DES ?&gt;<br>
+&lt;?include MT_InterstitialWater.DES ?&gt;<br>
+&lt;?include LT_InterstitialWater.DES ?&gt;<br>
+<br>
+&lt;structure&gt;&lt;name&gt; InterstitialWater &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Vol &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; InitialVol &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Vol(L) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Initialize &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; InitialVol &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      ECFV.InitialVol<br>
+    - PlasmaVol.InitialVol<br>
+    - ExternalH2O.InitialCore<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
+<br>
+&lt;call&gt; UT_InterstitialWater.Calc &lt;/call&gt;<br>
+&lt;call&gt; MT_InterstitialWater.Calc &lt;/call&gt;<br>
+&lt;call&gt; LT_InterstitialWater.Calc &lt;/call&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Vol &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      UT_InterstitialWater.Vol<br>
+    + MT_InterstitialWater.Vol<br>
+    + LT_InterstitialWater.Vol<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Vol(L) &lt;/name&gt;&lt;val&gt; Vol / 1000.0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

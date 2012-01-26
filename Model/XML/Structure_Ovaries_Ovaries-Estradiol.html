@@ -1,71 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/19/2012 3:54:08 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Ovaries_Ovaries.html'><img src='../../Back.PNG'></a>
-<p><a href='Structure_Ovaries_Follicle-Estradiol.html'>Structure_Ovaries_Follicle-Estradiol</a>
-<br><a href='Structure_Ovaries_CorpusLuteum-Estradiol.html'>Structure_Ovaries_CorpusLuteum-Estradiol</a>
-<p>
-HumMod / Ovaries-Estradiol<br>
-<br>
-Created : 05-Oct-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;?path Structure\Ovaries\ ?&gt;<br>
-<br>
-&lt;?include Follicle-Estradiol.DES ?&gt;<br>
-&lt;?include CorpusLuteum-Estradiol.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Ovaries-Estradiol &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Secretion &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;call&gt; Follicle-Estradiol.Dervs &lt;/call&gt;<br>
-&lt;call&gt; CorpusLuteum-Estradiol.Dervs &lt;/call&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Secretion &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-      Follicle-Estradiol.Secretion<br>
-    + CorpusLuteum-Estradiol.Secretion<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

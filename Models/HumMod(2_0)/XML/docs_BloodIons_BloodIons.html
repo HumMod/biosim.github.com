@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Docs_BloodIons.html'><img src='../../Back.PNG'></a>
+<p>
+2QHP 2008 / BloodIons.DOCS<br>
+<br>
+Created : 27-Mar-09<br>
+Last Modified : 27-Mar-09<br>
+Author : Tom Coleman<br>
+Copyright : 2009<br>
+<br>
+&lt;structurename&gt; BloodIons &lt;/structurename&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; BloodIons.[SID(mEq/L)]&lt;/name&gt;<br>
+&lt;topic&gt; SID - DefinitionBI1 &lt;/topic&gt;<br>
+&lt;topic&gt; [SID] - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; [SID] - Concentration Units &lt;/topic&gt;<br>
+<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; BloodIons.[SID] &lt;/name&gt;<br>
+&lt;topic&gt; SID - DefinitionBI1 &lt;/topic&gt;<br>
+&lt;topic&gt; [SID] - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; [SID] - Concentration Units &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; BloodIons.Anions &lt;/name&gt;<br>
+&lt;topic&gt; Anions - DefinitionBI2 &lt;/topic&gt;<br>
+&lt;topic&gt; Anions - Physical Units &lt;/topic&gt;<br>
+&lt;topic&gt; Anions - Concentration Units &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; BloodIons.AnionsLessProtein &lt;/name&gt;<br>
+&lt;topic&gt; AnionsLessProtein - DefinitionBI3 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; BloodIons.Cations &lt;/name&gt;<br>
+&lt;topic&gt; Cations - DefinitionBI4 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; BloodIons.Protein &lt;/name&gt;<br>
+&lt;topic&gt; Protein - DefinitionBI6 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; BloodIons.StrongAnions &lt;/name&gt;<br>
+&lt;topic&gt; StrongAnions - DefinitionBI7&lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; BloodIons.WeakAnions &lt;/name&gt;<br>
+&lt;topic&gt; WeakAnions - DefinitionBI8 &lt;/topic&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; SID - DefinitionBI1 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Peter Stewart was a Canadian physiologist who introduced <br>
+the term "strong ion difference" or [SID] to mean the <br>
+concentration of strongly dissociating cations minus <br>
+the concentration of strongly dissociating anions. Strong<br>
+cations are Na+, K+ and strong anions are Cl- and lactate.  <br>
+<br>
+The concentrations of anions and cations in both plasma<br>
+and cells must be equal to maintain electrical neutrality.<br>
+<br>
+His equation is:<br>
+<br>
+[SID] + [H+] = [HCO3-] + [A-] + [CO2] + [OH-]<br>
+<br>
+where [A-] is the concentration of dissociated weak acids.<br>
+<br>
+In HumMod, SID is calculated from the cations [Na+] and [K+].<br>
+The anions used are [Cl-], [Lac-]. Additionally the following <br>
+strong anions are included: Ketoacids [KA-], [SO4--] and [PO--]. <br>
+Under normal physiological conditions the contribution of the <br>
+latter three anions is small. <br>
+ <br>
+Stewart PA. Independent and dependent variables of acid-base <br>
+control. Respir Physiol 33: 9�26, 1978.<br>
+<br>
+Stewart PA. How to Understand Acid-Based: A Quantitative <br>
+Acid-Base Primer for Biology and Medicine. New York: Elsevier, 1981.<br>
+<br>
+Stewart PA. Modern quantitative acid-base chemistry. <br>
+Can J Physiol Pharmacol 61: 1444�1461, 1983.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; [SID] - Physical Units &lt;/name&gt;<br>
+&lt;label&gt; Physical Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+[SID] is expressed in mEq/mL<br>
+[SID] = 0.001 * [SID(mEq/L)]<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; [SID] - Concentration Units &lt;/name&gt;<br>
+&lt;label&gt; Concentration Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Under normal physiological conditions [SID] = 40mEq/L<br>
+or 0.04mEq/mL<br>
+<br>
+Stewart PA. Independent and dependent variables of acid-base <br>
+control. Respir Physiol 33: 9�26, 1978.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Anions - DefinitionBI2 &lt;/name&gt;<br>
+&lt;label&gt;  Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Many substances dissociate into ions when dissolved<br>
+in water. Such substances are called electrolytes.<br>
+Negatively charged electrolytes are called anions and<br>
+can be divided into strong and weak anions. Strong<br>
+anions are always completely dissociated in solution<br>
+and the resulting anions are considered strong anions.<br>
+Weak anions are only partially dissociated into ions<br>
+when they are dissolved in water.<br>
+<br>
+Strong anions are chloride (Cl-), ketoacids (KA-), <br>
+lactate (Lac-), sulphate (SO4--) and phosphate (PO --).<br>
+Bicarbonate (HCO3-) is a weak anion. Proteins are considered <br>
+weak anions because of their negative electric charge. <br>
+<br>
+Stewart PA. Independent and dependent variables of acid-base <br>
+control. Respir Physiol 33: 9�26, 1978.<br>
+<br>
+Stewart PA. How to Understand Acid-Based: A Quantitative <br>
+Acid-Base Primer for Biology and Medicine. New York: Elsevier, 1981.<br>
+<br>
+Stewart PA. Modern quantitative acid-base chemistry. <br>
+Can J Physiol Pharmacol 61: 1444�1461, 1983.<br>
+<br>
+Figge J, Rossing TH, Fencl V. The role of serum proteins in <br>
+acid-base equilibria. J. Lab Clin Med 117: 453 - 467, 1991.<br>
+<br>
+Figge J, Mydosh T, Fencl V. Serum proteins and acid -base <br>
+equilibria: a follow-up. J. Lab Clin Med 120: 713 - 719, 1992.<br>
+<br>
+Corey HE. Stewart and beyond: New models of acid-base balance.<br>
+Kidney International 64: 777 - 787, 2003.<br>
+<br>
+Shuck O, Matousovic K. Relation between pH and teh strong ion<br>
+difference (SID) in body fluids. Biomed Papers 149: 69 - 73, 2005.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Anions - Physical Units &lt;/name&gt;<br>
+&lt;label&gt; Physical Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Anions are expressed in mEq/L<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Anions - Concentration Units &lt;/name&gt;<br>
+&lt;label&gt; Concentration Units &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Normal values in mEq/L are:<br>
+[Cl-]  107.0<br>
+[KA-]    0.0<br>
+[Lac-]   1.0<br>
+[SO4--]  0.3<br>
+[PO4--]  0.2<br>
+[HCO3-]  28.0<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; AnionsLessProtein - DefinitionBI3 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Proteins in the body function as bases and have <br>
+negative charges that readily accept hydrogen ions. <br>
+Proteins are considered weak anions. <br>
+<br>
+The concentrations of anions and cations in both plasma<br>
+and cells must be equal to maintain electrical neutrality.<br>
+<br>
+Total Cation Concentration = Total Anion Concentration<br>
+= 148.5 mEq/L<br>
+<br>
+Total Anion Concentration = Weak + Strong Anions + Protein<br>
+Total (148.5 mEq/L) = Weak Anions (28 mEq/L) + Strong Anions (108.5<br>
+mEq/L) + Protein (12.0 mEq/L)<br>
+<br>
+Anions Less Protein = Weak + Strong Anions<br>
+148.5 mEq/L - 12.0 mEq/L = 28.0 mEq/L + 108.5 mEq/L<br>
+<br>
+Figge J, Rossing TH, Fencl V. The role of serum proteins in <br>
+acid-base equilibria. J. Lab Clin Med 117: 453 - 467, 1991.<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Cations - DefinitionBI4 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Many substances dissociate into ions when dissolved <br>
+in water. Such substances are called electrolytes.<br>
+Positively charged electrolytes are called cations <br>
+Strong electrolytes are always completely dissociated <br>
+in solution and the resulting ions are considered <br>
+strong cations. <br>
+<br>
+in HumMod, cations are sodium [Na+], potassium [K+]<br>
+and magnesium <br>
+<br>
+Normal values are 144 mEq/L for sodium and 4.4 mEq/L<br>
+for potassium.<br>
+<br>
+ <br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; Protein - DefinitionBI6 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Proteins in the body function as bases. They have negative <br>
+charges that readily accept hydrogen ions. Together with<br>
+weak anions and strong anions they contribute to the total<br>
+anion concentration. <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; StrongAnions - DefinitionBI7 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Negatively charged anions which completely dissociate in <br>
+solution are known as strong anions. Strong anions are <br>
+chloride, ketoacids, lactate, phosphate and sulphate. <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; WeakAnions - DefinitionBI8 &lt;/name&gt;<br>
+&lt;label&gt; Definition &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+Negatively charged electrolytes which only partially <br>
+dissociate in solution are called weak anions. Bicarbonate<br>
+is a weak anion. <br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+     <br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

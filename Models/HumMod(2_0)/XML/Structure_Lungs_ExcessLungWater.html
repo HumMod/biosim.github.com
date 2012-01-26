@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_Lungs_Lungs.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / ExcessLungWater<br>
+<br>
+Created : 27-Mar-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; ExcessLungWater &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; InitialVolume &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; Perm &lt;/name&gt;&lt;val&gt; 3.0 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Grad &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Flux &lt;/name&gt;&lt;/var&gt;<br>
+&lt;var&gt;&lt;name&gt; Lymph &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; Volume(L) &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;equations&gt;<br>
+<br>
+&lt;diffeq&gt;<br>
+  &lt;name&gt; Volume &lt;/name&gt;<br>
+  &lt;integralname&gt; Volume &lt;/integralname&gt;<br>
+  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
+  &lt;errorlim&gt; 10.0 &lt;/errorlim&gt;<br>
+&lt;/diffeq&gt;<br>
+<br>
+&lt;/equations&gt;<br>
+<br>
+&lt;functions&gt;<br>
+<br>
+&lt;curve&gt;<br>
+  &lt;name&gt; Lymph &lt;/name&gt;<br>
+  &lt;point&gt;&lt;x&gt;   10.0 &lt;/x&gt;&lt;y&gt; 0.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+  &lt;point&gt;&lt;x&gt; 1000.0 &lt;/x&gt;&lt;y&gt; 1.0 &lt;/y&gt;&lt;slope&gt; 0.0 &lt;/slope&gt;&lt;/point&gt;<br>
+&lt;/curve&gt;<br>
+<br>
+&lt;/functions&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Initialize &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; InitialVolume &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Volume &lt;/name&gt;&lt;val&gt; InitialVolume &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Volume(L) &lt;/name&gt;&lt;val&gt; Volume / 1000.0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;if&gt;<br>
+&lt;test&gt; OtherTissue-Function.Failed &lt;/test&gt;<br>
+&lt;true&gt;&lt;call&gt; Failed &lt;/call&gt;&lt;/true&gt;<br>
+&lt;false&gt;&lt;call&gt; NotFailed &lt;/call&gt;&lt;/false&gt;<br>
+&lt;/if&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; Flux - Lymph &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; NotFailed &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Grad &lt;/name&gt;&lt;val&gt; PulmCapys.Pressure - PlasmaProtein.COP &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Flux &lt;/name&gt;&lt;val&gt; ( Perm * Grad ) MAX 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Lymph &lt;/name&gt;&lt;val&gt; Lymph [ Volume ] &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Failed &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; Grad &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Flux &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+&lt;def&gt;&lt;name&gt; Lymph &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

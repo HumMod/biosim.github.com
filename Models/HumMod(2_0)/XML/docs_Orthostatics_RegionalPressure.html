@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Docs_Orthostatics.html'><img src='../../Back.PNG'></a>
+<p>
+QHP 2008 / Orthostatics.DOCS<br>
+<br>
+Created : 27-Mar-09<br>
+Last Modified : 27-Mar-09<br>
+Author : Tom Coleman<br>
+Copyright : 2009<br>
+<br>
+&lt;structurename&gt; RegionalPressure &lt;/structurename&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; RegionalPressure.Alpha &lt;/name&gt;<br>
+&lt;topic&gt; XX &lt;/topic&gt;<br>
+&lt;topic&gt; XX &lt;/topic&gt;<br>
+&lt;topic&gt; XXXX &lt;/topic&gt;<br>
+&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
+&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; RegionalPressure.Brain &lt;/name&gt;<br>
+&lt;topic&gt; XXX&lt;/topic&gt;<br>
+&lt;topic&gt; XXXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;seealso&gt; SystemicArtys.Pressure &lt;/seealso&gt;<br>
+&lt;seealso&gt; Hydrostatics.BrainGradient &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; RegionalPressure.Carotid &lt;/name&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;seealso&gt; SystemicArtys.Pressure  &lt;/seealso&gt;<br>
+&lt;seealso&gt; Hydrostatics.CarotidGradient &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; RegionalPressure.LowerArty &lt;/name&gt;<br>
+&lt;topic&gt; XX &lt;/topic&gt;<br>
+&lt;topic&gt; XX &lt;/topic&gt;<br>
+&lt;topic&gt; XXXX &lt;/topic&gt;<br>
+&lt;seealso&gt; SystemicArtys.Pressure   &lt;/seealso&gt;<br>
+&lt;seealso&gt; Hydrostatics.LowerTorsoArtyGradient &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; RegionalPressure.LowerCapy &lt;/name&gt;<br>
+&lt;topic&gt; XXX&lt;/topic&gt;<br>
+&lt;topic&gt; XXXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;seealso&gt; RegionalPressure.Alpha &lt;/seealso&gt;<br>
+&lt;seealso&gt; Regional Pressure.LowerArty &lt;/seealso&gt;<br>
+&lt;seealso&gt; RegionalPressure.LowerVein &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; RegionalPressure.LowerVein &lt;/name&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;seealso&gt; RightAtrium.Pressure&lt;/seealso&gt;<br>
+&lt;seealso&gt; Hydrostatics.LowerTorsoVeinGradient&lt;/seealso&gt;<br>
+&lt;seealso&gt; LegMusclePump.Effect &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; RegionalPressure.MiddleArty &lt;/name&gt;<br>
+&lt;topic&gt; XX &lt;/topic&gt;<br>
+&lt;topic&gt; XX &lt;/topic&gt;<br>
+&lt;topic&gt; XXXX &lt;/topic&gt;<br>
+&lt;seealso&gt; SystemicArtys.Pressure &lt;/seealso&gt;<br>
+&lt;seealso&gt; Hydrostatics.MiddleTorsoGradient &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; RegionalPressure.MiddleCapy &lt;/name&gt;<br>
+&lt;topic&gt; XXX&lt;/topic&gt;<br>
+&lt;topic&gt; XXXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;seealso&gt; RegionalPressure.Alpha &lt;/seealso&gt;<br>
+&lt;seealso&gt; Regional Pressure.MiddleArty &lt;/seealso&gt;<br>
+&lt;seealso&gt; RegionalPressure.MiddleVein &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; RegionalPressure.MiddleVein &lt;/name&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;seealso&gt; RightAtrium.Pressure &lt;/seealso&gt;<br>
+&lt;seealso&gt; Hydrostatics.MiddleTorsoGradient &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; RegionalPressure.UpperArty &lt;/name&gt;<br>
+&lt;topic&gt; XX &lt;/topic&gt;<br>
+&lt;topic&gt; XX &lt;/topic&gt;<br>
+&lt;topic&gt; XXXX &lt;/topic&gt;<br>
+&lt;seealso&gt; SystemicArtys.Pressure &lt;/seealso&gt;<br>
+&lt;seealso&gt; Hydrostatics.UpperTorsoGradient &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; RegionalPressure.UpperCapy &lt;/name&gt;<br>
+&lt;topic&gt; XXX&lt;/topic&gt;<br>
+&lt;topic&gt; XXXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;seealso&gt; RegionalPressure.Alpha &lt;/seealso&gt;<br>
+&lt;seealso&gt; Regionalpressure.UpperArty &lt;/seealso&gt;<br>
+&lt;seealso&gt; Regionalpressure.UpperVein &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+&lt;vardoc&gt;<br>
+&lt;name&gt; RegionalPressure.UpperVein &lt;/name&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;topic&gt; XXX &lt;/topic&gt;<br>
+&lt;seealso&gt; RightAtrium.Pressure &lt;/seealso&gt;<br>
+&lt;seealso&gt; Hydrostatics.UpperTorsoGradient &lt;/seealso&gt;<br>
+&lt;/vardoc&gt;<br>
+<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; XXX&lt;/name&gt;<br>
+&lt;label&gt; XXX&lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; XX &lt;/name&gt;<br>
+&lt;label&gt; XXX &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+&lt;topicdoc&gt;<br>
+&lt;name&gt; XXX &lt;/name&gt;<br>
+&lt;label&gt; XXX &lt;/label&gt;<br>
+&lt;content&gt;<br>
+<br>
+<br>
+&lt;/content&gt;<br>
+&lt;/topicdoc&gt;<br>
+<br>
+   <br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 2:00 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Display_Tree_Intervention_Intervention.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / Tree-Anesthesia<br>
+<br>
+Created : 08-Dec-05<br>
+Last Modified : 2010-05-21<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;branch&gt;<br>
+  &lt;name&gt; Anesthesia &lt;/name&gt;<br>
+  &lt;label&gt; Anesthesia &lt;/label&gt;<br>
+  &lt;parent&gt; INTERVENTION &lt;/parent&gt;<br>
+&lt;/branch&gt;<br>
+<br>
+&lt;branch&gt;<br>
+  &lt;name&gt; IVAnesthesia &lt;/name&gt;<br>
+  &lt;label&gt; IV &lt;/label&gt;<br>
+  &lt;parent&gt; Anesthesia &lt;/parent&gt;<br>
+&lt;/branch&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; IVAnesthesiaControl &lt;/name&gt;<br>
+  &lt;label&gt; Control &lt;/label&gt;<br>
+  &lt;parent&gt; IVAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; IVAnesthesiaProperties &lt;/name&gt;<br>
+  &lt;label&gt; Properties &lt;/label&gt;<br>
+  &lt;parent&gt; IVAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;separatorbar&gt;<br>
+  &lt;parent&gt; IVAnesthesia &lt;/parent&gt;<br>
+&lt;/separatorbar&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; IVAnesthesiaBlood &lt;/name&gt;<br>
+  &lt;label&gt; Blood &lt;/label&gt;<br>
+  &lt;parent&gt; IVAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; IVAnesthesiaTissues &lt;/name&gt;<br>
+  &lt;label&gt; Tissues &lt;/label&gt;<br>
+  &lt;parent&gt; IVAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;separatorbar&gt;<br>
+  &lt;parent&gt; IVAnesthesia &lt;/parent&gt;<br>
+&lt;/separatorbar&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; IVAnesthesiaBone &lt;/name&gt;<br>
+  &lt;label&gt; Bone &lt;/label&gt;<br>
+  &lt;parent&gt; IVAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; IVAnesthesiaBrain &lt;/name&gt;<br>
+  &lt;label&gt; Brain &lt;/label&gt;<br>
+  &lt;parent&gt; IVAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; IVAnesthesiaFat &lt;/name&gt;<br>
+  &lt;label&gt; Fat &lt;/label&gt;<br>
+  &lt;parent&gt; IVAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; IVAnesthesiaGITract &lt;/name&gt;<br>
+  &lt;label&gt; GI Tract &lt;/label&gt;<br>
+  &lt;parent&gt; IVAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; IVAnesthesiaKidney &lt;/name&gt;<br>
+  &lt;label&gt; Kidney &lt;/label&gt;<br>
+  &lt;parent&gt; IVAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; IVAnesthesiaLeftHeart &lt;/name&gt;<br>
+  &lt;label&gt; Left Heart &lt;/label&gt;<br>
+  &lt;parent&gt; IVAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; IVAnesthesiaLiver &lt;/name&gt;<br>
+  &lt;label&gt; Liver &lt;/label&gt;<br>
+  &lt;parent&gt; IVAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; IVAnesthesiaOtherTissue &lt;/name&gt;<br>
+  &lt;label&gt; Other Tissue &lt;/label&gt;<br>
+  &lt;parent&gt; IVAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; IVAnesthesiaRespiratoryMuscle &lt;/name&gt;<br>
+  &lt;label&gt; Respiratory Muscle &lt;/label&gt;<br>
+  &lt;parent&gt; IVAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; IVAnesthesiaRightHeart &lt;/name&gt;<br>
+  &lt;label&gt; Right Heart &lt;/label&gt;<br>
+  &lt;parent&gt; IVAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; IVAnesthesiaSkeletalMuscle &lt;/name&gt;<br>
+  &lt;label&gt; Skeletal Muscle &lt;/label&gt;<br>
+  &lt;parent&gt; IVAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; IVAnesthesiaSkin &lt;/name&gt;<br>
+  &lt;label&gt; Skin &lt;/label&gt;<br>
+  &lt;parent&gt; IVAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;branch&gt;<br>
+  &lt;name&gt; GasAnesthesia &lt;/name&gt;<br>
+  &lt;label&gt; Gas &lt;/label&gt;<br>
+  &lt;parent&gt; Anesthesia &lt;/parent&gt;<br>
+&lt;/branch&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; GasAnesthesiaControl &lt;/name&gt;<br>
+  &lt;label&gt; Control &lt;/label&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; GasAnesthesiaProperties &lt;/name&gt;<br>
+  &lt;label&gt; Properties &lt;/label&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;separatorbar&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/separatorbar&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; GasAnesthesiaLungs &lt;/name&gt;<br>
+  &lt;label&gt; Lungs &lt;/label&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; GasAnesthesiaArteries &lt;/name&gt;<br>
+  &lt;label&gt; Arteries &lt;/label&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; GasAnesthesiaTissues &lt;/name&gt;<br>
+  &lt;label&gt; Tissues &lt;/label&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; GasAnesthesiaVeins &lt;/name&gt;<br>
+  &lt;label&gt; Veins &lt;/label&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;separatorbar&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/separatorbar&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; GasAnesthesiaBone &lt;/name&gt;<br>
+  &lt;label&gt; Bone &lt;/label&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; GasAnesthesiaBrain &lt;/name&gt;<br>
+  &lt;label&gt; Brain &lt;/label&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; GasAnesthesiaFat &lt;/name&gt;<br>
+  &lt;label&gt; Fat &lt;/label&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; GasAnesthesiaGITract &lt;/name&gt;<br>
+  &lt;label&gt; GI Tract &lt;/label&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; GasAnesthesiaKidney &lt;/name&gt;<br>
+  &lt;label&gt; Kidney &lt;/label&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; GasAnesthesiaLeftHeart &lt;/name&gt;<br>
+  &lt;label&gt; Left Heart &lt;/label&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; GasAnesthesiaLiver &lt;/name&gt;<br>
+  &lt;label&gt; Liver &lt;/label&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; GasAnesthesiaOtherTissue &lt;/name&gt;<br>
+  &lt;label&gt; Other Tissue &lt;/label&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; GasAnesthesiaRespiratoryMuscle &lt;/name&gt;<br>
+  &lt;label&gt; Respiratory Muscle &lt;/label&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; GasAnesthesiaRightHeart &lt;/name&gt;<br>
+  &lt;label&gt; Right Heart &lt;/label&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; GasAnesthesiaSkeletalMuscle &lt;/name&gt;<br>
+  &lt;label&gt; Skeletal Muscle &lt;/label&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+&lt;leaf&gt;<br>
+  &lt;name&gt; GasAnesthesiaSkin &lt;/name&gt;<br>
+  &lt;label&gt; Skin &lt;/label&gt;<br>
+  &lt;parent&gt; GasAnesthesia &lt;/parent&gt;<br>
+&lt;/leaf&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

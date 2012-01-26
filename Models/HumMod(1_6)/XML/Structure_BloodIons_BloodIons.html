@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_Structure.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / BloodIons<br>
+<br>
+Created : 09-Apr-05<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2006-2010<br>
+By : University Of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; BloodIons &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; Cations &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; Anions &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; StrongAnions &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; WeakAnions &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; Protein &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; AnionsLessProtein &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; [SID] &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;var&gt;<br>
+  &lt;name&gt; [SID(mEq/L)] &lt;/name&gt;<br>
+&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+&lt;block&gt;&lt;name&gt; CalcSID &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Cations &lt;/name&gt;<br>
+  &lt;val&gt; NaPool.[Na+(mEq/L)] + KPool.[K+(mEq/L)] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Anions &lt;/name&gt;<br>
+  &lt;val&gt; Cations &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; StrongAnions &lt;/name&gt;<br>
+  &lt;val&gt;<br>
+      ClPool.[Cl-(mEq/L)]<br>
+    + LacPool.[Lac-(mEq/L)]<br>
+    + KAPool.[KA(mMol/L)]<br>
+    + SO4Pool.[SO4--(mEq/L)]<br>
+    + PO4Pool.[PO4--(mEq/L)]<br>
+  &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; [SID(mEq/L)] &lt;/name&gt;<br>
+  &lt;val&gt; Cations - StrongAnions &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; [SID] &lt;/name&gt;<br>
+  &lt;val&gt; 0.001 * [SID(mEq/L)] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; FinishSums &lt;/name&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; WeakAnions &lt;/name&gt;<br>
+  &lt;val&gt; Anions - StrongAnions &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; Protein &lt;/name&gt;<br>
+  &lt;val&gt; WeakAnions - CO2Veins.[HCO3(mEq/L)] &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;def&gt;<br>
+  &lt;name&gt; AnionsLessProtein &lt;/name&gt;<br>
+  &lt;val&gt; Anions - Protein &lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+&lt;/definitions&gt;<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>

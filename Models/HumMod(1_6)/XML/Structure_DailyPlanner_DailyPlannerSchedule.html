@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 1/26/2012 1:57 PM
+  Author : Tom Coleman
+  Copyright : 2011-2011
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Model </title>
+<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../SmallTitle.PNG'>
+<img src='../XMLLightBlue.png'>
+<a href='Structure_DailyPlanner_DailyPlanner.html'><img src='../../Back.PNG'></a>
+<p>
+HumMod / DailyPlannerSchedule<br>
+<br>
+Created : 27-Feb-08<br>
+Last Modified : 26-Jan-10<br>
+Author : Tom Coleman<br>
+Copyright : 2008-2010<br>
+By : University of Mississippi Medical Center<br>
+Schema : DES V1.0<br>
+<br>
+&lt;structure&gt;&lt;name&gt; DailyPlannerSchedule &lt;/name&gt;<br>
+<br>
+&lt;variables&gt;<br>
+<br>
+&lt;parm&gt;&lt;name&gt; Hour12AM-1AM  &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt;  Hour1AM-2AM  &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt;  Hour2AM-3AM  &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt;  Hour3AM-4AM  &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt;  Hour4AM-5AM  &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt;  Hour5AM-6AM  &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt;  Hour6AM-7AM  &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt;  Hour7AM-8AM  &lt;/name&gt;&lt;val&gt; 4 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt;  Hour8AM-9AM  &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt;  Hour9AM-10AM &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; Hour10AM-11AM &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; Hour11AM-12PM &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; Hour12PM-1PM  &lt;/name&gt;&lt;val&gt; 4 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt;  Hour1PM-2PM  &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt;  Hour2PM-3PM  &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt;  Hour3PM-4PM  &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt;  Hour4PM-5PM  &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt;  Hour5PM-6PM  &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt;  Hour6PM-7PM  &lt;/name&gt;&lt;val&gt; 4 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt;  Hour7PM-8PM  &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt;  Hour8PM-9PM  &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt;  Hour9PM-10PM &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; Hour10PM-11PM &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/parm&gt;<br>
+&lt;parm&gt;&lt;name&gt; Hour11PM-12AM &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/parm&gt;<br>
+<br>
+&lt;var&gt;&lt;name&gt; MealCount &lt;/name&gt;&lt;/var&gt;<br>
+<br>
+&lt;/variables&gt;<br>
+<br>
+&lt;definitions&gt;<br>
+<br>
+&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
+<br>
+&lt;def&gt;&lt;name&gt; MealCount &lt;/name&gt;<br>
+&lt;val&gt;<br>
+   ( Hour12AM-1AM EQ 4 ) <br>
+ + (  Hour1AM-2AM EQ 4 ) <br>
+ + (  Hour2AM-3AM EQ 4 ) <br>
+ + (  Hour3AM-4AM EQ 4 ) <br>
+ + (  Hour4AM-5AM EQ 4 ) <br>
+ + (  Hour5AM-6AM EQ 4 ) <br>
+ + (  Hour6AM-7AM EQ 4 ) <br>
+ + (  Hour7AM-8AM EQ 4 ) <br>
+ + (  Hour8AM-9AM EQ 4 ) <br>
+ + (  Hour9AM-10AM EQ 4 ) <br>
+ + ( Hour10AM-11AM EQ 4 ) <br>
+ + ( Hour11AM-12PM EQ 4 ) <br>
+ + ( Hour12PM-1PM EQ 4 ) <br>
+ + (  Hour1PM-2PM EQ 4 ) <br>
+ + (  Hour2PM-3PM EQ 4 ) <br>
+ + (  Hour3PM-4PM EQ 4 ) <br>
+ + (  Hour4PM-5PM EQ 4 ) <br>
+ + (  Hour5PM-6PM EQ 4 ) <br>
+ + (  Hour6PM-7PM EQ 4 ) <br>
+ + (  Hour7PM-8PM EQ 4 ) <br>
+ + (  Hour8PM-9PM EQ 4 ) <br>
+ + (  Hour9PM-10PM EQ 4 ) <br>
+ + ( Hour10PM-11PM EQ 4 ) <br>
+ + ( Hour11PM-12AM EQ 4 ) <br>
+&lt;/val&gt;<br>
+&lt;/def&gt;<br>
+<br>
+&lt;/block&gt;<br>
+<br>
+&lt;/definitions&gt;<br>
+<br>
+&lt;/structure&gt;<br>
+<br>
+End
+
+<p><img src='../../Footer.PNG'>
+
+</body>
+</html>
