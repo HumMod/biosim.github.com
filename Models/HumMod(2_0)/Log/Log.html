@@ -20,16 +20,50 @@
 <a href='../Model.html'><img src='../../Back.PNG'></a>
 
 <p>
+2012-01-27. You can edit the content for the <i>hidewindow</i>
+element below to <i>True</i> to hide the model solver's main
+window. Generally, Windows won't let you hide an application's
+main window, but you can minimize and not show it in the task
+bar to make it completely disappear.
+
+<p class='Indent'>
+WindowState = FormWindowState.Minimized ;
+
+<br class='Indent'>
+ShowInTaskbar = false ;
+
+<p>
+If there is a messup, use the task manager to mop up. Note that the
+only way to get the window back is to edit the INI file back to
+<i>False</i>.
+
+<p>
+2012-01-27. The model solver uses an INI file in place of Windows
+registry.
+
+<code>
+<ini>
+  <windowtop> 136 </windowtop>
+  <windowleft> 776 </windowleft>
+  <windowhigh> 174 </windowhigh>
+  <windowwide> 341 </windowwide>
+  <windowstate> 0 </windowstate>
+  <pipeinterval> 200 </pipeinterval>
+  <hidewindow> False </hidewindow>
+</ini>
+</code>
+
+<p>
 2012-01-27. Model controllers launch the model solver and pass the model
 name and location in using the command line. On the desktop it might be
 possible to use the defaults by putting the model controller, model
 solver and model root file all in the same folder.
 
 <p>
-But a better idea is to specify the model solver and model using the
-model controller's <i>Advanced</i> menu selection.
+But a better idea might be to specify the model solver and model using
+the model controller's <i>Advanced</i> menu selection.
 
-<br>
+<p>
 <img src='DialogShowingSolverAndModel.PNG'>
 
 <p>
