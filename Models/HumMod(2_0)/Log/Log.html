@@ -20,6 +20,13 @@
 <a href='../Model.html'><img src='../../Back.PNG'></a>
 
 <p>
+To get solution control and display information from the model
+solver, the model controller sends a requestcontrollerinfo empty
+message. The controller has a response that was prepared during
+model parsing and replies with a controllerinfo ... /controllerinfo
+message wrapped around the info.
+
+<p>
 2012-01-27. You can edit the content for the <i>hidewindow</i>
 element below to <i>True</i> to hide the model solver's main
 window. Generally, Windows won't let you hide an application's
@@ -29,7 +36,7 @@ bar to make it completely disappear.
 <p class='Indent'>
 WindowState = FormWindowState.Minimized ;
 
-<br class='Indent'>
+<br>
 ShowInTaskbar = false ;
 
 <p>
@@ -42,15 +49,15 @@ only way to get the window back is to edit the INI file back to
 registry.
 
 <code>
-<ini>
-  <windowtop> 136 </windowtop>
-  <windowleft> 776 </windowleft>
-  <windowhigh> 174 </windowhigh>
-  <windowwide> 341 </windowwide>
-  <windowstate> 0 </windowstate>
-  <pipeinterval> 200 </pipeinterval>
-  <hidewindow> False </hidewindow>
-</ini>
+<P>&lt;ini&gt;
+  <p class='Indent'> &lt;windowtop&gt; 136 &lt;/windowtop&gt;
+  <br> &lt;windowleft&gt; 776 &lt;/windowleft&gt;
+  <br> &lt;windowhigh&gt; 174 &lt;/windowhigh&gt;
+  <br> &lt;windowwide&gt; 341 &lt;/windowwide&gt;
+  <br> &lt;windowstate&gt; 0 &lt;/windowstate&gt;
+  <br> &lt;pipeinterval&gt; 200 &lt;/pipeinterval&gt;
+  <br> &lt;hidewindow&gt; False &lt;/hidewindow&gt;
+<p>&lt;/ini&gt;
 </code>
 
 <p>
@@ -72,7 +79,7 @@ The defaults are
 <p class='Indent'>
 Solver : Model Solver.exe
 
-<br class='Indent'>
+<br>
 Model : HumMod.DES
 
 <p>
