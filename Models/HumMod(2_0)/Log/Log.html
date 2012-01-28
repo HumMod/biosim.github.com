@@ -20,11 +20,77 @@
 <a href='../Model.html'><img src='../../Back.PNG'></a>
 
 <p>
-To get solution control and display information from the model
-solver, the model controller sends a requestcontrollerinfo empty
-message. The controller has a response that was prepared during
-model parsing and replies with a controllerinfo ... /controllerinfo
-message wrapped around the info.
+2012-01-28. With the Win32 library (HumMod.EXE), the programmer
+must group the radiobuttons into functional groups. With C# and
+WinForms, all of the radiobuttons with the same parent are
+considered to be in the same group. I had some panels with more
+than one group of radiobuttons on the surface. Parenthood was
+clarified by putting groups of buttons in appropriate group
+boxes. Panels that were edited :
+
+<p class='Indent'>
+Display\Hormones\ACTH\...
+
+<br>
+Display\Hormones\Calcitonin\...
+
+<br>
+Display\Hormones\Cortisol\...
+
+<p>
+More panel edits to follow.
+
+<p>
+2012-01-28. Installed placeholder folders and files for adrenal
+gland and pancreas. Organ weights are visible at <i>Organs</i>
+| <i>More</i>. Folders and files created :
+
+<p class='Indent'>
+Structure\AdrenalGland\...
+
+<br>
+Structure\Pancreas\...
+
+<br>
+Display\Tree\Organs\More\AdrenalGland.DES
+
+<br>
+Display\Tree\Organs\More\Pancreas.DES
+
+<br>
+Display\Organs\More\AdrenalGland\...
+
+
+<br>
+Display\Organs\More\Pancreas\...
+
+<p>
+2012-01-28. Thanks to Drew Pruett for this fix. Renin flux between
+free renin and granules had derivative signs reversed, which violated
+conservation of mass and caused big problems in many simulations
+after time had advanced about a week. Files edited :
+
+<p class='Indent'>
+Structure\ReninGranules.DES
+
+<br>
+Structure\ReninFree.DES
+
+<br>
+Structure\Renin.DES
+
+<br>
+Display\Hormones\Renin\Kidney\Granules.DES
+
+<br>
+Display\Hormones\Renin\Kidney\Free.DES
+
+<p>
+2012-01-27. To get solution control and display information from
+the model solver, the model controller sends a <i>requestcontrollerinfo/</i>
+empty message. The controller has a response that was prepared during
+model parsing and replies with a <i>controllerinfo</i> ...
+<i>/controllerinfo</i> message wrapped around the info.
 
 <p>
 2012-01-27. You can edit the content for the <i>hidewindow</i>
