@@ -22,4 +22,13 @@ a
 { margin-left : 20px ;
 }
 
+.Table
+{ margin-left : 20px ;
+  text-align : center ;
+}
+
+td
+{ padding : 2px ;
+}
+
 /* End */
