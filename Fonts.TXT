@@ -1,0 +1,12 @@
+Fonts.TXT
+
+The typeface is Arial, black, normal, not bold.
+
+The largest PNG's use 22pt.
+
+Smallest use 12pt.
+
+And there is an intermediate size that uses 14pt.
+
+
+End
