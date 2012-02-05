@@ -28,7 +28,29 @@ a
 }
 
 td
-{ padding : 2px ;
+{ padding-top : 2px ;
+  padding-bottom : 2px ;
+  padding-left : 20px ;
+  padding-right : 20px ;
+}
+
+.Left
+{ text-align : left ;
+}
+
+.Right
+{ text-align : right ;
+}
+
+.Anchor
+{ padding-left : 0px ;
+//  margin-left : -20px ;
+  text-align : left ;
+}
+
+.Spacer
+{ padding-top : 10px ;
+  text-align : left ;
 }
 
 /* End */
