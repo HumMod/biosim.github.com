@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<!--
+   General-OrganBloodFlow.html
+
+   Created : 2012-02-05
+   Revised : 2012-02-06
+   Author : Tom Coleman
+   Copyright : 2012-2012
+   By : University of Mississippi Medical Center
+-->
+
+<html>
+<head>
+<title> General-OrganBloodFlow </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'><img src='NormalValues.PNG'>
+<a href='NormalValues.html'><img src='../Back.PNG'></a>
+
+<p> Normal Values > General - Organ Blood Flow
+
+<p><img src='../Dot.PNG'> Cardiac Output
+
+<p>
+To get this started, I'm going to estimate that cardiac output in the
+male (and maybe the female) is 0.072 mL/Min per G body weight.
+
+<table class='Table'>
+<tr><td class='Anchor'> Gender </td><td> Body Weight (kG) </td><td> Cardiac Output (mL/Min) </td></tr>
+<tr><td class='Left'> Male </td><td> 75.0 </td><td> 5400 </td></tr>
+<tr><td class='Left'> Female </td><td> 60.5 </td><td> 4352 </td></tr>
+</table>
+
+<p><img src='../Dot.PNG'> Organ Blood Flow
+
+<p>
+Williams and Leggett provide the following values (as % of cardiac output)
+for males and females.
+
+<table class='Table'>
+<tr><td class='Anchor'> Organ </td><td> Male </td><td> Female </td></tr>
+<tr><td class='Left'> Adipose </td><td> 5.0 </td><td> 8.5 </td></tr>
+<tr><td class='Left'> Adrenal </td><td> 0.3 </td><td> 0.3 </td></tr>
+<tr><td class='Left'> Bone </td><td> 5.0 </td><td> 5.0 </td></tr>
+<tr><td class='Left'> Brain </td><td> 12.0 </td><td> 12.0 </td></tr>
+<tr><td class='Left'> Heart </td><td> 4.0 </td><td> 5.0 </td></tr>
+<tr><td class='Left'> Kidney </td><td> 19.0 </td><td> 21.0 </td></tr>
+<tr><td class='Left'> Liver </td><td> 25.0 </td><td> 27.0 </td></tr>
+<tr><td class='Right'> Hepatic Artery </td><td> N/A </td><td> N/A </td></tr>
+<tr><td class='Right'> Portal Vein </td><td> 19.0 </td><td> 21.0 </td></tr>
+<tr><td class='Left'> Lung </td><td> 2.5 </td><td> 2.5 </td></tr>
+<tr><td class='Left'> Muscle </td><td> 17.0 </td><td> 12.0 </td></tr>
+<tr><td class='Left'> Skin </td><td> 5.0 </td><td> 5.0 </td></tr>
+<tr><td class='Left'> Thyroid </td><td> 1.5 </td><td> 1.5 </td></tr>
+</table>
+
+<p>
+This data set is the starting point for specifying blood flow per gram
+tissue for all of the organs in the model. Using the cardiac outputs
+shown above and typical organ weights, the following blood flows were
+calculated.
+
+<P> Male Values
+
+<table class='Table'>
+<tr><td class='Anchor'> Organ  </td><td> Mass </td><td> Flow </td><td> Flow (/G) </td></tr>
+<tr><td class='Left'> Adipose  </td><td> 16,050 </td><td>  270 </td><td> 0.017 </td></tr>
+<tr><td class='Left'> Adrenal  </td><td>     15 </td><td>   16 </td><td> 1.080 </td></tr>
+<tr><td class='Left'> Bone     </td><td> 10,725 </td><td>  270 </td><td> 0.025 </td></tr>
+<tr><td class='Left'> Brain    </td><td>   1500 </td><td>  648 </td><td> 0.432 </td></tr>
+<tr><td class='Left'> GI Tract </td><td>   1275 </td><td> 1026 </td><td> 0.805 </td></tr>
+<tr><td class='Left'> Heart    </td><td>    353 </td><td>  216 </td><td> 0.613 </td></tr>
+<tr><td class='Left'> Kidney   </td><td>    330 </td><td> 1026 </td><td> 3.109 </td></tr>
+<tr><td class='Left'> Liver    </td><td>   1950 </td><td> 1350 </td><td> 0.692 </td></tr>
+<tr><td class='Left'> Lung     </td><td>    570 </td><td>  135 </td><td> 0.237 </td></tr>
+<tr><td class='Left'> Muscle   </td><td> 30,000 </td><td>  918 </td><td> 0.031 </td></tr>
+<tr><td class='Left'> Skin     </td><td>   2775 </td><td>  270 </td><td> 0.097 </td></tr>
+<tr><td class='Left'> Thyroid  </td><td>     23 </td><td>   81 </td><td> 3.600 </td></tr>
+</table>
+
+<P> Female Values
+
+<table class='Table'>
+<tr><td class='Anchor'> Organ  </td><td> Mass </td><td> Flow </td><td> Flow (/G) </td></tr>
+<tr><td class='Left'> Adipose  </td><td> 19,767 </td><td>  370 </td><td> 0.019 </td></tr>
+<tr><td class='Left'> Adrenal  </td><td>     12 </td><td>   13 </td><td> 1.080 </td></tr>
+<tr><td class='Left'> Bone     </td><td>   8567 </td><td>  218 </td><td> 0.025 </td></tr>
+<tr><td class='Left'> Brain    </td><td>   1198 </td><td>  522 </td><td> 0.436 </td></tr>
+<tr><td class='Left'> GI Tract </td><td>   1018 </td><td>  914 </td><td> 0.897 </td></tr>
+<tr><td class='Left'> Heart    </td><td>    284 </td><td>  218 </td><td> 0.766 </td></tr>
+<tr><td class='Left'> Kidney   </td><td>    264 </td><td>  740 </td><td> 2.807 </td></tr>
+<tr><td class='Left'> Liver    </td><td>   1558 </td><td> 1175 </td><td> 0.754 </td></tr>
+<tr><td class='Left'> Lung     </td><td>    459 </td><td>  109 </td><td> 0.237 </td></tr>
+<tr><td class='Left'> Muscle   </td><td> 24,180 </td><td>  522 </td><td> 0.022 </td></tr>
+<tr><td class='Left'> Skin     </td><td>   2217 </td><td>  218 </td><td> 0.098 </td></tr>
+<tr><td class='Left'> Thyroid  </td><td>     18 </td><td>   65 </td><td> 3.600 </td></tr>
+</table>
+
+<p>
+<img src='../Dot.PNG'> Gender
+
+<p>
+I'm going to try the assumption that there are no intrinsic gender
+differences. Organ blood flow depends on the type of organ and the
+size of the organ. Differences between males and females are due to
+the mix of sizes.
+
+<table class='Table'>
+<tr><td class='Anchor'> Organ  </td><td> Male </td><td> Female </td><td> Average </td></tr>
+<tr><td class='Left'> Adipose  </td><td> 0.017 </td><td> 0.019 </td><td> 0.018 </td></tr>
+<tr><td class='Left'> Adrenal  </td><td> 1.080 </td><td> 1.080 </td><td> 1.080 </td></tr>
+<tr><td class='Left'> Bone     </td><td> 0.025 </td><td> 0.025 </td><td> 0.025 </td></tr>
+<tr><td class='Left'> Brain    </td><td> 0.432 </td><td> 0.436 </td><td> 0.434 </td></tr>
+<tr><td class='Left'> GI Tract </td><td> 0.805 </td><td> 0.897 </td><td> 0.851 </td></tr>
+<tr><td class='Left'> Heart    </td><td> 0.613 </td><td> 0.766 </td><td> 0.689 </td></tr>
+<tr><td class='Left'> Kidney   </td><td> 3.109 </td><td> 2.807 </td><td> 2.958 </td></tr>
+<tr><td class='Left'> Liver    </td><td> 0.692 </td><td> 0.754 </td><td> 0.723 </td></tr>
+<tr><td class='Left'> Lung     </td><td> 0.237 </td><td> 0.237 </td><td> 0.237 </td></tr>
+<tr><td class='Left'> Muscle   </td><td> 0.031 </td><td> 0.022 </td><td> 0.026 </td></tr>
+<tr><td class='Left'> Skin     </td><td> 0.097 </td><td> 0.098 </td><td> 0.098 </td></tr>
+<tr><td class='Left'> Thyroid  </td><td> 3.600 </td><td> 3.600 </td><td> 3.600 </td></tr>
+</table>
+
+<p> I suggest that we can use the average values as scalers for both genders.
+
+<p>
+<img src='../Dot.PNG'> Base Organ Blood Flow
+
+<p>
+The base organs are all organs except skeletal muscle and adipose tissue.
+The assumption is that blood flow in the base organs is only size specific
+and is not dependent on gender, muscularity and adiposity.
+
+<p> Using this assumption we only need to know base organ mass and blood
+flow per gram to scale the base organs blood flow. For cardiac output work,
+we include the GI tract organ weight in the sums but not the blood flow --
+since blood flow through the liver is counted.
+
+<p>
+The values for our 75 kG male are blood flow is 3931 mL/Min, organ mass is
+49,515 G and flow per gram is 0.079.
+
+<p>
+<img src='../Dot.PNG'> References
+
+<p>
+Williams, L.R. and R.W.Leggett. Reference values for resting blood
+flow to organs of man. <u>Clin. Phys. Meas.</u> 10:187-217, 1989.
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>
