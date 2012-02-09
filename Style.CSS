@@ -44,12 +44,17 @@ td
 
 .Anchor
 { padding-left : 0px ;
-//  margin-left : -20px ;
   text-align : left ;
 }
 
 .Spacer
 { padding-top : 10px ;
+  text-align : left ;
+}
+
+.Single
+{ padding-left : 0px ;
+  padding-top : 10px ;
   text-align : left ;
 }
 

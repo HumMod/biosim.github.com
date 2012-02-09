@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<!--
+   BloodVolume.html
+
+   Created : 2012-02-09
+   Revised : 2012-02-09
+   Author : Tom Coleman
+   Copyright : 2012-2012
+   By : University of Mississippi Medical Center
+-->
+
+<html>
+<head>
+<title> Blood Volume </title>
+<link rel='stylesheet' type='text/css' href='../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../SmallTitle.PNG'><img src='NormalValues.PNG'>
+<a href='NormalValues.html'><img src='../Back.PNG'></a>
+
+<p> Normal Values > Blood Volume
+
+<p>
+<img src='../Dot.PNG'> Normal Blood Volume - Males
+
+<p>
+Reference Man uses a value of 69.3 mL/kG body weight for
+estimating blood volume. Yiengst and Shock reported a value
+of 75.0. The average is 72.1 mL/kG.
+
+<table class='Table'>
+<tr><td class='Anchor'> Body Mass (kG) </td><td> Blood (mL/kG) </td><td> BV (ml) </td></tr>
+<tr><td class='Left'> 75               </td><td> 72.1          </td><td> 5408    </td></tr>
+</table>
+
+<p>
+<img src='../Dot.PNG'> Normal Blood Volume - Females
+
+<p>
+Reference Man uses a value of 64.4 mL/kG body weight for
+estimating blood volume. Wadsworth reported a value of
+66.5. The average is 65.5 mL/kG.
+
+<table class='Table'>
+<tr><td class='Anchor'> Body Mass (kG) </td><td> Blood (mL/kG) </td><td> BV (ml) </td></tr>
+<tr><td class='Left'> 60.5             </td><td> 65.5          </td><td> 3959    </td></tr>
+</table>
+
+<p>
+<img src='../Dot.PNG'> Blood Volume - Effect of Body Composition
+
+<p>
+This is a preliminary report on scaling blood volume values. The
+general idea in scaling is that increased amounts of adipose tissue
+are associated with rather modest increases in blood volume.
+
+<p>
+I'm shooting for an algorithm similar to the one used with scaling
+cardiac output, where the calculated value is a function of body
+size and composition.
+
+<p>
+Male Values
+
+<table class='Table'>
+<tr><td class='Anchor'> Tissue    </td><td> Mass (G) </td><td> Blood (mL/kG) </td><td> BV (ml) </td></tr>
+<tr><td class='Left'> Base        </td><td> 26,033   </td><td>  100          </td><td> 2603    </td></tr>
+<tr><td class='Left'> Muscle      </td><td> 26,400   </td><td>   88          </td><td> 2323    </td></tr>
+<tr><td class='Left'> Fat         </td><td> 16,050   </td><td>   30          </td><td>  482    </td></tr>
+<tr><td class='Anchor'> Total     </td><td> 68,483   </td><td>               </td><td> 5408    </td></tr>
+<tr><td class='Spacer'> Reference </td><td> 68,483   </td><td>               </td><td> 5408    </td></tr>
+</table>
+
+<p>
+Female Values
+
+<table class='Table'>
+<tr><td class='Anchor'> Tissue    </td><td> Mass (G) </td><td> Blood (mL/kG) </td><td> BV (ml) </td></tr>
+<tr><td class='Left'> Base        </td><td> 20,795   </td><td>  100          </td><td> 2079    </td></tr>
+<tr><td class='Left'> Muscle      </td><td> 14,629   </td><td>   88          </td><td> 1287    </td></tr>
+<tr><td class='Left'> Fat         </td><td> 19,767   </td><td>   30          </td><td>  593    </td></tr>
+<tr><td class='Anchor'> Total     </td><td> 55,191   </td><td>               </td><td> 3960    </td></tr>
+<tr><td class='Spacer'> Reference </td><td> 55,191   </td><td>               </td><td> 3959    </td></tr>
+</table>
+
+<p>
+<img src='../Dot.PNG'> References
+
+<p>
+Huff, R.L. and D.D. Feller. Relation of circulating red cell volume
+to body density and obesity. <u>J. Clin. Invest.</u> 35:1-10, 1956.
+
+<p>
+International Commission on Radiological Protection (ICRP). No. 23.
+Report of the Task Group on Reference Man. Pergammon, 1975 (referred
+to as <i>Reference Man</i>).
+
+<p> Wadsworth, G.R. The blood volume of normal women. <u>Blood</u>
+9:1205-1207, 1954.
+
+<p>
+Yiengst, M.J. and N.W. Shock. Blood and plasma volume in young males.
+<u>J. Appl. Physiol.</u> 17:195-198, 1962.
+
+<p><img src='../Footer.PNG'>
+
+</body>
+</html>
