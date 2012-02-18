@@ -20,6 +20,21 @@
 <a href='../Model.html'><img src='../../Back.PNG'></a>
 
 <p>
+2012-02-17. Marek pointed out that I was cutting corners on
+this calculation by assuming a pulse pressure in the stroke
+volume calculation (using the Suga-Sagawa heart model). The
+rigorous calculation is now in place, using an implicit
+algebraic equation. SBP in aorta and pulmonary artery is
+defined by the implicit. Stoke volume is calculated and used
+to calculate the end value of SBP. The calculation crosses
+several structures, but it should be a very benign calculation.
+
+<p>
+2012-02-17. Values for left and right side stenosis and regurg
+are now in groupboxes in the left and right heart pumping
+panels.
+
+<p>
 2012-02-17. Code and panels are now installed in all 12 major
 organs for the new fuel selector.
 
