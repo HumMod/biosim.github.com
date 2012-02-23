@@ -1,0 +1,57 @@
+Pressures.Script
+
+Created : 2012-02-23
+Revised : 2012-02-23
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<open>
+  <filename> J:\HumModRepository\Validation\HumMod(2_0)\InitialValues\Pressures.HTML </filename>
+</open>
+
+<modeltitle/>
+<timestamp/>
+
+<comment> InitialValues - Pressures </comment>
+
+<accept>
+  <var> SystemicArtys.Pressure </var>
+  <min> 96 </min>
+  <max> 98 </max>
+</accept>
+
+<accept>
+  <var> SystemicVeins.Pressure </var>
+  <min> 9 </min>
+  <max> 11 </max>
+</accept>
+
+<accept>
+  <var> PulmArty.Pressure </var>
+  <min> 11 </min>
+  <max> 13 </max>
+</accept>
+
+<quality>
+  <var> SystemicArtys.Pressure </var>
+  <datum> 97 </datum>
+  <tolerance> 2 </tolerance>
+</quality>
+
+<quality>
+  <var> SystemicVeins.Pressure </var>
+  <datum> 10 </datum>
+  <tolerance> 1 </tolerance>
+</quality>
+
+<quality>
+  <var> PulmArty.Pressure </var>
+  <datum> 12 </datum>
+  <tolerance> 1 </tolerance>
+</quality>
+
+<stats/>
+<close/>
+
+End

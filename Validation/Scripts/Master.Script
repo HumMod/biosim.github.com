@@ -1,0 +1,29 @@
+Master.Script
+
+Created : 2012-02-23
+Revised : 2012-02-23
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<script>
+
+<launch>
+	<solver> J:\ModelSolver\Code\Model Solver.EXE </solver>
+	<model> J:\HumModXML\HumMod.DES </model>
+</launch>
+
+<reset/>
+<restart/>
+
+<emit> HTML </emit>
+
+<homepath> ../../../ </homepath>
+<parent> InitialValues.HTML </parent>
+
+<?include OrganMass.Script ?>
+<?include Pressures.Script ?>
+
+</script>
+
+End

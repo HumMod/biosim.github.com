@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 
 <!--
-   OrganMass.HTML
-
-   Created : 2012-02-20
-   Revised : 2012-02-20
-   Author : Tom Coleman
-   Copyright : 2012-2012
-   By : University of Mississippi Medical Center
-
+  Created : 2/23/2012 3:24 PM
+  Author : Tom Coleman
+  Copyright : 2011-2012
+  By : University of Missippi Medical Center
 -->
 
 <html>
 <head>
-<title> Organ Mass </title>
+<title> Model </title>
 <link rel='stylesheet' type='text/css' href='../../../Style.CSS'>
 </head>
 
@@ -22,12 +18,110 @@
 <img src='../../../SmallTitle.PNG'>
 <img src='../../../SmallValidation.PNG'>
 <a href='InitialValues.HTML'><img src='../../../Back.PNG'></a>
-
 <p>
-Home &gt; Validation &gt; HumMod (v2.0) &gt; Initial Values &gt; Organ Mass
-
+Integrative Biomedicine (v2.0.13)
 <p>
-====== Values resulting from a Scripted Controller script go here ======
+Timestamp : 2/23/2012 3:24 PM
+<br>
+Comment : InitialValues - OrganMass
+<p>
+Accept
+<br>
+&nbsp;&nbsp Var : SystemicArtys.Pressure
+<br>
+&nbsp;&nbsp Val : 96.1290322580645
+<br>
+&nbsp;&nbsp Min : 96
+<br>
+&nbsp;&nbsp Max : 98
+<br>
+&nbsp;&nbsp Result : Accepted
+<p>
+Accept
+<br>
+&nbsp;&nbsp Var : SystemicVeins.Pressure
+<br>
+&nbsp;&nbsp Val : 10.0534217208965
+<br>
+&nbsp;&nbsp Min : 9
+<br>
+&nbsp;&nbsp Max : 11
+<br>
+&nbsp;&nbsp Result : Accepted
+<p>
+Accept
+<br>
+&nbsp;&nbsp Var : PulmArty.Pressure
+<br>
+&nbsp;&nbsp Val : 14.6413967663504
+<br>
+&nbsp;&nbsp Min : 11
+<br>
+&nbsp;&nbsp Max : 13
+<br>
+&nbsp;&nbsp Result : Not Accepted
+<p>
+Quality Test
+<br>
+&nbsp;&nbsp Var : SystemicArtys.Pressure
+<br>
+&nbsp;&nbsp Value : 96.1290322580645
+<br>
+&nbsp;&nbsp Datum : 97
+<br>
+&nbsp;&nbsp Tolerance : 2
+<br>
+&nbsp;&nbsp Deviation : 0.435483870967751
+<br>
+&nbsp;&nbsp Quality : 65
+<p>
+Quality Test
+<br>
+&nbsp;&nbsp Var : SystemicVeins.Pressure
+<br>
+&nbsp;&nbsp Value : 10.0534217208965
+<br>
+&nbsp;&nbsp Datum : 10
+<br>
+&nbsp;&nbsp Tolerance : 1
+<br>
+&nbsp;&nbsp Deviation : 0.0534217208965
+<br>
+&nbsp;&nbsp Quality : 95
+<p>
+Quality Test
+<br>
+&nbsp;&nbsp Var : PulmArty.Pressure
+<br>
+&nbsp;&nbsp Value : 14.6413967663504
+<br>
+&nbsp;&nbsp Datum : 12
+<br>
+&nbsp;&nbsp Tolerance : 1
+<br>
+&nbsp;&nbsp Deviation : 2.6413967663504
+<br>
+&nbsp;&nbsp Quality : 7
+<p>
+Stats
+<p>
+Accept
+<br>
+&nbsp;&nbsp Total : 3
+<br>
+&nbsp;&nbsp Passed : 2
+<br>
+&nbsp;&nbsp Failed : 1
+<p>
+Quality Test
+<br>
+&nbsp;&nbsp N : 3
+<br>
+&nbsp;&nbsp Min : 7
+<br>
+&nbsp;&nbsp Max : 95
+<br>
+&nbsp;&nbsp Ave : 56
 
 <p><img src='../../../Footer.PNG'>
 
