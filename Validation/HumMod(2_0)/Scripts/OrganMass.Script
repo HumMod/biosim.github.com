@@ -1,4 +1,4 @@
-Pressures.Script
+OrganMass.Script
 
 Created : 2012-02-23
 Revised : 2012-02-23
@@ -7,48 +7,54 @@ Copyright : 2012-2012
 By : University of Mississippi Medical Center
 
 <open>
-  <filename> J:\HumModRepository\Validation\HumMod(2_0)\InitialValues\Pressures.HTML </filename>
+  <filename> J:\HumModRepository\Validation\HumMod(2_0)\InitialValues\OrganMass.HTML </filename>
 </open>
 
 <modeltitle/>
 <timestamp/>
 
-<comment> InitialValues - Pressures </comment>
+<comment> InitialValues - OrganMass </comment>
 
 <accept>
   <var> SystemicArtys.Pressure </var>
   <min> 96 </min>
   <max> 98 </max>
+  <format> 1 </format>
 </accept>
 
 <accept>
   <var> SystemicVeins.Pressure </var>
   <min> 9 </min>
   <max> 11 </max>
+  <format> 1 </format>
 </accept>
 
 <accept>
   <var> PulmArty.Pressure </var>
   <min> 11 </min>
   <max> 13 </max>
+  <format> 1 </format>
 </accept>
 
 <quality>
   <var> SystemicArtys.Pressure </var>
   <datum> 97 </datum>
   <tolerance> 2 </tolerance>
+  <format> 1 </format>
 </quality>
 
 <quality>
   <var> SystemicVeins.Pressure </var>
   <datum> 10 </datum>
   <tolerance> 1 </tolerance>
+  <format> 1 </format>
 </quality>
 
 <quality>
   <var> PulmArty.Pressure </var>
   <datum> 12 </datum>
   <tolerance> 1 </tolerance>
+  <format> 1 </format>
 </quality>
 
 <stats/>
