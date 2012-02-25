@@ -1,7 +1,7 @@
 Master.Script
 
 Created : 2012-02-23
-Revised : 2012-02-23
+Revised : 2012-02-25
 Author : Tom Coleman
 Copyright : 2012-2012
 By : University of Mississippi Medical Center
@@ -19,10 +19,30 @@ By : University of Mississippi Medical Center
 <emit> HTML </emit>
 
 <homepath> ../../../ </homepath>
-<parent> InitialValues.HTML </parent>
+<parent> Results.HTML </parent>
 
-<?include OrganMass.Script ?>
-<?include Pressures.Script ?>
+<?include InitialValues_OrganMass.Script ?>
+<?include InitialValues_Pressures.Script ?>
+
+<open>
+  <filename> J:\HumModRepository\Validation\HumMod(2_0)\Results\Summary.HTML </filename> 
+</open>
+
+<modeltitle/>
+<timestamp/>
+
+<comment> Summary </comment>
+
+<files>
+  <controller/>
+  <solver/>
+  <model/>
+  <script/>
+  <includedfiles/>
+  <resultslog/>
+</files>
+
+<close/>
 
 </script>
 
