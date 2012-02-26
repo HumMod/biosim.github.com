@@ -1,7 +1,7 @@
 /* Style.CSS
 
    Created : 2011-11-26
-   Revised : 2012-02-23
+   Revised : 2012-02-26
    Author : Tom Coleman
    Copyright : 2011-2012
    By : University of Mississippi Medical Center
@@ -60,6 +60,11 @@ td
 { padding-left : 0px ;
   padding-top : 10px ;
   text-align : left ;
+}
+
+pre
+{ font-family : Arial, Helvetica, sans-serif ;
+  font-size : 12pt ;
 }
 
 /* End */

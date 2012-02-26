@@ -1,10 +1,12 @@
 Pressures.Script
 
 Created : 2012-02-23
-Revised : 2012-02-25
+Revised : 2012-02-26
 Author : Tom Coleman
 Copyright : 2012-2012
 By : University of Mississippi Medical Center
+
+<stats_local_reset/>
 
 <open>
   <filename> J:\HumModRepository\Validation\HumMod(2_0)\Results\InitialValues_Pressures.HTML </filename>
@@ -57,7 +59,7 @@ By : University of Mississippi Medical Center
   <format> 1 </format>
 </quality>
 
-<stats/>
+<stats_local> Pressures </stats_local>
 <close/>
 
 End

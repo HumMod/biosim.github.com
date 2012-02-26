@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 2/26/2012 12:23 PM
+  Author : Tom Coleman
+  Copyright : 2012-2012
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Script </title>
+<link rel='stylesheet' type='text/css' href='../../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../../SmallTitle.PNG'>
+<img src='../../../SmallValidation.PNG'>
+<img src='Scripts.PNG'>
+<a href='Scripts.HTML'><img src='../../../Back.PNG'></a>
+<p> Home &gt; Validation &gt; HumMod (v2.0) &gt; Scripts
+<pre>
+Master.Script
+
+Created : 2012-02-23
+Revised : 2012-02-26
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+&lt;script&gt;
+&lt;script_to_html/&gt;
+
+&lt;launch&gt;
+	&lt;solver&gt; J:\ModelSolver\Code\Model Solver.EXE &lt;/solver&gt;
+	&lt;model&gt; J:\HumModXML\HumMod.DES &lt;/model&gt;
+&lt;/launch&gt;
+
+&lt;reset/&gt;
+&lt;restart/&gt;
+
+&lt;emit&gt; HTML &lt;/emit&gt;
+
+&lt;homepath&gt; ../../../ &lt;/homepath&gt;
+&lt;parent&gt; Results.HTML &lt;/parent&gt;
+
+&lt;?include InitialValues_OrganMass.Script ?&gt;
+&lt;?include InitialValues_Pressures.Script ?&gt;
+
+&lt;open&gt;
+  &lt;filename&gt; J:\HumModRepository\Validation\HumMod(2_0)\Results\Summary.HTML &lt;/filename&gt; 
+&lt;/open&gt;
+
+&lt;modeltitle/&gt;
+&lt;timestamp/&gt;
+
+&lt;comment&gt; Summary &lt;/comment&gt;
+
+&lt;files&gt;
+  &lt;controller/&gt;
+  &lt;solver/&gt;
+  &lt;model/&gt;
+  &lt;script/&gt;
+  &lt;includedfiles/&gt;
+  &lt;resultslog/&gt;
+&lt;/files&gt;
+
+&lt;close/&gt;
+
+&lt;/script&gt;
+
+End
+</pre>
+
+<p><img src='../../../Footer.PNG'>
+
+</body>
+</html>
