@@ -1,0 +1,108 @@
+InitialValues_BodyMass.Script
+
+Created : 2012-02-27
+Revised : 2012-02-27
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<stats_local_reset/>
+
+<open>
+  <filename> J:\HumModRepository\Validation\HumMod(2_0)\Results\InitialValues_BodyMass.HTML </filename>
+</open>
+
+<modeltitle/>
+<timestamp/>
+<comment> Initial Values - Body Mass </comment>
+
+<accept>
+  <var> Weight.Weight(kG) </var>
+  <min> 74 </min>
+  <max> 76 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Weight.Weight(kG) </var>
+  <datum> 75 </datum>
+  <tolerance> 1 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> Weight.Weight(Lb) </var>
+  <min> 164 </min>
+  <max> 166 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Weight.Weight(Lb) </var>
+  <datum> 165 </datum>
+  <tolerance> 1 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> Adiposity.Mass </var>
+  <min> 15500 </min>
+  <max> 16500 </max>
+  <format> 0 </format>
+</accept>
+
+<quality>
+  <var> Adiposity.Mass </var>
+  <datum> 16000 </datum>
+  <tolerance> 200 </tolerance>
+  <format> 0 </format>
+</quality>
+
+<accept>
+  <var> Muscularity.Mass </var>
+  <min> 26000 </min>
+  <max> 27000 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Muscularity.Mass </var>
+  <datum> 26,400 </datum>
+  <tolerance> 200 </tolerance>
+  <format> 0 </format>
+</quality>
+
+<accept>
+  <var> OtherMass.Mass </var>
+  <min> 25500 </min>
+  <max> 26500 </max>
+  <format> 0 </format>
+</accept>
+
+<quality>
+  <var> OtherMass.Mass </var>
+  <datum> 26000 </datum>
+  <tolerance> 200 </tolerance>
+  <format> 0 </format>
+</quality>
+
+<accept>
+  <var> Weight-Fluids.Total </var>
+  <min> 6500 </min>
+  <max> 6600 </max>
+  <format> 0 </format>
+</accept>
+
+<quality>
+  <var> Weight-Fluids.Total </var>
+  <datum> 6525 </datum>
+  <tolerance> 200 </tolerance>
+  <format> 0 </format>
+</quality>
+
+<stats_local> Initial Values - Body Mass </stats_local>
+
+<comment> End </comment>
+<close/>
+
+End

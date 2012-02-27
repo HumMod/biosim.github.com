@@ -1,7 +1,7 @@
 Master.Script
 
-Created : 2012-02-23
-Revised : 2012-02-26
+Created : 2012-02-27
+Revised : 2012-02-27
 Author : Tom Coleman
 Copyright : 2012-2012
 By : University of Mississippi Medical Center
@@ -22,17 +22,33 @@ By : University of Mississippi Medical Center
 <homepath> ../../../ </homepath>
 <parent> Results.HTML </parent>
 
-<?include InitialValues_OrganMass.Script ?>
-<?include InitialValues_Pressures.Script ?>
-
 <open>
   <filename> J:\HumModRepository\Validation\HumMod(2_0)\Results\Summary.HTML </filename> 
 </open>
 
 <modeltitle/>
 <timestamp/>
+<comment> Global Summary </comment>
 
-<comment> Summary </comment>
+<?include InitialValues_Master.Script ?>
+
+<open>
+  <filename> J:\HumModRepository\Validation\HumMod(2_0)\Results\Summary.HTML </filename> 
+  <append/>
+</open>
+
+<stats_regional> Initial Values </stats_regional>
+
+<?include Exercise_5_5_5_150W_Master.Script ?>
+
+<open>
+  <filename> J:\HumModRepository\Validation\HumMod(2_0)\Results\Summary.HTML </filename> 
+  <append/>
+</open>
+
+<stats_regional> Exercise 5-5-5 150W </stats_regional>
+
+<stats_global> Total Stats </stats_global>
 
 <files>
   <controller/>
@@ -43,6 +59,7 @@ By : University of Mississippi Medical Center
   <resultslog/>
 </files>
 
+<comment> End </comment>
 <close/>
 
 </script>
