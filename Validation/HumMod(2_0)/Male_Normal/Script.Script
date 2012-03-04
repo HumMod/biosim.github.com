@@ -1,0 +1,23 @@
+<!--
+   Script.Script @ Male_Normal
+
+   Created : 2012-03-04
+   Revised : 2012-03-04
+   Author : Tom Coleman
+   Copyright : 2012-2012
+   By : University of Mississippi Medical Center
+-->
+
+<modeltitle/>
+<timestamp/>
+
+<stats_context_reset/>
+
+<?path Male_Normal ?>
+
+<?include Initial_Values\Script.Script ?>
+<?include Exercise_5_5_5_150W\Script.Script ?>
+
+<stats_context> Male Normal </stats_context>
+
+<!-- End -->

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 3/4/2012 3:16 PM
+  Author : Tom Coleman
+  Copyright : 2012-2012
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Script </title>
+<link rel='stylesheet' type='text/css' href='../../../../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../../../../SmallTitle.PNG'>
+<img src='../../../../../SmallValidation.PNG'>
+<img src='../../../../../Scripts.PNG'>
+<a href='Results.HTML'><img src='../../../../../Back.PNG'></a>
+<p> Home &gt; Validation &gt; HumMod(v2.0) &gt; Male Normal &gt; Initial Values &gt; Blood Pressures<pre>
+&lt;!--
+   Script.Script @ Male_Normal | Initial_Values | Blood_Pressures
+
+   Created : 2012-03-04
+   Revised : 2012-03-04
+   Author : Tom Coleman
+   Copyright : 2012-2012
+   By : University of Mississippi Medical Center
+--&gt;
+
+&lt;modeltitle/&gt;
+&lt;timestamp/&gt;
+
+&lt;accept&gt;
+  &lt;var&gt; SystemicArtys.Pressure &lt;/var&gt;
+  &lt;min&gt; 95 &lt;/min&gt;
+  &lt;max&gt; 100 &lt;/max&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/accept&gt;
+
+&lt;quality&gt;
+  &lt;var&gt; SystemicArtys.Pressure &lt;/var&gt;
+  &lt;datum&gt; 97 &lt;/datum&gt;
+  &lt;tolerance&gt; 3 &lt;/tolerance&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/quality&gt;
+
+&lt;accept&gt;
+  &lt;var&gt; SystemicArtys.SBP &lt;/var&gt;
+  &lt;min&gt; 118 &lt;/min&gt;
+  &lt;max&gt; 122 &lt;/max&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/accept&gt;
+
+&lt;quality&gt;
+  &lt;var&gt; SystemicArtys.SBP &lt;/var&gt;
+  &lt;datum&gt; 120 &lt;/datum&gt;
+  &lt;tolerance&gt; 2 &lt;/tolerance&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/quality&gt;
+
+&lt;accept&gt;
+  &lt;var&gt; SystemicArtys.DBP &lt;/var&gt;
+  &lt;min&gt; 78 &lt;/min&gt;
+  &lt;max&gt; 82 &lt;/max&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/accept&gt;
+
+&lt;quality&gt;
+  &lt;var&gt; SystemicArtys.DBP &lt;/var&gt;
+  &lt;datum&gt; 80 &lt;/datum&gt;
+  &lt;tolerance&gt; 2 &lt;/tolerance&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/quality&gt;
+
+&lt;accept&gt;
+  &lt;var&gt; Kidney-ArcuateArtery.Pressure &lt;/var&gt;
+  &lt;min&gt; 93 &lt;/min&gt;
+  &lt;max&gt; 97 &lt;/max&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/accept&gt;
+
+&lt;quality&gt;
+  &lt;var&gt; Kidney-ArcuateArtery.Pressure  &lt;/var&gt;
+  &lt;datum&gt; 95 &lt;/datum&gt;
+  &lt;tolerance&gt; 2 &lt;/tolerance&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/quality&gt;
+
+&lt;accept&gt;
+  &lt;var&gt; GlomerulusFiltrate.Pressure &lt;/var&gt;
+  &lt;min&gt; 57 &lt;/min&gt;
+  &lt;max&gt; 63 &lt;/max&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/accept&gt;
+
+&lt;quality&gt;
+  &lt;var&gt; GlomerulusFiltrate.Pressure &lt;/var&gt;
+  &lt;datum&gt; 60 &lt;/datum&gt;
+  &lt;tolerance&gt; 2 &lt;/tolerance&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/quality&gt;
+
+&lt;accept&gt;
+  &lt;var&gt; SystemicVeins.Pressure &lt;/var&gt;
+  &lt;min&gt; 9 &lt;/min&gt;
+  &lt;max&gt; 11 &lt;/max&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/accept&gt;
+
+&lt;quality&gt;
+  &lt;var&gt; SystemicVeins.Pressure &lt;/var&gt;
+  &lt;datum&gt; 10 &lt;/datum&gt;
+  &lt;tolerance&gt; 1 &lt;/tolerance&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/quality&gt;
+
+&lt;accept&gt;
+  &lt;var&gt; SplanchnicVeins.Pressure &lt;/var&gt;
+  &lt;min&gt; 7 &lt;/min&gt;
+  &lt;max&gt; 9 &lt;/max&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/accept&gt;
+
+&lt;quality&gt;
+  &lt;var&gt; SplanchnicVeins.Pressure &lt;/var&gt;
+  &lt;datum&gt; 8 &lt;/datum&gt;
+  &lt;tolerance&gt; 1 &lt;/tolerance&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/quality&gt;
+
+&lt;accept&gt;
+  &lt;var&gt; RightAtrium.Pressure &lt;/var&gt;
+  &lt;min&gt; 1 &lt;/min&gt;
+  &lt;max&gt; 3 &lt;/max&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/accept&gt;
+
+&lt;quality&gt;
+  &lt;var&gt; RightAtrium.Pressure &lt;/var&gt;
+  &lt;datum&gt; 2 &lt;/datum&gt;
+  &lt;tolerance&gt; 1 &lt;/tolerance&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/quality&gt;
+
+&lt;accept&gt;
+  &lt;var&gt; PulmArty.Pressure &lt;/var&gt;
+  &lt;min&gt; 13 &lt;/min&gt;
+  &lt;max&gt; 15 &lt;/max&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/accept&gt;
+
+&lt;quality&gt;
+  &lt;var&gt; PulmArty.Pressure &lt;/var&gt;
+  &lt;datum&gt; 14 &lt;/datum&gt;
+  &lt;tolerance&gt; 1 &lt;/tolerance&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/quality&gt;
+
+&lt;accept&gt;
+  &lt;var&gt; PulmArty.SBP &lt;/var&gt;
+  &lt;min&gt; 19 &lt;/min&gt;
+  &lt;max&gt; 23 &lt;/max&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/accept&gt;
+
+&lt;quality&gt;
+  &lt;var&gt; PulmArty.SBP &lt;/var&gt;
+  &lt;datum&gt; 21 &lt;/datum&gt;
+  &lt;tolerance&gt; 2 &lt;/tolerance&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/quality&gt;
+
+&lt;accept&gt;
+  &lt;var&gt; PulmArty.DBP &lt;/var&gt;
+  &lt;min&gt; 8 &lt;/min&gt;
+  &lt;max&gt; 10 &lt;/max&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/accept&gt;
+
+&lt;quality&gt;
+  &lt;var&gt; PulmArty.DBP &lt;/var&gt;
+  &lt;datum&gt; 9 &lt;/datum&gt;
+  &lt;tolerance&gt; 1 &lt;/tolerance&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/quality&gt;
+
+&lt;accept&gt;
+  &lt;var&gt; PulmCapys.Pressure &lt;/var&gt;
+  &lt;min&gt; 9 &lt;/min&gt;
+  &lt;max&gt; 11 &lt;/max&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/accept&gt;
+
+&lt;quality&gt;
+  &lt;var&gt; PulmCapys.Pressure &lt;/var&gt;
+  &lt;datum&gt; 10 &lt;/datum&gt;
+  &lt;tolerance&gt; 1 &lt;/tolerance&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/quality&gt;
+
+&lt;accept&gt;
+  &lt;var&gt; PulmVeins.Pressure &lt;/var&gt;
+  &lt;min&gt; 6 &lt;/min&gt;
+  &lt;max&gt; 8 &lt;/max&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/accept&gt;
+
+&lt;quality&gt;
+  &lt;var&gt; PulmVeins.Pressure &lt;/var&gt;
+  &lt;datum&gt; 7 &lt;/datum&gt;
+  &lt;tolerance&gt; 1 &lt;/tolerance&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/quality&gt;
+
+&lt;accept&gt;
+  &lt;var&gt; LeftAtrium.Pressure &lt;/var&gt;
+  &lt;min&gt; 5 &lt;/min&gt;
+  &lt;max&gt; 7 &lt;/max&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/accept&gt;
+
+&lt;quality&gt;
+  &lt;var&gt; LeftAtrium.Pressure &lt;/var&gt;
+  &lt;datum&gt; 6 &lt;/datum&gt;
+  &lt;tolerance&gt; 1 &lt;/tolerance&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/quality&gt;
+
+&lt;accept&gt;
+  &lt;var&gt; Thorax.AvePressure &lt;/var&gt;
+  &lt;min&gt; -5 &lt;/min&gt;
+  &lt;max&gt; -3 &lt;/max&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/accept&gt;
+
+&lt;quality&gt;
+  &lt;var&gt; Thorax.AvePressure &lt;/var&gt;
+  &lt;datum&gt; -4 &lt;/datum&gt;
+  &lt;tolerance&gt; 1 &lt;/tolerance&gt;
+  &lt;format&gt; 1 &lt;/format&gt;
+&lt;/quality&gt;
+
+&lt;stats_local&gt; Initial Values - Blood Pressures &lt;/stats_local&gt;
+
+&lt;!-- End --&gt;</pre>
+
+<p><img src='../../../../../Footer.PNG'>
+
+</body>
+</html>
