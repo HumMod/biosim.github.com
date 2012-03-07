@@ -20,6 +20,6 @@
 <?include Blood_Pressures\Script.Script ?>
 <?include Organ_Composition\Script.Script ?>
 
-<stats_topic> Initial Values </stats_topic>
+<stats_topic> Male Normal | Initial Values </stats_topic>
 
 <!-- End -->

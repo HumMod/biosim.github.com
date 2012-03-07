@@ -11,13 +11,14 @@
 <modeltitle/>
 <timestamp/>
 
-<stats_context_reset/>
-
 <?path Male_Normal ?>
 
 <?include Initial_Values\Script.Script ?>
+<!--<?include Steady_State\Script.Script ?>-->
+<?include System_Check\Script.Script ?>
+
 <?include Exercise_5_5_5_150W\Script.Script ?>
 
-<stats_context> Male Normal </stats_context>
+<showtotals/>
 
 <!-- End -->

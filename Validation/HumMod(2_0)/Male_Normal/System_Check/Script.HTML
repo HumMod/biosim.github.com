@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<!--
+  Created : 3/7/2012 3:06 PM
+  Author : Tom Coleman
+  Copyright : 2012-2012
+  By : University of Missippi Medical Center
+-->
+
+<html>
+<head>
+<title> Script </title>
+<link rel='stylesheet' type='text/css' href='../../../../Style.CSS'>
+</head>
+
+<body>
+
+<img src='../../../../SmallTitle.PNG'>
+<img src='../../../../SmallValidation.PNG'>
+<img src='../../../../Scripts.PNG'>
+<a href='Results.HTML'><img src='../../../../Back.PNG'></a>
+<p>Home &gt; Validation &gt; HumMod(2 0) &gt; Male Normal &gt; System Check<pre>
+&lt;!--
+   Script.Script @ Male_Normal | System_Check
+
+   Created : 2012-03-05
+   Revised : 2012-03-07
+   Author : Tom Coleman
+   Copyright : 2012-2012
+   By : University of Mississippi Medical Center */
+--&gt;
+
+&lt;modeltitle/&gt;
+&lt;timestamp/&gt;
+
+&lt;restart/&gt;
+
+&lt;!-- Use 43200 and 2880 for 30 days --&gt;
+
+&lt;gofor&gt;
+  &lt;solutionint&gt; 1440 &lt;/solutionint&gt;
+  &lt;displayint&gt; 60 &lt;/displayint&gt;
+&lt;/gofor&gt;
+
+&lt;test&gt;
+  &lt;var&gt; System.X &lt;/var&gt;
+  &lt;min&gt; 1430 &lt;/min&gt;
+  &lt;max&gt; 1450 &lt;/max&gt;
+  &lt;format&gt; 0 &lt;/format&gt;
+&lt;/test&gt;
+
+&lt;test&gt;
+  &lt;var&gt; System.Tries &lt;/var&gt;
+  &lt;max&gt; 700 &lt;/max&gt;
+  &lt;format&gt; 0 &lt;/format&gt;
+&lt;/test&gt;
+
+&lt;test&gt;
+  &lt;var&gt; System.Steps &lt;/var&gt;
+  &lt;max&gt; 500 &lt;/max&gt;
+  &lt;format&gt; 0 &lt;/format&gt;
+&lt;/test&gt;
+
+&lt;test&gt;
+  &lt;var&gt; System.Retries &lt;/var&gt;
+  &lt;max&gt; 200 &lt;/max&gt;
+  &lt;format&gt; 0 &lt;/format&gt;
+&lt;/test&gt;
+
+&lt;showtotals/&gt;
+
+&lt;comment&gt; ==================================================== &lt;/comment&gt;
+
+&lt;showdetails/&gt;
+
+
+&lt;!-- End --&gt;</pre>
+
+<p><img src='../../../../Footer.PNG'>
+
+</body>
+</html>

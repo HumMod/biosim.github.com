@@ -1,5 +1,5 @@
 <!--
-   Script.Script @ Exercise_5_5_5_150W
+   Script.Script @ Male_Normal | Exercise_5_5_5_150W
 
    Created : 2012-03-04
    Revised : 2012-03-04
@@ -13,7 +13,14 @@
 
 <stats_topic_reset/>
 
-<comment> Nothing yet. </comment>
+<restart/>
+
+<?path Male_Normal/Exercise_5_5_5_150W/ ?>
+
+<?include Starting/Script.Script ?>
+<?include 5_Minutes/Script.Script ?>
+<?include 10_Minutes/Script.Script ?>
+<?include 15_Minutes/Script.Script ?>
 
 <stats_topic> Exercise 5-5-5 150W </stats_topic>
 

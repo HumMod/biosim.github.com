@@ -1,0 +1,55 @@
+<!--
+   Script.Script @ Male_Normal | System_Check
+
+   Created : 2012-03-05
+   Revised : 2012-03-07
+   Author : Tom Coleman
+   Copyright : 2012-2012
+   By : University of Mississippi Medical Center */
+-->
+
+<modeltitle/>
+<timestamp/>
+
+<restart/>
+
+<!-- Use 43200 and 2880 for 30 days -->
+
+<gofor>
+  <solutionint> 1440 </solutionint>
+  <displayint> 60 </displayint>
+</gofor>
+
+<test>
+  <var> System.X </var>
+  <min> 1430 </min>
+  <max> 1450 </max>
+  <format> 0 </format>
+</test>
+
+<test>
+  <var> System.Tries </var>
+  <max> 700 </max>
+  <format> 0 </format>
+</test>
+
+<test>
+  <var> System.Steps </var>
+  <max> 500 </max>
+  <format> 0 </format>
+</test>
+
+<test>
+  <var> System.Retries </var>
+  <max> 200 </max>
+  <format> 0 </format>
+</test>
+
+<showtotals/>
+
+<comment> ==================================================== </comment>
+
+<showdetails/>
+
+
+<!-- End -->

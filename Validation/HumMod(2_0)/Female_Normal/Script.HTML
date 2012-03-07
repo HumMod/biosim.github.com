@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-  Created : 3/4/2012 5:07 PM
+  Created : 3/7/2012 3:06 PM
   Author : Tom Coleman
   Copyright : 2012-2012
   By : University of Missippi Medical Center
@@ -19,12 +19,12 @@
 <img src='../../../SmallValidation.PNG'>
 <img src='../../../Scripts.PNG'>
 <a href='Results.HTML'><img src='../../../Back.PNG'></a>
-<p> Home &gt; Validation &gt; HumMod(v2.0) &gt; Female Normal<pre>
+<p>Home &gt; Validation &gt; HumMod(2 0) &gt; Female Normal<pre>
 &lt;!--
    Script.Script @ Female_Normal
 
    Created : 2012-03-04
-   Revised : 2012-03-04
+   Revised : 2012-03-05
    Author : Tom Coleman
    Copyright : 2012-2012
    By : University of Mississippi Medical Center
@@ -33,11 +33,17 @@
 &lt;modeltitle/&gt;
 &lt;timestamp/&gt;
 
-&lt;stats_context_reset/&gt;
+&lt;setvalue&gt;
+	&lt;var&gt; Gender.Index &lt;/var&gt;
+	&lt;val&gt; 1 &lt;/val&gt;
+&lt;/setvalue&gt;
 
-&lt;comment&gt; Nothing yet. &lt;/comment&gt;
+&lt;?path Female_Normal ?&gt;
 
-&lt;stats_context&gt; Female Normal &lt;/stats_context&gt;
+&lt;?include Initial_Values\Script.Script ?&gt;
+&lt;?include Exercise_5_5_5_150W\Script.Script ?&gt;
+
+&lt;showtotals/&gt;
 
 &lt;!-- End --&gt;</pre>
 

@@ -181,6 +181,10 @@
   <format> 1 </format>
 </quality>
 
-<stats_local> Initial Values - Organ Mass </stats_local>
+<stats_local> Male Normal | Initial Values | Organ Mass </stats_local>
+
+<comment> ==================================================== </comment>
+
+<stats_local_details/>
 
 <!-- End -->

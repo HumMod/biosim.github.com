@@ -1,0 +1,526 @@
+<!--
+   Script.Script @ Female_Normal | Initial_Values | Organ_Composition
+
+   Created : 2012-03-04
+   Revised : 2012-03-04
+   Author : Tom Coleman
+   Copyright : 2012-2012
+   By : University of Mississippi Medical Center
+-->
+
+<modeltitle/>
+<timestamp/>
+
+<stats_local_reset/>
+
+<accept>
+  <var> Bone-Size.LiquidMass </var>
+  <min> 3400 </min>
+  <max> 3500 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Bone-Size.LiquidMass </var>
+  <datum> 3432 </datum>
+  <tolerance> 100 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> Bone-Size.SolidMass </var>
+  <min> 7200 </min>
+  <max> 7300 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Bone-Size.SolidMass </var>
+  <datum> 7293 </datum>
+  <tolerance> 200 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> Bone-Size.MineralMass </var>
+  <min> 5000 </min>
+  <max> 6000 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Bone-Size.MineralMass </var>
+  <datum> 5543 </datum>
+  <tolerance> 100 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> Bone-Size.OtherMass </var>
+  <min> 1700 </min>
+  <max> 1800 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Bone-Size.OtherMass </var>
+  <datum> 1750 </datum>
+  <tolerance> 80 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> Brain-Size.LiquidMass </var>
+  <min> 900 </min>
+  <max> 1100 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Brain-Size.LiquidMass </var>
+  <datum> 1005 </datum>
+  <tolerance> 40 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> Brain-Size.SolidMass </var>
+  <min> 480 </min>
+  <max> 510 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Brain-Size.SolidMass </var>
+  <datum> 495 </datum>
+  <tolerance> 20 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> Fat-Size.LiquidMass </var>
+  <min> 2300 </min>
+  <max> 2500 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Fat-Size.LiquidMass </var>
+  <datum> 2408 </datum>
+  <tolerance> 50 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> Fat-Size.SolidMass </var>
+  <min> 13000 </min>
+  <max> 14000 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Fat-Size.SolidMass </var>
+  <datum> 13643 </datum>
+  <tolerance> 500 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> Fat-Size.LipidMass </var>
+  <min> 12000 </min>
+  <max> 13000 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Fat-Size.LipidMass </var>
+  <datum> 12142 </datum>
+  <tolerance> 500 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> Fat-Size.OtherMass </var>
+  <min> 1490 </min>
+  <max> 1510 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Fat-Size.OtherMass </var>
+  <datum> 1501 </datum>
+  <tolerance> 100 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> GITract-Size.LiquidMass </var>
+  <min> 800 </min>
+  <max> 900 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> GITract-Size.LiquidMass </var>
+  <datum> 854 </datum>
+  <tolerance> 20 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> GITract-Size.SolidMass </var>
+  <min> 410 </min>
+  <max> 430 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> GITract-Size.SolidMass </var>
+  <datum> 421 </datum>
+  <tolerance> 10 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> Kidney-Size.LiquidMass </var>
+  <min> 210 </min>
+  <max> 230 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Kidney-Size.LiquidMass </var>
+  <datum> 221 </datum>
+  <tolerance> 10 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> Kidney-Size.SolidMass </var>
+  <min> 100 </min>
+  <max> 120 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Kidney-Size.SolidMass </var>
+  <datum> 109 </datum>
+  <tolerance> 10 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> LeftHeart-Size.LiquidMass </var>
+  <min> 190 </min>
+  <max> 210 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> LeftHeart-Size.LiquidMass </var>
+  <datum> 196 </datum>
+  <tolerance> 10 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> LeftHeart-Size.SolidMass </var>
+  <min> 90 </min>
+  <max> 100 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> LeftHeart-Size.SolidMass </var>
+  <datum> 97 </datum>
+  <tolerance> 5 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> LeftHeart-Size.ContractileProteinMass </var>
+  <min> 65 </min>
+  <max> 75 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> LeftHeart-Size.ContractileProteinMass </var>
+  <datum> 68 </datum>
+  <tolerance> 5 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> LeftHeart-Size.OtherMass </var>
+  <min> 27 </min>
+  <max> 31 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> LeftHeart-Size.OtherMass </var>
+  <datum> 29 </datum>
+  <tolerance> 2 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> Liver-Size.LiquidMass </var>
+  <min> 1250 </min>
+  <max> 1350 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Liver-Size.LiquidMass </var>
+  <datum> 1307 </datum>
+  <tolerance> 50 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> Liver-Size.SolidMass </var>
+  <min> 635 </min>
+  <max> 655 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Liver-Size.SolidMass </var>
+  <datum> 644 </datum>
+  <tolerance> 10 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> OtherTissue-Size.LiquidMass </var>
+  <min> 2300 </min>
+  <max> 2400 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> OtherTissue-Size.LiquidMass </var>
+  <datum> 2362 </datum>
+  <tolerance> 50 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> OtherTissue-Size.SolidMass </var>
+  <min> 1100 </min>
+  <max> 1200 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> OtherTissue-Size.SolidMass </var>
+  <datum> 1163 </datum>
+  <tolerance> 50 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> RespiratoryMuscle-Size.LiquidMass </var>
+  <min> 2800 </min>
+  <max> 2900 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> RespiratoryMuscle-Size.LiquidMass </var>
+  <datum> 2844 </datum>
+  <tolerance> 50 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> RespiratoryMuscle-Size.SolidMass </var>
+  <min> 750 </min>
+  <max> 765 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> RespiratoryMuscle-Size.SolidMass </var>
+  <datum> 756 </datum>
+  <tolerance> 10 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> RespiratoryMuscle-Size.ContractileProteinMass </var>
+  <min> 370 </min>
+  <max> 390 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> RespiratoryMuscle-Size.ContractileProteinMass </var>
+  <datum> 378 </datum>
+  <tolerance> 10 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> RespiratoryMuscle-Size.OtherMass </var>
+  <min> 370 </min>
+  <max> 385 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> RespiratoryMuscle-Size.OtherMass </var>
+  <datum> 378 </datum>
+  <tolerance> 5 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> RightHeart-Size.LiquidMass </var>
+  <min> 38 </min>
+  <max> 42 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> RightHeart-Size.LiquidMass </var>
+  <datum> 40 </datum>
+  <tolerance> 2 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> RightHeart-Size.SolidMass </var>
+  <min> 19 </min>
+  <max> 21 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> RightHeart-Size.SolidMass </var>
+  <datum> 20 </datum>
+  <tolerance> 1 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> RightHeart-Size.ContractileProteinMass </var>
+  <min> 13 </min>
+  <max> 15 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> RightHeart-Size.ContractileProteinMass </var>
+  <datum> 14 </datum>
+  <tolerance> 1 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> RightHeart-Size.OtherMass </var>
+  <min> 5 </min>
+  <max> 7 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> RightHeart-Size.OtherMass </var>
+  <datum> 6 </datum>
+  <tolerance> 1 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> SkeletalMuscle-Size.LiquidMass </var>
+  <min> 20000 </min>
+  <max> 21000 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> SkeletalMuscle-Size.LiquidMass </var>
+  <datum> 20856 </datum>
+  <tolerance> 500 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> SkeletalMuscle-Size.SolidMass </var>
+  <min> 5500 </min>
+  <max> 5600 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> SkeletalMuscle-Size.SolidMass </var>
+  <datum> 5544 </datum>
+  <tolerance> 200 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> SkeletalMuscle-Size.ContractileProteinMass </var>
+  <min> 2750 </min>
+  <max> 2800 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> SkeletalMuscle-Size.ContractileProteinMass </var>
+  <datum> 2772 </datum>
+  <tolerance> 50 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> SkeletalMuscle-Size.OtherMass </var>
+  <min> 2750 </min>
+  <max> 2800 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> SkeletalMuscle-Size.OtherMass </var>
+  <datum> 2772 </datum>
+  <tolerance> 50 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> Skin-Size.LiquidMass </var>
+  <min> 1800 </min>
+  <max> 1900 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Skin-Size.LiquidMass </var>
+  <datum> 1859 </datum>
+  <tolerance> 100 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<accept>
+  <var> Skin-Size.SolidMass </var>
+  <min> 850 </min>
+  <max> 950 </max>
+  <format> 1 </format>
+</accept>
+
+<quality>
+  <var> Skin-Size.SolidMass </var>
+  <datum> 916 </datum>
+  <tolerance> 50 </tolerance>
+  <format> 1 </format>
+</quality>
+
+<stats_local> Female Normal | Initial Values | Organ Composition </stats_local>
+
+<comment> ==================================================== </comment>
+
+<stats_local_details/>
+
+<!-- End -->
