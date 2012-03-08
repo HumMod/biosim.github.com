@@ -1,0 +1,38 @@
+<!--
+   Script.Script @ Male_Normal | Initial_Values | Miscellaneous
+
+   Created : 2012-03-06
+   Revised : 2012-03-06
+   Author : Tom Coleman
+   Copyright : 2012-2012
+   By : University of Mississippi Medical Center
+-->
+
+<modeltitle/>
+<timestamp/>
+
+<!--
+<test>
+  <var>  </var>
+  <datum>  </datum>
+  <min>  </min>
+  <max>  </max>
+  <format> 1 </format>
+</test>
+-->
+
+<test>
+  <var> HeatCore.Temp(F) </var>
+  <datum> 98.6 </datum>
+  <min> 97.6 </min>
+  <max> 99.6 </max>
+  <format> 1 </format>
+</test>
+
+<showtotals/>
+
+<comment> ==================================================== </comment>
+
+<showdetails/>
+
+<!-- End -->

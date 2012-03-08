@@ -15,8 +15,16 @@
 
 <?include Body_Mass\Script.Script ?>
 <?include Organ_Mass\Script.Script ?>
-<?include Blood_Pressures\Script.Script ?>
 <?include Organ_Composition\Script.Script ?>
+<?include Blood_Pressures\Script.Script ?>
+<?include Circulation\Script.Script ?>
+<?include Respiration\Script.Script ?>
+<?include Metabolism\Script.Script ?>
+<?include Body_Fluids\Script.Script ?>
+<?include Electrolytes\Script.Script ?>
+<?include Hormones\Script.Script ?>
+<?include Nervous_System\Script.Script ?>
+<?include Miscellaneous\Script.Script ?>
 
 <showtotals/>
 
