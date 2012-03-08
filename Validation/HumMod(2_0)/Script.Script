@@ -2,7 +2,7 @@
    Script.Script @ HumMod(2_0)
 
    Created : 2012-03-03
-   Revised : 2012-03-07
+   Revised : 2012-03-08
    Author : Tom Coleman
    Copyright : 2012-2012
    By : University of Mississippi Medical Center
@@ -25,14 +25,14 @@
   <var> System.X </var>
 </roster>
 
-<?include Male_Normal/Script.Script ?>
-<?include Female_Normal/Script.Script ?>
+<?include Male_Normal\Script.Script ?>
+<?include Female_Normal\Script.Script ?>
 
 <showtotals/>
 
 <newline/>
 
-<?include Environment/Script.Script ?>
+<?include Environment\Script.Script ?>
 
 </script>
 

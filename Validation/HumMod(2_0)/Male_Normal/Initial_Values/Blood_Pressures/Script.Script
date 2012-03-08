@@ -2,232 +2,139 @@
    Script.Script @ Male_Normal | Initial_Values | Blood_Pressures
 
    Created : 2012-03-04
-   Revised : 2012-03-05
+   Revised : 2012-03-08
    Author : Tom Coleman
    Copyright : 2012-2012
    By : University of Mississippi Medical Center
 -->
 
-<stats_local_reset/>
-
 <modeltitle/>
 <timestamp/>
 
-<accept>
+<test>
   <var> SystemicArtys.Pressure </var>
+  <datum> 97 </datum>
   <min> 95 </min>
   <max> 100 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> SystemicArtys.Pressure </var>
-  <datum> 97 </datum>
-  <tolerance> 3 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> SystemicArtys.SBP </var>
+  <datum> 120 </datum>
   <min> 118 </min>
   <max> 122 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> SystemicArtys.SBP </var>
-  <datum> 120 </datum>
-  <tolerance> 2 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> SystemicArtys.DBP </var>
+  <datum> 80 </datum>
   <min> 78 </min>
   <max> 82 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> SystemicArtys.DBP </var>
-  <datum> 80 </datum>
-  <tolerance> 2 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> Kidney-ArcuateArtery.Pressure </var>
+  <datum> 95 </datum>
   <min> 93 </min>
   <max> 97 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> Kidney-ArcuateArtery.Pressure  </var>
-  <datum> 95 </datum>
-  <tolerance> 2 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> GlomerulusFiltrate.Pressure </var>
+  <datum> 60 </datum>
   <min> 57 </min>
   <max> 63 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> GlomerulusFiltrate.Pressure </var>
-  <datum> 60 </datum>
-  <tolerance> 2 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> SystemicVeins.Pressure </var>
+  <datum> 10 </datum>
   <min> 9 </min>
   <max> 11 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> SystemicVeins.Pressure </var>
-  <datum> 10 </datum>
-  <tolerance> 1 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> SplanchnicVeins.Pressure </var>
+  <datum> 8 </datum>
   <min> 7 </min>
   <max> 9 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> SplanchnicVeins.Pressure </var>
-  <datum> 8 </datum>
-  <tolerance> 1 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> RightAtrium.Pressure </var>
+  <datum> 2 </datum>
   <min> 1 </min>
   <max> 3 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> RightAtrium.Pressure </var>
-  <datum> 2 </datum>
-  <tolerance> 1 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> PulmArty.Pressure </var>
+  <datum> 14 </datum>
   <min> 13 </min>
   <max> 15 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> PulmArty.Pressure </var>
-  <datum> 14 </datum>
-  <tolerance> 1 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> PulmArty.SBP </var>
+  <datum> 21 </datum>
   <min> 19 </min>
   <max> 23 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> PulmArty.SBP </var>
-  <datum> 21 </datum>
-  <tolerance> 2 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> PulmArty.DBP </var>
+  <datum> 9 </datum>
   <min> 8 </min>
   <max> 10 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> PulmArty.DBP </var>
-  <datum> 9 </datum>
-  <tolerance> 1 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> PulmCapys.Pressure </var>
+  <datum> 10 </datum>
   <min> 9 </min>
   <max> 11 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> PulmCapys.Pressure </var>
-  <datum> 10 </datum>
-  <tolerance> 1 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> PulmVeins.Pressure </var>
+  <datum> 7 </datum>
   <min> 6 </min>
   <max> 8 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> PulmVeins.Pressure </var>
-  <datum> 7 </datum>
-  <tolerance> 1 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> LeftAtrium.Pressure </var>
+  <datum> 6 </datum>
   <min> 5 </min>
   <max> 7 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> LeftAtrium.Pressure </var>
-  <datum> 6 </datum>
-  <tolerance> 1 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> Thorax.AvePressure </var>
+  <datum> -4 </datum>
   <min> -5 </min>
   <max> -3 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> Thorax.AvePressure </var>
-  <datum> -4 </datum>
-  <tolerance> 1 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<stats_local> Male Normal | Initial Values | Blood Pressures </stats_local>
+<showtotals/>
 
 <comment> ==================================================== </comment>
 
-<stats_local_details/>
-
+<showdetails/>
 
 <!-- End -->

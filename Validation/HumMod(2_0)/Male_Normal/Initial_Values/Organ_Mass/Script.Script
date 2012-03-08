@@ -2,7 +2,7 @@
    Script.Script @ Male_Normal |  Initial_Values | Organ_Mass
 
    Created : 2012-03-04
-   Revised : 2012-03-04
+   Revised : 2012-03-08
    Author : Tom Coleman
    Copyright : 2012-2012
    By : University of Mississippi Medical Center
@@ -11,180 +11,106 @@
 <modeltitle/>
 <timestamp/>
 
-<stats_local_reset/>
-
-<accept>
+<test>
   <var> Bone-Size.Mass </var>
+  <datum> 10725 </datum>
   <min> 10000 </min>
   <max> 11000 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> Bone-Size.Mass </var>
-  <datum> 10725 </datum>
-  <tolerance> 400 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> Brain-Size.Mass </var>
+  <datum> 1500 </datum>
   <min> 1450 </min>
   <max> 1550 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> Brain-Size.Mass </var>
-  <datum> 1500 </datum>
-  <tolerance> 50 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> Fat-Size.Mass </var>
+  <datum> 16050 </datum>
   <min> 15500 </min>
   <max> 16500 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> Fat-Size.Mass </var>
-  <datum> 16050 </datum>
-  <tolerance> 500 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> GITract-Size.Mass </var>
+  <datum> 1275 </datum>
   <min> 1250 </min>
   <max> 1300 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> GITract-Size.Mass </var>
-  <datum> 1275 </datum>
-  <tolerance> 60 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> Kidney-Size.Mass </var>
+  <datum> 330 </datum>
   <min> 320 </min>
   <max> 340 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> Kidney-Size.Mass </var>
-  <datum> 330 </datum>
-  <tolerance> 10 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> LeftHeart-Size.Mass </var>
+  <datum> 293 </datum>
   <min> 285 </min>
   <max> 300 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> LeftHeart-Size.Mass </var>
-  <datum> 293 </datum>
-  <tolerance> 10 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> Liver-Size.Mass </var>
+  <datum> 1950 </datum>
   <min> 1900 </min>
   <max> 2000 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> Liver-Size.Mass </var>
-  <datum> 1950 </datum>
-  <tolerance> 80 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> OtherTissue-Size.Mass </var>
+  <datum> 3525 </datum>
   <min> 3450 </min>
   <max> 3600 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> OtherTissue-Size.Mass </var>
-  <datum> 3525 </datum>
-  <tolerance> 100 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> RespiratoryMuscle-Size.Mass </var>
+  <datum> 3600 </datum>
   <min> 3550 </min>
   <max> 3650 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> RespiratoryMuscle-Size.Mass </var>
-  <datum> 3600 </datum>
-  <tolerance> 100 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> RightHeart-Size.Mass </var>
+  <datum> 60 </datum>
   <min> 55 </min>
   <max> 65 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> RightHeart-Size.Mass </var>
-  <datum> 60 </datum>
-  <tolerance> 5 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> SkeletalMuscle-Size.Mass </var>
+  <datum> 26400 </datum>
   <min> 26000 </min>
   <max> 27000 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> SkeletalMuscle-Size.Mass </var>
-  <datum> 26400 </datum>
-  <tolerance> 500 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> Skin-Size.Mass </var>
+  <datum> 2775 </datum>
   <min> 2700 </min>
   <max> 2900 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> Skin-Size.Mass </var>
-  <datum> 2775 </datum>
-  <tolerance> 100 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<stats_local> Male Normal | Initial Values | Organ Mass </stats_local>
+<showtotals/>
 
 <comment> ==================================================== </comment>
 
-<stats_local_details/>
+<showdetails/>
 
 <!-- End -->

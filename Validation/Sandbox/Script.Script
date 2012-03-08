@@ -1,8 +1,8 @@
 <!--
-   Script.Script @ Sandbox
+   Script.Script @ HumMod(2_0)
 
-   Created : 2012-03-06
-   Revised : 2012-03-06
+   Created : 2012-03-03
+   Revised : 2012-03-08
    Author : Tom Coleman
    Copyright : 2012-2012
    By : University of Mississippi Medical Center
@@ -25,14 +25,7 @@
   <var> System.X </var>
 </roster>
 
-<?include Circulation/Script.Script ?>
-<?include Respiration/Script.Script ?>
-<?include Metabolism/Script.Script ?>
-<?include Body_Fluids/Script.Script ?>
-<?include Electrolytes/Script.Script ?>
-<?include Hormones/Script.Script ?>
-<?include Nervous_System/Script.Script ?>
-<?include Miscellaneous/Script.Script ?>
+<?include Female_Normal\Script.Script ?>
 
 <showtotals/>
 

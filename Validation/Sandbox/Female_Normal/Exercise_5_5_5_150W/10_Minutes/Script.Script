@@ -1,0 +1,63 @@
+<!--
+   Script.Script @ Female_Normal | Exercise_5_5_5_150W | 10_Minutes
+
+   Created : 2012-03-05
+   Revised : 2012-03-08
+   Author : Tom Coleman
+   Copyright : 2012-2012
+   By : University of Mississippi Medical Center */
+-->
+
+<modeltitle/>
+<timestamp/>
+
+<logpoint/>
+
+<setvalue>
+	<var> Exercise-Control.Request </var>
+	<val> 1 </val>
+</setvalue>
+
+<setvalue>
+	<var> Exercise-Bike.Power(W) </var>
+	<val> 150 </val>
+</setvalue>
+
+<gofor>
+  <solutionint> 5 </solutionint>
+  <displayint> 0.5 </displayint>
+</gofor>
+
+<logpoint/>
+
+<test>
+  <var> SystemicArtys.Pressure </var>
+  <datum> 97 </datum>
+  <min> 95 </min>
+  <max> 100 </max>
+  <format> 1 </format>
+</test>
+
+<test>
+  <var> SystemicArtys.SBP </var>
+  <datum> 120 </datum>
+  <min> 118 </min>
+  <max> 122 </max>
+  <format> 1 </format>
+</test>
+
+<test>
+  <var> SystemicArtys.DBP </var>
+  <datum> 80 </datum>
+  <min> 78 </min>
+  <max> 82 </max>
+  <format> 1 </format>
+</test>
+
+<showtotals/>
+
+<comment> ==================================================== </comment>
+
+<showdetails/>
+
+<!-- End -->

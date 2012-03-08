@@ -2,7 +2,7 @@
    Script.Script @ Male_Normal | Exercise_5_5_5_150W | 10_Minutes
 
    Created : 2012-03-05
-   Revised : 2012-03-05
+   Revised : 2012-03-08
    Author : Tom Coleman
    Copyright : 2012-2012
    By : University of Mississippi Medical Center */
@@ -10,8 +10,6 @@
 
 <modeltitle/>
 <timestamp/>
-
-<stats_local_reset/>
 
 <logpoint/>
 
@@ -32,52 +30,34 @@
 
 <logpoint/>
 
-<accept>
+<test>
   <var> SystemicArtys.Pressure </var>
+  <datum> 97 </datum>
   <min> 95 </min>
   <max> 100 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> SystemicArtys.Pressure </var>
-  <datum> 97 </datum>
-  <tolerance> 3 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> SystemicArtys.SBP </var>
+  <datum> 120 </datum>
   <min> 118 </min>
   <max> 122 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> SystemicArtys.SBP </var>
-  <datum> 120 </datum>
-  <tolerance> 2 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> SystemicArtys.DBP </var>
+  <datum> 80 </datum>
   <min> 78 </min>
   <max> 82 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> SystemicArtys.DBP </var>
-  <datum> 80 </datum>
-  <tolerance> 2 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<stats_local> Male Normal | Exercise 5-5-5 150W | 10 Minutes </stats_local>
+<showtotals/>
 
 <comment> ==================================================== </comment>
 
-<stats_local_details/>
+<showdetails/>
 
 <!-- End -->

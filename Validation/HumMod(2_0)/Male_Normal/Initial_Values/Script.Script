@@ -2,7 +2,7 @@
    Script.Script @ Male_Normal | Initial_Values
 
    Created : 2012-03-04
-   Revised : 2012-03-04
+   Revised : 2012-03-08
    Author : Tom Coleman
    Copyright : 2012-2012
    By : University of Mississippi Medical Center
@@ -11,8 +11,6 @@
 <modeltitle/>
 <timestamp/>
 
-<stats_topic_reset/>
-
 <?path Male_Normal\Initial_Values\ ?>
 
 <?include Body_Mass\Script.Script ?>
@@ -20,6 +18,6 @@
 <?include Blood_Pressures\Script.Script ?>
 <?include Organ_Composition\Script.Script ?>
 
-<stats_topic> Male Normal | Initial Values </stats_topic>
+<showtotals/>
 
 <!-- End -->

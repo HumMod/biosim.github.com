@@ -2,7 +2,7 @@
    Script.Script @ Male_Normal | Initial_Values | Body_Mass
 
    Created : 2012-03-04
-   Revised : 2012-03-04
+   Revised : 2012-03-08
    Author : Tom Coleman
    Copyright : 2012-2012
    By : University of Mississippi Medical Center
@@ -11,96 +11,58 @@
 <modeltitle/>
 <timestamp/>
 
-<stats_local_reset/>
-
-<accept>
+<test>
   <var> Weight.Weight(kG) </var>
+  <datum> 75 </datum>
   <min> 74 </min>
   <max> 76 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> Weight.Weight(kG) </var>
-  <datum> 75 </datum>
-  <tolerance> 1 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> Weight.Weight(Lb) </var>
+  <datum> 165 </datum>
   <min> 164 </min>
   <max> 166 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> Weight.Weight(Lb) </var>
-  <datum> 165 </datum>
-  <tolerance> 1 </tolerance>
-  <format> 1 </format>
-</quality>
-
-<accept>
+<test>
   <var> Adiposity.Mass </var>
+  <datum> 16000 </datum>
   <min> 15500 </min>
   <max> 16500 </max>
   <format> 0 </format>
-</accept>
+</test>
 
-<quality>
-  <var> Adiposity.Mass </var>
-  <datum> 16000 </datum>
-  <tolerance> 200 </tolerance>
-  <format> 0 </format>
-</quality>
-
-<accept>
+<test>
   <var> Muscularity.Mass </var>
+  <datum> 26,400 </datum>
   <min> 26000 </min>
   <max> 27000 </max>
   <format> 1 </format>
-</accept>
+</test>
 
-<quality>
-  <var> Muscularity.Mass </var>
-  <datum> 26,400 </datum>
-  <tolerance> 200 </tolerance>
-  <format> 0 </format>
-</quality>
-
-<accept>
+<test>
   <var> OtherMass.Mass </var>
+  <datum> 26000 </datum>
   <min> 25500 </min>
   <max> 26500 </max>
   <format> 0 </format>
-</accept>
+</test>
 
-<quality>
-  <var> OtherMass.Mass </var>
-  <datum> 26000 </datum>
-  <tolerance> 200 </tolerance>
-  <format> 0 </format>
-</quality>
-
-<accept>
+<test>
   <var> Weight-Fluids.Total </var>
+  <datum> 6525 </datum>
   <min> 6500 </min>
   <max> 6600 </max>
   <format> 0 </format>
-</accept>
+</test>
 
-<quality>
-  <var> Weight-Fluids.Total </var>
-  <datum> 6525 </datum>
-  <tolerance> 200 </tolerance>
-  <format> 0 </format>
-</quality>
-
-<stats_local> Male Normal | Initial Values | Body Mass </stats_local>
+<showtotals/>
 
 <comment> ==================================================== </comment>
 
-<stats_local_details/>
+<showdetails/>
 
 <!-- End -->
