@@ -1,265 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='docs_electrolytes_K.html'><img src='../../Back.PNG'></a>
-<p>
-QHP 2008 / K.DOCS<br>
-<br>
-Created : 27-Mar-09<br>
-Last Modified : 27-Mar-09<br>
-Author : Tom Coleman<br>
-Copyright : 2009<br>
-<br>
-&lt;structurename&gt; KCell &lt;/structurename&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; KCell.[K+(mEq/L)]&lt;/name&gt;<br>
-&lt;topic&gt; [K+] - KC1Overview &lt;/topic&gt;<br>
-&lt;topic&gt; [K+] - KC2Physical Units&lt;/topic&gt;<br>
-&lt;topic&gt; [K+] - KC3Concentration Units &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; KCell.[K+] &lt;/name&gt;<br>
-&lt;topic&gt; [K+] - KC1Overview &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; KCell.CaptiveMass &lt;/name&gt;<br>
-&lt;topic&gt; CaptiveMass - KCDefinition1&lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; KCell.Change &lt;/name&gt;<br>
-&lt;topic&gt; Change - KCDefinition2 &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; KCell.Gain &lt;/name&gt;<br>
-&lt;topic&gt; Gain - KCDefinition3 &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; KCell.InitialMass &lt;/name&gt;<br>
-&lt;topic&gt; InitialMass - KCDefinition4 &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; KCell.Loss &lt;/name&gt;<br>
-&lt;topic&gt; Loss - KCDefinition5&lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; KCell.Mass &lt;/name&gt;<br>
-&lt;topic&gt; Mass - KCDefinition6 &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; KCell.Target[K+]&lt;/name&gt;<br>
-&lt;topic&gt; Target[K+] - KCDefinition7 &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; [K+] - KC1Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Control of potassium distribution between the extracellular <br>
-and intracellular compartments plays an important role in <br>
-potassium homeostasis. Because over 98 percent of the total body<br>
-potassium is contained in the cells, they can serve as an <br>
-overflow site for excess extracellular fluid potassium during<br>
-hyperkalemia or as a source of potassium during hypokalemia. <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; [K+] - KC2Physical Units &lt;/name&gt;<br>
-&lt;label&gt; Physical Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Plasma mEq/L<br>
-Mass mEq<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; [K+] - KC3Concentration Units &lt;/name&gt;<br>
-&lt;label&gt; Concentration Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Extracellular K+ = 4.4 mEq/L<br>
-Intracellular K+ = 142 mEq/L<br>
-<br>
-Total body K+ = 50mEq/KG. Scaling for a 75KG man,<br>
-total body K+ = 50mEq/KG * 75KG = 3750mEq<br>
-<br>
-Extracellular Mass of K+ = 4.4mEq/L * 15L (ECFV) = 66mEq<br>
-Intracellular Mass of K+ = 3750 - 66 = 3684mEq<br>
-<br>
-Forbes GB, Lewis AM. Total sodium, potassium and chloride <br>
-in adult man. J Clin Invest 35: 596 - 600, 1956<br>
-<br>
-Pierson RN Jr., Lin DH, Phillips RA. Total-body potassium in <br>
-health: effects of age, sex, height and fat.<br>
-Am J Physiol 226: 206 - 212, 1974.<br>
-<br>
-Hollifield JW, Slaton PE. Thiazide diuretics hypokalemia and<br>
-cardiac arrhythmias. Acta Med Scand Suppl 647:67 - 73, 1981<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; CaptiveMass - KCDefinition1 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Not all of the potassium contained in cells is readily <br>
-available for flux. From depletion studies it appears<br>
-that 55% of cell K+ is captive. If we assume an initial<br>
-mass of 3964mEq, then the captive mass is 3964 * 0.55<br>
-= 2180 mEq. <br>
-<br>
-Hollifield JW, Slaton PE. Thiazide diuretics hypokalemia and<br>
-cardiac arrhythmias. Acta Med Scand Suppl 647:67 - 73, 1981<br>
-<br>
-Sterns RH, Cox M, Feig PU, Singer I. Internal potassium<br>
-balance and the control of the plasma potassium concentration.<br>
-Medicine 60: 339 - 354, 1981.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; XX &lt;/name&gt;<br>
-&lt;label&gt; XXX &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; XXX &lt;/name&gt;<br>
-&lt;label&gt; XXX &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; XXX&lt;/name&gt;<br>
-&lt;label&gt; XXX&lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; XX &lt;/name&gt;<br>
-&lt;label&gt; XXX &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; XXX &lt;/name&gt;<br>
-&lt;label&gt; XXX &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; XXX&lt;/name&gt;<br>
-&lt;label&gt; XXX&lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; XX &lt;/name&gt;<br>
-&lt;label&gt; XXX &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; XXX &lt;/name&gt;<br>
-&lt;label&gt; XXX &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-   <br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

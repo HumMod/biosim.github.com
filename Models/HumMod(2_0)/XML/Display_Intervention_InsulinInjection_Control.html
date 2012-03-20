@@ -1,114 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_Intervention_InsulinInjection_InsulinInjection.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / Control<br>
-<br>
-Created : 29-Feb-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-&lt;groupbox&gt;<br>
-   &lt;row&gt; 2.0 &lt;/row&gt;<br>
-   &lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;high&gt; 12.0 &lt;/high&gt;<br>
-   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
-   &lt;title&gt; Control &lt;/title&gt;<br>
-<br>
-&lt;structurename&gt; InsulinInjection &lt;/structurename&gt;<br>
-<br>
-&lt;actionbutton&gt;<br>
-  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;blockname&gt; InjectInsulinNow &lt;/blockname&gt;<br>
-  &lt;label&gt; Inject Insulin Now &lt;/label&gt;<br>
-&lt;/actionbutton&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 3.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; TotalInjections &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Total Injections &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;repeatlist&gt;<br>
-  &lt;name&gt; InsulinInjection.Dose &lt;/name&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 50 &lt;/reps&gt;&lt;stepsize&gt;  1.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt;  5 &lt;/reps&gt;&lt;stepsize&gt; 10.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-&lt;/repeatlist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 4.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;wide&gt; 8 &lt;/wide&gt;<br>
-  &lt;name&gt; Dose &lt;/name&gt;<br>
-  &lt;listname&gt; InsulinInjection.Dose &lt;/listname&gt;<br>
-  &lt;label&gt; Dose (U) &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;maplist&gt;<br>
-  &lt;name&gt; InsulinInjection.Type &lt;/name&gt;<br>
-  &lt;map&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;img&gt; Normal (4 Hrs) &lt;/img&gt;&lt;/map&gt;<br>
-  &lt;map&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;img&gt; Intermediate (10 Hrs) &lt;/img&gt;&lt;/map&gt;<br>
-  &lt;map&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;img&gt; Long (18 Hrs) &lt;/img&gt;&lt;/map&gt;<br>
-&lt;/maplist&gt;<br>
-<br>
-&lt;label&gt;<br>
-  &lt;row&gt; 6.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;text&gt; Duration Of Action &lt;/text&gt;<br>
-&lt;/label&gt;<br>
-<br>
-&lt;radiobuttons&gt;<br>
-  &lt;row&gt; 7.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Type &lt;/name&gt;<br>
-  &lt;listname&gt; InsulinInjection.Type &lt;/listname&gt;<br>
-  &lt;nolabel/&gt;<br>
-  &lt;layout&gt; VERT &lt;/layout&gt;<br>
-&lt;/radiobuttons&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 10.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; TotalDose &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Total Dose &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 1.2 &lt;/row&gt;<br>
-  &lt;col&gt; 26.0 &lt;/col&gt;<br>
-  &lt;line&gt; Dose is specified in insulin units (U). &lt;/line&gt;<br>
-  &lt;line&gt; Injection site is S.C. A typical maintenance &lt;/line&gt;<br>
-  &lt;line&gt; dose is 40 U/Day. &lt;/line&gt;<br>
-  &lt;line&gt;  &lt;/line&gt;<br>
-  &lt;line&gt; 1 U = 1/24 mG &lt;/line&gt;<br>
-  &lt;line&gt;  &lt;/line&gt;<br>
-  &lt;line&gt; Molecular weight of insulin is 5754. &lt;/line&gt;<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;/groupbox&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

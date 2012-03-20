@@ -1,72 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_SkeletalMuscle_SkeletalMuscle-Glycogen_SkeletalMuscle-Glycogen.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / SkeletalMuscle-Insulin<br>
-<br>
-Created : 31-Mar-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; SkeletalMuscle-Insulin &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; Tau &lt;/name&gt;&lt;val&gt; 40.0 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;delay&gt;<br>
-  &lt;name&gt; [InsulinDelayed] &lt;/name&gt;<br>
-  &lt;outputname&gt; [InsulinDelayed] &lt;/outputname&gt;<br>
-  &lt;initialval&gt; 20.0 &lt;/initialval&gt;<br>
-  &lt;inputname&gt; [Insulin] &lt;/inputname&gt;<br>
-  &lt;rateconstname&gt; K &lt;/rateconstname&gt;<br>
-  &lt;dervname&gt; Derv &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 0.20 &lt;/errorlim&gt;<br>
-&lt;/delay&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-  &lt;def&gt;&lt;name&gt; K &lt;/name&gt;&lt;val&gt; INVERT Tau &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-  &lt;def&gt;&lt;name&gt; [Insulin] &lt;/name&gt;&lt;val&gt; InsulinPool.[Insulin] &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

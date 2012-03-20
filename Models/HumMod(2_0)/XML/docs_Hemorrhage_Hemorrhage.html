@@ -1,166 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Docs_Hemorrhage.html'><img src='../../Back.PNG'></a>
-<p>
-QHP 2008 / Hemorrhage.DOCS<br>
-<br>
-Created : 27-Mar-09<br>
-Last Modified : 27-Mar-09<br>
-Author : Tom Coleman<br>
-Copyright : 2009<br>
-<br>
-&lt;structurename&gt; Hemorrhage &lt;/structurename&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; Hemorrhage.ClRate &lt;/name&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; ClPool.[Cl-] &lt;/seealso&gt;<br>
-&lt;seealso&gt; Hemorrhage.Rate &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; Hemorrhage.KRate &lt;/name&gt;<br>
-&lt;topic&gt; XXX&lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; KPool.[K+] &lt;/seealso&gt;<br>
-&lt;seealso&gt; Hemorrhage.Rate  &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; Hemorrhage.NaRate &lt;/name&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; NaPool.[Na+] &lt;/seealso&gt;<br>
-&lt;seealso&gt; Hemorrhage.Rate  &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; Hemorrhage.PlasmaRate &lt;/name&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; BloodVol.PVCrit&lt;/seealso&gt;<br>
-&lt;seealso&gt; Hemorrhage.Rate  &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; Hemorrhage.ProteinRate &lt;/name&gt;<br>
-&lt;topic&gt; XXX&lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; PlasmaProtein.[Protein] &lt;/seealso&gt;<br>
-&lt;seealso&gt; Hemorrhage.PlasmaRate  &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; Hemorrhage.Rate &lt;/name&gt;<br>
-&lt;topic&gt; Hemorrhage - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; Hemorrhage.TargetRate &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; Hemorrhage.RBCRate &lt;/name&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; BloodVol.Hct &lt;/seealso&gt;<br>
-&lt;seealso&gt; Hemorrhage.Rate  &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; Hemorrhage.Switch &lt;/name&gt;<br>
-&lt;topic&gt; XXX&lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; Hemorrhage.TargetRate &lt;/name&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; Hemorrhage.Volume &lt;/name&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt;Hemorrhage.Rate &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Hemorrhage - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Circulatory shock means generalized inadequate blood flow <br>
-through the body.  Shock usually results from inadequate <br>
-cardiac output. Factors that decrease venous return lead<br>
-to a decrease in cardiac output and cause circulatory shock.<br>
-The most common cause of decreased venous return is a diminished <br>
-blood volume. In the model, the user can create hypovolemic <br>
-shock by causing a hemorrhage. The volume and rate of blood loss <br>
-can be set by the user.  <br>
-<br>
-Adamson J, Hillman RS. Blood Volume and plasma protein <br>
-replacement following acute blood loss in normal man.<br>
-J. Amer.Med.Assoc. 205:609-612, 1968.<br>
-<br>
-Ebert RV, Stead Jr. EA,Gibson II JG. Response of normal<br>
-subjects to acute blood loss. <br>
-Arch.Int.Med. 68:578-590, 1941.<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; XX &lt;/name&gt;<br>
-&lt;label&gt; XXX &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; XXX &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-   <br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

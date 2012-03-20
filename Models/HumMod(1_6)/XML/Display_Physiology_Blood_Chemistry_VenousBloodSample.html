@@ -1,263 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_Physiology_Blood_Chemistry_Chemistry.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / VenousBloodSample<br>
-<br>
-Created : 21-Aug-09<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;groupbox&gt;<br>
-   &lt;row&gt; 2.0 &lt;/row&gt;<br>
-   &lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;high&gt; 27.4 &lt;/high&gt;<br>
-   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
-   &lt;title&gt; Venous Blood Sample &lt;/title&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; GlucosePool.[Glucose(mG/dL)] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Glucose] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 2.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; FAPool.[FA(mG/dL)] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Fatty Acids] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 3.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; TriglyceridePool.[Triglyceride(mG/dL)] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Triglycerides] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 4.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; AAPool.[AA(mG/dL)] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Amino Acids] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 5.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; CreatininePool.[Creatinine(mG/dL)] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Creatinine] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 6.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; UreaPool.[Urea(mG/dL)] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Urea] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 7.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; UreaPool.[BUN] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [BUN] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 8.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; BloodIons.[SID(mEq/L)] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Strong Ion Difference &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 9.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; BloodPh.VeinsPh &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 3 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; pH &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 10.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; BloodPh.Veins[H+] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [H+] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 12.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; PlasmaProtein.[Protein(G/dL)] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Protein] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 13.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; PlasmaProtein.COP &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Colloid Pressure &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 14.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; OsmBody.[Osm(mOsm/L)]-CellWall &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Osmolarity &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 15.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; BloodVol.Hct(%) &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Hematocrit (%) &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 1.2 &lt;/row&gt;<br>
-  &lt;col&gt; 26.0 &lt;/col&gt;<br>
-<br>
-  &lt;line&gt; Typical Values &lt;/line&gt;<br>
-  &lt;line&gt; &lt;/line&gt;<br>
-  &lt;line&gt; [Glucose] = 110 mG/dL &lt;/line&gt;<br>
-  &lt;line&gt; [Fatty Acids] = 15 mG/dL &lt;/line&gt;<br>
-  &lt;line&gt; [Triglycerides] = 100 mG/dL &lt;/line&gt;<br>
-  &lt;line&gt; [Amino Acids] = 50 mG/dL &lt;/line&gt;<br>
-  &lt;line&gt; [Creatinine] = 0.82 mG/dL &lt;/line&gt;<br>
-  &lt;line&gt; [Urea] = 26 mG/dL &lt;/line&gt;<br>
-  &lt;line&gt; [BUN] = 12 mG/dL &lt;/line&gt;<br>
-  &lt;line&gt; &lt;/line&gt;<br>
-  &lt;line&gt; Strong Ion Difference = 40 mEq/L &lt;/line&gt;<br>
-  &lt;line&gt; pH = 7.39 &lt;/line&gt;<br>
-  &lt;line&gt; [H+] = 41 nEq/L &lt;/line&gt;<br>
-  &lt;line&gt; &lt;/line&gt;<br>
-  &lt;line&gt; [Protein] = 7.0 G/dL &lt;/line&gt;<br>
-  &lt;line&gt; Colloid Pressure = 28 mmHg &lt;/line&gt;<br>
-  &lt;line&gt; &lt;/line&gt;<br>
-  &lt;line&gt; Osmolarity = 288 mOsm/L &lt;/line&gt;<br>
-  &lt;line&gt; Hematocrit = 44% &lt;/line&gt;<br>
-<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 17.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; A2Pool.[A2(pG/mL)] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Angiotensin] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 18.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; ReninPool.[PRA] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Plasma Renin Activity &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 19.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; AldoPool.[Aldo(pMol/L)] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Aldosterone] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 20.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; ADHPool.[ADH] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Antidiuretic Hormone] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 21.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; ANPPool.[ANP] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Atrial Natriuretic Peptide] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 22.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; ANPPool.[ANP] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Total T4/T3] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 22.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; ThyroidPool.[Total_T4-T3] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Total T4/T3] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 23.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; ThyroidTSH.[TSH] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [TSH] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 24.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; NEPool.[NE(pG/mL)] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Norepinephrine] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 25.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; EpiPool.[Epi(pG/mL)] &lt;/name&gt;<br>
-  &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-  &lt;label&gt; [Epinephrine] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 16.8 &lt;/row&gt;<br>
-  &lt;col&gt; 26.0 &lt;/col&gt;<br>
-<br>
-  &lt;line&gt; Typical Values &lt;/line&gt;<br>
-  &lt;line&gt; &lt;/line&gt;<br>
-  &lt;line&gt; [Angiotensin] = 20 pG/mL &lt;/line&gt;<br>
-  &lt;line&gt; PRA = 2.0 (nG aI/mL)/Hr &lt;/line&gt;<br>
-  &lt;line&gt; [Aldosterone] = 300 pMol/L &lt;/line&gt;<br>
-  &lt;line&gt; [ADH] = 2.0 pG/mL &lt;/line&gt;<br>
-  &lt;line&gt; [ANP] = 20 pMol/L &lt;/line&gt;<br>
-  &lt;line&gt; &lt;/line&gt;<br>
-  &lt;line&gt; [Total T4/T3] = 8.0 uG/dL &lt;/line&gt;<br>
-  &lt;line&gt; [TSH] = 4 uU/mmL &lt;/line&gt;<br>
-  &lt;line&gt; &lt;/line&gt;<br>
-  &lt;line&gt; [Norepinephrine] = 240 pG/mL &lt;/line&gt;<br>
-  &lt;line&gt; [Epinephrine] = 80 pG/mL &lt;/line&gt;<br>
-  &lt;line&gt; &lt;/line&gt;<br>
-  &lt;line&gt; &lt;/line&gt;<br>
-  &lt;line&gt; &lt;/line&gt;<br>
-<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;/groupbox&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

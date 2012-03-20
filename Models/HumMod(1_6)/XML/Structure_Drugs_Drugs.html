@@ -1,81 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Structure.html'><img src='../../Back.PNG'></a>
-<p><a href='Structure_Drugs_Chlorothiazide_Chlorothiazide.html'>Structure_Drugs_Chlorothiazide_Chlorothiazide</a>
-<br><a href='Structure_Drugs_Digoxin_Digoxin.html'>Structure_Drugs_Digoxin_Digoxin</a>
-<br><a href='Structure_Drugs_Furosemide_Furosemide.html'>Structure_Drugs_Furosemide_Furosemide</a>
-<br><a href='Structure_Drugs_Midodrine_Midodrine.html'>Structure_Drugs_Midodrine_Midodrine</a>
-<p>
-HumMod / Drugs<br>
-<br>
-Created : 21-Oct-04<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;?path Structure\Drugs\ ?&gt;<br>
-<br>
-&lt;?include Chlorothiazide\Chlorothiazide.DES ?&gt;<br>
-&lt;?include Digoxin\Digoxin.DES ?&gt;<br>
-&lt;?include Furosemide\Furosemide.DES ?&gt;<br>
-&lt;?include Midodrine\Midodrine.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Drugs &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-  &lt;call&gt; Chlorothiazide.Parms &lt;/call&gt;<br>
-  &lt;call&gt; Digoxin.Parms &lt;/call&gt;<br>
-  &lt;call&gt; Furosemide.Parms &lt;/call&gt;<br>
-  &lt;call&gt; Midodrine.Parms &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcConc &lt;/name&gt;<br>
-  &lt;call&gt; Chlorothiazide.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; Digoxin.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; Furosemide.CalcConc &lt;/call&gt;<br>
-  &lt;call&gt; Midodrine.CalcConc &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-  &lt;call&gt; Chlorothiazide.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Digoxin.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Furosemide.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Midodrine.Dervs &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
-  &lt;call&gt; Chlorothiazide.Wrapup &lt;/call&gt;<br>
-  &lt;call&gt; Digoxin.Wrapup &lt;/call&gt;<br>
-  &lt;call&gt; Midodrine.Wrapup &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

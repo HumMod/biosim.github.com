@@ -1,173 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_Physiology_Torso_Summary_Summary.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / UpperTorso<br>
-<br>
-Created : 2010-04-18<br>
-Last Modified : 2010-04-18<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;groupbox&gt;<br>
-   &lt;row&gt; 2.0 &lt;/row&gt;<br>
-   &lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;high&gt; 14.0 &lt;/high&gt;<br>
-   &lt;wide&gt; 61.0 &lt;/wide&gt;<br>
-   &lt;title&gt; Upper Torso &lt;/title&gt;<br>
-<br>
-&lt;structurename&gt; UT_H2O &lt;/structurename&gt;<br>
-<br>
-&lt;label&gt;<br>
-  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;text&gt; H2O &lt;/text&gt;<br>
-  &lt;color&gt; DARKRED &lt;/color&gt;<br>
-&lt;/label&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 2.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Vol &lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Volume &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 4.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; UT_InterstitialWater.Vol &lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Interstitial H2O &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 5.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; CellH2O.UT_Vol &lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Cell H2O &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 6.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; UT_CapillaryWater.Rate &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Capillary Leak &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 7.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; UT_LymphWater.Rate &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Lymph Flow &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;label&gt;<br>
-  &lt;row&gt; 9.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;text&gt; BLOOD PRESSURE &lt;/text&gt;<br>
-  &lt;color&gt; DARKRED &lt;/color&gt;<br>
-&lt;/label&gt;<br>
-<br>
-&lt;structurename&gt; RegionalPressure &lt;/structurename&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 10.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; UpperArty &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Arteries &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 11.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; UpperCapy &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Capillaries &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 12.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; UpperVein &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Veins &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;label&gt;<br>
-  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-  &lt;text&gt; INTERSTITIAL PROTEIN &lt;/text&gt;<br>
-  &lt;color&gt; DARKRED &lt;/color&gt;<br>
-&lt;/label&gt;<br>
-<br>
-&lt;structurename&gt; UT_InterstitialProtein &lt;/structurename&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 2.8 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-   &lt;name&gt; Mass &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Mass &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 4.2 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-   &lt;name&gt; [Protein(G/dL)] &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; [Protein (G/dL)] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 5.2 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-   &lt;name&gt; COP &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; COP &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;structurename&gt; UT_CapillaryProtein &lt;/structurename&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 6.6 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-   &lt;name&gt; Rate &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 4 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Capillary Leak &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;structurename&gt; UT_LymphProtein &lt;/structurename&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 7.6 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-   &lt;name&gt; Rate &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 4 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Lymph Transport &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 1.2 &lt;/row&gt;<br>
-  &lt;col&gt; 57.0 &lt;/col&gt;<br>
-<br>
-  &lt;line&gt; &lt;/line&gt;<br>
-  &lt;line&gt; &lt;/line&gt;<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;/groupbox&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

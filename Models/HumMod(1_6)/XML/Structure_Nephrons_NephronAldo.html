@@ -1,103 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Nephrons_Nephrons.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / NephronAldo<br>
-<br>
-Created : 10-Apr-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; NephronAldo &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; [Aldo(nG/dL)] &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; Tau &lt;/name&gt;<br>
-  &lt;val&gt; 3.0 &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; Clamp &lt;/name&gt;<br>
-  &lt;val&gt; FALSE &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; Level &lt;/name&gt;<br>
-  &lt;val&gt; 0.0 &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;delay&gt;<br>
-  &lt;name&gt; [AldoDelayed] &lt;/name&gt;<br>
-  &lt;outputname&gt; [AldoDelayed] &lt;/outputname&gt;<br>
-  &lt;initialval&gt; 11.0 &lt;/initialval&gt;<br>
-  &lt;inputname&gt; [AldoPool] &lt;/inputname&gt;<br>
-  &lt;rateconstname&gt; K &lt;/rateconstname&gt;<br>
-  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
-&lt;/delay&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; K &lt;/name&gt;<br>
-  &lt;val&gt; INVERT ( Tau * 60.0 ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;conditional&gt;<br>
-  &lt;name&gt; [Aldo(nG/dL)] &lt;/name&gt;<br>
-  &lt;test&gt; Clamp &lt;/test&gt;<br>
-  &lt;true&gt; Level &lt;/true&gt;<br>
-  &lt;false&gt; [AldoDelayed] &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; [AldoPool] &lt;/name&gt;<br>
-  &lt;val&gt; AldoPool.[Aldo(nG/dL)] &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

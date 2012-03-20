@@ -1,132 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_TissueH2O_TissueH2O.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / MT_H2O<br>
-<br>
-Created : 21-Oct-04<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2005-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; MT_H2O &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; InitialVol &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Vol(L) &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; MetabolicH2O &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; SweatH2O &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; InsensibleSkinH2O &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; InsensibleLungH2O &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;diffeq&gt;<br>
-  &lt;name&gt; Vol &lt;/name&gt;<br>
-  &lt;integralname&gt; Vol &lt;/integralname&gt;<br>
-  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 190.0 &lt;/errorlim&gt;<br>
-&lt;/diffeq&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Initialize &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; InitialVol &lt;/name&gt;<br>
-  &lt;val&gt; TissueH2O.MT_SizeFract * TissueH2O.InitialVol &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Vol &lt;/name&gt;<br>
-  &lt;val&gt; InitialVol &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Vol(L) &lt;/name&gt;&lt;val&gt; Vol / 1000.0 &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; MetabolicH2O &lt;/name&gt;<br>
-  &lt;val&gt; TissueH2O.MT_CalsFract * MetabolicH2O.Rate &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; SweatH2O &lt;/name&gt;<br>
-  &lt;val&gt; TissueH2O.MT_SweatFract * SweatDuct.H2OOutflow &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; InsensibleSkinH2O &lt;/name&gt;<br>
-  &lt;val&gt; TissueH2O.MT_SkinFract * HeatInsensibleSkin.H2O &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; InsensibleLungH2O &lt;/name&gt;<br>
-  &lt;val&gt; TissueH2O.MT_LungFract * HeatInsensibleLung.H2O &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Gain &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-     MT_CapillaryWater.Rate<br>
-   + MetabolicH2O<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Loss &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-     MT_LymphWater.Rate<br>
-   + SweatH2O<br>
-   + InsensibleSkinH2O<br>
-   + InsensibleLungH2O<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; Gain - Loss &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

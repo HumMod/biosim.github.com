@@ -1,85 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Metabolism_Metabolism.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / Metabolism-Tools<br>
-<br>
-Created : 01-Apr-05<br>
-Last Modified : 2010-05-28<br>
-Author : Tom Coleman<br>
-Copyright : 2005-2010<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Metabolism-Tools &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; CalToO2 &lt;/name&gt;&lt;val&gt; 0.2093 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; O2ToCal &lt;/name&gt;&lt;val&gt; 4.778 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; FatCalToCO2 &lt;/name&gt;&lt;val&gt; 0.1465 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; CarboCalToCO2 &lt;/name&gt;&lt;val&gt; 0.2093 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; WattToKPM &lt;/name&gt;&lt;val&gt; 6.12 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; CAL_MIN_TO_KCAL_DAY &lt;/name&gt;&lt;val&gt; 1.44 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; CAL_MIN_TO_WATT &lt;/name&gt;&lt;val&gt; 0.0697 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; KCAL_MIN_TO_WATT &lt;/name&gt;&lt;val&gt; 69.7 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; WATT_TO_CAL_MIN &lt;/name&gt;&lt;val&gt; 14.34 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; WATT_TO_KCAL_MIN &lt;/name&gt;&lt;val&gt; 0.0143 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; CAL_TO_JOULE &lt;/name&gt;&lt;val&gt; 4.19 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; CarboAerobic(kCal/G) &lt;/name&gt;&lt;val&gt; 4.10 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; CarboAerobic(kCal/mG) &lt;/name&gt;&lt;val&gt; 0.00410 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; CarboAerobic(mG/kCal) &lt;/name&gt;&lt;val&gt; 243.90 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; CarboAerobic(mG/Cal) &lt;/name&gt;&lt;val&gt; 0.2439 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; CarboAnaerobic(kCal/G) &lt;/name&gt;&lt;val&gt; 0.1577 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; CarboAnaerobic(kCal/mG) &lt;/name&gt;&lt;val&gt; 0.0001577 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; CarboAnaerobic(mG/kCal) &lt;/name&gt;&lt;val&gt; 6341.1 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; CarboAnaerobic(mG/Cal) &lt;/name&gt;&lt;val&gt; 6.3411 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; Fat(kCal/G) &lt;/name&gt;&lt;val&gt; 9.3 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; Fat(kCal/mG) &lt;/name&gt;&lt;val&gt; 0.0093 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; Fat(mG/kCal) &lt;/name&gt;&lt;val&gt; 107.5 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; Fat(mG/Cal) &lt;/name&gt;&lt;val&gt; 0.1075 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; Protein(kCal/G) &lt;/name&gt;&lt;val&gt; 4.35 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; Lac-(kCal/G) &lt;/name&gt;&lt;val&gt; 3.94 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; Lac-(mG/Cal) &lt;/name&gt;&lt;val&gt; 0.2538 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; Carbo(Cal/mG) &lt;/name&gt;&lt;val&gt; 4.10 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; Fat(Cal/mG) &lt;/name&gt;&lt;val&gt; 9.3 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; Protein(Cal/mG) &lt;/name&gt;&lt;val&gt; 4.35 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

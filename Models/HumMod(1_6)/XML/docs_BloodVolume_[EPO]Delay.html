@@ -1,195 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Docs_BloodVolume.html'><img src='../../Back.PNG'></a>
-<p>
-QHP 2008 / BloodVolume.DOCS<br>
-<br>
-Created : 27-Mar-09<br>
-Last Modified : 27-Mar-09<br>
-Author : Tom Coleman<br>
-Copyright : 2009<br>
-<br>
-&lt;structurename&gt; [EPO]Delay &lt;/structurename&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; [EPO]Delay.Derv &lt;/name&gt;<br>
-&lt;topic&gt; Derv - Definition &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; [EPO]Delay.Effect &lt;/name&gt;<br>
-&lt;topic&gt; EPO Delay - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; EPO - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; EPO - Concentration Units &lt;/topic&gt;<br>
-&lt;seealso&gt; [EPO]Delay.SteadyState &lt;/seealso&gt;<br>
-&lt;seealso&gt; [EPO]Delay.K &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; [EPO]Delay.K &lt;/name&gt;<br>
-&lt;topic&gt; K - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; EPO - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; EPO - Concentration Units &lt;/topic&gt;<br>
-&lt;seealso&gt; [EPO]Delay.Tau &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; [EPO]Delay.SteadyState &lt;/name&gt;<br>
-&lt;topic&gt; Steady State - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; EPO - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; EPO - Concentration Units &lt;/topic&gt;<br>
-&lt;seealso&gt; EPOPool.Log10Conc &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; [EPO]Delay.Tau &lt;/name&gt;<br>
-&lt;topic&gt; Tau - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; EPO - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; EPO - Concentration Units &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; EPO Delay - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-EPO Delay<br>
-Erythropoietin (EPO) is a glycoprotein <br>
-which increases red blood cell (RBC) <br>
-production in response to decreases in <br>
-tissue oxygenation. Although increased secretion <br>
-of erythropoietin occurs within minutes of a <br>
-decrease in tissue oxygenation ,it takes several <br>
-days before there is an increase in the red blood <br>
-cell concentration - this is the EPO delay.<br>
-EPO increases erythrocyte production by retarding <br>
-DNA breakdown and preventing apoptosis in erythroid <br>
-progenitor cells.<br>
-<br>
-Erslev, A.J. Erythropoietin. <br>
-Leukemia Research Volume 14, No. 8: 683-688, 1990<br>
-<br>
-Relationship between blood loss, EPO concentration <br>
-and effect on reticulocyte concentration<br>
-Miller Me, Cronkite EP, Garcia JF<br>
- <br>
-Plasma levels of immunoreactive erythropoietin<br>
-after acute blood loss in man.<br>
-Brit J Haematology 52: 545-549, 1982<br>
-<br>
-Effect of EPO infusion on reticulocyte concentration.<br>
-Escbach JW, Egrie JC, Downing MR, Browne JK, Adamson JW<br>
-correction of the anemia of end-stage renal disease <br>
-with recombinant human erythropoietin<br>
-New Eng J Med 316:73-78, 1987<br>
-<br>
-Winearls CG, Oliver DO, Pippard MJ, Reid C,<br>
-Downing MR, Cotes PM. Effect of human erythropoietin<br>
-derived from recombinant DNA on the anaemia of patients <br>
-maintained by chronic haemodialysis.<br>
-Lancet 2:1175-1178, 1986<br>
-<br>
-Koury MJ, Bondurant MC.<br>
-Erythropoietin retards DNA breakdown and prevents<br>
-programmed death in erythroid progenitor cells.<br>
-Science Vol 248: 378-381, 1990<br>
-<br>
-K is the rate constant<br>
-and is 1/Tau, (Tau = the time constant). <br>
-A steady state is achieved when red blood cell <br>
-volume reaches constant levels. <br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; EPO - Physical Units &lt;/name&gt;<br>
-&lt;label&gt; Physical Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-[Plasma] mU/mL<br>
-Flux  U/min<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; EPO - Concentration Units &lt;/name&gt;<br>
-&lt;label&gt; Concentration Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Typical [EPO] is 20mU/mL at a secretion rate of 0.67U/min<br>
-Tau = 3days. K =1/Tau  <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; K - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-K is the rate constant<br>
-and is 1/Tau, (Tau = the time constant). <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Steady State - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-A steady state is achieved when red blood cell <br>
-volume reaches constant levels. <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Tau - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-K is the rate constant<br>
-and is 1/Tau, (Tau = the time constant). <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Derv - Defintion &lt;/name&gt; <br>
-&lt;label&gt; Defintion &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
- <br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

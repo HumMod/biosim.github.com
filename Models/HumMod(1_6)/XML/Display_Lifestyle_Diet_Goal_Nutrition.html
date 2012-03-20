@@ -1,126 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_Lifestyle_Diet_Goal_Goal.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / Nutrition<br>
-<br>
-Created : 20-Jun-06<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;groupbox&gt;<br>
-   &lt;row&gt; 2.0 &lt;/row&gt;<br>
-   &lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;high&gt; 13.4 &lt;/high&gt;<br>
-   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
-   &lt;title&gt; Nutrition &lt;/title&gt;<br>
-<br>
-&lt;structurename&gt; DietGoalNutrition &lt;/structurename&gt;<br>
-<br>
-&lt;label&gt;<br>
-  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;text&gt; kCal / Day &lt;/text&gt;<br>
-&lt;/label&gt;<br>
-<br>
-&lt;repeatlist&gt;<br>
-  &lt;name&gt; DietGoalNutrition.Rate &lt;/name&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 200 &lt;/reps&gt;&lt;stepsize&gt;   10.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt;  40 &lt;/reps&gt;&lt;stepsize&gt;  100.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-&lt;/repeatlist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 2.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Carbo_kCal/Day &lt;/name&gt;<br>
-  &lt;listname&gt; DietGoalNutrition.Rate &lt;/listname&gt;<br>
-  &lt;label&gt; Carbo's &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 4.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Fat_kCal/Day &lt;/name&gt;<br>
-  &lt;listname&gt; DietGoalNutrition.Rate &lt;/listname&gt;<br>
-  &lt;label&gt; Fat &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 5.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Protein_kCal/Day &lt;/name&gt;<br>
-  &lt;listname&gt; DietGoalNutrition.Rate &lt;/listname&gt;<br>
-  &lt;label&gt; Protein &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 7.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Total_kCal/Day &lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Total &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;label&gt;<br>
-  &lt;row&gt; 8.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;text&gt; G / Day &lt;/text&gt;<br>
-&lt;/label&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 9.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Carbo_G/Day &lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Carbo's &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 10.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Fat_G/Day &lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Fat &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 11.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Protein_G/Day &lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Protein &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 1.2 &lt;/row&gt;<br>
-  &lt;col&gt; 26.0 &lt;/col&gt;<br>
-<br>
-  &lt;line&gt; Typical values for kCal/Day are &lt;/line&gt;<br>
-  &lt;line&gt; &lt;/line&gt;<br>
-  &lt;line&gt; Carbo's = 900 &lt;/line&gt;<br>
-  &lt;line&gt; Fat = 800 &lt;/line&gt;<br>
-  &lt;line&gt; Protein = 500 &lt;/line&gt;<br>
-  &lt;line&gt; &lt;/line&gt;<br>
-  &lt;line&gt; Total = 2200 &lt;/line&gt;<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;/groupbox&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

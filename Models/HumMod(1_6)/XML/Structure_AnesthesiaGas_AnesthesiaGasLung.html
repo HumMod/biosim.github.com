@@ -1,108 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_AnesthesiaGas_AnesthesiaGas.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / AnesthesiaGasLung<br>
-<br>
-Created : 01-Jun-06<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-<br>
-&lt;structure&gt;&lt;name&gt; AnesthesiaGasLung &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; [Alv] &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; pAlv &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; [Capy] &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; pCapy &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Uptake &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; N &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; D &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; N &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-    ( Breathing.AlveolarVentilation(STPD)<br>
-    * Bronchi.[Anesthetic] )<br>
-<br>
-    + ( LungBloodFlow.AlveolarVentilated<br>
-    * AnesthesiaGasVein.[Blood] )<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; D &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-    ( Breathing.AlveolarVentilation(STPD)<br>
-    / 760.0 )<br>
-<br>
-    + ( LungBloodFlow.AlveolarVentilated<br>
-    / AnesthesiaGasSolubility.BloodK )<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;conditional&gt;<br>
-  &lt;name&gt; pAlv &lt;/name&gt;<br>
-  &lt;test&gt; D GT 0.0 &lt;/test&gt;<br>
-  &lt;true&gt; N / D &lt;/true&gt;<br>
-  &lt;false&gt; 0.0 &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; [Alv] &lt;/name&gt;<br>
-  &lt;val&gt; pAlv / 760.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; pCapy &lt;/name&gt;<br>
-  &lt;val&gt; pAlv &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; [Capy] &lt;/name&gt;<br>
-  &lt;val&gt; pCapy / AnesthesiaGasSolubility.BloodK &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Uptake &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-    Breathing.AlveolarVentilation(STPD)<br>
-    * ( Bronchi.[Anesthetic] - [Alv] )<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

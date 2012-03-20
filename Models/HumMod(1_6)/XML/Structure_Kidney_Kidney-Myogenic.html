@@ -1,93 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Kidney_Kidney.html'><img src='../../Back.PNG'></a>
-<p><a href='Structure_Kidney_Kidney-MyogenicDelay.html'>Structure_Kidney_Kidney-MyogenicDelay</a>
-<p>
-HumMod / Kidney-Myogenic DES<br>
-<br>
-Created : 11-Apr-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-<br>
-&lt;?path Structure\Kidney\ ?&gt;<br>
-<br>
-&lt;?include Kidney-MyogenicDelay.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Kidney-Myogenic &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; Tau &lt;/name&gt;&lt;val&gt; 4.0 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; Clamp &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;parm&gt;&lt;name&gt; Level &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; PressureChange(Steady-State) &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;delay&gt;<br>
-  &lt;name&gt; AdaptedPressure &lt;/name&gt;<br>
-  &lt;outputname&gt; AdaptedPressure &lt;/outputname&gt;<br>
-  &lt;initialval&gt; 77.0 &lt;/initialval&gt;<br>
-  &lt;inputname&gt; InterlobarPressure &lt;/inputname&gt;<br>
-  &lt;rateconstname&gt; K &lt;/rateconstname&gt;<br>
-  &lt;dervname&gt; Derv &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 0.1 &lt;/errorlim&gt;<br>
-&lt;/delay&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-  &lt;def&gt;&lt;name&gt; K &lt;/name&gt;&lt;val&gt; INVERT ( 60.0 * Tau ) &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; InterlobarPressure &lt;/name&gt;&lt;val&gt; ( Kidney-ArcuateArtery.Pressure + GlomerulusFiltrate.Pressure ) / 2.0 &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;conditional&gt;&lt;name&gt; PressureChange(Steady-State) &lt;/name&gt;<br>
-&lt;test&gt; Clamp &lt;/test&gt;<br>
-&lt;true&gt; Level &lt;/true&gt;<br>
-&lt;false&gt; InterlobarPressure - AdaptedPressure &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;call&gt; Kidney-MyogenicDelay.Dervs &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

@@ -1,84 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Circulation_Circulation.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / OrganFlow<br>
-<br>
-Created : 21-Oct-04<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; OrganFlow &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; PeripheralFlow &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; HepaticVeinFlow &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; PeripheralFlow &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-     A-VFistula-Flow.BloodFlow<br>
-   + Bone-Flow.BloodFlow<br>
-   + Brain-Flow.BloodFlow<br>
-   + Fat-Flow.BloodFlow<br>
-   + Kidney-Flow.BloodFlow<br>
-   + LeftHeart-Flow.BloodFlow<br>
-   + OtherTissue-Flow.BloodFlow<br>
-   + RespiratoryMuscle-Flow.BloodFlow<br>
-   + RightHeart-Flow.BloodFlow<br>
-   + SkeletalMuscle-Flow.BloodFlow<br>
-   + Skin-Flow.BloodFlow<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; HepaticVeinFlow &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-      GITract-Flow.BloodFlow<br>
-    + HepaticArty.Flow<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

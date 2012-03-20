@@ -1,300 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_Tree_Physiology_Physiology.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / Tree-Nephrons<br>
-<br>
-Created : 08-Dec-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2005-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;branch&gt;<br>
-  &lt;name&gt; Nephrons &lt;/name&gt;<br>
-  &lt;label&gt; Nephrons &lt;/label&gt;<br>
-  &lt;parent&gt; PHYSIOLOGY &lt;/parent&gt;<br>
-&lt;/branch&gt;<br>
-<br>
-&lt;branch&gt;<br>
-  &lt;name&gt; NephronGlomerulus &lt;/name&gt;<br>
-  &lt;label&gt; Glomerulus &lt;/label&gt;<br>
-  &lt;parent&gt; Nephrons &lt;/parent&gt;<br>
-&lt;/branch&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GlomerulusFiltrate &lt;/name&gt;<br>
-  &lt;label&gt; Filtrate &lt;/label&gt;<br>
-  &lt;parent&gt; NephronGlomerulus &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GlomerulusSodium &lt;/name&gt;<br>
-  &lt;label&gt; Sodium &lt;/label&gt;<br>
-  &lt;parent&gt; NephronGlomerulus &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GlomerulusChloride &lt;/name&gt;<br>
-  &lt;label&gt; Chloride &lt;/label&gt;<br>
-  &lt;parent&gt; NephronGlomerulus &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GlomerulusBicarbonate &lt;/name&gt;<br>
-  &lt;label&gt; Bicarbonate &lt;/label&gt;<br>
-  &lt;parent&gt; NephronGlomerulus &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GlomerulusKetoacid &lt;/name&gt;<br>
-  &lt;label&gt; Ketoacid &lt;/label&gt;<br>
-  &lt;parent&gt; NephronGlomerulus &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GlomerulusPhosphate &lt;/name&gt;<br>
-  &lt;label&gt; Phosphate &lt;/label&gt;<br>
-  &lt;parent&gt; NephronGlomerulus &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GlomerulusSulphate &lt;/name&gt;<br>
-  &lt;label&gt; Sulphate &lt;/label&gt;<br>
-  &lt;parent&gt; NephronGlomerulus &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GlomerulusProtein &lt;/name&gt;<br>
-  &lt;label&gt; Protein &lt;/label&gt;<br>
-  &lt;parent&gt; NephronGlomerulus &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GlomerulusGlucose &lt;/name&gt;<br>
-  &lt;label&gt; Glucose &lt;/label&gt;<br>
-  &lt;parent&gt; NephronGlomerulus &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GlomerulusCreatinine &lt;/name&gt;<br>
-  &lt;label&gt; Creatinine &lt;/label&gt;<br>
-  &lt;parent&gt; NephronGlomerulus &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; GlomerulusUrea &lt;/name&gt;<br>
-  &lt;label&gt; Urea &lt;/label&gt;<br>
-  &lt;parent&gt; NephronGlomerulus &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; NephronProximalTubule &lt;/name&gt;<br>
-  &lt;label&gt; Proximal Tubule &lt;/label&gt;<br>
-  &lt;parent&gt; Nephrons &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; NephronLoopOfHenle &lt;/name&gt;<br>
-  &lt;label&gt; Loop Of Henle &lt;/label&gt;<br>
-  &lt;parent&gt; Nephrons &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;branch&gt;<br>
-  &lt;name&gt; MaculaDensa &lt;/name&gt;<br>
-  &lt;label&gt; Macula Densa &lt;/label&gt;<br>
-  &lt;parent&gt; Nephrons &lt;/parent&gt;<br>
-&lt;/branch&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; MaculaDensa-Summary &lt;/name&gt;<br>
-  &lt;label&gt; Summary &lt;/label&gt;<br>
-  &lt;parent&gt; MaculaDensa &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; MaculaDensa-TGF-Vascular &lt;/name&gt;<br>
-  &lt;label&gt; TGF-Vascular &lt;/label&gt;<br>
-  &lt;parent&gt; MaculaDensa &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; MaculaDensa-TGF-Renin &lt;/name&gt;<br>
-  &lt;label&gt; TGF-Renin &lt;/label&gt;<br>
-  &lt;parent&gt; MaculaDensa &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;branch&gt;<br>
-  &lt;name&gt; NephronDistalTubule &lt;/name&gt;<br>
-  &lt;label&gt; Distal Tubule &lt;/label&gt;<br>
-  &lt;parent&gt; Nephrons &lt;/parent&gt;<br>
-&lt;/branch&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; DistalTubuleSodium &lt;/name&gt;<br>
-  &lt;label&gt; Sodium &lt;/label&gt;<br>
-  &lt;parent&gt; NephronDistalTubule &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; DistalTubulePotassium &lt;/name&gt;<br>
-  &lt;label&gt; Potassium &lt;/label&gt;<br>
-  &lt;parent&gt; NephronDistalTubule &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; DistalTubuleAldosterone &lt;/name&gt;<br>
-  &lt;label&gt; Aldosterone &lt;/label&gt;<br>
-  &lt;parent&gt; NephronDistalTubule &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;branch&gt;<br>
-  &lt;name&gt; NephronCollectingDuct &lt;/name&gt;<br>
-  &lt;label&gt; Collecting Duct &lt;/label&gt;<br>
-  &lt;parent&gt; Nephrons &lt;/parent&gt;<br>
-&lt;/branch&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; CDSummary &lt;/name&gt;<br>
-  &lt;label&gt; Summary &lt;/label&gt;<br>
-  &lt;parent&gt; NephronCollectingDuct &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; CDWater &lt;/name&gt;<br>
-  &lt;label&gt; Water &lt;/label&gt;<br>
-  &lt;parent&gt; NephronCollectingDuct &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; CDSodium &lt;/name&gt;<br>
-  &lt;label&gt; Sodium &lt;/label&gt;<br>
-  &lt;parent&gt; NephronCollectingDuct &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; CDUrea &lt;/name&gt;<br>
-  &lt;label&gt; Urea &lt;/label&gt;<br>
-  &lt;parent&gt; NephronCollectingDuct &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; NephronUrine &lt;/name&gt;<br>
-  &lt;label&gt; Urine &lt;/label&gt;<br>
-  &lt;parent&gt; Nephrons &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; NephronMedulla &lt;/name&gt;<br>
-  &lt;label&gt; Medulla &lt;/label&gt;<br>
-  &lt;parent&gt; Nephrons &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; NephronVasaRecta &lt;/name&gt;<br>
-  &lt;label&gt; Vasa Recta &lt;/label&gt;<br>
-  &lt;parent&gt; Nephrons &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; NephronInterstitium &lt;/name&gt;<br>
-  &lt;label&gt; Interstitium &lt;/label&gt;<br>
-  &lt;parent&gt; Nephrons &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; NephronSegmentBalances &lt;/name&gt;<br>
-  &lt;label&gt; Segment Balances &lt;/label&gt;<br>
-  &lt;parent&gt; Nephrons &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;branch&gt;<br>
-  &lt;name&gt; NephronOtherElectrolytes &lt;/name&gt;<br>
-  &lt;label&gt; Other Electrolytes &lt;/label&gt;<br>
-  &lt;parent&gt; Nephrons &lt;/parent&gt;<br>
-&lt;/branch&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; NephronAmmonia &lt;/name&gt;<br>
-  &lt;label&gt; Ammonia &lt;/label&gt;<br>
-  &lt;parent&gt; NephronOtherElectrolytes &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; NephronChloride &lt;/name&gt;<br>
-  &lt;label&gt; Chloride &lt;/label&gt;<br>
-  &lt;parent&gt; NephronOtherElectrolytes &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; NephronBicarbonate &lt;/name&gt;<br>
-  &lt;label&gt; Bicarbonate &lt;/label&gt;<br>
-  &lt;parent&gt; NephronOtherElectrolytes &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; NephronCreatinine &lt;/name&gt;<br>
-  &lt;label&gt; Creatinine &lt;/label&gt;<br>
-  &lt;parent&gt; Nephrons &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; NephronGlucose &lt;/name&gt;<br>
-  &lt;label&gt; Glucose &lt;/label&gt;<br>
-  &lt;parent&gt; Nephrons &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; NephronKetoacids &lt;/name&gt;<br>
-  &lt;label&gt; Ketoacids &lt;/label&gt;<br>
-  &lt;parent&gt; Nephrons &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;branch&gt;<br>
-  &lt;name&gt; NephronHormones &lt;/name&gt;<br>
-  &lt;label&gt; Nephron Hormones &lt;/label&gt;<br>
-  &lt;parent&gt; Nephrons &lt;/parent&gt;<br>
-&lt;/branch&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; NephronHormones-Aldosterone &lt;/name&gt;<br>
-  &lt;label&gt; Aldosterone &lt;/label&gt;<br>
-  &lt;parent&gt; NephronHormones &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; NephronHormones-ADH &lt;/name&gt;<br>
-  &lt;label&gt; ADH &lt;/label&gt;<br>
-  &lt;parent&gt; NephronHormones &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-&lt;leaf&gt;<br>
-  &lt;name&gt; NephronHormones-ANP &lt;/name&gt;<br>
-  &lt;label&gt; ANP &lt;/label&gt;<br>
-  &lt;parent&gt; NephronHormones &lt;/parent&gt;<br>
-&lt;/leaf&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

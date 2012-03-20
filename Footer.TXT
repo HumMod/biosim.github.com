@@ -1,9 +1,0 @@
-Footer.TXT
-
-Center for Computational Medicine
-University of Mississippi Medical Center
-Jackson MS 39216 USA
-
-Supported by NSF EPSCoR, NIH and NASA
-
-End

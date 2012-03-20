@@ -1,132 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_Clinic_Drugs_Midodrine_Midodrine.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / DailyDoseOral<br>
-<br>
-Created : 05-Jun-06<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;groupbox&gt;<br>
-   &lt;row&gt; 2.0 &lt;/row&gt;<br>
-   &lt;col&gt; 32.0 &lt;/col&gt;<br>
-   &lt;high&gt; 13.2 &lt;/high&gt;<br>
-   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
-   &lt;title&gt; Daily Dose Oral &lt;/title&gt;<br>
-<br>
-&lt;structurename&gt; MidodrineDailyDose &lt;/structurename&gt;<br>
-<br>
-&lt;radiobuttons&gt;<br>
-  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; TakeDaily &lt;/name&gt;<br>
-  &lt;listname&gt; Common.Switch &lt;/listname&gt;<br>
-  &lt;label&gt; Take Daily &lt;/label&gt;<br>
-&lt;/radiobuttons&gt;<br>
-<br>
-&lt;maplist&gt;<br>
-  &lt;name&gt; MidodrineDailyDose.Dose &lt;/name&gt;<br>
-  &lt;map&gt;&lt;val&gt;  0.0 &lt;/val&gt;&lt;img&gt; None &lt;/img&gt;&lt;/map&gt;<br>
-  &lt;map&gt;&lt;val&gt;  2.5 &lt;/val&gt;&lt;img&gt; 2.5 &lt;/img&gt;&lt;/map&gt;<br>
-  &lt;map&gt;&lt;val&gt;  5.0 &lt;/val&gt;&lt;img&gt; 5 &lt;/img&gt;&lt;/map&gt;<br>
-  &lt;map&gt;&lt;val&gt; 10.0 &lt;/val&gt;&lt;img&gt; 2 x 5 &lt;/img&gt;&lt;/map&gt;<br>
-  &lt;map&gt;&lt;val&gt; 15.0 &lt;/val&gt;&lt;img&gt; 3 x 5 &lt;/img&gt;&lt;/map&gt;<br>
-  &lt;map&gt;&lt;val&gt; 20.0 &lt;/val&gt;&lt;img&gt; 4 x 5 &lt;/img&gt;&lt;/map&gt;<br>
-  &lt;map&gt;&lt;val&gt; 30.0 &lt;/val&gt;&lt;img&gt; 6 x 5 &lt;/img&gt;&lt;/map&gt;<br>
-&lt;/maplist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 3.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Dose &lt;/name&gt;<br>
-  &lt;listname&gt; MidodrineDailyDose.Dose &lt;/listname&gt;<br>
-  &lt;label&gt; Dose &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;repeatlist&gt;<br>
-  &lt;name&gt; MidodrineDailyDose.TimesADay &lt;/name&gt;<br>
-  &lt;firstval&gt; 1.0 &lt;/firstval&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 23 &lt;/reps&gt;&lt;stepsize&gt; 1.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-&lt;/repeatlist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 4.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; TimesADay &lt;/name&gt;<br>
-  &lt;listname&gt; MidodrineDailyDose.TimesADay &lt;/listname&gt;<br>
-  &lt;label&gt; Times A Day &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 6.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; TimeLastDose &lt;/name&gt;<br>
-   &lt;format&gt;<br>
-      &lt;timestamp/&gt;<br>
-      &lt;fieldwidth&gt; 14 &lt;/fieldwidth&gt;<br>
-   &lt;/format&gt;<br>
-   &lt;label&gt; Last Dose &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 7.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; TimeNextDose &lt;/name&gt;<br>
-   &lt;format&gt;<br>
-      &lt;timestamp/&gt;<br>
-      &lt;fieldwidth&gt; 14 &lt;/fieldwidth&gt;<br>
-   &lt;/format&gt;<br>
-   &lt;label&gt; Next Dose &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 8.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; TotalDoses &lt;/name&gt;<br>
-   &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-   &lt;label&gt; Total Doses &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 9.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; CumulativeDose &lt;/name&gt;<br>
-   &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-   &lt;label&gt; Cumulative Dose &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;actionbutton&gt;<br>
-  &lt;row&gt; 11.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;blockname&gt; Reset &lt;/blockname&gt;<br>
-  &lt;label&gt; Reset &lt;/label&gt;<br>
-&lt;/actionbutton&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 1.2 &lt;/row&gt;<br>
-  &lt;col&gt; 26.0 &lt;/col&gt;<br>
-  &lt;line&gt; Typical dose is 10 - 30 mG/Day. &lt;/line&gt;<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;/groupbox&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

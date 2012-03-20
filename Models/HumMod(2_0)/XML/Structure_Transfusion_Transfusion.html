@@ -1,105 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Structure.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / Transfusion<br>
-<br>
-Created : 30-May-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2005-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Transfusion &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; Switch &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;parm&gt;&lt;name&gt; Setting &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;parm&gt;&lt;name&gt; Hct(%) &lt;/name&gt;&lt;val&gt; 44.0 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Hct &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; PlasmaRate &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; ProteinRate &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; RBCRate &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; NaRate &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; KRate &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; ClRate &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Units &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;diffeq&gt;<br>
-  &lt;name&gt; Volume &lt;/name&gt;<br>
-  &lt;integralname&gt; Volume &lt;/integralname&gt;<br>
-  &lt;initialval&gt; 0.0 &lt;/initialval&gt;<br>
-  &lt;dervname&gt; Rate &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 10.0  &lt;/errorlim&gt;<br>
-&lt;/diffeq&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-<br>
-&lt;conditional&gt;<br>
-  &lt;name&gt; Rate &lt;/name&gt;<br>
-  &lt;test&gt; Switch &lt;/test&gt;<br>
-  &lt;true&gt; Setting &lt;/true&gt;<br>
-  &lt;false&gt; 0.0 &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Hct &lt;/name&gt;&lt;val&gt; Hct(%) / 100.0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; PlasmaRate &lt;/name&gt;&lt;val&gt; ( 1.0 - Hct ) * Rate &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; ProteinRate &lt;/name&gt;&lt;val&gt; 0.07 * PlasmaRate &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; RBCRate &lt;/name&gt;&lt;val&gt; Hct * Rate &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; NaRate &lt;/name&gt;&lt;val&gt; 0.140 * Rate &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; KRate &lt;/name&gt;&lt;val&gt; 0.0044 * Rate &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; ClRate &lt;/name&gt;&lt;val&gt; 0.105 * Rate &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcVol &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Units &lt;/name&gt;&lt;val&gt; 0.0025 * Volume &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; ResetVolume &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Volume &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

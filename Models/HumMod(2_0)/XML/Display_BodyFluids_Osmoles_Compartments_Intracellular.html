@@ -1,164 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_BodyFluids_Osmoles_Compartments_Compartments.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / Intracellular<br>
-<br>
-Created : 26-May-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2005-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-&lt;groupbox&gt;<br>
-   &lt;row&gt; 2.0 &lt;/row&gt;<br>
-   &lt;col&gt; 32.0 &lt;/col&gt;<br>
-   &lt;high&gt; 21.0 &lt;/high&gt;<br>
-   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
-   &lt;title&gt; Intracellular &lt;/title&gt;<br>
-<br>
-&lt;structurename&gt; OsmCell &lt;/structurename&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Total &lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Total &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showgraph&gt;<br>
-  &lt;row&gt; 2.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
-  &lt;leftmargin&gt; 6 &lt;/leftmargin&gt;<br>
-  &lt;xaxis&gt;<br>
-    &lt;name&gt; System.X &lt;/name&gt;<br>
-    &lt;label&gt; Time &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;/scale&gt;<br>
-  &lt;/xaxis&gt;<br>
-  &lt;yaxis&gt;<br>
-    &lt;yvar&gt;<br>
-      &lt;name&gt; Total &lt;/name&gt;<br>
-      &lt;nolabel/&gt;<br>
-      &lt;linecolor&gt; BLUE &lt;/linecolor&gt;<br>
-    &lt;/yvar&gt;<br>
-    &lt;scale&gt;<br>
-      &lt;min&gt; 8000 &lt;/min&gt;&lt;max&gt; 9000 &lt;/max&gt;<br>
-    &lt;/scale&gt;<br>
-  &lt;/yaxis&gt;<br>
-&lt;/showgraph&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 9.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Electrolytes &lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Electrolytes &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 11.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Cations &lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Cations &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 12.2 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
-   &lt;name&gt; KCell.Mass &lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; K+ &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 13.2 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
-   &lt;name&gt; OtherCations &lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Other Cations &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 14.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Anions&lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Anions &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 16.0 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Non-Electrolytes &lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Non-Electrolytes &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 17.0 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
-   &lt;name&gt; UreaCell.Osmoles&lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Urea &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 18.0 &lt;/row&gt;&lt;col&gt; 3 &lt;/col&gt;<br>
-   &lt;name&gt; UnknownOsmoles&lt;/name&gt;<br>
-   &lt;format&gt;&lt;integer/&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Unknown &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 19.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; OsmBody.ICFV &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Volume &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 1.2 &lt;/row&gt;<br>
-  &lt;col&gt; 26.0 &lt;/col&gt;<br>
-<br>
-  &lt;line&gt; Units are mOsm. &lt;/line&gt;<br>
-  &lt;line&gt;  &lt;/line&gt;<br>
-  &lt;line&gt; NORMAL VALUES &lt;/line&gt;<br>
-  &lt;line&gt;  &lt;/line&gt;<br>
-  &lt;line&gt; Total = 7920 &lt;/line&gt;<br>
-  &lt;line&gt;  &lt;/line&gt;<br>
-  &lt;line&gt; Cations = 4340 &lt;/line&gt;<br>
-  &lt;line&gt;  &lt;/line&gt;<br>
-  &lt;line&gt; K+ = 3980 &lt;/line&gt;<br>
-  &lt;line&gt; Other Cations = 360 &lt;/line&gt;<br>
-  &lt;line&gt;  &lt;/line&gt;<br>
-  &lt;line&gt; Anions = 3340 &lt;/line&gt;<br>
-  &lt;line&gt;  &lt;/line&gt;<br>
-  &lt;line&gt; OtherOsmoles = 244 &lt;/line&gt;<br>
-  &lt;line&gt;  &lt;/line&gt;<br>
-  &lt;line&gt; Urea = 174 &lt;/line&gt;<br>
-  &lt;line&gt; Unknown = 70 &lt;/line&gt;<br>
-  &lt;line&gt;  &lt;/line&gt;<br>
-  &lt;line&gt; Volume = 28.0 L &lt;/line&gt;<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;/groupbox&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

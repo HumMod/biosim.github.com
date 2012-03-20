@@ -1,164 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Docs_SequesteredBlood.html'><img src='../../Back.PNG'></a>
-<p>
-QHP 2008 / SequesteredBlood.DOCS<br>
-<br>
-Created : 27-Mar-09<br>
-Last Modified : 27-Mar-09<br>
-Author : Tom Coleman<br>
-Copyright : 2009<br>
-<br>
-&lt;structurename&gt; BVSeqArtys &lt;/structurename&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; BVSeqArtys.Change &lt;/name&gt;<br>
-&lt;topic&gt; BVSeqArtys - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; BVSeqArtys.Conductance &lt;/seealso&gt;<br>
-&lt;seealso&gt; RegionalPressure.LowerArty &lt;/seealso&gt;<br>
-&lt;seealso&gt; BVSeqArtys.Pressure &lt;/seealso&gt;<br>
-<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; BVSeqArtys.Conductance &lt;/name&gt;<br>
-&lt;topic&gt; Conductance - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; BVSeqArtys.DxMax &lt;/name&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; BVSeqArtys.Pressure &lt;/name&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; BVSeqArtys.TMP &lt;/seealso&gt;<br>
-&lt;seealso&gt; LowerExternalPressure.Pressure &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; BVSeqArtys.TMP &lt;/name&gt;<br>
-&lt;topic&gt; TMP - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; BVSeqArtys.Vol &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; BVSeqArtys.Vol &lt;/name&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; BVSeqArtys.Change &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Conductance - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;  <br>
-<br>
-Conductance is a measure of the blood flow through <br>
-a vessel for a given pressure difference. It is the<br>
-exact reciprocal of resistance. Since the arteries have<br>
-more resistance than the veins, conductance is less in <br>
-the arterial side of the circulation.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; BVSeqArtys - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Sequestered blood volume is a term used to explain the<br>
-changes in blood volume distribution and venous return<br>
-when a subject moves from a lying to a standing postion. <br>
-As the subject changes from a lying to standing position,<br>
-total blood volume does not acutely change, however <br>
-venous return falls as if some blood has been lost. The <br>
-(virtual) amount of blood that appears to be lost is called <br>
-sequestered. Some is in the arteries (BVSeqArtys) and some <br>
-in the veins (BVSeqVeins) of the lower extremities.<br>
-In the model we assume about 75% of sequestered volume is <br>
-in the veins and and 25% in the arteries.<br>
-<br>
-In the lying position, assume a pressure of 97mmHg in the<br>
-arteries and a sequestered volume of 50mL. Moving to a <br>
-standing position changes pressure to 150mmHg and the<br>
-sequestered volume to 200mL.<br>
-<br>
-Vascular compliance plays a role in sequestration since <br>
-the amount sequestered depends on the distending (orthostatic) <br>
-pressure versus the vascular compliance pushing back.<br>
-Together they affect the transmural pressure(TMP)<br>
-<br>
-Thornton WE, Moore TP, Pool SL Fluid Shifts in Weightlessness<br>
-Aviat.Space Environ Med 58(9, Suppl.):A86-90, 1987.<br>
-<br>
-Moore TP, Thornton WE Space shuttle inflight and postflight <br>
-fluid shifts measured by leg volume changes. <br>
-Aviat Space Environ. Med 58(9, Suppl.):A91-96, 1987.<br>
-<br>
-Musgrave FS, Zechman FW, Mains RC. Changes in total leg <br>
-volume during lower body negative pressure. <br>
-Aerospace Med 40(6):602-606, 1969.<br>
-<br>
-Asmussen E. The distribution of the blood between the lower <br>
-extremities and the rest of the body.<br>
-Acta Physiol Scanda 5:31-38, 1943<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; TMP - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-The transmural pressure is the difference between the pressure<br>
-within the vessel and outside the vessel. It is a function of<br>
-vascular compliance, the orthostatic pressure and any other <br>
-pressure exerted externally(lower external pressure).<br>
- <br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-  <br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

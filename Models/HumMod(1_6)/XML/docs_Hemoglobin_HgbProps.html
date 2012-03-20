@@ -1,705 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Docs_Hemoglobin.html'><img src='../../Back.PNG'></a>
-<p>
-QHP 2008 / Hemoglobin.DOCS<br>
-<br>
-<br>
-Created : 27-Mar-09<br>
-Last Modified : 27-Mar-09<br>
-Author : Tom Coleman<br>
-Copyright : 2009<br>
-<br>
-&lt;structurename&gt; HgbProps &lt;/structurename&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.[O2]&lt;/name&gt;<br>
-&lt;topic&gt; [O2] - DefinitionHP1 &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.A &lt;/name&gt;<br>
-&lt;topic&gt; A - DefinitionHP2 &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.An &lt;/name&gt;<br>
-&lt;topic&gt; An - DefinitionHP3 &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.CO2NORM &lt;/name&gt;<br>
-&lt;topic&gt; CO2NORM - DefinitionHP4 &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.COEffect &lt;/name&gt;<br>
-&lt;topic&gt; COEffect - DefinitionHP5 &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.COK &lt;/name&gt;<br>
-&lt;topic&gt; COK - DefinitionHP6 &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.CONORM&lt;/name&gt;<br>
-&lt;topic&gt; CONORM - DefinitionHP7 &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.COSens &lt;/name&gt;<br>
-&lt;topic&gt; COSens - DefinitionHP8 &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.Del &lt;/name&gt;<br>
-&lt;topic&gt; Del - DefinitionHP9 &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.HILLCONSTANT &lt;/name&gt;<br>
-&lt;topic&gt; HILLCONSTANT - DefinitionHP10 &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.K &lt;/name&gt;<br>
-&lt;topic&gt; K - DefinitionHP11 &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.Log &lt;/name&gt;<br>
-&lt;topic&gt; Log - DefintionHP12 &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.O2SOLUBILITY &lt;/name&gt;<br>
-&lt;topic&gt; O2SOLUBILITY - DefinitionHP13 &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.P50 &lt;/name&gt;<br>
-&lt;topic&gt; P50 - DefinitionHP14 &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.P50Basic &lt;/name&gt;<br>
-&lt;topic&gt; P50Basic - DefinitionHP15 &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.pCO2 &lt;/name&gt;<br>
-&lt;topic&gt; pCO2 - DefinitionHP16 &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.pCO2Effect &lt;/name&gt;<br>
-&lt;topic&gt; pCO2Effect - DefinitionHP17 &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.PCO2K &lt;/name&gt;<br>
-&lt;topic&gt; PCO2K - DefinitionHP18 &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.pCO2Sens &lt;/name&gt;<br>
-&lt;topic&gt; pCO2Sens - DefinitionHP19 &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.pH &lt;/name&gt;<br>
-&lt;topic&gt; pH - DefintionHP20 &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.pHEffect &lt;/name&gt;<br>
-&lt;topic&gt; pHEffect - DefinitionHP21 &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.PHK &lt;/name&gt;<br>
-&lt;topic&gt; PHK - DefinitionHP22 &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.PHNORM &lt;/name&gt;<br>
-&lt;topic&gt; PHNORM - DefinitionHP23 &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.pHSens &lt;/name&gt;<br>
-&lt;topic&gt; pHSens - DefinitionHP24 &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.pO2&lt;/name&gt;<br>
-&lt;topic&gt; pO2 - DefinitionHP25 &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.pO2SATURATED &lt;/name&gt;<br>
-&lt;topic&gt; pO2SATURATED - DefinitionHP26 &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.S &lt;/name&gt;<br>
-&lt;topic&gt; S - DefinitionHP27 &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.Sat &lt;/name&gt;<br>
-&lt;topic&gt; Sat - DefinitionHP28 &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.ScaleForSat &lt;/name&gt;<br>
-&lt;topic&gt; ScaleForSat - DefinitionHP29 &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.Temp &lt;/name&gt;<br>
-&lt;topic&gt; Temp - DefinitionHP30 &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.TempEffect &lt;/name&gt;<br>
-&lt;topic&gt; TempEffect - DefinitionHP31 &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.TEMPK &lt;/name&gt;<br>
-&lt;topic&gt; TEMPK - DefinitionHP32 &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.TEMPNORM &lt;/name&gt;<br>
-&lt;topic&gt; TEMPNORM - DefinitionHP33 &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;topic&gt; XXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; HgbProps.TempSens &lt;/name&gt;<br>
-&lt;topic&gt; TempSens - DefinitionHP34 &lt;/topic&gt;<br>
-&lt;topic&gt; XX &lt;/topic&gt;<br>
-&lt;topic&gt; XXXX &lt;/topic&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;seealso&gt; XXX &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; [O2] - DefinitionHP1 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-[O2] is the oxygen concentration in the blood.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; A - DefinitionHP2 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-A = P / P50<br>
-<br>
-Where P is the pO2 (partial pressure of oxygen)<br>
-and P50 is the pO2 that produces a saturation <br>
-of  50%.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; An - DefinitionHP3 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-An = (PO2SATURATED/P50)^HILLCONSTANT <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; CO2NORM - DefinitionHP4 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-CO2NORM is a constant and is defined as the arterial<br>
-partial pressure of carbon dioxide under normal <br>
-physiological conditions.<br>
-<br>
-It has a value of 40mm Hg. <br>
-<br>
-Douglas AR, Jones NL, Reed JW. Calculation of <br>
-whole blood CO2 content.<br>
-J Appl. Physiol. 65: 473 - 477, 1988<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; COEffect - DefinitionHP5 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; COK - DefinitionHP6 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; CONORM - DefinitionHP7 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-CONORM is a constant and is defined as the arterial<br>
-partial pressure of carbon monoixde under normal <br>
-physiological conditions.<br>
-<br>
-It has a value of 0.0 <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; COSens - DefinitionHP8 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Del - DefintionHP9 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; HILLCONSTANT - DefinitionHP10 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-HILLCONSTANT has a value of 2.3<br>
-<br>
-HILLCONSTANT is a exponent used in the equation <br>
-relating blood oxygen content and blood pO2.<br>
-The relationship is described using the sigmoidal <br>
-Hill equation:<br>
-<br>
-S = An / 1 + An<br>
-<br>
-where S is the fraction saturation, An is <br>
-(PO2SATURATED/P50)^HILLCONSTANT where <br>
-PO2SATURATED is the pO2 at 100% saturation <br>
-and p50 is the pO2 that produces a saturation <br>
-of 1/2 or 50%.<br>
-<br>
-Dill DB, Edwards HT, Florkin M, Campbell RW. <br>
-Properties of dog blood. <br>
-J Biol. Chem. 95: 143 - 152, 1932.<br>
-<br>
-Hill AV. The possible effects of the aggregation of<br>
-the molecules of haemoglobin on its dissociation curves.<br>
-J Physiol. 40: iv - vii, 1910.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; K - DefinitionHP11 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Log - DefinitionHP12 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; O2SOLUBILITY - DefinitionHP13 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; P50 - DefinitionHP14 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; P50Basic - DefinitionHP15 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; pCO2 - DefinitionHP16 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; pCO2Effect - DefinitionHP17 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; PCO2K - DefinitionHP18 &lt;/name&gt;<br>
-&lt;label&gt; Definition  &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; pCO2Sens - DefinitionHP19 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; pH - DefinitionHP20 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-pH is the calculated pH of blood.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; pHEffect - DefinitionHP21 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; PHK - DefinitionHP22 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; PHNORM - DefinitionHP23 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-It is customary to express H+ concentration of<br>
-blood on a logarithm scale, using pH units.<br>
-pH is related to the actual H+ concentration<br>
-by the following formula:<br>
-<br>
-pH = log 1/[H+] = -log[H+] <br>
-<br>
-PHNORM is a constant with a value of 7.40.<br>
-This is normal pH of blood. <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; pHSens - DefinitionHP24 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; pO2 - DefinitionHP25 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; PO2SATURATED - DefinitionHP26 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; S - DefinitionHP27 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Sat - DefinitionHP28 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; ScaleForSat - DefinitionHP29 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Temp - DefinitionHP30 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; TempEffect - DefinitionHP31 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; TEMPK - DefinitionHP32 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; TEMPNORM - DefinitionHP33 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-TEMPNORM is constant and has a value of 37 degrees <br>
-centigrade. This is normal body temperature.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; TempSens - DefinitionHP34 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-  <br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

@@ -1,231 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Drugs_Digoxin_Digoxin.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / DigoxinDailyDose<br>
-<br>
-Created : 05-Jun-06<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; DigoxinDailyDose &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; Dose &lt;/name&gt;<br>
-  &lt;val&gt; 0.0 &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; TakeDaily &lt;/name&gt;<br>
-  &lt;val&gt; FALSE &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; LastTakeDaily &lt;/name&gt;<br>
-  &lt;val&gt; FALSE &lt;/val&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;<br>
-  &lt;name&gt; TimesADay &lt;/name&gt;<br>
-  &lt;val&gt; 1.0 &lt;/val&gt;<br>
-&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; TimeLastDose &lt;/name&gt;<br>
-  &lt;val&gt; UNDEFINED &lt;/val&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; TimeNextDose &lt;/name&gt;<br>
-  &lt;val&gt; UNDEFINED &lt;/val&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; TotalDoses &lt;/name&gt;<br>
-  &lt;val&gt; 0.0 &lt;/val&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; CumulativeDose &lt;/name&gt;<br>
-  &lt;val&gt; 0.0 &lt;/val&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;timervar&gt;<br>
-  &lt;name&gt; Timer &lt;/name&gt;<br>
-  &lt;val&gt; 0.0 &lt;/val&gt;<br>
-  &lt;state&gt; OFF &lt;/state&gt;<br>
-&lt;/timervar&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; IntervalGoal &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; Interval &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;constant&gt;<br>
-  &lt;name&gt; PREPTIME &lt;/name&gt;<br>
-  &lt;val&gt; 10.0 &lt;/val&gt;<br>
-&lt;/constant&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; IntervalGoal &lt;/name&gt;<br>
-  &lt;val&gt; 1440.0 / TimesADay &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;if&gt;&lt;test&gt; TakeDaily EQ LastTakeDaily &lt;/test&gt;<br>
-&lt;true&gt;<br>
-  &lt;exitblock/&gt;<br>
-&lt;/true&gt;<br>
-&lt;/if&gt;<br>
-<br>
-&lt;if&gt;&lt;test&gt; TakeDaily &lt;/test&gt;<br>
-&lt;true&gt;<br>
-<br>
-&lt;timer&gt;<br>
-  &lt;name&gt; Timer &lt;/name&gt;<br>
-  &lt;val&gt; 0.0 &lt;/val&gt;<br>
-  &lt;state&gt; UP &lt;/state&gt;<br>
-&lt;/timer&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Interval &lt;/name&gt;<br>
-  &lt;val&gt; PREPTIME &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TimeNextDose &lt;/name&gt;<br>
-  &lt;val&gt; System.X + PREPTIME &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/true&gt;<br>
-&lt;false&gt;<br>
-<br>
-&lt;timer&gt;<br>
-  &lt;name&gt; Timer &lt;/name&gt;<br>
-  &lt;state&gt; OFF &lt;/state&gt;<br>
-&lt;/timer&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TimeNextDose &lt;/name&gt;<br>
-  &lt;val&gt; UNDEFINED &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/false&gt;<br>
-&lt;/if&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; LastTakeDaily &lt;/name&gt;<br>
-  &lt;val&gt; TakeDaily &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
-<br>
-&lt;if&gt;&lt;test&gt; TakeDaily &lt;/test&gt;<br>
-&lt;false&gt;<br>
-  &lt;exitblock/&gt;<br>
-&lt;/false&gt;<br>
-&lt;/if&gt;<br>
-<br>
-&lt;if&gt;&lt;test&gt; Timer LT Interval &lt;/test&gt;<br>
-&lt;true&gt;<br>
-  &lt;exitblock/&gt;<br>
-&lt;/true&gt;<br>
-&lt;/if&gt;<br>
-<br>
-&lt;timer&gt;<br>
-  &lt;name&gt; Timer &lt;/name&gt;<br>
-  &lt;val&gt; 0.0 &lt;/val&gt;<br>
-&lt;/timer&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TimeNextDose &lt;/name&gt;<br>
-  &lt;val&gt; TimeNextDose + IntervalGoal &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TimeLastDose &lt;/name&gt;<br>
-  &lt;val&gt; System.X &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Interval &lt;/name&gt;<br>
-  &lt;val&gt; TimeNextDose - System.X &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; DigoxinGILumen.Mass &lt;/name&gt;<br>
-  &lt;val&gt; DigoxinGILumen.Mass + Dose &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TotalDoses &lt;/name&gt;<br>
-  &lt;val&gt; TotalDoses + 1.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; CumulativeDose &lt;/name&gt;<br>
-  &lt;val&gt; CumulativeDose + Dose &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Reset &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TimeLastDose &lt;/name&gt;<br>
-  &lt;val&gt; UNDEFINED &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; TotalDoses &lt;/name&gt;<br>
-  &lt;val&gt; 0.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; CumulativeDose &lt;/name&gt;<br>
-  &lt;val&gt; 0.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

@@ -1,69 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:01 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='../Model.html'><img src='../../Back.PNG'></a>
-<p><a href='Context_Context.html'>Context_Context</a>
-<br><a href='Structure_Structure.html'>Structure_Structure</a>
-<br><a href='Control_Control.html'>Control_Control</a>
-<br><a href='Display_Display.html'>Display_Display</a>
-<br><a href='Docs_Docs.html'>Docs_Docs</a>
-<p>
-HumMod / HumMod.DES<br>
-<br>
-Created : 06-Sep-08<br>
-Last Modified : 2011-07-29<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2011<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;?xml version = '1.0' ?&gt;<br>
-<br>
-&lt;model&gt;<br>
-<br>
-&lt;title&gt;<br>
-   &lt;basic&gt; Integrative Biomedicine (v2.0.0) &lt;/basic&gt;<br>
-   &lt;navigator&gt; HumMod - Integrative Biomedicine (v2.0.0) &lt;/navigator&gt;<br>
-&lt;/title&gt;<br>
-<br>
-&lt;?include Context\Context.DES ?&gt;<br>
-&lt;?include Structure\Structure.DES ?&gt;<br>
-<br>
-&lt;math&gt;<br>
-<br>
-  &lt;context&gt; Structure.Context &lt;/context&gt;<br>
-  &lt;parms&gt; Structure.Parms &lt;/parms&gt;<br>
-  &lt;dervs&gt; Structure.Dervs &lt;/dervs&gt;<br>
-  &lt;wrapup&gt; Structure.Wrapup &lt;/wrapup&gt;<br>
-<br>
-&lt;/math&gt;<br>
-<br>
-&lt;?include Control\Control.DES ?&gt;<br>
-&lt;?include Display\Display.DES ?&gt;<br>
-<br>
-&lt;?attach Docs\Docs.DOCS ?&gt;<br>
-<br>
-&lt;/model&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

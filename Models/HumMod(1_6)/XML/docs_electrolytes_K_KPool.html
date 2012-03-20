@@ -1,221 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='docs_electrolytes_K.html'><img src='../../Back.PNG'></a>
-<p>
-QHP 2008 / K.DOCS<br>
-<br>
-Created : 27-Mar-09<br>
-Last Modified : 27-Mar-09<br>
-Author : Tom Coleman<br>
-Copyright : 2009<br>
-<br>
-&lt;structurename&gt; KPool &lt;/structurename&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; KPool.[K+(mEq/L)]&lt;/name&gt;<br>
-&lt;topic&gt; [K+] - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; [K+] - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; [K+] - Concentration Units &lt;/topic&gt;<br>
-&lt;seealso&gt; KCell.[K+(mEq/L)] &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; KPool.[K+] &lt;/name&gt;<br>
-&lt;topic&gt; [K+] - Overview &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt;KPool.Change &lt;/name&gt;<br>
-&lt;topic&gt; Change - KP1Definition &lt;/topic&gt;<br>
-&lt;topic&gt; [K+] - Overview &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; KPool.Gain &lt;/name&gt;<br>
-&lt;topic&gt; Gain - KP2Definition &lt;/topic&gt;<br>
-&lt;topic&gt; [K+] - Overview &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; KPool.InitialMass &lt;/name&gt;<br>
-&lt;topic&gt; InitialMass - KP3Definition &lt;/topic&gt;<br>
-&lt;topic&gt; [K+] - Overview &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; KPool.Loss &lt;/name&gt;<br>
-&lt;topic&gt; Loss - KP4Definition&lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; KPool.Mass &lt;/name&gt;<br>
-&lt;topic&gt; Mass - KP5Definition &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; KPool.Target[K+] &lt;/name&gt;<br>
-&lt;topic&gt; Target[K+] - KP6Definition &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; [K+] - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Extracellular potassium concentration is closely regulated<br>
-and is a function of the balance between rates of intake and <br>
-excretion of potassium. Maintenance of normal potassium<br>
-balance requires the kidneys to adjust their excretion rapidly <br>
-and precisely to wide variations in intake.<br>
-<br>
-Control of potassium distribution between the extracellular <br>
-and intracellular compartments also plays an important role <br>
-in potassium homeostasis. Because over 98 percent of the <br>
-total body potassium is contained in the cells, they can serve <br>
-as an overflow site for excess extracellular fluid potassium <br>
-during hyperkalemia or as a source of potassium during <br>
-hypokalemia. <br>
-<br>
-<br>
-In HumMOd, potassium is divided into extracellular K (KPool)<br>
-and cellular K (KCell)   <br>
-<br>
-Young DB. Analysis of long term potassium regulation.<br>
-Endo Rev 6: 24 - 44, 1985<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; [K+] - Physical Units &lt;/name&gt;<br>
-&lt;label&gt;  Physical Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Plasma mEq/L<br>
-Mass mEq<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; [K+] - Concentration Units &lt;/name&gt;<br>
-&lt;label&gt; Concentration Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Normal values for plasma potassium is 4.4mEq/L <br>
-Potassium Mass 66mEq<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt; <br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Change - KP1Definition &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Changes in the potassium pool or mass are a function of gains <br>
-and losses in potassium over time. Gains can occur from potassium<br>
-in the diet via reabsorption from the GI lumen; movement of<br>
-potassium out of cells ;from intravenous administration or <br>
-from transfusion.<br>
- <br>
-Losses in potassium can occur in urine; potassium movement <br>
-into cells; from sweating; from hemorrhage and during <br>
-dialysis.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Gain - KP2Definition &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Gains in potassium occur from 4 possible sources:<br>
-<br>
-1. Potassium absorption from the GI tract.<br>
-2. Movement of potassium out of cells and into the ECF.<br>
-3. Potassium in an IV drip.<br>
-4. Potassium in a blood transfusion.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; InitialMass - KP3Definition &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-The initial mass is the starting amount of potassium. Since the <br>
-plasma concentration is 4.4mEq/L (the Target[K+]) and the<br>
-volume of distribution is the ECFV (15,000mL), then the <br>
-initial mass or circulating pool is 66.<br>
-<br>
-Initial Mass = Target[K+]*ECFV.Vol<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Loss - KP4Definition &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Losses in potassium may occur in 5 possible ways:<br>
-<br>
-1. Potassium loss in the collecting duct of the kidney.<br>
-2. Movement of potassium out of the ECF into cells.<br>
-3. Loss of potassium in sweat. <br>
-4. Loss of potassium in a hemorrhage<br>
-5. Loss of potassium during dialysis<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Mass - KP5Definition &lt;/name&gt;<br>
-&lt;label&gt; Defintion &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Mass is the calculated amount of potassium at any given time. <br>
-It is the change in potassium integrated over time.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Target[K+] - KP6Definition &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-The Target[K+] is the initial plasma concentration of potassium.<br>
-Target[K+] = Initial Mass/ECFV.Vol<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-   <br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

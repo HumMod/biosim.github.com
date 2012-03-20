@@ -1,474 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Docs_Creatinine.html'><img src='../../Back.PNG'></a>
-<p>
-QHP 2008 / Creatinine.DOCS<br>
-<br>
-Created : 27-Mar-09<br>
-Last Modified : 27-Mar-09<br>
-Author : Tom Coleman<br>
-Copyright : 2009<br>
-<br>
-&lt;structurename&gt; CreatininePool &lt;/structurename&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; CreatininePool.[Creatinine(mG/dL)]&lt;/name&gt;<br>
-&lt;topic&gt; [Creatinine] - DefinitionCP1 &lt;/topic&gt;<br>
-&lt;topic&gt; [Creatinine] - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; [Creatinine] - Concentration Units &lt;/topic&gt;<br>
-&lt;topic&gt; Creatinine - Overview &lt;/topic&gt;<br>
-&lt;seealso&gt; CreatineSkeletalMuscle.[Creatine] &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; CreatininePool.[Creatinine(uMol/L)] &lt;/name&gt;<br>
-&lt;topic&gt; [Creatinine] - DefinitionCP1 &lt;/topic&gt;<br>
-&lt;topic&gt; [Creatinine] - Physical Units  &lt;/topic&gt;<br>
-&lt;topic&gt; [Creatinine] - Concentration Units  &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; CreatininePool.[Creatinine] &lt;/name&gt;<br>
-&lt;topic&gt; [Creatinine] - DefinitionCP1  &lt;/topic&gt;<br>
-&lt;topic&gt; [Creatinine] - Physical Units  &lt;/topic&gt;<br>
-&lt;topic&gt; [Creatinine] - Concentration Units  &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; CreatininePool.Change &lt;/name&gt;<br>
-&lt;topic&gt; Change - DefinitionCP2 &lt;/topic&gt;<br>
-&lt;seealso&gt; CreatininePool.Gain &lt;/seealso&gt;<br>
-&lt;seealso&gt; CreatininePool.Loss &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; CreatininePool.ExtrarenalLoss &lt;/name&gt;<br>
-&lt;topic&gt; ExtrarenalLoss - DefinitionCP3 &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; CreatininePool.Gain &lt;/name&gt;<br>
-&lt;topic&gt; Gain - DefinitionCP4 &lt;/topic&gt;<br>
-&lt;seealso&gt; Creatinecells. CreatineToCreatinine &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; CreatininePool.InitialMass &lt;/name&gt;<br>
-&lt;topic&gt; InitialMass - DefinitionCP5 &lt;/topic&gt;<br>
-&lt;seealso&gt; CreatininePool.Target[Creatinine]  &lt;/seealso&gt;<br>
-&lt;seealso&gt; CreatininePool.InitialVolDist&lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; CreatininePool.InitialVolDist &lt;/name&gt;<br>
-&lt;topic&gt; InitialVolDist - DefinitionCP6 &lt;/topic&gt;<br>
-&lt;seealso&gt; CreatininePool.VolDistFract &lt;/seealso&gt;<br>
-&lt;seealso&gt; BodyH2O.InitialTotalVol &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; CreatininePool.Loss &lt;/name&gt;<br>
-&lt;topic&gt; Loss - DefinitionCP7 &lt;/topic&gt;<br>
- &lt;seealso&gt; CreatininePool.RenalLoss &lt;/seealso&gt;<br>
-&lt;seealso&gt; CreatininePool.ExtraRenalLoss  &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; CreatininePool.Mass &lt;/name&gt;<br>
-&lt;topic&gt; Mass - DefinitionCP8 &lt;/topic&gt;<br>
-&lt;seealso&gt; CreatininePool.Change  &lt;/seealso&gt;<br>
-&lt;seealso&gt; CreatininePool.InitialMass &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; CreatininePool.MG_TO_UMOL &lt;/name&gt;<br>
-&lt;topic&gt; MG_TO_UMOL - DefinitionCP9 &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; CreatininePool.PER_ML_TO_PER_DL &lt;/name&gt;<br>
-&lt;topic&gt; PER_ML_TO_PER_DL - DefinitionCP10 &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; CreatininePool.RenalLoss &lt;/name&gt;<br>
-&lt;topic&gt; RenalLoss - DefinitionCP11 &lt;/topic&gt;<br>
-&lt;seealso&gt; CD_Creatinine.Outflow &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; CreatininePool.Target[Creatinine] &lt;/name&gt;<br>
-&lt;topic&gt; Target[Creatinine] - DefinitionCP12 &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; CreatininePool.VolDist &lt;/name&gt;<br>
-&lt;topic&gt; VolDist - DefinitionCP13 &lt;/topic&gt;<br>
-&lt;seealso&gt; CreatininePool.VolDistFract &lt;/seealso&gt;<br>
-&lt;seealso&gt; BodyH2O.TotalVol &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; CreatininePool.VolDistFract&lt;/name&gt;<br>
-&lt;topic&gt; VolDistFract - DefinitionCP14 &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Creatinine - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Creatinine is formed by nonenzymatic dehydration of <br>
-creatine and creatine phosphate within striated, <br>
-smooth and cardiac muscle.<br>
-Creatine in the body arises from two sources:<br>
-endogenous synthesis from amino acids and creatine<br>
-in the diet, notably from the ingestion of meat. <br>
-Endogenous synthesis occurs primarliy in the kidney <br>
-but also occurs in the liver. Creatine is concentrated <br>
-and stored mainly in skeletal muscle. Approximately <br>
-90% of the body stores of creatine are contained in <br>
-skeletal muscle. Creatine leaks into the extracellular <br>
-fluid where it is converted to creatinine. <br>
-<br>
-Creatinine is excreted both renally and extrarenally. <br>
-Extrarenal degradation probably occurs in the intestine <br>
-by intestinal bacteria. Extrarenal excretion is about 1.5% <br>
-of total excretion and varies with plasma creatinine <br>
-concentration.<br>
-<br>
-Borsook H, Bubnoff JW. The hydrolysis of phosphocreatine<br>
-and the origin of urinary creatinine. <br>
-J. Biol. Chem. 168: 493 - 510, 1947.  <br>
-<br>
-Van Pilsum JF, Bovis M. Effect of various protein precipitants<br>
-on recoveries of creatinine added to plasma. <br>
-Clin Chem 3: 90 - 94, 1957.<br>
-<br>
-Conn RB, Jr. Fluorimetric determination of creatine.<br>
-Clin Chem 6: 537 - 548, 1960.<br>
-<br>
-Jones JD, Burnett PC. Creatinine metabolism in humans with <br>
-decreased renal function: creatinine deficit. <br>
-Clin Chem 20: 1204 - 1212, 1974.<br>
-<br>
-Mitch WE, Collier VU, Walser M. Creatinine metabolism in <br>
-chronic renal failure. Clin Sci (Lond) 58: 327 - 335, 1980.<br>
-  <br>
-Lew SW, Bosch JP. Effect of diet on creatinine clearance and <br>
-excretion in young and elderly healthy subjects and in patients <br>
-with renal disease. J Am Soc Nephrol 2:856 -865, 1991.<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; [Creatinine] - DefinitionCP1 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-[Creatinine] is the plasma concentration of creatinine.<br>
-It can be expressed as mG/dL or uMol/L <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; [Creatinine] - Physical Units &lt;/name&gt;<br>
-&lt;label&gt; Physical Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-[Plasma]  mG/dL or uMol/L<br>
-mG * 0.00884 = mMol<br>
-mMol * 113.1 = mG<br>
-Mass  mG<br>
-Clearance mG/min<br>
-<br>
-milli = 10^-3<br>
-micro = 10^-6<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; [Creatinine] - Concentration Units &lt;/name&gt;<br>
-&lt;label&gt; Concentration Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Creatinine (C4 H7 N3 O) has a molecular weight<br>
-of 113.12. <br>
-<br>
-Typical plasma concentration is 0.82 mG/dL or<br>
-72.5 uMol/L<br>
-<br>
-Creatinine excretion is 1.26dL/Min <br>
-<br>
-Rowe JW, Andres R, Tobin JD, Norris AH, Shock NW. The effect<br>
-of age on creatinine clearance in men: a cross-sectional and<br>
-longitudinal study. J. Gerontology 31: 155 - 163, 1976.<br>
-<br>
-Mitch We, Collier VU, Walser M. Creatinine metabolism in chronic<br>
-renal failure. Clin Sci (Lond) 58: 327 - 335, 1980.<br>
-<br>
-Jones JD, Burnett PC. Creatinine metabolism in humans with decreased<br>
-renal function: creatinine deficit. Clin Chem 20: 1204 - 1212, 1974.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Change - DefinitionCP2 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Changes in the creatinine pool or mass are a function of both<br>
-gains and losses in creatinine over time. Gains may occur from<br>
-increases in the conversion of creatine to creatinine. Loss <br>
-occurs from renal creatinine clearance and nonrenal creatinine <br>
-clearance.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; ExtrarenalLoss - DefinitionCP3 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Extrarenal clearance has been reported to be 0.038L/Day/kG. <br>
-For a 77KG subject with a plasma concentration of 0.82mG/dL, <br>
-this yields a rate constant of 0.02 dL/Min.<br>
-<br>
-ExtrarenalLoss is therefore calculated as<br>
-0.02 * [Creatinine(mG/dL)]<br>
-<br>
-Rowe JW, Andres R, Tobin JD, Norris AH, Shock NW. The effect<br>
-of age on creatinine clearance in men: a cross-sectional and<br>
-longitudinal study. J. Gerontology 31: 155 - 163, 1976.<br>
-<br>
-Jones JD, Burnett PC. Creatinine metabolism in humans with decreased<br>
-renal function: creatinine deficit. Clin Chem 20: 1204 - 1212, 1974.<br>
-<br>
-Mitch WE, Collier VU, Walser M. Creatinine metabolism in chronic<br>
-renal failure. Clin Sci (Lond) 58: 327 - 335, 1980.<br>
-<br>
-Lew SW, Bosch JP. Effect of diet on creatinine clearance and excretion<br>
-in young and elderly healthy subjects and in patients with renal disease.<br>
-J Am Soc Nephrol 2:856 -865, 1991.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Gain - DefinitionCP4 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Gain is defined as positive changes in mass of creatinine<br>
-and is a function of the rate of conversion of creatine to <br>
-creatinine.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; InitialMass - DefinitionCP5 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-During startup, the model user defines the particular <br>
-traits of the HumMod patient. These are gender, body size, <br>
-age, muscularity and adiposity. All of these traits <br>
-influence body volumes, most notably total body water, <br>
-the extracellular fluid volume (ECFV) and plasma volume. <br>
-The assumption is made that while volumes may change with <br>
-traits, concentrations do not. At startup,initial volumes,<br>
-especially total body water, ECFV and plasma volume are <br>
-calculated. A target concentration is specified - in this <br>
-case Target[Creatinine]. <br>
-<br>
-The initial mass or circulating pool is the <br>
-Target[Creatinine] multiplied by the initial <br>
-volume of distribution.<br>
- <br>
-Initial Mass = Target[Creatinine]*InitialVolDist<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; InitialVolDist - DefinitionCP6 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-InitialVolDist is initial volume in which creatinine is <br>
-distributed. It is a fraction of total body water and is <br>
-defined by the parameter VoldDistFract. <br>
-<br>
-InitialVolDist = VoldDistFract * BodyH20.InitialTotalVolume<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Loss - DefinitionCP7 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Loss is defined as negative changes in mass of <br>
-creatinine and is a function of creatinine clearance.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Mass - DefinitionCP8 &lt;/name&gt;<br>
-&lt;label&gt;  Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-The creatinine pool or mass is the calculated amount of <br>
-creatinine in the body at any given time.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; MG_TO_UMOL - DefinitionCP9 &lt;/name&gt;<br>
-&lt;label&gt;  Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-MG_TO_UMOL is a constant used to convert mG to uMol.<br>
-It has  a value of 8840.0.<br>
-<br>
-The Merck Index 12th Edition Page 435.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; PER_ML_TO_PER_DL - DefinitionCP10 &lt;/name&gt;<br>
-&lt;label&gt;  Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-PER_ML_TO_PER_DL is a constant with a value of 100 and<br>
-is used to convert from mL to dL.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; RenalLoss - DefinitionCP11 &lt;/name&gt;<br>
-&lt;label&gt;  Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-RenalLoss is the urinary excretion rate of creatinine.<br>
-Under normal physiological conditions, reanl loss is <br>
-2.7L/Day/KG body weight.<br>
-<br>
-Rowe JW, Andres R, Tobin JD, Norris AH, Shock NW. The effect<br>
-of age on creatinine clearance in men: a cross-sectional and<br>
-longitudinal study. J. Gerontology 31: 155 - 163, 1976.<br>
-<br>
-Jones JD, Burnett PC. Creatinine metabolism in humans with decreased<br>
-renal function: creatinine deficit. Clin Chem 20: 1204 - 1212, 1974.<br>
-<br>
-Mitch WE, Collier VU, Walser M. Creatinine metabolism in chronic<br>
-renal failure. Clin Sci (Lond) 58: 327 - 335, 1980.<br>
-<br>
-Lew SW, Bosch JP. Effect of diet on creatinine clearance and excretion<br>
-in young and elderly healthy subjects and in patients with renal disease.<br>
-J Am Soc Nephrol 2:856 -865, 1991.<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Target[Creatinine] - DefinitionCP12 &lt;/name&gt;<br>
-&lt;label&gt;  Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Target[Creatinine] is the plasma concentration of creatinine<br>
-at startup. It has a value of 0.0082G/L<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; VolDist - DefinitionCP13 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-The volume of distribution of creatinine is 49% of body weight. <br>
-With a body weight of 77KG and a total body water of 43.2L, the <br>
-volume of distribution is 33.7L or 0.87 times total body water.<br>
-<br>
-VolDist is the calculated volume of distribution. <br>
-<br>
-VolDist = VolDistFract * BodyH20.TotalVol<br>
-<br>
-Rowe JW, Andres R, Tobin JD, Norris AH, Shock NW. The effect<br>
-of age on creatinine clearance in men: a cross-sectional and<br>
-longitudinal study. J. Gerontology 31: 155 - 163, 1976.<br>
-<br>
-Mitch We, Collier VU, Walser M. Creatinine metabolism in chronic<br>
-renal failure. Clin Sci (Lond) 58: 327 - 335, 1980.<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; VolDistFract - DefinitionCP14  &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-VolDistFract is a parameter used to calculate the volume of <br>
-distribution for creatinine.  The volume of distribution of <br>
-creatinine is 49% of body weight. With a body weight of 77KG <br>
-and a total body water of 43.2L, the volume of distribution <br>
-is 33.7L or 0.87 times total body water. VolDistFract <br>
-therefore has a value of 0.87.<br>
-<br>
-Jones JD, Burnett PC. Creatinine metabolism in humans with decreased<br>
-renal function: creatinine deficit. Clin Chem 20: 1204 - 1212, 1974.<br>
-<br>
-Rowe JW, Andres R, Tobin JD, Norris AH, Shock NW. The effect<br>
-of age on creatinine clearance in men: a cross-sectional and<br>
-longitudinal study. J. Gerontology 31: 155 - 163, 1976.<br>
-<br>
-Mitch We, Collier VU, Walser M. Creatinine metabolism in chronic<br>
-renal failure. Clin Sci (Lond) 58: 327 - 335, 1980.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-  <br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

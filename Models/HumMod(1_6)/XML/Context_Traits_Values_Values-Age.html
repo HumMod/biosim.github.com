@@ -1,94 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Context_Traits_Values_Values.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / Values-Age<br>
-<br>
-Created : 22-Nov-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Values-Age &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; YOUNG &lt;/name&gt;&lt;val&gt; 19.0 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; YOUNGISH &lt;/name&gt;&lt;val&gt; 28.0 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; MIDDLEAGED &lt;/name&gt;&lt;val&gt; 37.0 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; OLD &lt;/name&gt;&lt;val&gt; 65.0 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; VERYOLD &lt;/name&gt;&lt;val&gt; 89.0 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Age(Years) &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;testcase&gt;<br>
-<br>
-&lt;case&gt;<br>
-  &lt;test&gt; Descriptors-Age.IsYoung &lt;/test&gt;<br>
-  &lt;def&gt;&lt;name&gt; Age(Years) &lt;/name&gt;&lt;val&gt; YOUNG &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-  &lt;test&gt; Descriptors-Age.IsYoungish &lt;/test&gt;<br>
-  &lt;def&gt;&lt;name&gt; Age(Years) &lt;/name&gt;&lt;val&gt; YOUNGISH &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-  &lt;test&gt; Descriptors-Age.IsMiddleaged &lt;/test&gt;<br>
-  &lt;def&gt;&lt;name&gt; Age(Years) &lt;/name&gt;&lt;val&gt; MIDDLEAGED &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-  &lt;test&gt; Descriptors-Age.IsOld &lt;/test&gt;<br>
-  &lt;def&gt;&lt;name&gt; Age(Years) &lt;/name&gt;&lt;val&gt; OLD &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-  &lt;test&gt; Descriptors-Age.IsVeryOld &lt;/test&gt;<br>
-  &lt;def&gt;&lt;name&gt; Age(Years) &lt;/name&gt;&lt;val&gt; VERYOLD &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-  &lt;test&gt; TRUE &lt;/test&gt;<br>
-  &lt;message&gt; The age trait is not valid. &lt;/message&gt;<br>
-  &lt;stop/&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;/testcase&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

@@ -1,68 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_GILumen_GILumen.html'><img src='../../Back.PNG'></a>
-<p><a href='Structure_GILumen_GILumenElectrolytes_GILumenCalcium.html'>Structure_GILumen_GILumenElectrolytes_GILumenCalcium</a>
-<br><a href='Structure_GILumen_GILumenElectrolytes_GILumenChloride.html'>Structure_GILumen_GILumenElectrolytes_GILumenChloride</a>
-<br><a href='Structure_GILumen_GILumenElectrolytes_GILumenPotassium.html'>Structure_GILumen_GILumenElectrolytes_GILumenPotassium</a>
-<br><a href='Structure_GILumen_GILumenElectrolytes_GILumenSodium.html'>Structure_GILumen_GILumenElectrolytes_GILumenSodium</a>
-<p>
-HumMod / GILumenElectrolytes<br>
-<br>
-Created : 13-Mar-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;?path Structure\GILumen\GILumenElectrolytes\ ?&gt;<br>
-<br>
-&lt;?include GILumenCalcium.DES ?&gt;<br>
-&lt;?include GILumenChloride.DES ?&gt;<br>
-&lt;?include GILumenPotassium.DES ?&gt;<br>
-&lt;?include GILumenSodium.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; GILumenElectrolytes &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Conc &lt;/name&gt;<br>
-  &lt;call&gt; GILumenCalcium.Conc &lt;/call&gt;<br>
-  &lt;call&gt; GILumenChloride.Conc &lt;/call&gt;<br>
-  &lt;call&gt; GILumenPotassium.Conc &lt;/call&gt;<br>
-  &lt;call&gt; GILumenSodium.Conc &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-  &lt;call&gt; GILumenCalcium.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; GILumenChloride.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; GILumenPotassium.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; GILumenSodium.Dervs &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

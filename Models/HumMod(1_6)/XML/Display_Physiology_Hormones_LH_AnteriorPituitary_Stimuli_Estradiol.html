@@ -1,106 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_Physiology_Hormones_LH_AnteriorPituitary_Stimuli_Stimuli.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / Estradiol<br>
-<br>
-Created : 03-Oct-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;groupbox&gt;<br>
-   &lt;row&gt; 13.4 &lt;/row&gt;<br>
-   &lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;high&gt; 13.8 &lt;/high&gt;<br>
-   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
-   &lt;title&gt; Estradiol &lt;/title&gt;<br>
-<br>
-&lt;structurename&gt; LH-AnteriorPituitary &lt;/structurename&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; EstradiolEffectDelayed &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Effect Delayed &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;repeatlist&gt;<br>
-  &lt;name&gt; Delay(Hrs) &lt;/name&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 100 &lt;/reps&gt;&lt;stepsize&gt;  1.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-&lt;/repeatlist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 2.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Delay(Hrs)  &lt;/name&gt;<br>
-  &lt;listname&gt; Delay(Hrs)  &lt;/listname&gt;<br>
-  &lt;label&gt; Delay (Hrs)  &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 4.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; EstradiolEffect &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 2 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; Estradiol Effect &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showcurve&gt;<br>
-  &lt;row&gt; 5.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;&lt;high&gt; 7 &lt;/high&gt;&lt;wide&gt; 28 &lt;/wide&gt;<br>
-  &lt;leftmargin&gt; 5 &lt;/leftmargin&gt;<br>
-<br>
-  &lt;xaxis&gt;<br>
-    &lt;name&gt; Estradiol.[Conc(nMol/L)] &lt;/name&gt;<br>
-    &lt;label&gt; [Estradiol (nMol/L)] &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 2 &lt;/max&gt;&lt;inc&gt; 1 &lt;/inc&gt;&lt;/scale&gt;<br>
-  &lt;/xaxis&gt;<br>
-<br>
-  &lt;yaxis&gt;<br>
-    &lt;label&gt; Effect &lt;/label&gt;<br>
-    &lt;scale&gt;&lt;min&gt; 0 &lt;/min&gt;&lt;max&gt; 20 &lt;/max&gt;&lt;/scale&gt;<br>
-  &lt;/yaxis&gt;<br>
-<br>
-  &lt;curvename&gt; EstradiolEffect &lt;/curvename&gt;<br>
-&lt;/showcurve&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 12.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; Estradiol.[Conc(nMol/L)] &lt;/name&gt;<br>
-   &lt;format&gt;&lt;decimal&gt; 1 &lt;/decimal&gt;&lt;/format&gt;<br>
-   &lt;label&gt; [Estradiol (nMol/L)] &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 1.2 &lt;/row&gt;<br>
-  &lt;col&gt; 26.0 &lt;/col&gt;<br>
-<br>
-  &lt;line&gt;  &lt;/line&gt;<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;/groupbox&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

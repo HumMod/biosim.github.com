@@ -1,177 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Nephrons_Glomerulus_Glomerulus.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / GlomerulusFiltrate<br>
-<br>
-Created : 09-Apr-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; GlomerulusFiltrate &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; GFRxNormal &lt;/name&gt;&lt;/var&gt;<br>
-&lt;constant&gt;&lt;name&gt; GFRNORMAL &lt;/name&gt;&lt;val&gt; 125.0 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;var&gt;&lt;name&gt; AnionAdjustment &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; CationAdjustment &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; KAdjustment &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Pressure &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; FiltrationFraction &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; EffCOP &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; [EffProtein] &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; PressureGradient &lt;/name&gt;&lt;/var&gt;<br>
-&lt;parm&gt;&lt;name&gt; Perm &lt;/name&gt;&lt;val&gt; 20.0 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;var&gt;&lt;name&gt; Kf &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; PT_Pressure &lt;/name&gt;&lt;/var&gt;<br>
-&lt;parm&gt;&lt;name&gt; PT_Conductance &lt;/name&gt;&lt;val&gt; 7.0 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;parm&gt;&lt;name&gt; PelvisPressure &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;impliciteq&gt;<br>
-  &lt;name&gt; GFR &lt;/name&gt;<br>
-  &lt;startname&gt; GFR &lt;/startname&gt;<br>
-  &lt;initialval&gt; 125.0 &lt;/initialval&gt;<br>
-  &lt;endname&gt; EndGFR &lt;/endname&gt;<br>
-  &lt;errorlim&gt; 1.25 &lt;/errorlim&gt;<br>
-  &lt;searchmin&gt; 0.0 &lt;/searchmin&gt;<br>
-  &lt;searchmaxname&gt; SearchMax &lt;/searchmaxname&gt;<br>
-&lt;/impliciteq&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; AdjustIons &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; KAdjustment &lt;/name&gt;<br>
-  &lt;val&gt; ( BloodIons.Cations - BloodIons.AnionsLessProtein )  / ( BloodIons.Cations + BloodIons.AnionsLessProtein ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; AnionAdjustment &lt;/name&gt;&lt;val&gt; 1.0 + KAdjustment &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; CationAdjustment &lt;/name&gt;&lt;val&gt; 1.0 - KAdjustment &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;if&gt;<br>
-  &lt;test&gt; Kidney-Flow.BloodFlow LE 0.0 &lt;/test&gt;<br>
-  &lt;true&gt;<br>
-    &lt;def&gt;&lt;name&gt; Pressure &lt;/name&gt;&lt;val&gt; ( Kidney-Pressure.ArtyPressure + Kidney-Pressure.VeinPressure ) / 2.0 &lt;/val&gt;&lt;/def&gt;<br>
-    &lt;call&gt; Failed &lt;/call&gt;<br>
-    &lt;exitblock/&gt;<br>
-  &lt;/true&gt;<br>
-&lt;/if&gt;<br>
-<br>
-&lt;call&gt; AdjustIons &lt;/call&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Pressure &lt;/name&gt;&lt;val&gt; Kidney-Pressure.VeinPressure + ( Kidney-Flow.BloodFlow  / Kidney-EfferentArtery.Conductance ) &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Kf &lt;/name&gt;&lt;val&gt; Kidney-NephronCount.Filtering(xNormal) * Perm &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; SearchMax &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-    ( Kf * ( Pressure - PlasmaProtein.COP - PelvisPressure ) )<br>
-    MIN<br>
-    ( 0.8 * Kidney-Flow.PlasmaFlow )<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;if&gt;<br>
-  &lt;test&gt; SearchMax LE 0.0 &lt;/test&gt;<br>
-  &lt;true&gt;&lt;call&gt; Failed &lt;/call&gt;&lt;exitblock/&gt;&lt;/true&gt;<br>
-&lt;/if&gt;<br>
-<br>
-&lt;implicitmath&gt;&lt;name&gt; GFR &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; FiltrationFraction &lt;/name&gt;&lt;val&gt; GFR / Kidney-Flow.PlasmaFlow &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; [EffProtein] &lt;/name&gt;&lt;val&gt; PlasmaProtein.[Protein] / ( 1.0 - FiltrationFraction ) &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;copy&gt;&lt;from&gt; [EffProtein] &lt;/from&gt;&lt;to&gt; Colloids.[Prot] &lt;/to&gt;&lt;/copy&gt;<br>
-  &lt;call&gt; Colloids.GetPres &lt;/call&gt;<br>
-&lt;copy&gt;&lt;from&gt; Colloids.Pres &lt;/from&gt;&lt;to&gt; EffCOP &lt;/to&gt;&lt;/copy&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; PT_Pressure &lt;/name&gt;&lt;val&gt; PelvisPressure + ( GFR / PT_Conductance ) &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; PressureGradient &lt;/name&gt;&lt;val&gt; Pressure - EffCOP - PT_Pressure &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; EndGFR &lt;/name&gt;&lt;val&gt; Kf * PressureGradient &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/implicitmath&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; GFRxNormal &lt;/name&gt;&lt;val&gt; GFR / GFRNORMAL &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;call&gt; GlomerulusBicarbonate.Calc &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusCalcium.Calc &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusChloride.Calc &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusCreatinine.Calc &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusGlucose.Calc &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusKetoacid.Calc &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusPhosphate.Calc &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusProtein.Calc &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusSodium.Calc &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusSulphate.Calc &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusUrea.Calc &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Failed &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; GFR &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; EndGFR &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; GFRxNormal &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; FiltrationFraction &lt;/name&gt;&lt;val&gt; UNDEFINED &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; EffCOP &lt;/name&gt;&lt;val&gt; Pressure &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;copy&gt;&lt;from&gt; EffCOP &lt;/from&gt;&lt;to&gt; Colloids.Pres &lt;/to&gt;&lt;/copy&gt;<br>
-  &lt;call&gt; Colloids.Get[Prot] &lt;/call&gt;<br>
-&lt;copy&gt;&lt;from&gt; Colloids.[Prot] &lt;/from&gt;&lt;to&gt; [EffProtein] &lt;/to&gt;&lt;/copy&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; PT_Pressure &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; PressureGradient &lt;/name&gt;&lt;val&gt; 0.0 &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;call&gt; GlomerulusBicarbonate.Failed &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusCalcium.Failed &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusChloride.Failed &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusCreatinine.Failed &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusGlucose.Failed &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusKetoacid.Failed &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusPhosphate.Failed &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusProtein.Failed &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusSodium.Failed &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusSulphate.Failed &lt;/call&gt;<br>
-&lt;call&gt; GlomerulusUrea.Failed &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

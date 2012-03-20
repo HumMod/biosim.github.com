@@ -1,355 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Docs_AcidBase.html'><img src='../../Back.PNG'></a>
-<p>
-QHP 2008 / ACIDBASE.DOCS<br>
-<br>
-Created : 27-Mar-09<br>
-Last Modified : 27-Mar-09<br>
-Author : Tom Coleman<br>
-Copyright : 2009<br>
-<br>
-&lt;structurename&gt; PhCells &lt;/structurename&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; PhCells.H+ &lt;/name&gt;<br>
-&lt;topic&gt; H+ - DefinitionPHC1 &lt;/topic&gt;<br>
-&lt;topic&gt; H+ - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; H+ - Concentration Units &lt;/topic&gt;<br>
-&lt;seealso&gt; PhGeneral.H+ &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; PhCells.pCO2 &lt;/name&gt;<br>
-&lt;topic&gt; pCO2 - DefinitionPHC2 &lt;/topic&gt;<br>
-&lt;topic&gt; pCO2 - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; pCO2 - Concentration Units &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; PhCells.pH &lt;/name&gt;<br>
-&lt;topic&gt; pH - DefinitionPHC3 &lt;/topic&gt;<br>
-&lt;topic&gt; pH - Concentration Units &lt;/topic&gt;<br>
-&lt;topic&gt; pH - Overview &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; PhCells.pK &lt;/name&gt;<br>
-&lt;topic&gt; pK - DefinitionPHC4  &lt;/topic&gt;<br>
-&lt;topic&gt; pK - Concentration Units  &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; PhCells.SID &lt;/name&gt;<br>
-&lt;topic&gt; SID - DefinitionPHC5  &lt;/topic&gt;<br>
-&lt;topic&gt; SID - Physical Units  &lt;/topic&gt;<br>
-&lt;topic&gt; SID - Concentration Units  &lt;/topic&gt;<br>
-&lt;seealso&gt; BloodIons.[SID] &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; H+ - DefinitionPHC1 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-H+ is the hydrogen ion concentration in Eq/L<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; H+ - Physical Units &lt;/name&gt;<br>
-&lt;label&gt; Physical Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Units for H+ are Eq/L<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; H+ - Concentration Units &lt;/name&gt;<br>
-&lt;label&gt; Concentration Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Normal values for H+ are as follows:<br>
-Arterial Blood: 40nEq/L <br>
-Venous Blood: 42nEq/L<br>
-Cell: 100nEq/L<br>
-<br>
-Brown EB Jr., Goott B. Intracellular hydrogen ion changes<br>
-and potassium movements. Am J Physiol 204: 765 - 770, 1963. <br>
-<br>
-Adler S, Roy A, Relman AS. Intracellular acid-base regulation. <br>
-I. The response of muscle cells to changes in CO2 tension or<br>
-extracellular bicarbonate concentration. <br>
-J Clin Invest. 44: 8 - 20, 1965.<br>
-<br>
-Adler S, Roy A, Relman AS. Intracellular acid-base regulation.<br>
-II. The interaction between CO2 tension and extracellular <br>
-bicar in the determination of muscle cell pH.<br>
-J. Clin Invest. 44:21 - 30, 1965. <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; pH - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Intracellular pH regulates many cellular processes, <br>
-including cell metabolism, calcium homeostasis, gene<br>
-expression, cell motility and contractility  as well<br>
-enzyme activity. A close regulation of intracellular <br>
-pH is therefore necessary to maintain normal cellular <br>
-activity. <br>
-<br>
-Madshus IH. Regulation of intracellular pH in eukaryotic <br>
-cells. Biochem J 250: 1 - 8, 1988.<br>
-<br>
-Frelin C, Vigne P, Lanoux A, Lazdunski M. The regulation<br>
-of the intracellular pH in cells from vertebrates. <br>
-Eur J Biochem 174: 3 - 14, 1988.<br>
-<br>
-Puceat M. pHi regulatory ion transporters: an update on structure,<br>
-regulation and cell function. <br>
-Cell. Mol. Life Sci. 55: 1216 - 1229, 1999.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; pCO2 - DefinitionPHC2 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-pCO2 is the partial pressure of carbon dioxide<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; pCO2 - Physical Units &lt;/name&gt;<br>
-&lt;label&gt; Physical Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Units for pCO2 are mmHg<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; pCO2 - Concentration Units &lt;/name&gt;<br>
-&lt;label&gt; Concentration Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Normal values for pCO2 are as follows;<br>
-<br>
-Arterial pCO2 40mmHg<br>
-Venous pCO2 45mmHg<br>
-Cell pCO2 43mmHg<br>
-<br>
-Brown EB Jr., Goott B. Intracellular hydrogen ion changes<br>
-and potassium movement. Am J Physiol 204: 765 - 770, 1963. <br>
-<br>
-Adler S, Roy A, Relman AS. Intracellular acid-base regulation. <br>
-I. The response of muscle cells to changes in CO2 tension or<br>
-extracellular bicarbonate concentration. <br>
-J Clin Invest. 44: 8 - 20, 1965.<br>
-<br>
-Adler S, Roy A, Relman AS. Intracellular acid-base regulation.<br>
-II. The interaction between CO2 tension and extracellular <br>
-bicarbonate in the determination of muscle cell pH.<br>
-J. Clin Invest. 44:21 - 30, 1965. <br>
-<br>
-Cavaliere F, Antonelli M, Arcangeli A, Conti G, Pennisi MA, <br>
-Proietti R. Effects of acid-base abnormalities on blood<br>
-capacity of transporting CO2: adverse effect of metabolic<br>
-acidosis. Intensive Care Med 28: 609 - 615, 2002.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; pH - DefinitionPHC3 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-It is customary to express hydrogen ion concentration on a <br>
-logarithm scale using pH units.<br>
-<br>
-pH = log (1/[H+]) = -log[H+] where [H+] is the hydrogen<br>
-ion concentration in Eq/L<br>
-<br>
-[H+] is calculated using pK, SID and pCO2<br>
-<br>
-[H+] = K * (pCO2/SID) or<br>
-pH = pK + log10 (SID/pCO2)<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; pH - Concentration Units &lt;/name&gt;<br>
-&lt;label&gt; Concentration Units  &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Normal values for pH are as follows:<br>
-pH arterial blood 7.42<br>
-pH venous blood 7.35<br>
-pH cell 7.07<br>
-<br>
-Brown EB Jr., Goott B. Intracellular hydrogen ion changes<br>
-and potassium movements. Am J Physiol 204: 765 - 770, 1963. <br>
-<br>
-Adler S, Roy A, Relman AS. Intracellular acid-base regulation. <br>
-I. The response of muscle cells to changes in CO2 tension or<br>
-extracellular bicarbonate concentration. <br>
-J Clin Invest. 44: 8 - 20, 1965.<br>
-<br>
-Adler S, Roy A, Relman AS. Intracellular acid-base regulation.<br>
-II. The interaction between CO2 tension and extracellular <br>
-bicar in the determination of muscle cell pH.<br>
-J. Clin Invest. 44:21 - 30, 1965. <br>
-<br>
-Thomas RC. Intracellular pH of snail neurones measured with<br>
-a new pH-sensitive glass microelectrode. <br>
-J Physiol 238: 159 - 180, 1974.<br>
-<br>
-Thomas RC. The effect of carbon dioxide on the intracellular<br>
-pH and buffering power of snail neurones.<br>
-J Physiol 255: 715 - 735, 1976.<br>
-<br>
-Thomas RC. The role of bicarbonate, chloride and sodium ions<br>
-in the regulation of intracellular pH in snail neurones.<br>
-J Physiol 273: 317 - 338, 1977.<br>
-<br>
-Roos A, Boron WF. Intracellular pH. <br>
-Physiol Rev 61: 296 - 434, 1981.<br>
-<br>
-Frelin C, Vigne P, Ladoux A, Lazdunski M. The regulation of<br>
-the intracellular pH in cells from vertebrates. <br>
-Eur J Biochem 174: 3 - 14, 1988. <br>
-<br>
-Cavaliere F, Antonelli M, Arcangeli A, Conti G, Pennisi MA, <br>
-Proietti R. Effects of acid-base abnormalities on blood<br>
-capacity of transporting CO2: adverse effect of metabolic<br>
-acidosis. Intensive Care Med 28: 609 - 615, 2002.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; pK - DefinitionPHC4 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-For any acid, the concentration of the acid relative to its <br>
-dissociated ions is defined by the dissociation constant K.<br>
-<br>
-pK = -log K<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; pK - Concentration Units &lt;/name&gt;<br>
-&lt;label&gt; Concentration Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-pK is a constant with value of 7.15<br>
-pK is calculated from the following equation:<br>
-<br>
-pH = pK + log10 (SID/pCO2) and using the following data:<br>
-pH = 7.07<br>
-SID = 36mEq/L<br>
-pCO2 = 43 mmHg<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; SID - DefinitionPHC5 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Peter Stewart was a Canadian physiologist who introduced <br>
-the term "strong ion difference" or [SID]. SID in any solution<br>
-is defined as the concentration of strongly dissociating <br>
-cations minus the concentration of strongly dissociating anions.<br>
-<br>
-In HumMod, SID is used to calculate bicarbonate concentration.<br>
- <br>
-Stewart PA. Independent and dependent variables of acid-base <br>
-control. Respir Physiol 33: 9�26, 1978.<br>
-<br>
-Stewart PA. How to Understand Acid-Based: A Quantitative <br>
-Acid-Base Primer for Biology and Medicine. New York: Elsevier, 1981.<br>
-<br>
-Stewart PA. Modern quantitative acid-base chemistry. <br>
-Can J Physiol Pharmacol 61: 1444�1461, 1983.<br>
-  <br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; SID - Physical Units &lt;/name&gt;<br>
-&lt;label&gt; Physical Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Units for SID are mEq/L<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-      <br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; SID - Concentration Units &lt;/name&gt;<br>
-&lt;label&gt; Concentration Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Cell SID is estimated to be 36mEq/L<br>
-<br>
-Thomas RC. Intracellular pH of snail neurones measured with<br>
-a new pH-sensitive glass microelectrode. <br>
-J Physiol 238: 159 - 180, 1974.<br>
-<br>
-Thomas RC. The effect of carbon dioxide on the intracellular<br>
-pH and buffering power of snail neurones.<br>
-J Physiol 255: 715 - 735, 1976.<br>
-<br>
-Thomas RC. The role of bicarbonate, chloride and sodium ions<br>
-in tehr egulation of intracellular pH in snail neurones.<br>
-J Physiol 273: 317 - 338, 1977.<br>
-<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-End<br>
-  <br>
-  <br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

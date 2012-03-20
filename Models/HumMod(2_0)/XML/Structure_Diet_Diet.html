@@ -1,85 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Structure.html'><img src='../../Back.PNG'></a>
-<p><a href='Structure_Diet_DietGoalNutrition.html'>Structure_Diet_DietGoalNutrition</a>
-<br><a href='Structure_Diet_DietGoalElectrolytes.html'>Structure_Diet_DietGoalElectrolytes</a>
-<br><a href='Structure_Diet_DietGoalH2O.html'>Structure_Diet_DietGoalH2O</a>
-<br><a href='Structure_Diet_DietIntakeNutrition.html'>Structure_Diet_DietIntakeNutrition</a>
-<br><a href='Structure_Diet_DietIntakeElectrolytes.html'>Structure_Diet_DietIntakeElectrolytes</a>
-<br><a href='Structure_Diet_DietIntakeH2O.html'>Structure_Diet_DietIntakeH2O</a>
-<br><a href='Structure_Diet_DietThirst.html'>Structure_Diet_DietThirst</a>
-<br><a href='Structure_Diet_DietFeeding.html'>Structure_Diet_DietFeeding</a>
-<br><a href='Structure_Diet_DietAppetite.html'>Structure_Diet_DietAppetite</a>
-<p>
-HumMod / Diet<br>
-<br>
-Created : 24-Jun-06<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;?path Structure\Diet\ ?&gt;<br>
-<br>
-&lt;?include DietGoalNutrition.DES ?&gt;<br>
-&lt;?include DietGoalElectrolytes.DES ?&gt;<br>
-&lt;?include DietGoalH2O.DES ?&gt;<br>
-<br>
-&lt;?include DietIntakeNutrition.DES ?&gt;<br>
-&lt;?include DietIntakeElectrolytes.DES ?&gt;<br>
-&lt;?include DietIntakeH2O.DES ?&gt;<br>
-<br>
-&lt;?include DietThirst.DES ?&gt;<br>
-&lt;?include DietFeeding.DES ?&gt;<br>
-&lt;?include DietAppetite.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Diet &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-<br>
-  &lt;call&gt; DietGoalNutrition.Parms &lt;/call&gt;<br>
-  &lt;call&gt; DietGoalH2O.Parms &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-  &lt;call&gt; DietThirst.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; DietFeeding.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; DietAppetite.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; DietIntakeNutrition.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; DietIntakeElectrolytes.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; DietIntakeH2O.Dervs &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

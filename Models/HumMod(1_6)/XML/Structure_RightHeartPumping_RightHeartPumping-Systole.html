@@ -1,84 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_RightHeartPumping_RightHeartPumping.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / RightHeartPumping-Systole<br>
-<br>
-Created : 2010-05-25<br>
-Last Modified : 2010-05-25<br>
-Author : Tom Coleman<br>
-Copyright : 2010-2010<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;structure&gt;&lt;name&gt; RightHeartPumping-Systole &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; ESV &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; ESP &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; TMP &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; A-Basic &lt;/name&gt;&lt;val&gt; 3.53 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;var&gt;&lt;name&gt; A &lt;/name&gt;&lt;/var&gt;<br>
-&lt;parm&gt;&lt;name&gt; n &lt;/name&gt;&lt;val&gt; 0.5 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; Contractility-Basic &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;var&gt;&lt;name&gt; Contractility &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; ESP &lt;/name&gt;&lt;val&gt; PulmArty.Pressure + 9.0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; TMP &lt;/name&gt;&lt;val&gt; ESP - Pericardium-Cavity.Pressure &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Contractility &lt;/name&gt;<br>
- &lt;val&gt;<br>
-     Contractility-Basic<br>
-   * RightHeart-BetaReceptors.Activity<br>
-<br>
- &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; A &lt;/name&gt;&lt;val&gt; Contractility * A-Basic &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;call&gt; V=f(P) &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; P=f(V) &lt;/name&gt;<br>
-  &lt;def&gt;&lt;name&gt; TMP &lt;/name&gt;&lt;val&gt; A * ( ESV ^ n ) &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; V=f(P) &lt;/name&gt;<br>
-  &lt;def&gt;&lt;name&gt; ESV &lt;/name&gt;&lt;val&gt; ( TMP / A ) ^ ( 1.0 / n ) &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

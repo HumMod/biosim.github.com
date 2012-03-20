@@ -1,105 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Context_Start_Start.html'><img src='../../Back.PNG'></a>
-<p><a href='Context_Start_Start-Hormones_Start-Epinephrine.html'>Context_Start_Start-Hormones_Start-Epinephrine</a>
-<br><a href='Context_Start_Start-Hormones_Start-Norepinephrine.html'>Context_Start_Start-Hormones_Start-Norepinephrine</a>
-<br><a href='Context_Start_Start-Hormones_Start-ADH.html'>Context_Start_Start-Hormones_Start-ADH</a>
-<br><a href='Context_Start_Start-Hormones_Start-Aldosterone.html'>Context_Start_Start-Hormones_Start-Aldosterone</a>
-<br><a href='Context_Start_Start-Hormones_Start-ANP.html'>Context_Start_Start-Hormones_Start-ANP</a>
-<br><a href='Context_Start_Start-Hormones_Start-EPO.html'>Context_Start_Start-Hormones_Start-EPO</a>
-<br><a href='Context_Start_Start-Hormones_Start-Estradiol.html'>Context_Start_Start-Hormones_Start-Estradiol</a>
-<br><a href='Context_Start_Start-Hormones_Start-FSH.html'>Context_Start_Start-Hormones_Start-FSH</a>
-<br><a href='Context_Start_Start-Hormones_Start-Glucagon.html'>Context_Start_Start-Hormones_Start-Glucagon</a>
-<br><a href='Context_Start_Start-Hormones_Start-hCG.html'>Context_Start_Start-Hormones_Start-hCG</a>
-<br><a href='Context_Start_Start-Hormones_Start-Inhibin.html'>Context_Start_Start-Hormones_Start-Inhibin</a>
-<br><a href='Context_Start_Start-Hormones_Start-Insulin.html'>Context_Start_Start-Hormones_Start-Insulin</a>
-<br><a href='Context_Start_Start-Hormones_Start-Leptin.html'>Context_Start_Start-Hormones_Start-Leptin</a>
-<br><a href='Context_Start_Start-Hormones_Start-LH.html'>Context_Start_Start-Hormones_Start-LH</a>
-<br><a href='Context_Start_Start-Hormones_Start-Progesterone.html'>Context_Start_Start-Hormones_Start-Progesterone</a>
-<br><a href='Context_Start_Start-Hormones_Start-Renin.html'>Context_Start_Start-Hormones_Start-Renin</a>
-<br><a href='Context_Start_Start-Hormones_Start-Testosterone.html'>Context_Start_Start-Hormones_Start-Testosterone</a>
-<br><a href='Context_Start_Start-Hormones_Start-ThyroidHormone.html'>Context_Start_Start-Hormones_Start-ThyroidHormone</a>
-<p>
-HumMod / Start-Hormones DES<br>
-<br>
-Created : 03-Feb-10<br>
-Last Modified : 03-Feb-10<br>
-Author : Tom Coleman<br>
-Copyright : 2010-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;?path Context\Start\Start-Hormones\ ?&gt;<br>
-<br>
-&lt;?include Start-Epinephrine.DES ?&gt;<br>
-&lt;?include Start-Norepinephrine.DES ?&gt;<br>
-<br>
-&lt;?include Start-ADH.DES ?&gt;<br>
-&lt;?include Start-Aldosterone.DES ?&gt;<br>
-&lt;?include Start-ANP.DES ?&gt;<br>
-&lt;?include Start-EPO.DES ?&gt;<br>
-&lt;?include Start-Estradiol.DES ?&gt;<br>
-&lt;?include Start-FSH.DES ?&gt;<br>
-&lt;?include Start-Glucagon.DES ?&gt;<br>
-&lt;?include Start-hCG.DES ?&gt;<br>
-&lt;?include Start-Inhibin.DES ?&gt;<br>
-&lt;?include Start-Insulin.DES ?&gt;<br>
-&lt;?include Start-Leptin.DES ?&gt;<br>
-&lt;?include Start-LH.DES ?&gt;<br>
-&lt;?include Start-Progesterone.DES ?&gt;<br>
-&lt;?include Start-Renin.DES ?&gt;<br>
-&lt;?include Start-Testosterone.DES ?&gt;<br>
-&lt;?include Start-ThyroidHormone.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Start-Hormones &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-  &lt;call&gt; Start-Epinephrine.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Start-Norepinephrine.Calc &lt;/call&gt;<br>
-  <br>
-  &lt;call&gt; Start-ADH.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Start-Aldosterone.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Start-ANP.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Start-EPO.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Start-Estradiol.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Start-FSH.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Start-Glucagon.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Start-hCG.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Start-Inhibin.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Start-Insulin.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Start-Leptin.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Start-LH.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Start-Progesterone.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Start-Renin.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Start-Testosterone.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Start-ThyroidHormone.Calc &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

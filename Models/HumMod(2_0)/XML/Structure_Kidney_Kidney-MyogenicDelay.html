@@ -1,68 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Kidney_Kidney-Myogenic.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / Kidney-MyogenicDelay DES<br>
-<br>
-Created : 13-Apr-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Kidney-MyogenicDelay &lt;/name&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;stabledelay&gt;<br>
-  &lt;name&gt; PressureChange &lt;/name&gt;<br>
-  &lt;outputname&gt; PressureChange &lt;/outputname&gt;<br>
-  &lt;initialval&gt; 0.0 &lt;/initialval&gt;<br>
-  &lt;inputname&gt; PressureChange(Steady-State) &lt;/inputname&gt;<br>
-  &lt;rateconstname&gt; K &lt;/rateconstname&gt;<br>
-  &lt;dervname&gt; Derv &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 0.1 &lt;/errorlim&gt;<br>
-  &lt;dxmaxname&gt; DxMax &lt;/dxmaxname&gt;<br>
-&lt;/stabledelay&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; K &lt;/name&gt;&lt;val&gt; 2.0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; DxMax &lt;/name&gt;&lt;val&gt; 0.2 &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; PressureChange(Steady-State) &lt;/name&gt;&lt;val&gt; Kidney-Myogenic.PressureChange(Steady-State) &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

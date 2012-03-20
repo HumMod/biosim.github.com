@@ -1,116 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_Clinic_Drugs_Furosemide_Furosemide.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / Injection<br>
-<br>
-Created : 04-Jun-06<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;groupbox&gt;<br>
-   &lt;row&gt; 2.0 &lt;/row&gt;<br>
-   &lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;high&gt; 11.8 &lt;/high&gt;<br>
-   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
-   &lt;title&gt; Injection &lt;/title&gt;<br>
-<br>
-&lt;structurename&gt; FurosemideSingleDose &lt;/structurename&gt;<br>
-<br>
-&lt;actionbutton&gt;<br>
-  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;blockname&gt; InjectNow &lt;/blockname&gt;<br>
-  &lt;label&gt; Inject Now &lt;/label&gt;<br>
-&lt;/actionbutton&gt;<br>
-<br>
-&lt;repeatlist&gt;<br>
-  &lt;name&gt; FurosemideSingleDose.Dose &lt;/name&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 8 &lt;/reps&gt;&lt;stepsize&gt; 10 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-&lt;/repeatlist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 3.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Dose &lt;/name&gt;<br>
-  &lt;listname&gt; FurosemideSingleDose.Dose &lt;/listname&gt;<br>
-  &lt;label&gt; Dose &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;repeatlist&gt;<br>
-  &lt;name&gt; FurosemideSingleDose.Timespan &lt;/name&gt;<br>
-  &lt;firstval&gt; 5.0 &lt;/firstval&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 11 &lt;/reps&gt;&lt;stepsize&gt; 5.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-&lt;/repeatlist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 4.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Timespan &lt;/name&gt;<br>
-  &lt;listname&gt; FurosemideSingleDose.Timespan &lt;/listname&gt;<br>
-  &lt;label&gt; Timespan (Sec) &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 6.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; TimeLastDose &lt;/name&gt;<br>
-   &lt;format&gt;<br>
-      &lt;timestamp/&gt;<br>
-      &lt;fieldwidth&gt; 14 &lt;/fieldwidth&gt;<br>
-   &lt;/format&gt;<br>
-   &lt;label&gt; Last Dose &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 7.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; TotalDoses &lt;/name&gt;<br>
-   &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-   &lt;label&gt; Total Doses &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 8.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;name&gt; CumulativeDose &lt;/name&gt;<br>
-   &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-   &lt;label&gt; Cumulative Dose &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;actionbutton&gt;<br>
-  &lt;row&gt; 9.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;blockname&gt; FurosemideSingleDose.Reset &lt;/blockname&gt;<br>
-  &lt;label&gt; Reset &lt;/label&gt;<br>
-&lt;/actionbutton&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 1.2 &lt;/row&gt;<br>
-  &lt;col&gt; 26.0 &lt;/col&gt;<br>
-  &lt;line&gt; Typical dose is 20 - 40 mG. &lt;/line&gt;<br>
-  &lt;line&gt; Repeat after 2 hours if necessary. &lt;/line&gt;<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;/groupbox&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

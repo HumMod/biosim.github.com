@@ -1,83 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Structure.html'><img src='../../Back.PNG'></a>
-<p><a href='Structure_RightHeartPumping_RightHeartPumping-Pumping.html'>Structure_RightHeartPumping_RightHeartPumping-Pumping</a>
-<br><a href='Structure_RightHeartPumping_RightHeartPumping-Diastole.html'>Structure_RightHeartPumping_RightHeartPumping-Diastole</a>
-<br><a href='Structure_RightHeartPumping_RightHeartPumping-Systole.html'>Structure_RightHeartPumping_RightHeartPumping-Systole</a>
-<br><a href='Structure_RightHeartPumping_RightHeartPumping-Valves.html'>Structure_RightHeartPumping_RightHeartPumping-Valves</a>
-<br><a href='Structure_RightHeartPumping_RightHeartPumping-Work.html'>Structure_RightHeartPumping_RightHeartPumping-Work</a>
-<br><a href='Structure_RightHeartPumping_RightHeartPumping-ContractileProtein.html'>Structure_RightHeartPumping_RightHeartPumping-ContractileProtein</a>
-<br><a href='Structure_RightHeartPumping_RightHeartPumping-Contractility.html'>Structure_RightHeartPumping_RightHeartPumping-Contractility</a>
-<p>
-HumMod / RightHeartPumping<br>
-<br>
-Created : 2010-05-25<br>
-Last Modified : 2011-08-11<br>
-Author : Tom Coleman<br>
-Copyright : 2010-2011<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;?path Structure\RightHeartPumping\ ?&gt;<br>
-<br>
-&lt;?include RightHeartPumping-Pumping.DES ?&gt;<br>
-&lt;?include RightHeartPumping-Diastole.DES ?&gt;<br>
-&lt;?include RightHeartPumping-Systole.DES ?&gt;<br>
-&lt;?include RightHeartPumping-Valves.DES ?&gt;<br>
-&lt;?include RightHeartPumping-Work.DES ?&gt;<br>
-&lt;?include RightHeartPumping-ContractileProtein.DES ?&gt;<br>
-&lt;?include RightHeartPumping-Contractility.DES ?&gt;<br>
-<br>
-<br>
-&lt;structure&gt;&lt;name&gt; RightHeartPumping &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Init &lt;/name&gt;<br>
- &lt;call&gt; RightHeartPumping-ContractileProtein.Init &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
- &lt;call&gt; RightHeartPumping-ContractileProtein.Parms &lt;/call&gt;<br>
- &lt;call&gt; RightHeartPumping-Contractility.Parms &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-  &lt;call&gt; RightHeartPumping-ContractileProtein.Calc &lt;/call&gt;<br>
-  &lt;call&gt; RightHeartPumping-Contractility.Calc &lt;/call&gt;<br>
-  &lt;call&gt; RightHeartPumping-Diastole.Calc &lt;/call&gt;<br>
-  &lt;call&gt; RightHeartPumping-Systole.Calc &lt;/call&gt;<br>
-  &lt;call&gt; RightHeartPumping-Pumping.Calc &lt;/call&gt;<br>
-  &lt;call&gt; RightHeartPumping-Work.Calc &lt;/call&gt;<br>
-  &lt;call&gt; RightHeartPumping-ContractileProtein.Calc &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-  &lt;call&gt; RightHeartPumping-ContractileProtein.Dervs &lt;/call&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

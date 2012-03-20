@@ -1,184 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Docs_Catechols.html'><img src='../../Back.PNG'></a>
-<p>
-QHP 2008 / Catechols.DOCS<br>
-<br>
-Created : 27-Mar-09<br>
-Last Modified : 27-Mar-09<br>
-Author : Tom Coleman<br>
-Copyright : 2009<br>
-<br>
-&lt;structurename&gt; NEPump &lt;/structurename&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; NEPump.Rate &lt;/name&gt;<br>
-&lt;topic&gt; NEPump - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; NE - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; NE - Concentration Units &lt;/topic&gt;<br>
-&lt;seealso&gt; NEPool.[NE] &lt;/seealso&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; NEPump.Setting &lt;/name&gt;<br>
-&lt;topic&gt; Setting - DefinitionNEP1 &lt;/topic&gt;<br>
-&lt;topic&gt; NEPump - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; NE - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; NE - Concentration Units &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; NEPump.Switch &lt;/name&gt;<br>
-&lt;topic&gt; Switch - DefinitionNEP2 &lt;/topic&gt;<br>
-&lt;topic&gt; NEPump - Overview  &lt;/topic&gt;<br>
-&lt;topic&gt; NE - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; NE - Concentration Units &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; NEPump - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-The NE Pump enables the model user to change <br>
-[NE] levels by infusing norepinephrine at different <br>
-rates. Data is taken from a variety of human studies <br>
-relating infusion rates to plasma concentrations <br>
-of norepinephrine.<br>
-<br>
-When the switch is turned on, the model user sets the <br>
-rate by changing the setting using the slide bar. <br>
-rates can be increased in 100 unit increments.<br>
-<br>
-Human Data<br>
-Cohen G, Holland B, Sha J and Goldenberg M<br>
-Plasma concentrations of epinephrine and norepinephrine<br>
-during intravenous infusions in man.<br>
-J Clin Invest 38:1935-1941, 1959.<br>
-<br>
-Manger WM, Frohlich ED, Gifford RW, Dustan HP. <br>
-Norepinephrine infusion in normal subjects and<br>
-patients with essential or renal hypertension;<br>
-Effect on blood pressure, heart rate, and plasma<br>
-concentration. J Clin Pharm 16: 129 - 141, 1976.<br>
-<br>
-London GM, Safar ME, Weiss YA, Simon A, Lehner JP,<br>
-Milliez PL. The spectrum of pressor-response to<br>
-norepinephrine in normotensive and hypertensive<br>
-patients. Biomedicine 24: 178 - 182, 1976.<br>
-<br>
-Silverberg AB, Shah SD, Haymond MW and Cryer PE. <br>
-Norepinephrine: hormone and neurotransmitter in man.<br>
-Am J Physiol 234(3): E252-E256, 1978.<br>
-<br>
-Vlachakis ND. Blood pressure response to norepinephrine<br>
-infusion in relationship to plasma renin activity in man.<br>
-J Clin Pharm 19: 654 - 661, 1979.<br>
-<br>
-Cryer PE. Physiology and pathophysiology of the human<br>
-sympathoadrenal neuroendocrine system.<br>
-New England J Med 303: 436-444, 1984.<br>
-<br>
-Dog Data<br>
-Casals-Stenzel J, Tree M, Brown JJ, Fraser R, Lever AF,<br>
-Millar JA, Morton JJ, Robertson JIS, Reid JL, Hamilton C.<br>
-Prolonged infusion of norepinephrine in the conscious<br>
-dog: Effects on blood pressure, heart rate, renin,<br>
-angiotensin II, and aldosterone.<br>
-J of Cardiovascular Pharmacology 4: S114 - S121, 1982.<br>
-<br>
-Katholi RE, Carey RM, Ayers CR, Vaughan ED Jr.,<br>
-Yancey MR, Morton CL. production of sustained hypertension<br>
-by chronic intrarenal norepinephrine infusion in conscious<br>
-dogs. Circ Res 40, Suppl 1, I-118 - I-126, 1977. <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; NE - Physical Units &lt;/name&gt;<br>
-&lt;label&gt; Physical Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-[Plasma]  pG/mL or nMol/L<br>
-Plasma Mass  nG or pG<br>
-Pump units are nG/Min<br>
-<br>
-milli = 10^-3<br>
-micro = 10^-6<br>
-nano  = 10^-9<br>
-pico  = 10^-12<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; NE - Concentration Units &lt;/name&gt;<br>
-&lt;label&gt; Concentration Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Norepinephrine (C8 H11 N O3) has a molecular<br>
-weight of 169. Typical plasma concentration of <br>
-NE is 240pG/mL or 1.42nMol/L (Multiply by 0.00592<br>
-to convert pG/mL to nMol/L <br>
-<br>
-Jones DH, Carlene A, Hamilton A, Reid JL. Choice of<br>
-control groups in the appraisal of sympathetic nervous <br>
-activity in essential hypertension.<br>
-Clinical Science 57: 339 - 344, 1979<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Switch - DefinitionNEP2 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-When the NEPump switch is turned on, the model <br>
-user can set infusion rates using the sliding bar <br>
-feature in the NEPump display box. <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Setting - DefinitionNEP1 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-When the NEPump switch is turned on, the model <br>
-user can set infusion rates using the sliding bar <br>
-feature in the NEPump display box. Rates of infusion<br>
-may be increased from 0, in increments of 100, up to <br>
-1000nG/Min; from 1000, in increments of 1,000, up to <br>
-10,000nG/Min and from 10,000, in increments of 10,000,<br>
-up to 100,000nG/Min. <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-  <br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

@@ -1,323 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_Startup_BodySize_BodySize.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / Weight<br>
-<br>
-Created : 14-Dec-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;groupbox&gt;<br>
-   &lt;row&gt; 2.0 &lt;/row&gt;<br>
-   &lt;col&gt; 1.0 &lt;/col&gt;<br>
-   &lt;high&gt; 21.8 &lt;/high&gt;<br>
-   &lt;wide&gt; 61.0 &lt;/wide&gt;<br>
-   &lt;title&gt; Weight &lt;/title&gt;<br>
-<br>
-&lt;structurename&gt; Weight &lt;/structurename&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; InitialWeight &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Initial Weight &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 2.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; InitialOrganMass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Organs &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 3.8 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-  &lt;name&gt; Fat-Size.InitialMass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Adipose Tissue &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 4.8 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-  &lt;name&gt; Bone-Size.InitialMass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Bone &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 5.8 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-  &lt;name&gt; Brain-Size.InitialMass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Brain &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 6.8 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-  &lt;name&gt; GITract-Size.InitialMass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; GI Tract &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 7.8 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-  &lt;name&gt; Kidney-Size.InitialMass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Kidney &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 8.8 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-  &lt;name&gt; LeftHeart-Size.InitialMass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Left Heart &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 9.8 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-  &lt;name&gt; Liver-Size.InitialMass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Liver &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 10.8 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-  &lt;name&gt; OtherTissue-Size.InitialMass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Other Tissue &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 11.8 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-  &lt;name&gt; RespiratoryMuscle-Size.InitialMass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Respiratory Muscle &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 12.8 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-  &lt;name&gt; RightHeart-Size.InitialMass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Right Heart &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 13.8 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-  &lt;name&gt; SkeletalMuscle-Size.InitialMass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; SkeletalMuscle &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 14.8 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-  &lt;name&gt; Skin-Size.InitialMass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Skin &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 16.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Weight-Fluids.InitialTotal &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Fluids &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 17.2 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; Weight-Fluids.InitialBlood &lt;/name&gt;<br>
-   &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-   &lt;label&gt; Blood &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 18.2 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; ExcessLungWater.InitialVolume &lt;/name&gt;<br>
-   &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-   &lt;label&gt; Excess Lung H2O &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 19.2 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; PeritoneumSpace.InitialVolume &lt;/name&gt;<br>
-   &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-   &lt;label&gt; Peritoneum &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 20.2 &lt;/row&gt;&lt;col&gt; 3.0 &lt;/col&gt;<br>
-   &lt;name&gt; GILumenVolume.InitialMass &lt;/name&gt;<br>
-   &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-   &lt;label&gt; GI Lumen &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; Weight &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Current Weight &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 2.8 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; OrganMass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Organs &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 3.8 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-  &lt;name&gt; Fat-Size.Mass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Adipose Tissue &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 4.8 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-  &lt;name&gt; Bone-Size.Mass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Bone &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 5.8 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-  &lt;name&gt; Brain-Size.Mass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Brain &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 6.8 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-  &lt;name&gt; GITract-Size.Mass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; GI Tract &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 7.8 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-  &lt;name&gt; Kidney-Size.Mass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Kidney &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 8.8 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-  &lt;name&gt; LeftHeart-Size.Mass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Left Heart &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 9.8 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-  &lt;name&gt; Liver-Size.Mass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Liver &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 10.8 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-  &lt;name&gt; OtherTissue-Size.Mass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Other Tissue &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 11.8 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-  &lt;name&gt; RespiratoryMuscle-Size.Mass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Respiratory Muscle &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 12.8 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-  &lt;name&gt; RightHeart-Size.Mass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Right Heart &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 13.8 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-  &lt;name&gt; SkeletalMuscle-Size.Mass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; SkeletalMuscle &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 14.8 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-  &lt;name&gt; Skin-Size.Mass &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Skin &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 16.2 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; Weight-Fluids.Total &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Fluids &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 17.2 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-  &lt;name&gt; Weight-Fluids.Blood &lt;/name&gt;<br>
-  &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-  &lt;label&gt; Blood &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 18.2 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-   &lt;name&gt; ExcessLungWater.Volume &lt;/name&gt;<br>
-   &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-   &lt;label&gt; Excess Lung H2O &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 19.2 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-   &lt;name&gt; PeritoneumSpace.Volume &lt;/name&gt;<br>
-   &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-   &lt;label&gt; Peritoneum &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-   &lt;row&gt; 20.2 &lt;/row&gt;&lt;col&gt; 34.0 &lt;/col&gt;<br>
-   &lt;name&gt; GILumenVolume.Mass &lt;/name&gt;<br>
-   &lt;format&gt; &lt;integer/&gt; &lt;/format&gt;<br>
-   &lt;label&gt; GI Lumen &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;infobutton&gt;<br>
-  &lt;row&gt; 1.2 &lt;/row&gt;<br>
-  &lt;col&gt; 57.0 &lt;/col&gt;<br>
-<br>
-  &lt;line&gt; Weight is actually mass and the &lt;/line&gt;<br>
-  &lt;line&gt; units are G. &lt;/line&gt;<br>
-&lt;/infobutton&gt;<br>
-<br>
-&lt;/groupbox&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

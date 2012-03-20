@@ -1,163 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Osmoles_Osmoles.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / OsmBody<br>
-<br>
-Created : 31-May-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2005-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; OsmBody &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Total &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Electrolytes &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Non-Electrolytes &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; [Osm]-CellWall &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; [Osm(mOsm/L)]-CellWall &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; [Osm]-Osmoreceptors &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; [Osm(mOsm/L)]-Osmoreceptors &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; Dissociation &lt;/name&gt;&lt;val&gt; 0.890 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; ECFVActiveElectrolytes &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; ICFVActiveElectrolytes &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; ActiveElectrolytes &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; ECFVActiveOsmoles &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; ICFVActiveOsmoles &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; ActiveOsmoles &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; ECFV &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; ECFV(L) &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; ICFV &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; ICFV(L) &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Electrolytes &lt;/name&gt;<br>
-  &lt;val&gt; OsmECFV.Electrolytes + OsmCell.Electrolytes &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Non-Electrolytes &lt;/name&gt;<br>
-  &lt;val&gt; OsmECFV.Non-Electrolytes + OsmCell.Non-Electrolytes &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Total &lt;/name&gt;<br>
-  &lt;val&gt; Electrolytes + Non-Electrolytes &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; ECFVActiveElectrolytes &lt;/name&gt;<br>
-  &lt;val&gt; Dissociation * OsmECFV.Electrolytes &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; ICFVActiveElectrolytes &lt;/name&gt;<br>
-  &lt;val&gt; Dissociation * OsmCell.Electrolytes &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; ActiveElectrolytes &lt;/name&gt;<br>
-  &lt;val&gt; ECFVActiveElectrolytes + ICFVActiveElectrolytes &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; ECFVActiveOsmoles &lt;/name&gt;<br>
-  &lt;val&gt; ECFVActiveElectrolytes + OsmECFV.Non-Electrolytes &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; ICFVActiveOsmoles &lt;/name&gt;<br>
-  &lt;val&gt; ICFVActiveElectrolytes + OsmCell.Non-Electrolytes &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; ActiveOsmoles &lt;/name&gt;<br>
-  &lt;val&gt; ECFVActiveOsmoles + ICFVActiveOsmoles &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; [Osm]-CellWall &lt;/name&gt;<br>
-  &lt;val&gt; ActiveOsmoles / BodyH2O.Vol &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; [Osm(mOsm/L)]-CellWall &lt;/name&gt;<br>
-  &lt;val&gt; 1000.0 * [Osm]-CellWall &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; [Osm]-Osmoreceptors &lt;/name&gt;<br>
-  &lt;val&gt; ActiveElectrolytes / BodyH2O.Vol &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; [Osm(mOsm/L)]-Osmoreceptors &lt;/name&gt;<br>
-  &lt;val&gt; 1000.0 * [Osm]-Osmoreceptors &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; ICFV &lt;/name&gt;<br>
-  &lt;val&gt; ( ICFVActiveOsmoles / ActiveOsmoles ) * BodyH2O.Vol &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; ICFV(L) &lt;/name&gt;<br>
-  &lt;val&gt; ICFV / 1000.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; ECFV &lt;/name&gt;<br>
-  &lt;val&gt; BodyH2O.Vol - ICFV &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; ECFV(L) &lt;/name&gt;<br>
-  &lt;val&gt; ECFV / 1000.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

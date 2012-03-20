@@ -1,69 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Context_Traits_Traits.html'><img src='../../Back.PNG'></a>
-<p><a href='Context_Traits_Values_Values-Gender.html'>Context_Traits_Values_Values-Gender</a>
-<br><a href='Context_Traits_Values_Values-Age.html'>Context_Traits_Values_Values-Age</a>
-<br><a href='Context_Traits_Values_Values-Height.html'>Context_Traits_Values_Values-Height</a>
-<br><a href='Context_Traits_Values_Values-Adiposity.html'>Context_Traits_Values_Values-Adiposity</a>
-<br><a href='Context_Traits_Values_Values-OtherMass.html'>Context_Traits_Values_Values-OtherMass</a>
-<br><a href='Context_Traits_Values_Values-Muscularity.html'>Context_Traits_Values_Values-Muscularity</a>
-<p>
-HumMod / Values DES<br>
-<br>
-Created : 03-Apr-05<br>
-Last Modified : 01-Feb-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;?path Context\Traits\Values\ ?&gt;<br>
-<br>
-&lt;?include Values-Gender.DES ?&gt;<br>
-&lt;?include Values-Age.DES ?&gt;<br>
-&lt;?include Values-Height.DES ?&gt;<br>
-&lt;?include Values-Adiposity.DES ?&gt;<br>
-&lt;?include Values-OtherMass.DES ?&gt;<br>
-&lt;?include Values-Muscularity.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Values &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-  &lt;call&gt; Values-Gender.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Values-Age.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Values-Height.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Values-Adiposity.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Values-OtherMass.Calc &lt;/call&gt;<br>
-  &lt;call&gt; Values-Muscularity.Calc &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

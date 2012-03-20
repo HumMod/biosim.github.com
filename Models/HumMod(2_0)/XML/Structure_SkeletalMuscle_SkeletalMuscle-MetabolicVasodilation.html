@@ -1,112 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_SkeletalMuscle_SkeletalMuscle.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / SkeletalMuscle-MetabolicVasodilation<br>
-<br>
-Created : 03-Aug-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; SkeletalMuscle-MetabolicVasodilation &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; OnTau &lt;/name&gt;&lt;val&gt; 0.2 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;var&gt;&lt;name&gt; OnK &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; OffTau &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;var&gt;&lt;name&gt; OffK &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;delay&gt;<br>
-  &lt;name&gt; Effect &lt;/name&gt;<br>
-  &lt;outputname&gt; Effect &lt;/outputname&gt;<br>
-  &lt;initialval&gt; 1.0 &lt;/initialval&gt;<br>
-  &lt;inputname&gt; SteadyState &lt;/inputname&gt;<br>
-  &lt;rateconstname&gt; K &lt;/rateconstname&gt;<br>
-  &lt;dervname&gt; Derv &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 0.01 &lt;/errorlim&gt;<br>
-&lt;/delay&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;functions&gt;<br>
-<br>
-&lt;curve&gt;<br>
-  &lt;name&gt; SteadyState &lt;/name&gt;<br>
-  &lt;point&gt;&lt;x&gt;   50 &lt;/x&gt;&lt;y&gt; 1.0 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
-  &lt;point&gt;&lt;x&gt; 1000 &lt;/x&gt;&lt;y&gt; 3.5 &lt;/y&gt;&lt;slope&gt; 0.003 &lt;/slope&gt;&lt;/point&gt;<br>
-  &lt;point&gt;&lt;x&gt; 3000 &lt;/x&gt;&lt;y&gt; 5.5 &lt;/y&gt;&lt;slope&gt; 0 &lt;/slope&gt;&lt;/point&gt;<br>
-&lt;/curve&gt;<br>
-<br>
-&lt;/functions&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-<br>
-&lt;conditional&gt;&lt;name&gt; OnK &lt;/name&gt;<br>
-&lt;test&gt; OnTau GT 0.0 &lt;/test&gt;<br>
-&lt;true&gt; INVERT OnTau &lt;/true&gt;<br>
-&lt;false&gt; INFINITE &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;conditional&gt;&lt;name&gt; OffK &lt;/name&gt;<br>
-&lt;test&gt; OffTau GT 0.0 &lt;/test&gt;<br>
-&lt;true&gt; INVERT OffTau &lt;/true&gt;<br>
-&lt;false&gt; INFINITE &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Calc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; SteadyState &lt;/name&gt;<br>
-  &lt;val&gt; SteadyState [ SkeletalMuscle-Metabolism.O2Need ] &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;conditional&gt;&lt;name&gt; K &lt;/name&gt;<br>
-&lt;test&gt; Effect LE SteadyState &lt;/test&gt;<br>
-&lt;true&gt; OnK &lt;/true&gt;<br>
-&lt;false&gt; OffK &lt;/false&gt;<br>
-&lt;/conditional&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

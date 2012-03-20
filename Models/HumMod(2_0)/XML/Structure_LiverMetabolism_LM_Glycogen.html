@@ -1,82 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_LiverMetabolism_LiverMetabolism.html'><img src='../../Back.PNG'></a>
-<p><a href='Structure_LiverMetabolism_LM_Glycogenesis.html'>Structure_LiverMetabolism_LM_Glycogenesis</a>
-<br><a href='Structure_LiverMetabolism_LM_Glycogenolysis.html'>Structure_LiverMetabolism_LM_Glycogenolysis</a>
-<p>
-HumMod / LM_Glycogen<br>
-<br>
-Created : 29-Mar-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-&lt;?path Structure\LiverMetabolism\ ?&gt;<br>
-<br>
-&lt;?include LM_Glycogenesis.DES ?&gt;<br>
-&lt;?include LM_Glycogenolysis.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; LM_Glycogen &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;diffeq&gt;<br>
-  &lt;name&gt; Mass &lt;/name&gt;<br>
-  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
-  &lt;initialval&gt; 100.0 &lt;/initialval&gt;<br>
-  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 1.0 &lt;/errorlim&gt;<br>
-&lt;/diffeq&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-&lt;call&gt; LM_Glycogenesis.Dervs &lt;/call&gt;<br>
-&lt;call&gt; LM_Glycogenolysis.Dervs &lt;/call&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Gain &lt;/name&gt;&lt;val&gt; LM_Glycogenesis.Rate &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Loss &lt;/name&gt;&lt;val&gt; LM_Glycogenolysis.Rate &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Change &lt;/name&gt;&lt;val&gt; 0.001 * ( Gain - Loss ) &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

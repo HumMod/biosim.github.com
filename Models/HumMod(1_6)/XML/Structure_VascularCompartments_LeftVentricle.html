@@ -1,84 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_VascularCompartments_VascularCompartments.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / LeftVentricle-Compartment<br>
-<br>
-Created : 16-May-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-<br>
-&lt;structure&gt;&lt;name&gt; LeftVentricle &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Inflow &lt;/name&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Outflow &lt;/name&gt;&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;stabledelay&gt;<br>
-  &lt;name&gt; Vol &lt;/name&gt;<br>
-  &lt;outputname&gt; Vol &lt;/outputname&gt;<br>
-  &lt;initialval&gt; 87.5 &lt;/initialval&gt;<br>
-  &lt;inputname&gt; Vol-SteadyState &lt;/inputname&gt;<br>
-  &lt;rateconstname&gt; K &lt;/rateconstname&gt;<br>
-  &lt;dervname&gt; Derv &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 0.9 &lt;/errorlim&gt;<br>
-  &lt;dxmaxname&gt; DxMax &lt;/dxmaxname&gt;<br>
-&lt;/stabledelay&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-  &lt;def&gt;<br>
-    &lt;name&gt; Inflow &lt;/name&gt;<br>
-    &lt;val&gt; LeftHeartPumping-Pumping.BloodFlow &lt;/val&gt;<br>
-  &lt;/def&gt;<br>
-<br>
-  &lt;def&gt;<br>
-    &lt;name&gt; Outflow &lt;/name&gt;<br>
-    &lt;val&gt; LeftHeartPumping-Pumping.BloodFlow &lt;/val&gt;<br>
-  &lt;/def&gt;<br>
-<br>
-  &lt;def&gt;<br>
-    &lt;name&gt; Vol-SteadyState &lt;/name&gt;<br>
-    &lt;val&gt; ( LeftHeartPumping-Diastole.EDV + LeftHeartPumping-Systole.ESV ) / 2.0 &lt;/val&gt;<br>
-  &lt;/def&gt;<br>
-<br>
-  &lt;def&gt;&lt;name&gt; K &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;def&gt;&lt;name&gt; DxMax &lt;/name&gt;&lt;val&gt; 1.0 &lt;/val&gt;&lt;/def&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

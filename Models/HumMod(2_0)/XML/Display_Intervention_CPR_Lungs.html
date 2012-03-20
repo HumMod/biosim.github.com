@@ -1,105 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_Intervention_CPR_CPR.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / Lungs<br>
-<br>
-Created : 29-Feb-08<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Solver : DES 2005<br>
-Schema : 2005.0<br>
-<br>
-&lt;groupbox&gt;<br>
-   &lt;row&gt; 2.0 &lt;/row&gt;<br>
-   &lt;col&gt; 32.0 &lt;/col&gt;<br>
-   &lt;high&gt; 11.4 &lt;/high&gt;<br>
-   &lt;wide&gt; 30.0 &lt;/wide&gt;<br>
-   &lt;title&gt; Lungs &lt;/title&gt;<br>
-<br>
-&lt;structurename&gt; CPR-Lungs &lt;/structurename&gt;<br>
-<br>
-&lt;radiobuttons&gt;<br>
-  &lt;row&gt; 1.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Switch &lt;/name&gt;<br>
-  &lt;listname&gt; Common.Switch &lt;/listname&gt;<br>
-  &lt;nolabel/&gt;<br>
-&lt;/radiobuttons&gt;<br>
-<br>
-&lt;maplist&gt;<br>
-  &lt;name&gt; CPR-Lungs.Status &lt;/name&gt;<br>
-  &lt;map&gt;&lt;val&gt; 0  &lt;/val&gt;&lt;img&gt; Inactive &lt;/img&gt;&lt;/map&gt;<br>
-  &lt;map&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;img&gt; Ready &lt;/img&gt;&lt;/map&gt;<br>
-  &lt;map&gt;&lt;val&gt; 2  &lt;/val&gt;&lt;img&gt; Active &lt;/img&gt;&lt;/map&gt;<br>
-&lt;/maplist&gt;<br>
-<br>
-&lt;showvalue&gt;<br>
-  &lt;row&gt; 2.8 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Status &lt;/name&gt;<br>
-  &lt;format&gt;&lt;list&gt; CPR-Lungs.Status &lt;/list&gt;&lt;/format&gt;<br>
-  &lt;label&gt; Status &lt;/label&gt;<br>
-&lt;/showvalue&gt;<br>
-<br>
-&lt;label&gt;<br>
-  &lt;row&gt; 4.4 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;text&gt; Activate On &lt;/text&gt;<br>
-&lt;/label&gt;<br>
-<br>
-&lt;checkbox&gt;<br>
-  &lt;row&gt; 5.4 &lt;/row&gt;&lt;col&gt; 2.0 &lt;/col&gt;<br>
-  &lt;name&gt; ActivateOnRespiratoryArrest &lt;/name&gt;<br>
-  &lt;label&gt; Respiratory Arrest &lt;/label&gt;<br>
-&lt;/checkbox&gt;<br>
-<br>
-&lt;repeatlist&gt;<br>
-  &lt;name&gt; CPR-Lungs.Rate &lt;/name&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 20 &lt;/reps&gt;&lt;stepsize&gt;  1.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-&lt;/repeatlist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 8.2 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Rate &lt;/name&gt;<br>
-  &lt;listname&gt; CPR-Lungs.Rate &lt;/listname&gt;<br>
-  &lt;label&gt; Rate &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;repeatlist&gt;<br>
-  &lt;name&gt; CPR-Lungs.Volume &lt;/name&gt;<br>
-  &lt;repeat&gt;&lt;reps&gt; 100 &lt;/reps&gt;&lt;stepsize&gt;  10.0 &lt;/stepsize&gt;&lt;/repeat&gt;<br>
-&lt;/repeatlist&gt;<br>
-<br>
-&lt;slidebar&gt;<br>
-  &lt;row&gt; 9.6 &lt;/row&gt;&lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Volume &lt;/name&gt;<br>
-  &lt;listname&gt; CPR-Lungs.Volume &lt;/listname&gt;<br>
-  &lt;label&gt; Volume &lt;/label&gt;<br>
-&lt;/slidebar&gt;<br>
-<br>
-&lt;/groupbox&gt;<br>
-<br>
-End<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

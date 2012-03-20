@@ -1,78 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Display_Display.html'><img src='../../Back.PNG'></a>
-<p><a href='Display_Clinic_Chart_ThumbNail.html'>Display_Clinic_Chart_ThumbNail</a>
-<br><a href='Display_Clinic_Chart_BloodPressure.html'>Display_Clinic_Chart_BloodPressure</a>
-<br><a href='Display_Clinic_Chart_RespiratoryRate.html'>Display_Clinic_Chart_RespiratoryRate</a>
-<br><a href='Display_Clinic_Chart_Morphology.html'>Display_Clinic_Chart_Morphology</a>
-<br><a href='Display_Clinic_Chart_Symptoms.html'>Display_Clinic_Chart_Symptoms</a>
-<br><a href='Display_Clinic_Chart_Temperature.html'>Display_Clinic_Chart_Temperature</a>
-<br><a href='Display_Clinic_Chart_HeartRate.html'>Display_Clinic_Chart_HeartRate</a>
-<p>
-HumMod / Chart<br>
-<br>
-Created : 02-Apr-09<br>
-Last Modified : 2011-03-30<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2011<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;panel&gt;&lt;name&gt; Chart &lt;/name&gt;<br>
-<br>
-&lt;showbitmap&gt;<br>
-  &lt;row&gt; 0.3 &lt;/row&gt;<br>
-  &lt;col&gt; 1.0 &lt;/col&gt;<br>
-  &lt;name&gt; Chart &lt;/name&gt;<br>
-&lt;/showbitmap&gt;<br>
-<br>
-&lt;label&gt;<br>
-  &lt;row&gt; 0.3 &lt;/row&gt;<br>
-  &lt;col&gt; 4.5 &lt;/col&gt;<br>
-  &lt;text&gt; Chart &lt;/text&gt;<br>
-&lt;/label&gt;<br>
-<br>
-&lt;showclock&gt;<br>
-  &lt;row&gt; 0.3 &lt;/row&gt;&lt;col&gt; 32.0 &lt;/col&gt;<br>
-  &lt;name&gt; System.X &lt;/name&gt;<br>
-  &lt;ampm/&gt;&lt;secs/&gt;&lt;days/&gt;<br>
-&lt;/showclock&gt;<br>
-<br>
-&lt;?path Display\Clinic\Chart\ ?&gt;<br>
-<br>
-&lt;?include ThumbNail.DES ?&gt;<br>
-&lt;?include BloodPressure.DES ?&gt;<br>
-&lt;?include RespiratoryRate.DES ?&gt;<br>
-<br>
------------------------------------------<br>
-<br>
-&lt;?include Morphology.DES ?&gt;<br>
-&lt;?include Symptoms.DES ?&gt;<br>
-&lt;?include Temperature.DES ?&gt;<br>
-&lt;?include HeartRate.DES ?&gt;<br>
-<br>
-&lt;/panel&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

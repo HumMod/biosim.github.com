@@ -1,77 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Structure.html'><img src='../../Back.PNG'></a>
-<p><a href='Structure_ThyroidGland_ThyroidPool.html'>Structure_ThyroidGland_ThyroidPool</a>
-<br><a href='Structure_ThyroidGland_ThyroidPump.html'>Structure_ThyroidGland_ThyroidPump</a>
-<br><a href='Structure_ThyroidGland_ThyroidClearance.html'>Structure_ThyroidGland_ThyroidClearance</a>
-<br><a href='Structure_ThyroidGland_ThyroidSecretion.html'>Structure_ThyroidGland_ThyroidSecretion</a>
-<br><a href='Structure_ThyroidGland_ThyroidTSH.html'>Structure_ThyroidGland_ThyroidTSH</a>
-<p>
-HumMod / ThyroidGland<br>
-<br>
-Created : 21-Oct-04<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;?path Structure\ThyroidGland\ ?&gt;<br>
-<br>
-&lt;?include ThyroidPool.DES ?&gt;<br>
-&lt;?include ThyroidPump.DES ?&gt;<br>
-&lt;?include ThyroidClearance.DES ?&gt;<br>
-&lt;?include ThyroidSecretion.DES ?&gt;<br>
-&lt;?include ThyroidTSH.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; ThyroidGland &lt;/name&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-<br>
-  &lt;call&gt; ThyroidPump.Parms &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcConc &lt;/name&gt;<br>
-<br>
-  &lt;call&gt; ThyroidPool.CalcConc &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-  &lt;call&gt; ThyroidTSH.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; ThyroidSecretion.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; ThyroidClearance.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; ThyroidPool.Dervs &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

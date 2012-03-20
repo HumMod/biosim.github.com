@@ -1,212 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 2:00 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Docs_Circulation.html'><img src='../../Back.PNG'></a>
-<p>
-QHP 2008 / Circulation.DOCS<br>
-<br>
-Created : 27-Mar-09<br>
-Last Modified : 27-Mar-09<br>
-Author : Tom Coleman<br>
-Copyright : 2009<br>
-<br>
-&lt;structurename&gt; Viscosity &lt;/structurename&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; Viscosity.Clamp &lt;/name&gt;<br>
-&lt;topic&gt; Clamp - DefinitionV1 &lt;/topic&gt;<br>
-&lt;topic&gt; Viscosity - Overview &lt;/topic&gt;<br>
-&lt;topic&gt; Viscosity - Physical Units &lt;/topic&gt;<br>
-&lt;topic&gt; Viscosity - Concentration Units &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; Viscosity.ConductanceEffect &lt;/name&gt;<br>
-&lt;topic&gt; ConductanceEffect - DefinitionV2 &lt;/topic&gt;<br>
-&lt;topic&gt; Viscosity - Physical Units  &lt;/topic&gt;<br>
-&lt;topic&gt; Viscosity - Concentration Units &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; Viscosity.Level &lt;/name&gt;<br>
-&lt;topic&gt; Level - DefinitionV3 &lt;/topic&gt;<br>
-&lt;topic&gt; Viscosity - Physical Units  &lt;/topic&gt;<br>
-&lt;topic&gt; Viscosity - Concentration Units  &lt;/topic&gt;<br>
-&lt;/vardoc&gt;<br>
-<br>
-&lt;vardoc&gt;<br>
-&lt;name&gt; Viscosity.Value &lt;/name&gt;<br>
-&lt;topic&gt; Value - DefinitionV4 &lt;/topic&gt;<br>
-&lt;topic&gt; Viscosity - Physical Units   &lt;/topic&gt;<br>
-&lt;topic&gt; Viscosity - Concentration Units  &lt;/topic&gt;<br>
-&lt;seealso&gt; BloodVol.Hct &lt;/seealso&gt;<br>
-&lt;seealso&gt; Viscosity.Level &lt;/seealso&gt; <br>
-&lt;/vardoc&gt;<br>
-<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Viscosity - Overview &lt;/name&gt;<br>
-&lt;label&gt; Overview &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-The viscosity of blood is a measure of its resistance <br>
-to flow. The greater the viscosity, the less the flow<br>
-in a blood vessel if all other factors are constant.<br>
-Conversely the less viscous a fluid is, the greater <br>
-the flow. The viscosity of normal blood is about three<br>
-times as great as the viscosity of water and is largely <br>
-the result of the large numbers of suspended red cells<br>
-in the blood. Each of these cells exerts frictional <br>
-drag against adjacent cells and against the wall of the<br>
-blood vessel. The percentage of the blood that is cells<br>
-is called the hematocrit. The viscosity of blood increases<br>
-dramatically as the hematocrit increases. When the <br>
-hematocrit rises to 60 or 70 which it often does in <br>
-polycythemia, the blood viscosity can become as great as <br>
-ten times that of water, and its flow through blood vessels<br>
-is greatly retarded. <br>
-<br>
-Relationship of hematocrit to viscosity is described in <br>
-the following references:<br>
-<br>
-Fan FC, Chen RY, Schuessler GB and Chien S. Effects of <br>
-hematocrit variations on regional hemodynamics and<br>
-oxygen transport in the dog.<br>
-Am J Physiol 238: H545-H552,1980<br>
-<br>
-Stone HO, Thompson HK and Schmidt-Nielson K. Influence <br>
-of erthrocytes on blood viscosity. <br>
-Am. J. Physiol 214:913-918,1968.<br>
-<br>
-Whittaker SRF, Winton FR. The apparent viscosity of blood<br>
-flowing in the isolated hindlimb of the dog, and its <br>
-variation with corpuscular concentration. <br>
-J. Physiol 78:339-369,1933.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; ConductanceEffect - DefinitionV2 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Conductance is a measure of the blood flow through <br>
-a vessel for a given pressure difference. It is the<br>
-exact reciprocal of resistance. Since viscosity affects<br>
-resistance to flow, viscosity also affects conductance. <br>
-As viscosity increases, conductance decreases. The <br>
-conductance effect is defined by the relationship of<br>
-hematocrit to viscosity.<br>
-<br>
-Conductance Effect = 1 / Value. Value is the viscosity <br>
-which is either set by the user or is defined by the <br>
-curve relating hematocrit to viscosity.  <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Viscosity - Physical Units &lt;/name&gt;<br>
-&lt;label&gt; Physical Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-The viscosity of normal blood is about 3 times as great<br>
-as the viscosity of water.  <br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Viscosity - Concentration Units &lt;/name&gt;<br>
-&lt;label&gt; Concentration Units &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-Viscosity at a normal hematocrit of 0.44 is expressed as 1<br>
-<br>
-Relationship of hematocrit to viscosity is described in <br>
-the following references:<br>
-<br>
-Fan FC, Chen RY, Schuessler GB and Chien S. Effects of <br>
-hematocrit variations on regional hemodynamics and<br>
-oxygen transport in the dog.<br>
-Am J Physiol 238: H545-H552,1980<br>
-<br>
-Stone HO, Thompson HK and Schmidt-Nielson K. Influence <br>
-of erthrocytes on blood viscosity. <br>
-Am. J. Physiol 214:913-918, 1968.<br>
-<br>
-Whittaker SRF, Winton FR. The apparent viscosity of blood<br>
-flowing in the isolated hindlimb of the dog, and its <br>
-variation with corpuscular concentration. <br>
-J. Physiol 78:339-369, 1933.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Clamp - DefinitionV1 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-The clamp feature enables the model user to fix a particular<br>
-variable at a set value. In the case of viscosity,<br>
-if the clamp is turned to "on", the model user can set viscosity<br>
-level using the sliding bar feature in the viscosity display box. <br>
-viscosity.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Level - DefinitionV3 &lt;/name&gt;<br>
-&lt;label&gt; Definition  &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-The clamp feature enables the model user to fix a particular<br>
-variable at a set value. In the case of viscosity,<br>
-if the clamp is "on", then viscosity would have the value set by<br>
-the sliding bar in the viscosity display box. This is the level.<br>
-If the clamp is "off", then viscosity has a value defined by the <br>
-relationship of hematocrit to viscosity.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-&lt;topicdoc&gt;<br>
-&lt;name&gt; Value - DefinitionV4 &lt;/name&gt;<br>
-&lt;label&gt; Definition &lt;/label&gt;<br>
-&lt;content&gt;<br>
-<br>
-The clamp feature enables the model user to fix a particular<br>
-variable at a set value. In the case of viscosity,<br>
-if the clamp is "on" then viscosity would have the value set by<br>
-the sliding bar in the viscosity display box. If the clamp is <br>
-"off", then viscosity has a value defined by the relationship <br>
-of hematocrit to viscosity.<br>
-<br>
-&lt;/content&gt;<br>
-&lt;/topicdoc&gt;<br>
-<br>
-
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

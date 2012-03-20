@@ -1,126 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Structure.html'><img src='../../Back.PNG'></a>
-<p><a href='Structure_Ovaries_Ovaries-Follicle.html'>Structure_Ovaries_Ovaries-Follicle</a>
-<br><a href='Structure_Ovaries_Ovaries-Ovulation.html'>Structure_Ovaries_Ovaries-Ovulation</a>
-<br><a href='Structure_Ovaries_Ovaries-CorpusLuteum.html'>Structure_Ovaries_Ovaries-CorpusLuteum</a>
-<br><a href='Structure_Ovaries_Ovaries-Estradiol.html'>Structure_Ovaries_Ovaries-Estradiol</a>
-<br><a href='Structure_Ovaries_Ovaries-Progesterone.html'>Structure_Ovaries_Ovaries-Progesterone</a>
-<br><a href='Structure_Ovaries_Ovaries-Testosterone.html'>Structure_Ovaries_Ovaries-Testosterone</a>
-<br><a href='Structure_Ovaries_Ovaries-Inhibin.html'>Structure_Ovaries_Ovaries-Inhibin</a>
-<p>
-HumMod / Ovaries<br>
-<br>
-Created : 07-Apr-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2008-2010<br>
-By : University of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;?path Structure\Ovaries\ ?&gt;<br>
-<br>
-&lt;?include Ovaries-Follicle.DES ?&gt;<br>
-&lt;?include Ovaries-Ovulation.DES ?&gt;<br>
-&lt;?include Ovaries-CorpusLuteum.DES ?&gt;<br>
-<br>
-&lt;?include Ovaries-Estradiol.DES ?&gt;<br>
-&lt;?include Ovaries-Progesterone.DES ?&gt;<br>
-&lt;?include Ovaries-Testosterone.DES ?&gt;<br>
-&lt;?include Ovaries-Inhibin.DES ?&gt;<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Ovaries &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Cycling? &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-&lt;parm&gt;&lt;name&gt; BlockCycling &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;parm&gt;&lt;name&gt; Menarche(Years) &lt;/name&gt;&lt;val&gt; 12.5 &lt;/val&gt;&lt;/parm&gt;<br>
-&lt;parm&gt;&lt;name&gt; Menopause(Years) &lt;/name&gt;&lt;val&gt; 45.0 &lt;/val&gt;&lt;/parm&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Phase &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/var&gt;<br>
-<br>
-&lt;var&gt;&lt;name&gt; Idle? &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Follicular? &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Ovulatory? &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-&lt;var&gt;&lt;name&gt; Luteal? &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/var&gt;<br>
-<br>
-&lt;constant&gt;&lt;name&gt; IS_IDLE  &lt;/name&gt;&lt;val&gt; 0 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; IS_FOLLICULAR &lt;/name&gt;&lt;val&gt; 1 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; IS_OVULATORY &lt;/name&gt;&lt;val&gt; 2 &lt;/val&gt;&lt;/constant&gt;<br>
-&lt;constant&gt;&lt;name&gt; IS_LUTEAL &lt;/name&gt;&lt;val&gt; 3 &lt;/val&gt;&lt;/constant&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Parms &lt;/name&gt;<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Dervs &lt;/name&gt;<br>
-<br>
-  &lt;call&gt; Ovaries-Follicle.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Ovaries-CorpusLuteum.Dervs &lt;/call&gt;<br>
-<br>
-  &lt;call&gt; Ovaries-Estradiol.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Ovaries-Progesterone.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Ovaries-Testosterone.Dervs &lt;/call&gt;<br>
-  &lt;call&gt; Ovaries-Inhibin.Dervs &lt;/call&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; Wrapup &lt;/name&gt;<br>
-<br>
-&lt;if&gt;<br>
-  &lt;test&gt;<br>
-       ( Age.Age(Years) LT Menarche(Years) )<br>
-    OR ( Age.Age(Years) GT Menopause(Years) )<br>
-    OR ( BlockCycling )<br>
-  &lt;/test&gt;<br>
-  &lt;true&gt;<br>
-    &lt;def&gt;&lt;name&gt; Cycling? &lt;/name&gt;&lt;val&gt; FALSE &lt;/val&gt;&lt;/def&gt;<br>
-    &lt;def&gt;&lt;name&gt; Phase &lt;/name&gt;&lt;val&gt; IS_IDLE &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;/true&gt;<br>
-  &lt;false&gt;<br>
-    &lt;def&gt;&lt;name&gt; Cycling? &lt;/name&gt;&lt;val&gt; TRUE &lt;/val&gt;&lt;/def&gt;<br>
-  &lt;/false&gt;<br>
-&lt;/if&gt;<br>
-<br>
-&lt;call&gt; Ovaries-Follicle.Wrapup &lt;/call&gt;<br>
-&lt;call&gt; Ovaries-Ovulation.Wrapup &lt;/call&gt;<br>
-&lt;call&gt; Ovaries-CorpusLuteum.Wrapup &lt;/call&gt;<br>
-<br>
-&lt;def&gt;&lt;name&gt; Idle? &lt;/name&gt;&lt;val&gt; Phase EQ IS_IDLE &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Follicular? &lt;/name&gt;&lt;val&gt; Phase EQ IS_FOLLICULAR &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Ovulatory? &lt;/name&gt;&lt;val&gt; Phase EQ IS_OVULATORY &lt;/val&gt;&lt;/def&gt;<br>
-&lt;def&gt;&lt;name&gt; Luteal? &lt;/name&gt;&lt;val&gt; Phase EQ IS_LUTEAL &lt;/val&gt;&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>

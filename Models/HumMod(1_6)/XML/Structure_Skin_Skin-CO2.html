@@ -1,211 +1,0 @@
-<!DOCTYPE html>
-
-<!--
-  Created : 1/26/2012 1:57 PM
-  Author : Tom Coleman
-  Copyright : 2011-2011
-  By : University of Missippi Medical Center
--->
-
-<html>
-<head>
-<title> Model </title>
-<link rel='stylesheet' type='text/css' href='../../Style.CSS'>
-</head>
-
-<body>
-
-<img src='../../SmallTitle.PNG'>
-<img src='../XMLLightBlue.png'>
-<a href='Structure_Skin_Skin.html'><img src='../../Back.PNG'></a>
-<p>
-HumMod / Skin-CO2<br>
-<br>
-Created : 31-Mar-05<br>
-Last Modified : 26-Jan-10<br>
-Author : Tom Coleman<br>
-Copyright : 2006-2010<br>
-By : University Of Mississippi Medical Center<br>
-Schema : DES V1.0<br>
-<br>
-&lt;structure&gt;&lt;name&gt; Skin-CO2 &lt;/name&gt;<br>
-<br>
-&lt;variables&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; [HCO3] &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; [HCO3(mEq/L)] &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; PCO2 &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; InflowGas &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; InflowBase &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; OutflowBase &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; [BloodHCO3] &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; Outflow(0) &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; K &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;var&gt;<br>
-  &lt;name&gt; Alpha &lt;/name&gt;<br>
-&lt;/var&gt;<br>
-<br>
-&lt;/variables&gt;<br>
-<br>
-&lt;equations&gt;<br>
-<br>
-&lt;diffeq&gt;<br>
-  &lt;name&gt; Mass &lt;/name&gt;<br>
-  &lt;integralname&gt; Mass &lt;/integralname&gt;<br>
-  &lt;initialval&gt; 28.2 &lt;/initialval&gt;<br>
-  &lt;dervname&gt; Change &lt;/dervname&gt;<br>
-  &lt;errorlim&gt; 0.28 &lt;/errorlim&gt;<br>
-&lt;/diffeq&gt;<br>
-<br>
-&lt;/equations&gt;<br>
-<br>
-&lt;definitions&gt;<br>
-&lt;block&gt;&lt;name&gt; CalcConc &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; [HCO3] &lt;/name&gt;<br>
-  &lt;val&gt; Mass / Skin-Size.LiquidVol &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; [HCO3(mEq/L)] &lt;/name&gt;<br>
-  &lt;val&gt; 1000.0 * [HCO3] &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;copy&gt;<br>
-  &lt;from&gt; [HCO3] &lt;/from&gt;<br>
-  &lt;to&gt; Tissue-BaseToGas.[HCO3] &lt;/to&gt;<br>
-&lt;/copy&gt;<br>
-<br>
-&lt;copy&gt;<br>
-  &lt;from&gt; Skin-Ph.[SID] &lt;/from&gt;<br>
-  &lt;to&gt; Tissue-BaseToGas.[SID] &lt;/to&gt;<br>
-&lt;/copy&gt;<br>
-<br>
-&lt;call&gt; Tissue-BaseToGas.Calc &lt;/call&gt;<br>
-<br>
-&lt;copy&gt;<br>
-  &lt;from&gt; Tissue-BaseToGas.pCO2 &lt;/from&gt;<br>
-  &lt;to&gt; PCO2 &lt;/to&gt;<br>
-&lt;/copy&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;block&gt;&lt;name&gt; CalcDervs &lt;/name&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; K &lt;/name&gt;<br>
-  &lt;val&gt; Skin-Flow.BloodFlow / Skin-Size.LiquidVol &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;testcase&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; System.Dx GE UNDEFINED &lt;/test&gt;<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Alpha &lt;/name&gt;<br>
-  &lt;val&gt; 0.0 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; ( K * System.Dx ) GE 100.0 &lt;/test&gt;<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Alpha &lt;/name&gt;<br>
-  &lt;val&gt; 4E-44 &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;case&gt;<br>
-&lt;test&gt; TRUE &lt;/test&gt;<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Alpha &lt;/name&gt;<br>
-  &lt;val&gt; EXP ( -  K * System.Dx ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-&lt;/case&gt;<br>
-<br>
-&lt;/testcase&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; InflowGas &lt;/name&gt;<br>
-  &lt;val&gt; Metabolism-RespiratoryQuotient.RQ * Skin-Flow.O2Use &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; InflowBase &lt;/name&gt;<br>
-  &lt;val&gt; CO2Tools.LitersToMols * InflowGas &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;copy&gt;<br>
-  &lt;from&gt; PCO2 &lt;/from&gt;<br>
-  &lt;to&gt; Blood-GasToBase.pCO2 &lt;/to&gt;<br>
-&lt;/copy&gt;<br>
-<br>
-&lt;copy&gt;<br>
-  &lt;from&gt; BloodIons.[SID] &lt;/from&gt;<br>
-  &lt;to&gt; Blood-GasToBase.[SID] &lt;/to&gt;<br>
-&lt;/copy&gt;<br>
-<br>
-&lt;call&gt; Blood-GasToBase.Calc &lt;/call&gt;<br>
-<br>
-&lt;copy&gt;<br>
-  &lt;from&gt; Blood-GasToBase.[HCO3] &lt;/from&gt;<br>
-  &lt;to&gt; [BloodHCO3] &lt;/to&gt;<br>
-&lt;/copy&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Outflow(0) &lt;/name&gt;<br>
-  &lt;val&gt; Skin-Flow.BloodFlow * ( [BloodHCO3] - CO2Artys.[HCO3] ) &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; OutflowBase &lt;/name&gt;<br>
-  &lt;val&gt;<br>
-        ( Alpha * Outflow(0) )<br>
-    + ( ( 1 - Alpha ) * InflowBase )<br>
-  &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;def&gt;<br>
-  &lt;name&gt; Change &lt;/name&gt;<br>
-  &lt;val&gt; InflowBase - OutflowBase &lt;/val&gt;<br>
-&lt;/def&gt;<br>
-<br>
-&lt;/block&gt;<br>
-<br>
-&lt;/definitions&gt;<br>
-&lt;/structure&gt;<br>
-<br>
-End
-
-<p><img src='../../Footer.PNG'>
-
-</body>
-</html>
