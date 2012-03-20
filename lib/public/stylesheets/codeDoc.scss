@@ -1,2 +1,10 @@
 @import 'bootstrap/bootstrap';
 @import 'bootstrap/responsive';
+
+div.hero-unit {
+  a {
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .btn-large;
+  }
+}
